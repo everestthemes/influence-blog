@@ -95,6 +95,28 @@ if( ! function_exists( 'influence_blog_categories_meta' ) ) :
 	}
 endif;
 
+if( ! function_exists( 'influence_blog_tags_meta' ) ) :
+	/*
+	 * Prints HTML with meta information for post categories.
+	 */
+	function influence_blog_tags_meta( $display_meta ) {
+
+		if( $display_meta == true  ) {
+
+			// Hide category and tag text for pages.
+			if ( 'post' === get_post_type() ) {
+
+				/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list();
+
+				if ( $tags_list ) {
+					echo '<div class="entry-tags"><div class="post-tags">' . wp_kses_post( $tags_list ) . '</div></div>'; // WPCS: XSS OK.
+				}
+			}
+		}
+	}
+endif;
+
 if ( ! function_exists( 'influence_blog_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -168,13 +190,16 @@ if ( ! function_exists( 'influence_blog_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() ) :
+        
 			?>
-			
-			<figure>
-				<?php the_post_thumbnail(); ?>
-			</figure><!-- .post-thumbnail -->
-
-		<?php else :
+			<div class="img-holder">
+                <figure>
+                    <?php the_post_thumbnail(); ?>
+                </figure><!-- .post-thumbnail -->
+            </div>
+		    <?php
+        
+        else :
 
 		$display_featured_image = true;
             
@@ -193,11 +218,12 @@ if ( ! function_exists( 'influence_blog_post_thumbnail' ) ) :
             if( $display_featured_image == true ) {
             
                 ?>
-                <figure class="img-hover">
-                    <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
-                </figure><!-- // thumb -->
-
-		<?php
+                <div class="img-holder">
+                    <figure>
+                        <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                    </figure>
+                </div>
+		    <?php
             }
 		endif; // End is_singular().
 	}
