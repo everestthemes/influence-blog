@@ -47,7 +47,8 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
         
-        add_image_size( 'influence-blog-thumbnail-one', 400, 250, true );
+        add_image_size( 'influence-blog-thumbnail-one', 820, 550, true );
+        add_image_size( 'influence-blog-thumbnail-two', 300, 200, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -286,6 +287,16 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Functions which hooks into the theme functions.
  */
 require get_template_directory() . '/inc/theme-hooks.php';
+
+/**
+ * Load breadcrumbs.
+ */
+require get_template_directory() . '/third-party/breadcrumbs.php';
+
+/**
+ * Post Meta Sidebar Position for this theme.
+ */
+require get_template_directory() . '/inc/custom-fields/sidebar-position.php';
 
 /**
  * Load Jetpack compatibility file.

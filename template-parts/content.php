@@ -8,52 +8,69 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+    <div class="single layout-bdy single-layout1-bdy">
+        <?php influence_blog_categories_meta( true ); ?>
+        <div class="metastyle1">
+            <?php influence_blog_posted_on( true ); ?>
+        </div> <!--metastyle1 span meta-->
+        <h1 class="single-title"><?php the_title(); ?></h1>
+        <?php influence_blog_post_thumbnail(); ?>
+        <div class="single-post-detail single-layout1-detail">
+            <?php
+            
+            the_content(); 
+            
+            influence_blog_pages_links();
+            
+            if ( get_edit_post_link() ) :
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				influence_blog_posted_on();
-				influence_blog_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+                edit_post_link(
+                    sprintf(
+                        wp_kses(
+                            /* translators: %s: Name of current post. Only visible to screen readers */
+                            __( 'Edit <span class="screen-reader-text">%s</span>', 'grace-mag' ),
+                            array(
+                                'span' => array(
+                                    'class' => array(),
+                                ),
+                            )
+                        ),
+                        get_the_title()
+                    ),
+                    '<span class="edit-link">',
+                    '</span>'
+                );
+            endif;
+            
+            ?>
+        </div>
+        <?php
+        
+        if( is_single() ) {
+        
+            influence_blog_tags_meta( true );
 
-	<?php influence_blog_post_thumbnail(); ?>
+            influence_blog_post_navigation();
 
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'influence-blog' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+            get_template_part( 'template-parts/content', 'author' );
+            
+        }
+        
+        ?>
+    </div><!--//author-box-->
+    <?php
+    
+    if( is_single() ) {
+    
+        get_template_part( 'template-parts/content', 'related' );
+        
+    }
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'influence-blog' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php influence_blog_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+    // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+        comments_template();
+    endif;
+    
+    ?>
+</article>

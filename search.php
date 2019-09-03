@@ -8,48 +8,34 @@
  */
 
 get_header();
+
+$sidebar_position = influence_blog_sidebar_position();
 ?>
+<div class="archive-page-wrap lrg-padding">
+    <div class="container">
+        <?php influence_blog_breadcrumb(); ?>
+        <div class="row">
+            <?php
+                
+            if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+                get_sidebar();
+            }
 
-		<?php if ( have_posts() ) : ?>
+            ?>
+            <div class="<?php influence_blog_main_container_class(); ?>">
+                <?php influence_blog_post_listing_layout_template(); ?>
+            </div><!--//col-12 col-lg-8-->
+            <?php
+                
+            if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'influence-blog' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+                get_sidebar();
+            }
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+            ?>
+        </div><!--//row-->
+    </div><!--//container-->
+</div><!--//archive-page-wrap-->
 <?php
-get_sidebar();
 get_footer();

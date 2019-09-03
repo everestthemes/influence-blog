@@ -18,11 +18,16 @@ function influence_blog_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+    
+    // Adds a class of no-sidebar when there is no sidebar present.
+    $sidebar_position = influence_blog_sidebar_position();
+	if ( ! is_active_sidebar( 'influence-blog-sidebar' ) || $sidebar_position == 'none' ) {
 		$classes[] = 'no-sidebar';
 	}
+    
+    if( get_background_image() || get_background_color() != 'ffffff'  ) {
+        $classes[] = 'boxed';
+    }
 
 	return $classes;
 }
@@ -37,6 +42,93 @@ function influence_blog_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'influence_blog_pingback_header' );
+
+
+
+/**
+ * Social links template
+ */
+if( ! function_exists( 'influence_blog_social_links_template' ) ) {
+    
+    function influence_blog_social_links_template( $position ) {
+        
+        if( empty( $position ) ) {
+            
+            return;
+        }
+        
+        $facebook_link = ifb_mod( 'facebook_link', '' );
+        $twitter_link = ifb_mod( 'twitter_link', '' );
+        $instagram_link = ifb_mod( 'instagram_link', '' );
+        $youtube_link = ifb_mod( 'youtube_link', '' );
+        $display_rss_feed = ifb_mod( 'display_rss_feed', true );
+        
+        $youtube_class = '';
+        
+        if( $position == 'header' ) {
+            
+            $youtube_class = 'fa fa-youtube-play';
+            
+        }
+        
+        if( $position == 'header' ) {
+            
+            $youtube_class = 'fa fa-youtube';
+            
+        }
+        
+        if( !empty( $facebook_link ) ) {
+            
+            ?>
+            <li>
+                <a href="<?php echo esc_url( $facebook_link ); ?>" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+        <?php
+        }
+
+        if( !empty( $instagram_link ) ) {
+            ?>
+            <li>
+                <a href="<?php echo esc_url( $instagram_link ); ?>" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+        <?php
+        }
+
+        if( !empty( $twitter_link ) ) {
+            ?>
+            <li>
+                <a href="<?php echo esc_url( $twitter_link ); ?>" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        <?php
+        }
+
+        if( !empty( $youtube_link ) ) {
+            ?>
+            <li>
+                <a href="<?php echo esc_url( $youtube_link ); ?>" target="_blank">
+                    <i class="<?php echo esc_attr( $youtube_class ); ?>"></i>
+                </a>
+            </li>
+        <?php
+        }
+
+        if( $display_rss_feed == true ) {
+            ?>
+            <li>
+                <a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" target="_blank">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </li>
+        <?php
+        }
+    }
+}
 
 
 
@@ -214,3 +306,113 @@ if ( ! function_exists( 'influence_blog_has_image_url' ) ) :
         echo $bg_image_style;
 	}
 endif;
+
+
+
+/**
+ * Breadcrumb declaration of the theme.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
+
+ 	function influence_blog_breadcrumb() {
+        
+        $display_breadcrumb = ifb_mod( 'display_breadcrumb', true );
+
+ 		if( $display_breadcrumb == true ) {
+ 			?>
+ 			<div class="breadcrumbs-sec breadcrumbs-layout1">
+                <?php
+                $breadcrumb_args = array(
+                    'show_browse' => false,
+                );
+                influence_blog_breadcrumb_trail( $breadcrumb_args );
+                ?>
+            </div>
+            <!--breadcdrum-->
+ 			<?php
+ 		}  		
+ 	}
+endif;
+
+
+
+/**
+ * Function that defines pages links.
+ */
+if( ! function_exists('influence_blog_pages_links') ) {
+
+function influence_blog_pages_links() {
+
+        $pages_links_args = array(
+            'before'    => '<div class="page-links">' . esc_html__( 'Pages:', 'influence-blog' ),
+            'after'     => '</div>',
+        );
+
+        wp_link_pages( $pages_links_args );
+    }
+}
+
+
+
+/**
+ * Function that defines post navigation.
+ */
+if( ! function_exists( 'influence_blog_post_navigation' ) ) {
+
+	function influence_blog_post_navigation() {
+		
+		$next_post = get_next_post();
+
+	    $previous_post = get_previous_post();
+        
+        ?>
+        <div class="post-navigation">
+            <div class="nav-links">
+              <?php
+               if (!empty( $previous_post )):
+                ?>
+                <div class="nav-previous">
+                    <span><?php echo esc_html__( 'Prev post', 'grace-mag' ); ?></span>
+                    <a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>"><?php echo esc_html( $previous_post->post_title ); ?></a>
+                </div>
+                <?php
+                endif;
+        
+               if (!empty( $next_post )):
+                ?>
+                <div class="nav-next">
+                    <span><?php echo esc_html__( 'Next post', 'grace-mag' ); ?></span>
+                    <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a>
+                </div>
+                <?php
+                endif;
+                ?>
+            </div><!-- // nav-links -->
+        </div><!-- // post-navigation -->
+        <?php
+	}
+}
+
+
+
+/**
+ * Function that defines posts pagination.
+ */
+if( ! function_exists( 'influence_blog_pagination' ) ) {
+
+	function influence_blog_pagination() {
+        
+        ?>
+        <div class="ifb-pagination">
+        <?php
+        
+            the_posts_pagination( array(
+                'mid_size' => 2,
+            ) );
+        ?>
+        </div>
+        <?php
+	}
+}

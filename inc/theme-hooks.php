@@ -44,12 +44,7 @@ if( ! function_exists( 'influence_blog_header_social_links_action' ) ) :
         
     ?>
     <ul class="top-social-icon">
-        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+        <?php influence_blog_social_links_template( 'header' ); ?>
     </ul><!--//top-social-icon-->
     <?php
     }
@@ -198,6 +193,7 @@ if( ! function_exists( 'influence_blog_header_mobile_navigation_action' ) ) :
                     'container' => '',
                     'menu_class' => '',
                     'menu_id' => '',
+                    'items_wrap' => influence_blog_main_navigation_wrap(),
                     'fallback_cb' => 'influence_blog_navigation_fallback',
                 );
                 wp_nav_menu( $menu_args );
@@ -487,11 +483,7 @@ if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
         </div>
         <div class="social-media-foot">
             <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <?php influence_blog_social_links_template( 'footer' ); ?>
             </ul>
         </div>
         <div class="social-detail">
