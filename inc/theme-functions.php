@@ -5,6 +5,13 @@
  * @package Influence_Blog
  */
 
+function debug( $variable ) {
+    
+    echo '<pre>';
+    var_dump( $variable );
+    echo '</pre>';
+}
+
 
 /**
  * Funtion To Get Google Fonts
