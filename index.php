@@ -16,6 +16,11 @@ get_header();
 
 influence_blog_banner_template();
 
+if( is_active_sidebar( 'influence-blog-top-widget-area' ) ) {
+    
+    dynamic_sidebar( 'influence-blog-top-widget-area' );
+}
+
 $sidebar_position = influence_blog_sidebar_position();
 
 ?>
@@ -32,7 +37,16 @@ $sidebar_position = influence_blog_sidebar_position();
                 
                 ?>
                 <div class="<?php influence_blog_main_container_class(); ?>">
-                    <?php influence_blog_post_listing_layout_template(); ?>
+                    <?php
+                    
+                    influence_blog_post_listing_layout_template();
+                    
+                    if( is_active_sidebar( 'influence-blog-middle-widget-area' ) ) {
+    
+                        dynamic_sidebar( 'influence-blog-middle-widget-area' );
+                    }
+                    
+                    ?>
                 </div><!--//col-12 col-md-6 col-lg-9-->
                 <?php
                 
@@ -46,7 +60,14 @@ $sidebar_position = influence_blog_sidebar_position();
         </div><!--//container-->
     </div><!--//half-widget-area-->
 </div>
+<?php
 
+if( is_active_sidebar( 'influence-blog-bottom-widget-area' ) ) {
+    
+    dynamic_sidebar( 'influence-blog-bottom-widget-area' );
+}
+
+?>
 
 <div class="footer-about-sec center">
   <div class="container">

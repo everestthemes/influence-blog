@@ -47,8 +47,9 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
         
-        add_image_size( 'influence-blog-thumbnail-one', 820, 550, true );
-        add_image_size( 'influence-blog-thumbnail-two', 300, 200, true );
+        add_image_size( 'influence-blog-thumbnail-one', 820, 550, true ); //Grid layout
+        add_image_size( 'influence-blog-thumbnail-two', 300, 200, true ); //Related post
+        add_image_size( 'influence-blog-thumbnail-three', 1000, 1200, true ); //Related post
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -142,7 +143,7 @@ function influence_blog_widgets_init() {
     register_sidebar( array(
 		'name'          => esc_html__( 'Top Widget Area', 'influence-blog' ),
 		'id'            => 'influence-blog-top-widget-area',
-		'description'   => esc_html__( 'Add fullwidth widget here.', 'influence-blog' ),
+		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '',
@@ -152,7 +153,7 @@ function influence_blog_widgets_init() {
     register_sidebar( array(
 		'name'          => esc_html__( 'Middle Widget Area', 'influence-blog' ),
 		'id'            => 'influence-blog-middle-widget-area',
-		'description'   => esc_html__( 'Add halfwidget widget here.', 'influence-blog' ),
+		'description'   => esc_html__( 'Widgets will be shown in halfwidth.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '',
@@ -162,7 +163,7 @@ function influence_blog_widgets_init() {
     register_sidebar( array(
 		'name'          => esc_html__( 'Bottom Widget Area', 'influence-blog' ),
 		'id'            => 'influence-blog-fullwidth-bottom-widget-area',
-		'description'   => esc_html__( 'Add fullwidth widget here.', 'influence-blog' ),
+		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '',
@@ -287,6 +288,11 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  * Functions which hooks into the theme functions.
  */
 require get_template_directory() . '/inc/theme-hooks.php';
+
+/**
+ * Load widgets for theme
+ */
+require get_template_directory() . '/widgets/widgets.php';
 
 /**
  * Load breadcrumbs.
