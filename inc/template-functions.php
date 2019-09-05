@@ -160,6 +160,11 @@ if( ! function_exists( 'influence_blog_post_listing_layout_template' ) ) {
     function influence_blog_post_listing_layout_template() {
         
         get_template_part( 'template-parts/layout/layout', 'grid' );
+        
+        if( is_home() ) {
+        
+            get_template_part( 'template-parts/layout/layout', 'block' );
+        }
     }
 }
 

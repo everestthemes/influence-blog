@@ -1,6 +1,6 @@
 <?php
 /**
- * Fullwidth psot widget class
+ * Fullwidth post widget class
  *
  * @package Influence_Blog
  */
@@ -13,7 +13,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             parent::__construct(
                 'influence-blog-fullwidth-post-widget',  // Widget ID
-                esc_html__( 'IfB: Fullwidth post Widget', 'influence-blog' ),   // Widget Name
+                esc_html__( 'IfB: Fullwidth Post Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays Posts which is only for fullwidth.', 'influence-blog' ), 
                 )
@@ -27,7 +27,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             
             $description = !empty( $instance[ 'description' ] ) ? $instance[ 'description' ] : '';
 
-            $posts_no = !empty( $instance[ 'post_no' ] ) ? $instance[ 'post_no' ] : 9;
+            $posts_no = !empty( $instance[ 'post_no' ] ) ? $instance[ 'post_no' ] : 4;
 
             $layout = !empty( $instance[ 'layout' ] ) ? $instance[ 'layout' ] : 'full_one';
             
