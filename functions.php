@@ -151,16 +151,6 @@ function influence_blog_widgets_init() {
 	) );
     
     register_sidebar( array(
-		'name'          => esc_html__( 'Middle Widget Area', 'influence-blog' ),
-		'id'            => 'influence-blog-middle-widget-area',
-		'description'   => esc_html__( 'Widgets will be shown in halfwidth.', 'influence-blog' ),
-		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
-		'after_widget'  => '</div></div>',
-		'before_title'  => '',
-		'after_title'   => '',
-	) );
-    
-    register_sidebar( array(
 		'name'          => esc_html__( 'Bottom Widget Area', 'influence-blog' ),
 		'id'            => 'influence-blog-fullwidth-bottom-widget-area',
 		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),

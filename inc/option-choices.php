@@ -67,23 +67,6 @@ if( !function_exists( 'influence_blog_fullwidth_layouts_array' ) ) :
 	}
 endif;
 
-if( !function_exists( 'influence_blog_halfwidth_layouts_array' ) ) :
-	/*
-	 * Function to get halfwidth style
-	 */
-	function influence_blog_halfwidth_layouts_array() {
-
-        $halfwidth = array(
-            'half_one'            => get_template_directory_uri() . '/everestthemes/admin/images/half_one.png',
-            'half_two'            => get_template_directory_uri() . '/everestthemes/admin/images/half_two.png',
-            'half_three'          => get_template_directory_uri() . '/everestthemes/admin/images/half_three.png',
-        );
-
-        return $halfwidth;
-
-	}
-endif;
-
 if( !function_exists( 'influence_blog_post_layouts_array' ) ) :
 	/*
 	 * Function to get fullwidth style
@@ -92,9 +75,8 @@ if( !function_exists( 'influence_blog_post_layouts_array' ) ) :
 
         $post = array(
             'post_one'            => get_template_directory_uri() . '/everestthemes/admin/images/post_one.png',
-            'post_two'            => get_template_directory_uri() . '/everestthemes/admin/images/post_two.png',
         );
-
+        
         return $post;
 
 	}

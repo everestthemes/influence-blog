@@ -9,15 +9,20 @@ if( is_home() ) {
     
     ?>
     <div class="half-widget-left half-widget-d1">
+        <div class="widget-tt">
+            <h3 class="l-title"><?php echo esc_html__( 'Most Recent', 'influence-blog' ); ?></h3>             
+        </div>
         <div class="row">
         <?php
     
-        if( have_posts() ) :
+        $homepage_grid_query = influence_blog_homepage_grid_layout_posts_query();
+    
+        if( $homepage_grid_query -> have_posts() ) :
 
             /* Start the Loop */
-            while ( have_posts() ) :
+            while( $homepage_grid_query -> have_posts() ) :
 
-                the_post();
+                $homepage_grid_query -> the_post();
 
                 /*
                  * Include the Post-Format-specific template for the content.

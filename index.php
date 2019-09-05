@@ -27,6 +27,7 @@ $sidebar_position = influence_blog_sidebar_position();
 <div class="half-widget-area">
     <div class="half-widget-area-inner lrg-padding">
         <div class="container">
+            
             <div class="row">
                 <?php
                 
@@ -40,11 +41,6 @@ $sidebar_position = influence_blog_sidebar_position();
                     <?php
                     
                     influence_blog_post_listing_layout_template();
-                    
-                    if( is_active_sidebar( 'influence-blog-middle-widget-area' ) ) {
-    
-                        dynamic_sidebar( 'influence-blog-middle-widget-area' );
-                    }
                     
                     ?>
                 </div><!--//col-12 col-md-6 col-lg-9-->

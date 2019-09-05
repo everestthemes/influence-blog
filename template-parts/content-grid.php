@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Grace_Mag
+ * @package Influence_Blog
  */
 
 if( is_home() ) {
