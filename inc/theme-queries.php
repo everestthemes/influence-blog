@@ -45,11 +45,11 @@ if( !function_exists( 'influence_blog_homepage_grid_layout_posts_query' ) ) {
     
     function influence_blog_homepage_grid_layout_posts_query() {
         
-        $homepage_grid_category = ifb_mod( 'banner_category', '' );
+        $homepage_grid_category = ifb_mod( 'blog_page_grid_two_col_layout_category', '' );
         
-        $homepage_grid_post_type = ifb_mod( 'banner_category', 'recent_posts' );
+        $homepage_grid_post_type = ifb_mod( 'blog_page_grid_two_col_layout_post_type', 'recent_posts' );
         
-        $homepage_grid_posts_no = ifb_mod( 'banner_post_number', 4 );
+        $homepage_grid_posts_no = ifb_mod( 'blog_page_grid_two_col_layout_post_number', 6 );
         
         $homepage_grid_args = array(
           'post_type'      => 'post',  
@@ -83,11 +83,11 @@ if( !function_exists( 'influence_blog_homepage_block_layout_posts_query' ) ) {
     
     function influence_blog_homepage_block_layout_posts_query() {
         
-        $homepage_block_category = ifb_mod( 'banner_category', '' );
+        $homepage_block_category = ifb_mod( 'blog_page_grid_three_col_layout_category', '' );
         
-        $homepage_block_post_type = ifb_mod( 'banner_category', 'recent_posts' );
+        $homepage_block_post_type = ifb_mod( 'blog_page_grid_three_col_layout_post_type', 'recent_posts' );
         
-        $homepage_block_posts_no = ifb_mod( 'banner_post_number', 4 );
+        $homepage_block_posts_no = ifb_mod( 'blog_page_grid_three_col_layout_post_number', 3 );
         
         $homepage_block_args = array(
           'post_type'      => 'post',  
@@ -97,7 +97,7 @@ if( !function_exists( 'influence_blog_homepage_block_layout_posts_query' ) ) {
             $homepage_block_args['category_name'] = $homepage_block_category;
         }
         
-        if( $homepage_block_post_type == 'popular_post' ) {
+        if( $homepage_block_post_type == 'popular_posts' ) {
 
             $homepage_block_args['orderby'] = 'comment_count';
         }

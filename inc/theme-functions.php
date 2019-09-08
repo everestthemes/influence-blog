@@ -167,7 +167,13 @@ if( ! function_exists( 'influence_blog_main_navigation_wrap' ) ) {
 	function influence_blog_main_navigation_wrap() {
 
 	  	$wrap  = '<ul id="%1$s" class="nav-pd %2$s">';
-	  	$wrap .= '<li class="current_page_item"><a href="' . esc_url( home_url( '/' ) ) . '"><i class="fa fa-home"></i></a></li>';
+        
+        $display_home_icon = ifb_mod( 'display_home_icon', true );
+        
+        if( $display_home_icon == true ) {
+            
+	  	    $wrap .= '<li class="current_page_item"><a href="' . esc_url( home_url( '/' ) ) . '"><i class="fa fa-home"></i></a></li>';
+        }
 	  	$wrap .= '%3$s';
 	  	$wrap .= '</ul>';
 
@@ -203,3 +209,30 @@ if ( !function_exists( 'influence_blog_navigation_fallback' ) ) {
         <?php
     }
 }
+
+
+
+/*
+ * Hook - Plugin Recommendation
+ */
+if ( ! function_exists( 'influence_blog_recommended_plugins' ) ) :
+    /**
+     * Recommend plugins.
+     *
+     * @since 1.0.0
+     */
+    function influence_blog_recommended_plugins() {
+
+        $plugins = array(
+            array(
+                'name'     => esc_html__( 'Everest Toolkit', 'gucherry-blog-pro' ),
+                'slug'     => 'everest-toolkit',
+                'required' => false,
+            ),
+        );
+
+        tgmpa( $plugins );
+    }
+
+endif;
+add_action( 'tgmpa_register', 'influence_blog_recommended_plugins' );

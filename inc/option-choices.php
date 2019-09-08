@@ -81,3 +81,35 @@ if( !function_exists( 'influence_blog_post_layouts_array' ) ) :
 
 	}
 endif;
+
+if( !function_exists( 'influence_blog_post_types_array' ) ) :
+	/*
+	 * Function to get post type
+	 */
+	function influence_blog_post_types_array() {
+
+        $post_type = array(
+            'recent_posts'   => esc_html__( 'Recent Posts', 'influence-blog' ),
+            'popular_posts'  => esc_html__( 'Popular Posts', 'influence-blog' ),
+        );
+        
+        return $post_type;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_pagination_for_array' ) ) :
+	/*
+	 * Function to get pagination for in homepage
+	 */
+	function influence_blog_pagination_for_array() {
+
+        $pagination_for = array(
+            'grid_two'   => esc_html__( 'Grid Two Column Layout', 'influence-blog' ),
+            'grid_three' => esc_html__( 'Grid Three Column Layout', 'influence-blog' ),
+        );
+        
+        return $pagination_for;
+
+	}
+endif;

@@ -31,7 +31,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
             
             $select_cat    = !empty( $instance['select_cat'] ) ? $instance['select_cat'] : 0;
             
-            $post_type = !empty( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'recent_post';
+            $post_type = !empty( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'recent_posts';
 
             $post_args = array(
                 
@@ -43,7 +43,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                 $post_args['cat'] = absint( $select_cat );
             }
             
-            if( $post_type == 'popular_post' ) {
+            if( $post_type == 'popular_posts' ) {
                 
                 $post_args['orderby'] = 'comment_count';
             }
@@ -112,13 +112,15 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                 'title'        => '',
                 'post_no'      => 4,
                 'layout'       => 'post_one',
-                'post_type'    => 'recent_post',
+                'post_type'    => 'recent_posts',
                 'select_cat'   => 0,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
             
             $sidebar_layouts = influence_blog_post_layouts_array();
+            
+            $post_types = influence_blog_post_types_array();
 
             ?>
             
@@ -153,21 +155,17 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                 </label>
                 <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
                 <?php
-                    $post_type_choices = array(
-                        'recent_post'   => esc_html__( 'Recent Posts', 'influence-blog' ),
-                        'popular_post'  => esc_html__( 'Popular Posts', 'influence-blog' ),
-                    );
                     
-                    foreach( $post_type_choices as $key => $post_type ){
-                        ?>
-                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['post_type'], $key ); ?>>
-                            <?php 
-                                echo esc_html( $post_type );
-                            ?>
-                        </option>
-                        <?php
-                    }
+                foreach( $post_types as $key => $post_type ){
                     ?>
+                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['post_type'], $key ); ?>>
+                        <?php 
+                            echo esc_html( $post_type );
+                        ?>
+                    </option>
+                    <?php
+                }
+                ?>
                 </select>
             </p> 
 

@@ -7,12 +7,21 @@
  * @package Influence_Blog
  */
 
+$display_posted_date = influence_blog_posted_date_option();
+$display_category = influence_blog_category_option();
+$display_tags = influence_blog_tags_option();
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="single layout-bdy single-layout1-bdy">
-        <?php influence_blog_categories_meta( true ); ?>
+        <?php
+        if( is_single() ) {
+            
+            influence_blog_categories_meta( $display_category ); 
+        }
+        ?>
         <div class="metastyle1">
-            <?php influence_blog_posted_on( true ); ?>
+            <?php influence_blog_posted_on( $display_posted_date ); ?>
         </div> <!--metastyle1 span meta-->
         <h1 class="single-title"><?php the_title(); ?></h1>
         <?php influence_blog_post_thumbnail(); ?>
@@ -29,7 +38,7 @@
                     sprintf(
                         wp_kses(
                             /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Edit <span class="screen-reader-text">%s</span>', 'grace-mag' ),
+                            __( 'Edit <span class="screen-reader-text">%s</span>', 'influence-blog' ),
                             array(
                                 'span' => array(
                                     'class' => array(),
@@ -49,7 +58,7 @@
         
         if( is_single() ) {
         
-            influence_blog_tags_meta( true );
+            influence_blog_tags_meta( $display_tags );
 
             influence_blog_post_navigation();
 

@@ -58,33 +58,50 @@ $sidebar_position = influence_blog_sidebar_position();
 </div>
 <?php
 
+$display_blog_page_about_info = ifb_mod( 'display_blog_page_about_info', true );
+
+if( $display_blog_page_about_info == true ) {
+
+    ?>
+    <div class="footer-about-sec center">
+        <div class="container">
+            <div class="foot-abt">
+                <?php
+                $about_info_logo = ifb_mod( 'blog_page_about_info_logo', '' );
+                
+                if( !empty( $about_info_logo ) ) {
+                    ?>
+                    <figure><img src="<?php echo esc_url( $about_info_logo ); ?>" alt="logo"></figure>
+                    <?php
+                }
+    
+                $about_info_description = ifb_mod( 'blog_page_about_info_description', '' );
+    
+                if( !empty( $about_info_description ) ) {
+                    ?>
+                    <p><?php echo esc_html( $about_info_description ); ?></p>
+                    <?php
+                }
+    
+                $about_info_contact_title = ifb_mod( 'blog_page_about_info_contact_title', 'Contact us :' );
+                
+                $about_info_contact_email = ifb_mod( 'blog_page_about_info_contact_email', '' );
+    
+                if( !empty( $about_info_contact_title ) && !empty( $about_info_contact_email ) ) {
+                    ?>
+                    <div class="email-ad"><?php echo esc_html( $about_info_contact_title ); ?><a href="mailto:<?php echo esc_html( $about_info_contact_email ); ?>"><?php echo esc_html( $about_info_contact_email ); ?></a></div>
+                    <?php
+                }
+                ?>
+            </div><!--foot-abt-->
+        </div>
+    </div>
+    <?php
+}
+
+
 if( is_active_sidebar( 'influence-blog-bottom-widget-area' ) ) {
     
     dynamic_sidebar( 'influence-blog-bottom-widget-area' );
 }
-
-?>
-
-<div class="footer-about-sec center">
-  <div class="container">
-        <div class="foot-abt">
-      <figure><img src="assets/images/logo-img.png" alt="logo"></figure>
-      <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque<br> corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,<br> velit...</p>
-      <div class="email-ad">Contact us: <a href="mailto:contact@yoursite.com">contact@yoursite.com</a></div>
-    </div><!--foot-abt-->
-  </div>
-</div>
-
-<div class="newsletter-sec center">
-      <div class="side-tt">
-          <h3 class="s-title">Get Newsletter</h3>
-          <form>
-            <div class="substribe-sec">
-              <input class="email-n" type="email" placeholder="your e-mail address here">
-              <input class="submit-n" type="submit" value="Subscribe">
-            </div>
-          </form>
-        </div>
-</div>
-<?php
 get_footer();

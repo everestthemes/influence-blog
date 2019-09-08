@@ -5,11 +5,11 @@
  * @package Influence_Blog
  */
 
-$display_related_posts_section = ifb_mod( 'post_single_display_related_posts_section', true );
+$display_related_posts_section = ifb_mod( 'display_single_post_related_posts_section', true );
 
 if( $display_related_posts_section == true ) {
     
-    $related_posts_post_number = ifb_mod( 'post_single_related_posts_post_number', 3 );
+    $related_posts_post_number = ifb_mod( 'single_post_related_posts_section_post_no', 3 );
 
     $related_posts_query_args = array(
         'no_found_rows'       => true,
@@ -57,11 +57,9 @@ if( $display_related_posts_section == true ) {
     
     if( $related_posts_query->have_posts() ) :
     
-        $related_posts_section_title = ifb_mod( 'post_single_related_posts_section_title', esc_html__( 'Related Posts', 'grace-mag' ) );
+        $related_posts_section_title = ifb_mod( 'single_post_related_posts_section_title', esc_html__( 'Related Posts', 'influence-blog' ) );
 
-        $display_related_posted_date = ifb_mod( 'post_single_display_related_posted_date', true );
-    
-        $display_related_posts_comment_number = ifb_mod( 'post_single_display_related_posts_comment_number', true );
+        $display_related_category = ifb_mod( 'display_single_post_related_posts_section_category', true );
         
         ?>
         <div class="single-related-post">
@@ -90,7 +88,7 @@ if( $display_related_posts_section == true ) {
                     <?php } ?>
                     <div class="single-related-detail">
                         <div class="widget-in-tt">
-                            <?php influence_blog_categories_meta( true ); ?>
+                            <?php influence_blog_categories_meta( $display_related_category ); ?>
                             <h3 class="sub-cate"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         </div>
                     </div>
