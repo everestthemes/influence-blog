@@ -71,7 +71,7 @@ if( ! function_exists( 'influence_blog_social_links_template' ) ) {
             
         }
         
-        if( $position == 'header' ) {
+        if( $position == 'footer' ) {
             
             $youtube_class = 'fa fa-youtube';
             
@@ -379,7 +379,7 @@ if( ! function_exists( 'influence_blog_post_navigation' ) ) {
                if (!empty( $previous_post )):
                 ?>
                 <div class="nav-previous">
-                    <span><?php echo esc_html__( 'Prev post', 'grace-mag' ); ?></span>
+                    <span><?php echo esc_html__( 'Prev post', 'influence-blog' ); ?></span>
                     <a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>"><?php echo esc_html( $previous_post->post_title ); ?></a>
                 </div>
                 <?php
@@ -388,7 +388,7 @@ if( ! function_exists( 'influence_blog_post_navigation' ) ) {
                if (!empty( $next_post )):
                 ?>
                 <div class="nav-next">
-                    <span><?php echo esc_html__( 'Next post', 'grace-mag' ); ?></span>
+                    <span><?php echo esc_html__( 'Next post', 'influence-blog' ); ?></span>
                     <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a>
                 </div>
                 <?php
@@ -421,3 +421,125 @@ if( ! function_exists( 'influence_blog_pagination' ) ) {
         <?php
 	}
 }
+
+
+
+/**
+ * Function to return customizer option for posted date
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_posted_date_option' ) ) :
+
+ 	function influence_blog_posted_date_option() {
+        
+        $display_posted_time = false;
+        
+        if( is_single() ) {
+            
+            $display_posted_time = ifb_mod( 'display_single_post_posted_date', true );
+        }
+        
+        if( is_page() ) {
+            
+            $display_posted_time = ifb_mod( 'display_single_page_posted_date', true );
+        }
+        
+        if( is_archive() ) {
+            
+            $display_posted_time = ifb_mod( 'display_archive_page_posted_date', true );
+        }
+        
+        if( is_search() ) {
+            
+            $display_posted_time = ifb_mod( 'display_search_page_posted_date', true );
+        }
+        
+        return $display_posted_time;
+ 	}
+endif;
+
+
+
+/**
+ * Function to return customizer option for category
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_category_option' ) ) :
+
+ 	function influence_blog_category_option() {
+        
+        $display_category = false;
+        
+        if( is_single() ) {
+            
+            $display_category = ifb_mod( 'display_single_post_category', true );
+        }
+        
+        if( is_archive() ) {
+            
+            $display_category = ifb_mod( 'display_archive_page_category', true );
+        }
+        
+        if( is_search() ) {
+            
+            $display_category = ifb_mod( 'display_search_page_category', true );
+        }
+        
+        return $display_category;
+ 	}
+endif;
+
+
+
+/**
+ * Function to return customizer option for tags
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_tags_option' ) ) :
+
+ 	function influence_blog_tags_option() {
+        
+        $display_category = false;
+        
+        if( is_single() ) {
+            
+            $display_category = ifb_mod( 'display_single_post_tags', true );
+        }
+        
+        return $display_category;
+ 	}
+endif;
+
+
+
+/**
+ * Function to return pagination for blog page
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blog_page_pagingation_option' ) ) :
+
+ 	function influence_blog_blog_page_pagingation_option( $pagination_option ) {
+        
+        $display_pagination = false;
+        
+        $display_pagination = ifb_mod( 'display_blog_page_pagination', true );
+        
+        if( $display_pagination == true ) {
+            
+            $pagination_for = ifb_mod( 'blog_page_pagination_for', 'grid_two' );
+            
+            if( $pagination_for == $pagination_option ) {
+                
+                return influence_blog_pagination();
+                
+            } else {
+                
+                return;
+            }
+        }
+ 	}
+endif;

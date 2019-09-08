@@ -223,22 +223,34 @@ if( ! function_exists( 'influence_blog_header_top_action' ) ) :
             <div class="row">
                 <div class="col-12 col-md-6">
                     <?php
-                    /**
-                    * Hook - influence_blog_header_top_navigation
-                    *
-                    * @hooked influence_blog_header_top_navigation_action - 35
-                    */
-                    do_action( 'influence_blog_header_top_navigation' );
+        
+                    $display_top_header_menu = ifb_mod( 'display_top_header_menu', true );
+        
+                    if( $display_top_header_menu == true ) {
+                        
+                        /**
+                        * Hook - influence_blog_header_top_navigation
+                        *
+                        * @hooked influence_blog_header_top_navigation_action - 35
+                        */
+                        do_action( 'influence_blog_header_top_navigation' );
+                    }
                     ?>
                 </div><!--//col-12 col-md-6-->
                 <div class="col-12 col-md-6">
                     <?php
-                    /**
-                    * Hook - influence_blog_header_social_links
-                    *
-                    * @hooked influence_blog_header_social_links_action - 40
-                    */
-                    do_action( 'influence_blog_header_social_links' );
+        
+                    $display_top_header_social_links = ifb_mod( 'display_top_header_social_links', true );
+        
+                    if( $display_top_header_social_links == true ) {
+                        
+                        /**
+                        * Hook - influence_blog_header_social_links
+                        *
+                        * @hooked influence_blog_header_social_links_action - 40
+                        */
+                        do_action( 'influence_blog_header_social_links' );
+                    }
                     ?>
                 </div><!--//col-12 col-md-6-->
             </div><!--//col-lg-6-->
@@ -310,12 +322,18 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
                 <div class=" col-12 col-md-12">
                     <button class="hamburger hamburger_nb" type="button"> <span class="hamburger_box"> <span class="hamburger_inner"></span> </span> </button>
                     <?php
-                    /**
-                    * Hook - influence_blog_header_search
-                    *
-                    * @hooked influence_blog_header_search_action - 75
-                    */
-                    do_action( 'influence_blog_header_search' );
+        
+                    $display_search_icon = ifb_mod( 'display_search_icon', true );
+        
+                    if( $display_search_icon == true ) {
+                        
+                        /**
+                        * Hook - influence_blog_header_search
+                        *
+                        * @hooked influence_blog_header_search_action - 75
+                        */
+                        do_action( 'influence_blog_header_search' );
+                    }
         
                     /**
                     * Hook - influence_blog_header_main_navigation
@@ -355,12 +373,18 @@ if( ! function_exists( 'influence_blog_header_action' ) ) :
         <header id="header1" class="header header-layout1">
         <?php
         
-        /**
-        * Hook - influence_blog_header_top
-        *
-        * @hooked influence_blog_header_top_action - 30
-        */
-        do_action( 'influence_blog_header_top' );
+        $display_top_header = ifb_mod( 'display_top_header', true );
+        
+        if( $display_top_header == true ) {
+            
+            /**
+            * Hook - influence_blog_header_top
+            *
+            * @hooked influence_blog_header_top_action - 30
+            */
+            do_action( 'influence_blog_header_top' );
+            
+        }
         
         /**
         * Hook - influence_blog_header_middle
@@ -478,17 +502,39 @@ if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
         
     ?>
     <div class="contact-info lrg-padding">
-        <div class="side-tt">
-            <h3 class="s-title">Get in Touch</h3>
-        </div>
-        <div class="social-media-foot">
-            <ul>
-                <?php influence_blog_social_links_template( 'footer' ); ?>
-            </ul>
-        </div>
-        <div class="social-detail">
-           <p>Like, share, or follow for exclusive info!. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,</p>
-        </div>
+        <?php
+        $footer_contact_info_title = ifb_mod( 'footer_contact_info_title', 'Get In Touch' );
+        
+        if( !empty( $footer_contact_info_title ) ) {
+            ?>
+            <div class="side-tt">
+                <h3 class="s-title"><?php echo esc_html( $footer_contact_info_title ); ?></h3>
+            </div>
+            <?php
+        }
+        
+        $display_footer_contact_info_social_links = ifb_mod( 'display_footer_contact_info_social_links', true );
+        
+        if( $display_footer_contact_info_social_links == true ) {
+            ?>
+            <div class="social-media-foot">
+                <ul>
+                    <?php influence_blog_social_links_template( 'footer' ); ?>
+                </ul>
+            </div>
+            <?php
+        }
+        
+        $footer_contact_info_description = ifb_mod( 'footer_contact_info_description', '' );
+        
+        if( !empty( $footer_contact_info_description ) ) {
+            ?>
+            <div class="social-detail">
+               <p><?php echo esc_html( $footer_contact_info_description ); ?></p>
+            </div>
+            <?php
+        }
+        ?>
     </div>
     <?php
     }
@@ -507,7 +553,20 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
  	function influence_blog_footer_copyright_text_action() {
         
     ?>
-    <div class="copy center">Everest Themes&copy; 2018 All right reserved.</div>
+    <div class="copy center">
+        <?php
+        $footer_copyright_text = ifb_mod( 'footer_copyright_text', '' );
+        if( !empty( $footer_copyright_text ) ) {
+            
+            echo esc_html( $footer_copyright_text );
+            /* translators: 1: Theme name, 2: Theme author. */
+            printf( esc_html__( ' %1$s by %2$s','influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+        } else {
+            /* translators: 1: Theme name, 2: Theme author. */
+            printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+        }
+        ?>
+    </div>
     <?php
     }
 endif;
@@ -641,12 +700,18 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
         */
         do_action( 'influence_blog_footer_top' );
         
-        /**
-        * Hook - influence_blog_footer_middle
-        *
-        * @hooked influence_blog_footer_middle_action - 800
-        */
-        do_action( 'influence_blog_footer_middle' );
+        $display_footer_contact_info = ifb_mod( 'display_footer_contact_info', true );
+        
+        if( $display_footer_contact_info == true ) {
+        
+            /**
+            * Hook - influence_blog_footer_middle
+            *
+            * @hooked influence_blog_footer_middle_action - 800
+            */
+            do_action( 'influence_blog_footer_middle' );
+            
+        }
         
         ?>
         </div><!--foot-top-sec-->

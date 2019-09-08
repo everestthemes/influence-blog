@@ -7,44 +7,58 @@
 
 if( is_home() ) {
     
-    ?>
-    <div class="half-widget-left half-widget-d1">
-        <div class="widget-tt">
-            <h3 class="l-title"><?php echo esc_html__( 'Most Recent', 'influence-blog' ); ?></h3>             
-        </div>
-        <div class="row">
-        <?php
+    $display_blog_page_grid_two_col_layout = ifb_mod( 'display_blog_page_grid_two_col_layout', true );
     
-        $homepage_grid_query = influence_blog_homepage_grid_layout_posts_query();
+    if( $display_blog_page_grid_two_col_layout == true ) {
     
-        if( $homepage_grid_query -> have_posts() ) :
-
-            /* Start the Loop */
-            while( $homepage_grid_query -> have_posts() ) :
-
-                $homepage_grid_query -> the_post();
-
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-
-                get_template_part( 'template-parts/content', 'grid' );
-
-            endwhile;
-
-        else :
-
-        get_template_part( 'template-parts/content', 'none' );
-
-        endif;
-
         ?>
-        </div><!--//inner-row-->
-        <?php influence_blog_pagination(); ?>
-    </div><!--//half-widget-left-->
+        <div class="half-widget-left half-widget-d1">
+            <?php
+            $blog_page_grid_two_col_layout_title = ifb_mod( 'blog_page_grid_two_col_layout_title', 'Most Recent' );
+        
+            if( !empty( $blog_page_grid_two_col_layout_title ) ) {
+                
+                ?>
+                <div class="widget-tt">
+                    <h3 class="l-title"><?php echo esc_html( $blog_page_grid_two_col_layout_title ); ?></h3>             
+                </div>
+                <?php
+            }
+            ?>
+            <div class="row">
+            <?php
+
+            $homepage_grid_query = influence_blog_homepage_grid_layout_posts_query();
+
+            if( $homepage_grid_query -> have_posts() ) :
+
+                /* Start the Loop */
+                while( $homepage_grid_query -> have_posts() ) :
+
+                    $homepage_grid_query -> the_post();
+
+                    /*
+                     * Include the Post-Format-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                     */
+
+                    get_template_part( 'template-parts/content', 'grid' );
+
+                endwhile;
+
+            else :
+
+            get_template_part( 'template-parts/content', 'none' );
+
+            endif;
+
+            ?>
+            </div><!--//inner-row-->
+            <?php influence_blog_blog_page_pagingation_option( 'grid_two' ); ?>
+        </div><!--//half-widget-left-->
     <?php
+    }
 } 
 
 if( is_archive() || is_search() ) {

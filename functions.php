@@ -146,18 +146,18 @@ function influence_blog_widgets_init() {
 		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '',
-		'after_title'   => '',
+		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
+		'after_title'   => '</h3></div>',
 	) );
     
     register_sidebar( array(
 		'name'          => esc_html__( 'Bottom Widget Area', 'influence-blog' ),
-		'id'            => 'influence-blog-fullwidth-bottom-widget-area',
+		'id'            => 'influence-blog-bottom-widget-area',
 		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '',
-		'after_title'   => '',
+		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
+		'after_title'   => '</h3></div>',
 	) );
     
     register_sidebar( array(
@@ -197,6 +197,10 @@ add_action( 'widgets_init', 'influence_blog_widgets_init' );
  */
 
 function influence_blog_admin_enqueue_script() {
+    
+    wp_enqueue_script( 'media-upload' );
+
+	wp_enqueue_media();
     
     wp_enqueue_style('influence-blog-admin-style', get_template_directory_uri().'/everestthemes/admin/css/influence-blog-admin-style.css');
     
@@ -300,4 +304,9 @@ require get_template_directory() . '/inc/custom-fields/sidebar-position.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Load TGM plugin activation.
+ */
+require get_template_directory() . '/third-party/class-tgm-plugin-activation.php';
 

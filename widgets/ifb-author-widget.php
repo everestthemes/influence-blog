@@ -36,7 +36,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
                 return;
             }
             
-            if( $args['id'] == 'influence-blog-top-widget-area' || $args['id'] == 'influence-blog-fullwidth-bottom-widget-area' ) {
+            if( $args['id'] == 'influence-blog-top-widget-area' || $args['id'] == 'influence-blog-bottom-widget-area' ) {
                 
                 ?>
                 <div class="fl-top-widget-area primary-widget-area">

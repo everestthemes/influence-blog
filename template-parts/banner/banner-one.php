@@ -18,6 +18,9 @@ if( $banner_query -> have_posts() ) {
             $banner_query -> the_post();
 
             $banner_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+            
+            $banner_background_text = ifb_mod( 'banner_background_text', 'Passion of' );
+            $display_banner_category = ifb_mod( 'display_banner_category', true );
             ?>
             <div class="bannner-outer-wrap">
                 <div class="row align-items-center">
@@ -30,9 +33,15 @@ if( $banner_query -> have_posts() ) {
                     <div class="col-12 col-md-4 order-md-1">
                         <div class="banner-caption">
                             <div class="">
-                                <h2 class="l-title">Passion of</h2>
+                                <?php
+                                if( !empty( $banner_background_text ) ) {
+                                    ?>
+                                    <h2 class="l-title"><?php echo esc_html( $banner_background_text ); ?></h2>
+                                    <?php
+                                }
+                                ?>
                                 <h3 class="m-title"><?php the_title(); ?></h3>
-                                <?php influence_blog_categories_meta( true ); ?>
+                                <?php influence_blog_categories_meta( $display_banner_category ); ?>
                                 <?php the_excerpt(); ?>
                                 <a href="<?php the_permalink(); ?>" class="btn-more"><?php echo esc_html__( 'Read More', 'influence-blog' ); ?></a>
                           </div>
