@@ -245,7 +245,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                 <label for="<?php echo esc_attr( $this->get_field_id('description') ); ?>">
                     <strong><?php esc_html_e('Description', 'influence-blog'); ?></strong>
                 </label>
-                <textarea id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['description'] ); ?></textarea>
+                <textarea id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['description'] ); ?></textarea>
             </p>
             
             <p>

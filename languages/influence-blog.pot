@@ -16,21 +16,16 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:18
-msgid "Oops! That page can&rsquo;t be found."
+#: 404.php:15
+msgid "404"
 msgstr ""
 
-#: 404.php:22
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: 404.php:16
+msgid "Oops! Page not found"
 msgstr ""
 
-#: 404.php:31
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: 404.php:47
-msgid "Try looking in the monthly archives. %1$s"
+#: 404.php:17
+msgid "Why dont you try searching changing keyword."
 msgstr ""
 
 #. translators: 1: title.
@@ -58,39 +53,39 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:131
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:126, functions.php:136, functions.php:166, functions.php:176, functions.php:186
+#: functions.php:133, functions.php:143, functions.php:173, functions.php:183, functions.php:193
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:141
 msgid "Header Advertisement"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:151
 msgid "Top Widget Area"
 msgstr ""
 
-#: functions.php:146, functions.php:156
+#: functions.php:153, functions.php:163
 msgid "Widgets will be shown in fullwidth."
 msgstr ""
 
-#: functions.php:154
+#: functions.php:161
 msgid "Bottom Widget Area"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:171
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:181
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:191
 msgid "Footer Right"
 msgstr ""
 
@@ -600,6 +595,10 @@ msgstr ""
 
 #: inc/theme-functions.php:202
 msgid "Add Menu"
+msgstr ""
+
+#: inc/theme-functions.php:228
+msgid "Everest Toolkit"
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.

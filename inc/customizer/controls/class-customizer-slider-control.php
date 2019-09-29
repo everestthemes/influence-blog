@@ -2,7 +2,7 @@
 /**
  * Slider Custom Control
  *
- * @package gucherry-blog
+ * @package Influence_Blog
  */
 
 if( ! class_exists( 'Influence_Blog_Slider_Custom_Control' ) ) :
