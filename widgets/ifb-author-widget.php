@@ -183,7 +183,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
                 <label for="<?php echo esc_attr( $this->get_field_id('author_description') ); ?>">
                     <strong><?php esc_html_e('Author Description', 'influence-blog'); ?></strong>
                 </label>
-                <textarea id="<?php echo $this->get_field_id( 'author_description' ); ?>" name="<?php echo $this->get_field_name( 'author_description' ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['author_description'] ); ?></textarea>
+                <textarea id="<?php echo esc_attr( $this->get_field_id( 'author_description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'author_description' ) ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['author_description'] ); ?></textarea>
             </p>
             
             <p>

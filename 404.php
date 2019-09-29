@@ -9,52 +9,17 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'influence-blog' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'influence-blog' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'influence-blog' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$influence_blog_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'influence-blog' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$influence_blog_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+<div class="not-found">
+    <div class="container">
+        <div class="not-found-caption">
+            <h1 class="ex-large"><?php echo esc_html__( '404', 'influence-blog' ); ?></h1>
+            <h3 class="s-title"><?php echo esc_html__( 'Oops! Page not found', 'influence-blog' ); ?></h3>
+            <p><?php echo esc_html__( 'Why dont you try searching changing keyword.', 'influence-blog' ); ?></p>
+            <div class="search-again">
+                <?php get_search_form(); ?>
+            </div><!--/search-again-->
+        </div><!--//not-found-caption-->
+    </div><!--//container-->
+</div><!--//not-found-->
 <?php
 get_footer();

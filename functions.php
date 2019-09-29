@@ -90,6 +90,13 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 			'flex-height' => true,
 		) );
         
+        /**
+         * Add editor CSS to style to the WordPress visual post / page editor.
+         *
+         * pulls in all of our front-end css.
+         */
+         add_editor_style('/everestthemes/assets/css/editor-style.css');
+        
         // Add support for gutenberg
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );

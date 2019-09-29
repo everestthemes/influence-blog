@@ -225,7 +225,7 @@ if ( ! function_exists( 'influence_blog_recommended_plugins' ) ) :
 
         $plugins = array(
             array(
-                'name'     => esc_html__( 'Everest Toolkit', 'gucherry-blog-pro' ),
+                'name'     => esc_html__( 'Everest Toolkit', 'influence-blog' ),
                 'slug'     => 'everest-toolkit',
                 'required' => false,
             ),
