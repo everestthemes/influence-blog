@@ -3,7 +3,7 @@
 Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 5.2.2
+Tested up to: 5.2.4
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,5 +62,5 @@ Influence Blog includes support for mailchimp
 
 == Changelog ==
 
-= 1.0.0 - September 8, 2019 =
+= 1.0.0 - October 22, 2019 =
 * Initial release

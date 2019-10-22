@@ -28,6 +28,8 @@ function influence_blog_body_classes( $classes ) {
     if( get_background_image() || get_background_color() != 'ffffff'  ) {
         $classes[] = 'boxed';
     }
+    
+    $classes[] = 'home';
 
 	return $classes;
 }
