@@ -509,15 +509,15 @@ msgstr ""
 msgid "Popular Posts"
 msgstr ""
 
-#: inc/template-functions.php:354
+#: inc/template-functions.php:356
 msgid "Pages:"
 msgstr ""
 
-#: inc/template-functions.php:382
+#: inc/template-functions.php:384
 msgid "Prev post"
 msgstr ""
 
-#: inc/template-functions.php:391
+#: inc/template-functions.php:393
 msgid "Next post"
 msgstr ""
 
