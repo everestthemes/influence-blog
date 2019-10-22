@@ -294,6 +294,11 @@ button {
 }
 
 /* top header block */
+.site-title {
+    font-size: 48px;
+    margin-top: 0;
+    font-weight: 700;
+}
 .header-top-block {
     margin: 40px 0;
 }
