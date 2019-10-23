@@ -590,6 +590,11 @@ input.wpcf7-form-control.wpcf7-submit:hover{
 	color: #333;
 	background-color: #fff;
 }
+.comment-form .form-submit{
+	margin-top:30px;
+	margin-bottom: 60px;
+}
+
 .widget_text  .textwidget strong{
 	display: block;
 }
@@ -1003,4 +1008,8 @@ padding-top: 12px;
 }
 .secondary-widget-area {
     margin-top: -40px;
+}
+
+.comment-meta {
+    margin-top: 30px;
 }
