@@ -90,7 +90,8 @@
 	.mobile-search.search-icon{
 		visibility: visible;
 		right: 15px;
-		top:10px;
+		top: 50%;
+        transform: translateX(-50%);
 	}
 	.archive-bdy-d2 .archive-content-bdy{
 		display: block;
