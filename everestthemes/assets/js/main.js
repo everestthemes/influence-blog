@@ -4,6 +4,21 @@ jQuery(document).ready( function($) {
 $(document).ready(function() {
   "use strict";
   
+
+ if (window.matchMedia("(max-width: 991px)").matches) {
+
+           $(".col-lg-9").removeClass("sticky-portion");
+
+       } else {
+
+           $('.sticky-portion').theiaStickySidebar({
+
+             additionalMarginTop: 30
+
+           });
+
+      }
+      
   //mobile menu
 
 $('#mobile_navigation .menu-item-has-children > a').each(function() {
@@ -160,7 +175,17 @@ $('.banner-img-wrap').slick({
 });
   
 });
-    
+
 });
 
+ //Show or hide the button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+            $('.scrollup').fadeIn(1000);
+        } else {
+            $('.scrollup').fadeOut(1000);
+        }
+    });
+
 })(jQuery);
+

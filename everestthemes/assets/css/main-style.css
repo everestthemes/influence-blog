@@ -96,8 +96,8 @@ p {
 
 
 .lrg-padding {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .mdm-padding {
@@ -435,7 +435,7 @@ button {
     transition: 0.5s ease all;
     background: #1e3c50;
     z-index: 19;
-    padding: 5px 15px;
+    padding: 0;
 }
 
 .main_navigation ul li.menu-item-has-children:hover .sub-menu {
@@ -446,8 +446,6 @@ button {
 .main_navigation ul li.menu-item-has-children ul.sub-menu li {
     display: block;
     border-bottom: 1px solid #26485f;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
 }
 
 .main_navigation ul li.menu-item-has-children ul.sub-menu li:last-child {
@@ -456,9 +454,11 @@ button {
 }
 
 .main_navigation ul li.menu-item-has-children ul.sub-menu li a {
-    padding: 0;
     color: #fff;
     display: block;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+
 }
 
 .main_navigation ul li .sub-menu li:before {
@@ -681,8 +681,8 @@ span.sub-toggle.open {
     overflow: hidden;
     padding: 80px 0;
     position: relative;
-    padding-left: 80px;
-    margin-top: 80px;
+    padding-left: 60px;
+    margin-top: 60px;
 }
 
 .banner-inner:before {
@@ -812,7 +812,7 @@ span.sub-toggle.open {
     right: 0px;
 }
 .banner-inner .slick-arrow.prev{
-    right: 80px;
+    right: 60px;
 }
 
 
@@ -952,6 +952,7 @@ span.sub-toggle.open {
     display: inline-block;
     text-align: center;
     height: 60px;
+    color:#fff;
 }
 
 .date-meta em {
@@ -1041,7 +1042,10 @@ span.sub-toggle.open {
 }
 
 .half-widget-left.half-widget-d3 {
-    padding-top: 80px;
+    padding-top: 60px;
+}
+.half-widget-left.half-widget-d3 .half-content-bdy .img-holder{
+    margin-bottom: 15px;
 }
 .half-widget-d2 .half-content-bdy:last-child{
     margin-bottom: 0;
@@ -1107,47 +1111,10 @@ span.sub-toggle.open {
     font-size: 40px;
 }
 
-.cate-meta {
-    margin-bottom: 15px;
-}
-
-.cate-meta li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.cate-meta li a {
-    background-color: #e9b105;
-    padding: 1px 8px;
-    display: inline-block;
-    position: relative;
-    font-size: 11px;
-}
-
-.cate-meta li a:before {
-    position: absolute;
-    content: '';
-    background-color: #e9b105;
-    height: 4px;
-    width: 8px;
-    right: -4px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: 0.5s ease all;
-}
-
-.cate-meta li a:hover {
-    color: #fff;
-}
-
-.cate-meta li a:hover:before {
-    right: -1px;
-}
-
 .half-content-bdy {
     padding-right: 30px;
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .half-content-bdy:before {
@@ -1255,7 +1222,7 @@ span.sub-toggle.open {
 
 .side-space,
 .side-advertise {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .side-widget-d2 {
@@ -1375,6 +1342,7 @@ span.sub-toggle.open {
 .foot-top-sec {
     background-color: #183244;
     color: #fff;
+     position: relative;
 }
 
 .foot-top-sec .img-holder figure {
@@ -1384,9 +1352,6 @@ span.sub-toggle.open {
     margin-right: 16px;
 }
 
-.foot-top-sec {
-    position: relative;
-}
 
 .foot-top-sec.has-pattern:before,
 .foot-top-sec.has-pattern:after {
@@ -1398,7 +1363,30 @@ span.sub-toggle.open {
     color: #fff;
 
 }
+.foot-top-sec .widget-title{
+    margin-top:60px;
+     background: transparent;
+     padding:0;
+}
 
+.foot-top-sec  .side-tt .s-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: Lato, sans-serif;
+    color:#fff;
+    margin-bottom: 30px;
+}
+
+.foot-top-wrap.lrg-padding{
+    padding-top:0;
+}
+
+.foot-top-sec .widget_recent_entries ul{
+background-color:#fff;
+padding:10px;
+
+}
 /* instagram */
 
 .insta-feed ul li {
@@ -1441,7 +1429,7 @@ span.sub-toggle.open {
 
 
 .insta-wrap {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     padding-top: 30px;
 }
 
@@ -1544,8 +1532,25 @@ overflow: hidden;
     color: #fff;
 }
 
-.footer-about-sec {
+/* .footer-about-sec {
     padding-bottom: 60px;
+} */
+.scrollup {
+    background: #e9b105;
+    position: fixed;
+    color: #fff;
+    bottom: 40px;
+    right: 50px;
+    height: 40px;
+    width: 40px;
+    padding-top: 8px;
+    text-align: center;
+    z-index: 10;
+   
+}
+.scrollup:hover{
+    border-radius: 100%;
+    color: white;
 }
 
 /* social media */
@@ -1605,7 +1610,7 @@ overflow: hidden;
 .newsletter-sec {
     width: 50%;
     margin: auto;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .substribe-sec .email-n {
@@ -1642,7 +1647,7 @@ overflow: hidden;
 /* mid-banner */
 .mid-banner-ad,
 .min-half-banner {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 /* ==============
@@ -1701,6 +1706,15 @@ Single-post layout-1
     font-size: 40px;
 }
 /* single-post content */
+
+.secondary-widget-area .side-tt .s-title{
+    margin-bottom: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: Lato, sans-serif;
+}
+
 .single-post-detail {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -1915,12 +1929,8 @@ Single-post layout-1
 }
 
 /* single-post layout2 */
-.inner-single.lrg-padding{
-    padding-bottom: 00;
-}
-
 .single-related-wrap {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 .inner-post-bg {
     background-repeat: no-repeat;
@@ -1957,6 +1967,9 @@ Single-post layout-1
     margin-bottom: 0;
 }
 /* single-page layout3 */
+.breadcrumbs .trail-items{
+    margin-bottom: 40px;
+}
 .layout3 .breadcrumbs-sec .breadcrumbs-listing {
     background-color: transparent;
     text-align: right;
@@ -1971,7 +1984,7 @@ Single-post layout-1
     float: left;
     margin-right: 16px;
 }
-.inner-single.layout3  .half-content-bdy{
+ .half-content-bdy{
     margin-bottom: 0;
 }
 .inner-single.layout3 .single-title{
@@ -2074,7 +2087,7 @@ Single-post layout-1
     
 }
 .archive-bdy-d2{
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
  .breadcrumbs-sec.breadcrumbs-layout1 .breadcrumbs-listing {
     background-color: transparent;
@@ -2320,6 +2333,8 @@ Single-post layout-1
     background: white;
     line-height: 50px;
     font-size: 18px;
+    position: relative;
+    z-index: 9;
 }
 .header-layout1 .search-icon .btn-search:hover{
     background-color: #183244;
@@ -2405,7 +2420,7 @@ Single-post layout-1
 }
 .banner-wrapper .banner-caption{
     position:absolute;
-    margin-right: 80px; 
+    margin-right: 60px; 
     padding:30px;
     bottom: 0;
     left: 0;
