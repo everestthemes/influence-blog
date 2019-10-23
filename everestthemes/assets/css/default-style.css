@@ -681,6 +681,9 @@ color: #333;
 .canvas-show .foot-tittle .wid-title{
 	margin-top: 60px;
 }
+.pagination .nav-links{
+	margin-top:30px;
+}
 .pagination .nav-links .page-numbers{
 	border-radius: 50%;
 	height: 40px;
@@ -701,6 +704,10 @@ color: #333;
     height: auto;
     width: auto;
 }
+.prev.page-numbers:hover{
+	background-color: transparent;
+
+}
 .pagination .nav-links .page-numbers:hover,
 .pagination .nav-links  .page-numbers.current{
 	background:#999;
@@ -712,6 +719,7 @@ background-color: transparent;
 .pagination .nav-links .next.page-numbers:hover,
 .pagination .nav-links .prev.page-numbers:hover{
 	color: #333;
+	background: transparent;
 }
 
 .sigle-post-content-area .wp-block-tag-cloud {
