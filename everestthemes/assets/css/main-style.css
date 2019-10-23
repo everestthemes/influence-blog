@@ -59,6 +59,7 @@ figure {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -966,13 +967,13 @@ span.sub-toggle.open {
     line-height: 1.1;
 }
 
-.comment-meta {
+/* .comment-meta {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
-
+ */
 .editor-meta {
     padding-left: 10px;
 }
