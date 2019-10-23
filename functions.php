@@ -228,13 +228,13 @@ function influence_blog_scripts() {
     
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/everestthemes/assets/css/bootstrap.min.css' );
 
-     wp_enqueue_script( 'grace-mag-theia-sticky-sidebar', get_template_directory_uri() . '/everestthemes/assets/js/theia-sticky-sidebar.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+     wp_enqueue_script( 'influence-blog-theia-sticky-sidebar', get_template_directory_uri() . '/everestthemes/assets/js/theia-sticky-sidebar.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
     
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/everestthemes/assets/css/font-awesome.min.css' );
     
     wp_enqueue_style( 'influence-blog-main-style', get_template_directory_uri() . '/everestthemes/assets/css/main-style.css' );
     
-    wp_enqueue_style( 'grace-mag-default-style', get_template_directory_uri() . '/everestthemes/assets/css/default-style.css' );
+    wp_enqueue_style( 'influence-blog-default-style', get_template_directory_uri() . '/everestthemes/assets/css/default-style.css' );
     
     wp_enqueue_style( 'slick', get_template_directory_uri() . '/everestthemes/assets/library/slick/slick.css' );
     
