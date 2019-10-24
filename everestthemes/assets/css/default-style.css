@@ -1037,3 +1037,19 @@ padding-top: 12px;
 .comment-meta {
     margin-top: 30px;
 }
+.comment-author.vcard img{
+  border-radius:100%;
+margin-right:15px;
+}
+.comment-metadata{
+  margin-top:10px;
+}
+.comment-content{
+margin-bottom:10px;
+}
+.reply{
+margin-bottom:30px;
+}
+#reply-title{
+  margin-bottom:20px;
+}
