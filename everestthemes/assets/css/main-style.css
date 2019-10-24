@@ -709,11 +709,13 @@ span.sub-toggle.open {
     top: 0;
     opacity: 0.5;
     font-size: 100px;
-    z-index: 9;
+    z-index: -1;
 }
 
 .banner-caption {
     color: #eee;
+    position: relative;
+    z-index: 99;
 }
 
 .banner-caption .m-title {
@@ -2526,3 +2528,42 @@ Single-post layout-1
 .slick-dots .slick-active button{
     background-color: #e9b105;
 }
+
+/* latest changes */
+
+.banner-caption {
+    color: #eee;
+    position: relative;
+    z-index: 99;
+}
+.banner-caption .l-title{
+  z-index: -1;
+}
+.banner-inner .slick-arrow.prev {
+    right: 80px;
+}
+.footer-about-sec{
+  padding-bottom:60px;
+}
+
+.foot-top-sec .side-tt .s-title{
+  margin-top:60px;
+}
+
+.foot-top-wrap .recent-cate-wrap .sm-title a{
+  color:white;
+} 
+.foot-top-wrap .recent-cate-wrap .sm-title a:hover,
+.foot-top-wrap .recent-cate-wrap .sm-title a:focus,
+.foot-top-wrap  .sm-title a:hover,
+.foot-top-wrap  .sm-title focus{
+  color:#e9b105;
+}
+.half-widget-d1 .half-content-bdy,
+.half-widget-d3 .half-content-bdy {
+    margin-bottom: 30px;
+}
+.footer-mid-sec .contact-info .side-tt .s-title{
+  margin-top:0;
+}
+
