@@ -1053,3 +1053,13 @@ margin-bottom:30px;
 #reply-title{
   margin-bottom:20px;
 }
+.comment-form .form-submit .submit {
+    position: initial;
+}
+.inner-detail .comment-meta {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+	margin-top:0;
+}
