@@ -428,7 +428,7 @@ select:visited{
 	background-color: #fefefe;
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .breadcrumbs .trail-items li{
 	display: inline-block;
@@ -593,7 +593,7 @@ input.wpcf7-form-control.wpcf7-submit:hover{
 }
 .comment-form .form-submit{
 	margin-top:30px;
-	margin-bottom: 60px;
+	margin-bottom: 0px;
 }
 
 .widget_text  .textwidget strong{
