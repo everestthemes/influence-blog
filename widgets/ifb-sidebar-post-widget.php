@@ -77,7 +77,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
                                     $post_query->the_post();
                                     ?>
-                                    <div class="side-widget-d4">
+                                    <div class="side-widget-d4 clearfix">
                                         <?php
                                         if( has_post_thumbnail() ) {
                                             ?>
