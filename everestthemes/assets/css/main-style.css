@@ -184,6 +184,7 @@ button {
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .hamburger:hover {
@@ -642,13 +643,16 @@ button {
     position: absolute;
     color: white;
     right: 30px;
-    top: -4px;
+    top: 10px;
     height: 40px;
     width: 40px;
     line-height: 40px;
     text-align: center;
     font-size: 24px;
     z-index: 3;
+}
+.sub-toggle  i{
+    display: none;
 }
 
 span.sub-toggle.open {
@@ -1240,7 +1244,9 @@ span.sub-toggle.open {
     width: 120px;
     margin: auto;
 }
-
+.side-widget-d2 .img-holder:hover img{
+    transform: none;
+}
 .side-widget-d2 .img-holder img {
     max-width: 100%;
     max-height: 100%;
@@ -2565,9 +2571,6 @@ font-weight:700;
 }
 .banner-inner .slick-arrow.prev {
     right: 80px;
-}
-.footer-about-sec{
-  padding-bottom:60px;
 }
 
 .foot-top-sec .side-tt .s-title{

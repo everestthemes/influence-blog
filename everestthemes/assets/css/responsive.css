@@ -70,9 +70,9 @@
     font-size: 12px;
     text-transform: uppercase;
 }
-.search-icon {
+/* .search-icon {
     top: 6px;
-}
+} */
 .archive-bdy-d1 {
     margin-bottom: 40px;
 	}
@@ -84,12 +84,55 @@
 }
 
 @media (max-width:767px) {
+    .main_navigation {
+      display: none;
+      background-color: #183244;
+      position: absolute;
+      top: 54px;
+      left: 0;
+      width: 100%;
+  }
 	.mobile-search.search-icon{
 		visibility: visible;
 		right: 15px;
-		top: 50%;
-        transform: translateX(-50%);
+		top:1px;
 	}
+
+    .main_navigation ul li{
+        display: block;
+        border-bottom: 1px solid #fff;
+    }
+    span.sub-toggle.open{
+        top: 0;
+    }
+.main_navigation ul li.menu-item-has-children ul.sub-menu li a,
+.header-layout1 .main_navigation ul li.menu-item-has-children .sub-menu li a,
+.main_navigation ul li.menu-item-has-children .sub-menu li.menu-item-has-children > .sub-menu li a,
+.header-layout1 .main_navigation ul li.menu-item-has-children .sub-menu li.menu-item-has-children > .sub-menu li a{
+    background-color: #e9b105;
+     color:#fff;
+     display: block;
+}
+
+    .main_navigation ul li a{
+        display: block;
+    }
+    .main_navigation ul li.menu-item-has-children .sub-menu,
+    .main_navigation ul li.menu-item-has-children .sub-menu li.menu-item-has-children > .sub-menu{
+        position: initial;
+        display: none;
+        background-color: #e9b105;
+        color:#fff;
+    }
+    .main_navigation ul li.menu-item-has-children .sub-menu li.menu-item-has-children > .sub-menu{
+        width: 100%;
+    }
+.main_navigation ul li.menu-item-has-children ul.sub-menu li:hover a{
+    color:#fff;
+}
+    .sub-toggle  i{
+        display: block;
+    }
 	.archive-bdy-d2 .archive-content-bdy{
 		display: block;
 	}
@@ -143,9 +186,7 @@
 }
 	/*header-layout2*/
 
-	 .main_navigation {
-        display: none;
-    }
+]
 
     .mobile_navigation {
         display: block;
@@ -176,9 +217,6 @@
         display: block;
     }
 
-    .mobile_navigation ul li a {
-        margin-right: 90px;
-    }
     /* default Header layout*/
     .logo-sec {
         margin: auto;
@@ -190,12 +228,6 @@
         margin-bottom: 15px;
     }
 
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
 
     .header-medium-block {
         height: 54px;
