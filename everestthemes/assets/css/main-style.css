@@ -1373,7 +1373,7 @@ span.sub-toggle.open {
 }
 
 .foot-top-sec  .side-tt .s-title{
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     font-weight: 500;
     font-family: Lato, sans-serif;
@@ -2029,10 +2029,15 @@ Single-post layout-1
     font-size: 40px;
     margin-bottom: 30px;
 }
-/* archive page */
-.archive-page-wrap.lrg-padding {
-   padding-bottom: 0; 
+.single-post-detail  .wp-block-pullquote {
+    padding: 15px 0;
+    margin: 15px 0;
 }
+  .single-post-detail  .wp-block-image{
+    margin:15px 0;
+  }
+/* archive page */
+
 
  .archive-bdy-d1 .widget-tt .l-title{
     font-size: 40px;
