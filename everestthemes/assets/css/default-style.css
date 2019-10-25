@@ -55,6 +55,7 @@ time.updated,
     display: inline-block;
     position: relative;
     font-size: 11px;
+    color:#ffffff;
 }
 .post-categories li  a:before{
     position: absolute;
@@ -69,7 +70,7 @@ time.updated,
 }
 
 .post-categories li  a:hover {
-    color: #fff;
+    color: #183244;
 }
 
 .post-categories li  a:hover:before {
