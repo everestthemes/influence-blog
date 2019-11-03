@@ -575,6 +575,29 @@ add_action( 'influence_blog_footer_copyright_text', 'influence_blog_footer_copyr
 
 
 /**
+ * Footer scroll top hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_scroll_top_action' ) ) :
+
+ 	function influence_blog_footer_scroll_top_action() {
+
+        $display_footer_scroll_top = ifb_mod( 'display_footer_scroll_top', true );
+
+        if( $display_footer_scroll_top == true ) {
+
+            ?>
+            <a href="#" class="scrollup"><i class="fa fa-long-arrow-up"></i></a>
+            <?php
+        }
+    }
+endif;
+add_action( 'influence_blog_footer_scroll_top', 'influence_blog_footer_scroll_top_action', 910 );
+
+
+
+/**
  * Footer top hook declaration
  *
  * @since 1.0.0
@@ -672,6 +695,14 @@ if( ! function_exists( 'influence_blog_footer_bottom_action' ) ) :
             do_action( 'influence_blog_footer_copyright_text' );
             ?>
         </div>
+        <?php
+        /**
+        * Hook - influence_blog_footer_scroll_top
+        *
+        * @hooked influence_blog_footer_scroll_top_action - 910
+        */
+        do_action( 'influence_blog_footer_scroll_top' );
+        ?>
     </footer>
     <?php
     }
