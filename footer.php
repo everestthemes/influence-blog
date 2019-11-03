@@ -24,7 +24,5 @@
 
 <?php wp_footer(); ?>
 
-<a href="#" class="scrollup"><i class="fa fa-long-arrow-up"></i></a>
-
 </body>
 </html>
