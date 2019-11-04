@@ -102,7 +102,7 @@ influence_blog_add_field(
 
 influence_blog_add_section(
     'footer_scroll_top_section', //id
-    esc_html__( 'Scroll Top', 'influence-blog-pro' ), //title
+    esc_html__( 'Scroll Top', 'influence-blog' ), //title
     '', //desc
     'site_footer_panel', //panel
     10 //priority
@@ -111,7 +111,7 @@ influence_blog_add_section(
 //display footer scroll top
 influence_blog_add_field(
     'display_footer_scroll_top', //id
-    esc_html__( 'Display : Scroll Top', 'influence-blog-pro'), //label
+    esc_html__( 'Display : Scroll Top', 'influence-blog'), //label
     '', //desc
     'ios', //type ( text, number, url, select, ios )
     'footer_scroll_top_section', //section
