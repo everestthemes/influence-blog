@@ -8,7 +8,7 @@
 $categories = influence_blog_categories_array();
 $sidebar_position = influence_blog_sidebar_position_array( 'image' );
 $post_types = influence_blog_post_types_array();
-$pagination_for = influence_blog_pagination_for_array();
+$pagination_type = influence_blog_pagination_type_array();
 
 /**
  * Load customizer fields

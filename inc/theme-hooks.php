@@ -759,3 +759,102 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
 endif;
 add_action( 'influence_blog_footer', 'influence_blog_footer_action', 999 );
 
+
+
+/**
+ * Pagination loadmore template hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_pagination_loadmore_template_action' ) ) :
+
+ 	function influence_blog_pagination_loadmore_template_action() {
+
+        ?>
+        <div class="loadmore">
+            <button class="load-more-btn"><?php esc_html_e( 'Load More', 'influence-blog' ); ?> <span class="load-more-icon"><i class="fa fa-spinner fa-pulse" aria-hidden="true"></i></span></button>
+        </div>
+        <?php
+
+        /**
+        * Hook - influence_blog_pagination_no_more_template
+        *
+        * @hooked influence_blog_pagination_no_more_template - 520
+        */
+        do_action( 'influence_blog_pagination_no_more_template' );
+        ?>
+        <script type="text/javascript">
+            var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+            var page = 2;
+            jQuery(function($) {
+
+                $('.load_no_more').hide();
+
+                $('body').on('click', '.loadmore', function() {
+                    var data = {
+                        'action': 'load_posts_by_ajax',
+                        'page': page,
+                        'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
+                    };
+
+                    $.post(ajaxurl, data, function(response) {
+                        if(response != '') {
+                            $('.ifb-home-posts').append(response);
+                            page++;
+                        } else {
+                            $('.loadmore').hide();
+                            $('.load_no_more').show();
+                        }
+                    });
+                });
+            });
+        </script>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_pagination_loadmore_template', 'influence_blog_pagination_loadmore_template_action', 500 );
+
+
+
+/**
+ * Pagination default template hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_pagination_default_template_action' ) ) :
+
+ 	function influence_blog_pagination_default_template_action() {
+
+    ?>
+    <div class="ifb-pagination">
+    <?php
+
+        the_posts_pagination( array(
+            'mid_size' => 2,
+        ) );
+    ?>
+    </div>
+    <?php
+    }
+endif;
+add_action( 'influence_blog_pagination_default_template', 'influence_blog_pagination_default_template_action', 510 );
+
+
+
+/**
+ * Pagination no more template hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_pagination_no_more_template_action' ) ) :
+
+ 	function influence_blog_pagination_no_more_template_action() {
+
+    ?>
+    <div class="load_no_more">
+        <button class="no-more-to-load"><?php esc_html_e( 'Nothing More To Load', 'influence-blog' ); ?></button>
+    </div>
+    <?php
+    }
+endif;
+add_action( 'influence_blog_pagination_no_more_template', 'influence_blog_pagination_no_more_template_action', 520 );

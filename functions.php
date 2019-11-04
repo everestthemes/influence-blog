@@ -320,4 +320,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load TGM plugin activation.
  */
 require get_template_directory() . '/third-party/class-tgm-plugin-activation.php';
-

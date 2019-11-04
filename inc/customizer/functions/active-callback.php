@@ -40,23 +40,6 @@ if( ! function_exists( 'influence_blog_active_banner' ) ) {
 }
 
 /**
- * Active callback function for when blog page grid two layout is active.
- */
-if( ! function_exists( 'influence_blog_active_blog_page_grid_two_col_layout' ) ) {
-
-	function influence_blog_active_blog_page_grid_two_col_layout( $control ) {
-
-		if ( $control->manager->get_setting( 'influence_blog_display_blog_page_grid_two_col_layout' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
-	}
-}
-
-/**
  * Active callback function for when blog page grid three layout is active.
  */
 if( ! function_exists( 'influence_blog_active_blog_page_grid_three_col_layout' ) ) {
