@@ -772,7 +772,7 @@ if( ! function_exists( 'influence_blog_pagination_loadmore_template_action' ) ) 
 
         ?>
         <div class="loadmore">
-            <button class="load-more-btn"><?php esc_html_e( 'Load More', 'influence-blog' ); ?> <span class="load-more-icon"><i class="fa fa-spinner fa-pulse" aria-hidden="true"></i></span></button>
+            <button class="load-more-btn"><?php esc_html_e( 'Load More', 'influence-blog' ); ?> <span class="load-more-icon"><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></span></button>
         </div>
         <?php
 
