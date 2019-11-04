@@ -2606,6 +2606,10 @@ font-weight:700;
         load more 
 =========================*/
 
+.loadmore{
+    text-align:center;
+    margin:auto;
+}
 .loadmore .load-more-btn,
 .load_no_more .no-more-to-load{
     background-color: #183244;
