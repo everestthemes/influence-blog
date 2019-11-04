@@ -1064,3 +1064,118 @@ margin-bottom:30px;
     transform: translateY(-50%);
 	margin-top:0;
 }
+
+.email-ad a, .email-ad {
+	color: #e9b105;
+}
+.half-content-bdy:before{
+	border-color: 2px solid #e9b105;
+}
+
+/*New block*/
+
+b, strong {
+    font-weight: 700;
+}
+.inner-single .single-post-detail p  {
+    margin-bottom: 15px;
+
+}
+.inner-single .single-post-detail .has-background{
+	margin: 30px 0;
+}
+.has-drop-cap{
+	margin-bottom: 15px;
+}
+
+.has-background.has-very-light-gray-background-color em{
+	color: #183244;
+}
+
+.wp-block-media-text__content  h2,
+.wp-block-media-text__content  h3,
+.wp-block-media-text__content  h4,
+.wp-block-media-text__content  h5,
+.wp-block-media-text__content  h6{
+	margin-top:15px;
+}
+
+.single .has-luminous-vivid-orange-background-color.has-luminous-vivid-orange-background-color{
+	margin-top:30px;
+}
+.single .single-post-detail ul,
+.single .single-post-detail ol{
+    margin-left: 30px;
+}
+.single .single-post-detail ul li,
+.single .single-post-detail ol li{
+	list-style: circle;
+	margin-top: 15px;
+	color: #183244;
+
+}
+h2 {
+    font-weight: 700;
+    font-style: normal;
+    text-transform: inherit;
+    line-height: 1.1;
+	margin-bottom:30px;
+}
+.wp-block-pullquote .has-vivid-red-color.has-vivid-red-color,
+.wp-block-pullquote:not(.is-style-solid-color){
+	
+	background-color:#e9b105;
+	padding:30px;
+}
+.wp-block-pullquote,
+ .wp-block-pullquote:not(.is-style-solid-color){
+	border-color:transparent;
+}
+.single-post-detail em a{
+	color:#e9b105;
+}
+.wp-block-quote {
+	background-color:#e9b105;
+	color:#fff;
+	padding:20px;
+	font-size:30px;
+	text-align:center;
+}
+
+.wp-block-quote strong{
+	color:#fff;
+	font-size:16px;
+}
+
+.inner-single .single-post-detail .wp-block-pullquote  p,
+.inner-single .single-post-detail .wp-block-quote p{
+	color:#fff;
+}
+
+.single .single-post-detail p strong {
+	color:#333;
+	font-size:18px;
+}
+
+body.no-sidebar .alignfull {
+    width: 90vw;
+    max-width: 90vw;
+    margin-left: 50% !important;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.wp-block-table td, 
+.wp-block-table th,
+.editor-entry .wp-block-table td{
+   padding: 15px 20px;
+	border: 1px solid  #eeeeee;;
+
+}
+.single .single-post-detail h2 {
+    margin-bottom: 30px;
+	margin-top:30px;
+}
+.widget_search .search-form {
+    margin-top: 60px;
+}
