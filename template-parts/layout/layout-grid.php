@@ -51,7 +51,7 @@ if( is_home() ) {
         </div><!--//inner-row-->
         <?php get_template_part( 'template-parts/content', 'pagination' ); ?>
     </div><!--//half-widget-left-->
-    <?
+    <?php
 } 
 
 if( is_archive() || is_search() ) {
