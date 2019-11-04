@@ -30,22 +30,6 @@ influence_blog_add_section(
     10 //priority
 );
 
-//display blog page grid two col layout
-influence_blog_add_field( 
-    'display_blog_page_grid_two_col_layout', //id
-    esc_html__( "Display : Layout", 'influence-blog' ), //label
-    '', //desc
-    'ios', //type ( text, number, url, select, ios )
-    'blog_page_grid_two_col_section', //section
-    '', //choices
-    '', //active_callback
-    '', //min
-    '', //max
-    '', //step
-    'toggle', //control ( image, toggle, slider, multiple, color, upload )
-    true //default
-);
-
 //blog page grid two col layout title
 influence_blog_add_field( 
     'blog_page_grid_two_col_layout_title', //id
@@ -54,60 +38,12 @@ influence_blog_add_field(
     'text', //type ( text, number, url, select, ios )
     'blog_page_grid_two_col_section', //section
     '', //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
+    '', //active_callback
     '', //min
     '', //max
     '', //step
     '', //control ( image, toggle, slider, multiple, color, upload )
     'Most Recent' //default
-);
-
-//blog page grid two col layout post type
-influence_blog_add_field( 
-    'blog_page_grid_two_col_layout_post_type', //id
-    esc_html__( "Layout : Post Type", 'influence-blog' ), //label
-    '', //desc
-    'select', //type ( text, number, url, select, ios )
-    'blog_page_grid_two_col_section', //section
-    $post_types, //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
-    '', //min
-    '', //max
-    '', //step
-    '', //control ( image, toggle, slider, multiple, color, upload )
-    'recent_posts' //default
-);
-
-//blog page grid two col layout category
-influence_blog_add_field( 
-    'blog_page_grid_two_col_layout_category', //id
-    esc_html__( "Layout : Category", 'influence-blog' ), //label
-    '', //desc
-    'select', //type ( text, number, url, select, ios )
-    'blog_page_grid_two_col_section', //section
-    $categories, //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
-    '', //min
-    '', //max
-    '', //step
-    '', //control ( image, toggle, slider, multiple, color, upload )
-    'uncategorized' //default
-);
-
-//blog page grid two col layout post number
-influence_blog_add_field( 
-    'blog_page_grid_two_col_layout_post_number', //id
-    esc_html__( 'Layout : No. of Posts', 'influence-blog'), //label
-    esc_html__( 'Maximum 10 items and minimum 2 items can be set for this layout.', 'influence-blog'), //desc
-    'number', //type ( text, number, url, select, ios )
-    'blog_page_grid_two_col_section', //section
-    '', //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
-    '2', //min
-    '10', //max
-    '1', //step
-    '', //control ( image, toggle, slider, multiple, color, upload )
-    '6' //default
 );
 
 //display blog page grid two col layout category
@@ -118,7 +54,7 @@ influence_blog_add_field(
     'ios', //type ( text, number, url, select, ios )
     'blog_page_grid_two_col_section', //section
     '', //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
+    '', //active_callback
     '', //min
     '', //max
     '', //step
@@ -134,7 +70,7 @@ influence_blog_add_field(
     'ios', //type ( text, number, url, select, ios )
     'blog_page_grid_two_col_section', //section
     '', //choices
-    'influence_blog_active_blog_page_grid_two_col_layout', //active_callback
+    '', //active_callback
     '', //min
     '', //max
     '', //step
@@ -282,18 +218,18 @@ influence_blog_add_field(
 
 //blog page pagination for
 influence_blog_add_field( 
-    'blog_page_pagination_for', //id
-    esc_html__( "Select Pagination", 'influence-blog' ), //label
-    esc_html__( 'Select the pagination for which layout you want to show. You can show pagination for only one layout.', 'influence-blog' ), //desc
+    'blog_page_pagination_type', //id
+    esc_html__( "Select Pagination Type", 'influence-blog' ), //label
+    '', //desc
     'select', //type ( text, number, url, select, ios )
     'blog_page_common_options_section', //section
-    $pagination_for, //choices
+    $pagination_type, //choices
     'influence_blog_active_blog_page_pagination', //active_callback
     '', //min
     '', //max
     '', //step
     '', //control ( image, toggle, slider, multiple, color, upload )
-    'grid_two' //default
+    'default' //default
 );
 
 //blog page sidebar position

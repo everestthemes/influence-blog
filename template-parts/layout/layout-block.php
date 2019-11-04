@@ -55,7 +55,6 @@ if( is_home() ) {
 
             ?> 
             </div><!--//inn-row-->
-            <?php influence_blog_blog_page_pagingation_option( 'grid_three' ); ?>
         </div><!--//half-widget-left-d3-->
     <?php
     }

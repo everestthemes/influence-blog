@@ -405,28 +405,6 @@ if( ! function_exists( 'influence_blog_post_navigation' ) ) {
 
 
 /**
- * Function that defines posts pagination.
- */
-if( ! function_exists( 'influence_blog_pagination' ) ) {
-
-	function influence_blog_pagination() {
-        
-        ?>
-        <div class="ifb-pagination">
-        <?php
-        
-            the_posts_pagination( array(
-                'mid_size' => 2,
-            ) );
-        ?>
-        </div>
-        <?php
-	}
-}
-
-
-
-/**
  * Function to return customizer option for posted date
  *
  * @since 1.0.0
@@ -512,36 +490,5 @@ if( ! function_exists( 'influence_blog_tags_option' ) ) :
         }
         
         return $display_category;
- 	}
-endif;
-
-
-
-/**
- * Function to return pagination for blog page
- *
- * @since 1.0.0
- */
-if( ! function_exists( 'influence_blog_blog_page_pagingation_option' ) ) :
-
- 	function influence_blog_blog_page_pagingation_option( $pagination_option ) {
-        
-        $display_pagination = false;
-        
-        $display_pagination = ifb_mod( 'display_blog_page_pagination', true );
-        
-        if( $display_pagination == true ) {
-            
-            $pagination_for = ifb_mod( 'blog_page_pagination_for', 'grid_two' );
-            
-            if( $pagination_for == $pagination_option ) {
-                
-                return influence_blog_pagination();
-                
-            } else {
-                
-                return;
-            }
-        }
  	}
 endif;

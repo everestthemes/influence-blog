@@ -98,15 +98,15 @@ if( !function_exists( 'influence_blog_post_types_array' ) ) :
 	}
 endif;
 
-if( !function_exists( 'influence_blog_pagination_for_array' ) ) :
+if( !function_exists( 'influence_blog_pagination_type_array' ) ) :
 	/*
-	 * Function to get pagination for in homepage
+	 * Function to get pagination type for in homepage
 	 */
-	function influence_blog_pagination_for_array() {
+	function influence_blog_pagination_type_array() {
 
         $pagination_for = array(
-            'grid_two'   => esc_html__( 'Grid Two Column Layout', 'influence-blog' ),
-            'grid_three' => esc_html__( 'Grid Three Column Layout', 'influence-blog' ),
+            'default'   => esc_html__( 'Default', 'influence-blog' ),
+            'loadmore' => esc_html__( 'Load More', 'influence-blog' ),
         );
         
         return $pagination_for;
