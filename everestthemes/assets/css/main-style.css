@@ -3,11 +3,48 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
-    font-family: 'Lato', sans-serif;
+    background-image:transparent;
+    font-family: 'Lato', 'Halvetica', 'Arial', 'Roboto', 'Times New Roman', Sans Serif;
     font-weight: 400;
     font-size: 16px;
+    font-style: normal;
     line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    color:#000000;
 }
+body.wide  {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin:0 auto;
+    padding:0;
+    max-width: 1170px;
+}
+
+body.framed {
+    width: 80vw !important;
+    max-width: 80vw !important;
+    margin:0 auto;
+    padding:0;
+    max-width: 1170px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border:1px solid #eee;
+}
+
+body.boxed {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: repeat;
+    background-color: #eee;
+    margin: 0 auto;
+    padding:0;
+    max-width: 1170px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border:1px solid #eee;
+}
+
+
 
 h1,
 h2,
@@ -15,30 +52,61 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 500;
+    font-weight: 700;
+    font-family: 'Lato', 'Halvetica', 'Arial', 'Roboto', 'Times New Roman', Sans Serif;
+    font-style: normal;
+    color: #000000;
 }
 
 h1 {
     font-size: 48px;
-    font-weight: 700;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
 }
 
 h2 {
     font-size: 40px;
-    margin-bottom: 0;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin:0;
+    padding:0;
 }
 
 h3 {
     font-size: 36px;
-    margin-bottom: 0;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin:0;
+    padding:0;
 }
 
 h4 {
     font-size: 24px;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin:0;
+    padding:0;
 }
 
 h5 {
     font-size: 20px;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin:0;
+    padding:0;
+}
+h6{
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin:0;
+    padding:0;
 }
 
 ul,
@@ -50,6 +118,10 @@ figure {
     padding: 0;
     outline: 0;
     box-shadow: none;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 1px;
+    color: #000000;
 }
 
 figure {
@@ -65,6 +137,7 @@ img {
 a {
     color: #05233a;
     text-decoration: none;
+
 }
 
 a:focus,
@@ -88,12 +161,10 @@ nav ul {
 }
 
 p {
-    margin-bottom: 0;
-    line-height: 1.5;
     color: #a2a3a5;
+    margin:0;
+    padding:0;
 }
-
-
 
 
 .lrg-padding {
@@ -2628,3 +2699,28 @@ font-weight:700;
 .load-more-icon{
     padding-left: 10px;
 }
+
+/* alignment ************************** */
+/* .alignleft {
+
+    display: inline;
+    float: left;
+    margin-right: 15px;
+}
+
+.alignright {
+
+    display: inline;
+    float: right;
+    margin-left: 15px;
+}
+
+.aligncenter {
+
+    clear: both;
+    display: block;
+    margin: 0 auto;
+} */
+
+
+
