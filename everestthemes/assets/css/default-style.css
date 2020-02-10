@@ -272,6 +272,12 @@ span.edit-link a:before {
 	padding-left: 30px;
 
 }
+
+body.boxed .widget_recent_entries>ul>li a:before,
+body.framed .widget_recent_entries>ul>li a:before,
+body.wide .widget_recent_entries>ul>li a:before{
+	left:5px;
+}
 .widget_recent_entries>ul>li a{
 	padding-right: 5px;
 }
@@ -335,6 +341,11 @@ select#archives-dropdown-4,
 	padding:5px 10px;
 }
 
+body.boxed .widget_meta>ul>li,
+body.framed .widget_meta>ul>li,
+body.wide .widget_meta>ul>li{
+	margin:0px 0 15px 15px;
+}
 
 
 /* footer widget */
@@ -651,6 +662,7 @@ section#monster-widget-placeholder-12 .widget_text select option{
 	margin: 5px;
 	padding:5px 15px;
 	display: inline-block;
+	font-size:14px!important;
 
 }
 .comment-form-comment  #comment{
