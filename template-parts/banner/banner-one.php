@@ -5,6 +5,12 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
 $banner_query = influence_blog_banner_posts_query();
 if( $banner_query -> have_posts() ) {
 
@@ -19,8 +25,8 @@ if( $banner_query -> have_posts() ) {
 
             $banner_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
             
-            $banner_background_text = ifb_mod( 'banner_background_text', 'Passion of' );
-            $display_banner_category = ifb_mod( 'display_banner_category', true );
+            $banner_background_text = ifb_get_mod( 'banner_background_text', 'Passion of' );
+            $display_banner_category = ifb_get_mod( 'display_banner_category', true );
             ?>
             <div class="bannner-outer-wrap">
                 <div class="row align-items-center">

@@ -1,0 +1,68 @@
+/****************************************************************************************************
+ ****************************************** Info One Styles *****************************************
+ ****************************************************************************************************/
+
+.control-info-one {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 1em;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.control-info-one:after, .control-info-one:before {
+    top: 100%;
+    left: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.control-info-one.no-pointer:after, .control-info-one.no-pointer:before {
+    display: none;
+}
+
+.control-info-one:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.control-info-one:before {
+    border-color: rgba(225, 225, 225, 0);
+    border-top-color: #e1e1e1;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.control-info-one > :last-child {
+    margin-bottom: 0;
+}
+
+.control-info-one-label {
+    position: relative;
+    padding-right: 40px;
+}
+
+.control-info-one-label:after {
+    font-family: dashicons;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+.control-info-one-label .dashicons {
+    position: absolute;
+    top: 0.122em;
+    right: 0;
+    opacity: 0.5;
+}
+
+.control-info-one-description {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 1em;
+}

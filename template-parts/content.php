@@ -7,6 +7,12 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
 $display_posted_date = influence_blog_posted_date_option();
 $display_category = influence_blog_category_option();
 $display_tags = influence_blog_tags_option();

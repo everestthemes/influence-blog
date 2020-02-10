@@ -1,0 +1,31 @@
+/****************************************************************************************************
+ ************************************** Radio Image Two Styles **************************************
+ ****************************************************************************************************/
+
+.radio_image_two_style .radio-image-two-label > input {
+
+	display: none;
+}
+
+.radio_image_two_style .radio-image-two-label > img {
+
+    cursor: pointer;
+    border: 3px solid #ddd;
+}
+
+.radio_image_two_style .radio-image-two-label > input:focus + img {
+
+    border: 3px solid #999;
+}
+
+.radio_image_two_style .radio-image-two-label > input:checked + img {
+
+    border: 3px solid #2885bb;
+}
+
+.radio_image_two_style .radio-image-two-label > input + img {
+
+  	margin: 2px;
+	border-radius: 5px;
+    width: 40%;
+}

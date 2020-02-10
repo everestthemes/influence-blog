@@ -5,7 +5,13 @@
  * @package Influence_Blog
  */
 
-$display_author_section = ifb_mod( 'display_single_post_author_section', true );
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
+$display_author_section = ifb_get_mod( 'display_single_post_author_section', true );
 
 if( $display_author_section == true ) {
 

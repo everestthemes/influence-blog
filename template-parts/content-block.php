@@ -7,9 +7,15 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
 if( is_home() ) {
     
-    $display_category = ifb_mod( 'display_blog_page_grid_three_col_layout_category', true );
+    $display_category = ifb_get_mod( 'display_blog_page_grid_three_col_layout_category', true );
     
     ?>
     <div class="col-12 col-lg-4">

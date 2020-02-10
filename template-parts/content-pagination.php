@@ -7,11 +7,17 @@
  * @package Influence_Blog
  */
 
-$display_blog_page_pagination = ifb_mod( 'display_blog_page_pagination', true );
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
+$display_blog_page_pagination = ifb_get_mod( 'display_blog_page_pagination', true );
 
 if( $display_blog_page_pagination == true ) {
 
-    $blog_page_pagination_type = ifb_mod( 'blog_page_pagination_type', 'default' );
+    $blog_page_pagination_type = ifb_get_mod( 'blog_page_pagination_type', 'default' );
 
     switch ( $blog_page_pagination_type ) {
 
