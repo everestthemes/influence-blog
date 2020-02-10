@@ -1,0 +1,89 @@
+/****************************************************************************************************
+ ****************************************** Toggle Two Styles ***************************************
+ ****************************************************************************************************/
+
+.toggle-two-control .customize-control-title {
+	font-size: 14px;
+}
+
+.toggle-two {
+	position: relative;
+	width: 64px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	float: right;
+}
+
+.toggle-two .toggle-two-checkbox {
+	display: none;
+}
+
+.toggle-two .toggle-two-label {
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	border: 2px solid #ddd;
+	border-radius: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.toggle-two-inner {
+	display: block;
+	width: 200%;
+	margin-left: -100%;
+	transition: margin 0.3s ease-in 0s;
+}
+
+.toggle-two-inner:before,
+.toggle-two-inner:after {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 22px;
+	padding: 0;
+	line-height: 22px;
+	font-size: 14px;
+	color: white;
+	font-family: Trebuchet, Arial, sans-serif;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.toggle-two-inner:before {
+	content: "ON";
+	padding-left: 8px;
+	background-color: #2885bb;
+	color: #ffffff;
+}
+
+.toggle-two-inner:after {
+	content: "OFF";
+	padding-right: 8px;
+	background-color: #eeeeee;
+	color: #999999;
+	text-align: right;
+}
+
+.toggle-two-switch {
+	display: block;
+	width: 16px;
+	margin: 3px;
+	background: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 38px;
+	border: 2px solid #ddd;
+	border-radius: 20px;
+	transition: all 0.3s ease-in 0s;
+}
+
+.toggle-two-checkbox:checked + .toggle-two-label .toggle-two-inner {
+	margin-left: 0;
+}
+
+.toggle-two-checkbox:checked + .toggle-two-label .toggle-two-switch {
+	right: 0px;
+}

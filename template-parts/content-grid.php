@@ -7,6 +7,12 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
 if( is_archive() || is_search() ) {
     
     $display_category = influence_blog_category_option();

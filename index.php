@@ -58,7 +58,7 @@ $sidebar_position = influence_blog_sidebar_position();
 </div>
 <?php
 
-$display_blog_page_about_info = ifb_mod( 'display_blog_page_about_info', true );
+$display_blog_page_about_info = ifb_get_mod( 'display_blog_page_about_info', true );
 
 if( $display_blog_page_about_info == true ) {
 
@@ -67,7 +67,7 @@ if( $display_blog_page_about_info == true ) {
         <div class="container">
             <div class="foot-abt">
                 <?php
-                $about_info_logo = ifb_mod( 'blog_page_about_info_logo', '' );
+                $about_info_logo = ifb_get_mod( 'blog_page_about_info_logo', '' );
                 
                 if( !empty( $about_info_logo ) ) {
                     ?>
@@ -75,7 +75,7 @@ if( $display_blog_page_about_info == true ) {
                     <?php
                 }
     
-                $about_info_description = ifb_mod( 'blog_page_about_info_description', '' );
+                $about_info_description = ifb_get_mod( 'blog_page_about_info_description', '' );
     
                 if( !empty( $about_info_description ) ) {
                     ?>
@@ -83,9 +83,9 @@ if( $display_blog_page_about_info == true ) {
                     <?php
                 }
     
-                $about_info_contact_title = ifb_mod( 'blog_page_about_info_contact_title', 'Contact us :' );
+                $about_info_contact_title = ifb_get_mod( 'blog_page_about_info_contact_title', 'Contact us :' );
                 
-                $about_info_contact_email = ifb_mod( 'blog_page_about_info_contact_email', '' );
+                $about_info_contact_email = ifb_get_mod( 'blog_page_about_info_contact_email', '' );
     
                 if( !empty( $about_info_contact_title ) && !empty( $about_info_contact_email ) ) {
                     ?>

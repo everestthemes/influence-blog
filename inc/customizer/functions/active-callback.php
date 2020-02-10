@@ -5,16 +5,23 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
+
+    exit;
+}
+
 /**
- * Active callback function for when top header is active.
+ * Active callback function for homepage front page is selected.
  */
-if( ! function_exists( 'influence_blog_active_top_header' ) ) {
+if( ! function_exists( 'influence_blog_is_homepage_front_page' ) ) {
 
-	function influence_blog_active_top_header( $control ) {
+	function influence_blog_is_homepage_front_page( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_top_header' )->value() == true ) {
+		if ( $control->manager->get_setting( 'show_on_front' )->value() == 'page' ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -23,15 +30,16 @@ if( ! function_exists( 'influence_blog_active_top_header' ) ) {
 }
 
 /**
- * Active callback function for when banner is active.
+ * Active callback function for site layout design options image is selected.
  */
-if( ! function_exists( 'influence_blog_active_banner' ) ) {
+if( ! function_exists( 'influence_blog_is_site_layout_design_options_image' ) ) {
 
-	function influence_blog_active_banner( $control ) {
+	function influence_blog_is_site_layout_design_options_image( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_banner' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'image' ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -40,15 +48,16 @@ if( ! function_exists( 'influence_blog_active_banner' ) ) {
 }
 
 /**
- * Active callback function for when blog page grid three layout is active.
+ * Active callback function for site layout style wide is selected.
  */
-if( ! function_exists( 'influence_blog_active_blog_page_grid_three_col_layout' ) ) {
+if( ! function_exists( 'influence_blog_is_site_layout_style_wide' ) ) {
 
-	function influence_blog_active_blog_page_grid_three_col_layout( $control ) {
+	function influence_blog_is_site_layout_style_wide( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_blog_page_grid_three_col_layout' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() == 'wide' && $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'color' ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -57,15 +66,16 @@ if( ! function_exists( 'influence_blog_active_blog_page_grid_three_col_layout' )
 }
 
 /**
- * Active callback function for when blog page pagination for is active.
+ * Active callback function for site layout style wide is not selected.
  */
-if( ! function_exists( 'influence_blog_active_blog_page_pagination' ) ) {
+if( ! function_exists( 'influence_blog_not_site_layout_style_wide' ) ) {
 
-	function influence_blog_active_blog_page_pagination( $control ) {
+	function influence_blog_not_site_layout_style_wide( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_blog_page_pagination' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() !== 'wide' && $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'color' ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -74,15 +84,16 @@ if( ! function_exists( 'influence_blog_active_blog_page_pagination' ) ) {
 }
 
 /**
- * Active callback function for when blog page about info is active.
+ * Active callback function for site layout advance toggle true is not selected.
  */
-if( ! function_exists( 'influence_blog_active_blog_page_about_info' ) ) {
+if( ! function_exists( 'influence_blog_not_site_layout_advance_toggle' ) ) {
 
-	function influence_blog_active_blog_page_about_info( $control ) {
+	function influence_blog_not_site_layout_advance_toggle( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_blog_page_about_info' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_advance_toggle' )->value() == true ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -91,15 +102,16 @@ if( ! function_exists( 'influence_blog_active_blog_page_about_info' ) ) {
 }
 
 /**
- * Active callback function for when related posts section is active.
+ * Active callback function for site layout style box and advance true is selected.
  */
-if( ! function_exists( 'influence_blog_active_related_post_section' ) ) {
+if( ! function_exists( 'influence_blog_is_site_layout_style_box_advance' ) ) {
 
-	function influence_blog_active_related_post_section( $control ) {
+	function influence_blog_is_site_layout_style_box_advance( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_single_post_related_posts_section' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() == 'boxed' && $control->manager->get_setting( 'influence_blog_site_layout_advance_toggle' )->value() == true ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -108,15 +120,16 @@ if( ! function_exists( 'influence_blog_active_related_post_section' ) ) {
 }
 
 /**
- * Active callback function for when footer contact info is active.
+ * Active callback function for site layout style framed and advance true is selected.
  */
-if( ! function_exists( 'influence_blog_active_footer_contact_info' ) ) {
+if( ! function_exists( 'influence_blog_is_site_layout_style_framed_advance' ) ) {
 
-	function influence_blog_active_footer_contact_info( $control ) {
+	function influence_blog_is_site_layout_style_framed_advance( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_display_footer_contact_info' )->value() == true ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() == 'framed' && $control->manager->get_setting( 'influence_blog_site_layout_advance_toggle' )->value() == true ) {
 
 			return true;
+
 		} else {
 			
 			return false;
@@ -124,3 +137,20 @@ if( ! function_exists( 'influence_blog_active_footer_contact_info' ) ) {
 	}
 }
 
+/**
+ * Active callback function for site layout container is not uniform and advance true is selected.
+ */
+if( ! function_exists( 'influence_blog_not_site_layout_container_uniform_advance' ) ) {
+
+	function influence_blog_not_site_layout_container_uniform_advance( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_container_style' )->value() !== 'uniform' && $control->manager->get_setting( 'influence_blog_site_layout_advance_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}

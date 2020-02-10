@@ -7,9 +7,14 @@
  * @package Influence_Blog
  */
 
+// Exit if accessed directly.
+if ( !defined( 'ABSPATH' ) ) {
 
-$display_category = ifb_mod( 'display_blog_page_grid_two_col_layout_category', true );
-$display_posted_date = ifb_mod( 'display_blog_page_grid_two_col_layout_posted_date', true );
+    exit;
+}
+
+$display_category = ifb_get_mod( 'display_blog_page_grid_two_col_layout_category', true );
+$display_posted_date = ifb_get_mod( 'display_blog_page_grid_two_col_layout_posted_date', true );
 
 ?>
 <div class="col-12 col-lg-6">
