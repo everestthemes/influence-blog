@@ -28,8 +28,8 @@ body.framed {
     padding:0;
     max-width: 1170px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 20px;
-    border: 1px dashed #e9b105;
+    border-radius: 0;
+    border: 1px solid #eee;
 }
 
 body.boxed {
@@ -41,8 +41,8 @@ body.boxed {
     padding:0;
     max-width: 1170px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 20px;
-    border: 1px dotted #e9b105;
+    border-radius: 0;
+    border: 1px solid #eee;;
 }
 
 
