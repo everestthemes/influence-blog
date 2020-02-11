@@ -21,7 +21,7 @@ body.wide  {
     max-width: 1170px;
 }
 
-body.framed {
+body.framed  .page-wrap{
     width: 80vw !important;
     max-width: 80vw !important;
     margin:0 auto;
@@ -32,7 +32,7 @@ body.framed {
     border: 1px solid #eee;
 }
 
-body.boxed {
+body.boxed .page-wrap{
     background-size: cover;
     background-position: 50%;
     background-repeat: repeat;
