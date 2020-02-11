@@ -46,7 +46,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
 /*---------------------------------- Body font family -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_body_font', array(
-    'default' => influence_blog_defaults( 'typo_body_font' ),
+    'default'                  => influence_blog_defaults( 'typo_body_font' ),
     'sanitize_callback'        => 'sanitize_typography_one'
 ) );
 
@@ -60,8 +60,9 @@ $wp_customize->add_control( new Typography_One_Control( $wp_customize, 'influenc
 /*---------------------------------- Body text transform -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_body_transform', array(
-    'default' => influence_blog_defaults( 'typo_body_transform' ),
-    'sanitize_callback'        => 'influence_blog_sanitize_select'
+    'default'                  => influence_blog_defaults( 'typo_body_transform' ),
+    'sanitize_callback'        => 'influence_blog_sanitize_select',
+    'transport' 		       => 'postMessage',
 ) );
 
 $wp_customize->add_control( 'influence_blog_typo_body_transform', array(
@@ -195,7 +196,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
 /*---------------------------------- Heading font family -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_heading_font', array(
-    'default' => influence_blog_defaults( 'typo_heading_font' ),
+    'default'                  => influence_blog_defaults( 'typo_heading_font' ),
     'sanitize_callback'        => 'sanitize_typography_one'
 ) );
 
@@ -243,8 +244,9 @@ foreach( $headings as $heading ) {
     /*---------------------------------- Heading text transform -----------------------------------*/
 
     $wp_customize->add_setting( 'influence_blog_typo_heading_' . $heading . '_transform', array(
-        'default' => influence_blog_defaults( 'typo_heading_' . $heading . '_transform' ),
-        'sanitize_callback'        => 'influence_blog_sanitize_select'
+        'default'                  => influence_blog_defaults( 'typo_heading_' . $heading . '_transform' ),
+        'sanitize_callback'        => 'influence_blog_sanitize_select',
+        'transport' 		       => 'postMessage',
     ) );
 
     $wp_customize->add_control( 'influence_blog_typo_heading_' . $heading . '_transform', array(

@@ -12,62 +12,6 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Funtion To Get Google Fonts
- */
-if ( !function_exists( 'influence_blog_fonts_url' ) ) :
-
-    /**
-     * Return Font's URL.
-     *
-     * @since 1.0.0
-     * @return string Fonts URL.
-     */
-    function influence_blog_fonts_url() {
-
-        $fonts_url = '';
-        $fonts     = array();
-        $subsets   = 'latin,latin-ext';
-
-        /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-        if ('off' !== _x('on', 'Lato font: on or off', 'influence-blog')) {
-
-            $fonts[] = 'Lato:400,400i,700,700i';
-        }
-
-        /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-        if ('off' !== _x('on', 'Lobster font: on or off', 'influence-blog')) {
-
-            $fonts[] = 'Lobster';
-        }
-
-        /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-
-        if ('off' !== _x('on', 'Fira Sans font: on or off', 'influence-blog')) {
-
-            $fonts[] = 'Fira+Sans:400,400i,500,500i,600,600i,700,700i,800,800i';
-        }
-
-        /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-
-        if ('off' !== _x('on', 'Atomic Age font: on or off', 'influence-blog')) {
-
-            $fonts[] = 'Atomic+Age';
-        }
-
-        if ( $fonts ) {
-            $fonts_url = add_query_arg( array(
-                'family' => urlencode( implode( '|', $fonts ) ),
-                'subset' => urlencode( $subsets ),
-            ), '//fonts.googleapis.com/css' );
-        }
-
-        return $fonts_url;
-    }
-endif;
-
-
-
-/**
  * Function to get customizer options
  */
 if ( !function_exists( 'ifb_get_mod' ) ) {
@@ -97,6 +41,165 @@ if ( !function_exists( 'ifb_get_mod' ) ) {
     }
 }
 
+if ( !function_exists( 'influence_blog_default_fonts' ) ) {
+    /**
+     * Theme Default Fonts Load
+     */
+    function influence_blog_default_fonts() {
+
+        $fonts = array(
+            'Poppins:600,600i,700,700i,800,800i,900,900i',
+            'Roboto:100,100i,300,300i,500,500i,700,700i',
+        );
+
+        $fonts_collection = add_query_arg(
+            array(
+                'family' => urlencode( implode( '|', $fonts ) ),
+                'subset' => urlencode( 'latin,latin-ext' ),
+            ),
+            'https://fonts.googleapis.com/css'
+        );
+
+        return $fonts_collection;
+    }
+}
+
+if ( !function_exists( 'influence_blog_get_font_data' ) ) {
+    /**
+     * Function to get font data
+     */
+    function influence_blog_get_font_data( $name, $value='family' ) {
+
+        $font = ifb_get_mod( $name, $name );
+
+        $font = ! is_array( $font ) ? json_decode( $font, true ) : $font;
+
+        $output;
+
+        switch ( $value ) {
+
+            case "family":
+                $output = $font['font'];
+                break;
+
+            case "variants":
+                $output = isset( $font[ 'variantlist' ] ) && is_array( $font[ 'variantlist' ] ) ? implode( ',', $font[ 'variantlist' ] ) : '';
+                break;
+
+            case "fontweight":
+                $weight = $font['fontweight'];
+                $output = 'regular' == $weight ? "normal" : $weight;
+              break;
+        }
+
+        return $output;
+    }
+}
+
+/**
+ * Parse CSS
+ */
+if ( !function_exists( 'influence_blog_parse_css' ) ) {
+
+	/**
+	 * Parse CSS
+	 *
+	 * @param  array  $css_output Array of CSS.
+	 * @param  string $min_media  Min Media breakpoint.
+	 * @param  string $max_media  Max Media breakpoint.
+	 * @return string             Generated CSS.
+	 */
+	function influence_blog_parse_css( $css_output = array(), $min_media = '', $max_media = '' ) {
+
+		$parse_css = '';
+
+		if ( is_array( $css_output ) && count( $css_output ) > 0 ) {
+
+			foreach ( $css_output as $selector => $properties ) {
+
+				if ( ! count( $properties ) ) {
+
+					continue;
+                }
+
+				$temp_parse_css   = $selector . '{';
+
+				$properties_added = 0;
+
+				foreach ( $properties as $property => $value ) {
+
+					if ( '' === $value ) {
+
+						continue;
+                    }
+
+					$properties_added++;
+
+					$temp_parse_css .= $property . ':' . $value . ';';
+				}
+
+				$temp_parse_css .= '}';
+
+				if ( $properties_added > 0 ) {
+
+					$parse_css .= $temp_parse_css;
+				}
+			}
+
+			if ( '' != $parse_css && ( '' !== $min_media || '' !== $max_media ) ) {
+
+				$media_css       = '@media ';
+				$min_media_css   = '';
+				$max_media_css   = '';
+				$media_separator = '';
+
+				if ( '' !== $min_media ) {
+
+					$min_media_css = '(min-width:' . $min_media . 'px)';
+				}
+
+				if ( '' !== $max_media ) {
+
+					$max_media_css = '(max-width:' . $max_media . 'px)';
+				}
+
+				if ( '' !== $min_media && '' !== $max_media ) {
+					$media_separator = ' and ';
+				}
+
+				$media_css .= $min_media_css . $media_separator . $max_media_css . '{' . $parse_css . '}';
+
+				return $media_css;
+			}
+		}
+
+		return $parse_css;
+	}
+}
+
+if ( !function_exists( 'influence_blog_trim_css' ) ) {
+    /**
+     * Trim CSS
+     *
+     * @since 1.0.0
+     * @param string $css CSS content to trim.
+     * @return string
+     */
+    function influence_blog_trim_css( $css = '' ) {
+
+        // Trim white space for faster page loading.
+        if ( ! empty( $css ) ) {
+
+            $css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+
+            $css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );
+
+            $css = str_replace( ', ', ',', $css );
+        }
+
+        return $css;
+    }
+}
 
 
 /**
