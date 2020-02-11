@@ -24,7 +24,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
 			'site_layout_container_style'      => 'uniform',
 			'site_layout_content_width'        => 80,
 			'site_layout_sidebar_width'        => 20,
-			'site_layout_style_design_options' => 'image',
+			'site_layout_style_design_options' => 'color',
 			'site_layout_style_design_outside' => '#000000',
 			'site_layout_style_design_inside'  => '#ffffff',
 			'site_layout_container_design_bg'  => 'rgba(255,255,255,0)',
