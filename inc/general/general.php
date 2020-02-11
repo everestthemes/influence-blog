@@ -102,6 +102,7 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 		add_theme_support( 'custom-background', apply_filters( 'influence_blog_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
+			'wp-head-callback' => 'influence_blog_custom_bg_image',
 		) ) );
 
 		// Add theme support for selective refresh for widgets.
