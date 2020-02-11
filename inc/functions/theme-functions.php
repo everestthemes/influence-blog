@@ -221,6 +221,8 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
 
         $style = $color ? "background-color: #$color;" : '';
 
+        $bg_style = '';
+
         if ( $background ) {
             $image = " background-image: url('$background');";
 
@@ -239,13 +241,15 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
                 $attachment = 'scroll';
             $attachment = " background-attachment: $attachment;";
 
-            $style .= $image . $repeat . $position . $attachment;
+            $bg_style = $image . $repeat . $position . $attachment;
         }
     ?>
     <style type="text/css" id="custom-background-css">
-        body.wide .page-wrap,
-        body.boxed .page-wrap,
-        body.framed .page-wrap {
+        body.boxed,
+        body.framed {
+            <?php echo trim( $bg_style ); ?>
+        }
+        body.wide {
             <?php echo trim( $style ); ?>
         }
     </style>
