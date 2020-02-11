@@ -30,13 +30,11 @@ body.framed  .page-wrap{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0;
     border: 1px solid #eee;
+    background-color: white;
 }
 
 body.boxed .page-wrap{
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: repeat;
-    background-color: #eee;
+    background-color: white;
     margin: 0 auto;
     padding:0;
     max-width: 1170px;
