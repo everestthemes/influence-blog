@@ -37,6 +37,7 @@ $button_one_array = array(
 
 $button_two_array = array(
     'influence_blog_site_layout_style_design_heading'    => array(),
+    'influence_blog_site_layout_style_design_is_image_info'    => array(),
     'influence_blog_site_layout_style_design_options'    => array(),
     'background_image'    => array(),
     'background_preset'    => array(),
@@ -286,9 +287,25 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'site-layout-style-design-heading' ),
-    'controls_to_wrap'         => 10,
+    'controls_to_wrap'         => 11,
     'expanded'                 => true,
     'priority'                 => 50,
+) ) );
+
+/*---------------------------------- Layout style is wide and selected image info -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_site_layout_style_design_is_image_info', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_site_layout_style_design_is_image_info', array(
+    'label'                    => esc_html__( 'Note', 'influence-blog' ),
+    'description'              => esc_html__( 'Image is only suitable for Boxed and Framed layouts.', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'info-one',
+    'info_type'                => 'schedule',
+    'priority'                 => 50,
+    'active_callback'          => 'influence_blog_is_site_layout_design_options_image_wide',
 ) ) );
 
 /*---------------------------------- Layout style for image/color -----------------------------------*/

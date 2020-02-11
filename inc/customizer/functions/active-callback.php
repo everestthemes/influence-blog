@@ -36,7 +36,25 @@ if( ! function_exists( 'influence_blog_is_site_layout_design_options_image' ) ) 
 
 	function influence_blog_is_site_layout_design_options_image( $control ) {
 
-		if ( $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'image' ) {
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'image' && $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() !== 'wide' ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for site layout design options image and wide layout is selected.
+ */
+if( ! function_exists( 'influence_blog_is_site_layout_design_options_image_wide' ) ) {
+
+	function influence_blog_is_site_layout_design_options_image_wide( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style_design_options' )->value() == 'image' && $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() == 'wide' ) {
 
 			return true;
 
