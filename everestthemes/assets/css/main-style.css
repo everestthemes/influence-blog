@@ -28,11 +28,11 @@ body.framed {
     padding:0;
     max-width: 1170px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border:1px solid #eee;
+    border-radius: 20px;
+    border: 1px dashed #e9b105;
 }
 
 body.boxed {
-    background-attachment: fixed;
     background-size: cover;
     background-position: 50%;
     background-repeat: repeat;
@@ -41,7 +41,8 @@ body.boxed {
     padding:0;
     max-width: 1170px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border:1px solid #eee;
+    border-radius: 20px;
+    border: 1px dotted #e9b105;
 }
 
 
