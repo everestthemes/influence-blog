@@ -20,7 +20,95 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $parse_css = '';
 
-        /*---------------------------------- Site layout -----------------------------------*/
+        /*-----------------------------------------------------------------------------
+							 Site layout
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $site_layout_style = ifb_get_mod( 'site_layout_style' );
+        $site_layout_style_design_options = ifb_get_mod( 'site_layout_style_design_options' );
+
+        if( $site_layout_style !== 'wide' ) {
+
+            if( $site_layout_style_design_options == 'color' ) {
+
+                $site_layout_style_design_outside = ifb_get_mod( 'site_layout_style_design_outside' );
+                $site_layout_style_design_inside = ifb_get_mod( 'site_layout_style_design_inside' );
+
+                $site_layout_design_css = array(
+                    'body.framed, body.boxed' => array(
+                        'background-color' => esc_attr( $site_layout_style_design_outside ),
+                    ),
+                    'body.boxed .page-wrap, body.framed .page-wrap' => array(
+                        'background-color' => esc_attr( $site_layout_style_design_inside ),
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $site_layout_design_css
+                );
+
+                $parse_css .= influence_blog_parse_css( $output_css );
+
+                $output_css = array();
+
+            }
+        }
+
+        /*---------------------------------- Advance Section -----------------------------------*/
+
+        $site_layout_advance_toggle = ifb_get_mod( 'site_layout_advance_toggle' );
+
+        if( $site_layout_advance_toggle ) {
+
+            $site_layout_style_advance_d_p_top = ifb_get_mod( 'site_layout_style_advance_d_p_top' );
+            $site_layout_style_advance_d_p_right = ifb_get_mod( 'site_layout_style_advance_d_p_right' );
+            $site_layout_style_advance_d_p_bottom = ifb_get_mod( 'site_layout_style_advance_d_p_bottom' );
+            $site_layout_style_advance_d_p_left = ifb_get_mod( 'site_layout_style_advance_d_p_left' );
+
+            $site_layout_advance_wide_css = array(
+                'body.wide, body.boxed .page-warp, body.framed .page-warp' => array(
+                    'padding-top' => $site_layout_style_advance_d_p_top . 'px',
+                    'padding-right' => $site_layout_style_advance_d_p_right . 'px',
+                    'padding-bottom' => $site_layout_style_advance_d_p_bottom . 'px',
+                    'padding-left' => $site_layout_style_advance_d_p_left . 'px',
+                ),
+            );
+
+            $output_css = array_merge(
+                $site_layout_advance_wide_css
+            );
+
+            $parse_css .= influence_blog_parse_css( $output_css );
+
+            $output_css = array();
+
+            if( $site_layout_style == 'boxed' ) {
+
+                $site_layout_style_advance_b_d_m_right = ifb_get_mod( 'site_layout_style_advance_b_d_m_right' );
+                $site_layout_style_advance_b_d_m_left = ifb_get_mod( 'site_layout_style_advance_b_d_m_left' );
+
+                $site_layout_advance_box_css = array(
+                    'body.boxed .page-wrap' => array(
+                        'margin-right' => $site_layout_style_advance_b_d_m_right . 'px',
+                        'margin-left' => $site_layout_style_advance_b_d_m_left . 'px',
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $site_layout_advance_box_css
+                );
+
+                $parse_css .= influence_blog_parse_css( $output_css );
+
+                $output_css = array();
+            }
+        }
+
+        /*-----------------------------------------------------------------------------
+							 Typography Section
+        -----------------------------------------------------------------------------*/
 
         /*---------------------------------- Global typography -----------------------------------*/
 
