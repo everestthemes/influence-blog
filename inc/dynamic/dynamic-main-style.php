@@ -20,6 +20,8 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $parse_css = '';
 
+        /*---------------------------------- Site layout -----------------------------------*/
+
         /*---------------------------------- Global typography -----------------------------------*/
 
         //body typography
