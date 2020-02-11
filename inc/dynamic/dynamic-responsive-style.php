@@ -122,6 +122,55 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $heading_H6_css_t
         );
 
+        /*---------------------------------- Site layout advance -----------------------------------*/
+
+        $site_layout_style = ifb_get_mod( 'site_layout_style' );
+        $site_layout_advance_toggle = ifb_get_mod( 'site_layout_advance_toggle' );
+
+        if( $site_layout_advance_toggle ) {
+
+            $site_layout_style_advance_t_p_top = ifb_get_mod( 'site_layout_style_advance_t_p_top' );
+            $site_layout_style_advance_t_p_right = ifb_get_mod( 'site_layout_style_advance_t_p_right' );
+            $site_layout_style_advance_t_p_bottom = ifb_get_mod( 'site_layout_style_advance_t_p_bottom' );
+            $site_layout_style_advance_t_p_left = ifb_get_mod( 'site_layout_style_advance_t_p_left' );
+
+            $site_layout_advance_wide_css_t = array(
+                'body.wide, body.boxed .page-wrap, body.framed .page-wrap' => array(
+                    'padding-top' => $site_layout_style_advance_t_p_top . 'px',
+                    'padding-right' => $site_layout_style_advance_t_p_right . 'px',
+                    'padding-bottom' => $site_layout_style_advance_t_p_bottom . 'px',
+                    'padding-left' => $site_layout_style_advance_t_p_left . 'px',
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $site_layout_advance_wide_css_t
+            );
+
+            if( $site_layout_style == 'boxed' ) {
+
+                $site_layout_style_advance_b_t_m_right = ifb_get_mod( 'site_layout_style_advance_b_t_m_right' );
+                $site_layout_style_advance_b_t_m_left = ifb_get_mod( 'site_layout_style_advance_b_t_m_left' );
+
+                $site_layout_advance_box_css_t = array(
+                    'body.boxed .page-wrap' => array(
+                        'margin-right' => $site_layout_style_advance_b_t_m_right . 'px',
+                        'margin-left' => $site_layout_style_advance_b_t_m_left . 'px',
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $output_css,
+                    $site_layout_advance_box_css_t
+                );
+            }
+        }
+
+
+
+
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
         $output_css = array();
@@ -227,6 +276,48 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $heading_H5_css_m,
             $heading_H6_css_m
         );
+
+        /*---------------------------------- Site layout advance -----------------------------------*/
+
+        if( $site_layout_advance_toggle ) {
+
+            $site_layout_style_advance_m_p_top = ifb_get_mod( 'site_layout_style_advance_m_p_top' );
+            $site_layout_style_advance_m_p_right = ifb_get_mod( 'site_layout_style_advance_m_p_right' );
+            $site_layout_style_advance_m_p_bottom = ifb_get_mod( 'site_layout_style_advance_m_p_bottom' );
+            $site_layout_style_advance_m_p_left = ifb_get_mod( 'site_layout_style_advance_m_p_left' );
+
+            $site_layout_advance_wide_css_m = array(
+                'body.wide, body.boxed .page-wrap, body.framed .page-wrap' => array(
+                    'padding-top' => $site_layout_style_advance_m_p_top . 'px',
+                    'padding-right' => $site_layout_style_advance_m_p_right . 'px',
+                    'padding-bottom' => $site_layout_style_advance_m_p_bottom . 'px',
+                    'padding-left' => $site_layout_style_advance_m_p_left . 'px',
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $site_layout_advance_wide_css_m
+            );
+
+            if( $site_layout_style == 'boxed' ) {
+
+                $site_layout_style_advance_b_m_m_right = ifb_get_mod( 'site_layout_style_advance_b_m_m_right' );
+                $site_layout_style_advance_b_m_m_left = ifb_get_mod( 'site_layout_style_advance_b_m_m_left' );
+
+                $site_layout_advance_box_css_m = array(
+                    'body.boxed .page-wrap' => array(
+                        'margin-right' => $site_layout_style_advance_b_m_m_right . 'px',
+                        'margin-left' => $site_layout_style_advance_b_m_m_left . 'px',
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $output_css,
+                    $site_layout_advance_box_css_m
+                );
+            }
+        }
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 
