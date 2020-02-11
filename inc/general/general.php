@@ -251,7 +251,27 @@ function influence_blog_scripts() {
 
 	wp_enqueue_style( 'influence-blog-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'influence-blog-google-fonts', influence_blog_fonts_url() );
+    $google_fonts_url = Influence_Blog_Google_Fonts::get_google_fonts_url();
+
+    $body_font_family = influence_blog_get_font_data( 'typo_body_font' );
+    $heading_font_family = influence_blog_get_font_data( 'typo_heading_font' );
+
+    $system_stack = [ 'Arial', 'Verdana','Helvetica', 'Tahoma', 'Georgia', 'Times New Roman' ];
+
+    //fonts
+    if ( $google_fonts_url ) {
+        if ( !( in_array( $body_font_family, $system_stack ) && in_array( $heading_font_family, $system_stack ) ) ) {
+
+            wp_enqueue_style( 'influence-blog-google-fonts', $google_fonts_url, false, IFB_VERSION, 'all' );
+        }
+
+    } else {
+
+        if ( !( in_array( $body_font_family, $system_stack ) && in_array( $heading_font_family, $system_stack ) ) ) {
+
+            wp_enqueue_style( 'influence-blog-google-fonts', influence_blog_default_fonts(), array(), IFB_VERSION );
+        }
+    }
 
     wp_enqueue_style( 'influence-blog-reset', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/reset.css' );
 
@@ -261,13 +281,19 @@ function influence_blog_scripts() {
 
     wp_enqueue_style( 'font-awesome', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/font-awesome.min.css' );
 
+    wp_enqueue_style( 'slick', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.css' );
+
     wp_enqueue_style( 'influence-blog-main-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/main-style.css' );
+
+    wp_add_inline_style( 'influence-blog-main-style', apply_filters( 'influence_blog_dynamic_main_style', influence_blog_dynamic_main_style() ) );
 
     wp_enqueue_style( 'influence-blog-default-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/default-style.css' );
 
-    wp_enqueue_style( 'slick', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.css' );
+    wp_add_inline_style( 'influence-blog-default-style', apply_filters( 'influence_blog_dynamic_default_style', influence_blog_dynamic_default_style() ) );
 
-    wp_enqueue_style( 'influence-blog-responsive', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/responsive.css' );
+    wp_enqueue_style( 'influence-blog-responsive-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/responsive.css' );
+
+    wp_add_inline_style( 'influence-blog-responsive-style', apply_filters( 'influence_blog_dynamic_responsive_style', influence_blog_dynamic_responsive_style() ) );
 
     wp_enqueue_script( 'slick', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.min.js', array( 'jquery' ), IFB_VERSION, true );
 
