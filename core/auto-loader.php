@@ -56,6 +56,16 @@ if( !defined( 'IFB_INC_WIDGETS_PATH_URI' ) ) {
     define( 'IFB_INC_WIDGETS_PATH_URI', IFB_INC_PATH_URI . '/widgets/' );
 }
 
+if( !defined( 'IFB_INC_DYNAMIC_PATH' ) ) {
+
+    define( 'IFB_INC_DYNAMIC_PATH', IFB_INC_PATH . '/dynamic/' );
+}
+
+if( !defined( 'IFB_INC_DYNAMIC_PATH_URI' ) ) {
+
+    define( 'IFB_INC_DYNAMIC_PATH_URI', IFB_INC_PATH_URI . '/dynamic/' );
+}
+
 if( !defined( 'IFB_INC_THIRD_PARTY_PATH' ) ) {
 
     define( 'IFB_INC_THIRD_PARTY_PATH', IFB_INC_PATH . '/third-party/' );
@@ -108,9 +118,19 @@ $customizer_args = array( 'customizer' );
 $widgets_args = array( 'widgets' );
 
 /*
+* Dynamic arguments
+*/
+$dynamic_args = array(
+    'dynamic-default-style',
+    'dynamic-main-style',
+    'dynamic-responsive-style',
+);
+
+/*
 * Third Party arguments
 */
 $third_party_args = array(
+    'class-google-fonts',
     'breadcrumbs',
     'class-tgm-plugin-activation',
 );
@@ -124,6 +144,7 @@ ifb_blog_require_file( IFB_INC_GENERAL_PATH, $general_args );
 ifb_blog_require_file( IFB_INC_FUNCTIONS_PATH, $functions_args );
 ifb_blog_require_file( IFB_INC_CUSTOMIZER_PATH, $customizer_args );
 ifb_blog_require_file( IFB_INC_WIDGETS_PATH, $widgets_args );
+ifb_blog_require_file( IFB_INC_DYNAMIC_PATH, $dynamic_args );
 ifb_blog_require_file( IFB_INC_THIRD_PARTY_PATH, $third_party_args );
 ifb_blog_require_file( IFB_INC_CUSTOM_FIELDS_PATH, $custom_fields_args );
 
