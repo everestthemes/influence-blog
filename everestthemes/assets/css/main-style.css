@@ -19,8 +19,13 @@ body.wide  {
     margin:0 auto;
     padding:0;
     max-width: 1170px;
+    
 }
 
+body.framed ,
+body.boxed{
+    background-color: white;
+} 
 body.framed  .page-wrap{
     width: 80vw !important;
     max-width: 80vw !important;
