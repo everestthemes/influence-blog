@@ -35,3 +35,5 @@
     */
     do_action( 'influence_blog_header' );
     ?>
+    <div class="container-style-<?php echo esc_attr( influence_blog_site_layout_container_style() ); ?>">
+

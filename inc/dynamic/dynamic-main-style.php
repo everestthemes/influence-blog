@@ -241,11 +241,51 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $output_css = array();
 
+        /*-----------------------------------------------------------------------------
+							 Color Section
+        -----------------------------------------------------------------------------*/
 
+        /*---------------------------------- Global color -----------------------------------*/
 
+        $color_theme = ifb_get_mod( 'color_theme' );
+        $color_text = ifb_get_mod( 'color_text' );
+        $color_link = ifb_get_mod( 'color_link' );
+        $color_link_hover = ifb_get_mod( 'color_link_hover' );
 
+        $color_theme_css = array(
+            '.foot-top-sec' => array(
+                'background-color' => esc_attr( $color_theme ),
+            ),
+        );
 
+        $color_text_css = array(
+            'p' => array(
+                'color' => esc_attr( $color_text ),
+            ),
+        );
 
+        $color_link_css = array(
+            'a' => array(
+                'color' => esc_attr( $color_link ),
+            ),
+        );
+
+        $color_link_hover_css = array(
+            'a:hover' => array(
+                'color' => esc_attr( $color_link_hover ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $color_theme_css,
+            $color_text_css,
+            $color_link_css,
+            $color_link_hover_css
+        );
+
+        $parse_css .= influence_blog_parse_css( $output_css );
+
+        $output_css = array();
 
 
 

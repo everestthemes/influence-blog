@@ -10,7 +10,8 @@
  */
 
 ?>
-
+</div>
+<!--container-style-->
     <?php
     /**
     * Hook - influence_blog_header
