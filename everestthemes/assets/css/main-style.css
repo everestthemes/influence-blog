@@ -58,7 +58,21 @@ body.boxed .page-wrap {
 
 }
 
+.container-style-boxed .single {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
 
+
+
+
+.container-style-content-boxed  .secondary-widget-area {
+    background-color: white;
+    padding: 0px 5px 5px 5px;
+    margin-top: -60px;
+    padding-top: 0 !important;
+}
 
 h1,
 h2,
