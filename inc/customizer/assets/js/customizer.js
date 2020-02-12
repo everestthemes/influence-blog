@@ -1499,5 +1499,81 @@
         } );
     } );
 
+    /*-----------------------------------------------------------------------------
+							 Global color
+    -----------------------------------------------------------------------------*/
+
+    /*---------------------------------- theme color -----------------------------------*/
+
+    c( 'influence_blog_color_theme', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_color_theme' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_color_theme">.foot-top-sec { background-color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    /*---------------------------------- text color -----------------------------------*/
+
+    c( 'influence_blog_color_text', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_color_text' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_color_text">p { color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    /*---------------------------------- link color -----------------------------------*/
+
+    c( 'influence_blog_color_link', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_color_link' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_color_link">a { color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    /*---------------------------------- link hover color -----------------------------------*/
+
+    c( 'influence_blog_color_link_hover', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_color_link_hover' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_color_link_hover">a:hover { color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
 
 } )( jQuery );
