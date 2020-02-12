@@ -104,6 +104,26 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
                 $output_css = array();
             }
+
+            if( $site_layout_style !== 'wide' ) {
+
+                $site_layout_style_advance_boxed_border_radius = ifb_get_mod( 'site_layout_style_advance_boxed_border_radius' );
+
+                $site_layout_advance_box_border_radius_css = array(
+                    'body.boxed .page-wrap, body.framed .page-wrap' => array(
+                        'border-top-left-radius' => $site_layout_style_advance_boxed_border_radius . 'px',
+                        'border-top-right-radius' => $site_layout_style_advance_boxed_border_radius . 'px',
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $site_layout_advance_box_border_radius_css
+                );
+
+                $parse_css .= influence_blog_parse_css( $output_css );
+
+                $output_css = array();
+            }
         }
 
         /*-----------------------------------------------------------------------------

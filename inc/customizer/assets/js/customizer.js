@@ -275,6 +275,22 @@
         } );
     } );
 
+    c( 'influence_blog_site_layout_style_advance_boxed_border_radius', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_site_layout_style_advance_boxed_border_radius' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_site_layout_style_advance_boxed_border_radius">body.boxed .page-wrap, body.framed .page-wrap { border-radius: ' + to + 'px; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
     c( 'influence_blog_site_layout_style_advance_b_d_m_right', function( value ) {
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_site_layout_style_advance_b_d_m_right' );

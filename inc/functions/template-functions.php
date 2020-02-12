@@ -247,7 +247,7 @@ if( ! function_exists( 'influence_blog_main_container_class' ) ) {
 
 	function influence_blog_main_container_class() {
 
-		$container_class = '';
+		$container_class = 'primary-widget-area';
 
         $sidebar_position = influence_blog_sidebar_position();
 
@@ -255,11 +255,11 @@ if( ! function_exists( 'influence_blog_main_container_class' ) ) {
 
 		if( $sidebar_position == 'none' || !is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
-            $container_class = 'col-md-12 col-lg-12';
+            $container_class .= ' col-md-12 col-lg-12';
 
 		} else {
 
-			$container_class = 'col-12 col-md-6 col-lg-9';
+			$container_class .= ' col-12 col-md-6 col-lg-9';
 		}
 
 		if( $sticky_enabled == true && $sidebar_position != 'none' ) {

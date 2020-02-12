@@ -26,7 +26,6 @@ $button_one_array = array(
     'influence_blog_site_layout_style_info'         => array(),
     'influence_blog_site_layout_style'              => array(),
     'influence_blog_site_layout_container_heading'  => array(),
-    'influence_blog_site_layout_container_width'    => array(),
     'influence_blog_site_layout_container_info'     => array(),
     'influence_blog_site_layout_container_style'    => array(),
     'influence_blog_site_layout_content_heading'    => array(),
@@ -62,6 +61,7 @@ $button_three_array = array(
     'influence_blog_site_layout_style_advance_p'           => array(),
     'influence_blog_site_layout_style_advance_box_m'       => array(),
     'influence_blog_site_layout_style_advance_f_m'         => array(),
+    'influence_blog_site_layout_style_advance_boxed_border_radius' => array(),
     'influence_blog_site_layout_container_advance_heading' => array(),
     'influence_blog_site_layout_container_advance_b_p'     => array(),
     'influence_blog_site_layout_container_advance_b_m'     => array(),
@@ -146,29 +146,9 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'site-layout-container-heading' ),
-    'controls_to_wrap'         => 3,
+    'controls_to_wrap'         => 2,
     'expanded'                 => false,
     'priority'                 => 30,
-) ) );
-
-/*---------------------------------- Container width -----------------------------------*/
-
-$wp_customize->add_setting( 'influence_blog_site_layout_container_width', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
-    'transport' 		       => 'postMessage',
-    'default'                  => influence_blog_defaults( 'site_layout_container_width' ),
-) );
-
-$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_site_layout_container_width', array(
-    'label'                    => esc_html__( 'Container Width', 'influence-blog' ) . esc_html( ' (px) ' ),
-    'section'                  => $section,
-    'type'                     => 'range-slider-one',
-    'input_attrs'              => array(
-        'min'                  => 780,
-        'max'                  => 1920,
-        'step'                 => 1,
-    ),
-    'priority'                 => 35,
 ) ) );
 
 /*---------------------------------- Container Style Info -----------------------------------*/
@@ -445,7 +425,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'site-layout-style-advance-heading' ),
-    'controls_to_wrap'         => 3,
+    'controls_to_wrap'         => 4,
     'expanded'                 => true,
     'priority'                 => 100,
     'active_callback'          => 'influence_blog_not_site_layout_advance_toggle',
@@ -689,6 +669,27 @@ $wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence
     ),
     'priority' 				   => 115,
     'active_callback'          => 'influence_blog_is_site_layout_style_framed_advance',
+) ) );
+
+/*---------------------------------- Layout style border radius -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_radius', array(
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'transport' 		       => 'postMessage',
+    'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_radius' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_site_layout_style_advance_boxed_border_radius', array(
+    'label'                    => esc_html__( 'Border Radius', 'influence-blog' ) . esc_html( ' (px) ' ),
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 0,
+        'max'                  => 50,
+        'step'                 => 1,
+    ),
+    'priority'                 => 120,
+    'active_callback'          => 'influence_blog_not_site_layout_style_wide_advance',
 ) ) );
 
 /*---------------------------------- Layout container heading -----------------------------------*/

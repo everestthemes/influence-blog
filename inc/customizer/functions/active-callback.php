@@ -120,6 +120,24 @@ if( ! function_exists( 'influence_blog_not_site_layout_advance_toggle' ) ) {
 }
 
 /**
+ * Active callback function for site layout style wide and advance true is selected.
+ */
+if( ! function_exists( 'influence_blog_not_site_layout_style_wide_advance' ) ) {
+
+	function influence_blog_not_site_layout_style_wide_advance( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_site_layout_style' )->value() !== 'wide' && $control->manager->get_setting( 'influence_blog_site_layout_advance_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for site layout style box and advance true is selected.
  */
 if( ! function_exists( 'influence_blog_is_site_layout_style_box_advance' ) ) {
