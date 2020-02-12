@@ -23,22 +23,24 @@ $sidebar_position = influence_blog_sidebar_position();
             }
             ?>
             <div class="<?php influence_blog_main_container_class(); ?>">
-                <?php
-                if( have_posts() ) :
+                <aside id="primary" class="primary-widget-area">
+                    <?php
+                    if( have_posts() ) :
 
-                    while( have_posts() ) :
-                        the_post();
+                        while( have_posts() ) :
+                            the_post();
 
-                        get_template_part( 'template-parts/content', get_post_type() );
+                            get_template_part( 'template-parts/content', get_post_type() );
 
-                    endwhile;
+                        endwhile;
 
-                else :
+                    else :
 
-                    get_template_part( 'template-parts/content', 'none' );
+                        get_template_part( 'template-parts/content', 'none' );
 
-                endif;
-                ?>
+                    endif;
+                    ?>
+                </aside>
             </div><!--//col-12 col-lg-9-->
             <?php
                 
