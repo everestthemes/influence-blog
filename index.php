@@ -38,11 +38,13 @@ $sidebar_position = influence_blog_sidebar_position();
                 
                 ?>
                 <div class="<?php influence_blog_main_container_class(); ?>">
-                    <?php
-                    
-                    influence_blog_post_listing_layout_template();
-                    
-                    ?>
+                    <aside id="primary" class="primary-widget-area">
+                        <?php
+
+                        influence_blog_post_listing_layout_template();
+
+                        ?>
+                    </aside>
                 </div><!--//col-12 col-md-6 col-lg-9-->
                 <?php
                 
