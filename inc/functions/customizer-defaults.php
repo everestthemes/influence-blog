@@ -42,13 +42,15 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'site_layout_style_advance_m_p_right' => 20,
             'site_layout_style_advance_m_p_bottom' => 30,
             'site_layout_style_advance_m_p_left' => 40,
-            //Site layout- style -boxed - margin
+            //Site layout - style -boxed - margin
             'site_layout_style_advance_b_d_m_right' => 10,
             'site_layout_style_advance_b_d_m_left' => 30,
             'site_layout_style_advance_b_t_m_right' => 30,
             'site_layout_style_advance_b_t_m_left' => 10,
             'site_layout_style_advance_b_m_m_right' => 10,
             'site_layout_style_advance_b_m_m_left' => 30,
+            //Site layout - style - boxed - border radius
+            'site_layout_style_advance_boxed_border_radius' => 0,
             //Site layout - style - framed - margin
             'site_layout_style_advance_f_d_m_top' => 50,
             'site_layout_style_advance_f_d_m_right' => 0,
@@ -187,6 +189,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'color_text' => '#000000',
             'color_link' => '#ffffff',
             'color_link_hover' => '#000000',
+            'reset_toggle' => false,
 		);
 
         $defaults = apply_filters( 'influence_blog_filter_defaults_array', $defaults );
