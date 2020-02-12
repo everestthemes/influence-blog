@@ -32,7 +32,6 @@ body.framed .page-wrap {
     max-width: 80vw;
     margin: 0;
     padding: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0;
     border: 1px solid #eee;
     background-color: white;
@@ -46,7 +45,6 @@ body.boxed .page-wrap {
     background-color: white;
     padding: 0;
     margin: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0;
     border: 1px solid #eee;
     position: relative;
@@ -58,22 +56,57 @@ body.boxed .page-wrap {
 
 }
 
-.container-style-boxed .single {
+.container-style-content-boxed  .primary-widget-area,
+.container-style-boxed  .primary-widget-area{
     background-color: white;
     padding: 30px;
     margin-bottom: 30px;
 }
 
-
-
-
-.container-style-content-boxed  .secondary-widget-area {
+.container-style-boxed .secondary-widget-area .widget{
     background-color: white;
-    padding: 0px 5px 5px 5px;
-    margin-top: -60px;
-    padding-top: 0 !important;
+    padding:15px;
+    margin-top:30px;   
 }
 
+.container-style-boxed .secondary-widget-area .widget .side-tt{
+    margin-top:0px;
+    margin-bottom:15px;
+}
+
+.container-style-boxed .primary-widget-area.secondary-widget-area{
+    margin-top:-30px;
+}
+
+.container-style-boxed .secondary-widget-area .side-tt .s-title,
+{
+    padding:0 0 0 5px;
+}
+.container-style-content-boxed .widget_meta>ul>li,
+.container-style-boxed  .widget_meta>ul>li {
+    margin:0;
+}
+.container-style-content-boxed .canvas-recent-post .title-sec,
+.container-style-boxed .widget-title,
+.container-style-boxed .canvas-recent-post .title-sec{
+    padding:5px 0 5px ;
+    background-color: transparent;
+
+}
+
+.container-style-uniform .secondary-widget-area .widget_meta  .side-tt{
+    margin-bottom: 15px;
+    padding:0;
+}
+.container-style-content-boxed 
+.secondary-widget-area .widget_meta .side-tt{
+   
+    margin-bottom:15px;
+}
+.container-style-content-boxed 
+.secondary-widget-area .widget_meta .side-tt .s-title{
+    padding:0;
+}
 h1,
 h2,
 h3,
@@ -1858,9 +1891,9 @@ Single-post layout-1
 
 .secondary-widget-area .side-tt .s-title {
     margin-bottom: 0;
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
     font-family: Lato, sans-serif;
 }
 
