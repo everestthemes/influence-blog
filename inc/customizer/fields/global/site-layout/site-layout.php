@@ -49,6 +49,7 @@ $button_two_array = array(
     'background_color'    => array(),
     'influence_blog_site_layout_style_design_outside'     => array(),
     'influence_blog_site_layout_style_design_inside'      => array(),
+    'influence_blog_site_layout_style_design_box_shadow_toggle' => array(),
     'influence_blog_site_layout_container_design_heading' => array(),
     'influence_blog_site_layout_container_design_info'    => array(),
     'influence_blog_site_layout_container_design_bg'      => array(),
@@ -62,6 +63,8 @@ $button_three_array = array(
     'influence_blog_site_layout_style_advance_box_m'       => array(),
     'influence_blog_site_layout_style_advance_f_m'         => array(),
     'influence_blog_site_layout_style_advance_boxed_border_radius' => array(),
+    'influence_blog_site_layout_style_advance_boxed_border_width' => array(),
+    'influence_blog_site_layout_style_advance_boxed_border_color' => array(),
     'influence_blog_site_layout_container_advance_heading' => array(),
     'influence_blog_site_layout_container_advance_b_p'     => array(),
     'influence_blog_site_layout_container_advance_b_m'     => array(),
@@ -267,7 +270,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'site-layout-style-design-heading' ),
-    'controls_to_wrap'         => 11,
+    'controls_to_wrap'         => 12,
     'expanded'                 => true,
     'priority'                 => 50,
 ) ) );
@@ -332,6 +335,21 @@ $wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blo
     'type'                     => 'color-one',
     'active_callback'          => 'influence_blog_not_site_layout_style_wide',
     'priority'                 => 65,
+) ) );
+
+/*---------------------------------- Layout style design for box shadow color  -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_site_layout_style_design_box_shadow_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'site_layout_style_design_box_shadow_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_site_layout_style_design_box_shadow_toggle', array(
+    'label'                    => esc_html__( 'Display Box Shadow', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-two',
+    'active_callback'          => 'influence_blog_not_site_layout_style_wide',
+    'priority'                 => 67,
 ) ) );
 
 /*---------------------------------- Container Style Heading -----------------------------------*/
@@ -425,7 +443,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'site-layout-style-advance-heading' ),
-    'controls_to_wrap'         => 4,
+    'controls_to_wrap'         => 6,
     'expanded'                 => true,
     'priority'                 => 100,
     'active_callback'          => 'influence_blog_not_site_layout_advance_toggle',
@@ -688,6 +706,43 @@ $wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influ
         'max'                  => 50,
         'step'                 => 1,
     ),
+    'priority'                 => 120,
+    'active_callback'          => 'influence_blog_not_site_layout_style_wide_advance',
+) ) );
+
+/*---------------------------------- Layout style border width -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_width', array(
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'transport' 		       => 'postMessage',
+    'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_width' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_site_layout_style_advance_boxed_border_width', array(
+    'label'                    => esc_html__( 'Border Width', 'influence-blog' ) . esc_html( ' (px) ' ),
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 0,
+        'max'                  => 5,
+        'step'                 => 1,
+    ),
+    'priority'                 => 120,
+    'active_callback'          => 'influence_blog_not_site_layout_style_wide_advance',
+) ) );
+
+/*---------------------------------- Layout style border color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_site_layout_style_advance_boxed_border_color', array(
+    'label'                    => esc_html__( 'Border Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
     'priority'                 => 120,
     'active_callback'          => 'influence_blog_not_site_layout_style_wide_advance',
 ) ) );

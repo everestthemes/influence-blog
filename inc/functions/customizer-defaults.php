@@ -27,6 +27,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
 			'site_layout_style_design_options' => 'color',
 			'site_layout_style_design_outside' => '#ffffff',
 			'site_layout_style_design_inside'  => '#ffffff',
+			'site_layout_style_design_box_shadow_toggle'=> true,
 			'site_layout_container_design_bg'  => 'rgba(255,255,255,0)',
 			'site_layout_advance_toggle'       => false,
             //Site layout - style -padding
@@ -51,6 +52,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'site_layout_style_advance_b_m_m_left' => 30,
             //Site layout - style - boxed - border radius
             'site_layout_style_advance_boxed_border_radius' => 0,
+            'site_layout_style_advance_boxed_border_width' => 1,
+            'site_layout_style_advance_boxed_border_color' => '#eee',
             //Site layout - style - framed - margin
             'site_layout_style_advance_f_d_m_top' => 50,
             'site_layout_style_advance_f_d_m_right' => 0,

@@ -33,9 +33,9 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
         $body_css_t = array(
             'body' => array(
-                'font-size' => esc_attr( $body_font_size_t ) . 'px',
+                'font-size' => esc_attr( $body_font_size_t . 'px' ),
                 'line-height' => esc_attr( $body_line_height_t ),
-                'letter-spacing' => esc_attr( $body_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $body_letter_spacing_t . 'px' ),
             ),
         );
 
@@ -66,49 +66,49 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
         $heading_H1_css_t = array(
             'h1' => array(
-                'font-size' => esc_attr( $heading_H1_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H1_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H1_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H1_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H1_letter_spacing_t . 'px' ),
             ),
         );
 
         $heading_H2_css_t = array(
             'h2' => array(
-                'font-size' => esc_attr( $heading_H2_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H2_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H2_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H2_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H2_letter_spacing_t . 'px' ),
             ),
         );
 
         $heading_H3_css_t = array(
             'h3' => array(
-                'font-size' => esc_attr( $heading_H3_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H3_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H3_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H3_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H3_letter_spacing_t . 'px' ),
             ),
         );
 
         $heading_H4_css_t = array(
             'h4' => array(
-                'font-size' => esc_attr( $heading_H4_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H4_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H4_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H4_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H4_letter_spacing_t . 'px' ),
             ),
         );
 
         $heading_H5_css_t = array(
             'h5' => array(
-                'font-size' => esc_attr( $heading_H5_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H5_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H5_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H5_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H5_letter_spacing_t . 'px' ),
             ),
         );
 
         $heading_H6_css_t = array(
             'h6' => array(
-                'font-size' => esc_attr( $heading_H6_font_size_t ) . 'px',
+                'font-size' => esc_attr( $heading_H6_font_size_t . 'px' ),
                 'line-height' => esc_attr( $heading_H6_line_height_t ),
-                'letter-spacing' => esc_attr( $heading_H6_letter_spacing_t ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H6_letter_spacing_t . 'px' ),
             ),
         );
 
@@ -136,10 +136,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
             $site_layout_advance_wide_css_t = array(
                 'body.wide, body.boxed .page-wrap, body.framed .page-wrap' => array(
-                    'padding-top' => $site_layout_style_advance_t_p_top . 'px',
-                    'padding-right' => $site_layout_style_advance_t_p_right . 'px',
-                    'padding-bottom' => $site_layout_style_advance_t_p_bottom . 'px',
-                    'padding-left' => $site_layout_style_advance_t_p_left . 'px',
+                    'padding-top' => esc_attr( $site_layout_style_advance_t_p_top . 'px' ),
+                    'padding-right' => esc_attr( $site_layout_style_advance_t_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $site_layout_style_advance_t_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $site_layout_style_advance_t_p_left . 'px' ),
                 ),
             );
 
@@ -155,14 +155,36 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
                 $site_layout_advance_box_css_t = array(
                     'body.boxed .page-wrap' => array(
-                        'margin-right' => $site_layout_style_advance_b_t_m_right . 'px',
-                        'margin-left' => $site_layout_style_advance_b_t_m_left . 'px',
+                        'margin-right' => esc_attr( $site_layout_style_advance_b_t_m_right . 'px' ),
+                        'margin-left' => esc_attr( $site_layout_style_advance_b_t_m_left . 'px' ),
                     ),
                 );
 
                 $output_css = array_merge(
                     $output_css,
                     $site_layout_advance_box_css_t
+                );
+            }
+
+            if( $site_layout_style == 'framed' ) {
+
+                $site_layout_style_advance_f_t_m_top = ifb_get_mod( 'site_layout_style_advance_f_t_m_top' );
+                $site_layout_style_advance_f_t_m_right = ifb_get_mod( 'site_layout_style_advance_f_t_m_right' );
+                $site_layout_style_advance_f_t_m_bottom = ifb_get_mod( 'site_layout_style_advance_f_t_m_bottom' );
+                $site_layout_style_advance_f_t_m_left = ifb_get_mod( 'site_layout_style_advance_f_t_m_left' );
+
+                $site_layout_advance_framed_css_t = array(
+                    'body.framed .page-wrap' => array(
+                        'margin-top' => esc_attr( $site_layout_style_advance_f_t_m_top . 'px' ),
+                        'margin-right' => esc_attr( $site_layout_style_advance_f_t_m_right . 'px' ),
+                        'margin-bottom' => esc_attr( $site_layout_style_advance_f_t_m_bottom . 'px' ),
+                        'margin-left' => esc_attr( $site_layout_style_advance_f_t_m_left . 'px' ),
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $output_css,
+                    $site_layout_advance_framed_css_t
                 );
             }
         }
@@ -188,9 +210,9 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
         $body_css_m = array(
             'body' => array(
-                'font-size' => esc_attr( $body_font_size_m ) . 'px',
+                'font-size' => esc_attr( $body_font_size_m . 'px' ),
                 'line-height' => esc_attr( $body_line_height_m ),
-                'letter-spacing' => esc_attr( $body_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $body_letter_spacing_m . 'px' ),
             ),
         );
 
@@ -221,49 +243,49 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
         $heading_H1_css_m = array(
             'h1' => array(
-                'font-size' => esc_attr( $heading_H1_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H1_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H1_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H1_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H1_letter_spacing_m . 'px' ),
             ),
         );
 
         $heading_H2_css_m = array(
             'h2' => array(
-                'font-size' => esc_attr( $heading_H2_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H2_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H2_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H2_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H2_letter_spacing_m . 'px' ),
             ),
         );
 
         $heading_H3_css_m = array(
             'h3' => array(
-                'font-size' => esc_attr( $heading_H3_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H3_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H3_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H3_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H3_letter_spacing_m . 'px' ),
             ),
         );
 
         $heading_H4_css_m = array(
             'h4' => array(
-                'font-size' => esc_attr( $heading_H4_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H4_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H4_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H4_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H4_letter_spacing_m . 'px' ),
             ),
         );
 
         $heading_H5_css_m = array(
             'h5' => array(
-                'font-size' => esc_attr( $heading_H5_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H5_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H5_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H5_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H5_letter_spacing_m . 'px' ),
             ),
         );
 
         $heading_H6_css_m = array(
             'h6' => array(
-                'font-size' => esc_attr( $heading_H6_font_size_m ) . 'px',
+                'font-size' => esc_attr( $heading_H6_font_size_m . 'px' ),
                 'line-height' => esc_attr( $heading_H6_line_height_m ),
-                'letter-spacing' => esc_attr( $heading_H6_letter_spacing_m ) . 'px',
+                'letter-spacing' => esc_attr( $heading_H6_letter_spacing_m . 'px' ),
             ),
         );
 
@@ -288,10 +310,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
             $site_layout_advance_wide_css_m = array(
                 'body.wide, body.boxed .page-wrap, body.framed .page-wrap' => array(
-                    'padding-top' => $site_layout_style_advance_m_p_top . 'px',
-                    'padding-right' => $site_layout_style_advance_m_p_right . 'px',
-                    'padding-bottom' => $site_layout_style_advance_m_p_bottom . 'px',
-                    'padding-left' => $site_layout_style_advance_m_p_left . 'px',
+                    'padding-top' => esc_attr( $site_layout_style_advance_m_p_top . 'px' ),
+                    'padding-right' => esc_attr( $site_layout_style_advance_m_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $site_layout_style_advance_m_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $site_layout_style_advance_m_p_left . 'px' ),
                 ),
             );
 
@@ -307,14 +329,36 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
 
                 $site_layout_advance_box_css_m = array(
                     'body.boxed .page-wrap' => array(
-                        'margin-right' => $site_layout_style_advance_b_m_m_right . 'px',
-                        'margin-left' => $site_layout_style_advance_b_m_m_left . 'px',
+                        'margin-right' => esc_attr( $site_layout_style_advance_b_m_m_right . 'px' ),
+                        'margin-left' => esc_attr( $site_layout_style_advance_b_m_m_left . 'px' ),
                     ),
                 );
 
                 $output_css = array_merge(
                     $output_css,
                     $site_layout_advance_box_css_m
+                );
+            }
+
+            if( $site_layout_style == 'framed' ) {
+
+                $site_layout_style_advance_f_m_m_top = ifb_get_mod( 'site_layout_style_advance_f_m_m_top' );
+                $site_layout_style_advance_f_m_m_right = ifb_get_mod( 'site_layout_style_advance_f_m_m_right' );
+                $site_layout_style_advance_f_m_m_bottom = ifb_get_mod( 'site_layout_style_advance_f_m_m_bottom' );
+                $site_layout_style_advance_f_m_m_left = ifb_get_mod( 'site_layout_style_advance_f_m_m_left' );
+
+                $site_layout_advance_framed_css_m = array(
+                    'body.framed .page-wrap' => array(
+                        'margin-top' => esc_attr( $site_layout_style_advance_f_m_m_top . 'px' ),
+                        'margin-right' => esc_attr( $site_layout_style_advance_f_m_m_right . 'px' ),
+                        'margin-bottom' => esc_attr( $site_layout_style_advance_f_m_m_bottom . 'px' ),
+                        'margin-left' => esc_attr( $site_layout_style_advance_f_m_m_left . 'px' ),
+                    ),
+                );
+
+                $output_css = array_merge(
+                    $output_css,
+                    $site_layout_advance_framed_css_m
                 );
             }
         }
