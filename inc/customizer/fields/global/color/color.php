@@ -71,17 +71,3 @@ $wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blo
     'type'                     => 'color-one',
     'priority'                 => 25,
 ) ) );
-
-/*---------------------------------- Site layout advance toggle -----------------------------------*/
-
-$wp_customize->add_setting( 'influence_blog_reset_toggle', array(
-    'sanitize_callback'        => 'wp_validate_boolean',
-    'default'                  => influence_blog_defaults( 'reset_toggle' ),
-) );
-
-$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_reset_toggle', array(
-    'label'                    => esc_html__( 'Reset All Setting', 'influence-blog' ),
-    'section'                  => $section,
-    'type'                     => 'toggle-two',
-    'priority'                 => 95,
-) ) );
