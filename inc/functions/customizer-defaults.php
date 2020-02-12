@@ -192,6 +192,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'color_text' => '#000000',
             'color_link' => '#ffffff',
             'color_link_hover' => '#000000',
+            //Reset
             'reset_toggle' => false,
 		);
 
