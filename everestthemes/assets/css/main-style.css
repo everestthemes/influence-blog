@@ -107,6 +107,28 @@ body.boxed .page-wrap {
 .secondary-widget-area .widget_meta .side-tt .s-title{
     padding:0;
 }
+.container-style-content-boxed .primary-widget-area,
+.container-style-boxed .primary-widget-area{
+  background-color: #f1f1f1;
+  width:100%; 
+  padding:15px;
+}
+.container-style-content-boxed .secondary-widget-area .widget,
+.container-style-boxed .secondary-widget-area .widget {
+  background-color: #f1f1f1;
+  width:100%; 
+  padding:15px;
+  padding-top: 0px!important;
+
+}
+.container-style-content-boxed .secondary-widget-area .side-tt,
+.container-style-boxed .secondary-widget-area .side-tt{
+      margin-top:40px;
+}
+
+
+
+
 h1,
 h2,
 h3,
