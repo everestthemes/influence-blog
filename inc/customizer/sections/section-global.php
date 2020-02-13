@@ -41,12 +41,3 @@ $wp_customize->add_section( 'influence_blog_global_color_section', array(
     'title'        => esc_html__( 'Color', 'influence-blog' ),
     'panel'        => $panel,
 ) );
-
-/*-----------------------------------------------------------------------------
-							Reset Section
------------------------------------------------------------------------------*/
-
-$wp_customize->add_section( 'influence_blog_reset_section', array(
-    'priority'     => 999,
-    'title'        => esc_html__( 'Reset', 'influence-blog' ),
-) );

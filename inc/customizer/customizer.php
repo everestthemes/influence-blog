@@ -200,6 +200,11 @@ function influence_blog_customize_register( $wp_customize ) {
 	require IFB_INC_CUSTOMIZER_CONTROLS_PATH . 'typography/typography-one/class-typography-one-control.php';
 
     /**
+	 * Load custom customizer control for sortable one control
+	 */
+	require IFB_INC_CUSTOMIZER_CONTROLS_PATH . 'sortable/sortable-one/class-sortable-one-control.php';
+
+    /**
 	 * Load customizer functions for options of contol fields
 	 */
 	require IFB_INC_CUSTOMIZER_FUNCTIONS_PATH . 'customizer-options.php';
