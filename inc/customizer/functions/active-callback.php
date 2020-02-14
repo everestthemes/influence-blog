@@ -190,3 +190,108 @@ if( ! function_exists( 'influence_blog_not_site_layout_container_uniform_advance
 		}
 	}
 }
+
+/**
+ * Active callback function for top header is enabled.
+ */
+if( ! function_exists( 'influence_blog_is_top_header' ) ) {
+
+	function influence_blog_is_top_header( $control ) {
+
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+
+        $value = explode( ',', $value );
+
+        foreach( $value as $v ) {
+
+            $top = array( 'headerTop' );
+
+            $v = explode( ':', $v );
+
+            foreach( $top as $t ) {
+
+                if( $t == $v[0] ) {
+
+                    if( $v[1] == 1 ) {
+
+                        return true;
+
+                    } else {
+
+                        return false;
+                    }
+                }
+            }
+        }
+	}
+}
+
+/**
+ * Active callback function for middle header is enabled.
+ */
+if( ! function_exists( 'influence_blog_is_middle_header' ) ) {
+
+	function influence_blog_is_middle_header( $control ) {
+
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+
+        $value = explode( ',', $value );
+
+        foreach( $value as $v ) {
+
+            $top = array( 'headerMiddle' );
+
+            $v = explode( ':', $v );
+
+            foreach( $top as $t ) {
+
+                if( $t == $v[0] ) {
+
+                    if( $v[1] == 1 ) {
+
+                        return true;
+
+                    } else {
+
+                        return false;
+                    }
+                }
+            }
+        }
+	}
+}
+
+/**
+ * Active callback function for bottom header is enabled.
+ */
+if( ! function_exists( 'influence_blog_is_bottom_header' ) ) {
+
+	function influence_blog_is_bottom_header( $control ) {
+
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+
+        $value = explode( ',', $value );
+
+        foreach( $value as $v ) {
+
+            $top = array( 'headerBottom' );
+
+            $v = explode( ':', $v );
+
+            foreach( $top as $t ) {
+
+                if( $t == $v[0] ) {
+
+                    if( $v[1] == 1 ) {
+
+                        return true;
+
+                    } else {
+
+                        return false;
+                    }
+                }
+            }
+        }
+	}
+}
