@@ -36,8 +36,7 @@ foreach( $arrange_header_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_header', array(
     'transport'         => 'refresh',
-    'capability'        => 'edit_theme_options',
-    'sanitize_callback' => 'viable_blog_pro_sanitize_sortable',
+    'sanitize_callback' => 'sanitize_sortable_one',
     'default'           => influence_blog_sortable_defaults ( $arrange_header_options ),
 ) );
 

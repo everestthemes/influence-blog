@@ -34,5 +34,8 @@ require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'global/typography/typography.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'global/color/color.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/arrange/arrange.php';
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/top/top.php';
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/middle/middle.php';
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/bottom/bottom.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'reset/reset.php';

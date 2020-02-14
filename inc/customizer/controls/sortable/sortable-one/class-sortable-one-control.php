@@ -80,12 +80,12 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
 				<?php foreach ( $options as $key => $value ){ ?>
 
 					<li>
-						<label class="sortable-one-check-label"><!--multicheck-sortable-item-->
+						<label class="sortable-one-check-label sortable-one-options-handle"><!--multicheck-sortable-item-->
 							<input name="<?php echo esc_attr( $key ); ?>" class="sortable-one-options-item" type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( $value ); ?>/>
 							<em></em>
+							<i class="dashicons dashicons-menu"></i><!-- multicheck-sortable-handle -->
 							<?php echo esc_html( $choices[$key] ); ?>
 						</label>
-						<i class="dashicons dashicons-menu sortable-one-options-handle"></i><!-- multicheck-sortable-handle -->
 					</li>
 
 				<?php } // end choices. ?>

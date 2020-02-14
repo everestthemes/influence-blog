@@ -374,41 +374,16 @@ if( ! function_exists( 'influence_blog_header_action' ) ) :
         */
         do_action( 'influence_blog_header_mobile_navigation' );
 
-        ?>
-        <header id="header1" class="header header-layout1">
-        <?php
+        $header_layout = 'one';
 
-        $display_top_header = ifb_get_mod( 'display_top_header', true );
+        $header_layout = apply_filters( 'influence_blog_filter_header_layout', $header_layout );
 
-        if( $display_top_header == true ) {
+        if( $header_layout == 'one' ) {
 
-            /**
-            * Hook - influence_blog_header_top
-            *
-            * @hooked influence_blog_header_top_action - 30
-            */
-            do_action( 'influence_blog_header_top' );
-
+            get_template_part( 'template-parts/header/header', $header_layout );
         }
 
-        /**
-        * Hook - influence_blog_header_middle
-        *
-        * @hooked influence_blog_header_middle_action - 50
-        */
-        do_action( 'influence_blog_header_middle' );
-
-        /**
-        * Hook - influence_blog_header_bottom
-        *
-        * @hooked influence_blog_header_bottom_action - 70
-        */
-        do_action( 'influence_blog_header_bottom' );
-
-        ?>
-        </header>
-        <?php
-
+        $header_layout = apply_filters( 'influence_blog_filter_header_template', $header_layout );
     }
 endif;
 add_action( 'influence_blog_header', 'influence_blog_header_action', 100 );
