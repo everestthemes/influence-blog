@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying header layout one
+ * Template part for displaying header layout two
  *
  * @package Influence_Blog
  */
@@ -12,12 +12,12 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<header id="header1" class="header header-layout1">
+<header id="header" class="header header-layout2" style="background-image: url( <?php header_image(); ?> );">
 <?php
 
-$items     = influence_blog_arrange_header_layout_one_options();
+$items     = influence_blog_arrange_header_layout_two_options();
 $defaults  = influence_blog_sortable_defaults( $items );
-$mod       = get_theme_mod( 'influence_blog_arrange_header_layout_one', $defaults );
+$mod       = get_theme_mod( 'influence_blog_arrange_header_layout_two', $defaults );
 
 if( ! $mod ) return;
 

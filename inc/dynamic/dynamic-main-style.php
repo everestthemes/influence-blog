@@ -455,14 +455,46 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $output_css = array();
 
+        /*-----------------------------------------------------------------------------
+							 Header Settings
+        -----------------------------------------------------------------------------*/
 
+        /*-----------------------------------------------------------------------------
+							 Layout Options
+        -----------------------------------------------------------------------------*/
 
+        /*---------------------------------- Design Section -----------------------------------*/
 
+        $header_bg_color = ifb_get_mod( 'header_layout_options_hedader_bg_color' );
 
+        $header_bg_color_css = array(
+            '.header-layout2:before' => array(
+                'background-color' => esc_attr( $header_bg_color ),
+            ),
+        );
 
+        $parse_css .= influence_blog_parse_css( $header_bg_color_css );
 
+        /*---------------------------------- Advance Section -----------------------------------*/
 
+        $header_layout_options_advance_toggle = ifb_get_mod( 'header_layout_options_advance_toggle' );
 
+        if( $header_layout_options_advance_toggle ) {
+
+            $header_layout_options_advance_bg_image_size = ifb_get_mod( 'header_layout_options_advance_bg_image_size' );
+            $header_layout_options_advance_bg_image_position_x = ifb_get_mod( 'header_layout_options_advance_bg_image_position_x' );
+            $header_layout_options_advance_bg_image_position_y = ifb_get_mod( 'header_layout_options_advance_bg_image_position_y' );
+
+            $header_layout_options_advance_bg_css = array(
+                '.header-layout2' => array(
+                    'background-size' => esc_attr( $header_layout_options_advance_bg_image_size ),
+                    'background-position-x' => esc_attr( $header_layout_options_advance_bg_image_position_x ),
+                    'background-position-y' => esc_attr( $header_layout_options_advance_bg_image_position_y ),
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $header_layout_options_advance_bg_css );
+        }
 
 
 

@@ -18,11 +18,11 @@ if ( !defined( 'ABSPATH' ) ) {
 
 $panel = 'influence_blog_header_settings_panel';
 
-/*---------------------------------- Arrange header -----------------------------------*/
+/*---------------------------------- Header layout options -----------------------------------*/
 
-$wp_customize->add_section( 'influence_blog_arrange_header_section', array(
+$wp_customize->add_section( 'influence_blog_header_layout_options_section', array(
     'priority'     => 10,
-    'title'        => esc_html__( 'Arrange Header', 'influence-blog' ),
+    'title'        => esc_html__( 'Layout Options', 'influence-blog' ),
     'panel'        => $panel,
 ) );
 

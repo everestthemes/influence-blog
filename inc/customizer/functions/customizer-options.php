@@ -199,3 +199,85 @@ if( !function_exists( 'influence_blog_font_text_transform_array' ) ) :
 
 	}
 endif;
+
+if( !function_exists( 'influence_blog_header_layout_options_select_array' ) ) :
+	/*
+	 * Function to get header layouts
+	 */
+	function influence_blog_header_layout_options_select_array() {
+
+        $options = array(
+
+            'one' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/header-one.png',
+                'name' => __( 'Layout One', 'influence-blog' )
+            ),
+            'two' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/header-two.png',
+                'name' => __( 'Layout Two', 'influence-blog' )
+            ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_header_layout_options_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_background_image_sizes_array' ) ) :
+	/*
+	 * Function to get background image sizes
+	 */
+	function influence_blog_background_image_sizes_array() {
+
+        $options = array(
+            'auto' => __( 'Auto', 'influence-blog' ),
+            'contain' => __( 'Contain', 'influence-blog' ),
+            'cover' => __( 'Cover', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_background_image_sizes_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_background_image_positions_x_array' ) ) :
+	/*
+	 * Function to get background image position x
+	 */
+	function influence_blog_background_image_positions_x_array() {
+
+        $options = array(
+            'left' => __( 'Left', 'influence-blog' ),
+            'right' => __( 'Right', 'influence-blog' ),
+            'center' => __( 'Center', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_background_image_positions_x_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_background_image_positions_y_array' ) ) :
+	/*
+	 * Function to get background image position y
+	 */
+	function influence_blog_background_image_positions_y_array() {
+
+        $options = array(
+            'top' => __( 'Top', 'influence-blog' ),
+            'center' => __( 'Center', 'influence-blog' ),
+            'bottom' => __( 'Bottom', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_background_image_positions_y_array', $options );
+
+        return $options;
+
+	}
+endif;

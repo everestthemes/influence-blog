@@ -268,6 +268,9 @@ function influence_blog_customize_register( $wp_customize ) {
     $wp_customize->get_control( 'background_attachment' )->section = 'influence_blog_global_site_layout_section';
     $wp_customize->get_control( 'background_attachment' )->priority = 60;
     $wp_customize->get_control( 'background_attachment' )->active_callback = 'influence_blog_is_site_layout_design_options_image';
+
+    $wp_customize->get_control( 'header_image' )->section = 'influence_blog_header_layout_options_section';
+    $wp_customize->get_control( 'header_image' )->priority = 45;
 }
 add_action( 'customize_register', 'influence_blog_customize_register', 10 );
 

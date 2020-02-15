@@ -192,19 +192,73 @@ if( ! function_exists( 'influence_blog_not_site_layout_container_uniform_advance
 }
 
 /**
+ * Active callback function for header layout options select one is selected.
+ */
+if( ! function_exists( 'influence_blog_is_header_layout_options_select_one' ) ) {
+
+	function influence_blog_is_header_layout_options_select_one( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_header_layout_options_select' )->value() == 'one' ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for header layout options select two is selected.
+ */
+if( ! function_exists( 'influence_blog_is_header_layout_options_select_two' ) ) {
+
+	function influence_blog_is_header_layout_options_select_two( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_header_layout_options_select' )->value() == 'two' ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for header layout options advance toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_header_layout_options_advance_enable' ) ) {
+
+	function influence_blog_is_header_layout_options_advance_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_header_layout_options_advance_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for top header is enabled.
  */
 if( ! function_exists( 'influence_blog_is_top_header' ) ) {
 
 	function influence_blog_is_top_header( $control ) {
 
-        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
 
         $value = explode( ',', $value );
 
         foreach( $value as $v ) {
 
-            $top = array( 'headerTop' );
+            $top = array( 'headerOneTop' );
 
             $v = explode( ':', $v );
 
@@ -233,13 +287,13 @@ if( ! function_exists( 'influence_blog_is_middle_header' ) ) {
 
 	function influence_blog_is_middle_header( $control ) {
 
-        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
 
         $value = explode( ',', $value );
 
         foreach( $value as $v ) {
 
-            $top = array( 'headerMiddle' );
+            $top = array( 'headerOneMiddle' );
 
             $v = explode( ':', $v );
 
@@ -268,13 +322,13 @@ if( ! function_exists( 'influence_blog_is_bottom_header' ) ) {
 
 	function influence_blog_is_bottom_header( $control ) {
 
-        $value = $control->manager->get_setting( 'influence_blog_arrange_header' )->value();
+        $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
 
         $value = explode( ',', $value );
 
         foreach( $value as $v ) {
 
-            $top = array( 'headerBottom' );
+            $top = array( 'headerOneBottom' );
 
             $v = explode( ':', $v );
 

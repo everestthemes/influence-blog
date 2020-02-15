@@ -75,28 +75,72 @@ function influence_blog_sortable_items_ouput( $items, $new, $mod ) {
 }
 
 /**
-* Options used with the Sortable Items control
+* Options used with the Sortable Items control for header layout one
 */
-function influence_blog_arrange_header_options() {
+function influence_blog_arrange_header_layout_one_options() {
 
     $options = array();
 
-    $options['headerTop'] = [
-        'id'       => 'headerTop',
-        'label'    => esc_html_x( 'Top Header', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_top'
+    $options['headerOneTop'] = [
+        'id'       => 'headerOneTop',
+        'label'    => esc_html_x( 'Header One', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_one_top'
     ];
 
-    $options['headerMiddle'] = [
-        'id'       => 'headerMiddle',
+    $options['headerOneMiddle'] = [
+        'id'       => 'headerOneMiddle',
         'label'    => esc_html_x( 'Main Header', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_middle'
+        'callback' => 'influence_blog_arrange_header_one_middle'
     ];
 
-    $options['headerBottom'] = [
-        'id'       => 'headerBottom',
-        'label'    => esc_html_x( 'Bottom Header', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_bottom'
+    $options['headerOneBottom'] = [
+        'id'       => 'headerOneBottom',
+        'label'    => esc_html_x( 'Header Two', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_one_bottom'
+    ];
+
+    return $options;
+}
+
+/**
+* Options used with the Sortable Items control for header layout two
+*/
+function influence_blog_arrange_header_layout_two_options() {
+
+    $options = array();
+
+    $options['headerTwoMiddle'] = [
+        'id'       => 'headerTwoMiddle',
+        'label'    => esc_html_x( 'Main Header', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_two_middle'
+    ];
+
+    $options['headerTwoBottom'] = [
+        'id'       => 'headerTwoBottom',
+        'label'    => esc_html_x( 'Header Two', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_two_bottom'
+    ];
+
+    return $options;
+}
+
+/**
+* Options used with the Sortable Items control for top header
+*/
+function influence_blog_arrange_top_header_options() {
+
+    $options = array();
+
+    $options['topMenu'] = [
+        'id'       => 'topMenu',
+        'label'    => esc_html_x( 'Menu', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_top_header_menu'
+    ];
+
+    $options['topSocial'] = [
+        'id'       => 'topSocial',
+        'label'    => esc_html_x( 'Social Links', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_top_header_social_links'
     ];
 
     return $options;

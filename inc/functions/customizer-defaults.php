@@ -190,6 +190,13 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'color_text' => '#000000',
             'color_link' => '#ffffff',
             'color_link_hover' => '#000000',
+            //Header - layout options
+            'header_layout_options_select' => 'one',
+            'header_layout_options_hedader_bg_color' => 'rgb(0, 0, 0, 0.36)',
+            'header_layout_options_advance_toggle' => false,
+            'header_layout_options_advance_bg_image_size' => 'cover',
+            'header_layout_options_advance_bg_image_position_x' => 'center',
+            'header_layout_options_advance_bg_image_position_y' => 'center',
             //Reset
             'reset_toggle' => false,
 		);
