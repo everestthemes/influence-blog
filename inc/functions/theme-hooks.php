@@ -67,27 +67,36 @@ if( ! function_exists( 'influence_blog_header_logo_action' ) ) :
 
  	function influence_blog_header_logo_action() {
 
-    ?>
-    <div class="logo-sec">
-        <?php
+        $header_layout = ifb_get_mod( 'header_layout_options_select' );
 
-        the_custom_logo();
+        $header_class = '';
 
-        ?>
-        <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-        <?php
+        if( $header_layout == 'two' ) {
 
-        $influence_blog_description = get_bloginfo( 'description', 'display' );
-
-        if ( $influence_blog_description || is_customize_preview() ) :
+            $header_class = ' center';
+        }
 
         ?>
-        <p class="site-description"><?php echo esc_html( $influence_blog_description ); /* WPCS: xss ok. */ ?></p>
-        <?php
+        <div class="logo-sec<?php echo esc_attr( $header_class ); ?>">
+            <?php
 
-        endif;
-        ?>
-    </div>
+            the_custom_logo();
+
+            ?>
+            <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+            <?php
+
+            $influence_blog_description = get_bloginfo( 'description', 'display' );
+
+            if ( $influence_blog_description || is_customize_preview() ) :
+
+            ?>
+            <p class="site-description"><?php echo esc_html( $influence_blog_description ); /* WPCS: xss ok. */ ?></p>
+            <?php
+
+            endif;
+            ?>
+        </div>
     <?php
     }
 endif;
@@ -226,38 +235,21 @@ if( ! function_exists( 'influence_blog_header_top_action' ) ) :
     <div class="header-topbar-block">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <?php
+                <?php
 
-                    $display_top_header_menu = ifb_get_mod( 'display_top_header_menu', true );
+                $items     = influence_blog_arrange_top_header_options();
+                $defaults  = influence_blog_sortable_defaults( $items );
+                $mod       = get_theme_mod( 'influence_blog_arrange_top_header', $defaults );
 
-                    if( $display_top_header_menu == true ) {
+                if( ! $mod ) return;
 
-                        /**
-                        * Hook - influence_blog_header_top_navigation
-                        *
-                        * @hooked influence_blog_header_top_navigation_action - 35
-                        */
-                        do_action( 'influence_blog_header_top_navigation' );
-                    }
-                    ?>
-                </div><!--//col-12 col-md-6-->
-                <div class="col-12 col-md-6">
-                    <?php
+                $mod = explode( ',', $mod );
 
-                    $display_top_header_social_links = ifb_get_mod( 'display_top_header_social_links', true );
+                $new = influence_blog_sortable_items_to_array( $mod, $items );
 
-                    if( $display_top_header_social_links == true ) {
+                influence_blog_sortable_items_ouput( $items, $new, $mod );
 
-                        /**
-                        * Hook - influence_blog_header_social_links
-                        *
-                        * @hooked influence_blog_header_social_links_action - 40
-                        */
-                        do_action( 'influence_blog_header_social_links' );
-                    }
-                    ?>
-                </div><!--//col-12 col-md-6-->
+                ?>
             </div><!--//col-lg-6-->
         </div><!--//container-->
     </div><!--//topbar-block-->
@@ -374,11 +366,11 @@ if( ! function_exists( 'influence_blog_header_action' ) ) :
         */
         do_action( 'influence_blog_header_mobile_navigation' );
 
-        $header_layout = 'one';
+        $header_layout = ifb_get_mod( 'header_layout_options_select' );
 
         $header_layout = apply_filters( 'influence_blog_filter_header_layout', $header_layout );
 
-        if( $header_layout == 'one' ) {
+        if( $header_layout == 'one' || $header_layout == 'two' ) {
 
             get_template_part( 'template-parts/header/header', $header_layout );
         }

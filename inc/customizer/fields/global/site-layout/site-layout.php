@@ -30,6 +30,8 @@ $button_one_array = array(
     'influence_blog_site_layout_container_style'    => array(),
 );
 
+$button_one_array = apply_filters( 'influence_blog_filter_site_layout_button_one_array', $button_one_array );
+
 $button_two_array = array(
     'influence_blog_site_layout_style_design_heading'    => array(),
     'influence_blog_site_layout_style_design_is_image_info'    => array(),
@@ -51,6 +53,8 @@ $button_two_array = array(
     'influence_blog_site_layout_container_design_bg'      => array(),
 );
 
+$button_two_array = apply_filters( 'influence_blog_filter_site_layout_button_two_array', $button_two_array );
+
 $button_three_array = array(
     'influence_blog_site_layout_advance_info'              => array(),
     'influence_blog_site_layout_advance_toggle'            => array(),
@@ -66,6 +70,8 @@ $button_three_array = array(
     'influence_blog_site_layout_container_advance_b_p'     => array(),
     'influence_blog_site_layout_container_advance_b_m'     => array(),
 );
+
+$button_three_array = apply_filters( 'influence_blog_filter_site_layout_button_three_array', $button_three_array );
 
 /*-----------------------------------------------------------------------------
 							 Site layout options
