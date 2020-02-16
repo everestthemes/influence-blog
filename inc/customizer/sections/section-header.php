@@ -26,12 +26,13 @@ $wp_customize->add_section( 'influence_blog_header_layout_options_section', arra
     'panel'        => $panel,
 ) );
 
-/*---------------------------------- Top header -----------------------------------*/
+/*---------------------------------- Header one -----------------------------------*/
 
-$wp_customize->add_section( 'influence_blog_top_header_section', array(
+$wp_customize->add_section( 'influence_blog_header_one_section', array(
     'priority'     => 15,
-    'title'        => esc_html__( 'Top Header', 'influence-blog' ),
+    'title'        => esc_html__( 'Header One', 'influence-blog' ),
     'panel'        => $panel,
+    'active_callback' => 'influence_blog_is_header_one',
 ) );
 
 /*---------------------------------- Middle header -----------------------------------*/

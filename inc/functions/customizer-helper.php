@@ -84,19 +84,19 @@ function influence_blog_arrange_header_layout_one_options() {
     $options['headerOneTop'] = [
         'id'       => 'headerOneTop',
         'label'    => esc_html_x( 'Header One', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_one_top'
+        'callback' => 'influence_blog_arrange_header_layout_one_top'
     ];
 
     $options['headerOneMiddle'] = [
         'id'       => 'headerOneMiddle',
         'label'    => esc_html_x( 'Main Header', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_one_middle'
+        'callback' => 'influence_blog_arrange_header_layout_one_middle'
     ];
 
     $options['headerOneBottom'] = [
         'id'       => 'headerOneBottom',
         'label'    => esc_html_x( 'Header Two', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_one_bottom'
+        'callback' => 'influence_blog_arrange_header_layout_one_bottom'
     ];
 
     return $options;
@@ -112,35 +112,35 @@ function influence_blog_arrange_header_layout_two_options() {
     $options['headerTwoMiddle'] = [
         'id'       => 'headerTwoMiddle',
         'label'    => esc_html_x( 'Main Header', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_two_middle'
+        'callback' => 'influence_blog_arrange_header_layout_two_middle'
     ];
 
     $options['headerTwoBottom'] = [
         'id'       => 'headerTwoBottom',
         'label'    => esc_html_x( 'Header Two', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_two_bottom'
+        'callback' => 'influence_blog_arrange_header_layout_two_bottom'
     ];
 
     return $options;
 }
 
 /**
-* Options used with the Sortable Items control for top header
+* Options used with the Sortable Items control for header one
 */
-function influence_blog_arrange_top_header_options() {
+function influence_blog_arrange_header_one_options() {
 
     $options = array();
 
-    $options['topMenu'] = [
-        'id'       => 'topMenu',
+    $options['headerOneMenu'] = [
+        'id'       => 'headerOneMenu',
         'label'    => esc_html_x( 'Menu', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_top_header_menu'
+        'callback' => 'influence_blog_arrange_header_one_menu'
     ];
 
-    $options['topSocial'] = [
-        'id'       => 'topSocial',
+    $options['headerOneSocial'] = [
+        'id'       => 'headerOneSocial',
         'label'    => esc_html_x( 'Social Links', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_top_header_social_links'
+        'callback' => 'influence_blog_arrange_header_one_social_links'
     ];
 
     return $options;

@@ -246,11 +246,11 @@ if( ! function_exists( 'influence_blog_is_header_layout_options_advance_enable' 
 }
 
 /**
- * Active callback function for top header is enabled.
+ * Active callback function for header one is enabled.
  */
-if( ! function_exists( 'influence_blog_is_top_header' ) ) {
+if( ! function_exists( 'influence_blog_is_header_one' ) ) {
 
-	function influence_blog_is_top_header( $control ) {
+	function influence_blog_is_header_one( $control ) {
 
         $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
 
