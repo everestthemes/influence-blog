@@ -237,9 +237,9 @@ if( ! function_exists( 'influence_blog_header_top_action' ) ) :
             <div class="row">
                 <?php
 
-                $items     = influence_blog_arrange_top_header_options();
+                $items     = influence_blog_arrange_header_one_options();
                 $defaults  = influence_blog_sortable_defaults( $items );
-                $mod       = get_theme_mod( 'influence_blog_arrange_top_header', $defaults );
+                $mod       = get_theme_mod( 'influence_blog_arrange_header_one', $defaults );
 
                 if( ! $mod ) return;
 

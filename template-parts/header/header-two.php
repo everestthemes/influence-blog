@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<header id="header" class="header header-layout2" style="background-image: url( <?php header_image(); ?> );">
+<header id="header" class="header header-layout2"<?php influence_blog_has_header_image(); ?>>
 <?php
 
 $items     = influence_blog_arrange_header_layout_two_options();
