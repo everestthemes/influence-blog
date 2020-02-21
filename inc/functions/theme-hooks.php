@@ -22,17 +22,20 @@ if( ! function_exists( 'influence_blog_header_top_navigation_action' ) ) :
 
  	function influence_blog_header_top_navigation_action() {
 
-    ?>
-    <div class="top-bar-menu">
-        <?php
-        wp_nav_menu( array(
-            'theme_location' 	=> 'menu-2',
-            'container'			=> '',
-            'depth'             => 1,
-         ) );
+        $header_one_layout_one_menu_select = ifb_get_mod( 'header_one_layout_one_menu_select' );
+
         ?>
-    </div><!--//top-bar-menu -->
-    <?php
+        <div class="top-bar-menu">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' 	=> $header_one_layout_one_menu_select,
+                'container'			=> '',
+                'depth'             => 1,
+                'fallback_cb'       => 'influence_blog_navigation_fallback',
+             ) );
+            ?>
+        </div><!--//top-bar-menu -->
+        <?php
     }
 endif;
 add_action( 'influence_blog_header_top_navigation', 'influence_blog_header_top_navigation_action', 35 );
@@ -237,9 +240,9 @@ if( ! function_exists( 'influence_blog_header_top_action' ) ) :
             <div class="row">
                 <?php
 
-                $items     = influence_blog_arrange_header_one_options();
+                $items     = influence_blog_arrange_header_one_layout_one_options();
                 $defaults  = influence_blog_sortable_defaults( $items );
-                $mod       = get_theme_mod( 'influence_blog_arrange_header_one', $defaults );
+                $mod       = get_theme_mod( 'influence_blog_arrange_header_one_layout_one', $defaults );
 
                 if( ! $mod ) return;
 

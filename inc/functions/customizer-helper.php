@@ -125,22 +125,22 @@ function influence_blog_arrange_header_layout_two_options() {
 }
 
 /**
-* Options used with the Sortable Items control for header one
+* Options used with the Sortable Items control for header one layout one
 */
-function influence_blog_arrange_header_one_options() {
+function influence_blog_arrange_header_one_layout_one_options() {
 
     $options = array();
 
     $options['headerOneMenu'] = [
         'id'       => 'headerOneMenu',
         'label'    => esc_html_x( 'Menu', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_one_menu'
+        'callback' => 'influence_blog_arrange_header_one_layout_one_menu'
     ];
 
     $options['headerOneSocial'] = [
         'id'       => 'headerOneSocial',
         'label'    => esc_html_x( 'Social Links', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_one_social_links'
+        'callback' => 'influence_blog_arrange_header_one_layout_one_social_links'
     ];
 
     return $options;

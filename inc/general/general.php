@@ -82,8 +82,9 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary Menu', 'influence-blog' ),
-			'menu-2' => esc_html__( 'Top Menu', 'influence-blog' ),
+			'menu-1' => esc_html__( 'Menu One', 'influence-blog' ),
+			'menu-2' => esc_html__( 'Menu Two', 'influence-blog' ),
+			'menu-3' => esc_html__( 'Menu Three', 'influence-blog' ),
 		) );
 
 		/*

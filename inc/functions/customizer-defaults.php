@@ -197,6 +197,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_layout_options_advance_bg_image_size' => 'cover',
             'header_layout_options_advance_bg_image_position_x' => 'center',
             'header_layout_options_advance_bg_image_position_y' => 'center',
+            //Header - Header one
+            'header_one_layout_one_menu_select' => 'menu-2',
             //Reset
             'reset_toggle' => false,
 		);
