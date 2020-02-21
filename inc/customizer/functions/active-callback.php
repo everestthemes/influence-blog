@@ -252,27 +252,32 @@ if( ! function_exists( 'influence_blog_is_header_one' ) ) {
 
 	function influence_blog_is_header_one( $control ) {
 
-        $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
+        $layout = $control->manager->get_setting( 'influence_blog_header_layout_options_select' )->value();
 
-        $value = explode( ',', $value );
+        if( $layout == 'one' ) {
 
-        foreach( $value as $v ) {
+            $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
 
-            $top = array( 'headerOneTop' );
+            $value = explode( ',', $value );
 
-            $v = explode( ':', $v );
+            foreach( $value as $v ) {
 
-            foreach( $top as $t ) {
+                $top = array( 'headerOneTop' );
 
-                if( $t == $v[0] ) {
+                $v = explode( ':', $v );
 
-                    if( $v[1] == 1 ) {
+                foreach( $top as $t ) {
 
-                        return true;
+                    if( $t == $v[0] ) {
 
-                    } else {
+                        if( $v[1] == 1 ) {
 
-                        return false;
+                            return true;
+
+                        } else {
+
+                            return false;
+                        }
                     }
                 }
             }

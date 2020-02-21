@@ -162,6 +162,11 @@ function influence_blog_customize_register( $wp_customize ) {
 	require IFB_INC_CUSTOMIZER_CONTROLS_PATH . 'repeater/repeater-one/class-repeater-one-control.php';
 
     /**
+	 * Load custom customizer control for repeater two control
+	 */
+	require IFB_INC_CUSTOMIZER_CONTROLS_PATH . 'repeater/repeater-two/class-repeater-two-control.php';
+
+    /**
 	 * Load custom customizer control for icon picker one control
 	 */
 	require IFB_INC_CUSTOMIZER_CONTROLS_PATH . 'icon-picker/icon-picker-one/class-icon-picker-one-control.php';

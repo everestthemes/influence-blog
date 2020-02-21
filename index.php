@@ -13,6 +13,22 @@
  */
 
 get_header();
+$footer_Payment_icon= get_theme_mod('footer_Payment_icon');
+$footer_Payment_icon = json_decode($footer_Payment_icon);
+
+echo '<pre>';
+//var_dump( $footer_Payment_icon );
+echo '</pre>';
+
+foreach( $footer_Payment_icon as $v ) {
+    echo '<pre>';
+    //var_dump( $v );
+    echo '</pre>';
+    echo $v->icon_value;
+    echo '<br>';
+    echo $v->link;
+    echo '<br>';
+}
 
 influence_blog_banner_template();
 
