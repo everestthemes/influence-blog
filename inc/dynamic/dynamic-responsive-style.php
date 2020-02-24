@@ -247,7 +247,68 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             }
         }
 
+        /*---------------------------------- Header one layout one design menu typo typography -----------------------------------*/
 
+        //Header one layout one design menu typo typography
+        $typo_header_one_layout_one_design_menu_font_size_t = ifb_get_mod( 'typo_header_one_layout_one_design_menu_size_t' );
+        $typo_header_one_layout_one_design_menu_line_height_t = ifb_get_mod( 'typo_header_one_layout_one_design_menu_height_t' );
+        $typo_header_one_layout_one_design_menu_letter_spacing_t = ifb_get_mod( 'typo_header_one_layout_one_design_menu_spacing_t' );
+
+        $typo_header_one_layout_one_design_menu_css_t = array(
+            '.top-bar-menu ul li a' => array(
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_menu_font_size_t . 'px' ),
+                'line-height' => esc_attr( $typo_header_one_layout_one_design_menu_line_height_t ),
+                'letter-spacing' => esc_attr( $typo_header_one_layout_one_design_menu_letter_spacing_t . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_one_layout_one_design_menu_css_t
+        );
+
+        /*---------------------------------- Header one layout one design social links typo -----------------------------------*/
+
+        //Header one layout one design social links typo
+        $typo_header_one_layout_one_design_social_links_font_size_t = ifb_get_mod( 'typo_header_one_layout_one_design_social_links_size_t' );
+
+        $typo_header_one_layout_one_design_social_links_css_t = array(
+            '.top-social-icon li a' => array(
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_social_links_font_size_t . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_one_layout_one_design_social_links_css_t
+        );
+
+        /*---------------------------------- Header one layout one advance section -----------------------------------*/
+
+        $header_one_layout_one_advance_toggle = ifb_get_mod( 'header_one_layout_one_advance_toggle' );
+
+        if( $header_one_layout_one_advance_toggle ) {
+
+            $header_one_layout_one_advance_t_p_top = ifb_get_mod( 'header_one_layout_one_advance_t_p_top' );
+            $header_one_layout_one_advance_t_p_right = ifb_get_mod( 'header_one_layout_one_advance_t_p_right' );
+            $header_one_layout_one_advance_t_p_bottom = ifb_get_mod( 'header_one_layout_one_advance_t_p_bottom' );
+            $header_one_layout_one_advance_t_p_left = ifb_get_mod( 'header_one_layout_one_advance_t_p_left' );
+
+            $header_one_layout_one_advance_css_t = array(
+                '.header-topbar-block' => array(
+                    'padding-top' => esc_attr( $header_one_layout_one_advance_t_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_one_layout_one_advance_t_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_one_layout_one_advance_t_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_one_layout_one_advance_t_p_left . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_one_layout_one_advance_css_t
+            );
+
+        }
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
@@ -477,11 +538,72 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             }
         }
 
+        /*---------------------------------- Header one layout one design menu typo typography -----------------------------------*/
+
+        //Header one layout one design menu typo typography
+        $typo_header_one_layout_one_design_menu_font_size_m = ifb_get_mod( 'typo_header_one_layout_one_design_menu_size_m' );
+        $typo_header_one_layout_one_design_menu_line_height_m = ifb_get_mod( 'typo_header_one_layout_one_design_menu_height_m' );
+        $typo_header_one_layout_one_design_menu_letter_spacing_m = ifb_get_mod( 'typo_header_one_layout_one_design_menu_spacing_m' );
+
+        $typo_header_one_layout_one_design_menu_css_m = array(
+            '.top-bar-menu ul li a' => array(
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_menu_font_size_m . 'px' ),
+                'line-height' => esc_attr( $typo_header_one_layout_one_design_menu_line_height_m ),
+                'letter-spacing' => esc_attr( $typo_header_one_layout_one_design_menu_letter_spacing_m . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_one_layout_one_design_menu_css_m
+        );
+
+        /*---------------------------------- Header one layout one design social links typo -----------------------------------*/
+
+        //Header one layout one design social links typo
+        $typo_header_one_layout_one_design_social_links_font_size_m = ifb_get_mod( 'typo_header_one_layout_one_design_social_links_size_m' );
+
+        $typo_header_one_layout_one_design_social_links_css_m = array(
+            '.top-social-icon li a' => array(
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_social_links_font_size_m . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_one_layout_one_design_social_links_css_m
+        );
+
+        /*---------------------------------- Header one layout one advance section -----------------------------------*/
+
+        $header_one_layout_one_advance_toggle = ifb_get_mod( 'header_one_layout_one_advance_toggle' );
+
+        if( $header_one_layout_one_advance_toggle ) {
+
+            $header_one_layout_one_advance_m_p_top = ifb_get_mod( 'header_one_layout_one_advance_m_p_top' );
+            $header_one_layout_one_advance_m_p_right = ifb_get_mod( 'header_one_layout_one_advance_m_p_right' );
+            $header_one_layout_one_advance_m_p_bottom = ifb_get_mod( 'header_one_layout_one_advance_m_p_bottom' );
+            $header_one_layout_one_advance_m_p_left = ifb_get_mod( 'header_one_layout_one_advance_m_p_left' );
+
+            $header_one_layout_one_advance_css_m = array(
+                '.header-topbar-block' => array(
+                    'padding-top' => esc_attr( $header_one_layout_one_advance_m_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_one_layout_one_advance_m_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_one_layout_one_advance_m_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_one_layout_one_advance_m_p_left . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_one_layout_one_advance_css_m
+            );
+
+        }
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 
         $output_css = array();
-
-
 
 
 

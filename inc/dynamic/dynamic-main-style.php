@@ -496,6 +496,136 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $parse_css .= influence_blog_parse_css( $header_layout_options_advance_bg_css );
         }
 
+        /*-----------------------------------------------------------------------------
+							 Header One Options
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- General Section -----------------------------------*/
+
+        $header_one_layout_one_menu_alignment = ifb_get_mod( 'header_one_layout_one_menu_alignment' );
+
+        $header_one_menu_alignment_css = array(
+            '.top-bar-menu' => array(
+                'text-align' => esc_attr( $header_one_layout_one_menu_alignment ),
+            ),
+        );
+
+        $header_one_layout_one_social_links_alignment = ifb_get_mod( 'header_one_layout_one_social_links_alignment' );
+
+        $header_one_social_links_alignment_css = array(
+            '.top-social-icon' => array(
+                'text-align' => esc_attr( $header_one_layout_one_social_links_alignment ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $header_one_menu_alignment_css,
+            $header_one_social_links_alignment_css
+        );
+
+        $parse_css .= influence_blog_parse_css( $output_css );
+
+        $output_css = array();
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $header_one_layout_one_design_bg_color = ifb_get_mod( 'header_one_layout_one_design_bg_color' );
+
+        $header_one_layout_one_design_bg_color_css = array(
+            '.header-topbar-block' => array(
+                'background-color' => esc_attr( $header_one_layout_one_design_bg_color ),
+            ),
+        );
+
+        $header_one_layout_one_design_menu_color = ifb_get_mod( 'header_one_layout_one_design_menu_color' );
+        $header_one_layout_one_design_menu_hover_color = ifb_get_mod( 'header_one_layout_one_design_menu_hover_color' );
+        $header_one_layout_one_design_menu_sep_color = ifb_get_mod( 'header_one_layout_one_design_menu_sep_color' );
+
+        $header_one_layout_one_design_menu_color_css = array(
+            '.top-bar-menu ul li a' => array(
+                'color' => esc_attr( $header_one_layout_one_design_menu_color ),
+                'border-right' => esc_attr( '1px solid ' . $header_one_layout_one_design_menu_sep_color ),
+            ),
+            '.top-bar-menu ul li a:hover' => array(
+                'color' => esc_attr( $header_one_layout_one_design_menu_hover_color ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $header_one_layout_one_design_bg_color_css,
+            $header_one_layout_one_design_menu_color_css
+        );
+
+        $parse_css .= influence_blog_parse_css( $output_css );
+
+        $output_css = array();
+
+        //Header one layout one design menu typo typography
+        $typo_header_one_layout_one_design_menu_font_family = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font' );
+        $typo_header_one_layout_one_design_menu_font_weight = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font', 'fontweight' );
+        $typo_header_one_layout_one_design_menu_text_transform = ifb_get_mod( 'typo_header_one_layout_one_design_menu_transform' );
+        $typo_header_one_layout_one_design_menu_font_size = ifb_get_mod( 'typo_header_one_layout_one_design_menu_size_d' );
+        $typo_header_one_layout_one_design_menu_line_height = ifb_get_mod( 'typo_header_one_layout_one_design_menu_height_d' );
+        $typo_header_one_layout_one_design_menu_letter_spacing = ifb_get_mod( 'typo_header_one_layout_one_design_menu_spacing_d' );
+
+        $typo_header_one_layout_one_design_menu_css = array(
+            '.top-bar-menu ul li a' => array(
+                'font-family' => esc_attr( $typo_header_one_layout_one_design_menu_font_family ),
+                'font-weight' => esc_attr( $typo_header_one_layout_one_design_menu_font_weight ),
+                'text-transform' => esc_attr( $typo_header_one_layout_one_design_menu_text_transform ),
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_menu_font_size . 'px' ),
+                'line-height' => esc_attr( $typo_header_one_layout_one_design_menu_line_height ),
+                'letter-spacing' => esc_attr( $typo_header_one_layout_one_design_menu_letter_spacing . 'px' ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $typo_header_one_layout_one_design_menu_css );
+
+        $header_one_layout_one_design_social_links_color = ifb_get_mod( 'header_one_layout_one_design_social_links_color' );
+        $header_one_layout_one_design_social_links_hover_color = ifb_get_mod( 'header_one_layout_one_design_social_links_hover_color' );
+        $header_one_layout_one_design_social_links_sep_color = ifb_get_mod( 'header_one_layout_one_design_social_links_sep_color' );
+        $typo_header_one_layout_one_design_social_links_font_size = ifb_get_mod( 'typo_header_one_layout_one_design_social_links_size_d' );
+
+        $header_one_layout_one_design_social_links_color_css = array(
+            '.top-social-icon li a' => array(
+                'color' => esc_attr( $header_one_layout_one_design_social_links_color ),
+                'border-left' => esc_attr( '1px solid ' . $header_one_layout_one_design_social_links_sep_color ),
+                'font-size' => esc_attr( $typo_header_one_layout_one_design_social_links_font_size . 'px' ),
+            ),
+            '.top-social-icon li a:hover' => array(
+                'color' => esc_attr( $header_one_layout_one_design_social_links_hover_color ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $header_one_layout_one_design_social_links_color_css );
+
+        /*---------------------------------- Advance Section -----------------------------------*/
+
+        $header_one_layout_one_advance_toggle = ifb_get_mod( 'header_one_layout_one_advance_toggle' );
+
+        if( $header_one_layout_one_advance_toggle ) {
+
+            $header_one_layout_one_advance_d_p_top = ifb_get_mod( 'header_one_layout_one_advance_d_p_top' );
+            $header_one_layout_one_advance_d_p_right = ifb_get_mod( 'header_one_layout_one_advance_d_p_right' );
+            $header_one_layout_one_advance_d_p_bottom = ifb_get_mod( 'header_one_layout_one_advance_d_p_bottom' );
+            $header_one_layout_one_advance_d_p_left = ifb_get_mod( 'header_one_layout_one_advance_d_p_left' );
+
+            $header_one_layout_one_advance_css = array(
+                '.header-topbar-block' => array(
+                    'padding-top' => esc_attr( $header_one_layout_one_advance_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_one_layout_one_advance_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_one_layout_one_advance_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_one_layout_one_advance_d_p_left . 'px' ),
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $header_one_layout_one_advance_css );
+        }
+
+
+
+
+
 
 
         $dynamic_css = $parse_css;

@@ -58,7 +58,7 @@ if( ! class_exists( 'Dimension_One_Control' ) ) :
 
             $this->json['id'] 		= $this->id;
             $this->json['l10n']    	= $this->l10n();
-            $this->json['title'] 	= esc_html__( 'Link values together', 'textdomain' );
+            $this->json['title'] 	= esc_html__( 'Link values together', 'influence-blog' );
 
             $this->json['inputAttrs'] = '';
             foreach ( $this->input_attrs as $attr => $value ) {
@@ -184,18 +184,18 @@ if( ! class_exists( 'Dimension_One_Control' ) ) :
         protected function l10n( $id = false ) {
 
             $translation_strings = array(
-                'desktop_top' 		=> esc_attr__( 'Top', 'textdomain' ),
-                'desktop_right' 	=> esc_attr__( 'Right', 'textdomain' ),
-                'desktop_bottom' 	=> esc_attr__( 'Bottom', 'textdomain' ),
-                'desktop_left' 		=> esc_attr__( 'Left', 'textdomain' ),
-                'tablet_top' 		=> esc_attr__( 'Top', 'textdomain' ),
-                'tablet_right' 		=> esc_attr__( 'Right', 'textdomain' ),
-                'tablet_bottom' 	=> esc_attr__( 'Bottom', 'textdomain' ),
-                'tablet_left' 		=> esc_attr__( 'Left', 'textdomain' ),
-                'mobile_top' 		=> esc_attr__( 'Top', 'textdomain' ),
-                'mobile_right' 		=> esc_attr__( 'Right', 'textdomain' ),
-                'mobile_bottom' 	=> esc_attr__( 'Bottom', 'textdomain' ),
-                'mobile_left' 		=> esc_attr__( 'Left', 'textdomain' ),
+                'desktop_top' 		=> esc_attr__( 'Top', 'influence-blog' ),
+                'desktop_right' 	=> esc_attr__( 'Right', 'influence-blog' ),
+                'desktop_bottom' 	=> esc_attr__( 'Bottom', 'influence-blog' ),
+                'desktop_left' 		=> esc_attr__( 'Left', 'influence-blog' ),
+                'tablet_top' 		=> esc_attr__( 'Top', 'influence-blog' ),
+                'tablet_right' 		=> esc_attr__( 'Right', 'influence-blog' ),
+                'tablet_bottom' 	=> esc_attr__( 'Bottom', 'influence-blog' ),
+                'tablet_left' 		=> esc_attr__( 'Left', 'influence-blog' ),
+                'mobile_top' 		=> esc_attr__( 'Top', 'influence-blog' ),
+                'mobile_right' 		=> esc_attr__( 'Right', 'influence-blog' ),
+                'mobile_bottom' 	=> esc_attr__( 'Bottom', 'influence-blog' ),
+                'mobile_left' 		=> esc_attr__( 'Left', 'influence-blog' ),
             );
             if ( false === $id ) {
                 return $translation_strings;

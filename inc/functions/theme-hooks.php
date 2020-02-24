@@ -52,7 +52,44 @@ if( ! function_exists( 'influence_blog_header_social_links_action' ) ) :
 
     ?>
     <ul class="top-social-icon">
-        <?php influence_blog_social_links_template( 'header' ); ?>
+        <?php
+        $social_links = get_theme_mod( 'influence_blog_header_one_layout_one_social_links' );
+        $social_links = json_decode( $social_links );
+
+        if( !empty( $social_links ) ) {
+
+            $new_tab = ifb_get_mod( 'header_one_layout_one_social_links_tab_toggle' );
+
+            $target_attr = '_self';
+
+            if( $new_tab == true ) {
+
+                $target_attr = '_blank';
+
+            }
+
+            foreach( $social_links as $social ) {
+
+                $link = $social->link;
+                $icon = $social->icon_value;
+
+                if( empty( $link ) ) {
+
+                    $link = '#';
+                }
+
+                if( !empty( $icon ) ) {
+                    ?>
+                    <li>
+                        <a href="<?php echo esc_url( $link ); ?>" target="<?php echo esc_attr( $target_attr ); ?>">
+                           <i class="fa <?php echo esc_attr( $icon ); ?>"></i>
+                        </a>
+                    </li>
+                    <?php
+                }
+            }
+        }
+        ?>
     </ul><!--//top-social-icon-->
     <?php
     }
@@ -323,7 +360,7 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
                     <button class="hamburger hamburger_nb" type="button"> <span class="hamburger_box"> <span class="hamburger_inner"></span> </span> </button>
                     <?php
 
-                    $display_search_icon = ifb_get_mod( 'display_search_icon', true );
+                    $display_search_icon = ifb_get_mod( 'display_search_icon', false );
 
                     if( $display_search_icon == true ) {
 
@@ -478,7 +515,7 @@ if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
     ?>
     <div class="contact-info lrg-padding">
         <?php
-        $footer_contact_info_title = ifb_get_mod( 'footer_contact_info_title', 'Get In Touch' );
+        $footer_contact_info_title = ifb_get_mod( 'footer_contact_info_title', '' );
 
         if( !empty( $footer_contact_info_title ) ) {
             ?>
@@ -488,7 +525,7 @@ if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
             <?php
         }
 
-        $display_footer_contact_info_social_links = ifb_get_mod( 'display_footer_contact_info_social_links', true );
+        $display_footer_contact_info_social_links = ifb_get_mod( 'display_footer_contact_info_social_links', false );
 
         if( $display_footer_contact_info_social_links == true ) {
             ?>
@@ -558,7 +595,7 @@ if( ! function_exists( 'influence_blog_footer_scroll_top_action' ) ) :
 
  	function influence_blog_footer_scroll_top_action() {
 
-        $display_footer_scroll_top = ifb_get_mod( 'display_footer_scroll_top', true );
+        $display_footer_scroll_top = ifb_get_mod( 'display_footer_scroll_top', false );
 
         if( $display_footer_scroll_top == true ) {
 
@@ -706,7 +743,7 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
         */
         do_action( 'influence_blog_footer_top' );
 
-        $display_footer_contact_info = ifb_get_mod( 'display_footer_contact_info', true );
+        $display_footer_contact_info = ifb_get_mod( 'display_footer_contact_info', false );
 
         if( $display_footer_contact_info == true ) {
 

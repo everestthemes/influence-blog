@@ -46,9 +46,9 @@ if( !function_exists( 'influence_blog_sidebar_position_array' ) ) :
         } else {
 
             $position = array(
-                'left'  => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/sample-one.png',
-                'right' => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/sample-one.png',
-                'none'  => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/sample-one.png',
+                'left'  => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/header-one.png',
+                'right' => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/header-one.png',
+                'none'  => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/header-one.png',
             );
         }
 
@@ -64,7 +64,7 @@ if( !function_exists( 'influence_blog_fullwidth_layouts_array' ) ) :
 	function influence_blog_fullwidth_layouts_array() {
 
         $fullwidth = array(
-            'full_one'            => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/sample-one.png',
+            'full_one'            => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/header-one.png',
         );
 
         return $fullwidth;
@@ -79,7 +79,7 @@ if( !function_exists( 'influence_blog_post_layouts_array' ) ) :
 	function influence_blog_post_layouts_array() {
 
         $post = array(
-            'post_one'            => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/sample-one.png',
+            'post_one'            => IFB_INC_CUSTOMIZER_ASSETS_PATH_URI . 'images/header-one.png',
         );
 
         return $post;

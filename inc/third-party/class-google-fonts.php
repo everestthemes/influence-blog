@@ -35,6 +35,9 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
             $heading_font_family = influence_blog_get_font_data( 'typo_heading_font' );
             $heading_font_variants = influence_blog_get_font_data( 'typo_heading_font', 'variants' );
 
+            $header_one_layout_one_design_menu_font_family = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font' );
+            $header_one_layout_one_design_menu_font_variants = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font', 'variants' );
+
 			// Check for web safe fonts, since they don't require enqueues
 			$web_safe_fonts = array( 'web-safe-sans-serif', 'web-safe-serif' );
 
@@ -47,6 +50,10 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
                 'heading'			=> array(
                     'family'   => $heading_font_family,
                     'variants' => $heading_font_variants ? $heading_font_variants : self::$variants,
+                ),
+                'headerOneMenu'			=> array(
+                    'family'   => $header_one_layout_one_design_menu_font_family,
+                    'variants' => $header_one_layout_one_design_menu_font_variants ? $header_one_layout_one_design_menu_font_variants : self::$variants,
                 ),
 			);
 
@@ -101,11 +108,11 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
 
             if ( $variants ) {
 
-                $styles = apply_filters( 'influence_blog_filter_google_font_body_styles', ':' . $variants );
+                $styles = apply_filters( 'influence_blog_filter_google_font_value_styles', ':' . $variants );
 
             } else {
 
-                $styles = apply_filters( 'influence_blog_gfilter_oogle_font_body_styles', ':400' );
+                $styles = apply_filters( 'influence_blog_filter_google_font_value_styles', ':400' );
             }
 
 			return $font_name . $styles;

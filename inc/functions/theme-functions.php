@@ -11,6 +11,12 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
+function debug( $var ) {
+    echo '<pre>';
+    var_dump( $var );
+    echo '</pre>';
+}
+
 /**
  * Function to get customizer options
  */
@@ -293,7 +299,7 @@ if( !function_exists( 'influence_blog_excerpt_length' ) ) {
        return $excerpt_length;
    }
 }
-add_filter( 'excerpt_length', 'influence_blog_excerpt_length' );
+//add_filter( 'excerpt_length', 'influence_blog_excerpt_length' );
 
 
 
@@ -325,7 +331,7 @@ if( ! function_exists( 'influence_blog_main_navigation_wrap' ) ) {
 
 	  	$wrap  = '<ul id="%1$s" class="nav-pd %2$s">';
 
-        $display_home_icon = ifb_get_mod( 'display_home_icon', true );
+        $display_home_icon = ifb_get_mod( 'display_home_icon', false );
 
         if( $display_home_icon == true ) {
 

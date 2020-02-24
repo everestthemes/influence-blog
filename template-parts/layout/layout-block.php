@@ -13,7 +13,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 if( is_home() ) {
     
-    $display_blog_page_grid_three_col_layout = ifb_get_mod( 'display_blog_page_grid_three_col_layout', true );
+    $display_blog_page_grid_three_col_layout = ifb_get_mod( 'display_blog_page_grid_three_col_layout', false );
     
     if( $display_blog_page_grid_three_col_layout == true ) {
     

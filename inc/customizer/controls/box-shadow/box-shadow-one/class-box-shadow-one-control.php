@@ -59,7 +59,7 @@ if( ! class_exists( 'Box_Shadow_One_Control' ) ) :
 
             $this->json['id'] 		= $this->id;
             $this->json['l10n']    	= $this->l10n();
-            $this->json['title'] 	= esc_html__( 'Link values together', 'textdomain' );
+            $this->json['title'] 	= esc_html__( 'Link values together', 'influence-blog' );
 
             $this->json['inputAttrs'] = '';
             foreach ( $this->input_attrs as $attr => $value ) {
@@ -126,10 +126,10 @@ if( ! class_exists( 'Box_Shadow_One_Control' ) ) :
         protected function l10n( $id = false ) {
 
             $translation_strings = array(
-                'desktop_top' 		=> esc_attr__( 'X-Offset', 'textdomain' ),
-                'desktop_right' 	=> esc_attr__( 'Y-Offset', 'textdomain' ),
-                'desktop_bottom' 	=> esc_attr__( 'Blur', 'textdomain' ),
-                'desktop_left' 		=> esc_attr__( 'Spread', 'textdomain' ),
+                'desktop_top' 		=> esc_attr__( 'X-Offset', 'influence-blog' ),
+                'desktop_right' 	=> esc_attr__( 'Y-Offset', 'influence-blog' ),
+                'desktop_bottom' 	=> esc_attr__( 'Blur', 'influence-blog' ),
+                'desktop_left' 		=> esc_attr__( 'Spread', 'influence-blog' ),
             );
             if ( false === $id ) {
                 return $translation_strings;

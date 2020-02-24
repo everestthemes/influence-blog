@@ -65,17 +65,17 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
 
             $icon_lists = array(
                 'font_awesome' => array(
-                    'title' => __('Font Awesome', 'textdomain'),
+                    'title' => __('Font Awesome', 'influence-blog'),
                     'icons' => icon_picker_one_fontawesome_icon_list(),
                 )
             );
 
             $icon_picker_uri = get_template_directory_uri() . '/inc/customizer/controls/icon-picker/icon-picker-one/';
-            $fontawesome_fonts_uri = get_template_directory_uri() . '/inc/customizer/controls/icon-picker/icon-picker-one/fontawesome/css/font-awesome.min.css';
+            $fontawesome_fonts_uri = get_template_directory_uri() . '/everestthemes/assets/css/font-awesome.min.css';
 
             $icon_lists = array(
                 'font_awesome' => array(
-                    'title' => __('Font Awesome', 'textdomain'),
+                    'title' => __('Font Awesome', 'influence-blog'),
                     'icons' => icon_picker_one_fontawesome_icon_list(),
                 )
             );
@@ -128,17 +128,17 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
             <div id="customizer-icon-picker-one">
                 <div class="picker-header">
                     <a class="customize-controls-icon-close" href="#">
-                        <span class="screen-reader-text"><?php echo esc_html__('Cancel', 'textdomain'); ?></span>
+                        <span class="screen-reader-text"><?php echo esc_html__('Cancel', 'influence-blog'); ?></span>
                     </a>
                     <div class="icon-type-selector">
                         <select id="icon-picker-one-type">
-                            <option value="all"><?php echo esc_html__('All Icon Types', 'textdomain'); ?></option>
+                            <option value="all"><?php echo esc_html__('All Icon Types', 'influence-blog'); ?></option>
                         </select>
                     </div>
                 </div>
                 <div class="icon-picker-one-search">
                     <input type="text" id="icon-picker-one-search-input"
-                           placeholder="<?php echo esc_html__('Type icon name here', 'textdomain'); ?>">
+                           placeholder="<?php echo esc_html__('Type icon name here', 'influence-blog'); ?>">
                 </div>
                 <div id="icon-picker-one-browser">
 
