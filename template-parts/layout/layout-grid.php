@@ -27,7 +27,7 @@ if( is_home() ) {
             <?php
         }
         ?>
-        <div class="row ifb-home-posts">
+        <div id="content" class="row ifb-home-posts">
         <?php
 
         if( have_posts() ) :
@@ -94,7 +94,7 @@ if( is_archive() || is_search() ) {
             }
             ?>             
         </div>
-        <div class="row archive-detail-wrap">
+        <div id="content" class="row archive-detail-wrap">
             <?php
     
             if( have_posts() ) :

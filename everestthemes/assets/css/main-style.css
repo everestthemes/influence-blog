@@ -224,6 +224,9 @@ a {
 
 }
 
+/*Changes by dev starts here*/
+
+/*
 a:focus,
 a:hover {
     color: #e9b105;
@@ -236,6 +239,27 @@ button:focus {
     outline: none;
     box-shadow: none;
 }
+*/
+
+a:hover {
+    color: #e9b105;
+    text-decoration: none;
+    transition: 1s ease all;
+}
+
+a:focus {
+    color: #e9b105;
+    text-decoration: underline;
+    transition: 1s ease all;
+}
+
+a:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/*Changes by dev ends here*/
 
 nav ol,
 nav ul {

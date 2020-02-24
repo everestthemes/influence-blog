@@ -28,7 +28,7 @@ $sidebar_position = influence_blog_sidebar_position();
             }
             ?>
             <div class="<?php influence_blog_main_container_class(); ?>">
-                <aside id="primary" class="primary-widget-area">
+                <aside id="content" class="primary-widget-area">
                     <?php
                     if( have_posts() ) :
 
