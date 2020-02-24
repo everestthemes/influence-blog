@@ -87,6 +87,7 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
 
                 $this->customizer_repeater_two_text_control = $args['customizer_repeater_two_text_control'];
             }
+
             if ( ! empty( $args['customizer_repeater_two_text2_control'] ) ) {
 
                 $this->customizer_repeater_two_text2_control = $args['customizer_repeater_two_text2_control'];
@@ -95,6 +96,7 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
 
                 $this->customizer_repeater_two_link2_control = $args['customizer_repeater_two_link2_control'];
             }
+
             if ( ! empty( $args['customizer_repeater_two_designation_control'] ) ) {
 
                 $this->customizer_repeater_two_designation_control = $args['customizer_repeater_two_designation_control'];
@@ -238,7 +240,7 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
 
             if( !empty( $array ) ) {
 
-                $exist_service=count($array);
+                $exist_service= count( $array );
 
                     $repeater_two_del_btn_id=$this->boxtitle;
 
@@ -702,7 +704,7 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
                     <?php
                     echo sprintf(
                         esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'influence-blog' ),
-                        sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'influence-blog' ) )
+                        sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow" target="_blank">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'influence-blog' ) )
                     );
                     ?>
                 </span>

@@ -3,8 +3,8 @@
 Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 5.2.4
-Stable tag: 1.0.0
+Tested up to: 5.3.2
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -39,12 +39,14 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 * Font Awesome http://fontawesome.io/license/, [SIL OFL 1.1, MIT, CC](http://scripts.sil.org/OFL, http://opensource.org/licenses/mit-license.html, https://creativecommons.org/licenses/by/4.0/)
 
-* Images Included, full-one.png, full_two.png, half_one.png, half-two.png, half_three.png, post_one.png, post_two.png, sidebar_left.png, sidebar_right.png, and sidebar_none.png, self created GPLv2
+* Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar, Copyright (c) 2014 Liviu Cristian Mirea Ghiban, [MIT](http://opensource.org/licenses/MIT)
+
+* Images Included, header-one.png, header-two.png, self created GPLv2
 
 
 == Screenshot ==
 
-1. Logo Image & Advertisement Image ( Self created GPLv2 or later )
+1. Screenshot Image ( Self created GPLv2 or later )
 
 == Installation ==
 
@@ -57,10 +59,17 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 = Does this theme support any plugins? =
 
-Influence Blog includes support for mailchimp
+Influence Blog includes support for mailchimp, contact form 7.
 
 
 == Changelog ==
+
+= 1.0.1 - February 24, 2020 =
+* Customizer improved
+* Codes optimized
+* Fixed : Design
+* Updated as per reviewer
+* Removed unused files
 
 = 1.0.0 - October 22, 2019 =
 * Initial release

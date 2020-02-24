@@ -6,7 +6,6 @@
     <div class="popover-content">
         <div class="iconpicker">
             <div class="iconpicker-items">
-
                 <i data-type="iconpicker-item" title=".fa-behance" class="fa fa-behance"></i>
                 <i data-type="iconpicker-item" title=".fa-behance-square" class="fa fa-behance-square"></i>
                 <i data-type="iconpicker-item" title=".fa-facebook" class="fa fa-facebook"></i>
@@ -85,7 +84,6 @@
 				<i data-type="iconpicker-item" title=".fa-cc-stripe" class="fa fa-cc-stripe"></i>
 				<i data-type="iconpicker-item" title=".fa-cc-visa" class="fa fa-cc-visa"></i>
 				<i data-type="iconpicker-item" title=".fa-cc-mastercard" class="fa fa-cc-mastercard"></i>
-
             </div> <!-- /.iconpicker-items -->
         </div> <!-- /.iconpicker -->
     </div> <!-- /.popover-content -->

@@ -188,8 +188,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             //Color
             'color_theme' => '#eeeeee',
             'color_text' => '#000000',
-            'color_link' => '#ffffff',
-            'color_link_hover' => '#000000',
+            'color_link' => '#183244',
+            'color_link_hover' => '#e9b105',
             //Header - layout options
             'header_layout_options_select' => 'one',
             'header_layout_options_hedader_bg_color' => 'rgb(0, 0, 0, 0.36)',
@@ -199,6 +199,57 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_layout_options_advance_bg_image_position_y' => 'center',
             //Header - Header one
             'header_one_layout_one_menu_select' => 'menu-2',
+            'header_one_layout_one_menu_alignment' => 'left',
+            'header_one_layout_one_social_links_tab_toggle' => true,
+            'header_one_layout_one_social_links_alignment' => 'right',
+            //Header - Header one - Color
+            'header_one_layout_one_design_bg_color' => '#183244',
+            //Header - Header one - Menu Color
+            'header_one_layout_one_design_menu_color' => '#fff',
+            'header_one_layout_one_design_menu_hover_color' => '#e9b105',
+            'header_one_layout_one_design_menu_sep_color' => '#666',
+            //Header - Header one - Menu Typography
+			'typo_header_one_layout_one_design_menu_font' => json_encode(
+				array(
+					'font' => 'Lato',
+					'variantlist' => array( 'regular', '100', '300', '700', '900' ),
+					'fontweight' => 'regular',
+					'category' => 'sans-serif'
+				)
+			),
+            'typo_header_one_layout_one_design_menu_transform' => 'none',
+            'typo_header_one_layout_one_design_menu_size_d' => '12',
+            'typo_header_one_layout_one_design_menu_size_t' => '12',
+            'typo_header_one_layout_one_design_menu_size_m' => '12',
+            'typo_header_one_layout_one_design_menu_height_d' => '1.2',
+            'typo_header_one_layout_one_design_menu_height_t' => '1.2',
+            'typo_header_one_layout_one_design_menu_height_m' => '1.2',
+            'typo_header_one_layout_one_design_menu_spacing_d' => '1.2',
+            'typo_header_one_layout_one_design_menu_spacing_t' => '1.2',
+            'typo_header_one_layout_one_design_menu_spacing_m' => '1.2',
+            //Header - Header one - Social Links Color
+            'header_one_layout_one_design_social_links_color' => '#e9b105',
+            'header_one_layout_one_design_social_links_hover_color' => '#ffffff',
+            'header_one_layout_one_design_social_links_sep_color' => '#666',
+            //Header - Header one - Social Links Typography
+            'typo_header_one_layout_one_design_social_links_size_d' => '16',
+            'typo_header_one_layout_one_design_social_links_size_t' => '14',
+            'typo_header_one_layout_one_design_social_links_size_m' => '12',
+            //Header - Header one - Advance
+            'header_one_layout_one_advance_toggle' => false,
+            //Header - Header one - Advance - Padding
+            'header_one_layout_one_advance_d_p_top' => '5',
+            'header_one_layout_one_advance_d_p_right' => '0',
+            'header_one_layout_one_advance_d_p_bottom' => '5',
+            'header_one_layout_one_advance_d_p_left' => '0',
+            'header_one_layout_one_advance_t_p_top' => '5',
+            'header_one_layout_one_advance_t_p_right' => '0',
+            'header_one_layout_one_advance_t_p_bottom' => '5',
+            'header_one_layout_one_advance_t_p_left' => '0',
+            'header_one_layout_one_advance_m_p_top' => '5',
+            'header_one_layout_one_advance_m_p_right' => '0',
+            'header_one_layout_one_advance_m_p_bottom' => '5',
+            'header_one_layout_one_advance_m_p_left' => '0',
             //Reset
             'reset_toggle' => false,
 		);

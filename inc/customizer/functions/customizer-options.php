@@ -281,3 +281,22 @@ if( !function_exists( 'influence_blog_background_image_positions_y_array' ) ) :
 
 	}
 endif;
+
+if( !function_exists( 'influence_blog_alignment_array' ) ) :
+	/*
+	 * Function to get alignment
+	 */
+	function influence_blog_alignment_array() {
+
+        $options = array(
+            'left' => __( 'Left', 'influence-blog' ),
+            'right' => __( 'Right', 'influence-blog' ),
+            'center' => __( 'Center', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_alignment_array', $options );
+
+        return $options;
+
+	}
+endif;

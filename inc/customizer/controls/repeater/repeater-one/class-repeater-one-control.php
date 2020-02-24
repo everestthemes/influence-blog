@@ -66,7 +66,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     		// Set up defaults for row labels.
     		$this->row_label = array(
     			'type' => 'text',
-    			'value' => esc_attr__( 'row', 'textdomain' ),
+    			'value' => esc_attr__( 'row', 'influence-blog' ),
     			'field' => false,
     		);
 
@@ -74,7 +74,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     		$this->row_label( $args );
 
     		if ( empty( $this->button_label ) ) {
-    			$this->button_label = sprintf( esc_attr__( 'Add new %s', 'textdomain' ), $this->row_label['value'] );
+    			$this->button_label = sprintf( esc_attr__( 'Add new %s', 'influence-blog' ), $this->row_label['value'] );
     		}
 
     		if ( empty( $args['fields'] ) || ! is_array( $args['fields'] ) ) {
@@ -232,7 +232,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     		<ul class="repeater-one-fields"></ul>
 
     		<?php if ( isset( $this->choices['limit'] ) ) : ?>
-    			<p class="limit"><?php printf( esc_attr__( 'Limit: %s rows', 'textdomain' ), esc_html( $this->choices['limit'] ) ); ?></p>
+    			<p class="limit"><?php printf( esc_attr__( 'Limit: %s rows', 'influence-blog' ), esc_html( $this->choices['limit'] ) ); ?></p>
     		<?php endif; ?>
     		<button class="button-secondary repeater-one-add"><?php echo esc_html( $this->button_label ); ?></button>
 
@@ -364,7 +364,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     						            <# if ( field.description ) { #>
     						                <span class="description customize-control-description">{{{ field.description }}}</span>
     						            <# } #>
-    						            <input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php echo esc_attr__( 'Hex Value', 'textdomain' ); ?>"  value="{{{ field.default }}}" data-field="{{{ field.id }}}" {{ defaultValue }} />
+    						            <input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php echo esc_attr__( 'Hex Value', 'influence-blog' ); ?>"  value="{{{ field.default }}}" data-field="{{{ field.id }}}" {{ defaultValue }} />
 
     						        </label>
 
@@ -389,22 +389,22 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     									<# } #>
     								</label>
 
-    								<figure class="repeater-one-image-attachment" data-placeholder="<?php esc_attr_e( 'No Image Selected', 'textdomain' ); ?>" >
+    								<figure class="repeater-one-image-attachment" data-placeholder="<?php esc_attr_e( 'No Image Selected', 'influence-blog' ); ?>" >
     									<# if ( field.default ) { #>
     										<# var defaultImageURL = ( field.default.url ) ? field.default.url : field.default; #>
     										<img src="{{{ defaultImageURL }}}">
     									<# } else { #>
-    										<?php esc_attr_e( 'No Image Selected', 'textdomain' ); ?>
+    										<?php esc_attr_e( 'No Image Selected', 'influence-blog' ); ?>
     									<# } #>
     								</figure>
 
     								<div class="actions">
-    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( 'Remove', 'textdomain' ); ?></button>
-    									<button type="button" class="button upload-button" data-label=" <?php esc_attr_e( 'Add Image', 'textdomain' ); ?>" data-alt-label="<?php esc_attr_e( 'Change Image', 'textdomain' ); ?>" >
+    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( 'Remove', 'influence-blog' ); ?></button>
+    									<button type="button" class="button upload-button" data-label=" <?php esc_attr_e( 'Add Image', 'influence-blog' ); ?>" data-alt-label="<?php esc_attr_e( 'Change Image', 'influence-blog' ); ?>" >
     										<# if ( field.default ) { #>
-    											<?php esc_attr_e( 'Change Image', 'textdomain' ); ?>
+    											<?php esc_attr_e( 'Change Image', 'influence-blog' ); ?>
     										<# } else { #>
-    											<?php esc_attr_e( 'Add Image', 'textdomain' ); ?>
+    											<?php esc_attr_e( 'Add Image', 'influence-blog' ); ?>
     										<# } #>
     									</button>
     									<# if ( field.default.id ) { #>
@@ -425,22 +425,22 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
     									<# } #>
     								</label>
 
-    								<figure class="repeater-one-file-attachment" data-placeholder="<?php esc_attr_e( 'No File Selected', 'textdomain' ); ?>" >
+    								<figure class="repeater-one-file-attachment" data-placeholder="<?php esc_attr_e( 'No File Selected', 'influence-blog' ); ?>" >
     									<# if ( field.default ) { #>
     										<# var defaultFilename = ( field.default.filename ) ? field.default.filename : field.default; #>
     										<span class="file"><span class="dashicons dashicons-media-default"></span> {{ defaultFilename }}</span>
     									<# } else { #>
-    										<?php esc_attr_e( 'No File Selected', 'textdomain' ); ?>
+    										<?php esc_attr_e( 'No File Selected', 'influence-blog' ); ?>
     									<# } #>
     								</figure>
 
     								<div class="actions">
-    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( 'Remove', 'textdomain' ); ?></button>
-    									<button type="button" class="button upload-button" data-label="<?php esc_attr_e( 'Add File', 'textdomain' ); ?>" data-alt-label="<?php esc_attr_e( 'Change File', 'textdomain' ); ?>" >
+    									<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( 'Remove', 'influence-blog' ); ?></button>
+    									<button type="button" class="button upload-button" data-label="<?php esc_attr_e( 'Add File', 'influence-blog' ); ?>" data-alt-label="<?php esc_attr_e( 'Change File', 'influence-blog' ); ?>" >
     										<# if ( field.default ) { #>
-    											<?php esc_attr_e( 'Change File', 'textdomain' ); ?>
+    											<?php esc_attr_e( 'Change File', 'influence-blog' ); ?>
     										<# } else { #>
-    											<?php esc_attr_e( 'Add File', 'textdomain' ); ?>
+    											<?php esc_attr_e( 'Add File', 'influence-blog' ); ?>
     										<# } #>
     									</button>
     									<# if ( field.default.id ) { #>
@@ -464,7 +464,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
 
     						</div>
     					<# }); #>
-    					<button type="button" class="button-link repeater-one-row-remove"><?php esc_attr_e( 'Remove', 'textdomain' ); ?></button>
+    					<button type="button" class="button-link repeater-one-row-remove"><?php esc_attr_e( 'Remove', 'influence-blog' ); ?></button>
     				</div>
     			</li>
     		</script>

@@ -111,19 +111,19 @@ if( ! class_exists( 'Text_One_Control' ) ) :
 
             <# if ( data.desktop ) { #>
                 <div class="desktop control-wrap active">
-                    <input type="text" value="{{ data.desktop.value }}" placeholder="<?php esc_html_e( '16', 'textdomain' ); ?>" {{{ data.desktop.link }}} />
+                    <input type="text" value="{{ data.desktop.value }}" placeholder="<?php esc_html_e( '16', 'influence-blog' ); ?>" {{{ data.desktop.link }}} />
                 </div>
             <# } #>
 
             <# if ( data.tablet ) { #>
                 <div class="tablet control-wrap">
-                    <input type="text" value="{{ data.tablet.value }}" placeholder="<?php esc_html_e( '14', 'textdomain' ); ?>" {{{ data.tablet.link }}} />
+                    <input type="text" value="{{ data.tablet.value }}" placeholder="<?php esc_html_e( '14', 'influence-blog' ); ?>" {{{ data.tablet.link }}} />
                 </div>
             <# } #>
 
             <# if ( data.mobile ) { #>
                 <div class="mobile control-wrap">
-                    <input type="text" value="{{ data.mobile.value }}" placeholder="<?php esc_html_e( '12', 'textdomain' ); ?>" {{{ data.mobile.link }}} />
+                    <input type="text" value="{{ data.mobile.value }}" placeholder="<?php esc_html_e( '12', 'influence-blog' ); ?>" {{{ data.mobile.link }}} />
                 </div>
             <# } #>
         <?php

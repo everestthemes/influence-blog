@@ -65,7 +65,7 @@ if( ! function_exists( 'influence_blog_social_links_template' ) ) {
         $twitter_link = ifb_get_mod( 'twitter_link', '' );
         $instagram_link = ifb_get_mod( 'instagram_link', '' );
         $youtube_link = ifb_get_mod( 'youtube_link', '' );
-        $display_rss_feed = ifb_get_mod( 'display_rss_feed', true );
+        $display_rss_feed = ifb_get_mod( 'display_rss_feed', false );
 
         $youtube_class = '';
 
@@ -490,12 +490,7 @@ if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
  		if( $display_breadcrumb == true ) {
  			?>
  			<div class="breadcrumbs-sec breadcrumbs-layout1">
-                <?php
-                $breadcrumb_args = array(
-                    'show_browse' => false,
-                );
-                influence_blog_breadcrumb_trail( $breadcrumb_args );
-                ?>
+                <?php everestthemes_breadcrumb_trail(); ?>
             </div>
             <!--breadcdrum-->
  			<?php

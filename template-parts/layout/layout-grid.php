@@ -55,7 +55,16 @@ if( is_home() ) {
 
         ?>
         </div><!--//inner-row-->
-        <?php get_template_part( 'template-parts/content', 'pagination' ); ?>
+        <?php
+
+        /**
+        * Hook - influence_blog_pagination_default_template.
+        *
+        * @hooked influence_blog_pagination_default_template_action - 510
+        */
+        do_action( 'influence_blog_pagination_default_template' );
+
+        ?>
     </div><!--//half-widget-left-->
     <?php
 } 
