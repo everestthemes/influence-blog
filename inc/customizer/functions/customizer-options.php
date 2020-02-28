@@ -132,7 +132,7 @@ if( !function_exists( 'influence_blog_font_size_attrs_array' ) ) :
         $options = array(
             'min'                   => 10,
             'max'                   => 20,
-            'step'                  => 1,
+            'step'                  => 0.1,
         );
 
         $options = apply_filters( 'influence_blog_filter_font_size_attrs_array', $options );
@@ -151,7 +151,7 @@ if( !function_exists( 'influence_blog_line_height_attrs_array' ) ) :
         $options = array(
             'min'                   => 0,
             'max'                   => 5,
-            'step'                  => 0.5,
+            'step'                  => 0.1,
         );
 
         $options = apply_filters( 'influence_blog_filter_line_height_attrs_array', $options );
@@ -170,7 +170,7 @@ if( !function_exists( 'influence_blog_letter_spacing_attrs_array' ) ) :
         $options = array(
             'min'                   => 0,
             'max'                   => 5,
-            'step'                  => 0.5,
+            'step'                  => 0.1,
         );
 
         $options = apply_filters( 'influence_blog_filter_letter_spacing_attrs_array', $options );

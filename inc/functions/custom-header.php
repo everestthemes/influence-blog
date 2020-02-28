@@ -51,6 +51,8 @@ if ( ! function_exists( 'influence_blog_header_style' ) ) :
 			return;
 		}
 
+        $display_tagline = ifb_get_mod( 'display_tagline' );
+
 		// If we get this far, we have custom styles. Let's do this.
 		?>
 		<style type="text/css">
@@ -58,7 +60,22 @@ if ( ! function_exists( 'influence_blog_header_style' ) ) :
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>
-			.site-title,
+			.site-title {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+		<?php
+		// If the user has set a custom color for the text use that.
+		else :
+			?>
+			.site-title a {
+				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			}
+		<?php endif; ?>
+        <?php
+		// Has the text been hidden?
+		if ( ! $display_tagline ) :
+			?>
 			.site-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
@@ -67,7 +84,6 @@ if ( ! function_exists( 'influence_blog_header_style' ) ) :
 		// If the user has set a custom color for the text use that.
 		else :
 			?>
-			.site-title a,
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}

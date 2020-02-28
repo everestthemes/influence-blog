@@ -197,6 +197,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_layout_options_advance_bg_image_size' => 'cover',
             'header_layout_options_advance_bg_image_position_x' => 'center',
             'header_layout_options_advance_bg_image_position_y' => 'center',
+            'header_layout_options_advance_header_height' => '300',
             //Header - Header one
             'header_one_layout_one_menu_select' => 'menu-2',
             'header_one_layout_one_menu_alignment' => 'left',
@@ -250,6 +251,37 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_one_layout_one_advance_m_p_right' => '0',
             'header_one_layout_one_advance_m_p_bottom' => '5',
             'header_one_layout_one_advance_m_p_left' => '0',
+            //Header - Header two - General
+            'display_tagline' => true,
+            'header_two_site_title_alignment' => 'center',
+            'header_two_ads_upload_image' => '',
+            'header_two_ads_link' => '#',
+            'header_two_ads_link_rel' => 'nofollow',
+            'header_two_ads_links_tab_toggle' => true,
+            'header_two_ads_alignment' => 'right',
+            //Header - Header two - Design
+            'typo_header_two_design_site_title_font' => json_encode(
+				array(
+					'font' => 'Atomic Age',
+					'variantlist' => array( 'regular' ),
+					'fontweight' => 'regular',
+					'category' => 'display'
+				)
+			),
+            'typo_header_two_design_site_title_transform' => 'none',
+            'typo_header_two_design_site_title_size_d' => '48',
+            'typo_header_two_design_site_title_size_t' => '48',
+            'typo_header_two_design_site_title_size_m' => '48',
+            'typo_header_two_design_site_title_height_d' => '1.2',
+            'typo_header_two_design_site_title_height_t' => '1.2',
+            'typo_header_two_design_site_title_height_m' => '1.2',
+            'typo_header_two_design_site_title_spacing_d' => '1.2',
+            'typo_header_two_design_site_title_spacing_t' => '1.2',
+            'typo_header_two_design_site_title_spacing_m' => '1.2',
+            //Header - Header two - Advance
+            'header_two_advance_toggle' => false,
+            'header_two_advance_site_title_col' => '4',
+            'header_two_advance_ads_col' => '8',
             //Reset
             'reset_toggle' => false,
 		);

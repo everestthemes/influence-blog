@@ -276,6 +276,22 @@ function influence_blog_customize_register( $wp_customize ) {
 
     $wp_customize->get_control( 'header_image' )->section = 'influence_blog_header_layout_options_section';
     $wp_customize->get_control( 'header_image' )->priority = 45;
+
+    $wp_customize->get_control( 'custom_logo' )->section = 'influence_blog_header_two_section';
+    $wp_customize->get_control( 'custom_logo' )->priority = 25;
+
+    $wp_customize->get_control( 'blogname' )->section = 'influence_blog_header_two_section';
+    $wp_customize->get_control( 'blogname' )->priority = 30;
+
+    $wp_customize->get_control( 'display_header_text' )->section = 'influence_blog_header_two_section';
+    $wp_customize->get_control( 'display_header_text' )->label = esc_html__( 'Display Site Title', 'influence-blog' );
+    $wp_customize->get_control( 'display_header_text' )->priority = 35;
+
+    $wp_customize->get_control( 'blogdescription' )->section = 'influence_blog_header_two_section';
+    $wp_customize->get_control( 'blogdescription' )->priority = 40;
+
+    $wp_customize->get_control( 'header_textcolor' )->section = 'influence_blog_header_two_section';
+    $wp_customize->get_control( 'header_textcolor' )->priority = 100;
 }
 add_action( 'customize_register', 'influence_blog_customize_register', 10 );
 

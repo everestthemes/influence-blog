@@ -37,6 +37,9 @@ $button_three_array = array(
     'influence_blog_header_layout_options_advance_bg_image_size' => array(),
     'influence_blog_header_layout_options_advance_bg_image_position_x' => array(),
     'influence_blog_header_layout_options_advance_bg_image_position_y' => array(),
+    'influence_blog_header_layout_options_advance_header_height_heading' => array(),
+    'influence_blog_header_layout_options_advance_header_height_info' => array(),
+    'influence_blog_header_layout_options_advance_header_height' => array(),
 );
 
 $button_three_array = apply_filters( 'influence_blog_filter_header_layout_options_button_three_array', $button_three_array );
@@ -270,7 +273,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'header-layout-options-advance-bg-image-heading' ),
-    'controls_to_wrap'         => 7,
+    'controls_to_wrap'         => 3,
     'expanded'                 => true,
     'priority'                 => 65,
     'active_callback'          => 'influence_blog_is_header_layout_options_advance_enable',
@@ -326,3 +329,56 @@ $wp_customize->add_control( 'influence_blog_header_layout_options_advance_bg_ima
     'priority'                 => 80,
     'active_callback'          => 'influence_blog_is_header_layout_options_advance_enable',
 ) );
+
+/*---------------------------------- Header layout options advance header height heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_layout_options_advance_header_height_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_layout_options_advance_header_height_heading', array(
+    'label'                    => esc_html__( 'Header Height', 'influence-blog' ) . ' (px) ',
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'header-layout-options-advance-header-height-heading' ),
+    'controls_to_wrap'         => 2,
+    'expanded'                 => false,
+    'priority'                 => 85,
+    'active_callback'          => 'influence_blog_is_header_layout_options_advance_enable',
+) ) );
+
+/*---------------------------------- Header layout options advance header height Info -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_layout_options_advance_header_height_info', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_header_layout_options_advance_header_height_info', array(
+    'label'                    => esc_html__( 'For only Header layout two.', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'info-one',
+    'info_type'                => 'info',
+    'priority'                 => 90,
+    'active_callback'          => 'influence_blog_is_header_layout_options_advance_enable',
+) ) );
+
+/*---------------------------------- Header layout options advance header height -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_layout_options_advance_header_height', array(
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'transport' 		       => 'postMessage',
+    'default'                  => influence_blog_defaults( 'header_layout_options_advance_header_height' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_header_layout_options_advance_header_height', array(
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 200,
+        'max'                  => 900,
+        'step'                 => 1,
+    ),
+    'priority'                 => 95,
+    'active_callback'          => 'influence_blog_is_header_layout_options_advance_enable',
+) ) );

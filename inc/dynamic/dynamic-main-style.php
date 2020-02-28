@@ -484,12 +484,14 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $header_layout_options_advance_bg_image_size = ifb_get_mod( 'header_layout_options_advance_bg_image_size' );
             $header_layout_options_advance_bg_image_position_x = ifb_get_mod( 'header_layout_options_advance_bg_image_position_x' );
             $header_layout_options_advance_bg_image_position_y = ifb_get_mod( 'header_layout_options_advance_bg_image_position_y' );
+            $header_layout_options_advance_header_height = ifb_get_mod( 'header_layout_options_advance_header_height' );
 
             $header_layout_options_advance_bg_css = array(
                 '.header-layout2' => array(
                     'background-size' => esc_attr( $header_layout_options_advance_bg_image_size ),
                     'background-position-x' => esc_attr( $header_layout_options_advance_bg_image_position_x ),
                     'background-position-y' => esc_attr( $header_layout_options_advance_bg_image_position_y ),
+                    'height' => esc_attr( $header_layout_options_advance_header_height . 'px' ),
                 ),
             );
 
@@ -622,8 +624,48 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $parse_css .= influence_blog_parse_css( $header_one_layout_one_advance_css );
         }
 
+        /*-----------------------------------------------------------------------------
+							 Header Two Options
+        -----------------------------------------------------------------------------*/
 
+        /*---------------------------------- General Section -----------------------------------*/
 
+        $header_two_site_title_alignment = ifb_get_mod( 'header_two_site_title_alignment' );
+        $header_two_ads_alignment = ifb_get_mod( 'header_two_ads_alignment' );
+
+        $header_two_general_css = array(
+            '.logo-sec' => array(
+                'text-align' => esc_attr( $header_two_site_title_alignment ),
+            ),
+            '.side-img' => array(
+                'text-align' => esc_attr( $header_two_ads_alignment ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $header_two_general_css );
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        //Header two design site title typo
+        $typo_header_two_design_site_title_font_family = influence_blog_get_font_data( 'typo_header_two_design_site_title_font' );
+        $typo_header_two_design_site_title_font_weight = influence_blog_get_font_data( 'typo_header_two_design_site_title_font', 'fontweight' );
+        $typo_header_two_design_site_title_text_transform = ifb_get_mod( 'typo_header_two_design_site_title_transform' );
+        $typo_header_two_design_site_title_font_size = ifb_get_mod( 'typo_header_two_design_site_title_size_d' );
+        $typo_header_two_design_site_title_line_height = ifb_get_mod( 'typo_header_two_design_site_title_height_d' );
+        $typo_header_two_design_site_title_letter_spacing = ifb_get_mod( 'typo_header_two_design_site_title_spacing_d' );
+
+        $typo_header_two_design_site_title_css = array(
+            '.site-title' => array(
+                'font-family' => esc_attr( $typo_header_two_design_site_title_font_family ),
+                'font-weight' => esc_attr( $typo_header_two_design_site_title_font_weight ),
+                'text-transform' => esc_attr( $typo_header_two_design_site_title_text_transform ),
+                'font-size' => esc_attr( $typo_header_two_design_site_title_font_size . 'px' ),
+                'line-height' => esc_attr( $typo_header_two_design_site_title_line_height ),
+                'letter-spacing' => esc_attr( $typo_header_two_design_site_title_letter_spacing . 'px' ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $typo_header_two_design_site_title_css );
 
 
 
