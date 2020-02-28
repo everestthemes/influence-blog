@@ -263,6 +263,34 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
     }
 endif;
 
+if( !function_exists( 'influence_blog_col_value' ) ) {
+   /*
+    * Returns col value
+    */
+   function influence_blog_col_value( $value, $size = null ) {
+
+       $col_class = '';
+
+       if( $size !== null && !empty( $size ) ) {
+
+           $size = '-' . $size;
+
+       } else {
+
+           $size = '';
+       }
+
+       if( !empty( $value ) && absint( $value ) ) {
+
+           $value = '-' . $value;
+
+           $col_class = 'col' . $size . $value;
+       }
+
+       return $col_class;
+   }
+}
+
 /**
  * Customize Readmore Link.
  */

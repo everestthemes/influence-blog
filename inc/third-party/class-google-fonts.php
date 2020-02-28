@@ -38,6 +38,9 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
             $header_one_layout_one_design_menu_font_family = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font' );
             $header_one_layout_one_design_menu_font_variants = influence_blog_get_font_data( 'typo_header_one_layout_one_design_menu_font', 'variants' );
 
+            $typo_header_two_design_site_title_font_family = influence_blog_get_font_data( 'typo_header_two_design_site_title_font' );
+            $typo_header_two_design_site_title_font_variants = influence_blog_get_font_data( 'typo_header_two_design_site_title_font', 'variants' );
+
 			// Check for web safe fonts, since they don't require enqueues
 			$web_safe_fonts = array( 'web-safe-sans-serif', 'web-safe-serif' );
 
@@ -54,6 +57,10 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
                 'headerOneMenu'			=> array(
                     'family'   => $header_one_layout_one_design_menu_font_family,
                     'variants' => $header_one_layout_one_design_menu_font_variants ? $header_one_layout_one_design_menu_font_variants : self::$variants,
+                ),
+                'siteTitle'			=> array(
+                    'family'   => $typo_header_two_design_site_title_font_family,
+                    'variants' => $typo_header_two_design_site_title_font_variants ? $typo_header_two_design_site_title_font_variants : self::$variants,
                 ),
 			);
 

@@ -107,17 +107,8 @@ if( ! function_exists( 'influence_blog_header_logo_action' ) ) :
 
  	function influence_blog_header_logo_action() {
 
-        $header_layout = ifb_get_mod( 'header_layout_options_select' );
-
-        $header_class = '';
-
-        if( $header_layout == 'two' ) {
-
-            $header_class = ' center';
-        }
-
         ?>
-        <div class="logo-sec<?php echo esc_attr( $header_class ); ?>">
+        <div class="logo-sec">
             <?php
 
             the_custom_logo();
@@ -153,18 +144,42 @@ if( ! function_exists( 'influence_blog_header_advertisement_action' ) ) :
 
  	function influence_blog_header_advertisement_action() {
 
-    ?>
-    <div class="side-img">
-        <?php
+        $ads_image = ifb_get_mod( 'header_two_ads_upload_image' );
 
-        if( is_active_sidebar( 'influence-blog-header-advertisement' ) ) {
+        $ads_image_id_src[0] = $rel_tag = '';
 
-            dynamic_sidebar( 'influence-blog-header-advertisement' );
+        $tab_class = '_self';
+
+        if( !empty( $ads_image ) ) {
+
+            $ads_image_id = attachment_url_to_postid( $ads_image );
+
+            $ads_image_id_src = wp_get_attachment_image_src( $ads_image_id, 'full' );
+
+            $ads_link = ifb_get_mod( 'header_two_ads_link' );
+
+            $ads_link_tab = ifb_get_mod( 'header_two_ads_links_tab_toggle' );
+
+            if( $ads_link_tab == true ) {
+
+                $tab_class = '_blank';
+            }
+
+            $ads_link_rel = ifb_get_mod( 'header_two_ads_link_rel' );
+
+            if( !empty( $ads_link_rel ) ) {
+
+                $rel_tag = 'rel=' . $ads_link_rel;
+            }
+
+            ?>
+            <div class="side-img">
+                <a href="<?php echo esc_url( $ads_link ); ?>" <?php echo esc_attr( $rel_tag ); ?> target="<?php echo esc_attr( $tab_class ); ?>">
+                    <img src="<?php echo esc_url( $ads_image_id_src[0] ); ?>">
+                </a>
+            </div>
+            <?php
         }
-
-        ?>
-    </div>
-    <?php
     }
 endif;
 add_action( 'influence_blog_header_advertisement', 'influence_blog_header_advertisement_action', 60 );
@@ -313,26 +328,21 @@ if( ! function_exists( 'influence_blog_header_middle_action' ) ) :
     <div class="header-top-block">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-md-4">
-                    <?php
-                    /**
-                    * Hook - influence_blog_header_logo
-                    *
-                    * @hooked influence_blog_header_logo_action - 55
-                    */
-                    do_action( 'influence_blog_header_logo' );
-                    ?>
-                </div><!--//col-md-4-->
-                <div class="col-12 col-md-8">
-                    <?php
-                    /**
-                    * Hook - influence_blog_header_advertisement
-                    *
-                    * @hooked influence_blog_header_advertisement_action - 60
-                    */
-                    do_action( 'influence_blog_header_advertisement' );
-                    ?>
-                </div><!--//col-md-4-->
+                <?php
+
+                $items     = influence_blog_arrange_header_two_layout_one_two_options();
+                $defaults  = influence_blog_sortable_defaults( $items );
+                $mod       = get_theme_mod( 'influence_blog_arrange_header_two_layout_one_two', $defaults );
+
+                if( ! $mod ) return;
+
+                $mod = explode( ',', $mod );
+
+                $new = influence_blog_sortable_items_to_array( $mod, $items );
+
+                influence_blog_sortable_items_ouput( $items, $new, $mod );
+
+                ?>
             </div><!--//row-->
         </div><!--//container-->
     </div><!--header-top-block-->

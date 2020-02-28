@@ -39,7 +39,7 @@ $wp_customize->add_section( 'influence_blog_header_one_section', array(
 
 $wp_customize->add_section( 'influence_blog_header_two_section', array(
     'priority'     => 20,
-    'title'        => esc_html__( 'Header Two', 'influence-blog' ),
+    'title'        => esc_html__( 'Main Header', 'influence-blog' ),
     'panel'        => $panel,
 ) );
 
