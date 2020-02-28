@@ -509,7 +509,7 @@ button {
 }
 
 .side-img {
-    background-color: #333;
+    background-color: transparent;
     width: 100%;
     margin: 10px 0;
     text-align: right;
@@ -734,7 +734,7 @@ button {
 /* logo section */
 
 .logo-sec {
-    max-width: 300px;
+    max-width: 100%;
     margin: 10px 0;
     transition: 1s ease all;
 }
@@ -2658,6 +2658,23 @@ Single-post layout-1
     width: calc(100% - 81px);
 }
 
+
+#header1 {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    background-position: center center;
+}
+#header1:before {
+    position: absolute;
+    content: '';
+    background-color: rgba(24, 50, 68, 0.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 /* header-layout2 */
 .header-layout2 .logo-sec {
     max-width: 100%;
