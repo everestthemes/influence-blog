@@ -36,6 +36,6 @@ require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'global/color/color.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/layout-options/layout-options.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-one/header-one.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-two/header-two.php';
-require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/bottom/bottom.php';
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-three/header-three.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'reset/reset.php';

@@ -169,6 +169,34 @@ function influence_blog_arrange_header_two_layout_one_two_options() {
 }
 
 /**
+* Options used with the Sortable Items control for header three
+*/
+function influence_blog_arrange_header_three_options() {
+
+    $options = array();
+
+    $options['headerThreeIcon'] = [
+        'id'       => 'headerThreeIcon',
+        'label'    => esc_html_x( 'Icon', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_three_home'
+    ];
+
+    $options['headerThreeMenu'] = [
+        'id'       => 'headerThreeMenu',
+        'label'    => esc_html_x( 'Menu', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_three_menu'
+    ];
+
+    $options['headerThreeSearch'] = [
+        'id'       => 'headerThreeSearch',
+        'label'    => esc_html_x( 'Search', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_header_three_search'
+    ];
+
+    return $options;
+}
+
+/**
  * Function to reset date with respect to condition
  */
 function influence_blog_customizer_reset_data() {

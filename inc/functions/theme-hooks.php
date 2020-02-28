@@ -370,7 +370,7 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
                     <button class="hamburger hamburger_nb" type="button"> <span class="hamburger_box"> <span class="hamburger_inner"></span> </span> </button>
                     <?php
 
-                    $display_search_icon = ifb_get_mod( 'display_search_icon', false );
+                    $display_search_icon = true;
 
                     if( $display_search_icon == true ) {
 

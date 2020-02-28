@@ -324,17 +324,29 @@ if( ! function_exists( 'influence_blog_is_header_one' ) ) {
 /**
  * Active callback function for middle header is enabled.
  */
-if( ! function_exists( 'influence_blog_is_middle_header' ) ) {
+if( ! function_exists( 'influence_blog_is_header_two' ) ) {
 
-	function influence_blog_is_middle_header( $control ) {
+	function influence_blog_is_header_two( $control ) {
 
-        $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
+        $layout = $control->manager->get_setting( 'influence_blog_header_layout_options_select' )->value();
+
+        if( $layout == 'one' ) {
+
+            $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_one' )->value();
+
+            $top = array( 'headerOneMiddle' );
+        }
+
+        if( $layout == 'two' ) {
+
+            $value = $control->manager->get_setting( 'influence_blog_arrange_header_layout_two' )->value();
+
+            $top = array( 'headerTwoMiddle' );
+        }
 
         $value = explode( ',', $value );
 
         foreach( $value as $v ) {
-
-            $top = array( 'headerOneMiddle' );
 
             $v = explode( ':', $v );
 

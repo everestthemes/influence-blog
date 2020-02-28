@@ -35,18 +35,19 @@ $wp_customize->add_section( 'influence_blog_header_one_section', array(
     'active_callback' => 'influence_blog_is_header_one',
 ) );
 
-/*---------------------------------- Middle header -----------------------------------*/
+/*---------------------------------- Main Header -----------------------------------*/
 
 $wp_customize->add_section( 'influence_blog_header_two_section', array(
     'priority'     => 20,
     'title'        => esc_html__( 'Main Header', 'influence-blog' ),
     'panel'        => $panel,
+    'active_callback' => 'influence_blog_is_header_two',
 ) );
 
-/*---------------------------------- Bottom header -----------------------------------*/
+/*---------------------------------- Header two -----------------------------------*/
 
-$wp_customize->add_section( 'influence_blog_bottom_header_section', array(
+$wp_customize->add_section( 'influence_blog_header_three_section', array(
     'priority'     => 25,
-    'title'        => esc_html__( 'Bottom Header', 'influence-blog' ),
+    'title'        => esc_html__( 'Header Two', 'influence-blog' ),
     'panel'        => $panel,
 ) );

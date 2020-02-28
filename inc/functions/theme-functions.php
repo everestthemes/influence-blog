@@ -359,7 +359,7 @@ if( ! function_exists( 'influence_blog_main_navigation_wrap' ) ) {
 
 	  	$wrap  = '<ul id="%1$s" class="nav-pd %2$s">';
 
-        $display_home_icon = ifb_get_mod( 'display_home_icon', false );
+        $display_home_icon = true;
 
         if( $display_home_icon == true ) {
 

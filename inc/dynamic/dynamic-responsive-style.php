@@ -330,6 +330,35 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $typo_header_two_design_site_title_css_t
         );
 
+        /*---------------------------------- Header two design site title advance Section -----------------------------------*/
+
+        $header_two_advance_toggle = ifb_get_mod( 'header_two_advance_toggle' );
+
+        if( $header_two_advance_toggle ) {
+
+            $header_two_advance_site_title_t_m_top = ifb_get_mod( 'header_two_advance_site_title_t_m_top' );
+            $header_two_advance_site_title_t_m_bottom = ifb_get_mod( 'header_two_advance_site_title_t_m_bottom' );
+
+            $header_two_advance_ads_t_m_top = ifb_get_mod( 'header_two_advance_ads_t_m_top' );
+            $header_two_advance_ads_t_m_bottom = ifb_get_mod( 'header_two_advance_ads_t_m_bottom' );
+
+            $header_two_advance_css_t = array(
+                '.logo-sec' => array(
+                    'margin-top' => esc_attr( $header_two_advance_site_title_t_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_site_title_t_m_bottom . 'px' ),
+                ),
+                '.side-img' => array(
+                    'margin-top' => esc_attr( $header_two_advance_ads_t_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_ads_t_m_bottom . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_two_advance_css_t
+            );
+        }
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
         $output_css = array();
@@ -640,6 +669,35 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $output_css,
             $typo_header_two_design_site_title_css_m
         );
+
+        /*---------------------------------- Header two design site title/ads advance Section -----------------------------------*/
+
+        $header_two_advance_toggle = ifb_get_mod( 'header_two_advance_toggle' );
+
+        if( $header_two_advance_toggle ) {
+
+            $header_two_advance_site_title_m_m_top = ifb_get_mod( 'header_two_advance_site_title_m_m_top' );
+            $header_two_advance_site_title_m_m_bottom = ifb_get_mod( 'header_two_advance_site_title_m_m_bottom' );
+
+            $header_two_advance_ads_m_m_top = ifb_get_mod( 'header_two_advance_ads_m_m_top' );
+            $header_two_advance_ads_m_m_bottom = ifb_get_mod( 'header_two_advance_ads_m_m_bottom' );
+
+            $header_two_advance_css_m = array(
+                '.logo-sec' => array(
+                    'margin-top' => esc_attr( $header_two_advance_site_title_m_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_site_title_m_m_bottom . 'px' ),
+                ),
+                '.side-img' => array(
+                    'margin-top' => esc_attr( $header_two_advance_ads_m_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_ads_m_m_bottom . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_two_advance_css_m
+            );
+        }
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 

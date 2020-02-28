@@ -70,8 +70,10 @@ $button_three_array = array(
     'influence_blog_header_two_advance_toggle' => array(),
     'influence_blog_header_two_advance_site_title_heading' => array(),
     'influence_blog_header_two_advance_site_title_col' => array(),
+    'influence_blog_header_two_advance_site_title_m' => array(),
     'influence_blog_header_two_advance_ads_heading' => array(),
     'influence_blog_header_two_advance_ads_col' => array(),
+    'influence_blog_header_two_advance_ads_m' => array(),
 );
 
 $button_three_array = apply_filters( 'influence_blog_filter_header_two_button_three_array', $button_three_array );
@@ -491,7 +493,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'header-two-advance-sitle-title-heading' ),
-    'controls_to_wrap'         => 1,
+    'controls_to_wrap'         => 2,
     'expanded'                 => false,
     'priority'                 => 145,
     'active_callback'          => 'influence_blog_is_header_two_advance_enable',
@@ -517,6 +519,61 @@ $wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influ
     'active_callback'          => 'influence_blog_is_header_two_advance_enable',
 ) ) );
 
+/*---------------------------------- Header two advance site title margin -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_d_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_d_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_d_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_d_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_t_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_t_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_t_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_t_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_m_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_m_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_m_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_site_title_m_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_site_title_m', array(
+    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_header_two_advance_site_title_d_m_top',
+        'desktop_bottom' 	   => 'influence_blog_header_two_advance_site_title_d_m_bottom',
+        'tablet_top' 		   => 'influence_blog_header_two_advance_site_title_t_m_top',
+        'tablet_bottom' 	   => 'influence_blog_header_two_advance_site_title_t_m_bottom',
+        'mobile_top' 		   => 'influence_blog_header_two_advance_site_title_m_m_top',
+        'mobile_bottom' 	   => 'influence_blog_header_two_advance_site_title_m_m_bottom',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => -100,
+        'max'                  => 100,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 155,
+    'active_callback'          => 'influence_blog_is_header_two_advance_enable',
+) ) );
+
 /*---------------------------------- Header two advance ads heading -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_two_advance_ads_heading', array(
@@ -529,9 +586,9 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'header-two-advance-ads-heading' ),
-    'controls_to_wrap'         => 1,
+    'controls_to_wrap'         => 2,
     'expanded'                 => false,
-    'priority'                 => 155,
+    'priority'                 => 160,
     'active_callback'          => 'influence_blog_is_header_two_advance_enable',
 ) ) );
 
@@ -551,6 +608,61 @@ $wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influ
         'max'                  => 12,
         'step'                 => 1,
     ),
-    'priority'                 => 160,
+    'priority'                 => 165,
+    'active_callback'          => 'influence_blog_is_header_two_advance_enable',
+) ) );
+
+/*---------------------------------- Header two advance ads margin -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_d_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_d_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_d_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_d_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_t_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_t_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_t_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_t_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_m_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_m_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_header_two_advance_ads_m_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'header_two_advance_ads_m_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_ads_m', array(
+    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_header_two_advance_ads_d_m_top',
+        'desktop_bottom' 	   => 'influence_blog_header_two_advance_ads_d_m_bottom',
+        'tablet_top' 		   => 'influence_blog_header_two_advance_ads_t_m_top',
+        'tablet_bottom' 	   => 'influence_blog_header_two_advance_ads_t_m_bottom',
+        'mobile_top' 		   => 'influence_blog_header_two_advance_ads_m_m_top',
+        'mobile_bottom' 	   => 'influence_blog_header_two_advance_ads_m_m_bottom',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => -100,
+        'max'                  => 100,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 170,
     'active_callback'          => 'influence_blog_is_header_two_advance_enable',
 ) ) );
