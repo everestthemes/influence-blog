@@ -667,6 +667,32 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $parse_css .= influence_blog_parse_css( $typo_header_two_design_site_title_css );
 
+        /*---------------------------------- Advance Section -----------------------------------*/
+
+        $header_two_advance_toggle = ifb_get_mod( 'header_two_advance_toggle' );
+
+        if( $header_two_advance_toggle ) {
+
+            $header_two_advance_site_title_d_m_top = ifb_get_mod( 'header_two_advance_site_title_d_m_top' );
+            $header_two_advance_site_title_d_m_bottom = ifb_get_mod( 'header_two_advance_site_title_d_m_bottom' );
+
+            $header_two_advance_ads_d_m_top = ifb_get_mod( 'header_two_advance_ads_d_m_top' );
+            $header_two_advance_ads_d_m_bottom = ifb_get_mod( 'header_two_advance_ads_d_m_bottom' );
+
+            $header_two_advance_css = array(
+                '.logo-sec' => array(
+                    'margin-top' => esc_attr( $header_two_advance_site_title_d_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_site_title_d_m_bottom . 'px' ),
+                ),
+                '.side-img' => array(
+                    'margin-top' => esc_attr( $header_two_advance_ads_d_m_top . 'px' ),
+                    'margin-bottom' => esc_attr( $header_two_advance_ads_d_m_bottom . 'px' ),
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $header_two_advance_css );
+        }
+
 
 
 

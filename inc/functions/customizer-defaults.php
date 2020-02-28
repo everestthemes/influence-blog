@@ -282,6 +282,27 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_two_advance_toggle' => false,
             'header_two_advance_site_title_col' => '4',
             'header_two_advance_ads_col' => '8',
+            //Header - Header two - Advance - Site title margin
+            'header_two_advance_site_title_d_m_top' => '10',
+            'header_two_advance_site_title_d_m_bottom' => '10',
+            'header_two_advance_site_title_t_m_top' => '10',
+            'header_two_advance_site_title_t_m_bottom' => '10',
+            'header_two_advance_site_title_m_m_top' => '10',
+            'header_two_advance_site_title_m_m_bottom' => '10',
+            //Header - Header two - Advance - ads margin
+            'header_two_advance_ads_d_m_top' => '10',
+            'header_two_advance_ads_d_m_bottom' => '10',
+            'header_two_advance_ads_t_m_top' => '10',
+            'header_two_advance_ads_t_m_bottom' => '10',
+            'header_two_advance_ads_m_m_top' => '10',
+            'header_two_advance_ads_m_m_bottom' => '10',
+            //Header - Header three - General
+            'header_three_menu_icon_select' => 'fa fa-home',
+            'header_three_menu_icon_link' => site_url(),
+            'header_three_menu_icon_link_tab_toggle' => true,
+            'header_three_menu_select' => 'menu-1',
+            'header_three_menu_alignment' => 'left',
+            'header_three_search_icon_select' => 'fa fa-search',
             //Reset
             'reset_toggle' => false,
 		);
