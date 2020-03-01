@@ -302,9 +302,19 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_menu_icon_link_tab_toggle' => true,
             'header_three_menu_icon_alignment' => 'left',
             'header_three_menu_select' => 'menu-1',
-            'header_three_menu_alignment' => 'left',
+            'header_three_menu_alignment' => 'center',
             'header_three_search_icon_select' => 'fa fa-search',
             'header_three_search_icon_alignment' => 'right',
+            //Header - Header three - Design
+            'header_three_design_bg_color' => '#e9b105',
+            //Header - Header three - Design - Icon
+            'header_three_design_menu_icon_color' => '#fff',
+            'header_three_design_menu_icon_hover_color' => '#e9b105',
+            'header_three_design_menu_icon_bg_color' => '#183244',
+            'header_three_design_menu_icon_bg_hover_color' => '#fff',
+            'typo_header_three_design_menu_icon_size_d' => '18',
+            'typo_header_three_design_menu_icon_size_t' => '18',
+            'typo_header_three_design_menu_icon_size_m' => '18',
             //Reset
             'reset_toggle' => false,
 		);

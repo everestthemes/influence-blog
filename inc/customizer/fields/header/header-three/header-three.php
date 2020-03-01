@@ -47,8 +47,16 @@ $button_one_array = array(
 $button_one_array = apply_filters( 'influence_blog_filter_header_three_button_one_array', $button_one_array );
 
 $button_two_array = array(
-//    'influence_blog_header_three_layout_one_design_heading'   => array(),
-//    'influence_blog_header_three_layout_one_design_bg_color'  => array(),
+    'influence_blog_header_three_design_heading'   => array(),
+    'influence_blog_header_three_design_bg_color'  => array(),
+    'influence_blog_header_three_design_menu_icon_heading'  => array(),
+    'influence_blog_header_three_design_menu_icon_color_heading'  => array(),
+    'influence_blog_header_three_design_menu_icon_color'  => array(),
+    'influence_blog_header_three_design_menu_icon_hover_color'  => array(),
+    'influence_blog_header_three_design_menu_icon_bg_color'  => array(),
+    'influence_blog_header_three_design_menu_icon_bg_hover_color'  => array(),
+    'influence_blog_header_three_design_menu_icon_typo_heading'  => array(),
+    'influence_blog_typo_header_three_design_menu_icon_size'  => array(),
 //    'influence_blog_header_three_layout_one_design_menu_heading'  => array(),
 //    'influence_blog_header_three_layout_one_design_menu_color_heading'  => array(),
 //    'influence_blog_header_three_layout_one_design_menu_color'  => array(),
@@ -310,38 +318,174 @@ $wp_customize->add_control( 'influence_blog_header_three_search_icon_alignment',
     'priority'                 => 70,
 ) );
 
-///*-----------------------------------------------------------------------------
-//							 Design options
-//-----------------------------------------------------------------------------*/
-//
-///*---------------------------------- Header one layout one design heading -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_header_three_layout_one_design_heading', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//) );
-//
-//$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_three_layout_one_design_heading', array(
-//    'label'                    => esc_html__( 'Header One Options', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'heading-one',
-//    'priority'                 => 55,
-//) ) );
-//
-///*---------------------------------- Header one layout one design background color -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_header_three_layout_one_design_bg_color', array(
-//    'transport' 			   => 'postMessage',
-//    'sanitize_callback' 	   => 'sanitize_color_one',
-//    'default'                  => influence_blog_defaults( 'header_three_layout_one_design_bg_color' ),
-//) );
-//
-//$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_layout_one_design_bg_color', array(
-//    'label'                    => esc_html__( 'Background Color', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'color-one',
-//    'priority'                 => 60,
-//) ) );
-//
+/*-----------------------------------------------------------------------------
+							 Design options
+-----------------------------------------------------------------------------*/
+
+/*---------------------------------- Header three design heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_three_design_heading', array(
+    'label'                    => esc_html__( 'Header Two Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 75,
+) ) );
+
+/*---------------------------------- Header three design background color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_bg_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'header_three_design_bg_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_design_bg_color', array(
+    'label'                    => esc_html__( 'Background Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
+    'priority'                 => 80,
+) ) );
+
+/*---------------------------------- Header three design menu icon heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_heading', array(
+    'label'                    => esc_html__( 'Icon Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'header-three-design-menu-icon-heading' ),
+    'controls_to_wrap'         => 7,
+    'expanded'                 => false,
+    'priority'                 => 85,
+) ) );
+
+/*---------------------------------- Header three design menu icon color heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_color_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_color_heading', array(
+    'label'                    => esc_html__( 'Color Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 90,
+) ) );
+
+/*---------------------------------- Header three design menu icon color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'header_three_design_menu_icon_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_color', array(
+    'label'                    => esc_html__( 'Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
+    'priority'                 => 95,
+) ) );
+
+/*---------------------------------- Header three design menu icon color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_hover_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'header_three_design_menu_icon_hover_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_hover_color', array(
+    'label'                    => esc_html__( 'Hover Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
+    'priority'                 => 100,
+) ) );
+
+/*---------------------------------- Header three design menu icon bg color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_bg_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'header_three_design_menu_icon_bg_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_bg_color', array(
+    'label'                    => esc_html__( 'Background Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
+    'priority'                 => 105,
+) ) );
+
+/*---------------------------------- Header three design menu icon bg hover color -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_bg_hover_color', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_color_one',
+    'default'                  => influence_blog_defaults( 'header_three_design_menu_icon_bg_hover_color' ),
+) );
+
+$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_bg_hover_color', array(
+    'label'                    => esc_html__( 'Background Hover Color', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'color-one',
+    'priority'                 => 110,
+) ) );
+
+/*---------------------------------- Header three design menu icon typo heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_design_menu_icon_typo_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_three_design_menu_icon_typo_heading', array(
+    'label'                    => esc_html__( 'Typography Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 115,
+) ) );
+
+/*---------------------------------- Header three design menu icon typo font size -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_typo_header_three_design_menu_icon_size_d', array(
+    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'transport' 		       => 'postMessage',
+    'default'                  => influence_blog_defaults( 'typo_header_three_design_menu_icon_size_d' ),
+) );
+
+$wp_customize->add_setting( 'influence_blog_typo_header_three_design_menu_icon_size_t', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'default'                  => influence_blog_defaults( 'typo_header_three_design_menu_icon_size_t' ),
+) );
+
+$wp_customize->add_setting( 'influence_blog_typo_header_three_design_menu_icon_size_m', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'default'                  => influence_blog_defaults( 'typo_header_three_design_menu_icon_size_m' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_three_design_menu_icon_size', array(
+    'label'                    => esc_html__( 'Font Size', 'influence-blog' ) . ' (px) ',
+    'section' 			       => $section,
+    'type'                     => 'range-slider-two',
+    'settings' 			       => array(
+        'desktop' 	           => 'influence_blog_typo_header_three_design_menu_icon_size_d',
+        'tablet' 	           => 'influence_blog_typo_header_three_design_menu_icon_size_t',
+        'mobile' 	           => 'influence_blog_typo_header_three_design_menu_icon_size_m',
+    ),
+    'input_attrs' 		       => $size_attrs,
+    'priority' 			       => 120,
+) ) );
+
 ///*---------------------------------- Header one layout one design menu heading -----------------------------------*/
 //
 //$wp_customize->add_setting( 'influence_blog_header_three_layout_one_design_menu_heading', array(

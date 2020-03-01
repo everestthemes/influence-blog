@@ -199,13 +199,21 @@ if( ! function_exists( 'influence_blog_header_menu_icon_action' ) ) :
 
         $menu_icon = ifb_get_mod( 'header_three_menu_icon_select' );
 
-        $icon_link = ifb_get_mod( 'influence_blog_header_three_menu_icon_link' );
+        $icon_link = ifb_get_mod( 'header_three_menu_icon_link' );
 
-        ?>
-        <div class="col-md-1">
-             <a href="#"><i class="fa fa-home"></i></a>
-        </div>
-        <?php
+        $tab_class = ifb_get_mod( 'header_three_menu_icon_link_tab_toggle' );
+
+        if( !empty( $menu_icon ) && !empty( $icon_link ) ) {
+            ?>
+            <div class="col-md-1">
+                <div class="home-icon">
+                    <a href="<?php echo esc_url( $icon_link ); ?>" target="<?php echo esc_attr( $tab_class ); ?>">
+                        <i class="<?php echo esc_attr( $menu_icon ); ?>"></i>
+                    </a>
+                </div>
+            </div>
+            <?php
+        }
     }
 endif;
 add_action( 'influence_blog_header_menu_icon', 'influence_blog_header_menu_icon_action', 75 );
@@ -220,16 +228,21 @@ if( ! function_exists( 'influence_blog_header_search_action' ) ) :
 
  	function influence_blog_header_search_action() {
 
-    ?>
-    <div class="col-md-1">
-        <div class="mobile-search search-icon">
-            <button class="btn-style btn-search" type="button"><i class="fa fa-search"></i></button>
-            <div id="header-search">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-    </div><!--col-md-2-->
-    <?php
+        $search_icon = ifb_get_mod( 'header_three_search_icon_select' );
+
+        if( !empty( $search_icon ) ) {
+
+            ?>
+            <div class="col-md-1">
+                <div class="mobile-search search-icon">
+                    <button class="btn-style btn-search" type="button"><i class="<?php echo esc_attr( $search_icon ); ?>"></i></button>
+                    <div id="header-search">
+                        <?php get_search_form(); ?>
+                    </div>
+                </div>
+            </div><!--col-md-2-->
+            <?php
+        }
     }
 endif;
 add_action( 'influence_blog_header_search', 'influence_blog_header_search_action', 75 );
@@ -256,8 +269,11 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
                 </button>
                 <nav id="main_navigation" class="main_navigation">
                     <?php
+
+                    $header_three_menu_select = ifb_get_mod( 'header_three_menu_select' );
+
                     $menu_args = array(
-                        'theme_location' => 'menu-1',
+                        'theme_location' => $header_three_menu_select,
                         'container' => '',
                         'menu_class' => '',
                         'menu_id' => '',
@@ -290,8 +306,11 @@ if( ! function_exists( 'influence_blog_header_mobile_navigation_action' ) ) :
         <div class="mobile-nav">
             <nav id="mobile_navigation" class="mobile_navigation">
                 <?php
+
+                $header_three_menu_select = ifb_get_mod( 'header_three_menu_select' );
+
                 $menu_args = array(
-                    'theme_location' => 'menu-1',
+                    'theme_location' => $header_three_menu_select,
                     'container' => '',
                     'menu_class' => '',
                     'menu_id' => '',
