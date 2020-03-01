@@ -31,11 +31,13 @@ $button_one_array = array(
     'influence_blog_header_three_menu_icon_select'  => array(),
     'influence_blog_header_three_menu_icon_link'    => array(),
     'influence_blog_header_three_menu_icon_link_tab_toggle' => array(),
+    'influence_blog_header_three_menu_icon_alignment' => array(),
     'influence_blog_header_three_menu_heading'     => array(),
     'influence_blog_header_three_menu_select'      => array(),
     'influence_blog_header_three_menu_alignment'   => array(),
     'influence_blog_header_three_search_heading'   => array(),
     'influence_blog_header_three_search_icon_select'   => array(),
+    'influence_blog_header_three_search_icon_alignment'   => array(),
 //    'influence_blog_header_three_layout_one_social_links_heading' => array(),
 //    'influence_blog_header_three_layout_one_social_links'     => array(),
 //    'influence_blog_header_three_layout_one_social_links_tab_toggle' => array(),
@@ -151,7 +153,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'header-three-menu-icon-heading' ),
-    'controls_to_wrap'         => 3,
+    'controls_to_wrap'         => 4,
     'expanded'                 => false,
     'priority'                 => 20,
 ) ) );
@@ -197,6 +199,22 @@ $wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence
     'priority'                 => 35,
 ) ) );
 
+/*---------------------------------- Header three menu icon alignment -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_menu_icon_alignment', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'influence_blog_sanitize_select',
+    'default'                  => influence_blog_defaults( 'header_three_menu_icon_alignment' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_header_three_menu_icon_alignment', array(
+    'label'                    => esc_html__( 'Alignment', 'influence-blog' ),
+	'section'				   => $section,
+    'choices'                  => $alignment,
+    'type'                     => 'select',
+    'priority'                 => 40,
+) );
+
 /*---------------------------------- Header three menu heading -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_three_menu_heading', array(
@@ -211,7 +229,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'class'                    => esc_attr( 'header-three-menu-heading' ),
     'controls_to_wrap'         => 2,
     'expanded'                 => false,
-    'priority'                 => 40,
+    'priority'                 => 45,
 ) ) );
 
 /*---------------------------------- Header three menu select -----------------------------------*/
@@ -227,7 +245,7 @@ $wp_customize->add_control( 'influence_blog_header_three_menu_select', array(
 	'section'				   => $section,
     'choices'                  => $menu_lists,
     'type'                     => 'select',
-    'priority'                 => 45,
+    'priority'                 => 50,
 ) );
 
 /*---------------------------------- Header three menu alignment -----------------------------------*/
@@ -243,7 +261,7 @@ $wp_customize->add_control( 'influence_blog_header_three_menu_alignment', array(
 	'section'				   => $section,
     'choices'                  => $alignment,
     'type'                     => 'select',
-    'priority'                 => 50,
+    'priority'                 => 55,
 ) );
 
 /*---------------------------------- Header three search heading -----------------------------------*/
@@ -258,9 +276,9 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'header-three-search-heading' ),
-    'controls_to_wrap'         => 1,
+    'controls_to_wrap'         => 2,
     'expanded'                 => false,
-    'priority'                 => 55,
+    'priority'                 => 60,
 ) ) );
 
 /*---------------------------------- Header three search icon select -----------------------------------*/
@@ -273,8 +291,24 @@ $wp_customize->add_setting( 'influence_blog_header_three_search_icon_select', ar
 $wp_customize->add_control( new Icon_Picker_One_Control( $wp_customize, 'influence_blog_header_three_search_icon_select', array(
     'label'                    => esc_html__( 'Select Icon', 'influence-blog' ),
     'section'                  => $section,
-    'priority'                 => 60,
+    'priority'                 => 65,
 ) ) );
+
+/*---------------------------------- Header three search icon alignment -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_header_three_search_icon_alignment', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'influence_blog_sanitize_select',
+    'default'                  => influence_blog_defaults( 'header_three_search_icon_alignment' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_header_three_search_icon_alignment', array(
+    'label'                    => esc_html__( 'Alignment', 'influence-blog' ),
+	'section'				   => $section,
+    'choices'                  => $alignment,
+    'type'                     => 'select',
+    'priority'                 => 70,
+) );
 
 ///*-----------------------------------------------------------------------------
 //							 Design options
