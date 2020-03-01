@@ -660,20 +660,22 @@ button {
 
 
 /* search  */
-.search-icon {
+/* .search-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
 }
-
-.header-layout1 .search-icon {
+ */
+/* .header-layout1 .search-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+} */
+.mobile-search.search-icon {
+    text-align: right;
 }
-
 .search-icon .btn-search {
     border: none;
     cursor: pointer;
@@ -683,7 +685,6 @@ button {
     text-align: center;
     background: transparent;
     transition: 0.5s ease all;
-
 }
 
 .search-icon .btn-search:hover {

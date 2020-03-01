@@ -196,12 +196,14 @@ if( ! function_exists( 'influence_blog_header_search_action' ) ) :
  	function influence_blog_header_search_action() {
 
     ?>
-    <div class="mobile-search search-icon">
-        <button class="btn-style btn-search" type="button"><i class="fa fa-search"></i></button>
-        <div id="header-search">
-            <?php get_search_form(); ?>
+    <div class="col-md-1">
+        <div class="mobile-search search-icon">
+            <button class="btn-style btn-search" type="button"><i class="fa fa-search"></i></button>
+            <div id="header-search">
+                <?php get_search_form(); ?>
+            </div>
         </div>
-    </div>
+    </div><!--col-md-2-->
     <?php
     }
 endif;
@@ -219,23 +221,32 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
  	function influence_blog_header_main_navigation_action() {
 
     ?>
-    <div id="header" class="mastheader header header-layout1">
-        <div class="container">
-            <nav id="main_navigation" class="main_navigation">
-                <?php
-                $menu_args = array(
-                    'theme_location' => 'menu-1',
-                    'container' => '',
-                    'menu_class' => '',
-                    'menu_id' => '',
-                    'items_wrap' => influence_blog_main_navigation_wrap(),
-                    'fallback_cb' => 'influence_blog_navigation_fallback',
-                );
-                wp_nav_menu( $menu_args );
-                ?>
-            </nav>
+    <div class="col-md-10">
+        <div id="header" class="mastheader header header-layout1">
+            <div class="container">
+
+               <button class="hamburger hamburger_nb" type="button">
+                    <span class="hamburger_box">
+                        <span class="hamburger_inner"></span>
+                    </span>
+                </button>
+
+                <nav id="main_navigation" class="main_navigation">
+                    <?php
+                    $menu_args = array(
+                        'theme_location' => 'menu-1',
+                        'container' => '',
+                        'menu_class' => '',
+                        'menu_id' => '',
+                        'items_wrap' => influence_blog_main_navigation_wrap(),
+                        'fallback_cb' => 'influence_blog_navigation_fallback',
+                    );
+                    wp_nav_menu( $menu_args );
+                    ?>
+                </nav>
+            </div>
         </div>
-    </div>
+    </div><!--col-md-9-->
     <?php
     }
 endif;
@@ -365,30 +376,26 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
     ?>
     <div class="header-medium-block">
         <div class="container">
-            <div class="row align-items-center">
-                <div class=" col-12 col-md-12">
-                    <button class="hamburger hamburger_nb" type="button">
-                        <span class="hamburger_box">
-                            <span class="hamburger_inner"></span>
-                        </span>
-                    </button>
-                    <?php
+            <div class="menu-bg-wrap">
+                <div class="row align-items-center">
+                    
+                        <?php
 
-                    $items     = influence_blog_arrange_header_three_options();
-                    $defaults  = influence_blog_sortable_defaults( $items );
-                    $mod       = get_theme_mod( 'influence_blog_arrange_header_three', $defaults );
+                        $items     = influence_blog_arrange_header_three_options();
+                        $defaults  = influence_blog_sortable_defaults( $items );
+                        $mod       = get_theme_mod( 'influence_blog_arrange_header_three', $defaults );
 
-                    if( ! $mod ) return;
+                        if( ! $mod ) return;
 
-                    $mod = explode( ',', $mod );
+                        $mod = explode( ',', $mod );
 
-                    $new = influence_blog_sortable_items_to_array( $mod, $items );
+                        $new = influence_blog_sortable_items_to_array( $mod, $items );
 
-                    influence_blog_sortable_items_ouput( $items, $new, $mod );
+                        influence_blog_sortable_items_ouput( $items, $new, $mod );
 
-                    ?>
-                </div><!--col-md-12-->
-            </div><!--row-->
+                        ?>
+                </div><!--row-->
+            </div>
         </div><!--container-->
     </div><!--header-medium-block-->
     <?php
