@@ -300,9 +300,11 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_menu_icon_select' => 'fa fa-home',
             'header_three_menu_icon_link' => site_url(),
             'header_three_menu_icon_link_tab_toggle' => true,
+            'header_three_menu_icon_alignment' => 'left',
             'header_three_menu_select' => 'menu-1',
             'header_three_menu_alignment' => 'left',
             'header_three_search_icon_select' => 'fa fa-search',
+            'header_three_search_icon_alignment' => 'right',
             //Reset
             'reset_toggle' => false,
 		);

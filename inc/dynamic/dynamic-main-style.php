@@ -468,7 +468,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         $header_bg_color = ifb_get_mod( 'header_layout_options_hedader_bg_color' );
 
         $header_bg_color_css = array(
-            '.header-layout2:before' => array(
+            '#header1:before, .header-layout2:before' => array(
                 'background-color' => esc_attr( $header_bg_color ),
             ),
         );
@@ -487,7 +487,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $header_layout_options_advance_header_height = ifb_get_mod( 'header_layout_options_advance_header_height' );
 
             $header_layout_options_advance_bg_css = array(
-                '.header-layout2' => array(
+                '#header1, .header-layout2' => array(
                     'background-size' => esc_attr( $header_layout_options_advance_bg_image_size ),
                     'background-position-x' => esc_attr( $header_layout_options_advance_bg_image_position_x ),
                     'background-position-y' => esc_attr( $header_layout_options_advance_bg_image_position_y ),
