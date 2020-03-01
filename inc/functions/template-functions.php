@@ -324,7 +324,7 @@ if( ! function_exists( 'influence_blog_arrange_header_three_icon' ) ) {
         ?>
 
         <div class="col-md-1">
-             <a href="#"><i class="fa fa-home"></i></a>
+            <div class="home-icon"> <a href="#"><i class="fa fa-home"></i></a></div>
         </div>
 
         <?php 
