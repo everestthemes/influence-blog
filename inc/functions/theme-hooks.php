@@ -367,27 +367,25 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
         <div class="container">
             <div class="row align-items-center">
                 <div class=" col-12 col-md-12">
-                    <button class="hamburger hamburger_nb" type="button"> <span class="hamburger_box"> <span class="hamburger_inner"></span> </span> </button>
+                    <button class="hamburger hamburger_nb" type="button">
+                        <span class="hamburger_box">
+                            <span class="hamburger_inner"></span>
+                        </span>
+                    </button>
                     <?php
 
-                    $display_search_icon = true;
+                    $items     = influence_blog_arrange_header_three_options();
+                    $defaults  = influence_blog_sortable_defaults( $items );
+                    $mod       = get_theme_mod( 'influence_blog_arrange_header_three', $defaults );
 
-                    if( $display_search_icon == true ) {
+                    if( ! $mod ) return;
 
-                        /**
-                        * Hook - influence_blog_header_search
-                        *
-                        * @hooked influence_blog_header_search_action - 75
-                        */
-                        do_action( 'influence_blog_header_search' );
-                    }
+                    $mod = explode( ',', $mod );
 
-                    /**
-                    * Hook - influence_blog_header_main_navigation
-                    *
-                    * @hooked influence_blog_header_main_navigation_action - 80
-                    */
-                    do_action( 'influence_blog_header_main_navigation' );
+                    $new = influence_blog_sortable_items_to_array( $mod, $items );
+
+                    influence_blog_sortable_items_ouput( $items, $new, $mod );
+
                     ?>
                 </div><!--col-md-12-->
             </div><!--row-->

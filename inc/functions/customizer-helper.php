@@ -178,7 +178,7 @@ function influence_blog_arrange_header_three_options() {
     $options['headerThreeIcon'] = [
         'id'       => 'headerThreeIcon',
         'label'    => esc_html_x( 'Icon', 'Customizer sortable options', 'influence-blog' ),
-        'callback' => 'influence_blog_arrange_header_three_home'
+        'callback' => 'influence_blog_arrange_header_three_icon'
     ];
 
     $options['headerThreeMenu'] = [

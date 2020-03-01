@@ -314,6 +314,49 @@ if( ! function_exists( 'influence_blog_arrange_header_two_layout_one_two_ads' ) 
     }
 }
 
+/**
+ * Arrange header three menu icon
+ */
+if( ! function_exists( 'influence_blog_arrange_header_three_icon' ) ) {
+
+    function influence_blog_arrange_header_three_icon() {
+
+
+    }
+}
+
+/**
+ * Arrange header three menu
+ */
+if( ! function_exists( 'influence_blog_arrange_header_three_menu' ) ) {
+
+    function influence_blog_arrange_header_three_menu() {
+
+        /**
+        * Hook - influence_blog_header_main_navigation
+        *
+        * @hooked influence_blog_header_main_navigation_action - 80
+        */
+        do_action( 'influence_blog_header_main_navigation' );
+    }
+}
+
+/**
+ * Arrange header three search
+ */
+if( ! function_exists( 'influence_blog_arrange_header_three_search' ) ) {
+
+    function influence_blog_arrange_header_three_search() {
+
+        /**
+        * Hook - influence_blog_header_search
+        *
+        * @hooked influence_blog_header_search_action - 75
+        */
+        do_action( 'influence_blog_header_search' );
+    }
+}
+
 
 
 /**
