@@ -487,7 +487,7 @@ button {
     font-weight: 700;
 }
 
-.header-top-block {
+.header-layout2 .header-top-block {
     margin: 40px 0;
 }
 
@@ -2698,15 +2698,14 @@ Single-post layout-1
 
 
 
-#header1 {
+.header-layout1 .header-top-block {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
     background-position: center center;
 }
 
-#header1:before {
+.header-layout1 .header-top-block:before {
     position: absolute;
     content: '';
     background-color: rgba(24, 50, 68, 0.8);
@@ -2714,6 +2713,9 @@ Single-post layout-1
     right: 0;
     bottom: 0;
     left: 0;
+}
+.header-layout1  .header-top-block{
+    padding:40px 0;
 }
 
 /* header-layout2 */
