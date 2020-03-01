@@ -468,7 +468,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         $header_bg_color = ifb_get_mod( 'header_layout_options_hedader_bg_color' );
 
         $header_bg_color_css = array(
-            '#header1:before, .header-layout2:before' => array(
+            '.header-layout1 .header-top-block:before, .header-layout2:before' => array(
                 'background-color' => esc_attr( $header_bg_color ),
             ),
         );
@@ -487,7 +487,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $header_layout_options_advance_header_height = ifb_get_mod( 'header_layout_options_advance_header_height' );
 
             $header_layout_options_advance_bg_css = array(
-                '#header1, .header-layout2' => array(
+                '.header-layout1 .header-top-block, .header-layout2' => array(
                     'background-size' => esc_attr( $header_layout_options_advance_bg_image_size ),
                     'background-position-x' => esc_attr( $header_layout_options_advance_bg_image_position_x ),
                     'background-position-y' => esc_attr( $header_layout_options_advance_bg_image_position_y ),
@@ -692,6 +692,42 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
             $parse_css .= influence_blog_parse_css( $header_two_advance_css );
         }
+
+        /*-----------------------------------------------------------------------------
+							 Header Three Options
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- General Section -----------------------------------*/
+
+        $header_three_menu_icon_alignment = ifb_get_mod( 'header_three_menu_icon_alignment' );
+        $header_three_menu_alignment = ifb_get_mod( 'header_three_menu_alignment' );
+        $header_three_search_icon_alignment = ifb_get_mod( 'header_three_search_icon_alignment' );
+
+        $header_three_general_css = array(
+            '.home-icon' => array(
+                'text-align' => esc_attr( $header_three_menu_icon_alignment ),
+            ),
+            '.main_navigation' => array(
+                'text-align' => esc_attr( $header_three_menu_alignment ),
+            ),
+            '.mobile-search.search-icon' => array(
+                'text-align' => esc_attr( $header_three_search_icon_alignment ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $header_three_general_css );
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $header_three_design_bg_color = ifb_get_mod( 'header_three_design_bg_color' );
+
+        $header_three_design_css = array(
+            '.header-layout1 .header-medium-block, .header-layout2 .header-medium-block' => array(
+                'background-color' => esc_attr( $header_three_design_bg_color ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $header_three_design_css );
 
 
 
