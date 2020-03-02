@@ -767,17 +767,13 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 'color' => esc_attr( $header_three_design_menu_icon_hover_color ),
                 'background-color' => esc_attr( $header_three_design_menu_icon_bg_hover_color ),
             ),
-            '.main_navigation ul li a,
-            .header-layout1 .main_navigation ul li a,
-            .header-layout2 .main_navigation ul li a' => array(
+            '.main_navigation ul li a, .header-layout1 .main_navigation ul li a, .header-layout2 .main_navigation ul li a' => array(
                 'color' => esc_attr( $header_three_design_main_menu_color ),
             ),
-            '.main_navigation ul li a:hover,
-            .header-layout1 .main_navigation ul li a:hover,
-            .header-layout2 .main_navigation ul li a:hover' => array(
+            '.main_navigation ul li a:hover, .header-layout1 .main_navigation ul li a:hover, .header-layout2 .main_navigation ul li a:hover' => array(
                 'color' => esc_attr( $header_three_design_main_menu_hover_color ),
             ),
-            '.main_navigation ul li:before' => array(
+            '.main_navigation ul li:before, .header-layout2 .main_navigation ul li.current_page_item a, .header-layout2 .main_navigation ul li:before' => array(
                 'background-color' => esc_attr( $header_three_design_main_menu_bg_hover_color ),
             ),
             '.main_navigation ul li a' => array(
@@ -787,8 +783,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 'line-height' => esc_attr( $typo_header_three_design_main_menu_line_height ),
                 'letter-spacing' => esc_attr( $typo_header_three_design_main_menu_letter_spacing . 'px' ),
             ),
-            '.main_navigation ul li.menu-item-has-children,
-            .main_navigation ul li.menu-item-has-children ul.sub-menu li a' => array(
+            '.main_navigation ul li.menu-item-has-children, .main_navigation ul li.menu-item-has-children ul.sub-menu li a' => array(
                 'color' => esc_attr( $header_three_design_sub_menu_color ),
             ),
             '.main_navigation ul li.menu-item-has-children ul.sub-menu li a:hover' => array(
@@ -806,12 +801,12 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 'line-height' => esc_attr( $typo_header_three_design_sub_menu_line_height ),
                 'letter-spacing' => esc_attr( $typo_header_three_design_sub_menu_letter_spacing . 'px' ),
             ),
-            '.header-layout1 .search-icon .btn-search' => array(
+            '.header-layout1 .search-icon .btn-search, .search-icon .btn-search' => array(
                 'color' => esc_attr( $header_three_design_search_icon_color ),
                 'background-color' => esc_attr( $header_three_design_search_icon_bg_color ),
                 'font-size' => esc_attr( $typo_header_three_design_search_icon_size_d . 'px' ),
             ),
-            '.header-layout1 .search-icon .btn-search:hover' => array(
+            '.header-layout1 .search-icon .btn-search:hover, .search-icon .btn-search:hover' => array(
                 'color' => esc_attr( $header_three_design_search_icon_hover_color ),
                 'background-color' => esc_attr( $header_three_design_search_icon_bg_hover_color ),
             ),
