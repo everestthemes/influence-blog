@@ -720,10 +720,103 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         /*---------------------------------- Design Section -----------------------------------*/
 
         $header_three_design_bg_color = ifb_get_mod( 'header_three_design_bg_color' );
+        $header_three_design_border_color = ifb_get_mod( 'header_three_design_border_color' );
+
+        $header_three_design_menu_icon_color = ifb_get_mod( 'header_three_design_menu_icon_color' );
+        $header_three_design_menu_icon_hover_color = ifb_get_mod( 'header_three_design_menu_icon_hover_color' );
+        $header_three_design_menu_icon_bg_color = ifb_get_mod( 'header_three_design_menu_icon_bg_color' );
+        $header_three_design_menu_icon_bg_hover_color = ifb_get_mod( 'header_three_design_menu_icon_bg_hover_color' );
+        $typo_header_three_design_menu_icon_size_d = ifb_get_mod( 'typo_header_three_design_menu_icon_size_d' );
+
+        $header_three_design_main_menu_color = ifb_get_mod( 'header_three_design_main_menu_color' );
+        $header_three_design_main_menu_hover_color = ifb_get_mod( 'header_three_design_main_menu_hover_color' );
+        $header_three_design_main_menu_bg_color = ifb_get_mod( 'header_three_design_main_menu_bg_color' );
+        $header_three_design_main_menu_bg_hover_color = ifb_get_mod( 'header_three_design_main_menu_bg_hover_color' );
+        $typo_header_three_design_main_menu_font_family = influence_blog_get_font_data( 'typo_header_three_design_main_menu_font' );
+        $typo_header_three_design_main_menu_font_weight = influence_blog_get_font_data( 'typo_header_three_design_main_menu_font', 'fontweight' );
+        $typo_header_three_design_main_menu_transform = ifb_get_mod( 'typo_header_three_design_main_menu_transform' );
+        $typo_header_three_design_main_menu_font_size = ifb_get_mod( 'typo_header_three_design_main_menu_size_d' );
+        $typo_header_three_design_main_menu_line_height = ifb_get_mod( 'typo_header_three_design_main_menu_height_d' );
+        $typo_header_three_design_main_menu_letter_spacing = ifb_get_mod( 'typo_header_three_design_main_menu_spacing_d' );
+
+        $header_three_design_sub_menu_color = ifb_get_mod( 'header_three_design_sub_menu_color' );
+        $header_three_design_sub_menu_hover_color = ifb_get_mod( 'header_three_design_sub_menu_hover_color' );
+        $header_three_design_sub_menu_bg_color = ifb_get_mod( 'header_three_design_sub_menu_bg_color' );
+        $header_three_design_sub_menu_sep_color = ifb_get_mod( 'header_three_design_sub_menu_sep_color' );
+        $typo_header_three_design_sub_menu_transform = ifb_get_mod( 'typo_header_three_design_sub_menu_transform' );
+        $typo_header_three_design_sub_menu_font_size = ifb_get_mod( 'typo_header_three_design_sub_menu_size_d' );
+        $typo_header_three_design_sub_menu_line_height = ifb_get_mod( 'typo_header_three_design_sub_menu_height_d' );
+        $typo_header_three_design_sub_menu_letter_spacing = ifb_get_mod( 'typo_header_three_design_sub_menu_spacing_d' );
+
+        $header_three_design_search_icon_color = ifb_get_mod( 'header_three_design_search_icon_color' );
+        $header_three_design_search_icon_hover_color = ifb_get_mod( 'header_three_design_search_icon_hover_color' );
+        $header_three_design_search_icon_bg_color = ifb_get_mod( 'header_three_design_search_icon_bg_color' );
+        $header_three_design_search_icon_bg_hover_color = ifb_get_mod( 'header_three_design_search_icon_bg_hover_color' );
+        $typo_header_three_design_search_icon_size_d = ifb_get_mod( 'typo_header_three_design_search_icon_size_d' );
 
         $header_three_design_css = array(
             '.header-layout1 .header-medium-block, .header-layout2 .header-medium-block' => array(
                 'background-color' => esc_attr( $header_three_design_bg_color ),
+            ),
+            '.home-icon a' => array(
+                'color' => esc_attr( $header_three_design_menu_icon_color ),
+                'background-color' => esc_attr( $header_three_design_menu_icon_bg_color ),
+                'font-size' => esc_attr( $typo_header_three_design_menu_icon_size_d . 'px' ),
+            ),
+            '.home-icon a:hover' => array(
+                'color' => esc_attr( $header_three_design_menu_icon_hover_color ),
+                'background-color' => esc_attr( $header_three_design_menu_icon_bg_hover_color ),
+            ),
+            '.main_navigation ul li a,
+            .header-layout1 .main_navigation ul li a,
+            .header-layout2 .main_navigation ul li a' => array(
+                'color' => esc_attr( $header_three_design_main_menu_color ),
+            ),
+            '.main_navigation ul li a:hover,
+            .header-layout1 .main_navigation ul li a:hover,
+            .header-layout2 .main_navigation ul li a:hover' => array(
+                'color' => esc_attr( $header_three_design_main_menu_hover_color ),
+            ),
+            '.main_navigation ul li:before' => array(
+                'background-color' => esc_attr( $header_three_design_main_menu_bg_hover_color ),
+            ),
+            '.main_navigation ul li a' => array(
+                'font-family' => esc_attr( $typo_header_three_design_main_menu_font_family ),
+                'text-transform' => esc_attr( $typo_header_three_design_main_menu_transform ),
+                'font-size' => esc_attr( $typo_header_three_design_main_menu_font_size . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_main_menu_line_height ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_main_menu_letter_spacing . 'px' ),
+            ),
+            '.main_navigation ul li.menu-item-has-children,
+            .main_navigation ul li.menu-item-has-children ul.sub-menu li a' => array(
+                'color' => esc_attr( $header_three_design_sub_menu_color ),
+            ),
+            '.main_navigation ul li.menu-item-has-children ul.sub-menu li a:hover' => array(
+                'color' => esc_attr( $header_three_design_sub_menu_hover_color ),
+            ),
+            '.main_navigation ul li.menu-item-has-children .sub-menu' => array(
+                'background-color' => esc_attr( $header_three_design_sub_menu_bg_color ),
+            ),
+            '.main_navigation ul li.menu-item-has-children ul.sub-menu li' => array(
+                'border-bottom' => esc_attr( '1px solid ' . $header_three_design_sub_menu_sep_color ),
+            ),
+            '.main_navigation ul li.menu-item-has-children .sub-menu li a' => array(
+                'text-transform' => esc_attr( $typo_header_three_design_sub_menu_transform ),
+                'font-size' => esc_attr( $typo_header_three_design_sub_menu_font_size . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_sub_menu_line_height ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_sub_menu_letter_spacing . 'px' ),
+            ),
+            '.header-layout1 .search-icon .btn-search' => array(
+                'color' => esc_attr( $header_three_design_search_icon_color ),
+                'background-color' => esc_attr( $header_three_design_search_icon_bg_color ),
+                'font-size' => esc_attr( $typo_header_three_design_search_icon_size_d . 'px' ),
+            ),
+            '.header-layout1 .search-icon .btn-search:hover' => array(
+                'color' => esc_attr( $header_three_design_search_icon_hover_color ),
+                'background-color' => esc_attr( $header_three_design_search_icon_bg_hover_color ),
+            ),
+            '.menu-bg-wrap' => array(
+                'border-color' => esc_attr( $header_three_design_border_color ),
             ),
         );
 
