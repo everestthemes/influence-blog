@@ -359,6 +359,47 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             );
         }
 
+        /*---------------------------------- Header three design -----------------------------------*/
+
+        //Menu icon
+        $typo_header_three_design_menu_icon_font_size_t = ifb_get_mod( 'typo_header_three_design_menu_icon_size_t' );
+
+        //Menu
+        $typo_header_three_design_main_menu_font_size_t = ifb_get_mod( 'typo_header_three_design_main_menu_size_t' );
+        $typo_header_three_design_main_menu_line_height_t = ifb_get_mod( 'typo_header_three_design_main_menu_height_t' );
+        $typo_header_three_design_main_menu_letter_spacing_t = ifb_get_mod( 'typo_header_three_design_main_menu_spacing_t' );
+
+        $typo_header_three_design_sub_menu_font_size_t = ifb_get_mod( 'typo_header_three_design_sub_menu_size_t' );
+        $typo_header_three_design_sub_menu_line_height_t = ifb_get_mod( 'typo_header_three_design_sub_menu_height_t' );
+        $typo_header_three_design_sub_menu_letter_spacing_t = ifb_get_mod( 'typo_header_three_design_sub_menu_spacing_t' );
+
+        //Search icon
+        $typo_header_three_design_search_icon_font_size_t = ifb_get_mod( 'typo_header_three_design_search_icon_size_t' );
+
+        $typo_header_three_design_css_t = array(
+            '.home-icon a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_menu_icon_font_size_t . 'px' ),
+            ),
+            '.main_navigation ul li a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_main_menu_font_size_t . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_main_menu_line_height_t ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_main_menu_letter_spacing_t . 'px' ),
+            ),
+            '.main_navigation ul li.menu-item-has-children .sub-menu li a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_sub_menu_font_size_t . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_sub_menu_line_height_t ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_sub_menu_letter_spacing_t . 'px' ),
+            ),
+            '.header-layout1 .search-icon .btn-search' => array(
+                'font-size' => esc_attr( $typo_header_three_design_search_icon_font_size_t . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_three_design_css_t
+        );
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
         $output_css = array();
@@ -698,6 +739,47 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                 $header_two_advance_css_m
             );
         }
+
+        /*---------------------------------- Header three design -----------------------------------*/
+
+        //Menu icon
+        $typo_header_three_design_menu_icon_font_size_m = ifb_get_mod( 'typo_header_three_design_menu_icon_size_m' );
+
+        //Menu
+        $typo_header_three_design_main_menu_font_size_m = ifb_get_mod( 'typo_header_three_design_main_menu_size_m' );
+        $typo_header_three_design_main_menu_line_height_m = ifb_get_mod( 'typo_header_three_design_main_menu_height_m' );
+        $typo_header_three_design_main_menu_letter_spacing_m = ifb_get_mod( 'typo_header_three_design_main_menu_spacing_m' );
+
+        $typo_header_three_design_sub_menu_font_size_m = ifb_get_mod( 'typo_header_three_design_sub_menu_size_m' );
+        $typo_header_three_design_sub_menu_line_height_m = ifb_get_mod( 'typo_header_three_design_sub_menu_height_m' );
+        $typo_header_three_design_sub_menu_letter_spacing_m = ifb_get_mod( 'typo_header_three_design_sub_menu_spacing_m' );
+
+        //Search icon
+        $typo_header_three_design_search_icon_font_size_m = ifb_get_mod( 'typo_header_three_design_search_icon_size_m' );
+
+        $typo_header_three_design_css_m = array(
+            '.home-icon a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_menu_icon_font_size_m . 'px' ),
+            ),
+            '.main_navigation ul li a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_main_menu_font_size_m . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_main_menu_line_height_m ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_main_menu_letter_spacing_m . 'px' ),
+            ),
+            '.main_navigation ul li.menu-item-has-children .sub-menu li a' => array(
+                'font-size' => esc_attr( $typo_header_three_design_sub_menu_font_size_m . 'px' ),
+                'line-height' => esc_attr( $typo_header_three_design_sub_menu_line_height_m ),
+                'letter-spacing' => esc_attr( $typo_header_three_design_sub_menu_letter_spacing_m . 'px' ),
+            ),
+            '.header-layout1 .search-icon .btn-search' => array(
+                'font-size' => esc_attr( $typo_header_three_design_search_icon_font_size_m . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_header_three_design_css_m
+        );
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 
