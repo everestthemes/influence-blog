@@ -26,6 +26,8 @@
 .radio_image_two_style .radio-image-two-label > input + img {
 
   	margin: 2px;
-	border-radius: 5px;
+	border-radius: 0px;
     width: 40%;
+    padding:4px;
+    
 }
