@@ -756,6 +756,7 @@ button {
 
 .menu-bg-wrap {
     background-color: #e9b105;
+    border-bottom: 1px solid transparent;
 }
 .home-icon{
     text-align: left;
@@ -2759,9 +2760,7 @@ Single-post layout-1
     margin: 0;
 }
 
-.header-layout2 .main_navigation {
-    border-bottom: 1px solid #eee;
-}
+
 
 .header-layout2 .main_navigation ul li a {
     color: #ffffff;
