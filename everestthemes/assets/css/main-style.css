@@ -758,7 +758,9 @@ button {
     background-color: #e9b105;
     border-bottom: 1px solid transparent;
 }
-
+.home-icon{
+    text-align: left;
+}
 .home-icon a {
     padding: 12px 20px;
     background-color: #183244;
@@ -766,10 +768,12 @@ button {
     font-size: 18px;
     color: white;
     text-transform: uppercase;
+
 }
 
 .home-icon a:hover {
     color: #e9b105;
+    background-color: white;
 }
 
 /* logo section */
@@ -783,7 +787,9 @@ button {
 .sticky .logo-sec {
     max-width: 200px;
 }
-
+.main_navigation{
+    text-align: center;
+}
 .sticky .main_navigation ul li a {
     padding: 15px 20px;
     color: #414042;
@@ -2653,7 +2659,11 @@ Single-post layout-1
 .top-social-icon li a:hover {
     color: #ffffff;
 }
-
+.header-layout1{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 .header-layout1 .header-medium-block {
     background-color: #e9b105;
 }
@@ -2669,11 +2679,12 @@ Single-post layout-1
 .header-layout1 .search-icon .btn-search {
     height: 51px;
     width: 50px;
-    background: white;
+    background: #183244;
     line-height: 50px;
     font-size: 18px;
     position: relative;
     z-index: 9;
+    color: white;
 }
 
 .header-layout1 .main_navigation ul li a {
@@ -2682,7 +2693,8 @@ Single-post layout-1
 }
 
 .header-layout1 .search-icon .btn-search:hover {
-    background-color: #183244;
+    background-color: white;
+    color: #e9b105
 }
 
 .header-layout1 .main_navigation ul li.current_page_item a {
