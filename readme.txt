@@ -46,7 +46,7 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 == Screenshot ==
 
-1. Screenshot Image ( Self created GPLv2 or later )
+1. Screenshot Image (https://pxhere.com/en/photo/1230347)
 
 == Installation ==
 
