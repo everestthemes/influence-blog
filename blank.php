@@ -1,8 +1,8 @@
-c( 'influence_blog_header_three_design_search_icon_color', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_d_p_top', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_header_three_design_search_icon_color' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_d_p_top' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_header_three_design_search_icon_color">.header-layout1 .search-icon .btn-search { color: ' + to + '; }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_d_p_top">.header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-top: ' + to + 'px; }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -14,11 +14,11 @@ c( 'influence_blog_header_three_design_search_icon_color', function( value ) {
     } );
 } );
 
-c( 'influence_blog_header_three_design_search_icon_hover_color', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_d_p_right', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_header_three_design_search_icon_hover_color' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_d_p_right' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_header_three_design_search_icon_hover_color">.header-layout1 .search-icon .btn-search:hover { color: ' + to + '; }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_d_p_right">.header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-right: ' + to + 'px; }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -30,11 +30,11 @@ c( 'influence_blog_header_three_design_search_icon_hover_color', function( value
     } );
 } );
 
-c( 'influence_blog_header_three_design_search_icon_bg_color', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_d_p_bottom', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_header_three_design_search_icon_bg_color' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_d_p_bottom' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_header_three_design_search_icon_bg_color">.header-layout1 .search-icon .btn-search { background-color: ' + to + '; }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_d_p_bottom">.header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-bottom: ' + to + 'px; }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -46,11 +46,11 @@ c( 'influence_blog_header_three_design_search_icon_bg_color', function( value ) 
     } );
 } );
 
-c( 'influence_blog_header_three_design_search_icon_bg_hover_color', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_d_p_left', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_header_three_design_search_icon_bg_hover_color' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_d_p_left' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_header_three_design_search_icon_bg_hover_color">.header-layout1 .search-icon .btn-search:hover { background-color: ' + to + '; }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_d_p_left">.header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-left: ' + to + 'px; }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -62,11 +62,11 @@ c( 'influence_blog_header_three_design_search_icon_bg_hover_color', function( va
     } );
 } );
 
-c( 'influence_blog_typo_header_three_design_search_icon_size_d', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_t_p_top', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_typo_header_three_design_search_icon_size_d' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_t_p_top' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_typo_header_three_design_search_icon_size_d">.header-layout1 .search-icon .btn-search { font-size: ' + to + 'px; }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_t_p_top">@media (max-width: 768px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-top: ' + to + 'px; } }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -78,11 +78,11 @@ c( 'influence_blog_typo_header_three_design_search_icon_size_d', function( value
     } );
 } );
 
-c( 'influence_blog_typo_header_three_design_search_icon_size_t', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_t_p_right', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_typo_header_three_design_search_icon_size_t' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_t_p_right' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_typo_header_three_design_search_icon_size_t">@media (max-width: 768px) { .header-layout1 .search-icon .btn-search { font-size: ' + to + 'px; } }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_t_p_right">@media (max-width: 768px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-right: ' + to + 'px; } }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
@@ -94,11 +94,91 @@ c( 'influence_blog_typo_header_three_design_search_icon_size_t', function( value
     } );
 } );
 
-c( 'influence_blog_typo_header_three_design_search_icon_size_m', function( value ) {
+c( 'influence_blog_header_three_advance_search_icon_t_p_bottom', function( value ) {
     value.bind( function( to ) {
-        var $child = $( '.customizer-influence_blog_typo_header_three_design_search_icon_size_m' );
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_t_p_bottom' );
         if ( to ) {
-            var style = '<style class="customizer-influence_blog_typo_header_three_design_search_icon_size_m">@media (max-width: 480px) { .header-layout1 .search-icon .btn-search { font-size: ' + to + 'px; } }</style>';
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_t_p_bottom">@media (max-width: 768px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-bottom: ' + to + 'px; } }</style>';
+            if ( $child.length ) {
+                $child.replaceWith( style );
+            } else {
+                $( 'head' ).append( style );
+            }
+        } else {
+            $child.remove();
+        }
+    } );
+} );
+
+c( 'influence_blog_header_three_advance_search_icon_t_p_left', function( value ) {
+    value.bind( function( to ) {
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_t_p_left' );
+        if ( to ) {
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_t_p_left">@media (max-width: 768px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-left: ' + to + 'px; } }</style>';
+            if ( $child.length ) {
+                $child.replaceWith( style );
+            } else {
+                $( 'head' ).append( style );
+            }
+        } else {
+            $child.remove();
+        }
+    } );
+} );
+
+c( 'influence_blog_header_three_advance_search_icon_m_p_top', function( value ) {
+    value.bind( function( to ) {
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_m_p_top' );
+        if ( to ) {
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_m_p_top">@media (max-width: 480px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-top: ' + to + 'px; } }</style>';
+            if ( $child.length ) {
+                $child.replaceWith( style );
+            } else {
+                $( 'head' ).append( style );
+            }
+        } else {
+            $child.remove();
+        }
+    } );
+} );
+
+c( 'influence_blog_header_three_advance_search_icon_m_p_right', function( value ) {
+    value.bind( function( to ) {
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_m_p_right' );
+        if ( to ) {
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_m_p_right">@media (max-width: 480px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-right: ' + to + 'px; } }</style>';
+            if ( $child.length ) {
+                $child.replaceWith( style );
+            } else {
+                $( 'head' ).append( style );
+            }
+        } else {
+            $child.remove();
+        }
+    } );
+} );
+
+c( 'influence_blog_header_three_advance_search_icon_m_p_bottom', function( value ) {
+    value.bind( function( to ) {
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_m_p_bottom' );
+        if ( to ) {
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_m_p_bottom">@media (max-width: 480px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-bottom: ' + to + 'px; } }</style>';
+            if ( $child.length ) {
+                $child.replaceWith( style );
+            } else {
+                $( 'head' ).append( style );
+            }
+        } else {
+            $child.remove();
+        }
+    } );
+} );
+
+c( 'influence_blog_header_three_advance_search_icon_m_p_left', function( value ) {
+    value.bind( function( to ) {
+        var $child = $( '.customizer-influence_blog_header_three_advance_search_icon_m_p_left' );
+        if ( to ) {
+            var style = '<style class="customizer-influence_blog_header_three_advance_search_icon_m_p_left">@media (max-width: 480px) { .header-layout1 .search-icon .btn-search, .search-icon .btn-search { padding-left: ' + to + 'px; } }</style>';
             if ( $child.length ) {
                 $child.replaceWith( style );
             } else {
