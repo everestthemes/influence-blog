@@ -4,7 +4,7 @@ Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.3.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -63,6 +63,13 @@ Influence Blog includes support for mailchimp, contact form 7.
 
 
 == Changelog ==
+
+= 1.0.2 - March 3, 2020 =
+* Customizer options updated
+* Codes optimized
+* Fixed : Design
+* Updated as per reviewer
+* Screenshot image changed
 
 = 1.0.1 - February 24, 2020 =
 * Customizer improved
