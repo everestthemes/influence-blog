@@ -400,6 +400,59 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $typo_header_three_design_css_t
         );
 
+        /*---------------------------------- Header three advance Section -----------------------------------*/
+
+        $header_three_advance_toggle = ifb_get_mod( 'header_three_advance_toggle' );
+
+        if( $header_three_advance_toggle ) {
+
+            $header_three_advance_t_b_bottom = ifb_get_mod( 'header_three_advance_t_b_bottom' );
+
+            $header_three_advance_menu_icon_t_p_top = ifb_get_mod( 'header_three_advance_menu_icon_t_p_top' );
+            $header_three_advance_menu_icon_t_p_right = ifb_get_mod( 'header_three_advance_menu_icon_t_p_right' );
+            $header_three_advance_menu_icon_t_p_bottom = ifb_get_mod( 'header_three_advance_menu_icon_t_p_bottom' );
+            $header_three_advance_menu_icon_t_p_left = ifb_get_mod( 'header_three_advance_menu_icon_t_p_left' );
+
+            $header_three_advance_menu_t_p_top = ifb_get_mod( 'header_three_advance_menu_t_p_top' );
+            $header_three_advance_menu_t_p_right = ifb_get_mod( 'header_three_advance_menu_t_p_right' );
+            $header_three_advance_menu_t_p_bottom = ifb_get_mod( 'header_three_advance_menu_t_p_bottom' );
+            $header_three_advance_menu_t_p_left = ifb_get_mod( 'header_three_advance_menu_t_p_left' );
+
+            $header_three_advance_search_icon_t_p_top = ifb_get_mod( 'header_three_advance_search_icon_t_p_top' );
+            $header_three_advance_search_icon_t_p_right = ifb_get_mod( 'header_three_advance_search_icon_t_p_right' );
+            $header_three_advance_search_icon_t_p_bottom = ifb_get_mod( 'header_three_advance_search_icon_t_p_bottom' );
+            $header_three_advance_search_icon_t_p_left = ifb_get_mod( 'header_three_advance_search_icon_t_p_left' );
+
+            $header_three_advance_css_t = array(
+                '.menu-bg-wrap' => array(
+                    'border-bottom-width' => esc_attr( $header_three_advance_t_b_bottom . 'px' ),
+                ),
+                '.home-icon a' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_icon_t_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_icon_t_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_icon_t_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_icon_t_p_left . 'px' ),
+                ),
+                '#header' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_t_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_t_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_t_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_t_p_left . 'px' ),
+                ),
+                '.header-layout1 .search-icon .btn-search, .search-icon .btn-search' => array(
+                    'padding-top' => esc_attr( $header_three_advance_search_icon_t_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_search_icon_t_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_search_icon_t_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_search_icon_t_p_left . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_three_advance_css_t
+            );
+        }
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
         $output_css = array();
@@ -780,6 +833,59 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             $output_css,
             $typo_header_three_design_css_m
         );
+
+        /*---------------------------------- Header three advance Section -----------------------------------*/
+
+        $header_three_advance_toggle = ifb_get_mod( 'header_three_advance_toggle' );
+
+        if( $header_three_advance_toggle ) {
+
+            $header_three_advance_m_b_bottom = ifb_get_mod( 'header_three_advance_m_b_bottom' );
+
+            $header_three_advance_menu_icon_m_p_top = ifb_get_mod( 'header_three_advance_menu_icon_m_p_top' );
+            $header_three_advance_menu_icon_m_p_right = ifb_get_mod( 'header_three_advance_menu_icon_m_p_right' );
+            $header_three_advance_menu_icon_m_p_bottom = ifb_get_mod( 'header_three_advance_menu_icon_m_p_bottom' );
+            $header_three_advance_menu_icon_m_p_left = ifb_get_mod( 'header_three_advance_menu_icon_m_p_left' );
+
+            $header_three_advance_menu_m_p_top = ifb_get_mod( 'header_three_advance_menu_m_p_top' );
+            $header_three_advance_menu_m_p_right = ifb_get_mod( 'header_three_advance_menu_m_p_right' );
+            $header_three_advance_menu_m_p_bottom = ifb_get_mod( 'header_three_advance_menu_m_p_bottom' );
+            $header_three_advance_menu_m_p_left = ifb_get_mod( 'header_three_advance_menu_m_p_left' );
+
+            $header_three_advance_search_icon_m_p_top = ifb_get_mod( 'header_three_advance_search_icon_m_p_top' );
+            $header_three_advance_search_icon_m_p_right = ifb_get_mod( 'header_three_advance_search_icon_m_p_right' );
+            $header_three_advance_search_icon_m_p_bottom = ifb_get_mod( 'header_three_advance_search_icon_m_p_bottom' );
+            $header_three_advance_search_icon_m_p_left = ifb_get_mod( 'header_three_advance_search_icon_m_p_left' );
+
+            $header_three_advance_css_m = array(
+                '.menu-bg-wrap' => array(
+                    'border-bottom-width' => esc_attr( $header_three_advance_m_b_bottom . 'px' ),
+                ),
+                '.home-icon a' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_icon_m_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_icon_m_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_icon_m_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_icon_m_p_left . 'px' ),
+                ),
+                '#header' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_m_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_m_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_m_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_m_p_left . 'px' ),
+                ),
+                '.header-layout1 .search-icon .btn-search, .search-icon .btn-search' => array(
+                    'padding-top' => esc_attr( $header_three_advance_search_icon_m_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_search_icon_m_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_search_icon_m_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_search_icon_m_p_left . 'px' ),
+                ),
+            );
+
+            $output_css = array_merge(
+                $output_css,
+                $header_three_advance_css_m
+            );
+        }
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 

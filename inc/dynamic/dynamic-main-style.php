@@ -817,6 +817,56 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
 
         $parse_css .= influence_blog_parse_css( $header_three_design_css );
 
+        /*---------------------------------- Advance Section -----------------------------------*/
+
+        $header_three_advance_toggle = ifb_get_mod( 'header_three_advance_toggle' );
+
+        if( $header_three_advance_toggle ) {
+
+            $header_three_advance_d_b_bottom = ifb_get_mod( 'header_three_advance_d_b_bottom' );
+
+            $header_three_advance_menu_icon_d_p_top = ifb_get_mod( 'header_three_advance_menu_icon_d_p_top' );
+            $header_three_advance_menu_icon_d_p_right = ifb_get_mod( 'header_three_advance_menu_icon_d_p_right' );
+            $header_three_advance_menu_icon_d_p_bottom = ifb_get_mod( 'header_three_advance_menu_icon_d_p_bottom' );
+            $header_three_advance_menu_icon_d_p_left = ifb_get_mod( 'header_three_advance_menu_icon_d_p_left' );
+
+            $header_three_advance_menu_d_p_top = ifb_get_mod( 'header_three_advance_menu_d_p_top' );
+            $header_three_advance_menu_d_p_right = ifb_get_mod( 'header_three_advance_menu_d_p_right' );
+            $header_three_advance_menu_d_p_bottom = ifb_get_mod( 'header_three_advance_menu_d_p_bottom' );
+            $header_three_advance_menu_d_p_left = ifb_get_mod( 'header_three_advance_menu_d_p_left' );
+
+            $header_three_advance_search_icon_d_p_top = ifb_get_mod( 'header_three_advance_search_icon_d_p_top' );
+            $header_three_advance_search_icon_d_p_right = ifb_get_mod( 'header_three_advance_search_icon_d_p_right' );
+            $header_three_advance_search_icon_d_p_bottom = ifb_get_mod( 'header_three_advance_search_icon_d_p_bottom' );
+            $header_three_advance_search_icon_d_p_left = ifb_get_mod( 'header_three_advance_search_icon_d_p_left' );
+
+            $header_three_advance_css = array(
+                '.menu-bg-wrap' => array(
+                    'border-bottom-width' => esc_attr( $header_three_advance_d_b_bottom . 'px' ),
+                ),
+                '.home-icon a' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_icon_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_icon_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_icon_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_icon_d_p_left . 'px' ),
+                ),
+                '#header' => array(
+                    'padding-top' => esc_attr( $header_three_advance_menu_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_menu_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_menu_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_menu_d_p_left . 'px' ),
+                ),
+                '.header-layout1 .search-icon .btn-search, .search-icon .btn-search' => array(
+                    'padding-top' => esc_attr( $header_three_advance_search_icon_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $header_three_advance_search_icon_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $header_three_advance_search_icon_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $header_three_advance_search_icon_d_p_left . 'px' ),
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $header_three_advance_css );
+        }
+
 
 
 
