@@ -195,6 +195,10 @@ if( ! function_exists( 'influence_blog_header_menu_icon_action' ) ) :
 
  	function influence_blog_header_menu_icon_action() {
 
+        $icon_col = ifb_get_mod( 'header_three_advance_menu_icon_col' );
+
+        $col_class = influence_blog_col_value( $icon_col, 'md' );
+
         $tab_class = '_self';
 
         $menu_icon = ifb_get_mod( 'header_three_menu_icon_select' );
@@ -205,7 +209,7 @@ if( ! function_exists( 'influence_blog_header_menu_icon_action' ) ) :
 
         if( !empty( $menu_icon ) && !empty( $icon_link ) ) {
             ?>
-            <div class="col-md-1">
+            <div class="<?php echo esc_attr( $col_class ); ?>">
                 <div class="home-icon">
                     <a href="<?php echo esc_url( $icon_link ); ?>" target="<?php echo esc_attr( $tab_class ); ?>">
                         <i class="<?php echo esc_attr( $menu_icon ); ?>"></i>
@@ -232,8 +236,12 @@ if( ! function_exists( 'influence_blog_header_search_action' ) ) :
 
         if( !empty( $search_icon ) ) {
 
+            $search_col = ifb_get_mod( 'header_three_advance_search_icon_col' );
+
+            $col_class = influence_blog_col_value( $search_col, 'md' );
+
             ?>
-            <div class="col-md-1">
+            <div class="<?php echo esc_attr( $col_class ); ?>">
                 <div class="mobile-search search-icon">
                     <button class="btn-style btn-search" type="button"><i class="<?php echo esc_attr( $search_icon ); ?>"></i></button>
                     <div id="header-search">
@@ -258,34 +266,38 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
 
  	function influence_blog_header_main_navigation_action() {
 
-    ?>
-    <div class="col-md-10">
-        <div id="header" class="mastheader header header-layout1">
-            <div class="container">
-               <button class="hamburger hamburger_nb" type="button">
-                    <span class="hamburger_box">
-                        <span class="hamburger_inner"></span>
-                    </span>
-                </button>
-                <nav id="main_navigation" class="main_navigation">
-                    <?php
+        $menu_col = ifb_get_mod( 'header_three_advance_menu_col' );
 
-                    $header_three_menu_select = ifb_get_mod( 'header_three_menu_select' );
+        $col_class = influence_blog_col_value( $menu_col, 'md' );
 
-                    $menu_args = array(
-                        'theme_location' => $header_three_menu_select,
-                        'container' => '',
-                        'menu_class' => '',
-                        'menu_id' => '',
-                        'fallback_cb' => 'influence_blog_navigation_fallback',
-                    );
-                    wp_nav_menu( $menu_args );
-                    ?>
-                </nav>
+        ?>
+        <div class="<?php echo esc_attr( $col_class ); ?>">
+            <div id="header" class="mastheader header header-layout1">
+                <div class="container">
+                   <button class="hamburger hamburger_nb" type="button">
+                        <span class="hamburger_box">
+                            <span class="hamburger_inner"></span>
+                        </span>
+                    </button>
+                    <nav id="main_navigation" class="main_navigation">
+                        <?php
+
+                        $header_three_menu_select = ifb_get_mod( 'header_three_menu_select' );
+
+                        $menu_args = array(
+                            'theme_location' => $header_three_menu_select,
+                            'container' => '',
+                            'menu_class' => '',
+                            'menu_id' => '',
+                            'fallback_cb' => 'influence_blog_navigation_fallback',
+                        );
+                        wp_nav_menu( $menu_args );
+                        ?>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </div><!--col-md-9-->
-    <?php
+        </div><!--col-md-9-->
+        <?php
     }
 endif;
 add_action( 'influence_blog_header_main_navigation', 'influence_blog_header_main_navigation_action', 80 );
