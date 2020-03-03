@@ -487,10 +487,12 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $header_layout_options_advance_header_height = ifb_get_mod( 'header_layout_options_advance_header_height' );
 
             $header_layout_options_advance_bg_css = array(
-                '.header-layout1 .header-top-block, .header-layout2' => array(
+                '.header-layout1 .header-top-block, .header-layout2, .header-layout1' => array(
                     'background-size' => esc_attr( $header_layout_options_advance_bg_image_size ),
                     'background-position-x' => esc_attr( $header_layout_options_advance_bg_image_position_x ),
                     'background-position-y' => esc_attr( $header_layout_options_advance_bg_image_position_y ),
+                ),
+                '.header-layout1 .header-top-block, .header-layout2' => array(
                     'height' => esc_attr( $header_layout_options_advance_header_height . 'px' ),
                 ),
             );
@@ -787,12 +789,12 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 'color' => esc_attr( $header_three_design_sub_menu_color ),
             ),
             '.main_navigation ul li.menu-item-has-children ul.sub-menu li a:hover' => array(
-                'color' => esc_attr( $header_three_design_sub_menu_hover_color ),
+                'color' => esc_attr( $header_three_design_sub_menu_hover_color . '!important' ),
             ),
             '.main_navigation ul li.menu-item-has-children .sub-menu' => array(
                 'background-color' => esc_attr( $header_three_design_sub_menu_bg_color ),
             ),
-            '.main_navigation ul li.menu-item-has-children ul.sub-menu li' => array(
+            '.header-layout2 .main_navigation ul li.menu-item-has-children ul.sub-menu li, .main_navigation ul li.menu-item-has-children ul.sub-menu li' => array(
                 'border-bottom' => esc_attr( '1px solid ' . $header_three_design_sub_menu_sep_color ),
             ),
             '.main_navigation ul li.menu-item-has-children .sub-menu li a' => array(

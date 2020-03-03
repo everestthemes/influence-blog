@@ -2282,7 +2282,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_header_layout_options_advance_bg_image_size' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_size">.header-layout1 .header-top-block, .header-layout2 { background-size: ' + to + '; }</style>';
+                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_size">.header-layout1 .header-top-block, .header-layout2, .header-layout1 { background-size: ' + to + '; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -2298,7 +2298,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_header_layout_options_advance_bg_image_position_x' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_position_x">.header-layout1 .header-top-block, .header-layout2 { background-position-x: ' + to + '; }</style>';
+                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_position_x">.header-layout1 .header-top-block, .header-layout2, .header-layout1 { background-position-x: ' + to + '; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -2314,7 +2314,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_header_layout_options_advance_bg_image_position_y' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_position_y">.header-layout1 .header-top-block, .header-layout2 { background-position-y: ' + to + '; }</style>';
+                var style = '<style class="customizer-influence_blog_header_layout_options_advance_bg_image_position_y">.header-layout1 .header-top-block, .header-layout2, .header-layout1 { background-position-y: ' + to + '; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -3774,7 +3774,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_header_three_design_sub_menu_sep_color' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_header_three_design_sub_menu_sep_color">.main_navigation ul li.menu-item-has-children ul.sub-menu li { border-bottom: 1px solid ' + to + '; }</style>';
+                var style = '<style class="customizer-influence_blog_header_three_design_sub_menu_sep_color">.main_navigation ul li.menu-item-has-children ul.sub-menu li, .header-layout2 .main_navigation ul li.menu-item-has-children ul.sub-menu li { border-bottom: 1px solid ' + to + '; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
