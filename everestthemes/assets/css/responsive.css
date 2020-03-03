@@ -303,6 +303,10 @@
         margin-top: 15px;
         margin-bottom: 15px;
     }
+    .header-layout1 .header-top-block{
+        margin-top:0;
+        margin-bottom: 0;
+    }
 
 
     .header-medium-block {
@@ -509,6 +513,15 @@
         padding-bottom: 40px;
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .archive-bdy-d1 .widget-tt .l-title{
+        font-size: 30px;
+    }
+    .archive-bdy-d1 .widget-tt .l-title{
+        margin-top:30px;
+    }
+    .not-found{
+        padding-top:15px;
     }
 
 }
