@@ -169,38 +169,8 @@ function influence_blog_widgets_init() {
 	) );
 
     register_sidebar( array(
-		'name'          => esc_html__( 'Header Advertisement', 'influence-blog' ),
-		'id'            => 'influence-blog-header-advertisement',
-		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
-		'after_title'   => '</h3></div>',
-	) );
-
-    register_sidebar( array(
-		'name'          => esc_html__( 'Top Widget Area', 'influence-blog' ),
-		'id'            => 'influence-blog-top-widget-area',
-		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
-		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
-		'after_widget'  => '</div></div>',
-		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
-		'after_title'   => '</h3></div>',
-	) );
-
-    register_sidebar( array(
-		'name'          => esc_html__( 'Bottom Widget Area', 'influence-blog' ),
-		'id'            => 'influence-blog-bottom-widget-area',
-		'description'   => esc_html__( 'Widgets will be shown in fullwidth.', 'influence-blog' ),
-		'before_widget' => '<div id="%1$s"><div class="widget %2$s">',
-		'after_widget'  => '</div></div>',
-		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
-		'after_title'   => '</h3></div>',
-	) );
-
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Left', 'influence-blog' ),
-		'id'            => 'influence-blog-footer-left',
+		'name'          => esc_html__( 'Widget Area One', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-one',
 		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -209,8 +179,8 @@ function influence_blog_widgets_init() {
 	) );
 
     register_sidebar( array(
-		'name'          => esc_html__( 'Footer Middle', 'influence-blog' ),
-		'id'            => 'influence-blog-footer-middle',
+		'name'          => esc_html__( 'Widget Area Two', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-two',
 		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -219,8 +189,38 @@ function influence_blog_widgets_init() {
 	) );
 
     register_sidebar( array(
-		'name'          => esc_html__( 'Footer Right', 'influence-blog' ),
-		'id'            => 'influence-blog-footer-right',
+		'name'          => esc_html__( 'Widget Area Three', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-three',
+		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
+		'after_title'   => '</h3></div>',
+	) );
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Widget Area Four', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-four',
+		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
+		'after_title'   => '</h3></div>',
+	) );
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Widget Area Five', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-five',
+		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="side-tt widget-title"><h3 class="s-title">',
+		'after_title'   => '</h3></div>',
+	) );
+
+    register_sidebar( array(
+		'name'          => esc_html__( 'Widget Area Six', 'influence-blog' ),
+		'id'            => 'influence-blog-widget-six',
 		'description'   => esc_html__( 'Add widgets here.', 'influence-blog' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',

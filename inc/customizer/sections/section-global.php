@@ -29,7 +29,7 @@ $wp_customize->add_section( 'influence_blog_global_site_layout_section', array(
 /*---------------------------------- Typography -----------------------------------*/
 
 $wp_customize->add_section( 'influence_blog_global_typography_section', array(
-    'priority'     => 20,
+    'priority'     => 15,
     'title'        => esc_html__( 'Typography', 'influence-blog' ),
     'panel'        => $panel,
 ) );

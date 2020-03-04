@@ -430,22 +430,21 @@ if( ! function_exists( 'influence_blog_header_bottom_action' ) ) :
         <div class="container">
             <div class="menu-bg-wrap">
                 <div class="row align-items-center">
-                    
-                        <?php
+                    <?php
 
-                        $items     = influence_blog_arrange_header_three_options();
-                        $defaults  = influence_blog_sortable_defaults( $items );
-                        $mod       = get_theme_mod( 'influence_blog_arrange_header_three', $defaults );
+                    $items     = influence_blog_arrange_header_three_options();
+                    $defaults  = influence_blog_sortable_defaults( $items );
+                    $mod       = get_theme_mod( 'influence_blog_arrange_header_three', $defaults );
 
-                        if( ! $mod ) return;
+                    if( ! $mod ) return;
 
-                        $mod = explode( ',', $mod );
+                    $mod = explode( ',', $mod );
 
-                        $new = influence_blog_sortable_items_to_array( $mod, $items );
+                    $new = influence_blog_sortable_items_to_array( $mod, $items );
 
-                        influence_blog_sortable_items_ouput( $items, $new, $mod );
+                    influence_blog_sortable_items_ouput( $items, $new, $mod );
 
-                        ?>
+                    ?>
                 </div><!--row-->
             </div>
         </div><!--container-->
@@ -490,83 +489,198 @@ add_action( 'influence_blog_header', 'influence_blog_header_action', 100 );
 
 
 /**
- * Footer widget left hook declaration
+ * Footer first widget area hook declaration
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'influence_blog_footer_widget_left_action' ) ) :
+if( ! function_exists( 'influence_blog_footer_first_widget_area_action' ) ) :
 
- 	function influence_blog_footer_widget_left_action() {
+ 	function influence_blog_footer_first_widget_area_action() {
 
-    ?>
-    <div class="col-12 col-md-6 col-lg-4">
-        <?php
+        $area_col = ifb_get_mod( 'footer_one_first_widget_area_col' );
 
-        if( is_active_sidebar( 'influence-blog-footer-left' ) ) {
-
-            dynamic_sidebar( 'influence-blog-footer-left' );
-        }
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
 
         ?>
-    </div>
-    <?php
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_first_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
     }
 endif;
-add_action( 'influence_blog_footer_widget_left', 'influence_blog_footer_widget_left_action', 705 );
+add_action( 'influence_blog_footer_first_widget_area', 'influence_blog_footer_first_widget_area_action', 705 );
 
 
 
 /**
- * Footer widget middle hook declaration
+ * Footer second widget area hook declaration
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'influence_blog_footer_widget_middle_action' ) ) :
+if( ! function_exists( 'influence_blog_footer_second_widget_area_action' ) ) :
 
- 	function influence_blog_footer_widget_middle_action() {
+ 	function influence_blog_footer_second_widget_area_action() {
 
-    ?>
-    <div class="col-12 col-md-6 col-lg-4">
-        <?php
+        $area_col = ifb_get_mod( 'footer_one_second_widget_area_col' );
 
-        if( is_active_sidebar( 'influence-blog-footer-middle' ) ) {
-
-            dynamic_sidebar( 'influence-blog-footer-middle' );
-        }
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
 
         ?>
-    </div>
-    <?php
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_second_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
     }
 endif;
-add_action( 'influence_blog_footer_widget_middle', 'influence_blog_footer_widget_middle_action', 710 );
+add_action( 'influence_blog_footer_second_widget_area', 'influence_blog_footer_second_widget_area_action', 707 );
 
 
 
 /**
- * Footer widget right hook declaration
+ * Footer third widget area hook declaration
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'influence_blog_footer_widget_right_action' ) ) :
+if( ! function_exists( 'influence_blog_footer_third_widget_area_action' ) ) :
 
- 	function influence_blog_footer_widget_right_action() {
+ 	function influence_blog_footer_third_widget_area_action() {
 
-    ?>
-    <div class="col-12 col-md-6 col-lg-4">
-        <?php
+        $area_col = ifb_get_mod( 'footer_one_third_widget_area_col' );
 
-        if( is_active_sidebar( 'influence-blog-footer-right' ) ) {
-
-            dynamic_sidebar( 'influence-blog-footer-right' );
-        }
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
 
         ?>
-    </div>
-    <?php
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_third_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
     }
 endif;
-add_action( 'influence_blog_footer_widget_right', 'influence_blog_footer_widget_right_action', 715 );
+add_action( 'influence_blog_footer_third_widget_area', 'influence_blog_footer_third_widget_area_action', 709 );
+
+
+
+/**
+ * Footer fourth widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_fourth_widget_area_action' ) ) :
+
+ 	function influence_blog_footer_fourth_widget_area_action() {
+
+        $area_col = ifb_get_mod( 'footer_one_fourth_widget_area_col' );
+
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
+
+        ?>
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_fourth_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_footer_fourth_widget_area', 'influence_blog_footer_fourth_widget_area_action', 711 );
+
+/**
+ * Footer fifth widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_fifth_widget_area_action' ) ) :
+
+ 	function influence_blog_footer_fifth_widget_area_action() {
+
+        $area_col = ifb_get_mod( 'footer_one_fifth_widget_area_col' );
+
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
+
+        ?>
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_fifth_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_footer_fifth_widget_area', 'influence_blog_footer_fifth_widget_area_action', 713 );
+
+
+
+/**
+ * Footer sixth widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_sixth_widget_area_action' ) ) :
+
+ 	function influence_blog_footer_sixth_widget_area_action() {
+
+        $area_col = ifb_get_mod( 'footer_one_sixth_widget_area_col' );
+
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
+
+        ?>
+        <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+
+            $widget_area = ifb_get_mod( 'footer_one_sixth_widget_area_select' );
+
+            if( is_active_sidebar( $widget_area ) ) {
+
+                dynamic_sidebar( $widget_area );
+            }
+
+            ?>
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_footer_sixth_widget_area', 'influence_blog_footer_sixth_widget_area_action', 715 );
 
 
 
@@ -683,41 +797,84 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
 
  	function influence_blog_footer_top_action() {
 
-    if( is_active_sidebar( 'influence-blog-footer-left' ) || is_active_sidebar( 'influence-blog-footer-middle' ) || is_active_sidebar( 'influence-blog-footer-right' ) ) {
-
         ?>
         <div class="foot-top-wrap">
             <div class="container">
                 <div class="foot-top-border lrg-padding">
                     <div class="row">
                     <?php
-                    /**
-                    * Hook - influence_blog_footer_widget_left
-                    *
-                    * @hooked influence_blog_footer_widget_left_action - 705
-                    */
-                    do_action( 'influence_blog_footer_widget_left' );
 
-                    /**
-                    * Hook - influence_blog_footer_widget_middle
-                    *
-                    * @hooked influence_blog_footer_widget_middle_action - 710
-                    */
-                    do_action( 'influence_blog_footer_widget_middle' );
+                    $first_widget_area_toggle = ifb_get_mod( 'footer_one_first_widget_area_toggle' );
 
-                    /**
-                    * Hook - influence_blog_footer_widget_right
-                    *
-                    * @hooked influence_blog_footer_widget_right_action - 715
-                    */
-                    do_action( 'influence_blog_footer_widget_right' );
+                    if( $first_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_first_widget_area
+                        *
+                        * @hooked influence_blog_footer_first_widget_area_action - 705
+                        */
+                        do_action( 'influence_blog_footer_first_widget_area' );
+                    }
+
+                    $second_widget_area_toggle = ifb_get_mod( 'footer_one_second_widget_area_toggle' );
+
+                    if( $second_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_second_widget_area
+                        *
+                        * @hooked influence_blog_footer_second_widget_area_action - 707
+                        */
+                        do_action( 'influence_blog_footer_second_widget_area' );
+                    }
+
+                    $third_widget_area_toggle = ifb_get_mod( 'footer_one_third_widget_area_toggle' );
+
+                    if( $third_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_third_widget_area
+                        *
+                        * @hooked influence_blog_footer_third_widget_area_action - 709
+                        */
+                        do_action( 'influence_blog_footer_third_widget_area' );
+                    }
+
+                    $fourth_widget_area_toggle = ifb_get_mod( 'footer_one_fourth_widget_area_toggle' );
+
+                    if( $fourth_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_fourth_widget_area
+                        *
+                        * @hooked influence_blog_footer_fourth_widget_area_action - 711
+                        */
+                        do_action( 'influence_blog_footer_fourth_widget_area' );
+                    }
+
+                    $fifth_widget_area_toggle = ifb_get_mod( 'footer_one_fifth_widget_area_toggle' );
+
+                    if( $fifth_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_fifth_widget_area
+                        *
+                        * @hooked influence_blog_footer_fifth_widget_area_action - 713
+                        */
+                        do_action( 'influence_blog_footer_fifth_widget_area' );
+                    }
+
+                    $sixth_widget_area_toggle = ifb_get_mod( 'footer_one_sixth_widget_area_toggle' );
+
+                    if( $sixth_widget_area_toggle ) {
+                        /**
+                        * Hook - influence_blog_footer_sixth_widget_area
+                        *
+                        * @hooked influence_blog_footer_sixth_widget_area_action - 715
+                        */
+                        do_action( 'influence_blog_footer_sixth_widget_area' );
+                    }
                     ?>
                     </div><!--row-->
                 </div>
             </div>
         </div>
         <?php
-        }
     }
 endif;
 add_action( 'influence_blog_footer_top', 'influence_blog_footer_top_action', 700 );
@@ -801,27 +958,17 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
 
  	function influence_blog_footer_action() {
 
-        /**
-        * Hook - influence_blog_footer_top
-        *
-        * @hooked influence_blog_footer_top_action - 700
-        */
-        do_action( 'influence_blog_footer_top' );
+        $items     = influence_blog_arrange_footer_options();
+        $defaults  = influence_blog_sortable_defaults( $items );
+        $mod       = get_theme_mod( 'influence_blog_arrange_footer', $defaults );
 
-        /**
-        * Hook - influence_blog_footer_middle
-        *
-        * @hooked influence_blog_footer_middle_action - 800
-        */
-        do_action( 'influence_blog_footer_middle' );
+        if( ! $mod ) return;
 
-        /**
-        * Hook - influence_blog_footer_bottom
-        *
-        * @hooked influence_blog_footer_bottom_action - 900
-        */
-        do_action( 'influence_blog_footer_bottom' );
+        $mod = explode( ',', $mod );
 
+        $new = influence_blog_sortable_items_to_array( $mod, $items );
+
+        influence_blog_sortable_items_ouput( $items, $new, $mod );
     }
 endif;
 add_action( 'influence_blog_footer', 'influence_blog_footer_action', 999 );
