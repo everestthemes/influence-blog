@@ -300,3 +300,28 @@ if( !function_exists( 'influence_blog_alignment_array' ) ) :
 
 	}
 endif;
+
+if( !function_exists( 'influence_blog_get_registered_widget_areas' ) ) :
+	/*
+	 * Function to get registered widget areas
+	 */
+	function influence_blog_get_registered_widget_areas() {
+
+        global $wp_registered_sidebars;
+
+        $options = array();
+
+        if( isset( $wp_registered_sidebars ) ) {
+
+            foreach( $wp_registered_sidebars as $sidebars ) {
+
+                $id[] = $sidebars['id'];
+                $name[] = $sidebars['name'];
+
+                $options = array_combine( $id, $name );
+            }
+        }
+
+        return $options;
+	}
+endif;
