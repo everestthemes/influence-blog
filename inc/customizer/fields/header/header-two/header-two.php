@@ -158,6 +158,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
 
 $wp_customize->add_setting( 'influence_blog_display_tagline', array(
     'transport'                => 'postMessage',
+    'sanitize_callback' 	   => 'wp_validate_boolean',
     'default'                  => influence_blog_defaults( 'display_tagline' ),
 ) );
 

@@ -704,7 +704,7 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
                     <?php
                     echo sprintf(
                         esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'influence-blog' ),
-                        sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow" target="_blank">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'influence-blog' ) )
+                        sprintf( '<a href="' . esc_url( 'http://fontawesome.io/icons/' ) . '" rel="nofollow" target="_blank">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'influence-blog' ) )
                     );
                     ?>
                 </span>
