@@ -292,6 +292,9 @@ function influence_blog_customize_register( $wp_customize ) {
 
     $wp_customize->get_control( 'header_textcolor' )->section = 'influence_blog_header_two_section';
     $wp_customize->get_control( 'header_textcolor' )->priority = 100;
+
+    $wp_customize->get_section( 'title_tagline' )->panel = 'influence_blog_global_settings_panel';
+    $wp_customize->get_section( 'title_tagline' )->priority = 10;
 }
 add_action( 'customize_register', 'influence_blog_customize_register', 10 );
 

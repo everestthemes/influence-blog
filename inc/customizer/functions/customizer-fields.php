@@ -16,12 +16,14 @@ if ( !defined( 'ABSPATH' ) ) {
  */
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-global.php';
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-header.php';
+require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-footer.php';
 
 /**
  * Load customizer sections
  */
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-global.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-header.php';
+require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-footer.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-reset.php';
 
 /**
@@ -37,5 +39,7 @@ require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/layout-options/layout-options.p
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-one/header-one.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-two/header-two.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-three/header-three.php';
+
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/layout-options/layout-options.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'reset/reset.php';

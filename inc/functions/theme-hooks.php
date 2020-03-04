@@ -580,40 +580,38 @@ if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
  	function influence_blog_footer_contact_info_action() {
 
     ?>
-    <div class="contact-info lrg-padding">
-        <?php
-        $footer_contact_info_title = ifb_get_mod( 'footer_contact_info_title', '' );
-
-        if( !empty( $footer_contact_info_title ) ) {
-            ?>
-            <div class="side-tt">
-                <h3 class="s-title"><?php echo esc_html( $footer_contact_info_title ); ?></h3>
+    <div class="side-tt">
+        <h3 class="s-title">Get in Touch</h3>
+    </div>
+    <div class="social-media-foot">
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div>
+    <div class="social-detail">
+        <div class="social-detail-bdy center">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="popular-post">
+                        <div class="side-tt">
+                            <h3 class="s-title">Popular Post</h3>
+                        </div>
+                        <div class="popular-post-bdy">
+                            <div class="img-holder">
+                                <figure><img src="assets/images/post-fashion.jpg" alt="blog-img"></figure>
+                            </div>
+                            <div class="side-widget-bdy">
+                                <h3><a href="#" tabindex="-1">Traveling is one of my passion</a></h3>
+                            </div>
+                        </div><!--popular-post-bdy-->
+                    </div><!--popular-post-->
+                </div><!--col-12 col-md-4-->
             </div>
-            <?php
-        }
-
-        $display_footer_contact_info_social_links = ifb_get_mod( 'display_footer_contact_info_social_links', false );
-
-        if( $display_footer_contact_info_social_links == true ) {
-            ?>
-            <div class="social-media-foot">
-                <ul>
-                    <?php influence_blog_social_links_template( 'footer' ); ?>
-                </ul>
-            </div>
-            <?php
-        }
-
-        $footer_contact_info_description = ifb_get_mod( 'footer_contact_info_description', '' );
-
-        if( !empty( $footer_contact_info_description ) ) {
-            ?>
-            <div class="social-detail">
-               <p><?php echo esc_html( $footer_contact_info_description ); ?></p>
-            </div>
-            <?php
-        }
-        ?>
+        </div>
     </div>
     <?php
     }
@@ -688,9 +686,10 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
     if( is_active_sidebar( 'influence-blog-footer-left' ) || is_active_sidebar( 'influence-blog-footer-middle' ) || is_active_sidebar( 'influence-blog-footer-right' ) ) {
 
         ?>
-        <div class="container">
-            <div class="foot-top-wrap lrg-padding">
-                <div class="row">
+        <div class="foot-top-wrap">
+            <div class="container">
+                <div class="foot-top-border lrg-padding">
+                    <div class="row">
                     <?php
                     /**
                     * Hook - influence_blog_footer_widget_left
@@ -713,7 +712,8 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                     */
                     do_action( 'influence_blog_footer_widget_right' );
                     ?>
-                </div><!--row-->
+                    </div><!--row-->
+                </div>
             </div>
         </div>
         <?php
@@ -736,14 +736,16 @@ if( ! function_exists( 'influence_blog_footer_middle_action' ) ) :
     ?>
     <div class="footer-mid-sec center">
         <div class="container">
-            <?php
-            /**
-            * Hook - influence_blog_footer_contact_info
-            *
-            * @hooked influence_blog_footer_contact_info_action - 805
-            */
-            do_action( 'influence_blog_footer_contact_info' );
-            ?>
+            <div class="contact-info lrg-padding">
+                <?php
+                /**
+                * Hook - influence_blog_footer_contact_info
+                *
+                * @hooked influence_blog_footer_contact_info_action - 805
+                */
+                do_action( 'influence_blog_footer_contact_info' );
+                ?>
+            </div>
         </div>
     </div>
     <?php
@@ -799,10 +801,6 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
 
  	function influence_blog_footer_action() {
 
-        ?>
-        <div class="foot-top-sec">
-        <?php
-
         /**
         * Hook - influence_blog_footer_top
         *
@@ -810,22 +808,12 @@ if( ! function_exists( 'influence_blog_footer_action' ) ) :
         */
         do_action( 'influence_blog_footer_top' );
 
-        $display_footer_contact_info = ifb_get_mod( 'display_footer_contact_info', false );
-
-        if( $display_footer_contact_info == true ) {
-
-            /**
-            * Hook - influence_blog_footer_middle
-            *
-            * @hooked influence_blog_footer_middle_action - 800
-            */
-            do_action( 'influence_blog_footer_middle' );
-
-        }
-
-        ?>
-        </div><!--foot-top-sec-->
-        <?php
+        /**
+        * Hook - influence_blog_footer_middle
+        *
+        * @hooked influence_blog_footer_middle_action - 800
+        */
+        do_action( 'influence_blog_footer_middle' );
 
         /**
         * Hook - influence_blog_footer_bottom
