@@ -301,6 +301,25 @@ if( !function_exists( 'influence_blog_alignment_array' ) ) :
 	}
 endif;
 
+if( !function_exists( 'influence_blog_justify_array' ) ) :
+	/*
+	 * Function to get justify content
+	 */
+	function influence_blog_justify_array() {
+
+        $options = array(
+            'start' => __( 'Left', 'influence-blog' ),
+            'end' => __( 'Right', 'influence-blog' ),
+            'center' => __( 'Center', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_justify_array', $options );
+
+        return $options;
+
+	}
+endif;
+
 if( !function_exists( 'influence_blog_get_registered_widget_areas' ) ) :
 	/*
 	 * Function to get registered widget areas
