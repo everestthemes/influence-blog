@@ -131,7 +131,7 @@ if( !function_exists( 'influence_blog_font_size_attrs_array' ) ) :
 
         $options = array(
             'min'                   => 10,
-            'max'                   => 20,
+            'max'                   => 30,
             'step'                  => 0.1,
         );
 
