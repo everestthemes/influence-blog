@@ -436,6 +436,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_design_bg_color' => '#183244',
             'footer_one_design_border_top_color' => 'rgba(0,0,0,0)',
             'footer_one_design_border_bottom_color' => 'rgba(0,0,0,0)',
+            'footer_one_design_widget_area_alignment' => 'start',
             'footer_one_design_widget_title_color' => '#183244',
             'footer_one_design_widget_title_bg_color' => '#eee',
             'typo_footer_one_widget_area_design_title_font' => json_encode(

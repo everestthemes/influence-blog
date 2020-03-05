@@ -24,6 +24,8 @@ $line_height = influence_blog_line_height_attrs_array();
 
 $letter_spacing = influence_blog_letter_spacing_attrs_array();
 
+$justify = influence_blog_justify_array();
+
 $button_one_array = array(
     'influence_blog_footer_one_first_widget_area_heading' => array(),
     'influence_blog_footer_one_first_widget_area_toggle' => array(),
@@ -60,6 +62,8 @@ $button_two_array = array(
     'influence_blog_footer_one_design_border_top_color' => array(),
     'influence_blog_footer_one_design_border_bottom_color' => array(),
     'influence_blog_footer_one_design_widget_area_heading' => array(),
+    'influence_blog_footer_one_design_widget_area_alignment_info' => array(),
+    'influence_blog_footer_one_design_widget_area_alignment' => array(),
     'influence_blog_footer_one_design_widget_area_title_heading' => array(),
     'influence_blog_footer_one_design_widget_area_title_color_heading' => array(),
     'influence_blog_footer_one_design_widget_title_color' => array(),
@@ -603,6 +607,37 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'expanded'                 => false,
     'priority'                 => 155,
 ) ) );
+
+/*---------------------------------- Footer one design widget area alignment Info -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_one_design_widget_area_alignment_info', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_footer_one_design_widget_area_alignment_info', array(
+    'label'                    => esc_html__( 'Note', 'influence-blog' ),
+    'description'              => __( 'If there is spacing between column in widget areas, then it is only applicable.', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'info-one',
+    'info_type'                => 'info',
+    'priority'                 => 157,
+) ) );
+
+/*---------------------------------- Footer one design widget area alignment -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_one_design_widget_area_alignment', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'influence_blog_sanitize_select',
+    'default'                  => influence_blog_defaults( 'footer_one_design_widget_area_alignment' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_footer_one_design_widget_area_alignment', array(
+    'label'                    => esc_html__( 'Alignment', 'influence-blog' ),
+	'section'				   => $section,
+    'choices'                  => $justify,
+    'type'                     => 'select',
+    'priority'                 => 159,
+) );
 
 /*---------------------------------- Footer one design widget area title heading -----------------------------------*/
 
