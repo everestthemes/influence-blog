@@ -453,6 +453,25 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             );
         }
 
+        /*---------------------------------- Footer one design Section -----------------------------------*/
+
+        $typo_footer_one_widget_area_design_title_font_size_t = ifb_get_mod( 'typo_footer_one_widget_area_design_title_size_t' );
+        $typo_footer_one_widget_area_design_title_line_height_t = ifb_get_mod( 'typo_footer_one_widget_area_design_title_height_t' );
+        $typo_footer_one_widget_area_design_title_letter_spacing_t = ifb_get_mod( 'typo_footer_one_widget_area_design_title_spacing_t' );
+
+        $typo_footer_one_design_css_t = array(
+            '.foot-top-border .side-tt .s-title' => array(
+                'font-size' => esc_attr( $typo_footer_one_widget_area_design_title_font_size_t . 'px' ),
+                'line-height' => esc_attr( $typo_footer_one_widget_area_design_title_line_height_t ),
+                'letter-spacing' => esc_attr( $typo_footer_one_widget_area_design_title_letter_spacing_t . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_footer_one_design_css_t
+        );
+
         $parse_css .= influence_blog_parse_css( $output_css, '', '768' );
 
         $output_css = array();
@@ -886,6 +905,25 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                 $header_three_advance_css_m
             );
         }
+
+        /*---------------------------------- Footer one design Section -----------------------------------*/
+
+        $typo_footer_one_widget_area_design_title_font_size_m = ifb_get_mod( 'typo_footer_one_widget_area_design_title_size_m' );
+        $typo_footer_one_widget_area_design_title_line_height_m = ifb_get_mod( 'typo_footer_one_widget_area_design_title_height_m' );
+        $typo_footer_one_widget_area_design_title_letter_spacing_m = ifb_get_mod( 'typo_footer_one_widget_area_design_title_spacing_m' );
+
+        $typo_footer_one_design_css_t = array(
+            '.foot-top-border .side-tt .s-title' => array(
+                'font-size' => esc_attr( $typo_footer_one_widget_area_design_title_font_size_m . 'px' ),
+                'line-height' => esc_attr( $typo_footer_one_widget_area_design_title_line_height_m ),
+                'letter-spacing' => esc_attr( $typo_footer_one_widget_area_design_title_letter_spacing_m . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_footer_one_design_css_t
+        );
 
         $parse_css .= influence_blog_parse_css( $output_css, '', '480' );
 

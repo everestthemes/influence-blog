@@ -797,8 +797,10 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
 
  	function influence_blog_footer_top_action() {
 
+        $footer_one_design_bg_image = ifb_get_mod( 'footer_one_design_bg_image' );
+
         ?>
-        <div class="foot-top-wrap">
+        <div class="foot-top-wrap"<?php influence_blog_has_image_url( $footer_one_design_bg_image ); ?>>
             <div class="container">
                 <div class="foot-top-border lrg-padding">
                     <div class="row">
