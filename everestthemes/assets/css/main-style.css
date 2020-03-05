@@ -757,9 +757,11 @@ button {
     background-color: #e9b105;
     border-bottom: 1px solid transparent;
 }
-.home-icon{
+
+.home-icon {
     text-align: left;
 }
+
 .home-icon a {
     padding: 12px 20px;
     background-color: #183244;
@@ -786,9 +788,11 @@ button {
 .sticky .logo-sec {
     max-width: 200px;
 }
-.main_navigation{
+
+.main_navigation {
     text-align: center;
 }
+
 .sticky .main_navigation ul li a {
     padding: 15px 20px;
     color: #414042;
@@ -1642,32 +1646,36 @@ span.sub-toggle.open {
     padding: 10px;
 
 }
+
 /* footer news style  ************************** */
 
-.foot-top-wrap{
-   
+.foot-top-wrap {
+
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     position: relative;
 }
-.foot-top-wrap:before{
+
+.foot-top-wrap:before {
     content: '';
     position: absolute;
-    background-color: rgba(24,51,68,1);
-    left:0;
+    background-color: rgba(24, 51, 68, 1);
+    left: 0;
     right: 0;
-    top:0;
-    bottom:0;
+    top: 0;
+    bottom: 0;
 }
 
-.foot-top-border  .side-tt.widget-title {
-    margin-top:0;
+.foot-top-border .side-tt.widget-title {
+    margin-top: 0;
 }
-.foot-top-border.lrg-padding{
+
+.foot-top-border.lrg-padding {
     padding-bottom: 0;
 }
+
 .foot-top-border .side-tt .s-title {
     color: #183244;
     font-family: Lobster;
@@ -1678,29 +1686,40 @@ span.sub-toggle.open {
     letter-spacing: 1px;
     margin-bottom: 0;
 }
-.foot-top-border .widget{
+
+.foot-top-border .widget {
     background-color: transparent;
-    padding:0;
-    border:1px solid transparent;
+    padding: 0;
+    border: 1px solid transparent;
     margin-bottom: 60px;
+
+}
+
+.foot-top-border .widget .side-tt {
     text-align: left;
 }
+
 .foot-top-border .widget_meta .s-title {
     padding: 0;
 }
+
 .foot-top-border .widget_meta>ul>li {
     border: 1px solid #eee;
 }
-.foot-top-border .widget_meta>ul>li>a{
+
+.foot-top-border .widget_meta>ul>li>a {
     color: white;
 }
-.foot-top-border  .recentcomments a{
+
+.foot-top-border .recentcomments a {
     color: white;
 }
-.foot-top-border .widget_meta>ul>li>a:hover{
+
+.foot-top-border .widget_meta>ul>li>a:hover {
     color: #fbbe1c;
 }
-.footer-mid-sec{
+
+.footer-mid-sec {
     background-color: #183244;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1708,34 +1727,43 @@ span.sub-toggle.open {
     background-size: cover;
     position: relative;
 }
-.footer-mid-sec .side-widget-bdy a{
-    color:#fbbe1c;
+
+.footer-mid-sec .side-widget-bdy a {
+    color: #fbbe1c;
     font-size: 18px;
 }
-.footer-mid-sec .side-widget-bdy a:hover{
-   color: white; 
+
+.footer-mid-sec .side-widget-bdy a:hover {
+    color: white;
 }
-.footer-mid-sec.center{
+
+.footer-mid-sec.center {
     text-align: center;
 }
-.copy.center{
+
+.copy.center {
     text-align: left;
 }
-.foot-menu{
+
+.foot-menu {
     text-align: right;
-        padding: 15px 0;
+    padding: 15px 0;
 }
-.foot-menu ul li{
+
+.foot-menu ul li {
     display: inline-block;
     margin-left: 10px;
 }
-.foot-menu ul li a{
+
+.foot-menu ul li a {
     color: white;
     font-size: 12px;
 }
-.foot-menu ul li a:hover{
+
+.foot-menu ul li a:hover {
     color: #fbbe1c;
 }
+
 /* instagram */
 
 .insta-feed ul li {
@@ -2751,11 +2779,13 @@ Single-post layout-1
 .top-social-icon li a:hover {
     color: #ffffff;
 }
-.header-layout1{
+
+.header-layout1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
+
 .header-layout1 .header-medium-block {
     background-color: #e9b105;
 }
@@ -2815,8 +2845,9 @@ Single-post layout-1
     bottom: 0;
     left: 0;
 }
-.header-layout1  .header-top-block{
-    padding:40px 0;
+
+.header-layout1 .header-top-block {
+    padding: 40px 0;
 }
 
 /* header-layout2 */
@@ -3106,14 +3137,15 @@ Single-post layout-1
 }
 
 /* footer section new added style********************** */
-.footer-mid-sec{
+.footer-mid-sec {
     background-color: #183244;
 }
+
 .contact-info {
     border-bottom: 2px solid transparent;
 }
-.foot-top-border{
+
+.foot-top-border {
     border-bottom: 2px solid transparent;
     border-top: 2px solid transparent;
 }
-
