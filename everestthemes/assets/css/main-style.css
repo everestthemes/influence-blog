@@ -1642,7 +1642,100 @@ span.sub-toggle.open {
     padding: 10px;
 
 }
+/* footer news style  ************************** */
 
+.foot-top-wrap{
+   
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+.foot-top-wrap:before{
+    content: '';
+    position: absolute;
+    background-color: rgba(24,51,68,1);
+    left:0;
+    right: 0;
+    top:0;
+    bottom:0;
+}
+
+.foot-top-border  .side-tt.widget-title {
+    margin-top:0;
+}
+.foot-top-border.lrg-padding{
+    padding-bottom: 0;
+}
+.foot-top-border .side-tt .s-title {
+    color: #183244;
+    font-family: Lobster;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 28px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.foot-top-border .widget{
+    background-color: transparent;
+    padding:0;
+    border:1px solid transparent;
+    margin-bottom: 60px;
+    text-align: left;
+}
+.foot-top-border .widget_meta .s-title {
+    padding: 0;
+}
+.foot-top-border .widget_meta>ul>li {
+    border: 1px solid #eee;
+}
+.foot-top-border .widget_meta>ul>li>a{
+    color: white;
+}
+.foot-top-border  .recentcomments a{
+    color: white;
+}
+.foot-top-border .widget_meta>ul>li>a:hover{
+    color: #fbbe1c;
+}
+.footer-mid-sec{
+    background-color: #183244;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+.footer-mid-sec .side-widget-bdy a{
+    color:#fbbe1c;
+    font-size: 18px;
+}
+.footer-mid-sec .side-widget-bdy a:hover{
+   color: white; 
+}
+.footer-mid-sec.center{
+    text-align: center;
+}
+.copy.center{
+    text-align: left;
+}
+.foot-menu{
+    text-align: right;
+        padding: 15px 0;
+}
+.foot-menu ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+.foot-menu ul li a{
+    color: white;
+    font-size: 12px;
+}
+.foot-menu ul li a:hover{
+    color: #fbbe1c;
+}
 /* instagram */
 
 .insta-feed ul li {
@@ -3024,97 +3117,3 @@ Single-post layout-1
     border-top: 2px solid transparent;
 }
 
-/* footer news style  ************************** */
-
-.foot-top-wrap{
-   
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-}
-.foot-top-wrap:before{
-    content: '';
-    position: absolute;
-    background-color: rgba(24,51,68,1);
-    left:0;
-    right: 0;
-    top:0;
-    bottom:0;
-}
-
-.foot-top-border  .side-tt.widget-title {
-    margin-top:0;
-}
-.foot-top-border.lrg-padding{
-    padding-bottom: 0;
-}
-.foot-top-border .side-tt .s-title {
-    color: #183244;
-    font-family: Lobster;
-    font-weight: normal;
-    text-transform: none;
-    font-size: 28px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    margin-bottom: 0;
-}
-.foot-top-border .widget{
-    background-color: transparent;
-    padding:0;
-    border:1px solid transparent;
-    margin-bottom: 60px;
-    text-align: left;
-}
-.foot-top-border .widget_meta .s-title {
-    padding: 0;
-}
-.foot-top-border .widget_meta>ul>li {
-    border: 1px solid #eee;
-}
-.foot-top-border .widget_meta>ul>li>a{
-    color: white;
-}
-.foot-top-border  .recentcomments a{
-    color: white;
-}
-.foot-top-border .widget_meta>ul>li>a:hover{
-    color: #fbbe1c;
-}
-.footer-mid-sec{
-    background-color: #183244;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-}
-.footer-mid-sec .side-widget-bdy a{
-    color:#fbbe1c;
-    font-size: 18px;
-}
-.footer-mid-sec .side-widget-bdy a:hover{
-   color: white; 
-}
-.footer-mid-sec.center{
-    text-align: center;
-}
-.copy.center{
-    text-align: left;
-}
-.foot-menu{
-    text-align: right;
-        padding: 15px 0;
-}
-.foot-menu ul li{
-    display: inline-block;
-    margin-left: 10px;
-}
-.foot-menu ul li a{
-    color: white;
-    font-size: 12px;
-}
-.foot-menu ul li a:hover{
-    color: #fbbe1c;
-}
