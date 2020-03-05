@@ -3063,7 +3063,7 @@ Single-post layout-1
 .foot-top-border .widget{
     background-color: transparent;
     padding:0;
-    border:1px solid white;
+    border:1px solid transparent;
     margin-bottom: 60px;
     text-align: left;
 }
