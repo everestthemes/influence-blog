@@ -879,6 +879,9 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         $footer_one_design_border_top_color = ifb_get_mod( 'footer_one_design_border_top_color' );
         $footer_one_design_border_bottom_color = ifb_get_mod( 'footer_one_design_border_bottom_color' );
 
+        $footer_one_design_widget_area_bg_color = ifb_get_mod( 'footer_one_design_widget_area_bg_color' );
+        $footer_one_design_widget_area_border_color = ifb_get_mod( 'footer_one_design_widget_area_border_color' );
+
         $footer_one_design_widget_title_color = ifb_get_mod( 'footer_one_design_widget_title_color' );
         $footer_one_design_widget_title_bg_color = ifb_get_mod( 'footer_one_design_widget_title_bg_color' );
 
@@ -896,6 +899,13 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             '.foot-top-border' => array(
                 'border-top-color' => esc_attr( $footer_one_design_border_top_color ),
                 'border-bottom-color' => esc_attr( $footer_one_design_border_bottom_color ),
+            ),
+            '.foot-top-border .widget' => array(
+                'background-color' => esc_attr( $footer_one_design_widget_area_bg_color ),
+                'border-top-color' => esc_attr( $footer_one_design_widget_area_border_color ),
+                'border-right-color' => esc_attr( $footer_one_design_widget_area_border_color ),
+                'border-bottom-color' => esc_attr( $footer_one_design_widget_area_border_color ),
+                'border-left-color' => esc_attr( $footer_one_design_widget_area_border_color ),
             ),
             '.foot-top-border .widget-title' => array(
                 'background-color' => esc_attr( $footer_one_design_widget_title_bg_color ),
