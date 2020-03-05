@@ -744,19 +744,21 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
  	function influence_blog_footer_copyright_text_action() {
 
     ?>
-    <div class="copy center">
-        <?php
-        $footer_copyright_text = ifb_get_mod( 'footer_copyright_text', '' );
-        if( !empty( $footer_copyright_text ) ) {
+    <div class="col-lg-6">
+        <div class="copy center">
+            <?php
+            $footer_copyright_text = ifb_get_mod( 'footer_copyright_text', '' );
+            if( !empty( $footer_copyright_text ) ) {
 
-            echo esc_html( $footer_copyright_text );
-            /* translators: 1: Theme name, 2: Theme author. */
-            printf( esc_html__( ' %1$s by %2$s','influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
-        } else {
-            /* translators: 1: Theme name, 2: Theme author. */
-            printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
-        }
-        ?>
+                echo esc_html( $footer_copyright_text );
+                /* translators: 1: Theme name, 2: Theme author. */
+                printf( esc_html__( ' %1$s by %2$s','influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+            } else {
+                /* translators: 1: Theme name, 2: Theme author. */
+                printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+            }
+            ?>
+        </div>
     </div>
     <?php
     }
@@ -926,14 +928,26 @@ if( ! function_exists( 'influence_blog_footer_bottom_action' ) ) :
     ?>
     <footer class="footer-bottom">
         <div class="container">
-            <?php
-            /**
-            * Hook - influence_blog_footer_copyright_text
-            *
-            * @hooked influence_blog_footer_copyright_text_action - 905
-            */
-            do_action( 'influence_blog_footer_copyright_text' );
-            ?>
+            <div class="row">
+                <?php
+                /**
+                * Hook - influence_blog_footer_copyright_text
+                *
+                * @hooked influence_blog_footer_copyright_text_action - 905
+                */
+                do_action( 'influence_blog_footer_copyright_text' );
+                ?>
+                <div class="col-lg-6">
+                    <div class="foot-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div> 
         </div>
         <?php
         /**
