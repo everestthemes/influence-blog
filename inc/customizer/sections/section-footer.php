@@ -18,10 +18,18 @@ if ( !defined( 'ABSPATH' ) ) {
 
 $panel = 'influence_blog_footer_settings_panel';
 
-/*---------------------------------- Footer layout options -----------------------------------*/
+/*---------------------------------- Arrange footer -----------------------------------*/
 
-$wp_customize->add_section( 'influence_blog_footer_layout_options_section', array(
+$wp_customize->add_section( 'influence_blog_arrange_footer_section', array(
     'priority'     => 10,
-    'title'        => esc_html__( 'Layout Options', 'influence-blog' ),
+    'title'        => esc_html__( 'Arrange Footer', 'influence-blog' ),
+    'panel'        => $panel,
+) );
+
+/*---------------------------------- Footer one -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_footer_one_section', array(
+    'priority'     => 15,
+    'title'        => esc_html__( 'Footer One', 'influence-blog' ),
     'panel'        => $panel,
 ) );

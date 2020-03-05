@@ -300,6 +300,114 @@ if( ! function_exists( 'influence_blog_is_header_three_advance_enable' ) ) {
 }
 
 /**
+ * Active callback function for footer one first widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_first_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_first_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_first_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for footer one second widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_second_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_second_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_second_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for footer one third widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_third_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_third_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_third_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for footer one fourth widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_fourth_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_fourth_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_fourth_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for footer one fifth widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_fifth_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_fifth_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_fifth_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for footer one sixth widget toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_sixth_widget_enable' ) ) {
+
+	function influence_blog_is_footer_one_sixth_widget_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_sixth_widget_area_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for header one is enabled.
  */
 if( ! function_exists( 'influence_blog_is_header_one' ) ) {
