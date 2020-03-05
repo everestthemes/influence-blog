@@ -104,6 +104,13 @@
     .not-found-wrap {
         background-position: center center;
     }
+    .copy.center,
+    .foot-menu{
+        text-align: center;
+    }
+    .foot-menu{
+        padding-top: 0;
+    }
 
 }
 
