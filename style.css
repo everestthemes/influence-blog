@@ -20,17 +20,3 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-/* footer section new added style********************** */
-.foot-top-wrap {
-    background-color: #183244;
-}
-.footer-mid-sec{
-    background-color: #183244;
-}
-.contact-info {
-    border-bottom: 2px solid transparent;
-}
-.foot-top-border{
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
-}

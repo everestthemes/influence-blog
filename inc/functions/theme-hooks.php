@@ -803,7 +803,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
         <div class="foot-top-wrap"<?php influence_blog_has_image_url( $footer_one_design_bg_image ); ?>>
             <div class="container">
                 <div class="foot-top-border lrg-padding">
-                    <div class="row">
+                    <div class="row justify-content-center">
                     <?php
 
                     $first_widget_area_toggle = ifb_get_mod( 'footer_one_first_widget_area_toggle' );
