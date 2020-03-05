@@ -215,3 +215,6 @@ button.customizer-repeater-two-new-field:before {
 .customizer-repeater-two-box-content-hidden textarea {
 	width: 100%;
 }
+.customizer-repeater-two-general-control-repeater-container .social-repeater-general-control-remove-field.button {
+    margin-top: 15px;
+}
