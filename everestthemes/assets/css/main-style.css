@@ -3101,5 +3101,20 @@ Single-post layout-1
     text-align: center;
 }
 .copy.center{
-    text-align: center;
+    text-align: left;
+}
+.foot-menu{
+    text-align: right;
+        padding: 15px 0;
+}
+.foot-menu ul li{
+    display: inline-block;
+    margin-left: 10px;
+}
+.foot-menu ul li a{
+    color: white;
+    font-size: 12px;
+}
+.foot-menu ul li a:hover{
+    color: #fbbe1c;
 }
