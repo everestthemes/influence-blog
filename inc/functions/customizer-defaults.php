@@ -413,6 +413,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_advance_search_icon_m_p_bottom' => '12',
             'header_three_advance_search_icon_m_p_left' => '20',
             //Footer Footer one - General
+            'footer_one_widget_area_alignment' => 'start',
             'footer_one_first_widget_area_toggle' => true,
             'footer_one_first_widget_area_select' => 'influence-blog-widget-one',
             'footer_one_first_widget_area_col' => 4,
@@ -436,7 +437,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_design_bg_color' => '#183244',
             'footer_one_design_border_top_color' => 'rgba(0,0,0,0)',
             'footer_one_design_border_bottom_color' => 'rgba(0,0,0,0)',
-            'footer_one_design_widget_area_alignment' => 'start',
+            'footer_one_design_widget_area_bg_color' => 'rgba(0,0,0,0)',
+            'footer_one_design_widget_area_border_color' => 'rgba(0,0,0,0)',
             'footer_one_design_widget_title_color' => '#183244',
             'footer_one_design_widget_title_bg_color' => '#eee',
             'typo_footer_one_widget_area_design_title_font' => json_encode(
