@@ -116,6 +116,9 @@ body.boxed .page-wrap {
     width: 100%;
     padding: 15px;
 }
+.container-style-content-boxed .primary-widget-area{
+    margin-left: 0;
+}
 
 .container-style-boxed .secondary-widget-area .widget {
     background-color: #f1f1f1;
