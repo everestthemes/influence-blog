@@ -800,12 +800,13 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
  	function influence_blog_footer_top_action() {
 
         $footer_one_design_bg_image = ifb_get_mod( 'footer_one_design_bg_image' );
+        $footer_one_widget_area_alignment = ifb_get_mod( 'footer_one_widget_area_alignment' );
 
         ?>
         <div class="foot-top-wrap"<?php influence_blog_has_image_url( $footer_one_design_bg_image ); ?>>
             <div class="container">
                 <div class="foot-top-border lrg-padding">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-<?php echo esc_attr( $footer_one_widget_area_alignment ); ?>">
                     <?php
 
                     $first_widget_area_toggle = ifb_get_mod( 'footer_one_first_widget_area_toggle' );

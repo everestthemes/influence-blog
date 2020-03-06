@@ -408,6 +408,24 @@ if( ! function_exists( 'influence_blog_is_footer_one_sixth_widget_enable' ) ) {
 }
 
 /**
+ * Active callback function for footer one advance toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_footer_one_advance_enable' ) ) {
+
+	function influence_blog_is_footer_one_advance_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_footer_one_advance_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for header one is enabled.
  */
 if( ! function_exists( 'influence_blog_is_header_one' ) ) {
