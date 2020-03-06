@@ -282,6 +282,24 @@ if( !function_exists( 'influence_blog_background_image_positions_y_array' ) ) :
 	}
 endif;
 
+if( !function_exists( 'influence_blog_background_image_attachment_array' ) ) :
+	/*
+	 * Function to get background image attachment
+	 */
+	function influence_blog_background_image_attachment_array() {
+
+        $options = array(
+            'scroll' => __( 'Scroll', 'influence-blog' ),
+            'fixed' => __( 'Fixed', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_background_image_attachment_array', $options );
+
+        return $options;
+
+	}
+endif;
+
 if( !function_exists( 'influence_blog_alignment_array' ) ) :
 	/*
 	 * Function to get alignment
