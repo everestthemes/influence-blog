@@ -463,8 +463,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'typo_footer_one_widget_area_design_title_spacing_t' => '1',
             'typo_footer_one_widget_area_design_title_spacing_m' => '1',
             //Footer Footer one - Design - widget content
-            'footer_one_design_widget_content_color' => '',
-            'footer_one_design_widget_content_hover_color' => '',
+            'footer_one_design_widget_content_color' => '#fff',
+            'footer_one_design_widget_content_hover_color' => '#e9b105',
             'footer_one_design_widget_content_bg_color' => '',
             'footer_one_design_widget_content_bg_hover_color' => '',
             'footer_one_design_widget_content_border_color' => '',
