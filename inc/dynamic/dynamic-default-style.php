@@ -52,6 +52,60 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         $parse_css .= influence_blog_parse_css( $header_three_design_css );
 
+        /*-----------------------------------------------------------------------------
+							 Footer One
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $footer_one_design_widget_content_color = ifb_get_mod( 'footer_one_design_widget_content_color' );
+        $footer_one_design_widget_content_hover_color = ifb_get_mod( 'footer_one_design_widget_content_hover_color' );
+        $footer_one_design_widget_content_bg_color = ifb_get_mod( 'footer_one_design_widget_content_bg_color' );
+        $footer_one_design_widget_content_bg_hover_color = ifb_get_mod( 'footer_one_design_widget_content_bg_hover_color' );
+        $footer_one_design_widget_content_border_color = ifb_get_mod( 'footer_one_design_widget_content_border_color' );
+        $footer_one_design_widget_content_button_color = ifb_get_mod( 'footer_one_design_widget_content_button_color' );
+        $footer_one_design_widget_content_button_hover_color = ifb_get_mod( 'footer_one_design_widget_content_button_hover_color' );
+
+        $footer_one_design_css = array(
+            '.foot-top-wrap select#archives-dropdown-2,
+            .foot-top-wrap select.postform,
+            .foot-top-wrap select#archives-dropdown--1,
+            .foot-top-wrap select#archives-dropdown-4,
+            .foot-top-wrap .widget_archive>ul>li,
+            .foot-top-wrap .widget_archive>ul>li a,
+            .foot-top-wrap #wp-calendar tr th,
+            .foot-top-wrap #wp-calendar tr td,
+            .foot-top-wrap #wp-calendar caption,
+            .foot-top-wrap .widget_categories>ul>li,
+            .foot-top-wrap .widget_categories>ul>li a,
+            .foot-top-wrap .widget_pages>ul>li,
+            .foot-top-wrap .widget_nav_menu .menu>li,
+            .foot-top-wrap .widget_nav_menu .menu>li a,
+            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li a,
+            .foot-top-wrap .widget_pages>ul>li a,
+            .foot-top-wrap .widget_rss>ul>li a,
+            .foot-top-wrap .rssSummary,
+            .foot-top-wrap .widget_rss>ul>li cite,
+            .foot-top-wrap .recentcomments:before,
+            .foot-top-wrap .widget_search .search-form .search-submit,
+            .foot-top-wrap .form-submit .submit,
+            .foot-top-wrap .widget_search .search-form #submit,
+            .foot-top-wrap .widget_text .textwidget p,
+            .foot-top-wrap .widget_text .textwidget a,
+            .foot-top-wrap .widget_tag_cloud .tagcloud,
+            .foot-top-wrap .widget_tag_cloud .tagcloud a
+            ' => array(
+                'color' => esc_attr( $footer_one_design_widget_content_color ),
+            ),
+            '.foot-top-wrap .widget_search .search-form .search-submit:hover,
+            .foot-top-wrap .form-submit .submit:hover,
+            .foot-top-wrap a:hover
+            '=> array(
+                'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $footer_one_design_css );
 
         $dynamic_css = $parse_css;
 
