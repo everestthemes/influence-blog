@@ -42,5 +42,6 @@ require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-three/header-three.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/arrange-footer/arrange-footer.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/footer-one/footer-one.php';
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/footer-two/footer-two.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'reset/reset.php';

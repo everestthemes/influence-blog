@@ -685,52 +685,144 @@ add_action( 'influence_blog_footer_sixth_widget_area', 'influence_blog_footer_si
 
 
 /**
- * Footer contact info hook declaration
+ * Footer middle title hook declaration
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'influence_blog_footer_contact_info_action' ) ) :
+if( ! function_exists( 'influence_blog_footer_middle_title_action' ) ) :
 
- 	function influence_blog_footer_contact_info_action() {
+ 	function influence_blog_footer_middle_title_action() {
 
-    ?>
-    <div class="side-tt">
-        <h3 class="s-title">Get in Touch</h3>
-    </div>
-    <div class="social-media-foot">
-        <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        </ul>
-    </div>
-    <div class="social-detail">
-        <div class="social-detail-bdy center">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12">
-                    <div class="popular-post">
-                        <div class="side-tt">
-                            <h3 class="s-title">Popular Post</h3>
-                        </div>
-                        <div class="popular-post-bdy">
-                            <div class="img-holder">
-                                <figure><img src="assets/images/post-fashion.jpg" alt="blog-img"></figure>
-                            </div>
-                            <div class="side-widget-bdy">
-                                <h3><a href="#" tabindex="-1">Traveling is one of my passion</a></h3>
-                            </div>
-                        </div><!--popular-post-bdy-->
-                    </div><!--popular-post-->
-                </div><!--col-12 col-md-4-->
-            </div>
+        $title_col = ifb_get_mod( 'footer_two_title_col' );
+
+        $col_class = influence_blog_col_value( $title_col, 'lg' );
+
+        $title = ifb_get_mod( 'footer_two_title' );
+
+        ?>
+        <div class="foo-mid-title col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <?php
+            if( !empty( $title ) ) {
+                ?>
+                <div class="side-tt">
+                    <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
+                </div>
+                <?php
+            }
+            ?>
         </div>
-    </div>
-    <?php
+        <?php
     }
 endif;
-add_action( 'influence_blog_footer_contact_info', 'influence_blog_footer_contact_info_action', 805 );
+add_action( 'influence_blog_footer_middle_title', 'influence_blog_footer_middle_title_action', 805 );
+
+
+
+/**
+ * Footer middle social links hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_middle_social_links_action' ) ) :
+
+ 	function influence_blog_footer_middle_social_links_action() {
+
+        $links_col = ifb_get_mod( 'footer_two_social_links_col' );
+
+        $col_class = influence_blog_col_value( $links_col, 'lg' );
+
+        ?>
+        <div class="foo-mid-social col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <div class="social-media-foot">
+                <ul>
+                <?php
+
+                $social_links = get_theme_mod( 'influence_blog_footer_two_social_links' );
+
+                $social_links = json_decode( $social_links );
+
+                if( !empty( $social_links ) ) {
+
+                    $new_tab = ifb_get_mod( 'footer_two_social_links_tab_toggle' );
+
+                    $target_attr = '_self';
+
+                    if( $new_tab == true ) {
+
+                        $target_attr = '_blank';
+
+                    }
+
+                    foreach( $social_links as $social ) {
+
+                        $link = $social->link;
+                        $icon = $social->icon_value;
+
+                        if( empty( $link ) ) {
+
+                            $link = '#';
+                        }
+
+                        if( !empty( $icon ) ) {
+                            ?>
+                            <li>
+                                <a href="<?php echo esc_url( $link ); ?>" target="<?php echo esc_attr( $target_attr ); ?>">
+                                   <i class="fa <?php echo esc_attr( $icon ); ?>"></i>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                    }
+                }
+                ?>
+                </ul>
+            </div>
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_footer_middle_social_links', 'influence_blog_footer_middle_social_links_action', 810 );
+
+
+
+/**
+ * Footer middle widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_middle_widget_area_action' ) ) :
+
+ 	function influence_blog_footer_middle_widget_area_action() {
+
+        $area_col = ifb_get_mod( 'footer_two_widget_area_col' );
+
+        $col_class = influence_blog_col_value( $area_col, 'lg' );
+
+        ?>
+        <div class="foo-mid-wid col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <div class="social-detail">
+                <div class="social-detail-bdy center">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <?php
+
+                            $widget_area = ifb_get_mod( 'footer_two_widget_area_select' );
+
+                            if( is_active_sidebar( $widget_area ) ) {
+
+                                dynamic_sidebar( $widget_area );
+                            }
+
+                            ?>
+                        </div><!--col-12 col-md-4-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_footer_middle_widget_area', 'influence_blog_footer_middle_widget_area_action', 815 );
 
 
 
@@ -895,22 +987,32 @@ if( ! function_exists( 'influence_blog_footer_middle_action' ) ) :
 
  	function influence_blog_footer_middle_action() {
 
-    ?>
-    <div class="footer-mid-sec center">
-        <div class="container">
-            <div class="contact-info lrg-padding">
-                <?php
-                /**
-                * Hook - influence_blog_footer_contact_info
-                *
-                * @hooked influence_blog_footer_contact_info_action - 805
-                */
-                do_action( 'influence_blog_footer_contact_info' );
-                ?>
+        $footer_two_design_bg_image = ifb_get_mod( 'footer_two_design_bg_image' );
+
+        ?>
+        <div class="footer-mid-sec center"<?php influence_blog_has_image_url( $footer_two_design_bg_image ); ?>>
+            <div class="container">
+                <div class="contact-info lrg-padding">
+                    <div class="row">
+                        <?php
+
+                        $items     = influence_blog_arrange_footer_two_options();
+                        $defaults  = influence_blog_sortable_defaults( $items );
+                        $mod       = get_theme_mod( 'influence_blog_arrange_footer_two', $defaults );
+
+                        if( ! $mod ) return;
+
+                        $mod = explode( ',', $mod );
+
+                        $new = influence_blog_sortable_items_to_array( $mod, $items );
+
+                        influence_blog_sortable_items_ouput( $items, $new, $mod );
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <?php
+        <?php
     }
 endif;
 add_action( 'influence_blog_footer_middle', 'influence_blog_footer_middle_action', 800 );

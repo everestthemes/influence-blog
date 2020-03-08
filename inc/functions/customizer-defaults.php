@@ -412,7 +412,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_advance_search_icon_m_p_right' => '20',
             'header_three_advance_search_icon_m_p_bottom' => '12',
             'header_three_advance_search_icon_m_p_left' => '20',
-            //Footer Footer one - General
+            //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,
             'footer_one_first_widget_area_select' => 'influence-blog-widget-one',
@@ -432,15 +432,15 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_sixth_widget_area_toggle' => false,
             'footer_one_sixth_widget_area_select' => 'influence-blog-widget-six',
             'footer_one_sixth_widget_area_col' => 4,
-            //Footer Footer one - Design
+            //Footer - Footer one - Design
             'footer_one_design_bg_image' => '',
             'footer_one_design_bg_color' => 'rgba(24, 51, 68, 0.9)',
             'footer_one_design_border_top_color' => 'rgba(0,0,0,0)',
             'footer_one_design_border_bottom_color' => 'rgba(0,0,0,0)',
-            //Footer Footer one - Design - widget area
+            //Footer - Footer one - Design - widget area
             'footer_one_design_widget_area_bg_color' => 'rgba(0,0,0,0)',
             'footer_one_design_widget_area_border_color' => 'rgba(0,0,0,0)',
-            //Footer Footer one - Design - widget title
+            //Footer - Footer one - Design - widget title
             'footer_one_design_widget_area_title_alignment' => 'left',
             'footer_one_design_widget_title_color' => '#183244',
             'footer_one_design_widget_title_bg_color' => '#eee',
@@ -462,7 +462,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'typo_footer_one_widget_area_design_title_spacing_d' => '1',
             'typo_footer_one_widget_area_design_title_spacing_t' => '1',
             'typo_footer_one_widget_area_design_title_spacing_m' => '1',
-            //Footer Footer one - Design - widget content
+            //Footer - Footer one - Design - widget content
             'footer_one_design_widget_content_color' => '#fff',
             'footer_one_design_widget_content_hover_color' => '#e9b105',
             'footer_one_design_widget_content_bg_color' => '',
@@ -470,14 +470,14 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_design_widget_content_border_color' => '',
             'footer_one_design_widget_content_button_color' => '',
             'footer_one_design_widget_content_button_hover_color' => '',
-            //Footer Footer one - Advance - options
+            //Footer - Footer one - Advance - options
             'footer_one_advance_bg_image_size' => 'cover',
             'footer_one_advance_bg_image_attch' => 'fixed',
             'footer_one_advance_bg_image_position_x' => 'center',
             'footer_one_advance_bg_image_position_y' => 'center',
             'footer_one_advance_border_top' => 2,
             'footer_one_advance_border_bottom' => 2,
-            //Footer Footer one - Advance - widget area
+            //Footer - Footer one - Advance - widget area
             'footer_one_widget_area_advance_border_width' => 1,
             'footer_one_widget_area_advance_d_p_top' => 0,
             'footer_one_widget_area_advance_d_p_right' => 0,
@@ -491,7 +491,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_widget_area_advance_m_p_right' => 0,
             'footer_one_widget_area_advance_m_p_bottom' => 0,
             'footer_one_widget_area_advance_m_p_left' => 0,
-            //Footer Footer one - Advance - widget title
+            //Footer - Footer one - Advance - widget title
             'footer_one_widget_title_advance_d_m_top' => 0,
             'footer_one_widget_title_advance_d_m_right' => 0,
             'footer_one_widget_title_advance_d_m_bottom' => 30,
@@ -517,6 +517,86 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_widget_title_advance_m_p_right' => 10,
             'footer_one_widget_title_advance_m_p_bottom' => 10,
             'footer_one_widget_title_advance_m_p_left' => 10,
+            //Footer - Footer two - General - Title
+            'footer_two_title' => 'Get In Touch',
+            'footer_two_title_col' => 12,
+            'footer_two_title_alignment' => 'center',
+            //Footer - Footer two - General - Social links
+            'footer_two_social_links_tab_toggle' => true,
+            'footer_two_social_links_col' => 12,
+            'footer_two_social_links_alignment' => 'center',
+            //Footer - Footer two - General - widget area
+            'footer_two_widget_area_select' => 'influence-blog-widget-six',
+            'footer_two_widget_area_col' => 12,
+            'footer_two_widget_area_alignment' => 'center',
+            //Footer - Footer two - Design
+            'footer_two_design_bg_image' => '',
+            'footer_two_design_bg_color' => 'rgba(24, 51, 68, 0.9)',
+            'footer_two_design_border_top_color' => '#233d4e',
+            'footer_two_design_border_bottom_color' => 'rgba(0,0,0,0)',
+            //Footer - Footer two - Design - Main title
+            'footer_two_design_title_color' => '#fff',
+            'footer_two_design_title_border_color' => '#e9b105',
+            'typo_footer_two_design_title_font' => json_encode(
+				array(
+					'font' => 'Lobster',
+					'variantlist' => array( 'regular' ),
+					'fontweight' => 'regular',
+					'category' => 'display'
+				)
+			),
+            'typo_footer_two_design_title_transform' => 'capitalize',
+            'typo_footer_two_design_title_size_d' => '28',
+            'typo_footer_two_design_title_size_t' => '28',
+            'typo_footer_two_design_title_size_m' => '28',
+            'typo_footer_two_design_title_height_d' => '1.5',
+            'typo_footer_two_design_title_height_t' => '1.5',
+            'typo_footer_two_design_title_height_m' => '1.5',
+            'typo_footer_two_design_title_spacing_d' => '1',
+            'typo_footer_two_design_title_spacing_t' => '1',
+            'typo_footer_two_design_title_spacing_m' => '1',
+            //Footer - Footer two - Social Links Color
+            'footer_two_design_social_links_color' => '#fff',
+            'footer_two_design_social_links_hover_color' => '#e9b105',
+            'footer_two_design_social_links_border_color' => '#e9b105',
+            'footer_two_design_social_links_border_hover_color' => '#e9b105',
+            //Footer - Footer two - Social Links Typography
+            'typo_footer_two_design_social_links_size_d' => '20',
+            'typo_footer_two_design_social_links_size_t' => '20',
+            'typo_footer_two_design_social_links_size_m' => '20',
+            //Footer - Footer two - Design - widget area
+            'footer_two_design_widget_area_bg_color' => 'rgba(0,0,0,0)',
+            'footer_two_design_widget_area_border_color' => 'rgba(0,0,0,0)',
+            //Footer - Footer two - Design - widget title
+            'footer_two_design_widget_area_title_alignment' => 'center',
+            'footer_two_design_widget_title_color' => '#fff',
+            'footer_two_design_widget_title_border_color' => '#e9b105',
+            'typo_footer_two_widget_area_design_title_font' => json_encode(
+				array(
+					'font' => 'Lobster',
+					'variantlist' => array( 'regular' ),
+					'fontweight' => 'regular',
+					'category' => 'display'
+				)
+			),
+            'typo_footer_two_widget_area_design_title_transform' => 'capitalize',
+            'typo_footer_two_widget_area_design_title_size_d' => '28',
+            'typo_footer_two_widget_area_design_title_size_t' => '28',
+            'typo_footer_two_widget_area_design_title_size_m' => '28',
+            'typo_footer_two_widget_area_design_title_height_d' => '1.5',
+            'typo_footer_two_widget_area_design_title_height_t' => '1.5',
+            'typo_footer_two_widget_area_design_title_height_m' => '1.5',
+            'typo_footer_two_widget_area_design_title_spacing_d' => '1',
+            'typo_footer_two_widget_area_design_title_spacing_t' => '1',
+            'typo_footer_two_widget_area_design_title_spacing_m' => '1',
+            //Footer - Footer two - Design - widget content
+            'footer_two_design_widget_content_color' => '#fff',
+            'footer_two_design_widget_content_hover_color' => '#e9b105',
+            'footer_two_design_widget_content_bg_color' => '',
+            'footer_two_design_widget_content_bg_hover_color' => '',
+            'footer_two_design_widget_content_border_color' => '',
+            'footer_two_design_widget_content_button_color' => '',
+            'footer_two_design_widget_content_button_hover_color' => '',
             //Reset
             'reset_toggle' => false,
 		);

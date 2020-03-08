@@ -215,7 +215,7 @@ $wp_customize->add_control( new Repeater_Two_Control( $wp_customize, 'influence_
     'customizer_repeater_two_link_control' => true,
 ) ) );
 
-/*---------------------------------- Header layout options advance toggle -----------------------------------*/
+/*---------------------------------- Header one layout one social links toggle -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_social_links_tab_toggle', array(
     'sanitize_callback'        => 'wp_validate_boolean',

@@ -411,6 +411,54 @@ if( ! function_exists( 'influence_blog_arrange_footer_three' ) ) {
     }
 }
 
+/**
+ * Arrange footer two title
+ */
+if( ! function_exists( 'influence_blog_arrange_footer_two_title' ) ) {
+
+    function influence_blog_arrange_footer_two_title() {
+
+        /**
+        * Hook - influence_blog_footer_middle_title
+        *
+        * @hooked influence_blog_footer_middle_title_action - 805
+        */
+        do_action( 'influence_blog_footer_middle_title' );
+    }
+}
+
+/**
+ * Arrange footer two social links
+ */
+if( ! function_exists( 'influence_blog_arrange_footer_two_social_links' ) ) {
+
+    function influence_blog_arrange_footer_two_social_links() {
+
+        /**
+        * Hook - influence_blog_footer_middle_social_links
+        *
+        * @hooked influence_blog_footer_middle_social_links_action - 810
+        */
+        do_action( 'influence_blog_footer_middle_social_links' );
+    }
+}
+
+/**
+ * Arrange footer two widget area
+ */
+if( ! function_exists( 'influence_blog_arrange_footer_two_widget_area' ) ) {
+
+    function influence_blog_arrange_footer_two_widget_area() {
+
+        /**
+        * Hook - influence_blog_footer_middle_widget_area
+        *
+        * @hooked influence_blog_footer_middle_widget_area_action - 815
+        */
+        do_action( 'influence_blog_footer_middle_widget_area' );
+    }
+}
+
 
 
 /**
