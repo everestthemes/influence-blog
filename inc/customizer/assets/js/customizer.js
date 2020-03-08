@@ -5666,5 +5666,105 @@
         } );
     } );
 
+    /*---------------------------------- Footer two general -----------------------------------*/
+
+    c( 'influence_blog_footer_two_title_alignment', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_title_alignment' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_title_alignment">.footer-mid-sec .foo-mid-title { text-align: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_footer_two_social_links_alignment', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_social_links_alignment' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_social_links_alignment">.footer-mid-sec .foo-mid-social { text-align: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_footer_two_widget_area_alignment', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_widget_area_alignment' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_widget_area_alignment">.footer-mid-sec .foo-mid-wid .center { text-align: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    /*---------------------------------- Footer two design -----------------------------------*/
+
+    c( 'influence_blog_footer_two_design_bg_color', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_design_bg_color' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_design_bg_color">.footer-mid-sec:before { background-color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_footer_two_design_border_top_color', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_design_border_top_color' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_design_border_top_color">.contact-info { border-top-color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_footer_two_design_border_bottom_color', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_footer_two_design_border_bottom_color' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_footer_two_design_border_bottom_color">.contact-info { border-bottom-color: ' + to + '; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
 
 } )( jQuery );

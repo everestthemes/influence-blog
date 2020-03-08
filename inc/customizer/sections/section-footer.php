@@ -33,3 +33,11 @@ $wp_customize->add_section( 'influence_blog_footer_one_section', array(
     'title'        => esc_html__( 'Footer One', 'influence-blog' ),
     'panel'        => $panel,
 ) );
+
+/*---------------------------------- Footer two -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_footer_two_section', array(
+    'priority'     => 20,
+    'title'        => esc_html__( 'Footer Two', 'influence-blog' ),
+    'panel'        => $panel,
+) );

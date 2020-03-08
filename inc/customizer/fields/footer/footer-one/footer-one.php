@@ -64,7 +64,7 @@ $button_one_array = array(
     'influence_blog_footer_one_sixth_widget_area_col' => array(),
 );
 
-$button_one_array = apply_filters( 'influence_blog_filter_header_one_button_one_array', $button_one_array );
+$button_one_array = apply_filters( 'influence_blog_filter_footer_one_button_one_array', $button_one_array );
 
 $button_two_array = array(
     'influence_blog_footer_one_design_heading' => array(),
@@ -97,7 +97,7 @@ $button_two_array = array(
     'influence_blog_footer_one_design_widget_content_button_hover_color' => array(),
 );
 
-$button_two_array = apply_filters( 'influence_blog_filter_header_one_button_two_array', $button_two_array );
+$button_two_array = apply_filters( 'influence_blog_filter_footer_one_button_two_array', $button_two_array );
 
 $button_three_array = array(
     'influence_blog_footer_one_advance_info' => array(),
@@ -117,10 +117,10 @@ $button_three_array = array(
     'influence_blog_footer_one_widget_title_advance_p' => array(),
 );
 
-$button_three_array = apply_filters( 'influence_blog_filter_header_one_button_three_array', $button_three_array );
+$button_three_array = apply_filters( 'influence_blog_filter_footer_one_button_three_array', $button_three_array );
 
 /*-----------------------------------------------------------------------------
-							 Header one options
+							 Footer one options
 -----------------------------------------------------------------------------*/
 
 /*---------------------------------- Tabs -----------------------------------*/
