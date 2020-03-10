@@ -1740,6 +1740,17 @@ span.sub-toggle.open {
     bottom: 0;
 }
 
+.footer-mid-sec .widget{
+    background-color: rgba(0,0,0,0);
+    border-top-color: rgba(0,0,0,0);
+    border-right-color: rgba(0,0,0,0);
+    border-bottom-color: rgba(0,0,0,0);
+    border-left-color: rgba(0,0,0,0);
+    background-color: transparent;
+    padding: 0;
+    border: 1px solid transparent;
+    margin-bottom: 60px;
+}
 
 .footer-mid-sec .side-widget-bdy a {
     color: #fbbe1c;
