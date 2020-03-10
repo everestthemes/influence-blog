@@ -2017,7 +2017,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
     background-size: cover;
     position: relative;
 }
-.footer-mid-sec {
+.footer-mid-sec:before {
     content: '';
     position: absolute;
     background-color: rgba(24, 51, 68, 0);
