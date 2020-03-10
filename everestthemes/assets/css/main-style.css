@@ -1954,6 +1954,7 @@ span.sub-toggle.open {
     line-height: 50px;
     display: inline-block;
     font-size: 20px;
+    text-align: center;
 }
 
 .social-media-foot ul li a:hover {
