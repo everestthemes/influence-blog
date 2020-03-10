@@ -548,6 +548,7 @@ input.wpcf7-form-control.wpcf7-submit:hover{
 	padding-bottom: 10px;
 	list-style: square;
 	margin-left: 15px;
+    text-align: left;
 }
 .footer-bg .widget_nav_menu .menu>li a,
 .footer-bg .widget_pages>ul>li a{
@@ -1901,6 +1902,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 /* widget_text *****************************/
 .foot-top-wrap .widget_text .textwidget strong {
     display: block;
+    margin-bottom: 15px;
 }
 
 .foot-top-wrap .widget_text .textwidget {
@@ -2182,6 +2184,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 .footer-mid-sec  .widget_meta>ul>li>a {
     display: inline-block;
     padding: 5px 10px;
+    color: white;
 }
 
 body.boxed .footer-mid-sec  .widget_meta>ul>li,
@@ -2329,6 +2332,7 @@ body.wide .footer-mid-sec  .widget_recent_entries>ul>li a:before {
 /* widget_text *****************************/
 .footer-mid-sec  .widget_text .textwidget strong {
     display: block;
+    margin-bottom: 15px;
 }
 
 .footer-mid-sec  .widget_text .textwidget {
