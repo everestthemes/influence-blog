@@ -2010,22 +2010,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 
 /* ******************* footer-mid-sec  default widget style************************** */
 
-.footer-mid-sec {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-}
-.footer-mid-sec:before {
-    content: '';
-    position: absolute;
-    background-color: rgba(24, 51, 68, 0);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
+
 /* archive *****************************/
 
 

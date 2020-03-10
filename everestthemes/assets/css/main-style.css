@@ -1723,13 +1723,23 @@ span.sub-toggle.open {
 }
 
 .footer-mid-sec {
-    background-color: #183244;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     position: relative;
 }
+
+.footer-mid-sec:before {
+    content: '';
+    position: absolute;
+    background-color: rgba(24, 50, 68, 1);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 
 .footer-mid-sec .side-widget-bdy a {
     color: #fbbe1c;
@@ -1901,6 +1911,7 @@ span.sub-toggle.open {
 
 .contact-info {
     border-top: 2px solid #233d4e;
+    position: relative;
 }
 
 .contact-info .s-title {
@@ -3141,9 +3152,6 @@ Single-post layout-1
 }
 
 /* footer section new added style********************** */
-.footer-mid-sec {
-    background-color: #183244;
-}
 
 .contact-info {
     border-bottom: 2px solid transparent;
