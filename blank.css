@@ -12,17 +12,15 @@
     margin-bottom: 0;
 }
 
-.foot-top-wrap select#archives-dropdown-2,
+.foot-top-wrap .widget_archive select,
 .foot-top-wrap select.postform,
-.foot-top-wrap select#archives-dropdown--1,
-.foot-top-wrap select#archives-dropdown-4,
 .foot-top-wrap .widget_archive>ul>li {
     word-wrap: normal;
     width: 100%;
     padding: 10px;
     color: white;
 }
-.foot-top-wrap select#archives-dropdown--1,
+.foot-top-wrap .widget_archive select,
 .foot-top-wrap select.postform{
 	color:#183344;
 }

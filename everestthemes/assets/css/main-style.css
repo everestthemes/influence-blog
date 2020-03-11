@@ -1719,7 +1719,7 @@ span.sub-toggle.open {
 }
 
 .foot-top-border .widget_meta>ul>li>a:hover {
-    color: #fbbe1c;
+   opacity: 0.6;
 }
 
 .footer-mid-sec {
