@@ -47,6 +47,12 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
             $footer_one_widget_area_title_font_family = influence_blog_get_font_data( 'typo_footer_one_widget_area_design_title_font' );
             $footer_one_widget_area_title_font_variants = influence_blog_get_font_data( 'typo_footer_one_widget_area_design_title_font', 'variants' );
 
+            $footer_two_design_title_font_family = influence_blog_get_font_data( 'typo_footer_two_design_title_font' );
+            $footer_two_design_title_font_variants = influence_blog_get_font_data( 'typo_footer_two_design_title_font', 'variants' );
+
+            $footer_two_widget_area_title_font_family = influence_blog_get_font_data( 'typo_footer_two_widget_area_design_title_font' );
+            $footer_two_widget_area_title_font_variants = influence_blog_get_font_data( 'typo_footer_two_widget_area_design_title_font', 'variants' );
+
 			// Check for web safe fonts, since they don't require enqueues
 			$web_safe_fonts = array( 'web-safe-sans-serif', 'web-safe-serif' );
 
@@ -75,6 +81,14 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
                 'footerOne_Title'			=> array(
                     'family'   => $footer_one_widget_area_title_font_family,
                     'variants' => $footer_one_widget_area_title_font_variants ? $footer_one_widget_area_title_font_variants : self::$variants,
+                ),
+                'footerTwo_MainTitle'			=> array(
+                    'family'   => $footer_two_design_title_font_family,
+                    'variants' => $footer_two_design_title_font_variants ? $footer_two_design_title_font_variants : self::$variants,
+                ),
+                'footerTwo_Title'			=> array(
+                    'family'   => $footer_two_widget_area_title_font_family,
+                    'variants' => $footer_two_widget_area_title_font_variants ? $footer_two_widget_area_title_font_variants : self::$variants,
                 ),
 			);
 
