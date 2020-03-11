@@ -67,10 +67,7 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_one_design_widget_content_button_hover_color = ifb_get_mod( 'footer_one_design_widget_content_button_hover_color' );
 
         $footer_one_design_css = array(
-            '.foot-top-wrap select#archives-dropdown-2,
-            .foot-top-wrap select.postform,
-            .foot-top-wrap select#archives-dropdown--1,
-            .foot-top-wrap select#archives-dropdown-4,
+            '.foot-top-wrap select.postform,
             .foot-top-wrap .widget_archive>ul>li,
             .foot-top-wrap .widget_archive>ul>li a,
             .foot-top-wrap #wp-calendar tr th,
@@ -98,8 +95,7 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
                 'color' => esc_attr( $footer_one_design_widget_content_color ),
             ),
             '.foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover,
-            .foot-top-wrap a:hover
+            .foot-top-wrap .form-submit .submit:hover
             '=> array(
                 'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
             ),

@@ -602,7 +602,7 @@ input.wpcf7-form-control.wpcf7-submit:hover {
 }
 
 /* wp-calendar */
-#wp-calendar tr td {
+.calendar_wrap tr td {
     border: 1px solid #eee;
     padding: 10px;
     text-align: center;
@@ -610,13 +610,13 @@ input.wpcf7-form-control.wpcf7-submit:hover {
 
 }
 
-#wp-calendar tr th {
+.calendar_wrap tr th {
     padding-bottom: 15px;
     text-align: center;
 }
 
-#wp-calendar tr th:last-child,
-#wp-calendar tr td:last-child {
+.calendar_wrap tr th:last-child,
+.calendar_wrap tr td:last-child {
     color: red;
 }
 
@@ -1419,7 +1419,7 @@ Secondary-widget-area default widget style
 }
 
 /* wp-calendar ******************************/
-.secondary-widget-area #wp-calendar tr td {
+.secondary-widget-area .calendar_wrap tr td {
     border: 1px solid #eee;
     padding: 10px;
     text-align: center;
@@ -1427,13 +1427,13 @@ Secondary-widget-area default widget style
 
 }
 
-.secondary-widget-area #wp-calendar tr th {
+.secondary-widget-area .calendar_wrap tr th {
     padding-bottom: 15px;
     text-align: center;
 }
 
-.secondary-widget-area #wp-calendar tr th:last-child,
-.secondary-widget-area #wp-calendar tr td:last-child {
+.secondary-widget-area .calendar_wrap tr th:last-child,
+.secondary-widget-area .calendar_wrap tr td:last-child {
     color: red;
 }
 
@@ -1827,7 +1827,7 @@ body.wide .secondary-widget-area .widget_recent_entries>ul>li a:before {
 }
 
 /* wp-calendar ******************************/
-.foot-top-wrap #wp-calendar tr td {
+.foot-top-wrap .calendar_wrap tr td {
     border: 1px solid #eee;
     padding: 10px;
     text-align: center;
@@ -1835,13 +1835,13 @@ body.wide .secondary-widget-area .widget_recent_entries>ul>li a:before {
 
 }
 
-.foot-top-wrap #wp-calendar tr th {
+.foot-top-wrap .calendar_wrap tr th {
     padding-bottom: 15px;
     text-align: center;
 }
 
-.foot-top-wrap #wp-calendar tr th:last-child,
-.foot-top-wrap #wp-calendar tr td:last-child {
+.foot-top-wrap .calendar_wrap tr th:last-child,
+.foot-top-wrap .calendar_wrap tr td:last-child {
     color: red;
 }
 
@@ -1849,9 +1849,10 @@ body.wide .secondary-widget-area .widget_recent_entries>ul>li a:before {
     width: 100%;
 }
 
-.foot-top-wrap #wp-calendar tr th,
-.foot-top-wrap #wp-calendar tr td,
-.foot-top-wrap #wp-calendar caption {
+.foot-top-wrap .calendar_wrap tr th,
+.foot-top-wrap .calendar_wrap tr td,
+.foot-top-wrap .calendar_wrap caption,
+.foot-top-wrap .calendar_wrap tr td a {
     color: white;
 }
 
@@ -1946,7 +1947,7 @@ body.wide .secondary-widget-area .widget_recent_entries>ul>li a:before {
 
 .foot-top-wrap .widget_rss>ul>li .rss-date {
     font-size: 12px;
-    color: #676767;
+    color: #ffffff;
     margin-top: 10px;
 }
 
@@ -1992,7 +1993,7 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
     border-bottom: 1px solid #eee;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    color:
+    color:#ffffff;
 }
 
 .foot-top-wrap .recentcomments:before {
@@ -2012,7 +2013,7 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
 
 .foot-top-wrap .recentcomments .comment-author-link {
     display: block;
-    color: #fbbe1c;
+    color: #ffffff;
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -2031,7 +2032,10 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
     display: block;
     position: relative;
     padding-left: 30px;
-
+    color: #183244;
+}
+.foot-top-wrap .widget_recent_entries>ul>li a:hover{
+    opacity: 0.6;
 }
 
 body.boxed .foot-top-wrap .widget_recent_entries>ul>li a:before,
@@ -2166,6 +2170,9 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
     display: inline-block;
     font-size: 14px !important;
 }
+.foot-top-wrap .widget_tag_cloud .tagcloud a:hover{
+    opacity: 0.6;
+}
 
 /* gallery widget  ****************************/
 
@@ -2270,7 +2277,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 }
 
 /* wp-calendar ******************************/
-.footer-mid-sec #wp-calendar tr td {
+.footer-mid-sec .calendar_wrap tr td {
     border: 1px solid #eee;
     padding: 10px;
     text-align: center;
@@ -2278,13 +2285,13 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 
 }
 
-.footer-mid-sec #wp-calendar tr th {
+.footer-mid-sec .calendar_wrap tr th {
     padding-bottom: 15px;
     text-align: center;
 }
 
-.footer-mid-sec #wp-calendar tr th:last-child,
-.footer-mid-sec #wp-calendar tr td:last-child {
+.footer-mid-sec .calendar_wrap tr th:last-child,
+.footer-mid-sec .calendar_wrap tr td:last-child {
     color: red;
 }
 
@@ -2292,9 +2299,13 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
     width: 100%;
 }
 
-.footer-mid-sec #wp-calendar tr th,
-.footer-mid-sec #wp-calendar tr td,
-.footer-mid-sec #wp-calendar caption {
+.footer-mid-sec .calendar_wrap tr th,
+.footer-mid-sec .calendar_wrap caption,
+.footer-mid-sec  .calendar_wrap tr td {
+    color: white;
+}
+#prev,
+#next{
     color: white;
 }
 
@@ -2370,7 +2381,9 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 .footer-mid-sec .widget-title .rsswidget .rss-widget-icon {
     margin-right: 10px;
 }
-
+.footer-mid-sec .widget-title .rsswidget{
+    color: #ffffff;
+}
 .footer-mid-sec .widget_rss>ul>li {
     margin-bottom: 30px;
 }
@@ -2389,7 +2402,7 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
 
 .footer-mid-sec .widget_rss>ul>li .rss-date {
     font-size: 12px;
-    color: #676767;
+    color: #ffffff;
     margin-top: 10px;
 }
 
@@ -2419,6 +2432,9 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
     display: inline-block;
     padding: 5px 10px;
     color: white;
+}
+.footer-mid-sec .widget_meta>ul>li>a:hover{
+    opacity: 0.6;
 }
 
 body.boxed .footer-mid-sec .widget_meta>ul>li,
@@ -2463,7 +2479,7 @@ body.wide .footer-mid-sec .widget_meta>ul>li {
 
 .footer-mid-sec .recentcomments .comment-author-link {
     display: block;
-    color: #fbbe1c;
+    color: #ffffff;
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -2492,7 +2508,10 @@ body.wide .footer-mid-sec .widget_meta>ul>li {
     display: block;
     position: relative;
     padding-left: 30px;
-
+    color: #183244;
+}
+.footer-mid-sec .widget_recent_entries>ul>li a:hover{
+    opacity: 0.6;
 }
 
 body.boxed .footer-mid-sec .widget_recent_entries>ul>li a:before,
@@ -2627,7 +2646,9 @@ body.wide .footer-mid-sec .widget_recent_entries>ul>li a:before {
     display: inline-block;
     font-size: 14px !important;
 }
-
+.footer-mid-sec .widget_tag_cloud .tagcloud a:hover{
+    opacity: 0.6;
+}
 /* gallery widget  ****************************/
 
 
