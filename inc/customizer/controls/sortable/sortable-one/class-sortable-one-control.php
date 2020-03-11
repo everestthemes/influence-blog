@@ -19,6 +19,8 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
 		 */
         public $type = 'sortable-one';
 
+        public $disableKey;
+
         /**
          * Enqueue scripts and styles
          */
@@ -81,7 +83,10 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
 
 					<li>
 						<label class="sortable-one-check-label sortable-one-options-handle"><!--multicheck-sortable-item-->
-							<input name="<?php echo esc_attr( $key ); ?>" class="sortable-one-options-item" type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( $value ); ?>/>
+				        <?php
+                            $disable   = isset( $this->disableKey ) && ( $this->disableKey === $key ) ? esc_attr( 'disabled' ) : '';
+                            ?>
+							<input name="<?php echo esc_attr( $key ); ?>" class="sortable-one-options-item" type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( $value ); echo esc_attr( $disable ); ?>/>
 							<em></em>
 							<i class="dashicons dashicons-menu"></i><!-- multicheck-sortable-handle -->
 							<?php echo esc_html( $choices[$key] ); ?>

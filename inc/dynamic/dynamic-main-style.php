@@ -1121,6 +1121,11 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
             $footer_two_widget_area_advance_d_p_bottom = ifb_get_mod( 'footer_two_widget_area_advance_d_p_bottom' );
             $footer_two_widget_area_advance_d_p_left = ifb_get_mod( 'footer_two_widget_area_advance_d_p_left' );
 
+            $footer_two_widget_area_advance_d_m_top = ifb_get_mod( 'footer_two_widget_area_advance_d_m_top' );
+            $footer_two_widget_area_advance_d_m_right = ifb_get_mod( 'footer_two_widget_area_advance_d_m_right' );
+            $footer_two_widget_area_advance_d_m_bottom = ifb_get_mod( 'footer_two_widget_area_advance_d_m_bottom' );
+            $footer_two_widget_area_advance_d_m_left = ifb_get_mod( 'footer_two_widget_area_advance_d_m_left' );
+
             $footer_two_widget_title_advance_d_m_top = ifb_get_mod( 'footer_two_widget_title_advance_d_m_top' );
             $footer_two_widget_title_advance_d_m_right = ifb_get_mod( 'footer_two_widget_title_advance_d_m_right' );
             $footer_two_widget_title_advance_d_m_bottom = ifb_get_mod( 'footer_two_widget_title_advance_d_m_bottom' );
@@ -1152,6 +1157,10 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'padding-right' => esc_attr( $footer_two_widget_area_advance_d_p_right . 'px' ),
                     'padding-bottom' => esc_attr( $footer_two_widget_area_advance_d_p_bottom . 'px' ),
                     'padding-left' => esc_attr( $footer_two_widget_area_advance_d_p_left . 'px' ),
+                    'margin-top' => esc_attr( $footer_two_widget_area_advance_d_m_top . 'px' ),
+                    'margin-right' => esc_attr( $footer_two_widget_area_advance_d_m_right . 'px' ),
+                    'margin-bottom' => esc_attr( $footer_two_widget_area_advance_d_m_bottom . 'px' ),
+                    'margin-left' => esc_attr( $footer_two_widget_area_advance_d_m_left . 'px' ),
                 ),
                 '.footer-mid-sec .widget .side-tt.widget-title' => array(
                     'margin-top' => esc_attr( $footer_two_widget_title_advance_d_m_top . 'px' ),

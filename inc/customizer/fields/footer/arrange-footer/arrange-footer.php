@@ -38,6 +38,8 @@ foreach( $arrange_footer_options as $key => $val ) {
    $arrange_footer_option[ $key ] = $val[ 'label' ];
 }
 
+$disableKey = apply_filters( 'influence_blog_filter_footer_three_disable_key', 'footerThree' );
+
 $wp_customize->add_setting( 'influence_blog_arrange_footer', array(
     'transport'                => 'refresh',
     'sanitize_callback'        => 'sanitize_sortable_one',
@@ -47,5 +49,6 @@ $wp_customize->add_setting( 'influence_blog_arrange_footer', array(
 $wp_customize->add_control( new Sortable_One_Control( $wp_customize, 'influence_blog_arrange_footer', array(
 	'section'				   => $section,
     'choices'                  => $arrange_footer_option,
+    'disableKey'               => $disableKey,
     'priority'                 => 10,
 ) ) );
