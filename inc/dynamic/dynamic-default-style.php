@@ -107,6 +107,87 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         $parse_css .= influence_blog_parse_css( $footer_one_design_css );
 
+        /*-----------------------------------------------------------------------------
+							 Footer Two
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $footer_two_design_widget_content_color = ifb_get_mod( 'footer_two_design_widget_content_color' );
+        $footer_two_design_widget_content_hover_color = ifb_get_mod( 'footer_two_design_widget_content_hover_color' );
+        $footer_two_design_widget_content_bg_color = ifb_get_mod( 'footer_two_design_widget_content_bg_color' );
+        $footer_two_design_widget_content_bg_hover_color = ifb_get_mod( 'footer_two_design_widget_content_bg_hover_color' );
+        $footer_two_design_widget_content_border_color = ifb_get_mod( 'footer_two_design_widget_content_border_color' );
+        $footer_two_design_widget_content_button_color = ifb_get_mod( 'footer_two_design_widget_content_button_color' );
+        $footer_two_design_widget_content_button_hover_color = ifb_get_mod( 'footer_two_design_widget_content_button_hover_color' );
+
+        $footer_two_design_css = array(
+            '.classhere
+            ' => array(
+                'color' => esc_attr( $footer_two_design_widget_content_color ),
+            ),
+            '.classhere
+            '=> array(
+                'color'=> esc_attr( $footer_two_design_widget_content_hover_color ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $footer_two_design_css );
+
+        /*---------------------------------- Advance Section -----------------------------------*/
+
+        $footer_two_advance_toggle = ifb_get_mod( 'footer_two_advance_toggle' );
+
+        if( $footer_two_advance_toggle ) {
+
+            $footer_two_title_advance_d_m_top = ifb_get_mod( 'footer_two_title_advance_d_m_top' );
+            $footer_two_title_advance_d_m_right = ifb_get_mod( 'footer_two_title_advance_d_m_right' );
+            $footer_two_title_advance_d_m_bottom = ifb_get_mod( 'footer_two_title_advance_d_m_bottom' );
+            $footer_two_title_advance_d_m_left = ifb_get_mod( 'footer_two_title_advance_d_m_left' );
+
+            $footer_two_title_advance_d_p_top = ifb_get_mod( 'footer_two_title_advance_d_p_top' );
+            $footer_two_title_advance_d_p_right = ifb_get_mod( 'footer_two_title_advance_d_p_right' );
+            $footer_two_title_advance_d_p_bottom = ifb_get_mod( 'footer_two_title_advance_d_p_bottom' );
+            $footer_two_title_advance_d_p_left = ifb_get_mod( 'footer_two_title_advance_d_p_left' );
+            $footer_two_title_advance_border = ifb_get_mod( 'footer_two_title_advance_border' );
+
+            $footer_two_social_links_advance_d_m_top = ifb_get_mod( 'footer_two_social_links_advance_d_m_top' );
+            $footer_two_social_links_advance_d_m_right = ifb_get_mod( 'footer_two_social_links_advance_d_m_right' );
+            $footer_two_social_links_advance_d_m_bottom = ifb_get_mod( 'footer_two_social_links_advance_d_m_bottom' );
+            $footer_two_social_links_advance_d_m_left = ifb_get_mod( 'footer_two_social_links_advance_d_m_left' );
+
+            $footer_two_social_links_advance_d_p_top = ifb_get_mod( 'footer_two_social_links_advance_d_p_top' );
+            $footer_two_social_links_advance_d_p_right = ifb_get_mod( 'footer_two_social_links_advance_d_p_right' );
+            $footer_two_social_links_advance_d_p_bottom = ifb_get_mod( 'footer_two_social_links_advance_d_p_bottom' );
+            $footer_two_social_links_advance_d_p_left = ifb_get_mod( 'footer_two_social_links_advance_d_p_left' );
+
+            $footer_two_advance_css = array(
+                '.footer-mid-sec .contact-info .foo-mid-title .s-title' => array(
+                    'margin-top' => esc_attr( $footer_two_title_advance_d_m_top . 'px' ),
+                    'margin-right' => esc_attr( $footer_two_title_advance_d_m_right . 'px' ),
+                    'margin-bottom' => esc_attr( $footer_two_title_advance_d_m_bottom . 'px' ),
+                    'margin-left' => esc_attr( $footer_two_title_advance_d_m_left . 'px' ),
+                    'padding-top' => esc_attr( $footer_two_title_advance_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $footer_two_title_advance_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $footer_two_title_advance_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $footer_two_title_advance_d_p_left . 'px' ),
+                    'border-bottom-width' => esc_attr( $footer_two_title_advance_border . 'px' ),
+                ),
+                '.footer-mid-sec .social-media-foot' => array(
+                    'margin-top' => esc_attr( $footer_two_social_links_advance_d_m_top . 'px' ),
+                    'margin-right' => esc_attr( $footer_two_social_links_advance_d_m_right . 'px' ),
+                    'margin-bottom' => esc_attr( $footer_two_social_links_advance_d_m_bottom . 'px' ),
+                    'margin-left' => esc_attr( $footer_two_social_links_advance_d_m_left . 'px' ),
+                    'padding-top' => esc_attr( $footer_two_social_links_advance_d_p_top . 'px' ),
+                    'padding-right' => esc_attr( $footer_two_social_links_advance_d_p_right . 'px' ),
+                    'padding-bottom' => esc_attr( $footer_two_social_links_advance_d_p_bottom . 'px' ),
+                    'padding-left' => esc_attr( $footer_two_social_links_advance_d_p_left . 'px' ),
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $footer_two_advance_css );
+        }
+
         $dynamic_css = $parse_css;
 
         // trim white space for faster page loading.

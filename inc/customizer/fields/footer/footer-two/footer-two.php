@@ -105,6 +105,29 @@ $button_two_array = array(
 $button_two_array = apply_filters( 'influence_blog_filter_footer_two_button_two_array', $button_two_array );
 
 $button_three_array = array(
+    'influence_blog_footer_two_advance_info' => array(),
+    'influence_blog_footer_two_advance_toggle' => array(),
+    'influence_blog_footer_two_advance_heading' => array(),
+    'influence_blog_footer_two_advance_bg_image_size' => array(),
+    'influence_blog_footer_two_advance_bg_image_attch' => array(),
+    'influence_blog_footer_two_advance_bg_image_position_x' => array(),
+    'influence_blog_footer_two_advance_bg_image_position_y' => array(),
+    'influence_blog_footer_two_advance_border_top' => array(),
+    'influence_blog_footer_two_advance_border_bottom' => array(),
+    'influence_blog_footer_two_title_advance_heading' => array(),
+    'influence_blog_footer_two_title_advance_m' => array(),
+    'influence_blog_footer_two_title_advance_p' => array(),
+    'influence_blog_footer_two_title_advance_border' => array(),
+    'influence_blog_footer_two_social_links_advance_heading' => array(),
+    'influence_blog_footer_two_social_links_advance_m' => array(),
+    'influence_blog_footer_two_social_links_advance_p' => array(),
+    'influence_blog_footer_two_widget_area_advance_heading' => array(),
+    'influence_blog_footer_two_widget_area_advance_border_width' => array(),
+    'influence_blog_footer_two_widget_area_advance_p' => array(),
+    'influence_blog_footer_two_widget_title_advance_heading' => array(),
+    'influence_blog_footer_two_widget_title_advance_m' => array(),
+    'influence_blog_footer_two_widget_title_advance_p' => array(),
+    'influence_blog_footer_two_widget_title_advance_border_width' => array(),
 );
 
 $button_three_array = apply_filters( 'influence_blog_filter_footer_two_button_three_array', $button_three_array );
@@ -1208,490 +1231,932 @@ $wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blo
     'priority'                 => 310,
 ) ) );
 
-//
-///*-----------------------------------------------------------------------------
-//							 Advance options
-//-----------------------------------------------------------------------------*/
-//
-///*---------------------------------- Footer two advance Info -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_info', array(
-//    'sanitize_callback'        => 'sanitize_text_field',
-//) );
-//
-//$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_info', array(
-//    'label'                    => esc_html__( 'Note', 'influence-blog' ),
-//    'description'              => __( 'Recommended for experienced user.', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'info-one',
-//    'info_type'                => 'info',
-//    'priority'                 => 250,
-//) ) );
-//
-///*---------------------------------- Footer two advance toggle -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_toggle', array(
-//    'sanitize_callback'        => 'wp_validate_boolean',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_toggle' ),
-//) );
-//
-//$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_footer_two_advance_toggle', array(
-//    'label'                    => esc_html__( 'Enable Advance Settings', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'toggle-two',
-//    'priority'                 => 255,
-//) ) );
-//
-///*---------------------------------- Footer two advance heading -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_heading', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//) );
-//
-//$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_advance_heading', array(
-//    'label'                    => esc_html__( 'Footer One Options', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'heading-one',
-//    'priority'                 => 260,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two advance bg image size -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_size', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//    'transport' 			   => 'postMessage',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_size' ),
-//) );
-//
-//$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_size', array(
-//    'label'                    => esc_html__( 'Image Size', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'select',
-//    'choices'                  => $background_image_sizes,
-//    'priority'                 => 265,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) );
-//
-///*---------------------------------- Footer two advance bg image attachment -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_attch', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//    'transport' 			   => 'postMessage',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_attch' ),
-//) );
-//
-//$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_attch', array(
-//    'label'                    => esc_html__( 'Image Attachment', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'select',
-//    'choices'                  => $background_image_attachment,
-//    'priority'                 => 270,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) );
-//
-///*---------------------------------- Footer two advance bg image position X -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_position_x', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//    'transport' 			   => 'postMessage',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_position_x' ),
-//) );
-//
-//$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_position_x', array(
-//    'label'                    => esc_html__( 'Image Position', 'influence-blog' ) . ' (X)',
-//    'section'                  => $section,
-//    'type'                     => 'select',
-//    'choices'                  => $background_image_positions_x,
-//    'priority'                 => 275,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) );
-//
-///*---------------------------------- Footer two advance bg image position Y -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_position_y', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//    'transport' 			   => 'postMessage',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_position_y' ),
-//) );
-//
-//$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_position_y', array(
-//    'label'                    => esc_html__( 'Image Position', 'influence-blog' ) . ' (Y)',
-//    'section'                  => $section,
-//    'type'                     => 'select',
-//    'choices'                  => $background_image_positions_y,
-//    'priority'                 => 280,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) );
-//
-///*---------------------------------- Footer two advance border top -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_border_top', array(
-//    'transport'                => 'postMessage',
-//    'sanitize_callback'        => 'sanitize_range_slider_one',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_border_top' ),
-//) );
-//
-//$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_border_top', array(
-//    'label'                    => esc_html__( 'Border Top', 'influence-blog' ) . '( px)',
-//    'section'                  => $section,
-//    'type'                     => 'range-slider-one',
-//    'input_attrs'              => array(
-//        'min'                  => 1,
-//        'max'                  => 10,
-//        'step'                 => 0.5,
-//    ),
-//    'priority'                 => 285,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two advance border bottom -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_advance_border_bottom', array(
-//    'transport'                => 'postMessage',
-//    'sanitize_callback'        => 'sanitize_range_slider_one',
-//    'default'                  => influence_blog_defaults( 'footer_two_advance_border_bottom' ),
-//) );
-//
-//$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_border_bottom', array(
-//    'label'                    => esc_html__( 'Border Bottom', 'influence-blog' ) . '( px)',
-//    'section'                  => $section,
-//    'type'                     => 'range-slider-one',
-//    'input_attrs'              => array(
-//        'min'                  => 1,
-//        'max'                  => 10,
-//        'step'                 => 0.5,
-//    ),
-//    'priority'                 => 290,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget area advance heading -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_heading', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//) );
-//
-//$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_widget_area_advance_heading', array(
-//    'label'                    => esc_html__( 'Widget Area Options', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'heading-one',
-//    'accordion'                => true,
-//    'class'                    => esc_attr( 'footer-one-widget-area-advance-heading' ),
-//    'controls_to_wrap'         => 2,
-//    'expanded'                 => false,
-//    'priority'                 => 295,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget area advance border width -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_border_width', array(
-//    'transport'                => 'postMessage',
-//    'sanitize_callback'        => 'sanitize_range_slider_one',
-//    'default'                  => influence_blog_defaults( 'footer_two_widget_area_advance_border_width' ),
-//) );
-//
-//$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_widget_area_advance_border_width', array(
-//    'label'                    => esc_html__( 'Border Width', 'influence-blog' ) . '( px)',
-//    'section'                  => $section,
-//    'type'                     => 'range-slider-one',
-//    'input_attrs'              => array(
-//        'min'                  => 1,
-//        'max'                  => 10,
-//        'step'                 => 0.5,
-//    ),
-//    'priority'                 => 300,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget area advance padding -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_area_advance_p', array(
-//    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
-//    'section'  				   => $section,
-//    'settings'                 => array(
-//        'desktop_top' 		   => 'influence_blog_footer_two_widget_area_advance_d_p_top',
-//        'desktop_right' 	   => 'influence_blog_footer_two_widget_area_advance_d_p_right',
-//        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_d_p_bottom',
-//        'desktop_left' 	       => 'influence_blog_footer_two_widget_area_advance_d_p_left',
-//        'tablet_top' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_top',
-//        'tablet_right' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_right',
-//        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_t_p_bottom',
-//        'tablet_left' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_left',
-//        'mobile_top' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_top',
-//        'mobile_right' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_right',
-//        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_m_p_bottom',
-//        'mobile_left' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_left',
-//    ),
-//    'input_attrs' 			   => array(
-//        'min'                  => 0,
-//        'max'                  => 50,
-//        'step'                 => 1,
-//    ),
-//    'priority' 				   => 305,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget title advance heading -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_heading', array(
-//    'sanitize_callback' 	   => 'sanitize_text_field',
-//) );
-//
-//$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_heading', array(
-//    'label'                    => esc_html__( 'Widget Title Options', 'influence-blog' ),
-//    'section'                  => $section,
-//    'type'                     => 'heading-one',
-//    'accordion'                => true,
-//    'class'                    => esc_attr( 'footer-one-widget-title-advance-heading' ),
-//    'controls_to_wrap'         => 2,
-//    'expanded'                 => false,
-//    'priority'                 => 310,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget title advance margin -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_m', array(
-//    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
-//    'section'  				   => $section,
-//    'settings'                 => array(
-//        'desktop_top' 		   => 'influence_blog_footer_two_widget_title_advance_d_m_top',
-//        'desktop_right' 	   => 'influence_blog_footer_two_widget_title_advance_d_m_right',
-//        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_d_m_bottom',
-//        'desktop_left' 	       => 'influence_blog_footer_two_widget_title_advance_d_m_left',
-//        'tablet_top' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_top',
-//        'tablet_right' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_right',
-//        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_t_m_bottom',
-//        'tablet_left' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_left',
-//        'mobile_top' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_top',
-//        'mobile_right' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_right',
-//        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_m_m_bottom',
-//        'mobile_left' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_left',
-//    ),
-//    'input_attrs' 			   => array(
-//        'min'                  => -50,
-//        'max'                  => 50,
-//        'step'                 => 1,
-//    ),
-//    'priority' 				   => 315,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
-//
-///*---------------------------------- Footer two widget title advance padding -----------------------------------*/
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_top', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_top' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_right', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_right' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_bottom', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_bottom' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_left', array(
-//    'transport' 			   => 'postMessage',
-//    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_left' ),
-//    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
-//) );
-//
-//$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_p', array(
-//    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
-//    'section'  				   => $section,
-//    'settings'                 => array(
-//        'desktop_top' 		   => 'influence_blog_footer_two_widget_title_advance_d_p_top',
-//        'desktop_right' 	   => 'influence_blog_footer_two_widget_title_advance_d_p_right',
-//        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_d_p_bottom',
-//        'desktop_left' 	       => 'influence_blog_footer_two_widget_title_advance_d_p_left',
-//        'tablet_top' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_top',
-//        'tablet_right' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_right',
-//        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_t_p_bottom',
-//        'tablet_left' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_left',
-//        'mobile_top' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_top',
-//        'mobile_right' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_right',
-//        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_m_p_bottom',
-//        'mobile_left' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_left',
-//    ),
-//    'input_attrs' 			   => array(
-//        'min'                  => 0,
-//        'max'                  => 50,
-//        'step'                 => 1,
-//    ),
-//    'priority' 				   => 320,
-//    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
-//) ) );
+
+/*-----------------------------------------------------------------------------
+							 Advance options
+-----------------------------------------------------------------------------*/
+
+/*---------------------------------- Footer two advance Info -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_info', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_info', array(
+    'label'                    => esc_html__( 'Note', 'influence-blog' ),
+    'description'              => __( 'Recommended for experienced user.', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'info-one',
+    'info_type'                => 'info',
+    'priority'                 => 315,
+) ) );
+
+/*---------------------------------- Footer two advance toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_footer_two_advance_toggle', array(
+    'label'                    => esc_html__( 'Enable Advance Settings', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-two',
+    'priority'                 => 320,
+) ) );
+
+/*---------------------------------- Footer two advance heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_advance_heading', array(
+    'label'                    => esc_html__( 'Footer Two Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 325,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two advance bg image size -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_size', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+    'transport' 			   => 'postMessage',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_size' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_size', array(
+    'label'                    => esc_html__( 'Image Size', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'select',
+    'choices'                  => $background_image_sizes,
+    'priority'                 => 330,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) );
+
+/*---------------------------------- Footer two advance bg image attachment -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_attch', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+    'transport' 			   => 'postMessage',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_attch' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_attch', array(
+    'label'                    => esc_html__( 'Image Attachment', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'select',
+    'choices'                  => $background_image_attachment,
+    'priority'                 => 335,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) );
+
+/*---------------------------------- Footer two advance bg image position X -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_position_x', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+    'transport' 			   => 'postMessage',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_position_x' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_position_x', array(
+    'label'                    => esc_html__( 'Image Position', 'influence-blog' ) . ' (X)',
+    'section'                  => $section,
+    'type'                     => 'select',
+    'choices'                  => $background_image_positions_x,
+    'priority'                 => 340,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) );
+
+/*---------------------------------- Footer two advance bg image position Y -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_bg_image_position_y', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+    'transport' 			   => 'postMessage',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_bg_image_position_y' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_footer_two_advance_bg_image_position_y', array(
+    'label'                    => esc_html__( 'Image Position', 'influence-blog' ) . ' (Y)',
+    'section'                  => $section,
+    'type'                     => 'select',
+    'choices'                  => $background_image_positions_y,
+    'priority'                 => 345,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) );
+
+/*---------------------------------- Footer two advance border top -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_border_top', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_border_top' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_border_top', array(
+    'label'                    => esc_html__( 'Border Top', 'influence-blog' ) . ' (px)',
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 10,
+        'step'                 => 0.5,
+    ),
+    'priority'                 => 350,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two advance border bottom -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_advance_border_bottom', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'footer_two_advance_border_bottom' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_advance_border_bottom', array(
+    'label'                    => esc_html__( 'Border Bottom', 'influence-blog' ) . ' (px)',
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 10,
+        'step'                 => 0.5,
+    ),
+    'priority'                 => 355,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two title advance heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_title_advance_heading', array(
+    'label'                    => esc_html__( 'Main Title Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'footer-two-title-advance-heading' ),
+    'controls_to_wrap'         => 3,
+    'expanded'                 => false,
+    'priority'                 => 360,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two title advance margin -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_title_advance_m', array(
+    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_title_advance_d_m_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_title_advance_d_m_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_title_advance_d_m_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_title_advance_d_m_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_title_advance_t_m_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_title_advance_t_m_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_title_advance_t_m_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_title_advance_t_m_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_title_advance_m_m_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_title_advance_m_m_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_title_advance_m_m_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_title_advance_m_m_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => -200,
+        'max'                  => 200,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 365,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two title advance padding -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_d_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_d_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_t_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_t_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_m_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_title_advance_m_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_title_advance_p', array(
+    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_title_advance_d_p_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_title_advance_d_p_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_title_advance_d_p_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_title_advance_d_p_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_title_advance_t_p_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_title_advance_t_p_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_title_advance_t_p_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_title_advance_t_p_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_title_advance_m_p_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_title_advance_m_p_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_title_advance_m_p_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_title_advance_m_p_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => 0,
+        'max'                  => 200,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 370,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two title advance border -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_title_advance_border', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'footer_two_title_advance_border' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_title_advance_border', array(
+    'label'                    => esc_html__( 'Border Width', 'influence-blog' ) . ' (px)',
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 10,
+        'step'                 => 0.5,
+    ),
+    'priority'                 => 375,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two social links advance heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_social_links_advance_heading', array(
+    'label'                    => esc_html__( 'Social Links Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'footer-two-social-links-advance-heading' ),
+    'controls_to_wrap'         => 2,
+    'expanded'                 => false,
+    'priority'                 => 380,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two social links advance margin -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_social_links_advance_m', array(
+    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_social_links_advance_d_m_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_social_links_advance_d_m_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_social_links_advance_d_m_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_social_links_advance_d_m_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_social_links_advance_t_m_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_social_links_advance_t_m_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_social_links_advance_t_m_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_social_links_advance_t_m_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_social_links_advance_m_m_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_social_links_advance_m_m_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_social_links_advance_m_m_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_social_links_advance_m_m_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => -200,
+        'max'                  => 200,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 385,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two social links advance padding -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_d_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_d_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_t_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_t_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_social_links_advance_m_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_social_links_advance_m_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_social_links_advance_p', array(
+    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_social_links_advance_d_p_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_social_links_advance_d_p_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_social_links_advance_d_p_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_social_links_advance_d_p_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_social_links_advance_t_p_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_social_links_advance_t_p_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_social_links_advance_t_p_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_social_links_advance_t_p_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_social_links_advance_m_p_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_social_links_advance_m_p_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_social_links_advance_m_p_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_social_links_advance_m_p_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => 0,
+        'max'                  => 200,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 390,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget area advance heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_widget_area_advance_heading', array(
+    'label'                    => esc_html__( 'Widget Area Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'footer-two-widget-area-advance-heading' ),
+    'controls_to_wrap'         => 2,
+    'expanded'                 => false,
+    'priority'                 => 395,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget area advance border width -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_border_width', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'footer_two_widget_area_advance_border_width' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_widget_area_advance_border_width', array(
+    'label'                    => esc_html__( 'Border Width', 'influence-blog' ) . ' (px)',
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 10,
+        'step'                 => 0.5,
+    ),
+    'priority'                 => 400,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget area advance padding -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_d_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_d_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_t_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_t_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_area_advance_m_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_area_advance_m_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_area_advance_p', array(
+    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_widget_area_advance_d_p_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_widget_area_advance_d_p_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_d_p_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_widget_area_advance_d_p_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_t_p_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_widget_area_advance_t_p_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_area_advance_m_p_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_widget_area_advance_m_p_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => 0,
+        'max'                  => 50,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 405,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget title advance heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_heading', array(
+    'label'                    => esc_html__( 'Widget Title Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'footer-two-widget-title-advance-heading' ),
+    'controls_to_wrap'         => 3,
+    'expanded'                 => false,
+    'priority'                 => 410,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget title advance margin -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_m_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_m_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_m', array(
+    'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_widget_title_advance_d_m_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_widget_title_advance_d_m_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_d_m_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_widget_title_advance_d_m_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_t_m_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_widget_title_advance_t_m_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_m_m_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_widget_title_advance_m_m_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => -50,
+        'max'                  => 50,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 415,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget title advance padding -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_d_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_d_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_t_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_t_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_top', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_top' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_right', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_right' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_bottom', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_bottom' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_m_p_left', array(
+    'transport' 			   => 'postMessage',
+    'default'           	   => influence_blog_defaults( 'footer_two_widget_title_advance_m_p_left' ),
+    'sanitize_callback' 	   => 'sanitize_dimension_one_number',
+) );
+
+$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_footer_two_widget_title_advance_p', array(
+    'label'	   				   => esc_html__( 'Padding', 'influence-blog' ) . ' (px) ',
+    'section'  				   => $section,
+    'settings'                 => array(
+        'desktop_top' 		   => 'influence_blog_footer_two_widget_title_advance_d_p_top',
+        'desktop_right' 	   => 'influence_blog_footer_two_widget_title_advance_d_p_right',
+        'desktop_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_d_p_bottom',
+        'desktop_left' 	       => 'influence_blog_footer_two_widget_title_advance_d_p_left',
+        'tablet_top' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_top',
+        'tablet_right' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_right',
+        'tablet_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_t_p_bottom',
+        'tablet_left' 		   => 'influence_blog_footer_two_widget_title_advance_t_p_left',
+        'mobile_top' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_top',
+        'mobile_right' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_right',
+        'mobile_bottom' 	   => 'influence_blog_footer_two_widget_title_advance_m_p_bottom',
+        'mobile_left' 		   => 'influence_blog_footer_two_widget_title_advance_m_p_left',
+    ),
+    'input_attrs' 			   => array(
+        'min'                  => 0,
+        'max'                  => 50,
+        'step'                 => 1,
+    ),
+    'priority' 				   => 420,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
+
+/*---------------------------------- Footer two widget title advance border width -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_two_widget_title_advance_border_width', array(
+    'transport'                => 'postMessage',
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'footer_two_widget_title_advance_border_width' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_footer_two_widget_title_advance_border_width', array(
+    'label'                    => esc_html__( 'Border Width', 'influence-blog' ) . ' (px)',
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 10,
+        'step'                 => 0.5,
+    ),
+    'priority'                 => 425,
+    'active_callback'          => 'influence_blog_is_footer_two_advance_enable',
+) ) );
