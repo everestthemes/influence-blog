@@ -1,6 +1,3 @@
-/* ******************* foot-top-wrap default widget style************************** */
-
-/* archive *****************************/
 .foot-top-wrap .widget_archive>ul>li {
     border: 1px solid #ddd;
     text-align: left;
@@ -16,22 +13,17 @@
 .foot-top-wrap .widget_archive select.postform,
 .foot-top-wrap .widget_archive select,
 .foot-top-wrap .widget_archive select,
-
 .foot-top-wrap .widget_archive>ul>li {
     word-wrap: normal;
     width: 100%;
     padding: 10px;
 }
 
-
 .foot-top-wrap .widget_archive select,
 .foot-top-wrap select.postform {
     color: #183344;
     width: 100%;
     height: 45px;
-
-
-
 }
 
 .foot-top-wrap .widget_categories select.postform {
@@ -43,7 +35,7 @@
 }
 
 /* wp-calendar ******************************/
-.foot-top-wrap #wp-calendar tr td {
+.foot-top-wrap .calendar_wrap tr td {
     border: 1px solid #eee;
     padding: 10px;
     text-align: center;
@@ -51,13 +43,13 @@
 
 }
 
-.foot-top-wrap #wp-calendar tr th {
+.foot-top-wrap .calendar_wrap tr th {
     padding-bottom: 15px;
     text-align: center;
 }
 
-.foot-top-wrap #wp-calendar tr th:last-child,
-.foot-top-wrap #wp-calendar tr td:last-child {
+.foot-top-wrap .calendar_wrap tr th:last-child,
+.foot-top-wrap .calendar_wrap tr td:last-child {
     color: red;
 }
 
@@ -65,9 +57,10 @@
     width: 100%;
 }
 
-.foot-top-wrap #wp-calendar tr th,
-.foot-top-wrap #wp-calendar tr td,
-.foot-top-wrap #wp-calendar caption {
+.foot-top-wrap .calendar_wrap tr th,
+.foot-top-wrap .calendar_wrap tr td,
+.foot-top-wrap .calendar_wrap caption,
+.foot-top-wrap .calendar_wrap tr td a {
     color: white;
 }
 
@@ -162,7 +155,7 @@
 
 .foot-top-wrap .widget_rss>ul>li .rss-date {
     font-size: 12px;
-    color: #676767;
+    color: #ffffff;
     margin-top: 10px;
 }
 
@@ -208,7 +201,7 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
     border-bottom: 1px solid #eee;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    color:
+    color:#ffffff;
 }
 
 .foot-top-wrap .recentcomments:before {
@@ -228,7 +221,7 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
 
 .foot-top-wrap .recentcomments .comment-author-link {
     display: block;
-    color: #fbbe1c;
+    color: #ffffff;
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -247,7 +240,10 @@ body.wide .foot-top-wrap .widget_meta>ul>li {
     display: block;
     position: relative;
     padding-left: 30px;
-
+    color: #183244;
+}
+.foot-top-wrap .widget_recent_entries>ul>li a:hover{
+    opacity: 0.6;
 }
 
 body.boxed .foot-top-wrap .widget_recent_entries>ul>li a:before,
@@ -381,6 +377,9 @@ body.wide .foot-top-wrap .widget_recent_entries>ul>li a:before {
     padding: 5px 15px;
     display: inline-block;
     font-size: 14px !important;
+}
+.foot-top-wrap .widget_tag_cloud .tagcloud a:hover{
+    opacity: 0.6;
 }
 
 /* gallery widget  ****************************/
