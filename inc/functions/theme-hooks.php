@@ -839,15 +839,24 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
     <div class="col-lg-6">
         <div class="copy center">
             <?php
-            $footer_copyright_text = ifb_get_mod( 'footer_copyright_text', '' );
-            if( !empty( $footer_copyright_text ) ) {
+            $footer_copyright_text = ifb_get_mod( 'footer_three_cr_text' );
 
-                echo esc_html( $footer_copyright_text );
-                /* translators: 1: Theme name, 2: Theme author. */
-                printf( esc_html__( ' %1$s by %2$s','influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+            if( has_filter( 'influence_blog_filter_footer_three_cr_text' ) ) {
+
+                $footer_copyright_text = apply_filters( 'influence_blog_filter_footer_three_cr_text', $footer_copyright_text );
+
             } else {
-                /* translators: 1: Theme name, 2: Theme author. */
-                printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), 'Influence Blog', '<a href="'. esc_url( 'https://everestthemes.com' ) . '">Everestthemes</a>' );
+
+                if( !empty( $footer_copyright_text ) ) {
+
+                    /* translators: 1: Copyright Text 2: Theme name, 3: Theme author. */
+                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+
+                } else {
+
+                    /* translators: 1: Theme name, 2: Theme author. */
+                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+                }
             }
             ?>
         </div>
@@ -860,6 +869,35 @@ add_action( 'influence_blog_footer_copyright_text', 'influence_blog_footer_copyr
 
 
 /**
+ * Footer three menu hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_footer_three_menu_action' ) ) :
+
+ 	function influence_blog_footer_three_menu_action() {
+
+    ?>
+    <div class="col-lg-6">
+        <?php $footer_three_menu_select = ifb_get_mod( 'footer_three_menu_select' ); ?>
+        <div class="foot-menu">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' 	=> $footer_three_menu_select,
+                'container'			=> '',
+                'depth'             => 1,
+             ) );
+            ?>
+        </div>
+    </div>
+    <?php
+    }
+endif;
+add_action( 'influence_blog_footer_three_menu', 'influence_blog_footer_three_menu_action', 910 );
+
+
+
+/**
  * Footer scroll top hook declaration
  *
  * @since 1.0.0
@@ -868,14 +906,9 @@ if( ! function_exists( 'influence_blog_footer_scroll_top_action' ) ) :
 
  	function influence_blog_footer_scroll_top_action() {
 
-        $display_footer_scroll_top = ifb_get_mod( 'display_footer_scroll_top', false );
-
-        if( $display_footer_scroll_top == true ) {
-
-            ?>
-            <a href="#" class="scrollup"><i class="fa fa-long-arrow-up"></i></a>
-            <?php
-        }
+        ?>
+        <a href="#" class="scrollup"><i class="fa fa-long-arrow-up"></i></a>
+        <?php
     }
 endif;
 add_action( 'influence_blog_footer_scroll_top', 'influence_blog_footer_scroll_top_action', 910 );
@@ -1039,17 +1072,14 @@ if( ! function_exists( 'influence_blog_footer_bottom_action' ) ) :
                 * @hooked influence_blog_footer_copyright_text_action - 905
                 */
                 do_action( 'influence_blog_footer_copyright_text' );
+
+                /**
+                * Hook - influence_blog_footer_three_menu
+                *
+                * @hooked influence_blog_footer_three_menu_action - 910
+                */
+                do_action( 'influence_blog_footer_three_menu' );
                 ?>
-                <div class="col-lg-6">
-                    <div class="foot-menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Terms & Condition</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
             </div> 
         </div>
         <?php

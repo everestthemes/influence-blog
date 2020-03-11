@@ -671,6 +671,19 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_two_widget_area_advance_m_p_right' => 0,
             'footer_two_widget_area_advance_m_p_bottom' => 0,
             'footer_two_widget_area_advance_m_p_left' => 0,
+
+            'footer_two_widget_area_advance_d_m_top' => 0,
+            'footer_two_widget_area_advance_d_m_right' => 0,
+            'footer_two_widget_area_advance_d_m_bottom' => 0,
+            'footer_two_widget_area_advance_d_m_left' => 0,
+            'footer_two_widget_area_advance_t_m_top' => 0,
+            'footer_two_widget_area_advance_t_m_right' => 0,
+            'footer_two_widget_area_advance_t_m_bottom' => 0,
+            'footer_two_widget_area_advance_t_m_left' => 0,
+            'footer_two_widget_area_advance_m_m_top' => 0,
+            'footer_two_widget_area_advance_m_m_right' => 0,
+            'footer_two_widget_area_advance_m_m_bottom' => 0,
+            'footer_two_widget_area_advance_m_m_left' => 0,
             //Footer - Footer two - Advance - widget title
             'footer_two_widget_title_advance_d_m_top' => 60,
             'footer_two_widget_title_advance_d_m_right' => 0,
@@ -698,6 +711,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_two_widget_title_advance_m_p_bottom' => 10,
             'footer_two_widget_title_advance_m_p_left' => 10,
             'footer_two_widget_title_advance_border_width' => 2,
+            //Footer - footer three - general
+            'footer_three_cr_text' => 'Your Copy Right Text Here.',
+            'footer_three_menu_select' => 'menu-3',
             //Reset
             'reset_toggle' => false,
 		);
