@@ -67,14 +67,13 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_one_design_widget_content_button_hover_color = ifb_get_mod( 'footer_one_design_widget_content_button_hover_color' );
 
         $footer_one_design_css = array(
-            '.foot-top-wrap select.postform,
+            '.foot-top-wrap .widget_archive>ul>li a,
             .foot-top-wrap .widget_archive>ul>li,
-            .foot-top-wrap .widget_archive>ul>li a,
-            .foot-top-wrap #wp-calendar tr th,
-            .foot-top-wrap #wp-calendar tr td,
-            .foot-top-wrap #wp-calendar caption,
+            .foot-top-wrap .calendar_wrap tr th,
+            .foot-top-wrap .calendar_wrap tr td,
+            .foot-top-wrap .calendar_wrap caption,
+            .foot-top-wrap .calendar_wrap tr td a,
             .foot-top-wrap .widget_categories>ul>li,
-            .foot-top-wrap .widget_categories>ul>li a,
             .foot-top-wrap .widget_pages>ul>li,
             .foot-top-wrap .widget_nav_menu .menu>li,
             .foot-top-wrap .widget_nav_menu .menu>li a,
@@ -83,21 +82,55 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .widget_rss>ul>li a,
             .foot-top-wrap .rssSummary,
             .foot-top-wrap .widget_rss>ul>li cite,
-            .foot-top-wrap .recentcomments:before,
+            .foot-top-wrap .widget_rss>ul>li .rss-date,
+            .foot-top-wrap .recentcomments,
+            .foot-top-wrap .recentcomments .comment-author-link,
             .foot-top-wrap .widget_search .search-form .search-submit,
             .foot-top-wrap .form-submit .submit,
             .foot-top-wrap .widget_search .search-form #submit,
             .foot-top-wrap .widget_text .textwidget p,
             .foot-top-wrap .widget_text .textwidget a,
             .foot-top-wrap .widget_tag_cloud .tagcloud,
-            .foot-top-wrap .widget_tag_cloud .tagcloud a
+            .foot-top-wrap .widget_tag_cloud .tagcloud a,
+            .foot-top-border .widget_meta>ul>li>a,
+            .foot-top-border .recentcomments a,
+            .foot-top-wrap .widget_recent_entries>ul>li a,
+            .foot-top-wrap .widget_categories>ul>li a
             ' => array(
                 'color' => esc_attr( $footer_one_design_widget_content_color ),
+            ),
+            '.foot-top-wrap .widget_categories>ul>li a:hover,
+            .foot-top-wrap .widget_archive>ul>li a:hover,
+            .foot-top-wrap .calendar_wrap tr td a:hover,
+            .foot-top-wrap .widget_nav_menu .menu>li a:hover,
+            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li a:hover,
+            .foot-top-wrap .widget_pages>ul>li a:hover,
+            .foot-top-wrap .widget_recent_entries>ul>li a:hover,
+            .foot-top-wrap .widget_search .search-form .search-submit:hover,
+            .foot-top-wrap .form-submit .submit:hover,
+            .foot-top-wrap .widget_tag_cloud .tagcloud a:hover,
+            .foot-top-border .widget_meta>ul>li>a:hover,
+            .foot-top-border .recentcomments a:hover,
+            .foot-top-wrap .widget_rss>ul>li a:hover
+            '=> array(
+                'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
+            ),
+            '.foot-top-wrap .widget_categories>ul>li,
+            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li:before,
+            .foot-top-wrap .widget_recent_entries>ul>li,
+            .foot-top-wrap .widget_search .search-form .search-submit,
+            .foot-top-wrap .form-submit .submit,
+            .foot-top-wrap .widget_search .search-form #submit,
+            .foot-top-wrap .widget_search .search-form .search-submit:hover,
+            .foot-top-wrap .form-submit .submit:hover,
+            .foot-top-wrap .widget_tag_cloud .tagcloud
+            '=> array(
+                'background-color'=> esc_attr( $footer_one_design_widget_content_bg_color ),
             ),
             '.foot-top-wrap .widget_search .search-form .search-submit:hover,
             .foot-top-wrap .form-submit .submit:hover
             '=> array(
-                'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
+                'background-color'=> esc_attr( $footer_one_design_widget_content_bg_hover_color ),
             ),
         );
 
