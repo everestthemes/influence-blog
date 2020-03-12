@@ -468,9 +468,11 @@ if( ! function_exists( 'influence_blog_banner_template' ) ) {
 
     function influence_blog_banner_template() {
 
-        $display_banner = ifb_get_mod( 'display_banner', true );
+        $display_banner = ifb_get_mod( 'banner_display_toggle' );
 
         if( $display_banner == true ) {
+
+            $banner_layout = ifb_get_mod( 'banner_layout_options_select' );
 
             get_template_part( 'template-parts/banner/banner', 'one' );
 

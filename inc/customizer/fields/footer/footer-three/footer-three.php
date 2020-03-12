@@ -12,6 +12,7 @@ $tabs     = influence_blog_tab_one_array();
 
 $button_one_array = array(
     'influence_blog_footer_three_cr_text_heading' => array(),
+    'influence_blog_footer_three_cr_text_info' => array(),
     'influence_blog_footer_three_cr_text' => array(),
     'influence_blog_footer_three_menu_heading' => array(),
     'influence_blog_footer_three_menu_select' => array(),
@@ -57,17 +58,32 @@ $wp_customize->add_setting( 'influence_blog_footer_three_cr_text_heading', array
 ) );
 
 $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_three_cr_text_heading', array(
-    'label'                    => esc_html__( 'Copy Right Text', 'influence-blog' ),
+    'label'                    => esc_html__( 'Copyright Text', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
     'priority'                 => 20,
+) ) );
+
+/*---------------------------------- Footer three copy right text info -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_footer_three_cr_text_info', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_footer_three_cr_text_info', array(
+    'label'                    => esc_html__( 'Info', 'influence-blog' ),
+    'description'              => esc_html__( 'You can use <a> & <span> tags with the copyright text.', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'info-one',
+    'info_type'                => 'info',
+    'priority'                 => 22,
 ) ) );
 
 /*---------------------------------- Footer three copy right text -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_three_cr_text', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_text_field',
+    'sanitize_callback'        => 'influence_blog_sanitize_copyright_credit',
     'default'                  => influence_blog_defaults( 'footer_three_cr_text' ),
 ) );
 

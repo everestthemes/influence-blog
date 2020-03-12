@@ -190,6 +190,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'color_text' => '#000000',
             'color_link' => '#183244',
             'color_link_hover' => '#e9b105',
+
             //Header - layout options
             'header_layout_options_select' => 'one',
             'header_layout_options_hedader_bg_color' => 'rgb(0, 0, 0, 0.36)',
@@ -412,6 +413,18 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_advance_search_icon_m_p_right' => '20',
             'header_three_advance_search_icon_m_p_bottom' => '12',
             'header_three_advance_search_icon_m_p_left' => '20',
+
+            //Banner - layout options
+            'banner_layout_options_select' => 'one',
+            'banner_display_toggle'=> true,
+            //Banner - content options
+            'banner_category'=> array(
+                'uncategorized'
+            ),
+            'banner_orderby' => 'date',
+            'banner_sort_order' => 'desc',
+            'banner_posts_number' => 2,
+            'banner_background_text' => 'Fashion Time',
             //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,

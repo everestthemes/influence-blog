@@ -14,7 +14,12 @@
 
 get_header();
 
-influence_blog_banner_template();
+/**
+* Hook - influence_blog_banner
+*
+* @hooked influence_blog_banner_action - 100
+*/
+do_action( 'influence_blog_banner' );
 
 if( is_active_sidebar( 'influence-blog-top-widget-area' ) ) {
     

@@ -47,7 +47,7 @@ if( $banner_query -> have_posts() ) {
                                 }
                                 ?>
                                 <h3 class="m-title"><?php the_title(); ?></h3>
-                                <?php influence_blog_categories_meta( $display_banner_category ); ?>
+                                <?php influence_blog_categories_meta( true ); ?>
                                 <?php the_excerpt(); ?>
                                 <a href="<?php the_permalink(); ?>" class="btn-more"><?php echo esc_html__( 'Read More', 'influence-blog' ); ?></a>
                           </div>

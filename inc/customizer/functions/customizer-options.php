@@ -362,3 +362,104 @@ if( !function_exists( 'influence_blog_get_registered_widget_areas' ) ) :
         return $options;
 	}
 endif;
+
+if( !function_exists( 'influence_blog_banner_layout_options_select_array' ) ) :
+	/*
+	 * Function to get banner layouts
+	 */
+	function influence_blog_banner_layout_options_select_array() {
+
+        $options = array(
+
+            'one' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-one.png',
+                'name' => __( 'Layout One', 'influence-blog' )
+            ),
+            'two' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-two.png',
+                'name' => __( 'Layout Two', 'influence-blog' )
+            ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_banner_layout_options_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_categories_array' ) ) :
+	/*
+	 * Function to get categories
+	 */
+	function influence_blog_categories_array() {
+
+        $cats = get_categories();
+
+        $options = array();
+
+        foreach( $cats as $cat ) {
+
+            $options[$cat->slug] = $cat->name;
+        }
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_posts_number_attrs_array' ) ) :
+	/*
+	 * Function to get posts number input attributes options values
+	 */
+	function influence_blog_posts_number_attrs_array() {
+
+        $options = array(
+            'min'                   => 1,
+            'max'                   => 4,
+            'step'                  => 1,
+        );
+
+        $options = apply_filters( 'influence_blog_filter_posts_number_attrs_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_orderby_array' ) ) :
+	/*
+	 * Function to get orderby choices
+	 */
+	function influence_blog_orderby_array() {
+
+        $orderby_choices = array(
+            'date'            => esc_html__( 'Date', 'influence-blog' ),
+            'author'           => esc_html__( 'Author', 'influence-blog' ),
+            'comment_count'    => esc_html__( 'Comments', 'influence-blog' ),
+        );
+
+        $orderby_choices = apply_filters( 'influence_blog_filter_orderby_choices_array', $orderby_choices );
+
+        return $orderby_choices;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_sort_order_array' ) ) :
+	/*
+	 * Function to get order choices
+	 */
+	function influence_blog_sort_order_array() {
+
+        $order_choices = array(
+            'asc'      => esc_html__( 'Ascending Order', 'influence-blog' ),
+            'desc'     => esc_html__( 'Descending Order', 'influence-blog' ),
+        );
+
+        $order_choices = apply_filters( 'influence_blog_filter_order_choices_array', $order_choices );
+
+        return $order_choices;
+
+	}
+endif;

@@ -300,6 +300,24 @@ if( ! function_exists( 'influence_blog_is_header_three_advance_enable' ) ) {
 }
 
 /**
+ * Active callback function for banner display toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_banner_display_enable' ) ) {
+
+	function influence_blog_is_banner_display_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_banner_display_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for footer one first widget toggle true is selected.
  */
 if( ! function_exists( 'influence_blog_is_footer_one_first_widget_enable' ) ) {

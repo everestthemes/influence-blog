@@ -55,3 +55,48 @@ if ( ! function_exists( 'influence_blog_sanitize_image' ) ) :
 	   return ( $file['ext'] ? $image : $setting->default );
 	}
 endif;
+
+/**
+ * Sanitization Function - Copyright & Credit
+ *
+ * @param $input
+ * @return sanitized output
+ *
+ */
+if ( !function_exists( 'influence_blog_sanitize_copyright_credit' ) ) :
+
+    function influence_blog_sanitize_copyright_credit( $input ) {
+
+        $allowed_tags = array(
+            'a' => array(
+                'href' => array(),
+                'title' => array(),
+                'target' => array(),
+                'rel' => array(),
+            ),
+            'span' => array(
+                'class' => array(),
+            ),
+        );
+
+        return wp_kses( $input, $allowed_tags );
+    }
+
+endif;
+
+/**
+ * Sanitization callback function for number field with value in range.
+ */
+if ( ! function_exists( 'influence_blog_sanitize_range' ) ) {
+
+    function influence_blog_sanitize_range( $input, $setting ) {
+
+        if(  $input <= $setting->manager->get_control( $setting->id )->input_attrs['max'] ) {
+
+            if( $input >= $setting->manager->get_control( $setting->id )->input_attrs['min'] ) {
+
+                return absint( $input );
+            }
+        }
+    }
+}
