@@ -128,14 +128,6 @@ body.boxed .page-wrap {
 
 }
 
-.container-style-content-boxed .secondary-widget-area .side-tt,
-.container-style-boxed .secondary-widget-area .side-tt {
-    margin-top: 40px;
-}
-
-
-
-
 h1,
 h2,
 h3,
@@ -1671,9 +1663,6 @@ span.sub-toggle.open {
     bottom: 0;
 }
 
-.foot-top-border .side-tt.widget-title {
-    margin-top: 0;
-}
 
 .foot-top-border.lrg-padding {
     padding-bottom: 0;
@@ -1690,37 +1679,6 @@ span.sub-toggle.open {
     margin-bottom: 0;
 }
 
-.foot-top-border .widget {
-    background-color: transparent;
-    padding: 0;
-    border: 1px solid transparent;
-    margin-bottom: 60px;
-
-}
-
-.foot-top-border .widget .side-tt {
-    text-align: left;
-}
-
-.foot-top-border .widget_meta .s-title {
-    padding: 0;
-}
-
-.foot-top-border .widget_meta>ul>li {
-    border: 1px solid #eee;
-}
-
-.foot-top-border .widget_meta>ul>li>a {
-    color: white;
-}
-
-.foot-top-border .recentcomments a {
-    color: white;
-}
-
-.foot-top-border .widget_meta>ul>li>a:hover {
-   opacity: 0.6;
-}
 
 .footer-mid-sec {
     background-repeat: no-repeat;
@@ -2122,10 +2080,7 @@ Single-post layout-1
 }
 
 /* single-post content */
-.secondary-widget-area .side-tt {
-    margin-top: 60px;
-    margin-bottom: 30px;
-}
+
 
 .secondary-widget-area .side-tt .s-title {
     margin-bottom: 0;
