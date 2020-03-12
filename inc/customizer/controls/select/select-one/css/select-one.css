@@ -1,0 +1,23 @@
+/****************************************************************************************************
+ ****************************************** Select One Styles ****************************************
+ ****************************************************************************************************/
+.customize-control.customize-control-select-one .select-one-wrap select {
+
+  border: 1px solid #eee;
+  background: #fcfcff;
+  position: relative;
+  border-radius: 0;
+  height: auto;
+  line-height: 27px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.customize-control.customize-control-select-one .select-one-wrap select:active,
+.customize-control.customize-control-select-one .select-one-wrap select:focus {
+
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

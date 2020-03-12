@@ -489,6 +489,32 @@ add_action( 'influence_blog_header', 'influence_blog_header_action', 100 );
 
 
 /**
+ * Banner hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_banner_action' ) ) :
+
+ 	function influence_blog_banner_action() {
+
+        $display_banner = ifb_get_mod( 'banner_display_toggle' );
+
+        if( $display_banner == true ) {
+
+            $banner_layout = ifb_get_mod( 'banner_layout_options_select' );
+
+            if( $banner_layout == 'one' || $banner_layout == 'two' ) {
+
+                get_template_part( 'template-parts/banner/banner', $banner_layout );
+            }
+        }
+    }
+endif;
+add_action( 'influence_blog_banner', 'influence_blog_banner_action', 200 );
+
+
+
+/**
  * Footer first widget area hook declaration
  *
  * @since 1.0.0

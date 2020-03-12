@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Customizer Panel for Footer
+ * Customizer Panel for Banner
  *
  * @package Influence_Blog
  */
@@ -13,10 +13,10 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /*-----------------------------------------------------------------------------
-							Footer Panel
+							Banner Panel
 -----------------------------------------------------------------------------*/
 
-$wp_customize->add_panel( 'influence_blog_footer_settings_panel', array(
-    'title'        => esc_html__( 'Footer Settings', 'influence-blog' ),
-    'priority'     => 40,
+$wp_customize->add_panel( 'influence_blog_banner_settings_panel', array(
+    'title'        => esc_html__( 'Banner Settings', 'influence-blog' ),
+    'priority'     => 30,
 ) );
