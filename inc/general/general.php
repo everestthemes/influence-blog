@@ -293,6 +293,10 @@ function influence_blog_scripts() {
 
     wp_add_inline_style( 'influence-blog-default-style', apply_filters( 'influence_blog_dynamic_default_style', influence_blog_dynamic_default_style() ) );
 
+    wp_enqueue_style( 'influence-blog-gutenberg-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/gutenberg-style.css' );
+
+    wp_add_inline_style( 'influence-blog-gutenberg-style', apply_filters( 'influence_blog_dynamic_gutenberg_style', influence_blog_dynamic_gutenberg_style() ) );
+
     wp_enqueue_style( 'influence-blog-responsive-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/responsive.css' );
 
     wp_add_inline_style( 'influence-blog-responsive-style', apply_filters( 'influence_blog_dynamic_responsive_style', influence_blog_dynamic_responsive_style() ) );

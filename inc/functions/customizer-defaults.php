@@ -425,6 +425,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_sort_order' => 'desc',
             'banner_posts_number' => 2,
             'banner_background_text' => 'Fashion Time',
+            'banner_read_more_text' => 'Read More',
             //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,

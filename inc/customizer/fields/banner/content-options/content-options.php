@@ -27,6 +27,8 @@ $button_one_array = array(
     'influence_blog_banner_content_options_post_no_info' => array(),
     'influence_blog_banner_posts_number' => array(),
     'influence_blog_banner_background_text' => array(),
+    'influence_blog_banner_read_more_text' => array(),
+    'influence_blog_banner_content_options_display_heading' => array(),
 );
 
 $button_one_array = apply_filters( 'influence_blog_filter_banner_content_options_button_one_array', $button_one_array );
@@ -78,7 +80,7 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'banner-content-options-basic-heading' ),
-    'controls_to_wrap'         => 7,
+    'controls_to_wrap'         => 8,
     'expanded'                 => true,
     'priority'                 => 10,
 ) ) );
@@ -190,3 +192,34 @@ $wp_customize->add_control( 'influence_blog_banner_background_text', array(
     'type'                     => 'text',
     'priority'                 => 45,
 ) );
+
+/*---------------------------------- Banner read more text -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_read_more_text', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+    'default'                  => influence_blog_defaults( 'banner_read_more_text' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_banner_read_more_text', array(
+    'label'                    => esc_html__( 'Read More Text', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'text',
+    'priority'                 => 50,
+) );
+
+/*---------------------------------- Banner content options display heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_display_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_display_heading', array(
+    'label'                    => esc_html__( 'Display Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'banner-content-options-display-heading' ),
+    'controls_to_wrap'         => 8,
+    'expanded'                 => true,
+    'priority'                 => 60,
+) ) );
