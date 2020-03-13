@@ -25,8 +25,9 @@ if( $banner_query -> have_posts() ) {
 
             $banner_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
             
-            $banner_background_text = ifb_get_mod( 'banner_background_text', 'Passion of' );
+            $banner_background_text = ifb_get_mod( 'banner_background_text' );
             $display_banner_category = ifb_get_mod( 'display_banner_category', true );
+            $banner_read_more_text = ifb_get_mod( 'banner_read_more_text' );
             ?>
             <div class="bannner-outer-wrap">
                 <div class="row align-items-center">
@@ -38,19 +39,23 @@ if( $banner_query -> have_posts() ) {
                     </div><!--//col-md-8-->
                     <div class="col-12 col-md-4 order-md-1">
                         <div class="banner-caption">
-                            <div class="">
+                            <?php
+                            if( !empty( $banner_background_text ) ) {
+                                ?>
+                                <h2 class="l-title"><?php echo esc_html( $banner_background_text ); ?></h2>
                                 <?php
-                                if( !empty( $banner_background_text ) ) {
-                                    ?>
-                                    <h2 class="l-title"><?php echo esc_html( $banner_background_text ); ?></h2>
-                                    <?php
+                            }
+                            ?>
+                            <h3 class="m-title"><?php the_title(); ?></h3>
+                            <?php influence_blog_categories_meta( true ); ?>
+                            <?php the_excerpt(); ?>
+                            <a href="<?php the_permalink(); ?>" class="btn-more">
+                                <?php
+                                if( !empty( $banner_read_more_text ) ) {
+                                    echo esc_html( $banner_read_more_text );
                                 }
                                 ?>
-                                <h3 class="m-title"><?php the_title(); ?></h3>
-                                <?php influence_blog_categories_meta( true ); ?>
-                                <?php the_excerpt(); ?>
-                                <a href="<?php the_permalink(); ?>" class="btn-more"><?php echo esc_html__( 'Read More', 'influence-blog' ); ?></a>
-                          </div>
+                            </a>
                         </div>
                     </div><!--col-md-4-->
                 </div><!--//row-->

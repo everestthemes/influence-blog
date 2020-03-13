@@ -123,6 +123,7 @@ $widgets_args = array( 'widgets' );
 $dynamic_args = array(
     'dynamic-default-style',
     'dynamic-main-style',
+    'dynamic-gutenberg-style',
     'dynamic-responsive-style',
 );
 
