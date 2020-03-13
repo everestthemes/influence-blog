@@ -2214,9 +2214,12 @@ Single-post layout-1
 
 
 /* next-pre button */
-
+.post-navigation .nav-links {
+    margin-top:30px;
+}
 .post-navigation .nav-links .nav-previous {
     text-align: left;
+
 }
 
 .post-navigation {

@@ -678,7 +678,8 @@ body.single  {
 
 cite,
 .wp-block-pullquote cite,
-cite strong{
+cite strong,
+.wp-block-quote cite{
     color: #e9b105;
 }
 
@@ -785,8 +786,37 @@ cite strong{
 }
 
 /*--------------------------------------------------------------
+Audio,video
+--------------------------------------------------------------*/
+.wp-block-audio,
+.wp-block-video,
+.wp-audio-shortcode{
+    margin:15px 0;
+}
+/*--------------------------------------------------------------
+margins
+--------------------------------------------------------------*/
+.wp-block-rss .wp-block-rss__item,
+.wp-block-latest-posts.wp-block-latest-posts__list li,
+.wp-block-archives li,
+.entry-content ul li,
+.entry-content ol li{
+    margin-top:15px;
+}
+
+ .entry-content select{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+}
+.wp-block-group.has-background{
+    margin-bottom: 30px;
+}
+/*--------------------------------------------------------------
 # BUTTONS, INPUTS & COLORS
 --------------------------------------------------------------*/
+
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -1134,12 +1164,14 @@ body.no-sidebar .alignfull {
     transform: translateX(-50%);
 }
 
-
-/* body.no-sideba .post .alignwide.wp-block-cover,
-body.no-sideba .page .alignwide.wp-block-cover {
-    width: 1010px;
+.wp-block-cover.has-background-dim {
+    margin-bottom: 30px;
 }
- */
+
+.wp-block-cover.has-background-dim {
+    color: white;
+}
+
 body.no-sidebar .post .post-thumbnail,
 body.no-sidebar .page .post-thumbnail {
     margin-left: -100px;
