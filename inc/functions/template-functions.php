@@ -459,6 +459,65 @@ if( ! function_exists( 'influence_blog_arrange_footer_two_widget_area' ) ) {
     }
 }
 
+/**
+ * Arrange banner content title
+ */
+if( ! function_exists( 'influence_blog_arrange_banner_content_title' ) ) {
+
+    function influence_blog_arrange_banner_content_title() {
+
+        ?>
+        <h3 class="m-title"><?php the_title(); ?></h3>
+        <?php
+    }
+}
+
+/**
+ * Arrange banner content category
+ */
+if( ! function_exists( 'influence_blog_arrange_banner_content_category' ) ) {
+
+    function influence_blog_arrange_banner_content_category() {
+
+        influence_blog_categories_meta( true );
+    }
+}
+
+/**
+ * Arrange banner content content
+ */
+if( ! function_exists( 'influence_blog_arrange_banner_content_content' ) ) {
+
+    function influence_blog_arrange_banner_content_content() {
+
+        the_excerpt();
+    }
+}
+
+/**
+ * Arrange banner one content button
+ */
+if( ! function_exists( 'influence_blog_arrange_banner_one_content_button' ) ) {
+
+    function influence_blog_arrange_banner_one_content_button() {
+
+        $banner_read_more_text = ifb_get_mod( 'banner_read_more_text' );
+
+        if( !empty( $banner_read_more_text ) ) {
+
+            ?>
+            <a href="<?php the_permalink(); ?>" class="btn-more">
+                <?php
+                echo esc_html( $banner_read_more_text );
+                ?>
+            </a>
+            <?php
+        }
+    }
+}
+
+
+
 
 
 /**

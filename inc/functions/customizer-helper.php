@@ -197,6 +197,68 @@ function influence_blog_arrange_header_three_options() {
 }
 
 /**
+* Options used with the Sortable Items control for banner one content
+*/
+function influence_blog_arrange_banner_one_content_options() {
+
+    $options = array();
+
+    $options['bannerOneTitle'] = [
+        'id'       => 'bannerOneTitle',
+        'label'    => esc_html_x( 'Title', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_title'
+    ];
+
+    $options['bannerOneCategory'] = [
+        'id'       => 'bannerOneCategory',
+        'label'    => esc_html_x( 'Category', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_category'
+    ];
+
+    $options['bannerOneContent'] = [
+        'id'       => 'bannerOneContent',
+        'label'    => esc_html_x( 'Content', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_content'
+    ];
+
+    $options['bannerOneButton'] = [
+        'id'       => 'bannerOneButton',
+        'label'    => esc_html_x( 'Button', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_one_content_button'
+    ];
+
+    return $options;
+}
+
+/**
+* Options used with the Sortable Items control for banner two content
+*/
+function influence_blog_arrange_banner_two_content_options() {
+
+    $options = array();
+
+    $options['bannerTwoCategory'] = [
+        'id'       => 'bannerTwoCategory',
+        'label'    => esc_html_x( 'Category', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_category'
+    ];
+
+    $options['bannerTwoTitle'] = [
+        'id'       => 'bannerTwoTitle',
+        'label'    => esc_html_x( 'Title', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_title'
+    ];
+
+    $options['bannerTwoContent'] = [
+        'id'       => 'bannerTwoContent',
+        'label'    => esc_html_x( 'Content', 'Customizer sortable options', 'influence-blog' ),
+        'callback' => 'influence_blog_arrange_banner_content_content'
+    ];
+
+    return $options;
+}
+
+/**
 * Options used with the Sortable Items control for footer
 */
 function influence_blog_arrange_footer_options() {

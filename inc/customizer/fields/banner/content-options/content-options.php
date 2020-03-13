@@ -19,16 +19,29 @@ $orderby = influence_blog_orderby_array();
 $sort_order = influence_blog_sort_order_array();
 
 $button_one_array = array(
-    'influence_blog_banner_content_options_basic_heading' => array(),
+    'influence_blog_banner_content_options_arrange_heading' => array(),
+    'influence_blog_arrange_banner_content_options_one' => array(),
+    'influence_blog_arrange_banner_content_options_two' => array(),
+    'influence_blog_banner_content_options_query_heading' => array(),
     'influence_blog_banner_content_options_cat_select_info' => array(),
     'influence_blog_banner_category' => array(),
     'influence_blog_banner_orderby' => array(),
     'influence_blog_banner_sort_order' => array(),
     'influence_blog_banner_content_options_post_no_info' => array(),
     'influence_blog_banner_posts_number' => array(),
+    'influence_blog_banner_content_options_one_heading' => array(),
     'influence_blog_banner_background_text' => array(),
     'influence_blog_banner_read_more_text' => array(),
-    'influence_blog_banner_content_options_display_heading' => array(),
+    'influence_blog_banner_content_options_two_heading' => array(),
+    'influence_blog_banner_content_options_two_slider_col' => array(),
+    'influence_blog_banner_content_options_two_ads_heading' => array(),
+    'influence_blog_banner_content_options_two_ads_toggle' => array(),
+    'influence_blog_banner_content_options_two_ads_col' => array(),
+    'influence_blog_banner_content_options_two_ads_upload_image' => array(),
+    'influence_blog_banner_content_options_two_ads_title' => array(),
+    'influence_blog_banner_content_options_two_ads_link' => array(),
+    'influence_blog_banner_content_options_two_ads_link_rel' => array(),
+    'influence_blog_banner_content_options_two_ads_link_tab_toggle' => array(),
 );
 
 $button_one_array = apply_filters( 'influence_blog_filter_banner_content_options_button_one_array', $button_one_array );
@@ -68,21 +81,82 @@ $wp_customize->add_control( new Tab_One_Control( $wp_customize, 'influence_blog_
 							 General options
 -----------------------------------------------------------------------------*/
 
-/*---------------------------------- Banner content options basic heading -----------------------------------*/
+/*---------------------------------- Banner content options arrange heading -----------------------------------*/
 
-$wp_customize->add_setting( 'influence_blog_banner_content_options_basic_heading', array(
+$wp_customize->add_setting( 'influence_blog_banner_content_options_arrange_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_basic_heading', array(
-    'label'                    => esc_html__( 'Basic Options', 'influence-blog' ),
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_arrange_heading', array(
+    'label'                    => esc_html__( 'Arrange Elements', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 10,
+) ) );
+
+/*---------------------------------- Arrange banner one content options options -----------------------------------*/
+
+$arrange_banner_one_content_options = influence_blog_arrange_banner_one_content_options();
+
+$arrange_banner_one_content_option  = array();
+
+foreach( $arrange_banner_one_content_options as $key => $val ) {
+
+   $arrange_banner_one_content_option[ $key ] = $val[ 'label' ];
+}
+
+$wp_customize->add_setting( 'influence_blog_arrange_banner_content_options_one', array(
+    'transport'                => 'refresh',
+    'sanitize_callback'        => 'sanitize_sortable_one',
+    'default'                  => influence_blog_sortable_defaults ( $arrange_banner_one_content_options ),
+) );
+
+$wp_customize->add_control( new Sortable_One_Control( $wp_customize, 'influence_blog_arrange_banner_content_options_one', array(
+	'section'				   => $section,
+    'choices'                  => $arrange_banner_one_content_option,
+    'priority'                 => 15,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_one',
+) ) );
+
+/*---------------------------------- Arrange banner two content options options -----------------------------------*/
+
+$arrange_banner_two_content_options = influence_blog_arrange_banner_two_content_options();
+
+$arrange_banner_two_content_option  = array();
+
+foreach( $arrange_banner_two_content_options as $key => $val ) {
+
+   $arrange_banner_two_content_option[ $key ] = $val[ 'label' ];
+}
+
+$wp_customize->add_setting( 'influence_blog_arrange_banner_content_options_two', array(
+    'transport'                => 'refresh',
+    'sanitize_callback'        => 'sanitize_sortable_one',
+    'default'                  => influence_blog_sortable_defaults ( $arrange_banner_two_content_options ),
+) );
+
+$wp_customize->add_control( new Sortable_One_Control( $wp_customize, 'influence_blog_arrange_banner_content_options_two', array(
+	'section'				   => $section,
+    'choices'                  => $arrange_banner_two_content_option,
+    'priority'                 => 20,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options query heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_query_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_query_heading', array(
+    'label'                    => esc_html__( 'Query Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
     'accordion'                => true,
-    'class'                    => esc_attr( 'banner-content-options-basic-heading' ),
-    'controls_to_wrap'         => 8,
-    'expanded'                 => true,
-    'priority'                 => 10,
+    'class'                    => esc_attr( 'banner-content-options-query-heading' ),
+    'controls_to_wrap'         => 6,
+    'expanded'                 => false,
+    'priority'                 => 30,
 ) ) );
 
 /*---------------------------------- Banner content category select info -----------------------------------*/
@@ -97,7 +171,7 @@ $wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blo
     'section'                  => $section,
     'type'                     => 'info-one',
     'info_type'                => 'info',
-    'priority'                 => 15,
+    'priority'                 => 35,
 ) ) );
 
 /*---------------------------------- Banner select category -----------------------------------*/
@@ -112,7 +186,7 @@ $wp_customize->add_control( new Select_One_Control( $wp_customize, 'influence_bl
     'section'                  => $section,
     'type'                     => 'select-one',
     'choices'                  => $categories,
-    'priority'                 => 20,
+    'priority'                 => 40,
 ) ) );
 
 /*---------------------------------- Banner select orderby -----------------------------------*/
@@ -128,7 +202,7 @@ $wp_customize->add_control( 'influence_blog_banner_orderby', array(
     'section'                  => $section,
     'type'                     => 'select',
     'choices'                  => $orderby,
-    'priority'                 => 25,
+    'priority'                 => 45,
 ) );
 
 /*---------------------------------- Banner select sort order -----------------------------------*/
@@ -144,7 +218,7 @@ $wp_customize->add_control( 'influence_blog_banner_sort_order', array(
     'section'                  => $section,
     'type'                     => 'select',
     'choices'                  => $sort_order,
-    'priority'                 => 30,
+    'priority'                 => 50,
 ) );
 
 $banner_description = apply_filters( 'influence_blog_filter_banner_post_no_description', __( 'Minimum 1 &amp; maximum 4 can be set.', 'influence-blog' ) );
@@ -161,7 +235,7 @@ $wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blo
     'section'                  => $section,
     'type'                     => 'info-one',
     'info_type'                => 'info',
-    'priority'                 => 35,
+    'priority'                 => 55,
 ) ) );
 
 /*---------------------------------- Banner posts number -----------------------------------*/
@@ -176,8 +250,26 @@ $wp_customize->add_control( 'influence_blog_banner_posts_number', array(
     'section'                  => $section,
     'type'                     => 'number',
     'input_attrs'              => $posts_no,
-    'priority'                 => 40,
+    'priority'                 => 60,
 ) );
+
+/*---------------------------------- Banner content options one heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_one_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_one_heading', array(
+    'label'                    => esc_html__( 'Field Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'banner-content-options-one-heading' ),
+    'controls_to_wrap'         => 2,
+    'expanded'                 => false,
+    'priority'                 => 65,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_one',
+) ) );
 
 /*---------------------------------- Banner background text -----------------------------------*/
 
@@ -190,7 +282,8 @@ $wp_customize->add_control( 'influence_blog_banner_background_text', array(
     'label'                    => esc_html__( 'Background Text', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'text',
-    'priority'                 => 45,
+    'priority'                 => 70,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_one',
 ) );
 
 /*---------------------------------- Banner read more text -----------------------------------*/
@@ -204,22 +297,171 @@ $wp_customize->add_control( 'influence_blog_banner_read_more_text', array(
     'label'                    => esc_html__( 'Read More Text', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'text',
-    'priority'                 => 50,
+    'priority'                 => 75,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_one',
 ) );
 
-/*---------------------------------- Banner content options display heading -----------------------------------*/
+/*---------------------------------- Banner content options two heading -----------------------------------*/
 
-$wp_customize->add_setting( 'influence_blog_banner_content_options_display_heading', array(
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_display_heading', array(
-    'label'                    => esc_html__( 'Display Options', 'influence-blog' ),
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_two_heading', array(
+    'label'                    => esc_html__( 'Field Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
     'accordion'                => true,
-    'class'                    => esc_attr( 'banner-content-options-display-heading' ),
-    'controls_to_wrap'         => 8,
+    'class'                    => esc_attr( 'banner-content-options-two-heading' ),
+    'controls_to_wrap'         => 9,
+    'expanded'                 => false,
+    'priority'                 => 80,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two slider column width -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_slider_col', array(
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_slider_col' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_banner_content_options_two_slider_col', array(
+    'label'                    => esc_html__( 'Slider Column Width', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 12,
+        'step'                 => 1,
+    ),
+    'priority'                 => 85,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two ads heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_content_options_two_ads_heading', array(
+    'label'                    => esc_html__( 'Advertisement Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'banner-content-options-two-ads-heading' ),
+    'controls_to_wrap'         => 7,
     'expanded'                 => true,
-    'priority'                 => 60,
+    'priority'                 => 90,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two ads toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_banner_content_options_two_ads_toggle', array(
+    'label'                    => esc_html__( 'Display Advertisement', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-three',
+    'priority'                 => 95,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two ads column width -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_col', array(
+    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_col' ),
+) );
+
+$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_banner_content_options_two_ads_col', array(
+    'label'                    => esc_html__( 'Column Width', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'range-slider-one',
+    'input_attrs'              => array(
+        'min'                  => 1,
+        'max'                  => 12,
+        'step'                 => 1,
+    ),
+    'priority'                 => 97,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two ads image -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_upload_image', array(
+    'sanitize_callback'        => 'influence_blog_sanitize_image',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_upload_image' ),
+) );
+
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'influence_blog_banner_content_options_two_ads_upload_image', array(
+    'label'       		       => esc_html__( 'Upload Image', 'influence-blog' ),
+    'section'     		       => $section,
+    'priority'                 => 100,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) ) );
+
+/*---------------------------------- Banner content options two ads link -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_title', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_title' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_banner_content_options_two_ads_title', array(
+    'label'                    => esc_html__( 'Title', 'influence-blog' ),
+	'section'				   => $section,
+    'type'                     => 'text',
+    'priority'                 => 105,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) );
+
+/*---------------------------------- Banner content options two ads link -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_link', array(
+    'sanitize_callback'        => 'esc_url_raw',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_link' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_banner_content_options_two_ads_link', array(
+    'label'                    => esc_html__( 'Link', 'influence-blog' ),
+	'section'				   => $section,
+    'type'                     => 'url',
+    'priority'                 => 110,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) );
+
+/*---------------------------------- Banner content options two ads link rel -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_link_rel', array(
+    'sanitize_callback'        => 'sanitize_text_field',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_link_rel' ),
+) );
+
+$wp_customize->add_control( 'influence_blog_banner_content_options_two_ads_link_rel', array(
+    'label'                    => esc_html__( 'Link Rel', 'influence-blog' ),
+	'section'				   => $section,
+    'type'                     => 'text',
+    'priority'                 => 115,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
+) );
+
+/*---------------------------------- Banner content options two ads new tab toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_link_tab_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_link_tab_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_banner_content_options_two_ads_link_tab_toggle', array(
+    'label'                    => esc_html__( 'Open in new tab', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-three',
+    'priority'                 => 120,
+    'active_callback'          => 'influence_blog_is_banner_layout_options_two',
 ) ) );
