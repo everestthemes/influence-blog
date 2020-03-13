@@ -318,6 +318,42 @@ if( ! function_exists( 'influence_blog_is_banner_display_enable' ) ) {
 }
 
 /**
+ * Active callback function for banner layout options one is selected.
+ */
+if( ! function_exists( 'influence_blog_is_banner_layout_options_one' ) ) {
+
+	function influence_blog_is_banner_layout_options_one( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_banner_layout_options_select' )->value() == 'one' ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for banner layout options two is selected.
+ */
+if( ! function_exists( 'influence_blog_is_banner_layout_options_two' ) ) {
+
+	function influence_blog_is_banner_layout_options_two( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_banner_layout_options_select' )->value() == 'two' ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for footer one first widget toggle true is selected.
  */
 if( ! function_exists( 'influence_blog_is_footer_one_first_widget_enable' ) ) {
