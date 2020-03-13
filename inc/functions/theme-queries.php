@@ -27,7 +27,8 @@ if( !function_exists( 'influence_blog_banner_posts_query' ) ) {
         $banner_posts_no = ifb_get_mod( 'banner_posts_number' );
 
         $banner_args = array(
-          'post_type'      => 'post',
+            'post_type'      => 'post',
+            'ignore_sticky_posts' => 1,
         );
 
         if( !empty( $banner_category ) ) {
