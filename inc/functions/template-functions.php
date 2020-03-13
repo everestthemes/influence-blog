@@ -518,30 +518,6 @@ if( ! function_exists( 'influence_blog_arrange_banner_one_content_button' ) ) {
 
 
 
-
-
-/**
- * Selects banner template
- */
-if( ! function_exists( 'influence_blog_banner_template' ) ) {
-
-    function influence_blog_banner_template() {
-
-        $display_banner = ifb_get_mod( 'banner_display_toggle' );
-
-        if( $display_banner == true ) {
-
-            $banner_layout = ifb_get_mod( 'banner_layout_options_select' );
-
-            get_template_part( 'template-parts/banner/banner', 'one' );
-
-        }
-
-    }
-}
-
-
-
 /**
  * Selects post listing layout template
  */
