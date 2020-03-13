@@ -26,8 +26,6 @@ if( $banner_query -> have_posts() ) {
             $banner_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
             
             $banner_background_text = ifb_get_mod( 'banner_background_text' );
-            $display_banner_category = ifb_get_mod( 'display_banner_category', true );
-            $banner_read_more_text = ifb_get_mod( 'banner_read_more_text' );
             ?>
             <div class="bannner-outer-wrap">
                 <div class="row align-items-center">
@@ -46,16 +44,21 @@ if( $banner_query -> have_posts() ) {
                                 <?php
                             }
                             ?>
-                            <h3 class="m-title"><?php the_title(); ?></h3>
-                            <?php influence_blog_categories_meta( true ); ?>
-                            <?php the_excerpt(); ?>
-                            <a href="<?php the_permalink(); ?>" class="btn-more">
-                                <?php
-                                if( !empty( $banner_read_more_text ) ) {
-                                    echo esc_html( $banner_read_more_text );
-                                }
-                                ?>
-                            </a>
+                            <?php
+
+                            $items     = influence_blog_arrange_banner_one_content_options();
+                            $defaults  = influence_blog_sortable_defaults( $items );
+                            $mod       = get_theme_mod( 'influence_blog_arrange_banner_content_options_one', $defaults );
+
+                            if( ! $mod ) return;
+
+                            $mod = explode( ',', $mod );
+
+                            $new = influence_blog_sortable_items_to_array( $mod, $items );
+
+                            influence_blog_sortable_items_ouput( $items, $new, $mod );
+
+                            ?>
                         </div>
                     </div><!--col-md-4-->
                 </div><!--//row-->
