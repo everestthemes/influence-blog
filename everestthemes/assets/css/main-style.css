@@ -96,19 +96,8 @@ body.boxed .page-wrap {
 
 }
 
-.container-style-uniform .secondary-widget-area .widget_meta .side-tt {
-    margin-bottom: 15px;
-    padding: 0;
-}
 
-.container-style-content-boxed .secondary-widget-area .widget_meta .side-tt {
 
-    margin-bottom: 15px;
-}
-
-.container-style-content-boxed .secondary-widget-area .widget_meta .side-tt .s-title {
-    padding: 0;
-}
 
 .container-style-content-boxed .primary-widget-area,
 .container-style-boxed .primary-widget-area {

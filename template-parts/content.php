@@ -31,7 +31,7 @@ $display_tags = influence_blog_tags_option();
         </div> <!--metastyle1 span meta-->
         <h1 class="single-title"><?php the_title(); ?></h1>
         <?php influence_blog_post_thumbnail(); ?>
-        <div class="single-post-detail single-layout1-detail">
+        <div class="single-post-detail single-layout1-detail entry-content">
             <?php
             
             the_content(); 

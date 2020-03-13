@@ -82,33 +82,7 @@ time.updated,
     right: -1px;
 }
 
-/*
-===================================================
-=
-= WordPress basics styles
-=
-=====================================================================
-*/
-// Edit link
-span.edit-link a {
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
 
-span.edit-link a:before {
-    content: '-';
-    display: inline-block;
-    margin-right: 3px;
-}
-
-// sticky
-.sticky,
-.bypostauthor {
-    background: transparent; // wp recommeded classes, does nothing
-}
 
 /*
 ===================================================
@@ -129,111 +103,8 @@ span.edit-link a:before {
 = WordPress Gallery
 =
 =====================================================================
-*/
-.gallery {
-    margin-bottom: 0;
-    margin-left: -2%;
-}
-
-.gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
-    margin-bottom: 3%;
-    margin-left: 2%;
-}
-
-.site-main .gallery a img {
-    max-width: none;
-    width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-    max-width: 47%;
-}
-
-.gallery-columns-3 .gallery-item {
-    max-width: 31.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-    max-width: 23%;
-}
-
-.gallery-columns-5 .gallery-item {
-    max-width: 18%;
-}
-
-.gallery-columns-6 .gallery-item {
-    max-width: 14.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-    max-width: 12.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-    max-width: 10.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-    max-width: 9.11%;
-}
-
-.gallery-caption {
-    display: block;
-}
-
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-}
 
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-
-.alignleft {
-    display: inline;
-    float: left;
-    margin-right: 3em;
-}
-
-.alignright {
-    display: inline;
-    float: right;
-    margin-left: 3em;
-}
-
-.aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*================================= 
 
@@ -742,14 +613,13 @@ form.search-form button[type="search"],
     padding: 0 10px;
     height: 43px;
     border: 1px solid #eee;
-    /*     transform: translateY(-50%);
-     */
+    border-radius: 0;
     right: 0;
     background-color: #eeeeee;
     font-size: 14px;
-    border: none;
     color: #183244;
     transition: 0.5s ease all;
+    border-left: 1px solid transparent;
 
 }
 
@@ -762,6 +632,7 @@ form.search-form button[type="search"]:hover,
     background: #183244;
     color: #e9b105;
     border: 1px solid #183244;
+    border-left: 1px solid transparent;
 }
 
 .search-form button:focus,
