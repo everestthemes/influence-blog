@@ -67,70 +67,66 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_one_design_widget_content_button_hover_color = ifb_get_mod( 'footer_one_design_widget_content_button_hover_color' );
 
         $footer_one_design_css = array(
-            '.foot-top-wrap .widget_archive>ul>li a,
-            .foot-top-wrap .widget_archive>ul>li,
-            .foot-top-wrap .calendar_wrap tr th,
-            .foot-top-wrap .calendar_wrap tr td,
-            .foot-top-wrap .calendar_wrap caption,
-            .foot-top-wrap .calendar_wrap tr td a,
-            .foot-top-wrap .widget_categories>ul>li,
-            .foot-top-wrap .widget_pages>ul>li,
-            .foot-top-wrap .widget_nav_menu .menu>li,
-            .foot-top-wrap .widget_nav_menu .menu>li a,
-            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li a,
-            .foot-top-wrap .widget_pages>ul>li a,
-            .foot-top-wrap .widget_rss>ul>li a,
-            .foot-top-wrap .rssSummary,
-            .foot-top-wrap .widget_rss>ul>li cite,
-            .foot-top-wrap .widget_rss>ul>li .rss-date,
-            .foot-top-wrap .recentcomments,
-            .foot-top-wrap .recentcomments .comment-author-link,
-            .foot-top-wrap .widget_search .search-form .search-submit,
-            .foot-top-wrap .form-submit .submit,
-            .foot-top-wrap .widget_search .search-form #submit,
-            .foot-top-wrap .widget_text .textwidget p,
-            .foot-top-wrap .widget_text .textwidget a,
-            .foot-top-wrap .widget_tag_cloud .tagcloud,
+            '.foot-top-wrap .widget,
+            .foot-top-wrap .widget a,
+            .foot-top-wrap .widget ul li a,
             .foot-top-wrap .widget_tag_cloud .tagcloud a,
-            .foot-top-border .widget_meta>ul>li>a,
-            .foot-top-border .recentcomments a,
-            .foot-top-wrap .widget_recent_entries>ul>li a,
-            .foot-top-wrap .widget_categories>ul>li a
+            .foot-top-wrap input[type="text"],
+            .foot-top-wrap input[type="email"],
+            .foot-top-wrap input[type="url"],
+            .foot-top-wrap input[type="password"],
+            .foot-top-wrap input[type="search"],
+            .foot-top-wrap input[type="number"],
+            .foot-top-wrap input[type="tel"],
+            .foot-top-wrap input[type="range"],
+            .foot-top-wrap input[type="date"],
+            .foot-top-wrap input[type="month"],
+            .foot-top-wrap input[type="week"],
+            .foot-top-wrap input[type="time"],
+            .foot-top-wrap input[type="datetime"],
+            .foot-top-wrap input[type="datetime-local"],
+            .foot-top-wrap input[type="color"],
+            .foot-top-wrap textarea,
+            .foot-top-wrap .textwidget p,
+            .foot-top-wrap .widget_recent_entries .post-date,
+            .foot-top-wrap .widget.widget_recent_comments li,
+            .foot-top-wrap .textwidget,
+            .foot-top-wrap .textwidget.custom-html-widget h4,
+            .foot-top-wrap .widget .gallery-caption,
+            .foot-top-wrap .calendar_wrap caption,
+            .foot-top-wrap form.search-form input[type="search"],
+            .foot-top-wrap .widget_product_search form input[type="search"],
+            .foot-top-wrap .widget_pages ul li .sub-menu>li>.sub-menu li:before,
+            .foot-top-wrap .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
+            .foot-top-wrap .widget select
             ' => array(
                 'color' => esc_attr( $footer_one_design_widget_content_color ),
             ),
-            '.foot-top-wrap .widget_categories>ul>li a:hover,
-            .foot-top-wrap .widget_archive>ul>li a:hover,
-            .foot-top-wrap .calendar_wrap tr td a:hover,
-            .foot-top-wrap .widget_nav_menu .menu>li a:hover,
-            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li a:hover,
-            .foot-top-wrap .widget_pages>ul>li a:hover,
-            .foot-top-wrap .widget_recent_entries>ul>li a:hover,
-            .foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover,
-            .foot-top-wrap .widget_tag_cloud .tagcloud a:hover,
-            .foot-top-border .widget_meta>ul>li>a:hover,
-            .foot-top-border .recentcomments a:hover,
-            .foot-top-wrap .widget_rss>ul>li a:hover
+            '.foot-top-wrap .widget a:hover,
+            .foot-top-wrap .widget ul li a:hover,
+            .foot-top-wrap .widget_tag_cloud .tagcloud a:hover
             '=> array(
                 'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
             ),
-            '.foot-top-wrap .widget_categories>ul>li,
-            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li:before,
-            .foot-top-wrap .widget_recent_entries>ul>li,
-            .foot-top-wrap .widget_search .search-form .search-submit,
-            .foot-top-wrap .form-submit .submit,
-            .foot-top-wrap .widget_search .search-form #submit,
-            .foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover,
-            .foot-top-wrap .widget_tag_cloud .tagcloud
+            '.foot-top-wrap .widget_tag_cloud .tagcloud a
             '=> array(
                 'background-color'=> esc_attr( $footer_one_design_widget_content_bg_color ),
             ),
-            '.foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover
+            '.foot-top-wrap .widget_tag_cloud .tagcloud a:hover
             '=> array(
                 'background-color'=> esc_attr( $footer_one_design_widget_content_bg_hover_color ),
+            ),
+            '.foot-top-wrap .calendar_wrap table th,
+            .foot-top-wrap .widget_tag_cloud .tagcloud a,
+            .foot-top-wrap .widget_product_tag_cloud .tagcloud a
+            '=> array(
+                'border'=> esc_attr( '1px solid ' . $footer_one_design_widget_content_border_color ),
+            ),
+            '.foot-top-wrap .widget.widget_recent_entries li,
+            .foot-top-wrap .widget.widget_recent_comments li,
+            .foot-top-wrap .widget.widget_meta li
+            '=> array(
+                'border-bottom'=> esc_attr( '1px solid ' . $footer_one_design_widget_content_border_color ),
             ),
         );
 
@@ -151,13 +147,66 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_two_design_widget_content_button_hover_color = ifb_get_mod( 'footer_two_design_widget_content_button_hover_color' );
 
         $footer_two_design_css = array(
-            '.classhere
+            '.footer-mid-sec .widget,
+            .footer-mid-sec .widget a,
+            .footer-mid-sec .widget ul li a,
+            .footer-mid-sec .widget_tag_cloud .tagcloud a,
+            .footer-mid-sec input[type="text"],
+            .footer-mid-sec input[type="email"],
+            .footer-mid-sec input[type="url"],
+            .footer-mid-sec input[type="password"],
+            .footer-mid-sec input[type="search"],
+            .footer-mid-sec input[type="number"],
+            .footer-mid-sec input[type="tel"],
+            .footer-mid-sec input[type="range"],
+            .footer-mid-sec input[type="date"],
+            .footer-mid-sec input[type="month"],
+            .footer-mid-sec input[type="week"],
+            .footer-mid-sec input[type="time"],
+            .footer-mid-sec input[type="datetime"],
+            .footer-mid-sec input[type="datetime-local"],
+            .footer-mid-sec input[type="color"],
+            .footer-mid-sec textarea,
+            .footer-mid-sec .textwidget p,
+            .footer-mid-sec .widget_recent_entries .post-date,
+            .footer-mid-sec .widget.widget_recent_comments li,
+            .footer-mid-sec .textwidget,
+            .footer-mid-sec .textwidget.custom-html-widget h4,
+            .footer-mid-sec .widget .gallery-caption,
+            .footer-mid-sec .calendar_wrap caption,
+            .footer-mid-sec form.search-form input[type="search"],
+            .footer-mid-sec .widget_product_search form input[type="search"],
+            .footer-mid-sec .widget_pages ul li .sub-menu>li>.sub-menu li:before,
+            .footer-mid-sec .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
+            .footer-mid-sec .widget select
             ' => array(
                 'color' => esc_attr( $footer_two_design_widget_content_color ),
             ),
-            '.classhere
+            '.footer-mid-sec .widget a:hover,
+            .footer-mid-sec .widget ul li a:hover,
+            .footer-mid-sec .widget_tag_cloud .tagcloud a:hover
             '=> array(
                 'color'=> esc_attr( $footer_two_design_widget_content_hover_color ),
+            ),
+            '.footer-mid-sec .widget_tag_cloud .tagcloud a
+            '=> array(
+                'background-color'=> esc_attr( $footer_two_design_widget_content_bg_color ),
+            ),
+            '.footer-mid-sec .widget_tag_cloud .tagcloud a:hover
+            '=> array(
+                'background-color'=> esc_attr( $footer_two_design_widget_content_bg_hover_color ),
+            ),
+            '.footer-mid-sec .calendar_wrap table th,
+            .footer-mid-sec .widget_tag_cloud .tagcloud a,
+            .footer-mid-sec .widget_product_tag_cloud .tagcloud a
+            '=> array(
+                'border'=> esc_attr( '1px solid ' . $footer_two_design_widget_content_border_color ),
+            ),
+            '.footer-mid-sec .widget.widget_recent_entries li,
+            .footer-mid-sec .widget.widget_recent_comments li,
+            .footer-mid-sec .widget.widget_meta li
+            '=> array(
+                'border-bottom'=> esc_attr( '1px solid ' . $footer_two_design_widget_content_border_color ),
             ),
         );
 
