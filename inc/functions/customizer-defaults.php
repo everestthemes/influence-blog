@@ -458,6 +458,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'blogpage_section_one_sidebar_col' => 3,
             'blogpage_section_one_sidebar_position' => 'right',
             'blogpage_section_one_widget_area_select' => 'influence-blog-sidebar',
+            'blogpage_section_one_pagination_toggle' => true,
             'blogpage_section_one_pagination_style' => 'one',
 
             //Footer - Footer one - General

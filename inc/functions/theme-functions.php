@@ -310,9 +310,9 @@ if( !function_exists( 'influence_blog_check_sidebar_position' ) ) {
 
 if( !function_exists( 'influence_blog_blogpage_get_sidebar' ) ) {
     /*
-    * Returns col value
+    * prints dynamic sidebar
     */
-    function influence_blog_blogpage_get_sidebar( $position, $area, $col, $check ) {
+    function influence_blog_blogpage_get_sidebar( $position, $area, $col, $sticky, $check ) {
 
         $pos = false;
 
@@ -321,6 +321,11 @@ if( !function_exists( 'influence_blog_blogpage_get_sidebar' ) ) {
         if( $pos == true ) {
 
             $col_class = influence_blog_col_value( $col, 'lg' );
+
+            if( $sticky ) {
+
+                $col_class .= ' sticky-portion';
+            }
 
             ?>
             <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
@@ -335,6 +340,32 @@ if( !function_exists( 'influence_blog_blogpage_get_sidebar' ) ) {
             </div><!--side-bar col-3-->
             <?php
         }
+    }
+}
+
+if( !function_exists( 'influence_blog_blogpage_container_class' ) ) {
+    /*
+    * Returns col value
+    */
+    function influence_blog_blogpage_container_class( $position, $col, $sticky ) {
+
+        $col_class = 'col-12 col-md-6 ';
+
+        if( $position != 'none' ) {
+
+            $col_class .= influence_blog_col_value( $col, 'lg' );
+
+        } else {
+
+            $col_class .= 'col-lg-12';
+        }
+
+        if( $sticky ) {
+
+            $col_class .= ' sticky-portion';
+        }
+
+        echo esc_attr( $col_class );
     }
 }
 
@@ -424,45 +455,186 @@ if ( !function_exists( 'influence_blog_navigation_fallback' ) ) {
     }
 }
 
+add_action('wp_ajax_loadmore', 'influence_blog_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'influence_blog_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
+function influence_blog_loadmore_ajax_handler() {
 
-add_action('wp_ajax_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
+	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
 
-function influence_blog_load_posts_by_ajax_callback() {
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
 
-    check_ajax_referer('load_more_posts', 'security');
+	if( have_posts() ) :
 
-    $paged = $_POST['page'];
+        ?>
+        <div id="content" class="row ifb-home-posts">
+        <?php
 
-    $args = array(
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'paged' => $paged,
-    );
+		// run the loop
+		while( have_posts() ): the_post();
 
-    $home_grid_posts_query = new WP_Query( $args );
+			get_template_part( 'template-parts/section-one/content/content', 'one' );
 
-    if ( $home_grid_posts_query->have_posts() ) :
-
-        while ( $home_grid_posts_query->have_posts() ) :
-
-            $home_grid_posts_query->the_post();
-
-            /*
-             * Include the Post-Format-specific template for the content.
-             * If you want to override this in a child theme, then include a file
-             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-             */
-
-            get_template_part( 'template-parts/content', 'home-grid' );
-
-        endwhile;
-
-    endif;
-
-    wp_die();
+		endwhile;
+        ?></div><?php
+        influence_blog_paginator( $_POST['first_page'] );
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
 }
+
+function influence_blog_paginator( $first_page_url ){
+
+	global $wp_query;
+
+	$first_page_url = untrailingslashit( $first_page_url );
+
+	$first_page_url_exploded = array();
+
+	$first_page_url_exploded = explode( "/?", $first_page_url );
+
+	$search_query = '';
+
+	if( isset( $first_page_url_exploded[ 1 ] ) ) {
+
+		$search_query = "/?" . $first_page_url_exploded[ 1 ];
+		$first_page_url = $first_page_url_exploded[ 0 ];
+	}
+
+	$posts_per_page = (int) $wp_query->query_vars[ 'posts_per_page' ];
+
+	$current_page = (int) $wp_query->query_vars[ 'paged' ];
+
+	$max_page = $wp_query->max_num_pages;
+
+	if( $max_page <= 1 ) {
+
+        return;
+    }
+
+	if( empty( $current_page ) || $current_page == 0 ) {
+
+        $current_page = 1;
+    }
+
+	$links_in_the_middle = 2;
+
+	$links_in_the_middle_minus_1 = $links_in_the_middle - 1;
+
+	$first_link_in_the_middle = $current_page - floor( $links_in_the_middle_minus_1 / 2 );
+
+	$last_link_in_the_middle = $current_page + ceil( $links_in_the_middle_minus_1 / 2 );
+
+	if( $first_link_in_the_middle <= 0 ) {
+
+        $first_link_in_the_middle = 1;
+    }
+
+	if( ( $last_link_in_the_middle - $first_link_in_the_middle ) != $links_in_the_middle_minus_1 ) {
+
+        $last_link_in_the_middle = $first_link_in_the_middle + $links_in_the_middle_minus_1;
+    }
+
+	if( $last_link_in_the_middle > $max_page ) {
+
+        $first_link_in_the_middle = $max_page - $links_in_the_middle_minus_1;
+
+        $last_link_in_the_middle = (int) $max_page;
+    }
+
+	if( $first_link_in_the_middle <= 0 ) {
+
+        $first_link_in_the_middle = 1;
+    }
+
+	// begin to generate HTML of the pagination
+	$pagination = '<div class="ifb-pagination"><div class="pagination-entry"><nav id="influence_blog_pagination" class="navigation pagination" role="navigation"><div class="nav-links">';
+
+	// when to display "..." and the first page before it
+	if ( $first_link_in_the_middle >= 2 && $links_in_the_middle < $max_page ) {
+
+		$pagination.= '<a href="'. $first_page_url . $search_query . '" class="page-numbers">1</a>'; // first page
+
+		if( $first_link_in_the_middle != 2 ) {
+
+			$pagination .= '<span class="page-numbers extend">...</span>';
+        }
+	}
+
+	for( $i = $first_link_in_the_middle; $i <= $last_link_in_the_middle; $i++ ) {
+
+		if( $i == $current_page ) {
+
+			$pagination.= '<span class="page-numbers current">'.$i.'</span>';
+
+		} else {
+
+			$pagination .= '<a href="'. $first_page_url . '/page/' . $i . $search_query .'" class="page-numbers">'.$i.'</a>';
+		}
+	}
+
+	if ( $last_link_in_the_middle < $max_page ) {
+
+		if( $last_link_in_the_middle != ( $max_page-1 ) ) {
+
+			$pagination .= '<span class="page-numbers extend">...</span>';
+        }
+
+		$pagination .= '<a href="'. $first_page_url . '/page/' . $max_page . $search_query .'" class="page-numbers">'. $max_page .'</a>';
+	}
+
+	// end HTML
+	$pagination.= "</div></nav></div></div>\n";
+
+	if( $current_page < $max_page ) {
+
+		$pagination.= '<div class="loadmore"><button id="influence_blog_loadmore" class="load-more-btn">' . esc_html__( 'Load More', 'influence-blog' ) . '<span class="load-more-icon"><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></span></button>';
+    }
+
+	// replace first page before printing it
+	echo str_replace( array( "/page/1?", "/page/1\"" ), array( "?", "\"" ), $pagination );
+}
+
+//add_action('wp_ajax_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
+//add_action('wp_ajax_nopriv_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
+//
+//function influence_blog_load_posts_by_ajax_callback() {
+//
+//    check_ajax_referer('load_more_posts', 'security');
+//
+//    $paged = $_POST['page'];
+//
+//    $args = array(
+//        'post_type' => 'post',
+//        'post_status' => 'publish',
+//        'paged' => $paged,
+//    );
+//
+//    $home_grid_posts_query = new WP_Query( $args );
+//
+//    if ( $home_grid_posts_query->have_posts() ) :
+//
+//        while ( $home_grid_posts_query->have_posts() ) :
+//
+//            $home_grid_posts_query->the_post();
+//
+//            /*
+//             * Include the Post-Format-specific template for the content.
+//             * If you want to override this in a child theme, then include a file
+//             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+//             */
+//
+//            get_template_part( 'template-parts/content', 'home-grid' );
+//
+//        endwhile;
+//
+//    endif;
+//
+//    wp_die();
+//}
 
 if( !function_exists( 'influence_blog_default_archive_widget' ) ) :
     /**

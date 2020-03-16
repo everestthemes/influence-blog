@@ -207,10 +207,6 @@ if ( ! function_exists( 'influence_blog_post_thumbnail' ) ) :
 
 		$display_featured_image = true;
 
-            if( is_home() ) {
-                $display_featured_image = ifb_get_mod( 'blog_page_display_featured_image', true );
-            }
-
             if( is_archive() ) {
                 $display_featured_image = ifb_get_mod( 'archive_page_display_featured_image', true );
             }

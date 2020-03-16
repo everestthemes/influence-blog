@@ -54,6 +54,7 @@ $button_one_array = array(
     'influence_blog_blogpage_section_one_sidebar_position' => array(),
     'influence_blog_blogpage_section_one_widget_area_select' => array(),
     'influence_blog_blogpage_section_one_pagination_heading' => array(),
+    'influence_blog_blogpage_section_one_pagination_toggle' => array(),
     'influence_blog_blogpage_section_one_pagination_style' => array(),
 );
 
@@ -529,9 +530,24 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'blogpage-section-one-pagination-heading' ),
-    'controls_to_wrap'         => 1,
+    'controls_to_wrap'         => 2,
     'expanded'                 => false,
     'priority'                 => 135,
+    'active_callback'          => 'influence_blog_is_blogpage_section_one_display_enable',
+) ) );
+
+/*---------------------------------- Blog page section one pagination toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_pagination_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'blogpage_section_one_pagination_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_blogpage_section_one_pagination_toggle', array(
+    'label'                    => esc_html__( 'Display', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-three',
+    'priority'                 => 140,
     'active_callback'          => 'influence_blog_is_blogpage_section_one_display_enable',
 ) ) );
 
@@ -547,6 +563,6 @@ $wp_customize->add_control( new Button_One_Control ( $wp_customize, 'influence_b
     'section'                  => $section,
     'type'                     => 'select',
     'choices' 		           => $pagination_style,
-    'priority'                 => 140,
-    'active_callback'          => 'influence_blog_is_blogpage_section_one_display_enable',
+    'priority'                 => 145,
+    'active_callback'          => 'influence_blog_is_blogpage_section_one_pagination_enable',
 ) ) );
