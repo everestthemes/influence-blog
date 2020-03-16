@@ -464,31 +464,30 @@ function influence_blog_load_posts_by_ajax_callback() {
     wp_die();
 }
 
+if( !function_exists( 'influence_blog_default_archive_widget' ) ) :
+    /**
+    * Filter for default archive widget
+    */
+    function influence_blog_default_archive_widget($links) {
 
-/**
-* Filter for default archive widget
-*/
-
-function influence_blog_default_archive_widget($links) {
-
-    $links = str_replace('</a>&nbsp;(', '</a> <span class="count">(', $links);
-    $links = str_replace(')', ')</span>', $links);
-    return $links;
-}
-
+        $links = str_replace('</a>&nbsp;(', '</a> <span class="count">(', $links);
+        $links = str_replace(')', ')</span>', $links);
+        return $links;
+    }
+endif;
 add_filter('get_archives_link', 'influence_blog_default_archive_widget');
 
+if( !function_exists( 'influence_blog_cat_count_span' ) ) :
+    /**
+     * Filter the default categories widget
+     */
+    function influence_blog_cat_count_span( $links ) {
 
-/**
- * Filter the default categories widget
- */
-
-function influence_blog_cat_count_span( $links ) {
-
-    $links = str_replace( '</a> (', '</a><span class="count">(', $links );
-    $links = str_replace( ')', ')</span>', $links );
-    return $links;
-}
+        $links = str_replace( '</a> (', '</a><span class="count">(', $links );
+        $links = str_replace( ')', ')</span>', $links );
+        return $links;
+    }
+endif;
 add_filter( 'wp_list_categories', 'influence_blog_cat_count_span' );
 
 /*
