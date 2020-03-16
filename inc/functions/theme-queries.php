@@ -82,37 +82,56 @@ if( !function_exists( 'influence_blog_banner_posts_query' ) ) {
 
 
 /**
- * Homepage Block Layout Posts Query
+ * Blogpage Posts Query
  */
-if( !function_exists( 'influence_blog_homepage_block_layout_posts_query' ) ) {
+if( !function_exists( 'influence_blog_blogpage_posts_query' ) ) {
 
-    function influence_blog_homepage_block_layout_posts_query() {
+    function influence_blog_blogpage_posts_query( $cat, $order, $sort, $num ) {
 
-        $homepage_block_category = ifb_get_mod( 'blog_page_grid_three_col_layout_category', '' );
-
-        $homepage_block_post_type = ifb_get_mod( 'blog_page_grid_three_col_layout_post_type', 'recent_posts' );
-
-        $homepage_block_posts_no = ifb_get_mod( 'blog_page_grid_three_col_layout_post_number', 3 );
-
-        $homepage_block_args = array(
-          'post_type'      => 'post',
+        $query_args = array(
+            'post_type'      => 'post',
+            'paged'          => get_query_var( 'paged' ),
         );
 
-        if( !empty( $homepage_block_category ) ) {
-            $homepage_block_args['category_name'] = $homepage_block_category;
+        if( !empty( $cat ) ) {
+
+            if( is_array( $cat ) ) {
+
+                $query_args['category_name'] = implode( ',', $cat );
+
+            } else {
+
+                $query_args['category_name'] = $cat;
+            }
         }
 
-        if( $homepage_block_post_type == 'popular_posts' ) {
+        if( !empty( $order ) ) {
 
-            $homepage_block_args['orderby'] = 'comment_count';
+            $query_args['orderby'] = $order;
+
+        } else {
+
+            $query_args['orderby'] = esc_html( 'date' );
+
         }
 
-        if( !empty( $homepage_block_posts_no ) ) {
-            $homepage_block_args['posts_per_page'] = absint( $homepage_block_posts_no );
+        if( !empty( $sort ) ) {
+
+            $query_args['order'] = $sort;
+
+        } else {
+
+            $query_args['order'] = esc_html( 'desc' );
+
         }
 
-        $homepage_block_query = new WP_Query( $homepage_block_args );
+        if( !empty( $num ) ) {
 
-        return $homepage_block_query;
+            $query_args['posts_per_page'] = absint( $num );
+        }
+
+        $post_query = new WP_Query( $query_args );
+
+        return $post_query;
     }
 }

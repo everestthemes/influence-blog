@@ -305,6 +305,24 @@ function influence_blog_scripts() {
 
     wp_enqueue_script( 'influence-blog-main', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'js/main.js', array( 'jquery' ), IFB_VERSION, true );
 
+    if( ! is_singular() ) {
+
+        global $wp_query;
+
+        wp_register_script( 'influence-blog-ajax-script', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'js/ajax-script.js', array( 'jquery' ), IFB_VERSION, true );
+
+        wp_localize_script( 'influence-blog-ajax-script', 'influence_blog_obj', array(
+
+            'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+            'posts' => json_encode( $wp_query->query_vars ),
+            'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
+            'max_page' => $wp_query->max_num_pages,
+            'first_page' => get_pagenum_link(1)
+        ) );
+
+        wp_enqueue_script( 'influence-blog-ajax-script' );
+    }
+
 	wp_enqueue_script( 'influence-blog-navigation', IFB_EVERESTTHEMES_ASSETS_PATH_URI . '/js/navigation.js', array(), IFB_VERSION, true );
 
 	wp_enqueue_script( 'influence-blog-skip-link-focus-fix', IFB_EVERESTTHEMES_ASSETS_PATH_URI . '/js/skip-link-focus-fix.js', array(), IFB_VERSION, true );

@@ -507,6 +507,8 @@ if( ! function_exists( 'influence_blog_banner_action' ) ) :
 
                 get_template_part( 'template-parts/banner/banner', $banner_layout );
             }
+
+            $banner_template = apply_filters( 'influence_blog_banner_layout_template', $banner_layout );
         }
     }
 endif;
@@ -565,22 +567,33 @@ if( ! function_exists( 'influence_blog_blogpage_section_one_action' ) ) :
 
         $sidebar_area = ifb_get_mod( 'blogpage_section_one_widget_area_select' );
 
+        $content_col = ifb_get_mod( 'blogpage_section_one_content_col' );
+
+        $sticky = apply_filters( 'influence_blog_section_one_sticky_status', false );
+
         ?>
         <div id="section-one" class="half-widget-area">
             <div class="half-widget-area-inner lrg-padding">
                 <div class="container">
                     <div class="row">
-                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, 'left' ); ?>
-                        <div class="<?php influence_blog_main_container_class(); ?>">
+                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, $sticky, 'left' ); ?>
+                        <div class="<?php influence_blog_blogpage_container_class( $sidebar_position, $content_col, $sticky ); ?>">
                             <aside id="primary" class="primary-widget-area">
                                 <?php
 
-                                influence_blog_post_listing_layout_template();
+                                $section_one_layout = ifb_get_mod( 'blogpage_section_one_layout_select' );
+
+                                if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
+
+                                    get_template_part( 'template-parts/section-one/layout/layout', $section_one_layout );
+                                }
+
+                                $section_one_template = apply_filters( 'influence_blog_section_one_layout_template', $section_one_layout );
 
                                 ?>
                             </aside>
                         </div><!--//col-12 col-md-6 col-lg-9-->
-                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, 'right' ); ?>
+                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, $sticky, 'right' ); ?>
                     </div><!--//row-->
                 </div><!--//container-->
             </div><!--//half-widget-area-->
