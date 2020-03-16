@@ -14,9 +14,9 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Load Widgets.
  */
-require IFB_INC_WIDGETS_PATH . 'ifb-author-widget.php';
-require IFB_INC_WIDGETS_PATH . 'ifb-fullwidth-post-widget.php';
-require IFB_INC_WIDGETS_PATH . 'ifb-sidebar-post-widget.php';
+require INFLUENCE_BLOG_INC_WIDGETS_PATH . 'ifb-author-widget.php';
+require INFLUENCE_BLOG_INC_WIDGETS_PATH . 'ifb-fullwidth-post-widget.php';
+require INFLUENCE_BLOG_INC_WIDGETS_PATH . 'ifb-sidebar-post-widget.php';
 
 function influence_blog_custom_widgets_init() {
 }

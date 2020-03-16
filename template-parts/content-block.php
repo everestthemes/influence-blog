@@ -15,7 +15,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 if( is_home() ) {
     
-    $display_category = ifb_get_mod( 'display_blog_page_grid_three_col_layout_category', true );
+    $display_category = infb_blog_get_mod( 'display_blog_page_grid_three_col_layout_category', true );
     
     ?>
     <div class="col-12 col-lg-4">

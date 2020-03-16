@@ -26,10 +26,10 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         /*---------------------------------- Design Section -----------------------------------*/
 
-        $header_three_design_sub_menu_color = ifb_get_mod( 'header_three_design_sub_menu_color' );
-        $header_three_design_sub_menu_hover_color = ifb_get_mod( 'header_three_design_sub_menu_hover_color' );
-        $header_three_design_sub_menu_bg_color = ifb_get_mod( 'header_three_design_sub_menu_bg_color' );
-        $header_three_design_main_menu_bg_color = ifb_get_mod( 'header_three_design_main_menu_bg_color' );
+        $header_three_design_sub_menu_color = infb_blog_get_mod( 'header_three_design_sub_menu_color' );
+        $header_three_design_sub_menu_hover_color = infb_blog_get_mod( 'header_three_design_sub_menu_hover_color' );
+        $header_three_design_sub_menu_bg_color = infb_blog_get_mod( 'header_three_design_sub_menu_bg_color' );
+        $header_three_design_main_menu_bg_color = infb_blog_get_mod( 'header_three_design_main_menu_bg_color' );
         $typo_header_three_design_main_menu_font_weight = influence_blog_get_font_data( 'typo_header_three_design_main_menu_font', 'fontweight' );
 
         $header_three_design_css = array(
@@ -58,13 +58,13 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         /*---------------------------------- Design Section -----------------------------------*/
 
-        $footer_one_design_widget_content_color = ifb_get_mod( 'footer_one_design_widget_content_color' );
-        $footer_one_design_widget_content_hover_color = ifb_get_mod( 'footer_one_design_widget_content_hover_color' );
-        $footer_one_design_widget_content_bg_color = ifb_get_mod( 'footer_one_design_widget_content_bg_color' );
-        $footer_one_design_widget_content_bg_hover_color = ifb_get_mod( 'footer_one_design_widget_content_bg_hover_color' );
-        $footer_one_design_widget_content_border_color = ifb_get_mod( 'footer_one_design_widget_content_border_color' );
-        $footer_one_design_widget_content_button_color = ifb_get_mod( 'footer_one_design_widget_content_button_color' );
-        $footer_one_design_widget_content_button_hover_color = ifb_get_mod( 'footer_one_design_widget_content_button_hover_color' );
+        $footer_one_design_widget_content_color = infb_blog_get_mod( 'footer_one_design_widget_content_color' );
+        $footer_one_design_widget_content_hover_color = infb_blog_get_mod( 'footer_one_design_widget_content_hover_color' );
+        $footer_one_design_widget_content_bg_color = infb_blog_get_mod( 'footer_one_design_widget_content_bg_color' );
+        $footer_one_design_widget_content_bg_hover_color = infb_blog_get_mod( 'footer_one_design_widget_content_bg_hover_color' );
+        $footer_one_design_widget_content_border_color = infb_blog_get_mod( 'footer_one_design_widget_content_border_color' );
+        $footer_one_design_widget_content_button_color = infb_blog_get_mod( 'footer_one_design_widget_content_button_color' );
+        $footer_one_design_widget_content_button_hover_color = infb_blog_get_mod( 'footer_one_design_widget_content_button_hover_color' );
 
         $footer_one_design_css = array(
             '.foot-top-wrap .widget_archive>ul>li a,
@@ -161,13 +161,13 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         /*---------------------------------- Design Section -----------------------------------*/
 
-        $footer_two_design_widget_content_color = ifb_get_mod( 'footer_two_design_widget_content_color' );
-        $footer_two_design_widget_content_hover_color = ifb_get_mod( 'footer_two_design_widget_content_hover_color' );
-        $footer_two_design_widget_content_bg_color = ifb_get_mod( 'footer_two_design_widget_content_bg_color' );
-        $footer_two_design_widget_content_bg_hover_color = ifb_get_mod( 'footer_two_design_widget_content_bg_hover_color' );
-        $footer_two_design_widget_content_border_color = ifb_get_mod( 'footer_two_design_widget_content_border_color' );
-        $footer_two_design_widget_content_button_color = ifb_get_mod( 'footer_two_design_widget_content_button_color' );
-        $footer_two_design_widget_content_button_hover_color = ifb_get_mod( 'footer_two_design_widget_content_button_hover_color' );
+        $footer_two_design_widget_content_color = infb_blog_get_mod( 'footer_two_design_widget_content_color' );
+        $footer_two_design_widget_content_hover_color = infb_blog_get_mod( 'footer_two_design_widget_content_hover_color' );
+        $footer_two_design_widget_content_bg_color = infb_blog_get_mod( 'footer_two_design_widget_content_bg_color' );
+        $footer_two_design_widget_content_bg_hover_color = infb_blog_get_mod( 'footer_two_design_widget_content_bg_hover_color' );
+        $footer_two_design_widget_content_border_color = infb_blog_get_mod( 'footer_two_design_widget_content_border_color' );
+        $footer_two_design_widget_content_button_color = infb_blog_get_mod( 'footer_two_design_widget_content_button_color' );
+        $footer_two_design_widget_content_button_hover_color = infb_blog_get_mod( 'footer_two_design_widget_content_button_hover_color' );
 
         $footer_two_design_css = array(
             '.footer-mid-sec .widget,
@@ -237,30 +237,30 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
 
         /*---------------------------------- Advance Section -----------------------------------*/
 
-        $footer_two_advance_toggle = ifb_get_mod( 'footer_two_advance_toggle' );
+        $footer_two_advance_toggle = infb_blog_get_mod( 'footer_two_advance_toggle' );
 
         if( $footer_two_advance_toggle ) {
 
-            $footer_two_title_advance_d_m_top = ifb_get_mod( 'footer_two_title_advance_d_m_top' );
-            $footer_two_title_advance_d_m_right = ifb_get_mod( 'footer_two_title_advance_d_m_right' );
-            $footer_two_title_advance_d_m_bottom = ifb_get_mod( 'footer_two_title_advance_d_m_bottom' );
-            $footer_two_title_advance_d_m_left = ifb_get_mod( 'footer_two_title_advance_d_m_left' );
+            $footer_two_title_advance_d_m_top = infb_blog_get_mod( 'footer_two_title_advance_d_m_top' );
+            $footer_two_title_advance_d_m_right = infb_blog_get_mod( 'footer_two_title_advance_d_m_right' );
+            $footer_two_title_advance_d_m_bottom = infb_blog_get_mod( 'footer_two_title_advance_d_m_bottom' );
+            $footer_two_title_advance_d_m_left = infb_blog_get_mod( 'footer_two_title_advance_d_m_left' );
 
-            $footer_two_title_advance_d_p_top = ifb_get_mod( 'footer_two_title_advance_d_p_top' );
-            $footer_two_title_advance_d_p_right = ifb_get_mod( 'footer_two_title_advance_d_p_right' );
-            $footer_two_title_advance_d_p_bottom = ifb_get_mod( 'footer_two_title_advance_d_p_bottom' );
-            $footer_two_title_advance_d_p_left = ifb_get_mod( 'footer_two_title_advance_d_p_left' );
-            $footer_two_title_advance_border = ifb_get_mod( 'footer_two_title_advance_border' );
+            $footer_two_title_advance_d_p_top = infb_blog_get_mod( 'footer_two_title_advance_d_p_top' );
+            $footer_two_title_advance_d_p_right = infb_blog_get_mod( 'footer_two_title_advance_d_p_right' );
+            $footer_two_title_advance_d_p_bottom = infb_blog_get_mod( 'footer_two_title_advance_d_p_bottom' );
+            $footer_two_title_advance_d_p_left = infb_blog_get_mod( 'footer_two_title_advance_d_p_left' );
+            $footer_two_title_advance_border = infb_blog_get_mod( 'footer_two_title_advance_border' );
 
-            $footer_two_social_links_advance_d_m_top = ifb_get_mod( 'footer_two_social_links_advance_d_m_top' );
-            $footer_two_social_links_advance_d_m_right = ifb_get_mod( 'footer_two_social_links_advance_d_m_right' );
-            $footer_two_social_links_advance_d_m_bottom = ifb_get_mod( 'footer_two_social_links_advance_d_m_bottom' );
-            $footer_two_social_links_advance_d_m_left = ifb_get_mod( 'footer_two_social_links_advance_d_m_left' );
+            $footer_two_social_links_advance_d_m_top = infb_blog_get_mod( 'footer_two_social_links_advance_d_m_top' );
+            $footer_two_social_links_advance_d_m_right = infb_blog_get_mod( 'footer_two_social_links_advance_d_m_right' );
+            $footer_two_social_links_advance_d_m_bottom = infb_blog_get_mod( 'footer_two_social_links_advance_d_m_bottom' );
+            $footer_two_social_links_advance_d_m_left = infb_blog_get_mod( 'footer_two_social_links_advance_d_m_left' );
 
-            $footer_two_social_links_advance_d_p_top = ifb_get_mod( 'footer_two_social_links_advance_d_p_top' );
-            $footer_two_social_links_advance_d_p_right = ifb_get_mod( 'footer_two_social_links_advance_d_p_right' );
-            $footer_two_social_links_advance_d_p_bottom = ifb_get_mod( 'footer_two_social_links_advance_d_p_bottom' );
-            $footer_two_social_links_advance_d_p_left = ifb_get_mod( 'footer_two_social_links_advance_d_p_left' );
+            $footer_two_social_links_advance_d_p_top = infb_blog_get_mod( 'footer_two_social_links_advance_d_p_top' );
+            $footer_two_social_links_advance_d_p_right = infb_blog_get_mod( 'footer_two_social_links_advance_d_p_right' );
+            $footer_two_social_links_advance_d_p_bottom = infb_blog_get_mod( 'footer_two_social_links_advance_d_p_bottom' );
+            $footer_two_social_links_advance_d_p_left = infb_blog_get_mod( 'footer_two_social_links_advance_d_p_left' );
 
             $footer_two_advance_css = array(
                 '.footer-mid-sec .contact-info .foo-mid-title .s-title' => array(

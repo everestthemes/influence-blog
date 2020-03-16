@@ -6,34 +6,34 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_PATH' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_PATH' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_PATH', IFB_PATH . 'everestthemes/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_PATH', INFLUENCE_BLOG_PATH . 'everestthemes/' );
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_PATH_URI' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_PATH_URI' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_PATH_URI', IFB_PATH_URI . 'everestthemes/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_PATH_URI', INFLUENCE_BLOG_PATH_URI . 'everestthemes/' );
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_ADMIN_PATH' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_ADMIN_PATH', IFB_EVERESTTHEMES_PATH . 'admin/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH', INFLUENCE_BLOG_EVERESTTHEMES_PATH . 'admin/' );
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_ADMIN_PATH_URI' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_ADMIN_PATH_URI', IFB_EVERESTTHEMES_PATH_URI . 'admin/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI', INFLUENCE_BLOG_EVERESTTHEMES_PATH_URI . 'admin/' );
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_ASSETS_PATH' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_ASSETS_PATH', IFB_EVERESTTHEMES_PATH . 'assets/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH', INFLUENCE_BLOG_EVERESTTHEMES_PATH . 'assets/' );
 }
 
-if( !defined( 'IFB_EVERESTTHEMES_ASSETS_PATH_URI' ) ) {
+if( !defined( 'INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI' ) ) {
 
-    define( 'IFB_EVERESTTHEMES_ASSETS_PATH_URI', IFB_EVERESTTHEMES_PATH_URI . 'assets/' );
+    define( 'INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI', INFLUENCE_BLOG_EVERESTTHEMES_PATH_URI . 'assets/' );
 }
 
 if ( ! function_exists( 'influence_blog_setup' ) ) :
@@ -56,7 +56,7 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 		 * If you're building a theme based on Influence Blog, use a find and replace
 		 * to change 'influence-blog' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'influence-blog', IFB_PATH . 'languages' );
+		load_theme_textdomain( 'influence-blog', INFLUENCE_BLOG_PATH . 'languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -240,9 +240,9 @@ function influence_blog_admin_enqueue_script() {
 
 	wp_enqueue_media();
 
-    wp_enqueue_style( 'influence-blog-admin-style', IFB_EVERESTTHEMES_ADMIN_PATH_URI .'css/influence-blog-admin-style.css' );
+    wp_enqueue_style( 'influence-blog-admin-style', INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI .'css/influence-blog-admin-style.css' );
 
-    wp_enqueue_script( 'influence-blog-admin-script', IFB_EVERESTTHEMES_ADMIN_PATH_URI . 'js/influence-blog-admin-script.js', array( 'jquery' ), IFB_VERSION, true );
+    wp_enqueue_script( 'influence-blog-admin-script', INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI . 'js/influence-blog-admin-script.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'influence_blog_admin_enqueue_script', 5 );
 
@@ -264,52 +264,52 @@ function influence_blog_scripts() {
     if ( $google_fonts_url ) {
         if ( !( in_array( $body_font_family, $system_stack ) && in_array( $heading_font_family, $system_stack ) ) ) {
 
-            wp_enqueue_style( 'influence-blog-google-fonts', $google_fonts_url, false, IFB_VERSION, 'all' );
+            wp_enqueue_style( 'influence-blog-google-fonts', $google_fonts_url, false, INFLUENCE_BLOG_VERSION, 'all' );
         }
 
     } else {
 
         if ( !( in_array( $body_font_family, $system_stack ) && in_array( $heading_font_family, $system_stack ) ) ) {
 
-            wp_enqueue_style( 'influence-blog-google-fonts', influence_blog_default_fonts(), array(), IFB_VERSION );
+            wp_enqueue_style( 'influence-blog-google-fonts', influence_blog_default_fonts(), array(), INFLUENCE_BLOG_VERSION );
         }
     }
 
-    wp_enqueue_style( 'influence-blog-reset', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/reset.css' );
+    wp_enqueue_style( 'influence-blog-reset', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/reset.css' );
 
-    wp_enqueue_style( 'bootstrap', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/bootstrap.min.css' );
+    wp_enqueue_style( 'bootstrap', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/bootstrap.min.css' );
 
-     wp_enqueue_script( 'influence-blog-theia-sticky-sidebar', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'js/theia-sticky-sidebar.js', array( 'jquery' ), IFB_VERSION, true );
+     wp_enqueue_script( 'influence-blog-theia-sticky-sidebar', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'js/theia-sticky-sidebar.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 
-    wp_enqueue_style( 'font-awesome', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/font-awesome.min.css' );
 
-    wp_enqueue_style( 'slick', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.css' );
+    wp_enqueue_style( 'slick', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.css' );
 
-    wp_enqueue_style( 'influence-blog-main-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/main-style.css' );
+    wp_enqueue_style( 'influence-blog-main-style', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/main-style.css' );
 
     wp_add_inline_style( 'influence-blog-main-style', apply_filters( 'influence_blog_dynamic_main_style', influence_blog_dynamic_main_style() ) );
 
-    wp_enqueue_style( 'influence-blog-default-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/default-style.css' );
+    wp_enqueue_style( 'influence-blog-default-style', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/default-style.css' );
 
     wp_add_inline_style( 'influence-blog-default-style', apply_filters( 'influence_blog_dynamic_default_style', influence_blog_dynamic_default_style() ) );
 
-    wp_enqueue_style( 'influence-blog-gutenberg-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/gutenberg-style.css' );
+    wp_enqueue_style( 'influence-blog-gutenberg-style', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/gutenberg-style.css' );
 
     wp_add_inline_style( 'influence-blog-gutenberg-style', apply_filters( 'influence_blog_dynamic_gutenberg_style', influence_blog_dynamic_gutenberg_style() ) );
 
-    wp_enqueue_style( 'influence-blog-responsive-style', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'css/responsive.css' );
+    wp_enqueue_style( 'influence-blog-responsive-style', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'css/responsive.css' );
 
     wp_add_inline_style( 'influence-blog-responsive-style', apply_filters( 'influence_blog_dynamic_responsive_style', influence_blog_dynamic_responsive_style() ) );
 
-    wp_enqueue_script( 'slick', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.min.js', array( 'jquery' ), IFB_VERSION, true );
+    wp_enqueue_script( 'slick', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'library/slick/slick.min.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 
-    wp_enqueue_script( 'influence-blog-main', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'js/main.js', array( 'jquery' ), IFB_VERSION, true );
+    wp_enqueue_script( 'influence-blog-main', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'js/main.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 
     if( ! is_singular() ) {
 
         global $wp_query;
 
-        wp_register_script( 'influence-blog-ajax-script', IFB_EVERESTTHEMES_ASSETS_PATH_URI . 'js/ajax-script.js', array( 'jquery' ), IFB_VERSION, true );
+        wp_register_script( 'influence-blog-ajax-script', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'js/ajax-script.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 
         wp_localize_script( 'influence-blog-ajax-script', 'influence_blog_obj', array(
 
@@ -323,9 +323,9 @@ function influence_blog_scripts() {
         wp_enqueue_script( 'influence-blog-ajax-script' );
     }
 
-	wp_enqueue_script( 'influence-blog-navigation', IFB_EVERESTTHEMES_ASSETS_PATH_URI . '/js/navigation.js', array(), IFB_VERSION, true );
+	wp_enqueue_script( 'influence-blog-navigation', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . '/js/navigation.js', array(), INFLUENCE_BLOG_VERSION, true );
 
-	wp_enqueue_script( 'influence-blog-skip-link-focus-fix', IFB_EVERESTTHEMES_ASSETS_PATH_URI . '/js/skip-link-focus-fix.js', array(), IFB_VERSION, true );
+	wp_enqueue_script( 'influence-blog-skip-link-focus-fix', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . '/js/skip-link-focus-fix.js', array(), INFLUENCE_BLOG_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

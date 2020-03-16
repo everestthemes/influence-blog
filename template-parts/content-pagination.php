@@ -13,11 +13,11 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-$display_blog_page_pagination = ifb_get_mod( 'display_blog_page_pagination', true );
+$display_blog_page_pagination = infb_blog_get_mod( 'display_blog_page_pagination', true );
 
 if( $display_blog_page_pagination == true ) {
 
-    $blog_page_pagination_type = ifb_get_mod( 'blog_page_pagination_type', 'default' );
+    $blog_page_pagination_type = infb_blog_get_mod( 'blog_page_pagination_type', 'default' );
 
     switch ( $blog_page_pagination_type ) {
 
