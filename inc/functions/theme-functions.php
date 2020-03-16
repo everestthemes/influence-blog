@@ -418,6 +418,31 @@ function influence_blog_load_posts_by_ajax_callback() {
 }
 
 
+/**
+* Filter for default archive widget
+*/
+
+function influence_blog_default_archive_widget($links) {
+
+    $links = str_replace('</a>&nbsp;(', '</a> <span class="count">(', $links);
+    $links = str_replace(')', ')</span>', $links);
+    return $links;
+}
+
+add_filter('get_archives_link', 'influence_blog_default_archive_widget');
+
+
+/**
+ * Filter the default categories widget
+ */
+
+function influence_blog_cat_count_span( $links ) {
+
+    $links = str_replace( '</a> (', '</a><span class="count">(', $links );
+    $links = str_replace( ')', ')</span>', $links );
+    return $links;
+}
+add_filter( 'wp_list_categories', 'influence_blog_cat_count_span' );
 
 /*
  * Hook - Plugin Recommendation
