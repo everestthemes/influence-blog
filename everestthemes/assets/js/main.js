@@ -152,9 +152,6 @@ $('.banner-img-wrap').slick({
 });
   
 });
-
-});
-
  //Show or hide the button
     $(window).scroll(function() {
         if ($(this).scrollTop() > 300) {
@@ -163,6 +160,10 @@ $('.banner-img-wrap').slick({
             $('.scrollup').fadeOut(1000);
         }
     });
+
+});
+
+
 
 })(jQuery);
 
