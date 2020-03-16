@@ -950,6 +950,10 @@ span.sub-toggle.open {
 .banner-caption .m-title {
     font-family: 'Lobster', cursive;
     letter-spacing: 5px;
+    color: white;
+}
+.banner-caption  p{
+    color: white;
 }
 
 .banner-caption .sub-title {
@@ -1056,6 +1060,37 @@ span.sub-toggle.open {
     color: #fff;
 }
 
+
+
+.post-categories {
+    margin-bottom: 10px;
+}
+.post-categories li, .primary-content-area .sub-cate .post-categories li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.post-categories li a {
+    background-color: #e9b105;
+    padding: 1px 8px;
+    display: inline-block;
+    position: relative;
+    font-size: 11px;
+    color: #ffffff;
+}
+.post-categories li a:before {
+    position: absolute;
+    content: '';
+    background-color: #e9b105;
+    height: 4px;
+    width: 8px;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s ease all;
+}
+.post-categories li a:hover:before {
+    right: -1px;
+}
 /* ***primary-widget-area *** */
 .primary-widget-area .widget-area-entry {
     position: relative;
@@ -2263,6 +2298,7 @@ Single-post layout-1
 .post-navigation .nav-links .nav-previous a {
     display: block;
     margin-top: 15px;
+    word-break: break-all;
 
 }
 
@@ -2911,10 +2947,14 @@ Single-post layout-1
     left: 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, rgba(233, 177, 5, 0.7)), to(#233, 177, 5, 1));
     background-image: linear-gradient(180deg, transparent 0%, rgba(233, 177, 5, 0.7) 40%, #e9b105 100%);
+    
 }
-
+.banner-wrapper .banner-caption  p{
+   color: white; 
+}
 .banner-wrapper .banner-caption .m-title {
     font-size: 30px;
+    color: white;
 }
 
 .banner-wrapper .banner-caption .m-title a {

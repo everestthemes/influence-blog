@@ -1,6 +1,3 @@
-
-
-
 /*================================= 
 
 Wordpress Default Style Here 
@@ -12,6 +9,10 @@ Wordpress Default Style Here
     margin-bottom: 60px;
     background-color: #fff;
     padding: 5px;
+}
+
+.secondary-widget-area .widget ul li {
+    margin-bottom: 0;
 }
 
 .widget a,
@@ -60,7 +61,7 @@ Wordpress Default Style Here
 .widget_nav_menu ul.sub-menu,
 .widget_product_categories ul.children {
 
-    padding-top: 15px;
+    padding-top: 0;
     margin-top: 15px;
 }
 
@@ -94,7 +95,7 @@ Wordpress Default Style Here
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 15px 0;
+    padding: 10px 0;
     position: relative;
 }
 
@@ -153,6 +154,7 @@ Wordpress Default Style Here
 .widget_product_categories ul li a,
 .woocommerce-widget-layered-nav ul li a {
 
+    order: 1;
     border: none;
     color: #183244;
 }
@@ -167,16 +169,6 @@ Wordpress Default Style Here
     background-color: transparent;
     color: #e9b105;
 }
-
-.widget_product_categories ul.children li a::before {
-
-    content: '\f105';
-    font-family: 'fontAwesome';
-    display: inline-block;
-    margin-right: 10px;
-}
-
-
 
 .widget_pages ul li::before,
 .widget_nav_menu ul li::before,
@@ -194,8 +186,6 @@ Wordpress Default Style Here
 .widget_pages ul li .sub-menu>li>.sub-menu li,
 .widget_nav_menu ul li .sub-menu>li>.sub-menu li {
     position: relative;
-    padding-left: 20px;
-
 }
 
 .widget_pages ul li .sub-menu>li>.sub-menu li:first-child:before,
@@ -203,36 +193,14 @@ Wordpress Default Style Here
     top: 3px;
 }
 
-.widget_pages ul li .sub-menu>li>.sub-menu li:before,
-.widget_nav_menu ul li .sub-menu>li>.sub-menu li:before {
-    position: absolute;
-    content: '\f101';
-    font-family: FontAwesome;
-    left: 0px;
-    top: 15px;
-    color: #183244;
-}
-
 .widget_archive ul li,
 .widget_categories ul li,
 .widget_product_categories ul li {
     position: relative;
-    padding-left: 20px;
-}
-
-.widget_archive ul li::before,
-.widget_categories ul li::before,
-.widget_product_categories ul li::before {
-    position: absolute;
-    content: '\f105';
-    font-family: FontAwesome;
-    left: 0px;
-    top: 15px;
-    color: #183244;
+    padding-left: 0px;
 }
 
 .widget_archive ul li:first-child::before,
-.widget_categories ul li:first-child::before,
 .widget_product_categories ul li:first-child::before {
     top: 3px;
 }
@@ -275,6 +243,19 @@ Wordpress Default Style Here
     margin-left: 15px;
 }
 
+.widget_pages ul li ul,
+.widget_nav_menu ul li ul {
+    margin-left: 5px;
+}
+
+.widget_pages ul li ul:nth-child(1),
+.widget_pages ul li ul:nth-child(2),
+.widget_pages ul li ul:nth-child(3),
+.widget_pages ul li ul:nth-child(4),
+.widget_pages ul li ul:nth-child(5) {
+    margin-left: 15px;
+}
+
 
 .widget.widget_recent_entries li,
 .widget.widget_recent_comments li,
@@ -283,7 +264,6 @@ Wordpress Default Style Here
     line-height: 1.3;
     display: table;
     width: 100%;
-    margin-bottom: 12px;
     padding-bottom: 13px;
     border-bottom: 1px solid #eee;
 }
@@ -313,19 +293,20 @@ Wordpress Default Style Here
 
 .widget_tag_cloud .tagcloud a,
 .widget_product_tag_cloud .tagcloud a {
-    text-transform: uppercase;
     background: #fff;
     color: #183244;
     padding: 5px 12px;
     margin-right: 1px;
     margin-bottom: 5px;
-    display: inline-block;
+    display: flex;
+    flex: 1;
+    margin: 5px;
     border: 1px solid #eee;
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     outline: none;
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 .widget_tag_cloud .tagcloud a:hover,
@@ -373,6 +354,14 @@ Wordpress Default Style Here
 .widget_recent_comments ul li a {
 
     margin-left: 5px !important;
+}
+
+.comment-content h1,
+.comment-content h2,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5 {
+    margin-top: 15px;
 }
 
 /* Category widget**********************************/
@@ -434,7 +423,7 @@ input[type="color"],
 textarea {
     color: #183244;
     border: 1px solid #eee;
-    padding: 10px 43px 10px 15px;
+    padding: 6px 43px 6px 15px;
     -webkit-appearance: textfield;
     background: transparent;
 }
@@ -859,6 +848,10 @@ form.search-form button[type="search"]:focus,
     color: white;
 }
 
+.foot-top-wrap .widget ul li {
+    margin-bottom: 0;
+}
+
 .foot-top-wrap .widget a,
 .foot-top-wrap .widget ul li a,
 .foot-top-wrap .widget_tag_cloud .tagcloud a {
@@ -878,7 +871,6 @@ form.search-form button[type="search"]:focus,
     font-weight: 500;
     font-family: Lato, sans-serif;
     margin-bottom: 15px;
-    background-color: transparent;
     color: #fff;
     padding: 5px;
 }
@@ -899,7 +891,6 @@ form.search-form button[type="search"]:focus,
 .foot-top-wrap input[type="datetime-local"],
 .foot-top-wrap input[type="color"],
 .foot-top-wrap textarea,
-.foot-top-wrap .foot-top-border .side-tt .s-title,
 .foot-top-wrap .textwidget p,
 .foot-top-wrap .widget_recent_entries .post-date,
 .foot-top-wrap .widget.widget_recent_comments li,
@@ -913,7 +904,6 @@ form.search-form button[type="search"]:focus,
 .foot-top-wrap .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
 .foot-top-wrap .widget select {
     color: white;
-    font-weight: 400;
 }
 
 .foot-top-wrap .widget_tag_cloud .tagcloud a {
@@ -924,31 +914,47 @@ form.search-form button[type="search"]:focus,
     color: #183244;
 }
 
+.foot-top-wrap .widget_archive ul li::before,
+.foot-top-wrap .widget_categories ul li::before,
+.foot-top-wrap .widget_product_categories ul li::before {
+    color: white;
+}
+
+.foot-top-wrap .widget_archive ul li,
+.foot-top-wrap .widget_categories ul li,
+.foot-top-wrap .widget_product_categories ul li {
+    color: white;
+}
+
 
 /* Mid footer default style**************************** */
 
 /* widget title **************************/
-.footer-mid-sec   .widget {
+.footer-mid-sec .widget {
     margin-bottom: 60px;
     background-color: transparent;
     padding: 5px;
     color: white;
 }
 
-.footer-mid-sec   .widget a,
-.footer-mid-sec   .widget ul li a,
-.footer-mid-sec   .widget_tag_cloud .tagcloud a {
+.footer-mid-sec .widget a,
+.footer-mid-sec .widget ul li a,
+.footer-mid-sec .widget_tag_cloud .tagcloud a {
     color: #fff;
     font-weight: inherit;
 }
 
-.footer-mid-sec   .widget a:hover,
-.footer-mid-sec   .widget ul li a:hover,
-.footer-mid-sec   .widget_tag_cloud .tagcloud a:hover {
+.footer-mid-sec .widget a:hover,
+.footer-mid-sec .widget ul li a:hover,
+.footer-mid-sec .widget_tag_cloud .tagcloud a:hover {
     color: #e9b105;
 }
 
-.footer-mid-sec   .side-tt.widget-title {
+.footer-mid-sec .widget ul li {
+    margin-bottom: 0;
+}
+
+.footer-mid-sec .side-tt.widget-title {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 500;
@@ -959,43 +965,54 @@ form.search-form button[type="search"]:focus,
     padding: 5px;
 }
 
-.footer-mid-sec   input[type="text"],
-.footer-mid-sec   input[type="email"],
-.footer-mid-sec   input[type="url"],
-.footer-mid-sec   input[type="password"],
-.footer-mid-sec   input[type="search"],
-.footer-mid-sec   input[type="number"],
-.footer-mid-sec   input[type="tel"],
-.footer-mid-sec   input[type="range"],
-.footer-mid-sec   input[type="date"],
-.footer-mid-sec   input[type="month"],
-.footer-mid-sec   input[type="week"],
-.footer-mid-sec   input[type="time"],
-.footer-mid-sec   input[type="datetime"],
-.footer-mid-sec   input[type="datetime-local"],
-.footer-mid-sec   input[type="color"],
-.footer-mid-sec   textarea,
-.footer-mid-sec   .foot-top-border .side-tt .s-title,
-.footer-mid-sec   .textwidget p,
-.footer-mid-sec   .widget_recent_entries .post-date,
-.footer-mid-sec   .widget.widget_recent_comments li,
-.footer-mid-sec   .textwidget,
-.footer-mid-sec   .textwidget.custom-html-widget h4,
-.footer-mid-sec   .widget .gallery-caption,
-.footer-mid-sec   .calendar_wrap caption,
-.footer-mid-sec   form.search-form input[type="search"],
-.footer-mid-sec   .widget_product_search form input[type="search"],
-.footer-mid-sec   .widget_pages ul li .sub-menu>li>.sub-menu li:before,
-.footer-mid-sec   .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
-.footer-mid-sec   .widget select {
+.footer-mid-sec input[type="text"],
+.footer-mid-sec input[type="email"],
+.footer-mid-sec input[type="url"],
+.footer-mid-sec input[type="password"],
+.footer-mid-sec input[type="search"],
+.footer-mid-sec input[type="number"],
+.footer-mid-sec input[type="tel"],
+.footer-mid-sec input[type="range"],
+.footer-mid-sec input[type="date"],
+.footer-mid-sec input[type="month"],
+.footer-mid-sec input[type="week"],
+.footer-mid-sec input[type="time"],
+.footer-mid-sec input[type="datetime"],
+.footer-mid-sec input[type="datetime-local"],
+.footer-mid-sec input[type="color"],
+.footer-mid-sec textarea,
+.footer-mid-sec .foot-top-border .side-tt .s-title,
+.footer-mid-sec .textwidget p,
+.footer-mid-sec .widget_recent_entries .post-date,
+.footer-mid-sec .widget.widget_recent_comments li,
+.footer-mid-sec .textwidget,
+.footer-mid-sec .textwidget.custom-html-widget h4,
+.footer-mid-sec .widget .gallery-caption,
+.footer-mid-sec .calendar_wrap caption,
+.footer-mid-sec form.search-form input[type="search"],
+.footer-mid-sec .widget_product_search form input[type="search"],
+.footer-mid-sec .widget_pages ul li .sub-menu>li>.sub-menu li:before,
+.footer-mid-sec .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
+.footer-mid-sec .widget select {
     color: white;
-    font-weight: 400;
 }
 
-.footer-mid-sec   .widget_tag_cloud .tagcloud a {
+.footer-mid-sec .widget_tag_cloud .tagcloud a {
     background-color: transparent;
 }
 
-.footer-mid-sec   .widget select option {
+.footer-mid-sec .widget select option {
     color: #183244;
+}
+
+.footer-mid-sec .widget_archive ul li::before,
+.footer-mid-sec .widget_categories ul li::before,
+.footer-mid-sec .widget_product_categories ul li::before {
+    color: white;
+}
+
+.footer-mid-sec .widget_archive ul li,
+.footer-mid-sec .widget_categories ul li,
+.footer-mid-sec .widget_product_categories ul li {
+    color: white;
 }

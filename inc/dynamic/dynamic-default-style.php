@@ -73,7 +73,6 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .calendar_wrap tr td,
             .foot-top-wrap .calendar_wrap caption,
             .foot-top-wrap .calendar_wrap tr td a,
-            .foot-top-wrap .widget_categories>ul>li,
             .foot-top-wrap .widget_pages>ul>li,
             .foot-top-wrap .widget_nav_menu .menu>li,
             .foot-top-wrap .widget_nav_menu .menu>li a,
@@ -90,7 +89,6 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .widget_search .search-form #submit,
             .foot-top-wrap .widget_text .textwidget p,
             .foot-top-wrap .widget_text .textwidget a,
-            .foot-top-wrap .widget_tag_cloud .tagcloud,
             .foot-top-wrap .widget_tag_cloud .tagcloud a,
             .foot-top-border .widget_meta>ul>li>a,
             .foot-top-border .recentcomments a,
@@ -115,15 +113,11 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             '=> array(
                 'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
             ),
-            '.foot-top-wrap .widget_categories>ul>li,
-            .foot-top-wrap .widget_nav_menu .menu>li .sub-menu li:before,
-            .foot-top-wrap .widget_recent_entries>ul>li,
-            .foot-top-wrap .widget_search .search-form .search-submit,
+            '.foot-top-wrap .widget_search .search-form .search-submit,
             .foot-top-wrap .form-submit .submit,
             .foot-top-wrap .widget_search .search-form #submit,
             .foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover,
-            .foot-top-wrap .widget_tag_cloud .tagcloud
+            .foot-top-wrap .form-submit .submit:hover
             '=> array(
                 'background-color'=> esc_attr( $footer_one_design_widget_content_bg_color ),
             ),
