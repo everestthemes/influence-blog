@@ -375,7 +375,7 @@ $wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influ
     'section'                  => $section,
     'type'                     => 'range-slider-one',
     'input_attrs'              => array(
-        'min'                  => 200,
+        'min'                  => 100,
         'max'                  => 900,
         'step'                 => 1,
     ),
