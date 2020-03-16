@@ -14,7 +14,7 @@ if ( !defined( 'ABSPATH' ) ) {
 ?>
 <div class="half-widget-left half-widget-d1">
     <?php
-    $section_title = ifb_get_mod( 'blogpage_section_one_content_title' );
+    $section_title = infb_blog_get_mod( 'blogpage_section_one_content_title' );
 
     if( !empty( $section_title ) ) {
 
@@ -28,17 +28,17 @@ if ( !defined( 'ABSPATH' ) ) {
     <div id="content" class="row ifb-home-posts">
     <?php
 
-    $section_one_query = ifb_get_mod( 'blogpage_section_one_content_query_toggle' );
+    $section_one_query = infb_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
 
     if( $section_one_query ) {
 
-        $category = ifb_get_mod( 'blogpage_section_one_content_category' );
+        $category = infb_blog_get_mod( 'blogpage_section_one_content_category' );
 
-        $orderby = ifb_get_mod( 'blogpage_section_one_content_orderby' );
+        $orderby = infb_blog_get_mod( 'blogpage_section_one_content_orderby' );
 
-        $sort_order = ifb_get_mod( 'blogpage_section_one_content_sort_order' );
+        $sort_order = infb_blog_get_mod( 'blogpage_section_one_content_sort_order' );
 
-        $posts_no = ifb_get_mod( 'blogpage_section_one_content_posts_number' );
+        $posts_no = infb_blog_get_mod( 'blogpage_section_one_content_posts_number' );
 
         $query = influence_blog_blogpage_posts_query( $category, $orderby, $sort_order, $posts_no );
 
@@ -94,11 +94,11 @@ if ( !defined( 'ABSPATH' ) ) {
     </div><!--//inner-row-->
     <?php
 
-    $display_pagination = ifb_get_mod( 'blogpage_section_one_pagination_toggle' );
+    $display_pagination = infb_blog_get_mod( 'blogpage_section_one_pagination_toggle' );
 
     if( $display_pagination ) {
 
-        $pagination_style = ifb_get_mod( 'blogpage_section_one_pagination_style' );
+        $pagination_style = infb_blog_get_mod( 'blogpage_section_one_pagination_style' );
 
         switch( $pagination_style ) {
 

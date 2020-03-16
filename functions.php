@@ -14,36 +14,36 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 //Lists of define required for theme
-if( !defined( 'IFB_VERSION' ) ) {
+if( !defined( 'INFLUENCE_BLOG_VERSION' ) ) {
     
-    define( 'IFB_VERSION', wp_get_theme()->get( 'Version' ) );
+    define( 'INFLUENCE_BLOG_VERSION', wp_get_theme()->get( 'Version' ) );
 }
 
-if( !defined( 'IFB_PATH' ) ) {
+if( !defined( 'INFLUENCE_BLOG_PATH' ) ) {
     
-    define( 'IFB_PATH', get_template_directory() . '/' );
+    define( 'INFLUENCE_BLOG_PATH', get_template_directory() . '/' );
 }
 
-if( !defined( 'IFB_PATH_URI' ) ) {
+if( !defined( 'INFLUENCE_BLOG_PATH_URI' ) ) {
     
-    define( 'IFB_PATH_URI', get_template_directory_uri() . '/' );
+    define( 'INFLUENCE_BLOG_PATH_URI', get_template_directory_uri() . '/' );
 }
 
-if( !defined( 'IFB_CORE_PATH' ) ) {
+if( !defined( 'INFLUENCE_BLOG_CORE_PATH' ) ) {
     
-    define( 'IFB_CORE_PATH', IFB_PATH . 'core/' );
+    define( 'INFLUENCE_BLOG_CORE_PATH', INFLUENCE_BLOG_PATH . 'core/' );
 }
 
-if( !defined( 'IFB_CORE_PATH_URI' ) ) {
+if( !defined( 'INFLUENCE_BLOG_CORE_PATH_URI' ) ) {
     
-    define( 'IFB_CORE_PATH_URI', IFB_PATH_URI . 'core/' );
+    define( 'INFLUENCE_BLOG_CORE_PATH_URI', INFLUENCE_BLOG_PATH_URI . 'core/' );
 }
 
-if( !function_exists( 'ifb_blog_require_file' ) ) :
+if( !function_exists( 'infb_blog_require_file' ) ) :
     /**
      * Functions for required files
      */
-    function ifb_blog_require_file( $path , array $args, $extension = null ) {
+    function infb_blog_require_file( $path , array $args, $extension = null ) {
 
         if( !array( $args ) && !empty( $path ) ) {
 
@@ -64,4 +64,4 @@ endif;
 
 $core_args = array( 'auto-loader' );
 
-ifb_blog_require_file( IFB_CORE_PATH, $core_args );
+infb_blog_require_file( INFLUENCE_BLOG_CORE_PATH, $core_args );

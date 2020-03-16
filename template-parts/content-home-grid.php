@@ -13,8 +13,8 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-$display_category = ifb_get_mod( 'display_blog_page_grid_two_col_layout_category', true );
-$display_posted_date = ifb_get_mod( 'display_blog_page_grid_two_col_layout_posted_date', true );
+$display_category = infb_blog_get_mod( 'display_blog_page_grid_two_col_layout_category', true );
+$display_posted_date = infb_blog_get_mod( 'display_blog_page_grid_two_col_layout_posted_date', true );
 
 ?>
 <div class="col-12 col-lg-6">
