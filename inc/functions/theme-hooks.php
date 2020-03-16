@@ -512,6 +512,185 @@ if( ! function_exists( 'influence_blog_banner_action' ) ) :
 endif;
 add_action( 'influence_blog_banner', 'influence_blog_banner_action', 200 );
 
+/**
+ * Blogpage hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blogpage_action' ) ) :
+
+ 	function influence_blog_blogpage_action() {
+
+        $display_section_one = ifb_get_mod( 'blogpage_section_one_display_toggle' );
+
+        if( $display_section_one ) {
+
+            /**
+            * Hook - influence_blog_blogpage_section_one
+            *
+            * @hooked influence_blog_blogpage_section_one_action - 310
+            */
+            do_action( 'influence_blog_blogpage_section_one' );
+        }
+
+        /**
+        * Hook - influence_blog_blogpage_section_two
+        *
+        * @hooked influence_blog_blogpage_section_two_action - 320
+        */
+        //do_action( 'influence_blog_blogpage_section_two' );
+
+        /**
+        * Hook - influence_blog_blogpage_section_three
+        *
+        * @hooked influence_blog_blogpage_section_three_action - 330
+        */
+        //do_action( 'influence_blog_blogpage_section_three' );
+    }
+endif;
+add_action( 'influence_blog_blogpage', 'influence_blog_blogpage_action', 300 );
+
+/**
+ * Blogpage section one hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blogpage_section_one_action' ) ) :
+
+ 	function influence_blog_blogpage_section_one_action() {
+
+        $sidebar_col = ifb_get_mod( 'blogpage_section_one_sidebar_col' );
+
+        $sidebar_position = ifb_get_mod( 'blogpage_section_one_sidebar_position' );
+
+        $sidebar_area = ifb_get_mod( 'blogpage_section_one_widget_area_select' );
+
+        ?>
+        <div id="section-one" class="half-widget-area">
+            <div class="half-widget-area-inner lrg-padding">
+                <div class="container">
+                    <div class="row">
+                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, 'left' ); ?>
+                        <div class="<?php influence_blog_main_container_class(); ?>">
+                            <aside id="primary" class="primary-widget-area">
+                                <?php
+
+                                influence_blog_post_listing_layout_template();
+
+                                ?>
+                            </aside>
+                        </div><!--//col-12 col-md-6 col-lg-9-->
+                        <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, 'right' ); ?>
+                    </div><!--//row-->
+                </div><!--//container-->
+            </div><!--//half-widget-area-->
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_blogpage_section_one', 'influence_blog_blogpage_section_one_action', 310 );
+
+/**
+ * Blogpage section two hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blogpage_section_two_action' ) ) :
+
+ 	function influence_blog_blogpage_section_two_action() {
+
+        $sidebar_position = influence_blog_sidebar_position();
+
+        ?>
+        <div id="section-two" class="half-widget-area">
+            <div class="half-widget-area-inner lrg-padding">
+                <div class="container">
+
+                    <div class="row">
+                        <?php
+
+                        if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
+
+                            get_sidebar();
+                        }
+
+                        ?>
+                        <div class="<?php influence_blog_main_container_class(); ?>">
+                            <aside id="primary" class="primary-widget-area">
+                                <?php
+
+                                influence_blog_post_listing_layout_template();
+
+                                ?>
+                            </aside>
+                        </div><!--//col-12 col-md-6 col-lg-9-->
+                        <?php
+
+                        if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
+
+                            get_sidebar();
+                        }
+
+                        ?>
+                    </div><!--//row-->
+                </div><!--//container-->
+            </div><!--//half-widget-area-->
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_blogpage_section_two', 'influence_blog_blogpage_section_two_action', 320 );
+
+/**
+ * Blogpage section three hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blogpage_section_three_action' ) ) :
+
+ 	function influence_blog_blogpage_section_three_action() {
+
+        $sidebar_position = influence_blog_sidebar_position();
+
+        ?>
+        <div id="section-three" class="half-widget-area">
+            <div class="half-widget-area-inner lrg-padding">
+                <div class="container">
+
+                    <div class="row">
+                        <?php
+
+                        if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
+
+                            get_sidebar();
+                        }
+
+                        ?>
+                        <div class="<?php influence_blog_main_container_class(); ?>">
+                            <aside id="primary" class="primary-widget-area">
+                                <?php
+
+                                influence_blog_post_listing_layout_template();
+
+                                ?>
+                            </aside>
+                        </div><!--//col-12 col-md-6 col-lg-9-->
+                        <?php
+
+                        if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
+
+                            get_sidebar();
+                        }
+
+                        ?>
+                    </div><!--//row-->
+                </div><!--//container-->
+            </div><!--//half-widget-area-->
+        </div>
+        <?php
+    }
+endif;
+add_action( 'influence_blog_blogpage_section_three', 'influence_blog_blogpage_section_three_action', 330 );
 
 
 /**

@@ -18,6 +18,8 @@ if( !function_exists( 'influence_blog_banner_posts_query' ) ) {
 
     function influence_blog_banner_posts_query() {
 
+        $banner_query = ifb_get_mod( 'banner_content_options_query_toggle' );
+
         $banner_category = ifb_get_mod( 'banner_category' );
 
         $banner_orderby = ifb_get_mod( 'banner_orderby' );
@@ -31,36 +33,39 @@ if( !function_exists( 'influence_blog_banner_posts_query' ) ) {
             'ignore_sticky_posts' => 1,
         );
 
-        if( !empty( $banner_category ) ) {
+        if( $banner_query ) {
 
-            if( is_array( $banner_category ) ) {
+            if( !empty( $banner_category ) ) {
 
-                $banner_args['category_name'] = implode( ',', $banner_category );
+                if( is_array( $banner_category ) ) {
+
+                    $banner_args['category_name'] = implode( ',', $banner_category );
+
+                } else {
+
+                    $banner_args['category_name'] = $banner_category;
+                }
+            }
+
+            if( !empty( $banner_orderby ) ) {
+
+                $banner_args['orderby'] = $banner_orderby;
 
             } else {
 
-                $banner_args['category_name'] = $banner_category;
+                $banner_args['orderby'] = esc_html( 'date' );
+
             }
-        }
 
-        if( !empty( $banner_orderby ) ) {
+            if( !empty( $banner_sort_order ) ) {
 
-            $banner_args['orderby'] = $banner_orderby;
+                $banner_args['order'] = $banner_sort_order;
 
-        } else {
+            } else {
 
-            $banner_args['orderby'] = esc_html( 'date' );
+                $banner_args['order'] = esc_html( 'desc' );
 
-        }
-
-        if( !empty( $banner_sort_order ) ) {
-
-            $banner_args['order'] = $banner_sort_order;
-
-        } else {
-
-            $banner_args['order'] = esc_html( 'desc' );
-
+            }
         }
 
         if( !empty( $banner_posts_no ) ) {

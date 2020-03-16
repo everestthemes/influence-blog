@@ -17,6 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-global.php';
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-header.php';
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-banner.php';
+require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-blogpage.php';
 require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-footer.php';
 
 /**
@@ -25,6 +26,7 @@ require IFB_INC_CUSTOMIZER_PANELS_PATH . 'panel-footer.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-global.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-header.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-banner.php';
+require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-blogpage.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-footer.php';
 require IFB_INC_CUSTOMIZER_SECTIONS_PATH . 'section-reset.php';
 
@@ -44,6 +46,8 @@ require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-three/header-three.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'banner/layout-options/layout-options.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'banner/content-options/content-options.php';
+
+require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'blogpage/section-one/section-one.php';
 
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/arrange-footer/arrange-footer.php';
 require IFB_INC_CUSTOMIZER_FIELDS_PATH . 'footer/footer-one/footer-one.php';

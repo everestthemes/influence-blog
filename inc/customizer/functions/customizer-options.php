@@ -416,7 +416,7 @@ if( !function_exists( 'influence_blog_posts_number_attrs_array' ) ) :
 
         $options = array(
             'min'                   => 1,
-            'max'                   => 4,
+            'max'                   => 6,
             'step'                  => 1,
         );
 
@@ -460,6 +460,73 @@ if( !function_exists( 'influence_blog_sort_order_array' ) ) :
         $order_choices = apply_filters( 'influence_blog_filter_order_choices_array', $order_choices );
 
         return $order_choices;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_blog_layouts_select_array' ) ) :
+	/*
+	 * Function to get blog layouts
+	 */
+	function influence_blog_blog_layouts_select_array() {
+
+        $options = array(
+
+            'one' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-one.png',
+                'name' => __( 'Layout One', 'influence-blog' )
+            ),
+            'two' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-two.png',
+                'name' => __( 'Layout Two', 'influence-blog' )
+            ),
+            'three' => array(
+                'image' => trailingslashit( IFB_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-two.png',
+                'name' => __( 'Layout Three', 'influence-blog' )
+            ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_blog_layouts_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_sidebar_position_array' ) ) :
+	/*
+	 * Function to get sidebar position
+	 */
+	function influence_blog_sidebar_position_array() {
+
+        $options = array(
+            'right'    => esc_html__( 'Right', 'influence-blog' ),
+            'left'     => esc_html__( 'Left', 'influence-blog' ),
+            'none'     => esc_html__( 'None', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_sidebar_position_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_pagination_style_array' ) ) :
+	/*
+	 * Function to get pagination style
+	 */
+	function influence_blog_pagination_style_array() {
+
+        $options = array(
+            'one'    => esc_html__( 'Standard', 'influence-blog' ),
+            'two'     => esc_html__( 'Number', 'influence-blog' ),
+            'three'     => esc_html__( 'Load More', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_pagination_style_array', $options );
+
+        return $options;
 
 	}
 endif;

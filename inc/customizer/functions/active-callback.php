@@ -354,6 +354,60 @@ if( ! function_exists( 'influence_blog_is_banner_layout_options_two' ) ) {
 }
 
 /**
+ * Active callback function for banner content options query toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_banner_content_options_query_enable' ) ) {
+
+	function influence_blog_is_banner_content_options_query_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_banner_content_options_query_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for blog page section one toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_blogpage_section_one_display_enable' ) ) {
+
+	function influence_blog_is_blogpage_section_one_display_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_blogpage_section_one_display_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
+ * Active callback function for blog page section one query toggle true is selected.
+ */
+if( ! function_exists( 'influence_blog_is_blogpage_section_one_query_enable' ) ) {
+
+	function influence_blog_is_blogpage_section_one_query_enable( $control ) {
+
+		if ( $control->manager->get_setting( 'influence_blog_blogpage_section_one_content_query_toggle' )->value() == true && $control->manager->get_setting( 'influence_blog_blogpage_section_one_display_toggle' )->value() == true ) {
+
+			return true;
+
+		} else {
+
+			return false;
+		}
+	}
+}
+
+/**
  * Active callback function for footer one first widget toggle true is selected.
  */
 if( ! function_exists( 'influence_blog_is_footer_one_first_widget_enable' ) ) {

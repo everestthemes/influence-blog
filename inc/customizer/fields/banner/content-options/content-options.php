@@ -23,6 +23,7 @@ $button_one_array = array(
     'influence_blog_arrange_banner_content_options_one' => array(),
     'influence_blog_arrange_banner_content_options_two' => array(),
     'influence_blog_banner_content_options_query_heading' => array(),
+    'influence_blog_banner_content_options_query_toggle' => array(),
     'influence_blog_banner_content_options_cat_select_info' => array(),
     'influence_blog_banner_category' => array(),
     'influence_blog_banner_orderby' => array(),
@@ -154,9 +155,23 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'banner-content-options-query-heading' ),
-    'controls_to_wrap'         => 6,
+    'controls_to_wrap'         => 7,
     'expanded'                 => false,
     'priority'                 => 30,
+) ) );
+
+/*---------------------------------- Banner content options query toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_banner_content_options_query_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'banner_content_options_query_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_banner_content_options_query_toggle', array(
+    'label'                    => esc_html__( 'Enable Query', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-three',
+    'priority'                 => 32,
 ) ) );
 
 /*---------------------------------- Banner content category select info -----------------------------------*/
@@ -172,6 +187,7 @@ $wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blo
     'type'                     => 'info-one',
     'info_type'                => 'info',
     'priority'                 => 35,
+    'active_callback'          => 'influence_blog_is_banner_content_options_query_enable',
 ) ) );
 
 /*---------------------------------- Banner select category -----------------------------------*/
@@ -187,6 +203,7 @@ $wp_customize->add_control( new Select_One_Control( $wp_customize, 'influence_bl
     'type'                     => 'select-one',
     'choices'                  => $categories,
     'priority'                 => 40,
+    'active_callback'          => 'influence_blog_is_banner_content_options_query_enable',
 ) ) );
 
 /*---------------------------------- Banner select orderby -----------------------------------*/
@@ -203,6 +220,7 @@ $wp_customize->add_control( 'influence_blog_banner_orderby', array(
     'type'                     => 'select',
     'choices'                  => $orderby,
     'priority'                 => 45,
+    'active_callback'          => 'influence_blog_is_banner_content_options_query_enable',
 ) );
 
 /*---------------------------------- Banner select sort order -----------------------------------*/
@@ -219,11 +237,12 @@ $wp_customize->add_control( 'influence_blog_banner_sort_order', array(
     'type'                     => 'select',
     'choices'                  => $sort_order,
     'priority'                 => 50,
+    'active_callback'          => 'influence_blog_is_banner_content_options_query_enable',
 ) );
 
-$banner_description = apply_filters( 'influence_blog_filter_banner_post_no_description', __( 'Minimum 1 &amp; maximum 4 can be set.', 'influence-blog' ) );
-
 /*---------------------------------- Banner content posts number info -----------------------------------*/
+
+$post_no_description = apply_filters( 'influence_blog_filter_post_no_description', __( 'Minimum 1 &amp; maximum 6 can be set.', 'influence-blog' ) );
 
 $wp_customize->add_setting( 'influence_blog_banner_content_options_post_no_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
@@ -231,7 +250,7 @@ $wp_customize->add_setting( 'influence_blog_banner_content_options_post_no_info'
 
 $wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_banner_content_options_post_no_info', array(
     'label'                    => esc_html__( 'Note', 'influence-blog' ),
-    'description'              => $banner_description,
+    'description'              => $post_no_description,
     'section'                  => $section,
     'type'                     => 'info-one',
     'info_type'                => 'info',
@@ -294,7 +313,7 @@ $wp_customize->add_setting( 'influence_blog_banner_read_more_text', array(
 ) );
 
 $wp_customize->add_control( 'influence_blog_banner_read_more_text', array(
-    'label'                    => esc_html__( 'Read More Text', 'influence-blog' ),
+    'label'                    => esc_html__( 'Button Text', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'text',
     'priority'                 => 75,
