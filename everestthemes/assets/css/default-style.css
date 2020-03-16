@@ -542,7 +542,7 @@ form.search-form button[type="search"]:focus,
 .calendar_wrap table {
 
     border-collapse: collapse;
-    width: auto;
+    width: 100%;
 }
 
 .calendar_wrap table th {
