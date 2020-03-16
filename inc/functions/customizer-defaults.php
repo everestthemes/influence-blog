@@ -418,6 +418,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_layout_options_select' => 'one',
             'banner_display_toggle'=> true,
             //Banner - content options
+            'banner_content_options_query_toggle' => false,
             'banner_category'=> array(
                 'uncategorized'
             ),
@@ -434,6 +435,31 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_content_options_two_ads_link' => '#',
             'banner_content_options_two_ads_link_rel' => 'nofollow',
             'banner_content_options_two_ads_link_tab_toggle' => true,
+
+            //Blog page - Section one - General
+            'blogpage_section_one_display_toggle' => true,
+            'blogpage_section_one_layout_select' => 'one',
+            'blogpage_section_one_content_col' => 9,
+            'blogpage_section_one_content_title' => 'Recent Posts',
+            'blogpage_section_one_content_button_text' => 'Read More',
+            'blogpage_section_one_content_query_toggle' => false,
+            'blogpage_section_one_content_category'=> array(
+                'uncategorized'
+            ),
+            'blogpage_section_one_content_orderby' => 'date',
+            'blogpage_section_one_content_sort_order' => 'desc',
+            'blogpage_section_one_content_posts_number' => 6,
+            'blogpage_section_one_content_image_toggle' => true,
+            'blogpage_section_one_content_title_toggle' => true,
+            'blogpage_section_one_content_cat_toggle' => true,
+            'blogpage_section_one_content_date_toggle' => true,
+            'blogpage_section_one_content_content_toggle' => true,
+            'blogpage_section_one_content_button_toggle' => true,
+            'blogpage_section_one_sidebar_col' => 3,
+            'blogpage_section_one_sidebar_position' => 'right',
+            'blogpage_section_one_widget_area_select' => 'influence-blog-sidebar',
+            'blogpage_section_one_pagination_style' => 'one',
+
             //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,

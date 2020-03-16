@@ -291,6 +291,53 @@ if( !function_exists( 'influence_blog_col_value' ) ) {
    }
 }
 
+if( !function_exists( 'influence_blog_check_sidebar_position' ) ) {
+    /*
+    * Returns bool value
+    */
+    function influence_blog_check_sidebar_position( $position, $check ) {
+
+        $status = false;
+
+        if( $position === $check ) {
+
+            $status = true;
+        }
+
+        return $status;
+    }
+}
+
+if( !function_exists( 'influence_blog_blogpage_get_sidebar' ) ) {
+    /*
+    * Returns col value
+    */
+    function influence_blog_blogpage_get_sidebar( $position, $area, $col, $check ) {
+
+        $pos = false;
+
+        $pos = influence_blog_check_sidebar_position( $position, $check );
+
+        if( $pos == true ) {
+
+            $col_class = influence_blog_col_value( $col, 'lg' );
+
+            ?>
+            <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+                <aside id="secondary" class="secondary-widget-area">
+                    <?php
+                    if( is_active_sidebar( $area ) ) {
+
+                        dynamic_sidebar( $area );
+                    }
+                    ?>
+                </aside><!-- // aside -->
+            </div><!--side-bar col-3-->
+            <?php
+        }
+    }
+}
+
 /**
  * Customize Readmore Link.
  */

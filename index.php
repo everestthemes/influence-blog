@@ -26,44 +26,12 @@ if( is_active_sidebar( 'influence-blog-top-widget-area' ) ) {
     dynamic_sidebar( 'influence-blog-top-widget-area' );
 }
 
-$sidebar_position = influence_blog_sidebar_position();
-
-?>
-<div class="half-widget-area">
-    <div class="half-widget-area-inner lrg-padding">
-        <div class="container">
-            
-            <div class="row">
-                <?php
-                
-                if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-                    
-                    get_sidebar();
-                }
-                
-                ?>
-                <div class="<?php influence_blog_main_container_class(); ?>">
-                    <aside id="primary" class="primary-widget-area">
-                        <?php
-
-                        influence_blog_post_listing_layout_template();
-
-                        ?>
-                    </aside>
-                </div><!--//col-12 col-md-6 col-lg-9-->
-                <?php
-                
-                if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-                    
-                    get_sidebar();
-                }
-                
-                ?>
-            </div><!--//row-->
-        </div><!--//container-->
-    </div><!--//half-widget-area-->
-</div>
-<?php
+/**
+* Hook - influence_blog_blogpage
+*
+* @hooked iinfluence_blog_blogpage_action - 300
+*/
+do_action( 'influence_blog_blogpage' );
 
 $display_blog_page_about_info = ifb_get_mod( 'display_blog_page_about_info', true );
 
