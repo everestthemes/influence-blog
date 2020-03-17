@@ -13,14 +13,14 @@ if ( !defined( 'ABSPATH' ) ) {
 
 if( is_home() ) {
     
-    $display_blog_page_grid_three_col_layout = ifb_get_mod( 'display_blog_page_grid_three_col_layout', false );
+    $display_blog_page_grid_three_col_layout = infb_blog_get_mod( 'display_blog_page_grid_three_col_layout', false );
     
     if( $display_blog_page_grid_three_col_layout == true ) {
     
         ?>
         <div class="half-widget-left half-widget-d3">
             <?php
-            $blog_page_grid_three_col_layout_title = ifb_get_mod( 'blog_page_grid_three_col_layout_title', 'Most Recent' );
+            $blog_page_grid_three_col_layout_title = infb_blog_get_mod( 'blog_page_grid_three_col_layout_title', 'Most Recent' );
         
             if( !empty( $blog_page_grid_three_col_layout_title ) ) {
                 

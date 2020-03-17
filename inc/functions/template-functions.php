@@ -61,11 +61,11 @@ if( ! function_exists( 'influence_blog_social_links_template' ) ) {
             return;
         }
 
-        $facebook_link = ifb_get_mod( 'facebook_link', '' );
-        $twitter_link = ifb_get_mod( 'twitter_link', '' );
-        $instagram_link = ifb_get_mod( 'instagram_link', '' );
-        $youtube_link = ifb_get_mod( 'youtube_link', '' );
-        $display_rss_feed = ifb_get_mod( 'display_rss_feed', false );
+        $facebook_link = infb_blog_get_mod( 'facebook_link', '' );
+        $twitter_link = infb_blog_get_mod( 'twitter_link', '' );
+        $instagram_link = infb_blog_get_mod( 'instagram_link', '' );
+        $youtube_link = infb_blog_get_mod( 'youtube_link', '' );
+        $display_rss_feed = infb_blog_get_mod( 'display_rss_feed', false );
 
         $youtube_class = '';
 
@@ -269,7 +269,7 @@ if( ! function_exists( 'influence_blog_arrange_header_two_layout_one_two_logo' )
 
     function influence_blog_arrange_header_two_layout_one_two_logo() {
 
-        $site_title_col = ifb_get_mod( 'header_two_advance_site_title_col' );
+        $site_title_col = infb_blog_get_mod( 'header_two_advance_site_title_col' );
 
         $col_class = influence_blog_col_value( $site_title_col, 'md' );
 
@@ -295,7 +295,7 @@ if( ! function_exists( 'influence_blog_arrange_header_two_layout_one_two_ads' ) 
 
     function influence_blog_arrange_header_two_layout_one_two_ads() {
 
-        $ads_col = ifb_get_mod( 'header_two_advance_ads_col' );
+        $ads_col = infb_blog_get_mod( 'header_two_advance_ads_col' );
 
         $col_class = influence_blog_col_value( $ads_col, 'md' );
 
@@ -501,7 +501,7 @@ if( ! function_exists( 'influence_blog_arrange_banner_one_content_button' ) ) {
 
     function influence_blog_arrange_banner_one_content_button() {
 
-        $banner_read_more_text = ifb_get_mod( 'banner_read_more_text' );
+        $banner_read_more_text = infb_blog_get_mod( 'banner_read_more_text' );
 
         if( !empty( $banner_read_more_text ) ) {
 
@@ -570,17 +570,17 @@ if( !function_exists( 'influence_blog_sidebar_position' ) ) {
 
                 if( is_archive() ) {
 
-                    $sidebar_position = ifb_get_mod( 'archive_page_sidebar_position', 'right' );
+                    $sidebar_position = infb_blog_get_mod( 'archive_page_sidebar_position', 'right' );
                 }
 
                 if( is_search() ) {
 
-                    $sidebar_position = ifb_get_mod( 'search_page_sidebar_position', 'right' );
+                    $sidebar_position = infb_blog_get_mod( 'search_page_sidebar_position', 'right' );
                 }
 
                 if( is_home() ) {
 
-                    $sidebar_position = ifb_get_mod( 'blog_page_sidebar_position', 'right' );
+                    $sidebar_position = infb_blog_get_mod( 'blog_page_sidebar_position', 'right' );
                 }
             } else {
 
@@ -613,7 +613,7 @@ if( ! function_exists( 'influence_blog_main_container_class' ) ) {
 
         $sidebar_position = influence_blog_sidebar_position();
 
-		$sticky_enabled = ifb_get_mod( 'enable_sticky_sidebar', true );
+		$sticky_enabled = infb_blog_get_mod( 'enable_sticky_sidebar', true );
 
 		if( $sidebar_position == 'none' || !is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
@@ -643,7 +643,7 @@ if( ! function_exists( 'influence_blog_sidebar_class' ) ) {
 	function influence_blog_sidebar_class() {
 
 		$sidebar_class = 'col-12 col-md-6 col-lg-3';
-		$sticky_enabled = ifb_get_mod( 'enable_sticky_sidebar', true );
+		$sticky_enabled = infb_blog_get_mod( 'enable_sticky_sidebar', true );
 
 		if( $sticky_enabled == true ) {
 			$sidebar_class .= ' sticky-portion';
@@ -710,7 +710,7 @@ if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
 
  	function influence_blog_breadcrumb() {
 
-        $display_breadcrumb = ifb_get_mod( 'display_breadcrumb', true );
+        $display_breadcrumb = infb_blog_get_mod( 'display_breadcrumb', true );
 
  		if( $display_breadcrumb == true ) {
  			?>
@@ -797,22 +797,22 @@ if( ! function_exists( 'influence_blog_posted_date_option' ) ) :
 
         if( is_single() ) {
 
-            $display_posted_time = ifb_get_mod( 'display_single_post_posted_date', true );
+            $display_posted_time = infb_blog_get_mod( 'display_single_post_posted_date', true );
         }
 
         if( is_page() ) {
 
-            $display_posted_time = ifb_get_mod( 'display_single_page_posted_date', true );
+            $display_posted_time = infb_blog_get_mod( 'display_single_page_posted_date', true );
         }
 
         if( is_archive() ) {
 
-            $display_posted_time = ifb_get_mod( 'display_archive_page_posted_date', true );
+            $display_posted_time = infb_blog_get_mod( 'display_archive_page_posted_date', true );
         }
 
         if( is_search() ) {
 
-            $display_posted_time = ifb_get_mod( 'display_search_page_posted_date', true );
+            $display_posted_time = infb_blog_get_mod( 'display_search_page_posted_date', true );
         }
 
         return $display_posted_time;
@@ -834,17 +834,17 @@ if( ! function_exists( 'influence_blog_category_option' ) ) :
 
         if( is_single() ) {
 
-            $display_category = ifb_get_mod( 'display_single_post_category', true );
+            $display_category = infb_blog_get_mod( 'display_single_post_category', true );
         }
 
         if( is_archive() ) {
 
-            $display_category = ifb_get_mod( 'display_archive_page_category', true );
+            $display_category = infb_blog_get_mod( 'display_archive_page_category', true );
         }
 
         if( is_search() ) {
 
-            $display_category = ifb_get_mod( 'display_search_page_category', true );
+            $display_category = infb_blog_get_mod( 'display_search_page_category', true );
         }
 
         return $display_category;
@@ -866,7 +866,7 @@ if( ! function_exists( 'influence_blog_tags_option' ) ) :
 
         if( is_single() ) {
 
-            $display_category = ifb_get_mod( 'display_single_post_tags', true );
+            $display_category = infb_blog_get_mod( 'display_single_post_tags', true );
         }
 
         return $display_category;

@@ -20,9 +20,9 @@ function debug( $var ) {
 /**
  * Function to get customizer options
  */
-if ( !function_exists( 'ifb_get_mod' ) ) {
+if ( !function_exists( 'infb_blog_get_mod' ) ) {
 
-    function ifb_get_mod( $id ) {
+    function infb_blog_get_mod( $id ) {
 
         global $influence_blog_prefix;
 
@@ -76,7 +76,7 @@ if ( !function_exists( 'influence_blog_get_font_data' ) ) {
      */
     function influence_blog_get_font_data( $name, $value='family' ) {
 
-        $font = ifb_get_mod( $name, $name );
+        $font = infb_blog_get_mod( $name, $name );
 
         $font = ! is_array( $font ) ? json_decode( $font, true ) : $font;
 
@@ -397,7 +397,7 @@ if( !function_exists( 'influence_blog_excerpt_length' ) ) {
            return $length;
        }
 
-       $excerpt_length = ifb_get_mod( 'excerpt_length', 25 );
+       $excerpt_length = infb_blog_get_mod( 'excerpt_length', 25 );
 
        if( absint( $excerpt_length ) > 0 ) {
            $excerpt_length = absint( $excerpt_length );

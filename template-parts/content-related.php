@@ -11,11 +11,11 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-$display_related_posts_section = ifb_get_mod( 'display_single_post_related_posts_section', true );
+$display_related_posts_section = infb_blog_get_mod( 'display_single_post_related_posts_section', true );
 
 if( $display_related_posts_section == true ) {
     
-    $related_posts_post_number = ifb_get_mod( 'single_post_related_posts_section_post_no', 3 );
+    $related_posts_post_number = infb_blog_get_mod( 'single_post_related_posts_section_post_no', 3 );
 
     $related_posts_query_args = array(
         'no_found_rows'       => true,
@@ -63,9 +63,9 @@ if( $display_related_posts_section == true ) {
     
     if( $related_posts_query->have_posts() ) :
     
-        $related_posts_section_title = ifb_get_mod( 'single_post_related_posts_section_title', esc_html__( 'Related Posts', 'influence-blog' ) );
+        $related_posts_section_title = infb_blog_get_mod( 'single_post_related_posts_section_title', esc_html__( 'Related Posts', 'influence-blog' ) );
 
-        $display_related_category = ifb_get_mod( 'display_single_post_related_posts_section_category', true );
+        $display_related_category = infb_blog_get_mod( 'display_single_post_related_posts_section_category', true );
         
         ?>
         <div class="single-related-post">

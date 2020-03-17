@@ -16,7 +16,7 @@ if( is_home() ) {
     ?>
     <div class="half-widget-left half-widget-d1">
         <?php
-        $blog_page_grid_two_col_layout_title = ifb_get_mod( 'blog_page_grid_two_col_layout_title', 'Most Recent' );
+        $blog_page_grid_two_col_layout_title = infb_blog_get_mod( 'blog_page_grid_two_col_layout_title', 'Most Recent' );
 
         if( !empty( $blog_page_grid_two_col_layout_title ) ) {
 
