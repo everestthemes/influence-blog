@@ -530,3 +530,21 @@ if( !function_exists( 'influence_blog_pagination_style_array' ) ) :
 
 	}
 endif;
+
+if( !function_exists( 'influence_blog_default_pagination_style_array' ) ) :
+	/*
+	 * Function to get default pagination style
+	 */
+	function influence_blog_default_pagination_style_array() {
+
+        $options = array(
+            'one'    => esc_html__( 'Standard', 'influence-blog' ),
+            'two'     => esc_html__( 'Number', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_default_pagination_style_array', $options );
+
+        return $options;
+
+	}
+endif;
