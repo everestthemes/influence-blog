@@ -625,6 +625,7 @@ button {
 }
 .main_navigation ul li.menu-item-has-children ul.sub-menu li> .sub-menu{
     left:100%;
+    top: 0;
 }
 .header .c-logo {
     display: none;
@@ -1421,9 +1422,6 @@ span.sub-toggle.open {
     margin-bottom: 30px;
 }
 
-.half-widget-d2 .half-content-bdy .img-holder {
-    width: 50%;
-}
 
 .half-widget-d2 .half-content-bdy:before {
     display: none;
