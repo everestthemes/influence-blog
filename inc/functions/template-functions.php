@@ -774,7 +774,7 @@ if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
 
  	function influence_blog_breadcrumb() {
 
-        $display_breadcrumb = infb_blog_get_mod( 'display_breadcrumb', true );
+        $display_breadcrumb = true;
 
  		if( $display_breadcrumb == true ) {
  			?>

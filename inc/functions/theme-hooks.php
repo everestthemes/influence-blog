@@ -112,10 +112,24 @@ if( ! function_exists( 'influence_blog_header_logo_action' ) ) :
             <?php
 
             the_custom_logo();
+            if( is_home() || is_front_page() ) {
 
-            ?>
-            <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-            <?php
+                ?>
+                <h1>
+                    <span class="site-title">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    </span>
+                </h1>
+                <?php
+
+            } else {
+
+                ?>
+                <span class="site-title">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                </span>
+                <?php
+            }
 
             $influence_blog_description = get_bloginfo( 'description', 'display' );
 
