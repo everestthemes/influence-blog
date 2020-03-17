@@ -78,6 +78,7 @@
         font-size: 30px;
     }
 
+
 }
 
 @media (max-width: 992px) {
@@ -529,6 +530,9 @@
     }
     .not-found{
         padding-top:15px;
+    }
+    .secondary-widget-area{
+        margin-top:60px;
     }
 
 }
