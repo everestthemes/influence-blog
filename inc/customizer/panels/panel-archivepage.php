@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Customizer Panel for Footer
+ * Customizer Panel for Archive Page
  *
  * @package Influence_Blog
  */
@@ -13,10 +13,10 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /*-----------------------------------------------------------------------------
-							Footer Panel
+							Archive Page Panel
 -----------------------------------------------------------------------------*/
 
-$wp_customize->add_panel( 'influence_blog_footer_settings_panel', array(
-    'title'        => esc_html__( 'Footer Settings', 'influence-blog' ),
-    'priority'     => 70,
+$wp_customize->add_panel( 'influence_blog_archivepage_settings_panel', array(
+    'title'        => esc_html__( 'Archive Page Settings', 'influence-blog' ),
+    'priority'     => 50,
 ) );

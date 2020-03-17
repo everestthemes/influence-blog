@@ -461,6 +461,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'blogpage_section_one_pagination_toggle' => true,
             'blogpage_section_one_pagination_style' => 'one',
 
+            //Archive page - Layout options - General
+            'archivepage_layout_options_select' => 'one',
+
             //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,

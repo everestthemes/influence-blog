@@ -15,7 +15,7 @@ jQuery(function($){
 			},
 			type : 'POST',
 			beforeSend : function ( xhr ) {
-				$('#influence_blog_loadmore').html('Loading<span class="load-more-icon"><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></span>'); // some type of preloader
+				$('#influence_blog_loadmore').html(influence_blog_obj.loading+'<span class="load-more-icon"><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i></span>'); // some type of preloader
 			},
 			success : function( data ){
 
