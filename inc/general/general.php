@@ -317,6 +317,7 @@ function influence_blog_scripts() {
             'posts' => json_encode( $wp_query->query_vars ),
             'current_page' => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
             'max_page' => $wp_query->max_num_pages,
+            'loading' => esc_html__( 'Loading', 'influence-blog' ),
             'first_page' => get_pagenum_link(1)
         ) );
 

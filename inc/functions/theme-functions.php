@@ -465,19 +465,76 @@ function influence_blog_loadmore_ajax_handler() {
 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
 	$args['post_status'] = 'publish';
 
+    $section_one_query = infb_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
+
+    if( $section_one_query ) {
+
+        $cat = infb_blog_get_mod( 'blogpage_section_one_content_category' );
+
+        $order = infb_blog_get_mod( 'blogpage_section_one_content_orderby' );
+
+        $sort = infb_blog_get_mod( 'blogpage_section_one_content_sort_order' );
+
+        $num = infb_blog_get_mod( 'blogpage_section_one_content_posts_number' );
+
+        if( !empty( $cat ) ) {
+
+            if( is_array( $cat ) ) {
+
+                $args['category_name'] = implode( ',', $cat );
+
+            } else {
+
+                $args['category_name'] = $cat;
+            }
+        }
+
+        if( !empty( $order ) ) {
+
+            $args['orderby'] = $order;
+
+        } else {
+
+            $args['orderby'] = esc_html( 'date' );
+
+        }
+
+        if( !empty( $sort ) ) {
+
+            $args['order'] = $sort;
+
+        } else {
+
+            $args['order'] = esc_html( 'desc' );
+
+        }
+
+        if( !empty( $num ) ) {
+
+            $args['posts_per_page'] = absint( $num );
+        }
+    }
+
 	// it is always better to use WP_Query but not here
 	query_posts( $args );
 
 	if( have_posts() ) :
 
         ?>
-        <div id="content" class="row ifb-home-posts">
+        <div id="content" class="row">
         <?php
 
 		// run the loop
 		while( have_posts() ): the_post();
 
-			get_template_part( 'template-parts/section-one/content/content', 'one' );
+            $section_one_layout = infb_blog_get_mod( 'blogpage_section_one_layout_select' );
+
+            if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
+
+                get_template_part( 'template-parts/section-one/content/content', $section_one_layout );
+            }
+
+            $section_one_template = apply_filters( 'influence_blog_section_one_layout_template', $section_one_layout );
 
 		endwhile;
         ?></div><?php
@@ -551,7 +608,7 @@ function influence_blog_paginator( $first_page_url ){
     }
 
 	// begin to generate HTML of the pagination
-	$pagination = '<div class="ifb-pagination"><div class="pagination-entry"><nav id="influence_blog_pagination" class="navigation pagination" role="navigation"><div class="nav-links">';
+	$pagination = '<div class="ifb-pagination"><div class="pagination-entry"><nav id="influence_blog_pagination" class="navigation pagination" role="navigation"><div class="nav-links" style="display:none;">';
 
 	// when to display "..." and the first page before it
 	if ( $first_link_in_the_middle >= 2 && $links_in_the_middle < $max_page ) {

@@ -516,6 +516,53 @@ if( ! function_exists( 'influence_blog_arrange_banner_one_content_button' ) ) {
     }
 }
 
+/**
+ * Get pagination template
+ */
+if( ! function_exists( 'influence_blog_get_pagination_style' ) ) {
+
+    function influence_blog_get_pagination_style( $style ) {
+
+        switch( $style ) {
+
+            case 'one':
+
+                ?><div class="ifb-pagination"><?php
+                the_posts_pagination( array(
+                    'mid_size' => 2,
+                    'prev_text' => esc_html__( 'Prev', 'influence-blog' ),
+                    'next_text' => esc_html__( 'Next', 'influence-blog' ),
+                ) );
+
+                ?></div><?php
+
+                break;
+
+            case 'two':
+
+                ?><div class="ifb-pagination"><?php
+                the_posts_pagination( array(
+                    'mid_size' => 2,
+                    'prev_text' => false,
+                    'next_text' => false,
+                ) );
+
+                ?></div><?php
+
+                break;
+
+            case 'three':
+
+                influence_blog_paginator( get_pagenum_link() );
+
+                break;
+
+            default:
+                //code is poetry
+        }
+    }
+}
+
 
 
 /**

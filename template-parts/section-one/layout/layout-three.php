@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for Layout one
+ * The template for Layout three
  *
  * @package Influence_Blog
  */
@@ -12,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="half-widget-left half-widget-d1">
+<div class="half-widget-left half-widget-d2">
     <?php
     $section_title = infb_blog_get_mod( 'blogpage_section_one_content_title' );
 
@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
         <?php
     }
     ?>
-    <div id="content" class="row ifb-home-posts">
+    <div id="content" class="row">
     <?php
 
     $section_one_query = infb_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
@@ -55,7 +55,7 @@ if ( !defined( 'ABSPATH' ) ) {
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
 
-                get_template_part( 'template-parts/section-one/content/content', 'one' );
+                get_template_part( 'template-parts/section-one/content/content', 'three' );
             }
             wp_reset_postdata();
 
@@ -79,7 +79,7 @@ if ( !defined( 'ABSPATH' ) ) {
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
 
-                get_template_part( 'template-parts/section-one/content/content', 'one' );
+                get_template_part( 'template-parts/section-one/content/content', 'three' );
 
             endwhile;
 
@@ -89,9 +89,8 @@ if ( !defined( 'ABSPATH' ) ) {
 
         endif;
     }
-
     ?>
-    </div><!--//inner-row-->
+    </div><!--//inn-row-->
     <?php
 
     $display_pagination = infb_blog_get_mod( 'blogpage_section_one_pagination_toggle' );
@@ -104,4 +103,4 @@ if ( !defined( 'ABSPATH' ) ) {
     }
 
     ?>
-</div><!--//half-widget-left-->
+</div><!--//half-widget-left-d2-->
