@@ -397,15 +397,16 @@ if( !function_exists( 'influence_blog_excerpt_length' ) ) {
            return $length;
        }
 
-       $excerpt_length = infb_blog_get_mod( 'excerpt_length', 25 );
+       $excerpt_length = infb_blog_get_mod( 'excerpt_length' );
 
        if( absint( $excerpt_length ) > 0 ) {
+
            $excerpt_length = absint( $excerpt_length );
        }
        return $excerpt_length;
    }
 }
-//add_filter( 'excerpt_length', 'influence_blog_excerpt_length' );
+add_filter( 'excerpt_length', 'influence_blog_excerpt_length' );
 
 
 
