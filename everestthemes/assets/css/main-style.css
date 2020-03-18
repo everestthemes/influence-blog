@@ -12,6 +12,7 @@ body {
     text-transform: none;
     letter-spacing: 1px;
     color: #000000;
+    word-break: break-all;
 }
 
 body.wide {
@@ -1309,10 +1310,6 @@ span.sub-toggle.open {
     margin-bottom: 15px;
 }
 
-.half-widget-d2 .half-content-bdy:last-child {
-    margin-bottom: 0;
-}
-
 .full-widget-d3-slide-wrap .slick-arrow {
     border: 2px solid #fff;
     color: #fff;
@@ -2041,7 +2038,7 @@ Single-post layout-1
 
 
 /* breadcdrumbs*/
-.breadcrumbs-sec .breadcrumbs-listing {
+.trail-items {
     background-color: #e9b105;
     padding: 5px 5px 8px 15px;
     margin-bottom: 30px;
@@ -2049,13 +2046,13 @@ Single-post layout-1
 
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li {
+.trail-items li {
     display: inline-block;
     position: relative;
     padding-right: 15px;
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li:before {
+.trail-items li:before {
     content: '\f105';
     position: absolute;
     right: 2px;
@@ -2063,21 +2060,22 @@ Single-post layout-1
     font-family: 'FontAwesome';
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li:last-child:before {
+.trail-items li:last-child:before {
     content: '';
     position: absolute;
     right: 2px;
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li:nth-child(2) a {
+.trail-items li:nth-child(2) a {
     color: #4e4e4e;
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li a {
+.trail-items li a {
     font-size: 12px;
 }
 
-.breadcrumbs-sec .breadcrumbs-listing li a:hover {
+.trail-items li a:hover,
+.trail-items li a:focus {
     color: #fff;
 }
 

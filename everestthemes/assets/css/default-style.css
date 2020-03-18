@@ -36,7 +36,9 @@ Wordpress Default Style Here
     color: #000;
     padding: 5px;
 }
-
+.secondary-widget-area .widget .side-tt.widget-title {
+     background-color: #eee;
+}
 
 .widget_meta ul,
 .widget_rss ul,
