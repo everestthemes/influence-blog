@@ -18,7 +18,7 @@ $sidebar_position = influence_blog_sidebar_position();
 ?>
 <div class="inner-single lrg-padding">
     <div class="container">
-        <?php influence_blog_breadcrumb(); ?>
+        <?php influence_blog_breadcrumb( true ); ?>
         <div class="row">
             <?php
                 
