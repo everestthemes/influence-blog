@@ -20,6 +20,7 @@ $button_one_array = array(
     'influence_blog_archivepage_content_options_field_heading' => array(),
     'influence_blog_archivepage_content_options_field_button_title' => array(),
     'influence_blog_archivepage_content_options_display_heading' => array(),
+    'influence_blog_archivepage_content_options_breadcrumb_toggle' => array(),
     'influence_blog_archivepage_content_options_image_toggle' => array(),
     'influence_blog_archivepage_content_options_title_toggle' => array(),
     'influence_blog_archivepage_content_options_cat_toggle' => array(),
@@ -109,9 +110,23 @@ $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_b
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'archivepage-content-options-display-heading' ),
-    'controls_to_wrap'         => 6,
+    'controls_to_wrap'         => 7,
     'expanded'                 => false,
     'priority'                 => 20,
+) ) );
+
+/*---------------------------------- Archive page content options display breadcrumb toggle -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_archivepage_content_options_breadcrumb_toggle', array(
+    'sanitize_callback'        => 'wp_validate_boolean',
+    'default'                  => influence_blog_defaults( 'archivepage_content_options_breadcrumb_toggle' ),
+) );
+
+$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_archivepage_content_options_breadcrumb_toggle', array(
+    'label'                    => esc_html__( 'Breadcrumb', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'toggle-three',
+    'priority'                 => 22,
 ) ) );
 
 /*---------------------------------- Archive page content options display image toggle -----------------------------------*/

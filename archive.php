@@ -11,6 +11,8 @@ get_header();
 
 $sidebar_col = 3;
 
+$breadcrumb = infb_blog_get_mod( 'archivepage_content_options_breadcrumb_toggle' );
+
 $sidebar_position = infb_blog_get_mod( 'archivepage_content_options_sidebar_position' );
 
 $sidebar_area = infb_blog_get_mod( 'archivepage_content_options_widget_area_select' );
@@ -21,7 +23,7 @@ $sticky = apply_filters( 'influence_blog_archivepage_sticky_status', false );
 ?>
 <div class="archive-page-wrap lrg-padding">
     <div class="container">
-        <?php influence_blog_breadcrumb(); ?>
+        <?php influence_blog_breadcrumb( $breadcrumb ); ?>
         <div class="row">
             <?php influence_blog_blogpage_get_sidebar( $sidebar_position, $sidebar_area, $sidebar_col, $sticky, 'left' ); ?>
             <div class="<?php influence_blog_blogpage_container_class( $sidebar_position, $content_col, $sticky ); ?>">

@@ -473,15 +473,15 @@ if( !function_exists( 'influence_blog_blog_layouts_select_array' ) ) :
         $options = array(
 
             'one' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-one.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-one.png',
                 'name' => __( 'Layout One', 'influence-blog' )
             ),
             'two' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-two.png',
                 'name' => __( 'Layout Two', 'influence-blog' )
             ),
             'three' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/banner-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-two.png',
                 'name' => __( 'Layout Three', 'influence-blog' )
             ),
         );

@@ -466,6 +466,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
 
             //Archive page - Content options - General
             'archivepage_content_options_field_button_title' => 'Read More',
+            'archivepage_content_options_breadcrumb_toggle' => true,
             'archivepage_content_options_image_toggle' => true,
             'archivepage_content_options_title_toggle' => true,
             'archivepage_content_options_cat_toggle' => true,
@@ -481,6 +482,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
 
             //Search page - Content options - General
             'searchpage_content_options_field_button_title' => 'Read More',
+            'searchpage_content_options_breadcrumb_toggle' => true,
             'searchpage_content_options_image_toggle' => true,
             'searchpage_content_options_title_toggle' => true,
             'searchpage_content_options_cat_toggle' => true,

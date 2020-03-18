@@ -630,26 +630,7 @@ if( !function_exists( 'influence_blog_sidebar_position' ) ) {
 
         if( is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
-            if( !is_singular() ) {
-
-                if( is_archive() ) {
-
-                    $sidebar_position = infb_blog_get_mod( 'archive_page_sidebar_position', 'right' );
-                }
-
-                if( is_search() ) {
-
-                    $sidebar_position = infb_blog_get_mod( 'search_page_sidebar_position', 'right' );
-                }
-
-                if( is_home() ) {
-
-                    $sidebar_position = infb_blog_get_mod( 'blog_page_sidebar_position', 'right' );
-                }
-            } else {
-
-                $sidebar_position = influence_blog_single_sidebar_position();
-            }
+            $sidebar_position = influence_blog_single_sidebar_position();
 
             if( empty( $sidebar_position ) ) {
 
@@ -677,7 +658,7 @@ if( ! function_exists( 'influence_blog_main_container_class' ) ) {
 
         $sidebar_position = influence_blog_sidebar_position();
 
-		$sticky_enabled = infb_blog_get_mod( 'enable_sticky_sidebar', true );
+		$sticky_enabled = apply_filters( 'influence_blog_archivepage_sticky_status', false );
 
 		if( $sidebar_position == 'none' || !is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
@@ -707,9 +688,11 @@ if( ! function_exists( 'influence_blog_sidebar_class' ) ) {
 	function influence_blog_sidebar_class() {
 
 		$sidebar_class = 'col-12 col-md-6 col-lg-3';
-		$sticky_enabled = infb_blog_get_mod( 'enable_sticky_sidebar', true );
+
+        $sticky_enabled = apply_filters( 'influence_blog_archivepage_sticky_status', false );
 
 		if( $sticky_enabled == true ) {
+
 			$sidebar_class .= ' sticky-portion';
 		}
 
@@ -772,11 +755,9 @@ endif;
  */
 if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
 
- 	function influence_blog_breadcrumb() {
+ 	function influence_blog_breadcrumb( $display ) {
 
-        $display_breadcrumb = true;
-
- 		if( $display_breadcrumb == true ) {
+ 		if( $display == true ) {
  			?>
  			<div class="breadcrumbs-sec breadcrumbs-layout1">
                 <?php everestthemes_breadcrumb_trail(); ?>
