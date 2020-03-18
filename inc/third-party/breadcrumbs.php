@@ -31,7 +31,7 @@
  * @param  array $args Arguments to pass to Breadcrumb_Trail.
  * @return void
  */
-function everestthemes_breadcrumb_trail( $args = array() ) {
+function influence_blog_breadcrumb_trail( $args = array() ) {
 
 	// Return if breadcrumbs are disabled
 	if ( is_front_page() ) {
