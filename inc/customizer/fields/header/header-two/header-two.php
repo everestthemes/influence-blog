@@ -88,7 +88,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_tabs', array(
     'sanitize_callback'        => 'wp_filter_nohtml_kses',
 ) );
 
-$wp_customize->add_control( new Tab_One_Control( $wp_customize, 'influence_blog_header_two_tabs', array(
+$wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_header_two_tabs', array(
     'section'                  => $section,
     'tabs'                     => $tabs,
     'controls'                 => array(
@@ -109,7 +109,7 @@ $wp_customize->add_setting( 'influence_blog_arange_header_two_layout_one_heading
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_arange_header_two_layout_one_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_arange_header_two_layout_one_heading', array(
     'label'                    => esc_html__( 'Arrange elements', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -133,7 +133,7 @@ $wp_customize->add_setting( 'influence_blog_arrange_header_two_layout_one_two', 
     'default'                  => influence_blog_sortable_defaults( $arrange_header_two_layout_one_two_options ),
 ) );
 
-$wp_customize->add_control( new Sortable_One_Control( $wp_customize, 'influence_blog_arrange_header_two_layout_one_two', array(
+$wp_customize->add_control( new Influence_Blog_Sortable_One_Control( $wp_customize, 'influence_blog_arrange_header_two_layout_one_two', array(
 	'section'				   => $section,
     'choices'                  => $arrange_header_two_layout_one_two_option,
     'priority'                 => 15
@@ -145,7 +145,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_site_title_heading', arra
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_site_title_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_site_title_heading', array(
     'label'                    => esc_html__( 'Site Title Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -191,7 +191,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_ads_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_ads_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_ads_heading', array(
     'label'                    => esc_html__( 'Advertisement Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -250,7 +250,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_ads_links_tab_toggle', ar
     'default'                  => influence_blog_defaults( 'header_two_ads_links_tab_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_header_two_ads_links_tab_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_header_two_ads_links_tab_toggle', array(
     'label'                    => esc_html__( 'Open in new tab', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -283,7 +283,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_design_site_title_heading
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_heading', array(
     'label'                    => esc_html__( 'Site Title Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -300,7 +300,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_design_site_title_color_h
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_color_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_color_heading', array(
     'label'                    => esc_html__( 'Color Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -313,7 +313,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_design_site_title_typo_he
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_typo_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_design_site_title_typo_heading', array(
     'label'                    => esc_html__( 'Typography Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -327,7 +327,7 @@ $wp_customize->add_setting( 'influence_blog_typo_header_two_design_site_title_fo
     'sanitize_callback'        => 'sanitize_typography_one'
 ) );
 
-$wp_customize->add_control( new Typography_One_Control( $wp_customize, 'influence_blog_typo_header_two_design_site_title_font', array(
+$wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_header_two_design_site_title_font', array(
     'label'                    => __( 'Font Family', 'influence-blog' ),
     'section'                  => $section,
     'input_attrs'              => $font_attrs,
@@ -370,7 +370,7 @@ $wp_customize->add_setting( 'influence_blog_typo_header_two_design_site_title_si
     'default'                  => influence_blog_defaults( 'typo_header_two_design_site_title_size_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_size', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_size', array(
     'label'                    => esc_html__( 'Font Size', 'influence-blog' ) . ' (px) ',
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -403,7 +403,7 @@ $wp_customize->add_setting( 'influence_blog_typo_header_two_design_site_title_he
     'default'                  => influence_blog_defaults( 'typo_header_two_design_site_title_height_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_height', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_height', array(
     'label'                    => esc_html__( 'Line Height', 'influence-blog' ),
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -436,7 +436,7 @@ $wp_customize->add_setting( 'influence_blog_typo_header_two_design_site_title_sp
     'default'                  => influence_blog_defaults( 'typo_header_two_design_site_title_spacing_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_spacing', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_header_two_design_site_title_spacing', array(
     'label'                    => esc_html__( 'Letter Spacing', 'influence-blog' ) . ' (px) ',
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -459,7 +459,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_header_two_advance_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_header_two_advance_info', array(
     'label'                    => esc_html__( 'Note', 'influence-blog' ),
     'description'              => __( 'Recommended for experienced user.', 'influence-blog' ),
     'section'                  => $section,
@@ -475,7 +475,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_toggle', array(
     'default'                  => influence_blog_defaults( 'header_two_advance_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_header_two_advance_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Two_Control ( $wp_customize, 'influence_blog_header_two_advance_toggle', array(
     'label'                    => esc_html__( 'Enable Advance Settings', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-two',
@@ -488,7 +488,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_headin
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_advance_site_title_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_advance_site_title_heading', array(
     'label'                    => esc_html__( 'Site Title Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -507,7 +507,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_col', 
     'default'                  => influence_blog_defaults( 'header_two_advance_site_title_col' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_header_two_advance_site_title_col', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_customize, 'influence_blog_header_two_advance_site_title_col', array(
     'label'                    => esc_html__( 'Column Width', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'range-slider-one',
@@ -555,7 +555,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_site_title_m_m_bo
     'sanitize_callback' 	   => 'sanitize_dimension_one_number',
 ) );
 
-$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_site_title_m', array(
+$wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_site_title_m', array(
     'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
     'section'  				   => $section,
     'settings'                 => array(
@@ -581,7 +581,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_ads_heading', arr
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_header_two_advance_ads_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_header_two_advance_ads_heading', array(
     'label'                    => esc_html__( 'Advertisement Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -600,7 +600,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_ads_col', array(
     'default'                  => influence_blog_defaults( 'header_two_advance_ads_col' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_One_Control ( $wp_customize, 'influence_blog_header_two_advance_ads_col', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_customize, 'influence_blog_header_two_advance_ads_col', array(
     'label'                    => esc_html__( 'Column Width', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'range-slider-one',
@@ -648,7 +648,7 @@ $wp_customize->add_setting( 'influence_blog_header_two_advance_ads_m_m_bottom', 
     'sanitize_callback' 	   => 'sanitize_dimension_one_number',
 ) );
 
-$wp_customize->add_control( new Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_ads_m', array(
+$wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_header_two_advance_ads_m', array(
     'label'	   				   => esc_html__( 'Margin', 'influence-blog' ) . ' (px) ',
     'section'  				   => $section,
     'settings'                 => array(

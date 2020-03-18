@@ -1,6 +1,6 @@
 <?php
 
-if ( ! class_exists( 'Repeater_One_Setting' ) ) {
+if ( ! class_exists( 'Influence_Blog_Repeater_One_Setting' ) ) {
 	/**
 	 * Repeater One Custom Setting Class
 	 *
@@ -8,7 +8,7 @@ if ( ! class_exists( 'Repeater_One_Setting' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	class Repeater_One_Setting extends WP_Customize_Setting {
+	class Influence_Blog_Repeater_One_Setting extends WP_Customize_Setting {
 
 		/**
 		 * Constructor.

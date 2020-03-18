@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Toggle_Three_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Toggle_Three_Control' ) ) :
 
     /**
 	 * Toggle Three Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Toggle_Three_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Toggle_Three_Control extends WP_Customize_Control {
+    class Influence_Blog_Toggle_Three_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.

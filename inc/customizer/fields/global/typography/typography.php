@@ -32,7 +32,7 @@ $wp_customize->add_setting( 'influence_blog_typo_body_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_typo_body_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_typo_body_heading', array(
     'label'                    => esc_html__( 'Body Typography', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -50,7 +50,7 @@ $wp_customize->add_setting( 'influence_blog_typo_body_font', array(
     'sanitize_callback'        => 'sanitize_typography_one'
 ) );
 
-$wp_customize->add_control( new Typography_One_Control( $wp_customize, 'influence_blog_typo_body_font', array(
+$wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_body_font', array(
     'label'                    => __( 'Font Family', 'influence-blog' ),
     'section'                  => $section,
     'input_attrs'              => $font_attrs,
@@ -93,7 +93,7 @@ $wp_customize->add_setting( 'influence_blog_typo_body_size_m', array(
     'default'                  => influence_blog_defaults( 'typo_body_size_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_size', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_size', array(
     'label'                    => esc_html__( 'Font Size', 'influence-blog' ) . ' (px) ',
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -126,7 +126,7 @@ $wp_customize->add_setting( 'influence_blog_typo_body_height_m', array(
     'default'                  => influence_blog_defaults( 'typo_body_height_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_line_height', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_line_height', array(
     'label'                    => esc_html__( 'Line Height', 'influence-blog' ),
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -159,7 +159,7 @@ $wp_customize->add_setting( 'influence_blog_typo_body_spacing_m', array(
     'default'                  => influence_blog_defaults( 'typo_body_spacing_m' ),
 ) );
 
-$wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_spacing', array(
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_body_spacing', array(
     'label'                    => esc_html__( 'Letter Spacing', 'influence-blog' ) . ' (px) ',
     'section' 			       => $section,
     'type'                     => 'range-slider-two',
@@ -182,7 +182,7 @@ $wp_customize->add_setting( 'influence_blog_typo_heading_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_typo_heading_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_typo_heading_heading', array(
     'label'                    => esc_html__( 'Heading Typography', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -200,7 +200,7 @@ $wp_customize->add_setting( 'influence_blog_typo_heading_font', array(
     'sanitize_callback'        => 'sanitize_typography_one'
 ) );
 
-$wp_customize->add_control( new Typography_One_Control( $wp_customize, 'influence_blog_typo_heading_font', array(
+$wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_heading_font', array(
     'label'                    => __( 'Font Family', 'influence-blog' ),
     'section'                  => $section,
     'input_attrs'              => $font_attrs,
@@ -228,7 +228,7 @@ foreach( $headings as $heading ) {
         'sanitize_callback' 	   => 'sanitize_text_field',
     ) );
 
-    $wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_typo_heading_' . $heading . '_heading', array(
+    $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_typo_heading_' . $heading . '_heading', array(
         'label'                    => $heading . ' ' . esc_html__( 'Typography', 'influence-blog' ),
         'section'                  => $section,
         'type'                     => 'heading-one',
@@ -279,7 +279,7 @@ foreach( $headings as $heading ) {
         'default'                  => influence_blog_defaults( 'typo_heading_' . $heading . '_size_m' ),
     ) );
 
-    $wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_size', array(
+    $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_size', array(
         'label'                    => esc_html__( 'Font Size', 'influence-blog' ) . ' (px) ',
         'section' 			       => $section,
         'type'                     => 'range-slider-two',
@@ -314,7 +314,7 @@ foreach( $headings as $heading ) {
         'default'                  => influence_blog_defaults( 'typo_heading_' . $heading . '_height_m' ),
     ) );
 
-    $wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_line_height', array(
+    $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_line_height', array(
         'label'                    => esc_html__( 'Line Height', 'influence-blog' ),
         'section' 			       => $section,
         'type'                     => 'range-slider-two',
@@ -349,7 +349,7 @@ foreach( $headings as $heading ) {
         'default'                  => influence_blog_defaults( 'typo_heading_' . $heading . '_spacing_m' ),
     ) );
 
-    $wp_customize->add_control( new Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_spacing', array(
+    $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_heading_' . $heading . '_spacing', array(
         'label'                    => esc_html__( 'Letter Spacing', 'influence-blog' ) . ' (px) ',
         'section' 			       => $section,
         'type'                     => 'range-slider-two',

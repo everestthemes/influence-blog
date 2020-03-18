@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Repeater_One_Control' ) ) {
+if( ! class_exists( 'Influence_Blog_Repeater_One_Control' ) ) {
     /**
 	 * Repeater One Custom Control Class
 	 *
@@ -8,7 +8,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-    class Repeater_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Repeater_One_Control extends WP_Customize_Control {
 
     	/**
     	 * The control type.

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Range_Slider_Two_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Range_Slider_Two_Control' ) ) :
     /**
 	 * Range Slider Two Custom Control Class
 	 *
@@ -8,7 +8,7 @@ if( ! class_exists( 'Range_Slider_Two_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Range_Slider_Two_Control extends WP_Customize_Control {
+    class Influence_Blog_Range_Slider_Two_Control extends WP_Customize_Control {
 
         /**
          * The control type.
