@@ -24,7 +24,7 @@ if ( !function_exists( 'influence_blog_get_mod' ) ) {
 
     function influence_blog_get_mod( $id ) {
 
-        global $influence_blog_prefix;
+        $influence_blog_prefix = 'influence_blog';
 
         if( empty( $id ) ) {
             return;
