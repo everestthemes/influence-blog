@@ -328,7 +328,7 @@ if( !function_exists( 'influence_blog_blogpage_get_sidebar' ) ) {
             }
 
             ?>
-            <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
+            <div class="col-12 <?php echo esc_attr( $col_class ); ?>">
                 <aside id="secondary" class="secondary-widget-area">
                     <?php
                     if( is_active_sidebar( $area ) ) {
@@ -349,7 +349,7 @@ if( !function_exists( 'influence_blog_blogpage_container_class' ) ) {
     */
     function influence_blog_blogpage_container_class( $position, $col, $sticky ) {
 
-        $col_class = 'col-12 col-md-6 ';
+        $col_class = 'col-12 ';
 
         if( $position != 'none' ) {
 
