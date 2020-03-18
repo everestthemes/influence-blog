@@ -40,9 +40,9 @@ if( ! class_exists( 'Tab_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-tab-one-style', get_template_directory_uri() . '/inc/customizer/controls/tab/tab-one/css/tab-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-tab-one-style', get_template_directory_uri() . '/inc/customizer/controls/tab/tab-one/css/tab-one.css' );
 
-            wp_enqueue_script( 'customizer-tab-one-script', get_template_directory_uri() . '/inc/customizer/controls/tab/tab-one/js/tab-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-tab-one-script', get_template_directory_uri() . '/inc/customizer/controls/tab/tab-one/js/tab-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

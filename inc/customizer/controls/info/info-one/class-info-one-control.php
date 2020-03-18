@@ -30,7 +30,7 @@ if( ! class_exists( 'Info_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-info-one-style', get_template_directory_uri() . '/inc/customizer/controls/info/info-one/css/info-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-info-one-style', get_template_directory_uri() . '/inc/customizer/controls/info/info-one/css/info-one.css' );
         }
 
 		/**

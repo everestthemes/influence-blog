@@ -20,7 +20,7 @@
     display: block;
 }
 
-#customizer-icon-picker-one .yatri-icon-list-ul li {
+#customizer-icon-picker-one .icon-picker-one-icon-list-ul li {
     width: 20%;
     float: left;
     font-size: 24px;
@@ -43,8 +43,8 @@
     overflow: auto;
 }
 
-#customizer-icon-picker-one .yatri-icon-list-ul li:hover span,
-#customizer-icon-picker-one .yatri-icon-list-ul li.active span {
+#customizer-icon-picker-one .icon-picker-one-icon-list-ul li:hover span,
+#customizer-icon-picker-one .icon-picker-one-icon-list-ul li.active span {
     background: #007cba;
     color: #fff;
 }
@@ -76,7 +76,7 @@
     text-decoration: none;
 }
 
-#customizer-icon-picker-one .yatri-icon-list-ul li span {
+#customizer-icon-picker-one .icon-picker-one-icon-list-ul li span {
     padding: 10px;
     display: inline-block;
     border: 1px solid #aaa;

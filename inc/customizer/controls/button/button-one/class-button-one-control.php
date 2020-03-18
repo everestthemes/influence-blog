@@ -27,9 +27,9 @@ if( ! class_exists( 'Button_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-button-one-style', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/css/button-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-button-one-style', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/css/button-one.css' );
 
-            wp_enqueue_script( 'customizer-button-one-script', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/js/button-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-button-one-script', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/js/button-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
 
         }
 

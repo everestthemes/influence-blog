@@ -38,13 +38,13 @@ if( ! class_exists( 'Color_One_Control' ) ) :
 
             wp_enqueue_style( 'wp-color-picker' );
 
-            wp_enqueue_style( 'customizer-color-one-style', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/css/color-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-color-one-style', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/css/color-one.css' );
 
             wp_enqueue_script( 'wp-color-picker' );
 
-            wp_enqueue_script( 'customizer-color-one-script', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/js/color-one.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-color-one-script', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/js/color-one.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_localize_script( 'customizer-color-one-script', 'colorOne', array(
+            wp_localize_script( 'influence-blog-customizer-color-one-script', 'colorOne', array(
                 'colorPalettes' => color_one_default_color_palettes(),
             ) );
         }

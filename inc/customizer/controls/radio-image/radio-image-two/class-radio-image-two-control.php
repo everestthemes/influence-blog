@@ -24,7 +24,7 @@ if ( ! class_exists( 'Radio_Image_Two_Control' ) ) :
          */
 		public function enqueue() {
 
-            wp_enqueue_style( 'customizer-radio-image-two-style', get_template_directory_uri() . '/inc/customizer/controls/radio-image/radio-image-two/css/radio-image-two.css' );
+            wp_enqueue_style( 'influence-blog-customizer-radio-image-two-style', get_template_directory_uri() . '/inc/customizer/controls/radio-image/radio-image-two/css/radio-image-two.css' );
 		}
 
 		/**
