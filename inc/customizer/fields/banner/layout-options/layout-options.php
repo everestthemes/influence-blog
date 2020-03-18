@@ -40,7 +40,7 @@ $wp_customize->add_setting( 'influence_blog_banner_layout_options_tabs', array(
     'sanitize_callback'        => 'wp_filter_nohtml_kses',
 ) );
 
-$wp_customize->add_control( new Tab_One_Control( $wp_customize, 'influence_blog_banner_layout_options_tabs', array(
+$wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_banner_layout_options_tabs', array(
     'section'                  => $section,
     'tabs'                     => $tabs,
     'controls'                 => array(
@@ -62,7 +62,7 @@ $wp_customize->add_setting( 'influence_blog_banner_display_toggle', array(
     'default'                  => influence_blog_defaults( 'banner_display_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_banner_display_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_banner_display_toggle', array(
     'label'                    => esc_html__( 'Display Banner', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -75,7 +75,7 @@ $wp_customize->add_setting( 'influence_blog_banner_layout_options_select_heading
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_banner_layout_options_select_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_banner_layout_options_select_heading', array(
     'label'                    => esc_html__( 'Select Layout', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -90,7 +90,7 @@ $wp_customize->add_setting( 'influence_blog_banner_layout_options_select', array
     'default'                  => influence_blog_defaults( 'banner_layout_options_select' ),
 ) );
 
-$wp_customize->add_control( new Radio_Image_Two_Control( $wp_customize, 'influence_blog_banner_layout_options_select', array(
+$wp_customize->add_control( new Influence_Blog_Radio_Image_Two_Control( $wp_customize, 'influence_blog_banner_layout_options_select', array(
     'section'                  => $section,
     'type'                     => 'radio-image-one',
     'choices'                  => $banner_layouts,

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Sortable_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Sortable_One_Control' ) ) :
 
     /**
 	 * Sortable One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Sortable_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Sortable_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.

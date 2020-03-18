@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Toggle_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Toggle_One_Control' ) ) :
 
     /**
 	 * Toggle One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Toggle_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Toggle_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Toggle_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.

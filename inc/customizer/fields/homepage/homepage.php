@@ -18,7 +18,7 @@ $wp_customize->add_setting( 'influence_blog_homepage_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_homepage_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_homepage_info', array(
     'label'                    => esc_html__( 'Recommended', 'influence-blog' ),
     'description'              => __( 'Select <code>your latest posts</code> as your homepage.', 'influence-blog' ),
     'section'                  => $section,

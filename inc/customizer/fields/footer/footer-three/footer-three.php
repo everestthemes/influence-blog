@@ -40,7 +40,7 @@ $wp_customize->add_setting( 'influence_blog_footer_three_tabs', array(
     'sanitize_callback'        => 'wp_filter_nohtml_kses',
 ) );
 
-$wp_customize->add_control( new Tab_One_Control( $wp_customize, 'influence_blog_footer_three_tabs', array(
+$wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_footer_three_tabs', array(
     'section'                  => $section,
     'tabs'                     => $tabs,
     'controls'                 => array(
@@ -57,7 +57,7 @@ $wp_customize->add_setting( 'influence_blog_footer_three_cr_text_heading', array
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_three_cr_text_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_footer_three_cr_text_heading', array(
     'label'                    => esc_html__( 'Copyright Text', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -70,7 +70,7 @@ $wp_customize->add_setting( 'influence_blog_footer_three_cr_text_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_footer_three_cr_text_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_footer_three_cr_text_info', array(
     'label'                    => esc_html__( 'Info', 'influence-blog' ),
     'description'              => esc_html__( 'You can use <a> & <span> tags with the copyright text.', 'influence-blog' ),
     'section'                  => $section,
@@ -100,7 +100,7 @@ $wp_customize->add_setting( 'influence_blog_footer_three_menu_heading', array(
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_footer_three_menu_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_footer_three_menu_heading', array(
     'label'                    => esc_html__( 'Menu Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',

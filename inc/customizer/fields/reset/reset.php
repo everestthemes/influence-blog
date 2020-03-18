@@ -14,7 +14,7 @@ $wp_customize->add_setting( 'influence_blog_reset_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_reset_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_reset_info', array(
     'label'                    => esc_html__( 'Caution', 'influence-blog' ),
     'description'              => __( 'Reset all settings to default. Refresh the page after save to view full effects.', 'influence-blog' ),
     'section'                  => $section,
@@ -30,7 +30,7 @@ $wp_customize->add_setting( 'influence_blog_reset_toggle', array(
     'default'                  => influence_blog_defaults( 'reset_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Two_Control ( $wp_customize, 'influence_blog_reset_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Two_Control ( $wp_customize, 'influence_blog_reset_toggle', array(
     'label'                    => esc_html__( 'Reset All Settings', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-two',

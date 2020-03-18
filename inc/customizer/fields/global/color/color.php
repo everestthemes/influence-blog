@@ -20,7 +20,7 @@ $wp_customize->add_setting( 'influence_blog_color_theme', array(
     'default'                  => influence_blog_defaults( 'color_theme' ),
 ) );
 
-$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_color_theme', array(
+$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_color_theme', array(
     'label'                    => esc_html__( 'Theme Color', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'color-one',
@@ -35,7 +35,7 @@ $wp_customize->add_setting( 'influence_blog_color_text', array(
     'default'                  => influence_blog_defaults( 'color_text' ),
 ) );
 
-$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_color_text', array(
+$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_color_text', array(
     'label'                    => esc_html__( 'Text Color', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'color-one',
@@ -50,7 +50,7 @@ $wp_customize->add_setting( 'influence_blog_color_link', array(
     'default'                  => influence_blog_defaults( 'color_link' ),
 ) );
 
-$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_color_link', array(
+$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_color_link', array(
     'label'                    => esc_html__( 'Link Color', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'color-one',
@@ -65,7 +65,7 @@ $wp_customize->add_setting( 'influence_blog_color_link_hover', array(
     'default'                  => influence_blog_defaults( 'color_link_hover' ),
 ) );
 
-$wp_customize->add_control( new Color_One_Control( $wp_customize, 'influence_blog_color_link_hover', array(
+$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_color_link_hover', array(
     'label'                    => esc_html__( 'Link Hover Color', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'color-one',

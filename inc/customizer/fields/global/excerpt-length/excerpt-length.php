@@ -18,7 +18,7 @@ $wp_customize->add_setting( 'influence_blog_excerpt_length_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_excerpt_length_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_excerpt_length_info', array(
     'label'                    => esc_html__( 'Note', 'influence-blog' ),
     'description'              => $description,
     'section'                  => $section,

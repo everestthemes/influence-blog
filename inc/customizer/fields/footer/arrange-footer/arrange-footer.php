@@ -18,7 +18,7 @@ $wp_customize->add_setting( 'influence_blog_arrange_footer_info', array(
     'sanitize_callback'        => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Info_One_Control ( $wp_customize, 'influence_blog_arrange_footer_info', array(
+$wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_arrange_footer_info', array(
     'label'                    => esc_html__( 'Notice', 'influence-blog' ),
     'description'              => __( 'Rearrange and enable or disable to display footer sections.', 'influence-blog' ),
     'section'                  => $section,
@@ -46,7 +46,7 @@ $wp_customize->add_setting( 'influence_blog_arrange_footer', array(
     'default'                  => influence_blog_sortable_defaults ( $arrange_footer_options ),
 ) );
 
-$wp_customize->add_control( new Sortable_One_Control( $wp_customize, 'influence_blog_arrange_footer', array(
+$wp_customize->add_control( new Influence_Blog_Sortable_One_Control( $wp_customize, 'influence_blog_arrange_footer', array(
 	'section'				   => $section,
     'choices'                  => $arrange_footer_option,
     'disableKey'               => $disableKey,
