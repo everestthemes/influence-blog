@@ -27,7 +27,7 @@ Wordpress Default Style Here
     color: #e9b105;
 }
 
-.widget .side-tt.widget-title {
+.widget .side-tt.widget-title .s-title {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 700;
@@ -36,7 +36,7 @@ Wordpress Default Style Here
     color: #000;
     padding: 5px;
 }
-.secondary-widget-area .widget .side-tt.widget-title {
+.secondary-widget-area .widget .side-tt.widget-title  .s-title{
      background-color: #eee;
 }
 
