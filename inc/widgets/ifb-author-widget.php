@@ -31,9 +31,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-            $author_name = !empty( $instance[ 'author_name' ] ) ? $instance[ 'author_name' ] : '';
-
-            $author_description = !empty( $instance[ 'author_description' ] ) ? $instance[ 'author_description' ] : '';
+            $author_page = !empty( $instance[ 'author_page' ] ) ? $instance[ 'author_page' ] : '';
 
             $author_image_url = !empty( $instance['author_image_url'] ) ? $instance['author_image_url'] : '';
 
@@ -42,126 +40,91 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
                 return;
             }
 
-            if( $args['id'] == 'influence-blog-top-widget-area' || $args['id'] == 'influence-blog-bottom-widget-area' ) {
+            ?>
+            <div class="side-space">
+                <div class="author-wrap">
+                    <?php
+                    if( !empty( $title ) ) {
+                    ?>
+                    <div class="side-tt">
+                        <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
+                    </div>
+                    <?php
+                    }
 
-                ?>
-                <div class="fl-top-widget-area primary-widget-area">
-                    <div class="widget-area-inner lrg-padding">
-                        <div class="container">
-                            <div class="row justify-content-between">
-                                <div class="col-12 col-lg-7">
-                                    <div class="widget-area-entry">
-                                        <div class="widget text_widget">
-                                            <?php
-                                            if( !empty( $title ) ) {
-                                                ?>
-                                                <h2 class="l-title"><?php echo esc_html( $title ); ?></h2>
-                                                <?php
-                                            }
+                    if( !empty( $author_page ) ) {
 
-                                            if( !empty( $author_name ) ) {
-                                                ?>
-                                                <h3 class="m-title"><?php echo esc_html( $author_name ); ?></h3>
-                                                <?php
-                                            }
+                        $page_args = array(
+                            'post_type' => 'page',
+                        );
 
-                                            if( !empty( $author_description ) ) {
-                                                ?>
-                                                <p class="sub-title"><?php echo esc_html( $author_description ); ?></p>
-                                                <?php
-                                            }
-                                            ?>
-                                        </div><!-- // widget text_widget -->
-                                    </div>
-                                </div><!-- // col-12 col-lg-7-->
-                                <?php
-                                if( !empty( $author_image_url ) ) {
+                        if( absint( $author_page ) > 0) {
 
-                                    $author_image_url_id = attachment_url_to_postid( $author_image_url );
-
-                                    $author_image_src = wp_get_attachment_image_src( $author_image_url_id, 'influence-blog-thumbnail-three' );
-
-                                    $author_image_src = $author_image_src[0];
-
-                                    if( !empty( $author_image_src ) ) {
-                                        ?>
-                                        <div class="col-12 col-lg-4">
-                                            <div class="widget abt-img-sec">
-                                                <figure><img src="<?php echo esc_url( $author_image_src ); ?>" alt="about-img"></figure>
-                                            </div>
-                                        </div><!-- // col-12 col-lg-7-->
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </div><!-- // row-->
-                        </div><!-- // container -->
-                    </div><!-- // widget-area-inner -->
-                </div><!-- // fl-top-widget-area -->
-                <?php
-
-            } else {
-
-                ?>
-                <div class="side-space">
-                    <div class="author-wrap">
-                        <?php
-                        if( !empty( $title ) ) {
-                        ?>
-                        <div class="side-tt">
-                            <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
-                        </div>
-                        <?php
+                            $page_args['page_id'] = absint( $author_page );
                         }
-                        ?>
-                        <div class="side-widget-d2 clearfix">
-                            <?php
-                                if( !empty( $author_image_url ) ) {
 
-                                    $author_image_url_id = attachment_url_to_postid( $author_image_url );
+                        $page_query = new WP_Query( $page_args );
 
-                                    $author_image_src = wp_get_attachment_image_src( $author_image_url_id, 'influence-blog-thumbnail-one' );
+                        if( $page_query->have_posts() ) {
 
-                                    $author_image_src = $author_image_src[0];
+                            while( $page_query->have_posts() ) :
 
-                                    if( !empty( $author_image_src ) ) {
-                                        ?>
-                                        <div class="img-holder">
-                                            <figure><img src="<?php echo esc_url( $author_image_src ); ?>" alt="author"></figure>
-                                        </div>
-                                        <?php
-                                    }
-                                }
-                            ?>
-                            <div class="side-widget-bdy">
-                                <div class="author-detail">
+                                $page_query->the_post();
+                                ?>
+                                <div class="side-widget-d2 clearfix">
                                     <?php
-                                    if( !empty( $author_name ) ) {
-                                        ?>
-                                        <h4 class="sm-title"><?php echo esc_html( $author_name ); ?></h4>
-                                        <?php
-                                    }
 
-                                    if( !empty( $author_description ) ) {
-                                        ?>
-                                        <h3 class="exs-title"><?php echo esc_html( $author_description ); ?></h3>
-                                        <?php
+                                    if( !empty( $author_image_url ) ) {
+
+                                        $author_image_url_id = attachment_url_to_postid( $author_image_url );
+
+                                        $author_image_src = wp_get_attachment_image_src( $author_image_url_id, 'influence-blog-thumbnail-one' );
+
+                                        $author_image_src = $author_image_src[0];
+
+                                        if( !empty( $author_image_src ) ) {
+                                            ?>
+                                            <div class="img-holder">
+                                                <figure><img src="<?php echo esc_url( $author_image_src ); ?>" alt="author"></figure>
+                                            </div>
+                                            <?php
+                                        }
+                                    } else {
+
+                                        if( has_post_thumbnail() ) {
+
+                                            ?>
+                                            <div class="img-holder">
+                                                <figure>
+                                                    <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                                </figure>
+                                            </div>
+                                            <?php
+                                        }
                                     }
                                     ?>
-                                </div>
-                            </div>
-                        </div><!--//side-widget-d1-->
-                    </div>
-                </div><!--author-post-->
-                <?php
-            }
+                                    <div class="side-widget-bdy">
+                                        <div class="author-detail">
+                                            <h4 class="sm-title"><?php the_title(); ?></h4>
+                                            <p class="exs-title"><?php the_excerpt(); ?></p>
+                                        </div>
+                                    </div>
+                                </div><!--//side-widget-d1-->
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        }
+                    }
+                    ?>
+                </div>
+            </div><!--author-post-->
+            <?php
         }
 
         public function form( $instance ) {
             $defaults = array(
                 'title'        => '',
-                'author_name'        => '',
-                'author_description' => '',
+                'author_page'  => '',
                 'author_image_url' => '',
             );
 
@@ -179,22 +142,27 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
             </p>
 
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id('author_name') ); ?>">
-                    <strong><?php esc_html_e('Author Name', 'influence-blog'); ?></strong>
+                <label for="<?php echo esc_attr( $this->get_field_id('author_page') ); ?>">
+                    <strong><?php esc_html_e('Author Page', 'influence-blog'); ?></strong>
                 </label>
-                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('author_name') ); ?>" name="<?php echo esc_attr( $this->get_field_name('author_name') ); ?>" type="text" value="<?php echo esc_attr( $instance['author_name'] ); ?>" />
-            </p>
-
-            <p>
-                <label for="<?php echo esc_attr( $this->get_field_id('author_description') ); ?>">
-                    <strong><?php esc_html_e('Author Description', 'influence-blog'); ?></strong>
-                </label>
-                <textarea id="<?php echo esc_attr( $this->get_field_id( 'author_description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'author_description' ) ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['author_description'] ); ?></textarea>
+                <?php
+                    wp_dropdown_pages( array(
+                        'id'               => esc_attr( $this->get_field_id( 'author_page' ) ),
+                        'class'            => 'widefat',
+                        'name'             => esc_attr( $this->get_field_name( 'author_page' ) ),
+                        'orderby'          => 'name',
+                        'selected'         => esc_attr( $instance [ 'author_page' ] ),
+                        'show_option_none'  => esc_html__( 'Select Page' , 'influence-blog' ),
+                        )
+                    );
+                ?>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('author_image_url')); ?>">
                     <strong><?php esc_html_e('Author Image', 'influence-blog'); ?></strong>
+                    <br>
+                    <small><?php esc_html_e('If no image is set, then featured image of selected page will be used.', 'influence-blog'); ?></small>
                 </label>
 
                 <span class="image-uploader-container">
@@ -230,9 +198,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             $instance['title']        = sanitize_text_field( $new_instance['title'] );
 
-            $instance['author_name']  = sanitize_text_field( $new_instance['author_name'] );
-
-            $instance['author_description']  = sanitize_textarea_field( $new_instance['author_description'] );
+            $instance['author_page']   = absint( $new_instance['author_page'] );
 
             $instance['author_image_url']  = esc_url_raw( $new_instance['author_image_url'] );
 
