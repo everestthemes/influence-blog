@@ -20,9 +20,9 @@ function debug( $var ) {
 /**
  * Function to get customizer options
  */
-if ( !function_exists( 'infb_blog_get_mod' ) ) {
+if ( !function_exists( 'influence_blog_get_mod' ) ) {
 
-    function infb_blog_get_mod( $id ) {
+    function influence_blog_get_mod( $id ) {
 
         global $influence_blog_prefix;
 
@@ -76,7 +76,7 @@ if ( !function_exists( 'influence_blog_get_font_data' ) ) {
      */
     function influence_blog_get_font_data( $name, $value='family' ) {
 
-        $font = infb_blog_get_mod( $name, $name );
+        $font = influence_blog_get_mod( $name, $name );
 
         $font = ! is_array( $font ) ? json_decode( $font, true ) : $font;
 
@@ -397,7 +397,7 @@ if( !function_exists( 'influence_blog_excerpt_length' ) ) {
            return $length;
        }
 
-       $excerpt_length = infb_blog_get_mod( 'excerpt_length' );
+       $excerpt_length = influence_blog_get_mod( 'excerpt_length' );
 
        if( absint( $excerpt_length ) > 0 ) {
 
@@ -466,17 +466,17 @@ function influence_blog_loadmore_ajax_handler() {
 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
 	$args['post_status'] = 'publish';
 
-    $section_one_query = infb_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
+    $section_one_query = influence_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
 
     if( $section_one_query ) {
 
-        $cat = infb_blog_get_mod( 'blogpage_section_one_content_category' );
+        $cat = influence_blog_get_mod( 'blogpage_section_one_content_category' );
 
-        $order = infb_blog_get_mod( 'blogpage_section_one_content_orderby' );
+        $order = influence_blog_get_mod( 'blogpage_section_one_content_orderby' );
 
-        $sort = infb_blog_get_mod( 'blogpage_section_one_content_sort_order' );
+        $sort = influence_blog_get_mod( 'blogpage_section_one_content_sort_order' );
 
-        $num = infb_blog_get_mod( 'blogpage_section_one_content_posts_number' );
+        $num = influence_blog_get_mod( 'blogpage_section_one_content_posts_number' );
 
         if( !empty( $cat ) ) {
 
@@ -528,7 +528,7 @@ function influence_blog_loadmore_ajax_handler() {
 		// run the loop
 		while( have_posts() ): the_post();
 
-            $section_one_layout = infb_blog_get_mod( 'blogpage_section_one_layout_select' );
+            $section_one_layout = influence_blog_get_mod( 'blogpage_section_one_layout_select' );
 
             if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
 

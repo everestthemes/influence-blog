@@ -22,7 +22,7 @@ if( ! function_exists( 'influence_blog_header_top_navigation_action' ) ) :
 
  	function influence_blog_header_top_navigation_action() {
 
-        $header_one_layout_one_menu_select = infb_blog_get_mod( 'header_one_layout_one_menu_select' );
+        $header_one_layout_one_menu_select = influence_blog_get_mod( 'header_one_layout_one_menu_select' );
 
         ?>
         <div class="top-bar-menu">
@@ -58,7 +58,7 @@ if( ! function_exists( 'influence_blog_header_social_links_action' ) ) :
 
         if( !empty( $social_links ) ) {
 
-            $new_tab = infb_blog_get_mod( 'header_one_layout_one_social_links_tab_toggle' );
+            $new_tab = influence_blog_get_mod( 'header_one_layout_one_social_links_tab_toggle' );
 
             $target_attr = '_self';
 
@@ -158,7 +158,7 @@ if( ! function_exists( 'influence_blog_header_advertisement_action' ) ) :
 
  	function influence_blog_header_advertisement_action() {
 
-        $ads_image = infb_blog_get_mod( 'header_two_ads_upload_image' );
+        $ads_image = influence_blog_get_mod( 'header_two_ads_upload_image' );
 
         $ads_image_id_src[0] = $rel_tag = '';
 
@@ -170,16 +170,16 @@ if( ! function_exists( 'influence_blog_header_advertisement_action' ) ) :
 
             $ads_image_id_src = wp_get_attachment_image_src( $ads_image_id, 'full' );
 
-            $ads_link = infb_blog_get_mod( 'header_two_ads_link' );
+            $ads_link = influence_blog_get_mod( 'header_two_ads_link' );
 
-            $ads_link_tab = infb_blog_get_mod( 'header_two_ads_links_tab_toggle' );
+            $ads_link_tab = influence_blog_get_mod( 'header_two_ads_links_tab_toggle' );
 
             if( $ads_link_tab == true ) {
 
                 $tab_class = '_blank';
             }
 
-            $ads_link_rel = infb_blog_get_mod( 'header_two_ads_link_rel' );
+            $ads_link_rel = influence_blog_get_mod( 'header_two_ads_link_rel' );
 
             if( !empty( $ads_link_rel ) ) {
 
@@ -209,17 +209,17 @@ if( ! function_exists( 'influence_blog_header_menu_icon_action' ) ) :
 
  	function influence_blog_header_menu_icon_action() {
 
-        $icon_col = infb_blog_get_mod( 'header_three_advance_menu_icon_col' );
+        $icon_col = influence_blog_get_mod( 'header_three_advance_menu_icon_col' );
 
         $col_class = influence_blog_col_value( $icon_col, 'md' );
 
         $tab_class = '_self';
 
-        $menu_icon = infb_blog_get_mod( 'header_three_menu_icon_select' );
+        $menu_icon = influence_blog_get_mod( 'header_three_menu_icon_select' );
 
-        $icon_link = infb_blog_get_mod( 'header_three_menu_icon_link' );
+        $icon_link = influence_blog_get_mod( 'header_three_menu_icon_link' );
 
-        $tab_class = infb_blog_get_mod( 'header_three_menu_icon_link_tab_toggle' );
+        $tab_class = influence_blog_get_mod( 'header_three_menu_icon_link_tab_toggle' );
 
         if( !empty( $menu_icon ) && !empty( $icon_link ) ) {
             ?>
@@ -246,11 +246,11 @@ if( ! function_exists( 'influence_blog_header_search_action' ) ) :
 
  	function influence_blog_header_search_action() {
 
-        $search_icon = infb_blog_get_mod( 'header_three_search_icon_select' );
+        $search_icon = influence_blog_get_mod( 'header_three_search_icon_select' );
 
         if( !empty( $search_icon ) ) {
 
-            $search_col = infb_blog_get_mod( 'header_three_advance_search_icon_col' );
+            $search_col = influence_blog_get_mod( 'header_three_advance_search_icon_col' );
 
             $col_class = influence_blog_col_value( $search_col, 'md' );
 
@@ -281,7 +281,7 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
 
  	function influence_blog_header_main_navigation_action() {
 
-        $menu_col = infb_blog_get_mod( 'header_three_advance_menu_col' );
+        $menu_col = influence_blog_get_mod( 'header_three_advance_menu_col' );
 
         $col_class = influence_blog_col_value( $menu_col, 'md' );
 
@@ -297,7 +297,7 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
                     <nav id="main_navigation" class="main_navigation">
                         <?php
 
-                        $header_three_menu_select = infb_blog_get_mod( 'header_three_menu_select' );
+                        $header_three_menu_select = influence_blog_get_mod( 'header_three_menu_select' );
 
                         $menu_args = array(
                             'theme_location' => $header_three_menu_select,
@@ -444,7 +444,7 @@ if( ! function_exists( 'influence_blog_header_action' ) ) :
 
  	function influence_blog_header_action() {
 
-        $header_layout = infb_blog_get_mod( 'header_layout_options_select' );
+        $header_layout = influence_blog_get_mod( 'header_layout_options_select' );
 
         $header_layout = apply_filters( 'influence_blog_filter_header_layout', $header_layout );
 
@@ -469,11 +469,11 @@ if( ! function_exists( 'influence_blog_banner_action' ) ) :
 
  	function influence_blog_banner_action() {
 
-        $display_banner = infb_blog_get_mod( 'banner_display_toggle' );
+        $display_banner = influence_blog_get_mod( 'banner_display_toggle' );
 
         if( $display_banner == true ) {
 
-            $banner_layout = infb_blog_get_mod( 'banner_layout_options_select' );
+            $banner_layout = influence_blog_get_mod( 'banner_layout_options_select' );
 
             if( $banner_layout == 'one' || $banner_layout == 'two' ) {
 
@@ -495,7 +495,7 @@ if( ! function_exists( 'influence_blog_blogpage_action' ) ) :
 
  	function influence_blog_blogpage_action() {
 
-        $display_section_one = infb_blog_get_mod( 'blogpage_section_one_display_toggle' );
+        $display_section_one = influence_blog_get_mod( 'blogpage_section_one_display_toggle' );
 
         if( $display_section_one ) {
 
@@ -533,13 +533,13 @@ if( ! function_exists( 'influence_blog_blogpage_section_one_action' ) ) :
 
  	function influence_blog_blogpage_section_one_action() {
 
-        $sidebar_col = infb_blog_get_mod( 'blogpage_section_one_sidebar_col' );
+        $sidebar_col = influence_blog_get_mod( 'blogpage_section_one_sidebar_col' );
 
-        $sidebar_position = infb_blog_get_mod( 'blogpage_section_one_sidebar_position' );
+        $sidebar_position = influence_blog_get_mod( 'blogpage_section_one_sidebar_position' );
 
-        $sidebar_area = infb_blog_get_mod( 'blogpage_section_one_widget_area_select' );
+        $sidebar_area = influence_blog_get_mod( 'blogpage_section_one_widget_area_select' );
 
-        $content_col = infb_blog_get_mod( 'blogpage_section_one_content_col' );
+        $content_col = influence_blog_get_mod( 'blogpage_section_one_content_col' );
 
         $sticky = apply_filters( 'influence_blog_section_one_sticky_status', false );
 
@@ -553,7 +553,7 @@ if( ! function_exists( 'influence_blog_blogpage_section_one_action' ) ) :
                             <aside id="primary" class="primary-widget-area">
                                 <?php
 
-                                $section_one_layout = infb_blog_get_mod( 'blogpage_section_one_layout_select' );
+                                $section_one_layout = influence_blog_get_mod( 'blogpage_section_one_layout_select' );
 
                                 if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
 
@@ -687,7 +687,7 @@ if( ! function_exists( 'influence_blog_footer_first_widget_area_action' ) ) :
 
  	function influence_blog_footer_first_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_first_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_first_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -695,7 +695,7 @@ if( ! function_exists( 'influence_blog_footer_first_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_first_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_first_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -720,7 +720,7 @@ if( ! function_exists( 'influence_blog_footer_second_widget_area_action' ) ) :
 
  	function influence_blog_footer_second_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_second_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_second_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -728,7 +728,7 @@ if( ! function_exists( 'influence_blog_footer_second_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_second_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_second_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -753,7 +753,7 @@ if( ! function_exists( 'influence_blog_footer_third_widget_area_action' ) ) :
 
  	function influence_blog_footer_third_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_third_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_third_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -761,7 +761,7 @@ if( ! function_exists( 'influence_blog_footer_third_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_third_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_third_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -786,7 +786,7 @@ if( ! function_exists( 'influence_blog_footer_fourth_widget_area_action' ) ) :
 
  	function influence_blog_footer_fourth_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_fourth_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_fourth_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -794,7 +794,7 @@ if( ! function_exists( 'influence_blog_footer_fourth_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_fourth_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_fourth_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -817,7 +817,7 @@ if( ! function_exists( 'influence_blog_footer_fifth_widget_area_action' ) ) :
 
  	function influence_blog_footer_fifth_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_fifth_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_fifth_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -825,7 +825,7 @@ if( ! function_exists( 'influence_blog_footer_fifth_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_fifth_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_fifth_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -850,7 +850,7 @@ if( ! function_exists( 'influence_blog_footer_sixth_widget_area_action' ) ) :
 
  	function influence_blog_footer_sixth_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_one_sixth_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_one_sixth_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -858,7 +858,7 @@ if( ! function_exists( 'influence_blog_footer_sixth_widget_area_action' ) ) :
         <div class="col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
             <?php
 
-            $widget_area = infb_blog_get_mod( 'footer_one_sixth_widget_area_select' );
+            $widget_area = influence_blog_get_mod( 'footer_one_sixth_widget_area_select' );
 
             if( is_active_sidebar( $widget_area ) ) {
 
@@ -883,11 +883,11 @@ if( ! function_exists( 'influence_blog_footer_middle_title_action' ) ) :
 
  	function influence_blog_footer_middle_title_action() {
 
-        $title_col = infb_blog_get_mod( 'footer_two_title_col' );
+        $title_col = influence_blog_get_mod( 'footer_two_title_col' );
 
         $col_class = influence_blog_col_value( $title_col, 'lg' );
 
-        $title = infb_blog_get_mod( 'footer_two_title' );
+        $title = influence_blog_get_mod( 'footer_two_title' );
 
         ?>
         <div class="foo-mid-title col-12 col-md-6 <?php echo esc_attr( $col_class ); ?>">
@@ -917,7 +917,7 @@ if( ! function_exists( 'influence_blog_footer_middle_social_links_action' ) ) :
 
  	function influence_blog_footer_middle_social_links_action() {
 
-        $links_col = infb_blog_get_mod( 'footer_two_social_links_col' );
+        $links_col = influence_blog_get_mod( 'footer_two_social_links_col' );
 
         $col_class = influence_blog_col_value( $links_col, 'lg' );
 
@@ -933,7 +933,7 @@ if( ! function_exists( 'influence_blog_footer_middle_social_links_action' ) ) :
 
                 if( !empty( $social_links ) ) {
 
-                    $new_tab = infb_blog_get_mod( 'footer_two_social_links_tab_toggle' );
+                    $new_tab = influence_blog_get_mod( 'footer_two_social_links_tab_toggle' );
 
                     $target_attr = '_self';
 
@@ -984,7 +984,7 @@ if( ! function_exists( 'influence_blog_footer_middle_widget_area_action' ) ) :
 
  	function influence_blog_footer_middle_widget_area_action() {
 
-        $area_col = infb_blog_get_mod( 'footer_two_widget_area_col' );
+        $area_col = influence_blog_get_mod( 'footer_two_widget_area_col' );
 
         $col_class = influence_blog_col_value( $area_col, 'lg' );
 
@@ -996,7 +996,7 @@ if( ! function_exists( 'influence_blog_footer_middle_widget_area_action' ) ) :
                         <div class="col-12 col-md-12 col-lg-12">
                             <?php
 
-                            $widget_area = infb_blog_get_mod( 'footer_two_widget_area_select' );
+                            $widget_area = influence_blog_get_mod( 'footer_two_widget_area_select' );
 
                             if( is_active_sidebar( $widget_area ) ) {
 
@@ -1029,7 +1029,7 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
     <div class="col-lg-6">
         <div class="copy center">
             <?php
-            $footer_copyright_text = infb_blog_get_mod( 'footer_three_cr_text' );
+            $footer_copyright_text = influence_blog_get_mod( 'footer_three_cr_text' );
 
             if( has_filter( 'influence_blog_filter_footer_three_cr_text' ) ) {
 
@@ -1069,7 +1069,7 @@ if( ! function_exists( 'influence_blog_footer_three_menu_action' ) ) :
 
     ?>
     <div class="col-lg-6">
-        <?php $footer_three_menu_select = infb_blog_get_mod( 'footer_three_menu_select' ); ?>
+        <?php $footer_three_menu_select = influence_blog_get_mod( 'footer_three_menu_select' ); ?>
         <div class="foot-menu">
             <?php
             wp_nav_menu( array(
@@ -1114,8 +1114,8 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
 
  	function influence_blog_footer_top_action() {
 
-        $footer_one_design_bg_image = infb_blog_get_mod( 'footer_one_design_bg_image' );
-        $footer_one_widget_area_alignment = infb_blog_get_mod( 'footer_one_widget_area_alignment' );
+        $footer_one_design_bg_image = influence_blog_get_mod( 'footer_one_design_bg_image' );
+        $footer_one_widget_area_alignment = influence_blog_get_mod( 'footer_one_widget_area_alignment' );
 
         ?>
         <div class="foot-top-wrap"<?php influence_blog_has_image_url( $footer_one_design_bg_image ); ?>>
@@ -1124,7 +1124,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                     <div class="row justify-content-<?php echo esc_attr( $footer_one_widget_area_alignment ); ?>">
                     <?php
 
-                    $first_widget_area_toggle = infb_blog_get_mod( 'footer_one_first_widget_area_toggle' );
+                    $first_widget_area_toggle = influence_blog_get_mod( 'footer_one_first_widget_area_toggle' );
 
                     if( $first_widget_area_toggle ) {
                         /**
@@ -1135,7 +1135,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                         do_action( 'influence_blog_footer_first_widget_area' );
                     }
 
-                    $second_widget_area_toggle = infb_blog_get_mod( 'footer_one_second_widget_area_toggle' );
+                    $second_widget_area_toggle = influence_blog_get_mod( 'footer_one_second_widget_area_toggle' );
 
                     if( $second_widget_area_toggle ) {
                         /**
@@ -1146,7 +1146,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                         do_action( 'influence_blog_footer_second_widget_area' );
                     }
 
-                    $third_widget_area_toggle = infb_blog_get_mod( 'footer_one_third_widget_area_toggle' );
+                    $third_widget_area_toggle = influence_blog_get_mod( 'footer_one_third_widget_area_toggle' );
 
                     if( $third_widget_area_toggle ) {
                         /**
@@ -1157,7 +1157,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                         do_action( 'influence_blog_footer_third_widget_area' );
                     }
 
-                    $fourth_widget_area_toggle = infb_blog_get_mod( 'footer_one_fourth_widget_area_toggle' );
+                    $fourth_widget_area_toggle = influence_blog_get_mod( 'footer_one_fourth_widget_area_toggle' );
 
                     if( $fourth_widget_area_toggle ) {
                         /**
@@ -1168,7 +1168,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                         do_action( 'influence_blog_footer_fourth_widget_area' );
                     }
 
-                    $fifth_widget_area_toggle = infb_blog_get_mod( 'footer_one_fifth_widget_area_toggle' );
+                    $fifth_widget_area_toggle = influence_blog_get_mod( 'footer_one_fifth_widget_area_toggle' );
 
                     if( $fifth_widget_area_toggle ) {
                         /**
@@ -1179,7 +1179,7 @@ if( ! function_exists( 'influence_blog_footer_top_action' ) ) :
                         do_action( 'influence_blog_footer_fifth_widget_area' );
                     }
 
-                    $sixth_widget_area_toggle = infb_blog_get_mod( 'footer_one_sixth_widget_area_toggle' );
+                    $sixth_widget_area_toggle = influence_blog_get_mod( 'footer_one_sixth_widget_area_toggle' );
 
                     if( $sixth_widget_area_toggle ) {
                         /**
@@ -1210,7 +1210,7 @@ if( ! function_exists( 'influence_blog_footer_middle_action' ) ) :
 
  	function influence_blog_footer_middle_action() {
 
-        $footer_two_design_bg_image = infb_blog_get_mod( 'footer_two_design_bg_image' );
+        $footer_two_design_bg_image = influence_blog_get_mod( 'footer_two_design_bg_image' );
 
         ?>
         <div class="footer-mid-sec center"<?php influence_blog_has_image_url( $footer_two_design_bg_image ); ?>>
@@ -1325,12 +1325,12 @@ if( ! function_exists( 'influence_blog_pagination_default_template_action' ) ) :
 
         if( is_archive() ) {
 
-            $style = infb_blog_get_mod( 'archivepage_content_options_pagination_style' );
+            $style = influence_blog_get_mod( 'archivepage_content_options_pagination_style' );
         }
 
         if( is_search() ) {
 
-            $style = infb_blog_get_mod( 'searchpage_content_options_pagination_style' );
+            $style = influence_blog_get_mod( 'searchpage_content_options_pagination_style' );
         }
 
         ?>
