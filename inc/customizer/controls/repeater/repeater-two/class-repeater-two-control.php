@@ -164,15 +164,15 @@ if( ! class_exists( 'Repeater_Two_Control' ) ) {
 
             wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/everestthemes/assets/css/font-awesome.min.css' );
 
-            wp_enqueue_style( 'customizer-repeater-two-style', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/css/repeater-two.css' );
+            wp_enqueue_style( 'influence-blog-customizer-repeater-two-style', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/css/repeater-two.css' );
 
             wp_enqueue_style( 'wp-color-picker' );
 
-            wp_enqueue_script( 'customizer-repeater-two-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/js/repeater-two.js', array( 'jquery', 'jquery-ui-draggable', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-repeater-two-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/js/repeater-two.js', array( 'jquery', 'jquery-ui-draggable', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_enqueue_script( 'customizer-repeater-two-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/js/iconpicker.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-repeater-two-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/js/iconpicker.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_enqueue_style( 'customizer-repeater-two-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/css/iconpicker.css' );
+            wp_enqueue_style( 'influence-blog-customizer-repeater-two-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-two/css/iconpicker.css' );
         }
 
         public function render_content() {

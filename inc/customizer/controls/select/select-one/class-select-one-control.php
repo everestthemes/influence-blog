@@ -36,7 +36,7 @@ if( ! class_exists( 'Select_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-select-one-style', get_template_directory_uri() . '/inc/customizer/controls/select/select-one/css/select-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-select-one-style', get_template_directory_uri() . '/inc/customizer/controls/select/select-one/css/select-one.css' );
         }
 
 		/**

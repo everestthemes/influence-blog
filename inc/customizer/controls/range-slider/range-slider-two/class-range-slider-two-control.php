@@ -25,9 +25,9 @@ if( ! class_exists( 'Range_Slider_Two_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-range-slider-two-style', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-two/css/range-slider-two.css', array( 'customizer-responsive-media-style' ) );
+            wp_enqueue_style( 'influence-blog-customizer-range-slider-two-style', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-two/css/range-slider-two.css', array( 'customizer-responsive-media-style' ) );
 
-            wp_enqueue_script( 'customizer-range-slider-two-script', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-two/js/range-slider-two.js', array( 'jquery', 'customize-base', 'jquery-ui-slider', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-range-slider-two-script', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-two/js/range-slider-two.js', array( 'jquery', 'customize-base', 'jquery-ui-slider', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

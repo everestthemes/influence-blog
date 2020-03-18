@@ -31,9 +31,9 @@ if( ! class_exists( 'Toggle_Three_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-toggle-three-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-three/css/toggle-three.css' );
+            wp_enqueue_style( 'influence-blog-customizer-toggle-three-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-three/css/toggle-three.css' );
 
-            wp_enqueue_script( 'customizer-toggle-three-script', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-three/js/toggle-three.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-toggle-three-script', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-three/js/toggle-three.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

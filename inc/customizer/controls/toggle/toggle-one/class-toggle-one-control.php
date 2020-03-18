@@ -24,9 +24,9 @@ if( ! class_exists( 'Toggle_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-toggle-one-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-one/css/toggle-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-toggle-one-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-one/css/toggle-one.css' );
 
-            wp_enqueue_script( 'customizer-toggle-one-script', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-one/js/toggle-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-toggle-one-script', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-one/js/toggle-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

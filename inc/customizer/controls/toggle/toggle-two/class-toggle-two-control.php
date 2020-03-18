@@ -24,7 +24,7 @@ if( ! class_exists( 'Toggle_Two_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-toggle-two-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-two/css/toggle-two.css' );
+            wp_enqueue_style( 'influence-blog-customizer-toggle-two-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-two/css/toggle-two.css' );
         }
 
         /**

@@ -44,7 +44,7 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
 
         public function field_header($icon = '')
         {
-            echo '<div class="yatri-field-header">';
+            echo '<div class="icon-picker-one-field-header">';
             if (!empty($this->label)) {
                 echo '<span class="customize-control-title">' . esc_html($this->label) . '</span>';
             }
@@ -80,11 +80,11 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
                 )
             );
 
-            wp_enqueue_script( 'icon-picker-one-script', $icon_picker_uri . 'js/icon-picker-one.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
-            wp_localize_script('icon-picker-one-script', 'faAllIcons', $icon_lists);
+            wp_enqueue_script( 'influence-blog-icon-picker-one-script', $icon_picker_uri . 'js/icon-picker-one.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+            wp_localize_script('influence-blog-icon-picker-one-script', 'faAllIcons', $icon_lists);
 
-            wp_register_style('icon-picker-one-fontawesome', $fontawesome_fonts_uri, array(), wp_get_theme()->get( 'Version' ) );
-            wp_enqueue_style('icon-picker-one-control-css', $icon_picker_uri . 'css/icon-picker-one.css', array('icon-picker-one-fontawesome'), wp_get_theme()->get( 'Version' ) );
+            wp_register_style('influence-blog-icon-picker-one-fontawesome', $fontawesome_fonts_uri, array(), wp_get_theme()->get( 'Version' ) );
+            wp_enqueue_style('influence-blog-icon-picker-one-control-css', $icon_picker_uri . 'css/icon-picker-one.css', array('influence-blog-icon-picker-one-fontawesome'), wp_get_theme()->get( 'Version' ) );
         }
 
         /**
