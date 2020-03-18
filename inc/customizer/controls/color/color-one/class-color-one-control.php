@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Color_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Color_One_Control' ) ) :
 
     /**
 	 * Color One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Color_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Color_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Color_One_Control extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -38,13 +38,13 @@ if( ! class_exists( 'Color_One_Control' ) ) :
 
             wp_enqueue_style( 'wp-color-picker' );
 
-            wp_enqueue_style( 'customizer-color-one-style', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/css/color-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-color-one-style', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/css/color-one.css' );
 
             wp_enqueue_script( 'wp-color-picker' );
 
-            wp_enqueue_script( 'customizer-color-one-script', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/js/color-one.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-color-one-script', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/js/color-one.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_localize_script( 'customizer-color-one-script', 'colorOne', array(
+            wp_localize_script( 'influence-blog-customizer-color-one-script', 'colorOne', array(
                 'colorPalettes' => color_one_default_color_palettes(),
             ) );
         }

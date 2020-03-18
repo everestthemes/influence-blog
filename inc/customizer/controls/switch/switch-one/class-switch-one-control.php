@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Switch_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Switch_One_Control' ) ) :
 
     /**
 	 * Switch One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Switch_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Switch_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Switch_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.
@@ -39,9 +39,9 @@ if( ! class_exists( 'Switch_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-switch-one-style', get_template_directory_uri() . '/inc/customizer/controls/switch/switch-one/css/switch-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-switch-one-style', get_template_directory_uri() . '/inc/customizer/controls/switch/switch-one/css/switch-one.css' );
 
-            wp_enqueue_script( 'customizer-switch-one-script', get_template_directory_uri() . '/inc/customizer/controls/switch/switch-one/js/switch-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-switch-one-script', get_template_directory_uri() . '/inc/customizer/controls/switch/switch-one/js/switch-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

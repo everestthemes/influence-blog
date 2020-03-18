@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Dimension_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Dimension_One_Control' ) ) :
 
     /**
 	 * Dimension One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Dimension_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Dimension_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Dimension_One_Control extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -24,11 +24,11 @@ if( ! class_exists( 'Dimension_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_script( 'customizer-dimension-one-script', get_template_directory_uri() . '/inc/customizer/controls/dimension/dimension-one/js/dimension-one.js', array( 'jquery', 'customize-base', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-dimension-one-script', get_template_directory_uri() . '/inc/customizer/controls/dimension/dimension-one/js/dimension-one.js', array( 'jquery', 'customize-base', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_localize_script( 'customizer-dimension-one-script', 'dimensionOne', $this->l10n() );
+            wp_localize_script( 'influence-blog-customizer-dimension-one-script', 'dimensionOne', $this->l10n() );
 
-            wp_enqueue_style( 'customizer-dimension-one-style', get_template_directory_uri() . '/inc/customizer/controls/dimension/dimension-one/css/dimension-one.css', array( 'customizer-responsive-media-style' ) );
+            wp_enqueue_style( 'influence-blog-customizer-dimension-one-style', get_template_directory_uri() . '/inc/customizer/controls/dimension/dimension-one/css/dimension-one.css', array( 'customizer-responsive-media-style' ) );
         }
 
         /**

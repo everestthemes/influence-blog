@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Box_Shadow_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Box_Shadow_One_Control' ) ) :
 
     /**
 	 * Box Shadow One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Box_Shadow_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Box_Shadow_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Box_Shadow_One_Control extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -24,11 +24,11 @@ if( ! class_exists( 'Box_Shadow_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-box-shadow-one-style', get_template_directory_uri() . '/inc/customizer/controls/box-shadow/box-shadow-one/css/box-shadow-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-box-shadow-one-style', get_template_directory_uri() . '/inc/customizer/controls/box-shadow/box-shadow-one/css/box-shadow-one.css' );
 
-            wp_enqueue_script( 'customizer-box-shadow-one-script', get_template_directory_uri() . '/inc/customizer/controls/box-shadow/box-shadow-one/js/box-shadow-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-box-shadow-one-script', get_template_directory_uri() . '/inc/customizer/controls/box-shadow/box-shadow-one/js/box-shadow-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
 
-            wp_localize_script( 'customizer-box-shadow-one-script', 'boxShadowOne', $this->l10n() );
+            wp_localize_script( 'influence-blog-customizer-box-shadow-one-script', 'boxShadowOne', $this->l10n() );
         }
 
         /**

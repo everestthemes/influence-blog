@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Button_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Button_One_Control' ) ) :
 
     /**
 	 * Button One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Button_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Button_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Button_One_Control extends WP_Customize_Control {
 
 		/**
 		 * The control type.
@@ -27,9 +27,9 @@ if( ! class_exists( 'Button_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-button-one-style', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/css/button-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-button-one-style', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/css/button-one.css' );
 
-            wp_enqueue_script( 'customizer-button-one-script', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/js/button-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-button-one-script', get_template_directory_uri() . '/inc/customizer/controls/button/button-one/js/button-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
 
         }
 

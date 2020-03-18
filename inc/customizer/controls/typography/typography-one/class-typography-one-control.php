@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Typography_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Typography_One_Control' ) ) :
 
     /**
 	 * Typography One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Typography_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Typography_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Typography_One_Control extends WP_Customize_Control {
 
         /**
          * The type of control being rendered
@@ -71,14 +71,14 @@ if( ! class_exists( 'Typography_One_Control' ) ) :
 
             $control_dir = trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/typography/typography-one/';
 
-            wp_enqueue_script( 'typography-one-script', $control_dir . 'js/typography-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
-            wp_enqueue_style( 'typography-one-style', $control_dir . 'css/typography-one.css', array(), wp_get_theme()->get( 'Version' ), 'all' );
+            wp_enqueue_script( 'influence-blog-typography-one-script', $control_dir . 'js/typography-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+            wp_enqueue_style( 'influence-blog-typography-one-style', $control_dir . 'css/typography-one.css', array(), wp_get_theme()->get( 'Version' ), 'all' );
 
-            wp_enqueue_script( 'typography-one-font-control-script', $control_dir . 'font-control.js', array( 'typography-one-script' ), wp_get_theme()->get( 'Version' ), true );
+            wp_enqueue_script( 'influence-blog-typography-one-font-control-script', $control_dir . 'font-control.js', array( 'influence-blog-typography-one-script' ), wp_get_theme()->get( 'Version' ), true );
 
             $fontFile = $control_dir . 'google-fonts-alphabetical.json';
 
-            wp_localize_script('typography-one-font-control-script', 'typoOne', array(
+            wp_localize_script('influence-blog-typography-one-font-control-script', 'typoOne', array(
 
                     'nonce'    => wp_create_nonce( 'typoOne' ),
                     'font_url' => $fontFile

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Icon_Picker_One_Control' ) ) :
     /**
 	 * Icon Picker One Custom Control Class
 	 *
@@ -8,7 +8,7 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Icon_Picker_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Icon_Picker_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.
@@ -44,7 +44,7 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
 
         public function field_header($icon = '')
         {
-            echo '<div class="yatri-field-header">';
+            echo '<div class="icon-picker-one-field-header">';
             if (!empty($this->label)) {
                 echo '<span class="customize-control-title">' . esc_html($this->label) . '</span>';
             }
@@ -80,11 +80,11 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
                 )
             );
 
-            wp_enqueue_script( 'icon-picker-one-script', $icon_picker_uri . 'js/icon-picker-one.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
-            wp_localize_script('icon-picker-one-script', 'faAllIcons', $icon_lists);
+            wp_enqueue_script( 'influence-blog-icon-picker-one-script', $icon_picker_uri . 'js/icon-picker-one.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+            wp_localize_script('influence-blog-icon-picker-one-script', 'faAllIcons', $icon_lists);
 
-            wp_register_style('icon-picker-one-fontawesome', $fontawesome_fonts_uri, array(), wp_get_theme()->get( 'Version' ) );
-            wp_enqueue_style('icon-picker-one-control-css', $icon_picker_uri . 'css/icon-picker-one.css', array('icon-picker-one-fontawesome'), wp_get_theme()->get( 'Version' ) );
+            wp_register_style('influence-blog-icon-picker-one-fontawesome', $fontawesome_fonts_uri, array(), wp_get_theme()->get( 'Version' ) );
+            wp_enqueue_style('influence-blog-icon-picker-one-control-css', $icon_picker_uri . 'css/icon-picker-one.css', array('influence-blog-icon-picker-one-fontawesome'), wp_get_theme()->get( 'Version' ) );
         }
 
         /**
@@ -131,13 +131,13 @@ if( ! class_exists( 'Icon_Picker_One_Control' ) ) :
                         <span class="screen-reader-text"><?php echo esc_html__('Cancel', 'influence-blog'); ?></span>
                     </a>
                     <div class="icon-type-selector">
-                        <select id="icon-picker-one-type">
+                        <select id="icon-picker-one-type-<?php echo esc_attr( $this->id ); ?>">
                             <option value="all"><?php echo esc_html__('All Icon Types', 'influence-blog'); ?></option>
                         </select>
                     </div>
                 </div>
                 <div class="icon-picker-one-search">
-                    <input type="text" id="icon-picker-one-search-input"
+                    <input type="text" id="icon-picker-one-search-input-<?php echo esc_attr( $this->id ); ?>"
                            placeholder="<?php echo esc_html__('Type icon name here', 'influence-blog'); ?>">
                 </div>
                 <div id="icon-picker-one-browser">

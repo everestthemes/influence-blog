@@ -25,7 +25,7 @@ if( $banner_query -> have_posts() ) {
 
             $banner_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
             
-            $banner_background_text = infb_blog_get_mod( 'banner_background_text' );
+            $banner_background_text = influence_blog_get_mod( 'banner_background_text' );
             ?>
             <div class="bannner-outer-wrap">
                 <div class="row align-items-center">

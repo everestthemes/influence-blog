@@ -11,11 +11,11 @@ get_header();
 
 $sidebar_col = 3;
 
-$breadcrumb = infb_blog_get_mod( 'archivepage_content_options_breadcrumb_toggle' );
+$breadcrumb = influence_blog_get_mod( 'archivepage_content_options_breadcrumb_toggle' );
 
-$sidebar_position = infb_blog_get_mod( 'archivepage_content_options_sidebar_position' );
+$sidebar_position = influence_blog_get_mod( 'archivepage_content_options_sidebar_position' );
 
-$sidebar_area = infb_blog_get_mod( 'archivepage_content_options_widget_area_select' );
+$sidebar_area = influence_blog_get_mod( 'archivepage_content_options_widget_area_select' );
 
 $content_col = 9;
 

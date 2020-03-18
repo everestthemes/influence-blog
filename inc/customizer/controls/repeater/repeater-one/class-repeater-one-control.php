@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Repeater_One_Control' ) ) {
+if( ! class_exists( 'Influence_Blog_Repeater_One_Control' ) ) {
     /**
 	 * Repeater One Custom Control Class
 	 *
@@ -8,7 +8,7 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-    class Repeater_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Repeater_One_Control extends WP_Customize_Control {
 
     	/**
     	 * The control type.
@@ -199,15 +199,15 @@ if( ! class_exists( 'Repeater_One_Control' ) ) {
                             wp_enqueue_script( 'wp-color-picker' );
                             wp_enqueue_style( 'wp-color-picker' );
     					}elseif( 'font' === $field['type'] ){
-                            wp_enqueue_script( 'customizer-repeater-one-font-type-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/js/repeater-one-font-type.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+                            wp_enqueue_script( 'influence-blog-customizer-repeater-one-font-type-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/js/repeater-one-font-type.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
     					}
     				}
     			}
     		}
 
-            wp_enqueue_style( 'customizer-repeater-one-style', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/css/repeater-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-repeater-one-style', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/css/repeater-one.css' );
 
-            wp_enqueue_script( 'customizer-repeater-one-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/js/repeater-one.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-repeater-one-script', get_template_directory_uri() . '/inc/customizer/controls/repeater/repeater-one/js/repeater-one.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable' ), wp_get_theme()->get( 'Version' ) , true );
 
     	}
 

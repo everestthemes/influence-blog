@@ -4,7 +4,7 @@ Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.3.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -46,7 +46,9 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 == Screenshot ==
 
-1. Screenshot Image (https://pxhere.com/en/photo/1230347)
+1. Logo Image - self created GPLv2
+2. Advertisement Image - self created GPLv2
+3. Banner Image (https://pxhere.com/en/photo/1230347) - (http://creativecommons.org/publicdomain/zero/1.0 - CCO)
 
 == Installation ==
 

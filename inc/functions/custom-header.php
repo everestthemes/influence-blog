@@ -51,7 +51,7 @@ if ( ! function_exists( 'influence_blog_header_style' ) ) :
 			return;
 		}
 
-        $display_tagline = infb_blog_get_mod( 'display_tagline' );
+        $display_tagline = influence_blog_get_mod( 'display_tagline' );
 
 		// If we get this far, we have custom styles. Let's do this.
 		?>

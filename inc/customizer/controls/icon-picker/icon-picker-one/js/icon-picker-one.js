@@ -7,7 +7,7 @@
 
     var $document = $(document);
 
-    var yatriIconPicker = {
+    var InfluenceIconPicker = {
         init: function () {
 
             this.icons = faAllIcons;
@@ -35,7 +35,7 @@
             });
         },
         pickIcon: function () {
-            $document.on('click', '.icon-picker-one-control-field .yatri-icon-list-ul li', function () {
+            $document.on('click', '.icon-picker-one-control-field .icon-picker-one-icon-list-ul li', function () {
                 var wrap = $(this).closest('.icon-picker-one-control-field');
                 var icon = $(this).attr('data-icon');
                 wrap.find('.customize-control-icon-picker-one-value').val(icon).trigger('change');
@@ -45,21 +45,21 @@
             });
         },
         initIconType: function () {
-            $document.on("change", "#icon-picker-one-type", function () {
+            $document.on("change", "[id*='icon-picker-one-type']", function () {
                 var wrap = $(this).closest('.icon-picker-one-control-field');
                 var type = $(this).val();
                 if (!type || type == "all") {
-                    wrap.find("#icon-picker-one-browser ul.yatri-icon-list-ul").show();
+                    wrap.find("#icon-picker-one-browser ul.icon-picker-one-icon-list-ul").show();
                 } else {
-                    wrap.find("#icon-picker-one-browser ul.yatri-icon-list-ul").hide();
+                    wrap.find("#icon-picker-one-browser ul.icon-picker-one-icon-list-ul").hide();
                     wrap.find(
-                        '#icon-picker-one-browser ul.yatri-icon-list-ul[data-icon-type="' + type + '"]'
+                        '#icon-picker-one-browser ul.icon-picker-one-icon-list-ul[data-icon-type="' + type + '"]'
                     ).show();
                 }
             });
         },
         initSearch: function () {
-            $document.on("keyup", "#icon-picker-one-search-input", function (e) {
+            $document.on("keyup", "[id*='icon-picker-one-search-input']", function (e) {
                 var v = $(this).val();
                 v = v.trim();
                 var wrap = $(this).closest('.icon-picker-one-control-field');
@@ -105,7 +105,7 @@
         },
         lodIcons: function (wrap) {
             var icon_wrap = wrap.find('#icon-picker-one-browser');
-            var icon_select = wrap.closest('#customizer-icon-picker-one').find('select#icon-picker-one-type');
+            var icon_select = wrap.closest('#customizer-icon-picker-one').find('select[id*="icon-picker-one-type"]');
             var icon = this.icons;
             if (icon_select.find('option').length < 2) {
                 var icon_select_node = $('<select/>');
@@ -113,7 +113,7 @@
 
                 for (var icon_key  in icon) {
 
-                    var icon_list_node = $('<ul class="yatri-icon-list-ul" data-icon-type="' + icon_key + '"/>');
+                    var icon_list_node = $('<ul class="icon-picker-one-icon-list-ul" data-icon-type="' + icon_key + '"/>');
                     var icon_prefix = '';
                     switch (icon_key) {
                         case "font_awesome":
@@ -145,7 +145,7 @@
 
     };
     $document.ready(function () {
-        yatriIconPicker.init();
+        InfluenceIconPicker.init();
 
     })
 

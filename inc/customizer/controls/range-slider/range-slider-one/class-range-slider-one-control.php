@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Range_Slider_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Range_Slider_One_Control' ) ) :
     /**
 	 * Range Slider One Custom Control Class
 	 *
@@ -8,7 +8,7 @@ if( ! class_exists( 'Range_Slider_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Range_Slider_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Range_Slider_One_Control extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -25,9 +25,9 @@ if( ! class_exists( 'Range_Slider_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-range-slider-one-style', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-one/css/range-slider-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-range-slider-one-style', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-one/css/range-slider-one.css' );
 
-            wp_enqueue_script( 'customizer-range-slider-one-script', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-one/js/range-slider-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-range-slider-one-script', get_template_directory_uri() . '/inc/customizer/controls/range-slider/range-slider-one/js/range-slider-one.js', array( 'jquery', 'customize-base' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

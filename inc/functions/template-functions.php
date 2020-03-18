@@ -61,11 +61,11 @@ if( ! function_exists( 'influence_blog_social_links_template' ) ) {
             return;
         }
 
-        $facebook_link = infb_blog_get_mod( 'facebook_link', '' );
-        $twitter_link = infb_blog_get_mod( 'twitter_link', '' );
-        $instagram_link = infb_blog_get_mod( 'instagram_link', '' );
-        $youtube_link = infb_blog_get_mod( 'youtube_link', '' );
-        $display_rss_feed = infb_blog_get_mod( 'display_rss_feed', false );
+        $facebook_link = influence_blog_get_mod( 'facebook_link', '' );
+        $twitter_link = influence_blog_get_mod( 'twitter_link', '' );
+        $instagram_link = influence_blog_get_mod( 'instagram_link', '' );
+        $youtube_link = influence_blog_get_mod( 'youtube_link', '' );
+        $display_rss_feed = influence_blog_get_mod( 'display_rss_feed', false );
 
         $youtube_class = '';
 
@@ -269,7 +269,7 @@ if( ! function_exists( 'influence_blog_arrange_header_two_layout_one_two_logo' )
 
     function influence_blog_arrange_header_two_layout_one_two_logo() {
 
-        $site_title_col = infb_blog_get_mod( 'header_two_advance_site_title_col' );
+        $site_title_col = influence_blog_get_mod( 'header_two_advance_site_title_col' );
 
         $col_class = influence_blog_col_value( $site_title_col, 'md' );
 
@@ -295,7 +295,7 @@ if( ! function_exists( 'influence_blog_arrange_header_two_layout_one_two_ads' ) 
 
     function influence_blog_arrange_header_two_layout_one_two_ads() {
 
-        $ads_col = infb_blog_get_mod( 'header_two_advance_ads_col' );
+        $ads_col = influence_blog_get_mod( 'header_two_advance_ads_col' );
 
         $col_class = influence_blog_col_value( $ads_col, 'md' );
 
@@ -501,7 +501,7 @@ if( ! function_exists( 'influence_blog_arrange_banner_one_content_button' ) ) {
 
     function influence_blog_arrange_banner_one_content_button() {
 
-        $banner_read_more_text = infb_blog_get_mod( 'banner_read_more_text' );
+        $banner_read_more_text = influence_blog_get_mod( 'banner_read_more_text' );
 
         if( !empty( $banner_read_more_text ) ) {
 
@@ -574,7 +574,7 @@ if( ! function_exists( 'influence_blog_post_listing_layout_template' ) ) {
 
         if( is_archive() ) {
 
-            $layout = infb_blog_get_mod( 'archivepage_layout_options_select' );
+            $layout = influence_blog_get_mod( 'archivepage_layout_options_select' );
 
             if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
 
@@ -586,7 +586,7 @@ if( ! function_exists( 'influence_blog_post_listing_layout_template' ) ) {
 
         if( is_search() ) {
 
-            $layout = infb_blog_get_mod( 'searchpage_layout_options_select' );
+            $layout = influence_blog_get_mod( 'searchpage_layout_options_select' );
 
             if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
 
@@ -607,7 +607,7 @@ if( ! function_exists( 'influence_blog_single_sidebar_position' ) ) {
 
 	function influence_blog_single_sidebar_position() {
 
-		global $influence_blog_prefix;
+		$influence_blog_prefix = 'influence_blog';
 
 		$sidebar_position_key = $influence_blog_prefix . '_sidebar_position';
 
@@ -760,7 +760,7 @@ if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
  		if( $display == true ) {
  			?>
  			<div class="breadcrumbs-sec breadcrumbs-layout1">
-                <?php everestthemes_breadcrumb_trail(); ?>
+                <?php influence_blog_breadcrumb_trail(); ?>
             </div>
             <!--breadcdrum-->
  			<?php
@@ -842,12 +842,12 @@ if( ! function_exists( 'influence_blog_image_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_image = infb_blog_get_mod( 'archivepage_content_options_image_toggle', true );
+            $display_image = influence_blog_get_mod( 'archivepage_content_options_image_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_image = infb_blog_get_mod( 'searchpage_content_options_image_toggle', true );
+            $display_image = influence_blog_get_mod( 'searchpage_content_options_image_toggle', true );
         }
 
         return $display_image;
@@ -867,12 +867,12 @@ if( ! function_exists( 'influence_blog_title_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_title = infb_blog_get_mod( 'archivepage_content_options_title_toggle', true );
+            $display_title = influence_blog_get_mod( 'archivepage_content_options_title_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_title = infb_blog_get_mod( 'searchpage_content_options_title_toggle', true );
+            $display_title = influence_blog_get_mod( 'searchpage_content_options_title_toggle', true );
         }
 
         return $display_title;
@@ -892,12 +892,12 @@ if( ! function_exists( 'influence_blog_category_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_category = infb_blog_get_mod( 'archivepage_content_options_cat_toggle', true );
+            $display_category = influence_blog_get_mod( 'archivepage_content_options_cat_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_category = infb_blog_get_mod( 'searchpage_content_options_cat_toggle', true );
+            $display_category = influence_blog_get_mod( 'searchpage_content_options_cat_toggle', true );
         }
 
         return $display_category;
@@ -917,12 +917,12 @@ if( ! function_exists( 'influence_blog_date_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_date = infb_blog_get_mod( 'archivepage_content_options_date_toggle', true );
+            $display_date = influence_blog_get_mod( 'archivepage_content_options_date_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_date = infb_blog_get_mod( 'searchpage_content_options_date_toggle', true );
+            $display_date = influence_blog_get_mod( 'searchpage_content_options_date_toggle', true );
         }
 
         return $display_date;
@@ -942,12 +942,12 @@ if( ! function_exists( 'influence_blog_content_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_content = infb_blog_get_mod( 'archivepage_content_options_content_toggle', true );
+            $display_content = influence_blog_get_mod( 'archivepage_content_options_content_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_content = infb_blog_get_mod( 'searchpage_content_options_content_toggle', true );
+            $display_content = influence_blog_get_mod( 'searchpage_content_options_content_toggle', true );
         }
 
         return $display_content;
@@ -967,12 +967,12 @@ if( ! function_exists( 'influence_blog_button_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_button = infb_blog_get_mod( 'archivepage_content_options_button_toggle', true );
+            $display_button = influence_blog_get_mod( 'archivepage_content_options_button_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_button = infb_blog_get_mod( 'searchpage_content_options_button_toggle', true );
+            $display_button = influence_blog_get_mod( 'searchpage_content_options_button_toggle', true );
         }
 
         return $display_button;
@@ -992,12 +992,12 @@ if( ! function_exists( 'influence_blog_button_text_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_button_text = infb_blog_get_mod( 'archivepage_content_options_field_button_title', true );
+            $display_button_text = influence_blog_get_mod( 'archivepage_content_options_field_button_title', true );
         }
 
         if( is_search() ) {
 
-            $display_button_text = infb_blog_get_mod( 'searchpage_content_options_field_button_title', true );
+            $display_button_text = influence_blog_get_mod( 'searchpage_content_options_field_button_title', true );
         }
 
         return $display_button_text;
@@ -1021,7 +1021,7 @@ if( ! function_exists( 'influence_blog_tags_option' ) ) :
 
         if( is_single() ) {
 
-            $display_category = infb_blog_get_mod( 'display_single_post_tags', true );
+            $display_category = influence_blog_get_mod( 'display_single_post_tags', true );
         }
 
         return $display_category;

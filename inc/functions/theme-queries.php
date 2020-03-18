@@ -18,15 +18,15 @@ if( !function_exists( 'influence_blog_banner_posts_query' ) ) {
 
     function influence_blog_banner_posts_query() {
 
-        $banner_query = infb_blog_get_mod( 'banner_content_options_query_toggle' );
+        $banner_query = influence_blog_get_mod( 'banner_content_options_query_toggle' );
 
-        $banner_category = infb_blog_get_mod( 'banner_category' );
+        $banner_category = influence_blog_get_mod( 'banner_category' );
 
-        $banner_orderby = infb_blog_get_mod( 'banner_orderby' );
+        $banner_orderby = influence_blog_get_mod( 'banner_orderby' );
 
-        $banner_sort_order = infb_blog_get_mod( 'banner_sort_order' );
+        $banner_sort_order = influence_blog_get_mod( 'banner_sort_order' );
 
-        $banner_posts_no = infb_blog_get_mod( 'banner_posts_number' );
+        $banner_posts_no = influence_blog_get_mod( 'banner_posts_number' );
 
         $banner_args = array(
             'post_type'      => 'post',

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Toggle_Two_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Toggle_Two_Control' ) ) :
 
     /**
 	 * Toggle Two Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Toggle_Two_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Toggle_Two_Control extends WP_Customize_Control {
+    class Influence_Blog_Toggle_Two_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.
@@ -24,7 +24,7 @@ if( ! class_exists( 'Toggle_Two_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-toggle-two-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-two/css/toggle-two.css' );
+            wp_enqueue_style( 'influence-blog-customizer-toggle-two-style', get_template_directory_uri() . '/inc/customizer/controls/toggle/toggle-two/css/toggle-two.css' );
         }
 
         /**

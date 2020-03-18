@@ -56,7 +56,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_tabs', ar
     'sanitize_callback'        => 'wp_filter_nohtml_kses',
 ) );
 
-$wp_customize->add_control( new Tab_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_tabs', array(
+$wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_tabs', array(
     'section'                  => $section,
     'tabs'                     => $tabs,
     'controls'                 => array(
@@ -77,7 +77,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_field_hea
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_field_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_field_heading', array(
     'label'                    => esc_html__( 'Field Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -104,7 +104,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_display_h
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_display_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_display_heading', array(
     'label'                    => esc_html__( 'Display Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -122,7 +122,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_breadcrum
     'default'                  => influence_blog_defaults( 'searchpage_content_options_breadcrumb_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_breadcrumb_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_breadcrumb_toggle', array(
     'label'                    => esc_html__( 'Breadcrumb', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -136,7 +136,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_image_tog
     'default'                  => influence_blog_defaults( 'searchpage_content_options_image_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_image_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_image_toggle', array(
     'label'                    => esc_html__( 'Featured Image', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -150,7 +150,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_title_tog
     'default'                  => influence_blog_defaults( 'searchpage_content_options_title_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_title_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_title_toggle', array(
     'label'                    => esc_html__( 'Post Title', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -164,7 +164,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_cat_toggl
     'default'                  => influence_blog_defaults( 'searchpage_content_options_cat_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_cat_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_cat_toggle', array(
     'label'                    => esc_html__( 'Post Category', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -178,7 +178,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_date_togg
     'default'                  => influence_blog_defaults( 'searchpage_content_options_date_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_date_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_date_toggle', array(
     'label'                    => esc_html__( 'Post Date', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -192,7 +192,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_content_t
     'default'                  => influence_blog_defaults( 'searchpage_content_options_content_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_content_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_content_toggle', array(
     'label'                    => esc_html__( 'Post Content', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -206,7 +206,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_button_to
     'default'                  => influence_blog_defaults( 'searchpage_content_options_button_toggle' ),
 ) );
 
-$wp_customize->add_control( new Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_button_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_searchpage_content_options_button_toggle', array(
     'label'                    => esc_html__( 'Button', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -219,7 +219,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_sidebar_h
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_sidebar_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_sidebar_heading', array(
     'label'                    => esc_html__( 'Sidebar Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -267,7 +267,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_paginatio
     'sanitize_callback' 	   => 'sanitize_text_field',
 ) );
 
-$wp_customize->add_control( new Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_pagination_heading', array(
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_searchpage_content_options_pagination_heading', array(
     'label'                    => esc_html__( 'Pagination Options', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'heading-one',
@@ -285,11 +285,11 @@ $wp_customize->add_setting( 'influence_blog_searchpage_content_options_paginatio
     'default'                  => influence_blog_defaults( 'searchpage_content_options_pagination_style' ),
 ) );
 
-$wp_customize->add_control( new Button_One_Control ( $wp_customize, 'influence_blog_searchpage_content_options_pagination_style', array(
+$wp_customize->add_control( 'influence_blog_searchpage_content_options_pagination_style', array(
     'label'                    => esc_html__( 'Style', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'select',
     'choices' 		           => $pagination_style,
     'priority'                 => 75,
-) ) );
+) );
 

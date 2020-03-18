@@ -42,6 +42,7 @@ require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'homepage/homepage.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'global/site-layout/site-layout.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'global/typography/typography.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'global/color/color.php';
+require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'global/excerpt-length/excerpt-length.php';
 
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/layout-options/layout-options.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-one/header-one.php';

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Info_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Info_One_Control' ) ) :
 
 	/**
 	 * Information One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Info_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	class Info_One_Control extends WP_Customize_Control {
+	class Influence_Blog_Info_One_Control extends WP_Customize_Control {
 
 		/**
 		 * Control type
@@ -30,7 +30,7 @@ if( ! class_exists( 'Info_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-info-one-style', get_template_directory_uri() . '/inc/customizer/controls/info/info-one/css/info-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-info-one-style', get_template_directory_uri() . '/inc/customizer/controls/info/info-one/css/info-one.css' );
         }
 
 		/**

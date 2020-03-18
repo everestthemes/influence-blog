@@ -481,7 +481,7 @@ if( !function_exists( 'influence_blog_blog_layouts_select_array' ) ) :
                 'name' => __( 'Layout Two', 'influence-blog' )
             ),
             'three' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-three.png',
                 'name' => __( 'Layout Three', 'influence-blog' )
             ),
         );
@@ -543,6 +543,25 @@ if( !function_exists( 'influence_blog_default_pagination_style_array' ) ) :
         );
 
         $options = apply_filters( 'influence_blog_filter_default_pagination_style_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_excerpt_length_attrs_array' ) ) :
+	/*
+	 * Function to get excerpt length input attributes options values
+	 */
+	function influence_blog_excerpt_length_attrs_array() {
+
+        $options = array(
+            'min'                   => 10,
+            'max'                   => 30,
+            'step'                  => 1,
+        );
+
+        $options = apply_filters( 'influence_blog_filter_excerpt_length_attrs_array', $options );
 
         return $options;
 

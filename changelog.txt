@@ -1,0 +1,29 @@
+=== v1.0.3 : March 18, 2020 ===
+
+- Customizer options updated
+- Fixed : Design
+- Screenshot image changed
+- Removed unused codes
+- Accessibility updated
+- Prefixings updated
+- Updated as per reviewer
+
+=== v1.0.2 : March 3, 2020 ===
+
+- Customizer options updated
+- Codes optimized
+- Fixed : Design
+- Updated as per reviewer
+- Screenshot image changed
+
+=== v1.0.1 : February 24, 2020 ===
+
+- Customizer improved
+- Codes optimized
+- Fixed : Design
+- Updated as per reviewer
+- Removed unused files
+
+=== v1.0.0 : October 22, 2019 ===
+
+- Initial release

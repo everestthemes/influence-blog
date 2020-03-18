@@ -77,9 +77,7 @@ if( !defined( 'INFLUENCE_BLOG_INC_CUSTOMIZER_FUNCTIONS_PATH_URI' ) ) {
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function influence_blog_customize_register( $wp_customize ) {
-    
-    global $influence_blog_prefix;
-    
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -108,7 +106,7 @@ function influence_blog_customize_register( $wp_customize ) {
 	 * Load custom customizer control for toggle three control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'toggle/toggle-three/class-toggle-three-control.php';
-    $wp_customize->register_control_type( 'Toggle_Three_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Toggle_Three_Control' );
     
     /**
 	 * Load custom customizer control for switch one control
@@ -125,35 +123,35 @@ function influence_blog_customize_register( $wp_customize ) {
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'range-slider/range-slider-one/class-range-slider-one-control.php';
 
-    $wp_customize->register_control_type( 'Range_Slider_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Range_Slider_One_Control' );
 
     /**
 	 * Load custom customizer control for range slider two control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'range-slider/range-slider-two/class-range-slider-two-control.php';
 
-    $wp_customize->register_control_type( 'Range_Slider_Two_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Range_Slider_Two_Control' );
 
     /**
 	 * Load custom customizer control for button one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'button/button-one/class-button-one-control.php';
     
-    $wp_customize->register_control_type( 'Button_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Button_One_Control' );
 
     /**
 	 * Load custom customizer control for box shadow one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'box-shadow/box-shadow-one/class-box-shadow-one-control.php';
 
-    $wp_customize->register_control_type( 'Box_Shadow_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Box_Shadow_One_Control' );
 
     /**
 	 * Load custom customizer control for color one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'color/color-one/class-color-one-control.php';
 
-    $wp_customize->register_control_type( 'Color_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Color_One_Control' );
 
     /**
 	 * Load custom customizer control for repeater one control
@@ -176,28 +174,28 @@ function influence_blog_customize_register( $wp_customize ) {
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'tab/tab-one/class-tab-one-control.php';
 
-    $wp_customize->register_control_type( 'Tab_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Tab_One_Control' );
 
     /**
 	 * Load custom customizer control for dimension one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'dimension/dimension-one/class-dimension-one-control.php';
 
-    $wp_customize->register_control_type( 'Dimension_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Dimension_One_Control' );
 
     /**
 	 * Load custom customizer control for text one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'text/text-one/class-text-one-control.php';
 
-    $wp_customize->register_control_type( 'Text_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Text_One_Control' );
 
     /**
 	 * Load custom customizer control for heading one control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'heading/heading-one/class-heading-one-control.php';
 
-    $wp_customize->register_control_type( 'Heading_One_Control' );
+    $wp_customize->register_control_type( 'Influence_Blog_Heading_One_Control' );
 
     /**
 	 * Load custom customizer control for typography one control

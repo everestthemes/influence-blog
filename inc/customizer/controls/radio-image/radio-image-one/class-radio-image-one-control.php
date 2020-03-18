@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Radio_Image_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Radio_Image_One_Control' ) ) :
 
     /**
 	 * Radio Image One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Radio_Image_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Radio_Image_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Radio_Image_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.
@@ -24,7 +24,7 @@ if( ! class_exists( 'Radio_Image_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-radio-image-one-style', get_template_directory_uri() . '/inc/customizer/controls/radio-image/radio-image-one/css/radio-image-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-radio-image-one-style', get_template_directory_uri() . '/inc/customizer/controls/radio-image/radio-image-one/css/radio-image-one.css' );
         }
 
         /**

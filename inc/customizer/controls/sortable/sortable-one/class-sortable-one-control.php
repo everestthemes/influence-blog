@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Sortable_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Sortable_One_Control' ) ) :
 
     /**
 	 * Sortable One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Sortable_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Sortable_One_Control extends WP_Customize_Control {
 
         /**
 		 * Declare the control type.
@@ -26,9 +26,9 @@ if( ! class_exists( 'Sortable_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-sortable-one-style', get_template_directory_uri() . '/inc/customizer/controls/sortable/sortable-one/css/sortable-one.css' );
+            wp_enqueue_style( 'influence-blog-customizer-sortable-one-style', get_template_directory_uri() . '/inc/customizer/controls/sortable/sortable-one/css/sortable-one.css' );
 
-            wp_enqueue_script( 'customizer-sortable-one-script', get_template_directory_uri() . '/inc/customizer/controls/sortable/sortable-one/js/sortable-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-sortable-one-script', get_template_directory_uri() . '/inc/customizer/controls/sortable/sortable-one/js/sortable-one.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

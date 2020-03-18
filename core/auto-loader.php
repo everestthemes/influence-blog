@@ -141,11 +141,11 @@ $third_party_args = array(
 */
 $custom_fields_args = array( 'sidebar-position' );
 
-infb_blog_require_file( INFLUENCE_BLOG_INC_GENERAL_PATH, $general_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_FUNCTIONS_PATH, $functions_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_CUSTOMIZER_PATH, $customizer_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_WIDGETS_PATH, $widgets_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_DYNAMIC_PATH, $dynamic_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_THIRD_PARTY_PATH, $third_party_args );
-infb_blog_require_file( INFLUENCE_BLOG_INC_CUSTOM_FIELDS_PATH, $custom_fields_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_GENERAL_PATH, $general_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_FUNCTIONS_PATH, $functions_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_CUSTOMIZER_PATH, $customizer_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_WIDGETS_PATH, $widgets_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_DYNAMIC_PATH, $dynamic_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_THIRD_PARTY_PATH, $third_party_args );
+influence_blog_require_file( INFLUENCE_BLOG_INC_CUSTOM_FIELDS_PATH, $custom_fields_args );
 

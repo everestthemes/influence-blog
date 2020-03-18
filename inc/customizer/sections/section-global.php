@@ -41,3 +41,11 @@ $wp_customize->add_section( 'influence_blog_global_color_section', array(
     'title'        => esc_html__( 'Color', 'influence-blog' ),
     'panel'        => $panel,
 ) );
+
+/*---------------------------------- Excerpt length -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_excerpt_length_section', array(
+    'priority'     => 25,
+    'title'        => esc_html__( 'Excerpt Length', 'influence-blog' ),
+    'panel'        => $panel,
+) );

@@ -1,6 +1,6 @@
 <?php
 
-if( ! class_exists( 'Text_One_Control' ) ) :
+if( ! class_exists( 'Influence_Blog_Text_One_Control' ) ) :
 
     /**
 	 * Text One Custom Control Class
@@ -9,7 +9,7 @@ if( ! class_exists( 'Text_One_Control' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-    class Text_One_Control extends WP_Customize_Control {
+    class Influence_Blog_Text_One_Control extends WP_Customize_Control {
 
         /**
          * The control type.
@@ -26,7 +26,7 @@ if( ! class_exists( 'Text_One_Control' ) ) :
 
             wp_enqueue_style( 'customizer-responsive-media-style' );
 
-            wp_enqueue_script( 'customizer-text-one-script', get_template_directory_uri() . '/inc/customizer/controls/text/text-one/js/text-one.js', array( 'jquery', 'customize-base', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-text-one-script', get_template_directory_uri() . '/inc/customizer/controls/text/text-one/js/text-one.js', array( 'jquery', 'customize-base', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

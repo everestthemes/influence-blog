@@ -190,6 +190,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'color_text' => '#000000',
             'color_link' => '#183244',
             'color_link_hover' => '#e9b105',
+            //Excerpt Length
+            'excerpt_length' => 10,
 
             //Header - layout options
             'header_layout_options_select' => 'one',

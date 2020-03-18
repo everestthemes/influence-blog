@@ -18,7 +18,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
         function __construct() {
 
             parent::__construct(
-                'influence-blog-fullwidth-post-widget',  // Widget ID
+                'influence_blog_fullwidth_post_widget',  // Widget ID
                 esc_html__( 'IfB: Fullwidth Post Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays Posts which is only for fullwidth.', 'influence-blog' ),
