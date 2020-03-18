@@ -464,6 +464,33 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             //Archive page - Layout options - General
             'archivepage_layout_options_select' => 'one',
 
+            //Archive page - Content options - General
+            'archivepage_content_options_field_button_title' => 'Read More',
+            'archivepage_content_options_image_toggle' => true,
+            'archivepage_content_options_title_toggle' => true,
+            'archivepage_content_options_cat_toggle' => true,
+            'archivepage_content_options_date_toggle' => true,
+            'archivepage_content_options_content_toggle' => true,
+            'archivepage_content_options_button_toggle' => true,
+            'archivepage_content_options_sidebar_position' => 'right',
+            'archivepage_content_options_widget_area_select' => 'influence-blog-sidebar',
+            'archivepage_content_options_pagination_style' => 'one',
+
+            //Search page - Layout options - General
+            'searchpage_layout_options_select' => 'one',
+
+            //Search page - Content options - General
+            'searchpage_content_options_field_button_title' => 'Read More',
+            'searchpage_content_options_image_toggle' => true,
+            'searchpage_content_options_title_toggle' => true,
+            'searchpage_content_options_cat_toggle' => true,
+            'searchpage_content_options_date_toggle' => true,
+            'searchpage_content_options_content_toggle' => true,
+            'searchpage_content_options_button_toggle' => true,
+            'searchpage_content_options_sidebar_position' => 'right',
+            'searchpage_content_options_widget_area_select' => 'influence-blog-sidebar',
+            'searchpage_content_options_pagination_style' => 'one',
+
             //Footer - Footer one - General
             'footer_one_widget_area_alignment' => 'center',
             'footer_one_first_widget_area_toggle' => true,

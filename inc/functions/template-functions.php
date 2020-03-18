@@ -572,11 +572,28 @@ if( ! function_exists( 'influence_blog_post_listing_layout_template' ) ) {
 
     function influence_blog_post_listing_layout_template() {
 
-        get_template_part( 'template-parts/layout/layout', 'grid' );
+        if( is_archive() ) {
 
-        if( is_home() ) {
+            $layout = infb_blog_get_mod( 'archivepage_layout_options_select' );
 
-            get_template_part( 'template-parts/layout/layout', 'block' );
+            if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
+
+                get_template_part( 'template-parts/layout/layout', $layout );
+            }
+
+            $template = apply_filters( 'influence_blog_archivepage_layout_template', $layout );
+        }
+
+        if( is_search() ) {
+
+            $layout = infb_blog_get_mod( 'searchpage_layout_options_select' );
+
+            if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
+
+                get_template_part( 'template-parts/layout/layout', $layout );
+            }
+
+            $template = apply_filters( 'influence_blog_searchpage_layout_template', $layout );
         }
     }
 }
@@ -832,41 +849,54 @@ if( ! function_exists( 'influence_blog_post_navigation' ) ) {
 
 
 /**
- * Function to return customizer option for posted date
+ * Function to return customizer option for image
  *
  * @since 1.0.0
  */
-if( ! function_exists( 'influence_blog_posted_date_option' ) ) :
+if( ! function_exists( 'influence_blog_image_option' ) ) :
 
- 	function influence_blog_posted_date_option() {
+ 	function influence_blog_image_option() {
 
-        $display_posted_time = false;
-
-        if( is_single() ) {
-
-            $display_posted_time = infb_blog_get_mod( 'display_single_post_posted_date', true );
-        }
-
-        if( is_page() ) {
-
-            $display_posted_time = infb_blog_get_mod( 'display_single_page_posted_date', true );
-        }
+        $display_image = false;
 
         if( is_archive() ) {
 
-            $display_posted_time = infb_blog_get_mod( 'display_archive_page_posted_date', true );
+            $display_image = infb_blog_get_mod( 'archivepage_content_options_image_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_posted_time = infb_blog_get_mod( 'display_search_page_posted_date', true );
+            $display_image = infb_blog_get_mod( 'searchpage_content_options_image_toggle', true );
         }
 
-        return $display_posted_time;
+        return $display_image;
  	}
 endif;
 
+/**
+ * Function to return customizer option for title
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_title_option' ) ) :
 
+ 	function influence_blog_title_option() {
+
+        $display_title = false;
+
+        if( is_archive() ) {
+
+            $display_title = infb_blog_get_mod( 'archivepage_content_options_title_toggle', true );
+        }
+
+        if( is_search() ) {
+
+            $display_title = infb_blog_get_mod( 'searchpage_content_options_title_toggle', true );
+        }
+
+        return $display_title;
+ 	}
+endif;
 
 /**
  * Function to return customizer option for category
@@ -879,24 +909,121 @@ if( ! function_exists( 'influence_blog_category_option' ) ) :
 
         $display_category = false;
 
-        if( is_single() ) {
-
-            $display_category = infb_blog_get_mod( 'display_single_post_category', true );
-        }
-
         if( is_archive() ) {
 
-            $display_category = infb_blog_get_mod( 'display_archive_page_category', true );
+            $display_category = infb_blog_get_mod( 'archivepage_content_options_cat_toggle', true );
         }
 
         if( is_search() ) {
 
-            $display_category = infb_blog_get_mod( 'display_search_page_category', true );
+            $display_category = infb_blog_get_mod( 'searchpage_content_options_cat_toggle', true );
         }
 
         return $display_category;
  	}
 endif;
+
+/**
+ * Function to return customizer option for date
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_date_option' ) ) :
+
+ 	function influence_blog_date_option() {
+
+        $display_date = false;
+
+        if( is_archive() ) {
+
+            $display_date = infb_blog_get_mod( 'archivepage_content_options_date_toggle', true );
+        }
+
+        if( is_search() ) {
+
+            $display_date = infb_blog_get_mod( 'searchpage_content_options_date_toggle', true );
+        }
+
+        return $display_date;
+ 	}
+endif;
+
+/**
+ * Function to return customizer option for content
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_content_option' ) ) :
+
+ 	function influence_blog_content_option() {
+
+        $display_content = false;
+
+        if( is_archive() ) {
+
+            $display_content = infb_blog_get_mod( 'archivepage_content_options_content_toggle', true );
+        }
+
+        if( is_search() ) {
+
+            $display_content = infb_blog_get_mod( 'searchpage_content_options_content_toggle', true );
+        }
+
+        return $display_content;
+ 	}
+endif;
+
+/**
+ * Function to return customizer option for button
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_button_option' ) ) :
+
+ 	function influence_blog_button_option() {
+
+        $display_button = false;
+
+        if( is_archive() ) {
+
+            $display_button = infb_blog_get_mod( 'archivepage_content_options_button_toggle', true );
+        }
+
+        if( is_search() ) {
+
+            $display_button = infb_blog_get_mod( 'searchpage_content_options_button_toggle', true );
+        }
+
+        return $display_button;
+ 	}
+endif;
+
+/**
+ * Function to return customizer option for button text
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_button_text_option' ) ) :
+
+ 	function influence_blog_button_text_option() {
+
+        $display_button_text = false;
+
+        if( is_archive() ) {
+
+            $display_button_text = infb_blog_get_mod( 'archivepage_content_options_field_button_title', true );
+        }
+
+        if( is_search() ) {
+
+            $display_button_text = infb_blog_get_mod( 'searchpage_content_options_field_button_title', true );
+        }
+
+        return $display_button_text;
+ 	}
+endif;
+
+
 
 
 
