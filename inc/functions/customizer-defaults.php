@@ -306,7 +306,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_menu_icon_alignment' => 'left',
             'header_three_menu_select' => 'menu-1',
             'header_three_menu_alignment' => 'center',
-            'header_three_search_icon_select' => 'fa fa-search',
+            'header_three_search_icon_select' => '',
             'header_three_search_icon_alignment' => 'right',
             //Header - Header three - Design
             'header_three_design_bg_color' => '#e9b105',
