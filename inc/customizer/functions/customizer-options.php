@@ -481,7 +481,7 @@ if( !function_exists( 'influence_blog_blog_layouts_select_array' ) ) :
                 'name' => __( 'Layout Two', 'influence-blog' )
             ),
             'three' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI ). 'images/post-three.png',
                 'name' => __( 'Layout Three', 'influence-blog' )
             ),
         );

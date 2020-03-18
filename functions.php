@@ -39,11 +39,11 @@ if( !defined( 'INFLUENCE_BLOG_CORE_PATH_URI' ) ) {
     define( 'INFLUENCE_BLOG_CORE_PATH_URI', INFLUENCE_BLOG_PATH_URI . 'core/' );
 }
 
-if( !function_exists( 'infb_blog_require_file' ) ) :
+if( !function_exists( 'influence_blog_require_file' ) ) :
     /**
      * Functions for required files
      */
-    function infb_blog_require_file( $path , array $args, $extension = null ) {
+    function influence_blog_require_file( $path , array $args, $extension = null ) {
 
         if( !array( $args ) && !empty( $path ) ) {
 
@@ -64,4 +64,4 @@ endif;
 
 $core_args = array( 'auto-loader' );
 
-infb_blog_require_file( INFLUENCE_BLOG_CORE_PATH, $core_args );
+influence_blog_require_file( INFLUENCE_BLOG_CORE_PATH, $core_args );

@@ -14,7 +14,7 @@ $banner_query = influence_blog_banner_posts_query();
                 <?php
                 if( $banner_query -> have_posts() ) {
 
-                    $slider_col = infb_blog_get_mod( 'banner_content_options_two_slider_col' );
+                    $slider_col = influence_blog_get_mod( 'banner_content_options_two_slider_col' );
 
                     $col_class = influence_blog_col_value( $slider_col, 'lg' );
                     ?>
@@ -58,11 +58,11 @@ $banner_query = influence_blog_banner_posts_query();
                     </div><!--//col-md-8-->
                     <?php
                 }
-                $display_ads = infb_blog_get_mod( 'banner_content_options_two_ads_toggle' );
+                $display_ads = influence_blog_get_mod( 'banner_content_options_two_ads_toggle' );
 
                 if( $display_ads ) {
 
-                    $ads_col = infb_blog_get_mod( 'banner_content_options_two_ads_col' );
+                    $ads_col = influence_blog_get_mod( 'banner_content_options_two_ads_col' );
 
                     $col_class = influence_blog_col_value( $ads_col, 'lg' );
                     ?>
@@ -70,7 +70,7 @@ $banner_query = influence_blog_banner_posts_query();
                         <div class="banner-post">
                             <div class="banner-wrapper">
                                 <?php
-                                $ads_image = infb_blog_get_mod( 'banner_content_options_two_ads_upload_image' );
+                                $ads_image = influence_blog_get_mod( 'banner_content_options_two_ads_upload_image' );
 
                                 $ads_image_id = attachment_url_to_postid( $ads_image );
 
@@ -79,21 +79,21 @@ $banner_query = influence_blog_banner_posts_query();
                                 <div class="slide"<?php influence_blog_has_image_url( $ads_image_id_src[0] ); ?>>
                                     <div class="banner-caption">
                                         <?php
-                                        $ads_title = infb_blog_get_mod( 'banner_content_options_two_ads_title' );
-                                        $ads_link = infb_blog_get_mod( 'banner_content_options_two_ads_link' );
+                                        $ads_title = influence_blog_get_mod( 'banner_content_options_two_ads_title' );
+                                        $ads_link = influence_blog_get_mod( 'banner_content_options_two_ads_link' );
 
                                         $rel_tag = '';
 
                                         $tab_class = '_self';
 
-                                        $ads_link_rel = infb_blog_get_mod( 'banner_content_options_two_ads_link_rel' );
+                                        $ads_link_rel = influence_blog_get_mod( 'banner_content_options_two_ads_link_rel' );
 
                                         if( !empty( $ads_link_rel ) ) {
 
                                             $rel_tag = 'rel=' . $ads_link_rel;
                                         }
 
-                                        $ads_link_tab = infb_blog_get_mod( 'banner_content_options_two_ads_link_tab_toggle' );
+                                        $ads_link_tab = influence_blog_get_mod( 'banner_content_options_two_ads_link_tab_toggle' );
 
                                         if( $ads_link_tab == true ) {
 

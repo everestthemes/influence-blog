@@ -11,13 +11,13 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-$display_image = infb_blog_get_mod( 'blogpage_section_one_content_image_toggle' );
-$display_title = infb_blog_get_mod( 'blogpage_section_one_content_title_toggle' );
-$display_category = infb_blog_get_mod( 'blogpage_section_one_content_cat_toggle' );
-$display_date = infb_blog_get_mod( 'blogpage_section_one_content_date_toggle' );
-$display_content = infb_blog_get_mod( 'blogpage_section_one_content_content_toggle' );
-$display_button = infb_blog_get_mod( 'blogpage_section_one_content_button_toggle' );
-$button_text = infb_blog_get_mod( 'blogpage_section_one_content_button_text' );
+$display_image = influence_blog_get_mod( 'blogpage_section_one_content_image_toggle' );
+$display_title = influence_blog_get_mod( 'blogpage_section_one_content_title_toggle' );
+$display_category = influence_blog_get_mod( 'blogpage_section_one_content_cat_toggle' );
+$display_date = influence_blog_get_mod( 'blogpage_section_one_content_date_toggle' );
+$display_content = influence_blog_get_mod( 'blogpage_section_one_content_content_toggle' );
+$display_button = influence_blog_get_mod( 'blogpage_section_one_content_button_toggle' );
+$button_text = influence_blog_get_mod( 'blogpage_section_one_content_button_text' );
 
 ?>
 <div class="col-12 col-lg-6">
