@@ -18,7 +18,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
         function __construct() {
 
             parent::__construct(
-                'influence-blog-sidebar-post-widget',  // Widget ID
+                'influence_blog_sidebar_post_widget',  // Widget ID
                 esc_html__( 'IfB: Post Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays Posts.', 'influence-blog' ),

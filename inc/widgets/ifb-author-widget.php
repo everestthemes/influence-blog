@@ -18,7 +18,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
         function __construct() {
 
             parent::__construct(
-                'influence-blog-author-widget',  // Widget ID
+                'influence_blog_author_widget',  // Widget ID
                 esc_html__( 'IfB: Author Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays the author.', 'influence-blog' ),
