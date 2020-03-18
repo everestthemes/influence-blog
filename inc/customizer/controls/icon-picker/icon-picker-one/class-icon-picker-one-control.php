@@ -131,13 +131,13 @@ if( ! class_exists( 'Influence_Blog_Icon_Picker_One_Control' ) ) :
                         <span class="screen-reader-text"><?php echo esc_html__('Cancel', 'influence-blog'); ?></span>
                     </a>
                     <div class="icon-type-selector">
-                        <select id="icon-picker-one-type">
+                        <select id="icon-picker-one-type-<?php echo esc_attr( $this->id ); ?>">
                             <option value="all"><?php echo esc_html__('All Icon Types', 'influence-blog'); ?></option>
                         </select>
                     </div>
                 </div>
                 <div class="icon-picker-one-search">
-                    <input type="text" id="icon-picker-one-search-input"
+                    <input type="text" id="icon-picker-one-search-input-<?php echo esc_attr( $this->id ); ?>"
                            placeholder="<?php echo esc_html__('Type icon name here', 'influence-blog'); ?>">
                 </div>
                 <div id="icon-picker-one-browser">

@@ -242,7 +242,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
 
                 $exist_service= count( $array );
 
-                    $repeater_two_del_btn_id=$this->boxtitle;
+                    $repeater_two_del_btn_id=$this->boxtitle . $this->id;
 
                 global $influence_blog_repeater_two_limit;
 

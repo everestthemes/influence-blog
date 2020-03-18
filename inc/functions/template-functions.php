@@ -760,7 +760,7 @@ if( ! function_exists( 'influence_blog_breadcrumb' ) ) :
  		if( $display == true ) {
  			?>
  			<div class="breadcrumbs-sec breadcrumbs-layout1">
-                <?php everestthemes_breadcrumb_trail(); ?>
+                <?php influence_blog_breadcrumb_trail(); ?>
             </div>
             <!--breadcdrum-->
  			<?php

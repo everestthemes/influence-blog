@@ -45,7 +45,7 @@
             });
         },
         initIconType: function () {
-            $document.on("change", "#icon-picker-one-type", function () {
+            $document.on("change", "[id*='icon-picker-one-type']", function () {
                 var wrap = $(this).closest('.icon-picker-one-control-field');
                 var type = $(this).val();
                 if (!type || type == "all") {
@@ -59,7 +59,7 @@
             });
         },
         initSearch: function () {
-            $document.on("keyup", "#icon-picker-one-search-input", function (e) {
+            $document.on("keyup", "[id*='icon-picker-one-search-input']", function (e) {
                 var v = $(this).val();
                 v = v.trim();
                 var wrap = $(this).closest('.icon-picker-one-control-field');
@@ -105,7 +105,7 @@
         },
         lodIcons: function (wrap) {
             var icon_wrap = wrap.find('#icon-picker-one-browser');
-            var icon_select = wrap.closest('#customizer-icon-picker-one').find('select#icon-picker-one-type');
+            var icon_select = wrap.closest('#customizer-icon-picker-one').find('select[id*="icon-picker-one-type"]');
             var icon = this.icons;
             if (icon_select.find('option').length < 2) {
                 var icon_select_node = $('<select/>');
