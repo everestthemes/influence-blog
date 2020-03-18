@@ -607,7 +607,7 @@ if( ! function_exists( 'influence_blog_single_sidebar_position' ) ) {
 
 	function influence_blog_single_sidebar_position() {
 
-		global $influence_blog_prefix;
+		$influence_blog_prefix = 'influence_blog';
 
 		$sidebar_position_key = $influence_blog_prefix . '_sidebar_position';
 

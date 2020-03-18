@@ -77,9 +77,7 @@ if( !defined( 'INFLUENCE_BLOG_INC_CUSTOMIZER_FUNCTIONS_PATH_URI' ) ) {
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function influence_blog_customize_register( $wp_customize ) {
-    
-    global $influence_blog_prefix;
-    
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

@@ -46,10 +46,6 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 	 */
 	function influence_blog_setup() {
 
-        /* Theme Prefix Define*/
-		global $influence_blog_prefix;
-
-		$influence_blog_prefix = 'influence_blog';
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
