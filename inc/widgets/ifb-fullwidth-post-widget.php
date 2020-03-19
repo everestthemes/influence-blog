@@ -178,23 +178,33 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
         }
 
         public function form( $instance ) {
+
             $defaults = array(
                 'title'        => '',
-                'description'  => '',
                 'post_no'      => 4,
-                'layout'       => 'full_one',
-                'post_type'    => 'recent_posts',
+                'layout'       => 'one',
+                'sort_order'   => 'desc',
+                'orderby'      => 'date',
                 'select_cat'   => 0,
+                'button_title' => '',
+                'display_category_desc' => true,
+                'display_featured_image' => true,
+                'display_category' => true,
+                'display_posted_date' => true,
+                'display_comment_no' => true,
+                'display_post_author' => true,
+                'display_post_content' => true,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
 
-            $fullwidth_layouts = influence_blog_fullwidth_layouts_array();
+            $fullwidth_layouts = influence_blog_fullwidth_widget_select_array();
 
-            $post_types = influence_blog_post_types_array();
+            $orderby_choices = influence_blog_widget_orderby_array();
+
+            $sort_order_choices = influence_blog_widget_sort_order_array();
 
             ?>
-
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('layout') ); ?>">
                     <strong><?php esc_html_e('Chooose Layout', 'influence-blog'); ?></strong>
@@ -202,7 +212,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             </p>
             <div class="selector-labels">
             <?php
-            foreach( $sidebar_layouts as $key => $value ) {
+            foreach( $fullwidth_layouts as $key => $value ) {
 
                 $img_path = $value['image'];
 
@@ -219,37 +229,10 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             <input data-default="<?php echo esc_attr( $instance['layout'] ) ?>" type="hidden" value="<?php echo esc_attr( $instance['layout'] ) ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ) ?>"/>
 
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
-                    <strong><?php esc_html_e( 'Post Type' , 'influence-blog' ); ?></strong>
-                </label>
-                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
-                <?php
-
-                foreach( $post_types as $key => $post_type ){
-                    ?>
-                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['post_type'], $key ); ?>>
-                        <?php
-                            echo esc_html( $post_type );
-                        ?>
-                    </option>
-                    <?php
-                }
-                ?>
-                </select>
-            </p>
-
-            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">
                     <strong><?php esc_html_e('Title', 'influence-blog'); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-            </p>
-
-            <p>
-                <label for="<?php echo esc_attr( $this->get_field_id('description') ); ?>">
-                    <strong><?php esc_html_e('Description', 'influence-blog'); ?></strong>
-                </label>
-                <textarea id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" rows="4" cols="46"><?php echo esc_textarea( $instance['description'] ); ?></textarea>
             </p>
 
             <p>
@@ -270,12 +253,111 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             </p>
 
             <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>">
+                    <strong><?php esc_html_e( 'Order By' , 'influence-blog' ); ?></strong>
+                    <br>
+                    <small><b><?php esc_html_e( 'Select how to sort retrieved posts.' , 'influence-blog' ); ?></b></small>
+                </label>
+                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>">
+                    <?php
+
+                    foreach( $orderby_choices as $key => $orderby ){
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['orderby'], $key ); ?>>
+                            <?php
+                                echo esc_html( $orderby );
+                            ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'sort_order' ) ); ?>">
+                    <strong><?php esc_html_e( 'Sort Order' , 'influence-blog' ); ?></strong>
+                    <br>
+                    <small><b><?php esc_html_e( 'Designates the ascending or descending order.' , 'influence-blog' ); ?></b></small>
+                </label>
+                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'sort_order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'sort_order' ) ); ?>">
+                    <?php
+
+                    foreach( $sort_order_choices as $key => $sort_order ){
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['sort_order'], $key ); ?>>
+                            <?php
+                                echo esc_html( $sort_order );
+                            ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
+
+            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('post_no') ); ?>">
                     <strong><?php esc_html_e('No of Posts', 'influence-blog'); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('post_no') ); ?>" name="<?php echo esc_attr( $this->get_field_name('post_no') ); ?>" type="number" value="<?php echo esc_attr( $instance['post_no'] ); ?>" />
             </p>
 
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('button_title') ); ?>">
+                    <strong><?php esc_html_e('Button Title', 'influence-blog'); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('button_title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_title') ); ?>" type="text" value="<?php echo esc_attr( $instance['button_title'] ); ?>" />
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_category_desc' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_category_desc' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_category_desc' ) ); ?>" <?php checked( $instance['display_category_desc'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Category Description', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_featured_image' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_featured_image' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_featured_image' ) ); ?>" <?php checked( $instance['display_featured_image'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Featured Image', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_category' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_category' ) ); ?>" <?php checked( $instance['display_category'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Post Category', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_posted_date' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_posted_date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_posted_date' ) ); ?>" <?php checked( $instance['display_posted_date'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Posted Date', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_comment_no' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_comment_no' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_comment_no' ) ); ?>" <?php checked( $instance['display_comment_no'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Comment No.', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_post_author' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_post_author' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_post_author' ) ); ?>" <?php checked( $instance['display_post_author'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Post Author', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_post_content' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_post_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_post_content' ) ); ?>" <?php checked( $instance['display_post_content'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Post Content', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
             <?php
         }
 
@@ -285,15 +367,31 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             $instance['title']        = sanitize_text_field( $new_instance['title'] );
 
-            $instance['description']  = sanitize_textarea_field( $new_instance['description'] );
-
             $instance['select_cat']   = absint( $new_instance['select_cat'] );
 
             $instance['post_no']      = absint( $new_instance['post_no'] );
 
             $instance['layout']       = sanitize_text_field( $new_instance['layout'] );
 
-             $instance['post_type']   = sanitize_text_field( $new_instance['post_type'] );
+            $instance['sort_order']   = sanitize_text_field( $new_instance['sort_order'] );
+
+            $instance['orderby']      = sanitize_text_field( $new_instance['orderby'] );
+
+            $instance['button_title']        = sanitize_text_field( $new_instance['button_title'] );
+
+            $instance['display_category_desc'] = wp_validate_boolean( $new_instance['display_category_desc'] );
+
+            $instance['display_featured_image'] = wp_validate_boolean( $new_instance['display_featured_image'] );
+
+            $instance['display_category'] = wp_validate_boolean( $new_instance['display_category'] );
+
+            $instance['display_posted_date'] = wp_validate_boolean( $new_instance['display_posted_date'] );
+
+            $instance['display_comment_no'] = wp_validate_boolean( $new_instance['display_comment_no'] );
+
+            $instance['display_post_author'] = wp_validate_boolean( $new_instance['display_post_author'] );
+
+            $instance['display_post_content'] = wp_validate_boolean( $new_instance['display_post_content'] );
 
             return $instance;
         }
