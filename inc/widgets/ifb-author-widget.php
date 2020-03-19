@@ -39,7 +39,16 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             $author_image_url = !empty( $instance['author_image_url'] ) ? $instance['author_image_url'] : '';
 
-            if( $layout == 'one' || $layout == 'two' ) {
+            if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
+
+                if( $layout == 'one' ) {
+
+                    $thumbnail = 'influence-blog-thumbnail-two';
+
+                } else {
+
+                    $thumbnail = 'influence-blog-thumbnail-one';
+                }
 
                 ?>
                 <div class="side-space">
@@ -79,7 +88,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
                                             $author_image_url_id = attachment_url_to_postid( $author_image_url );
 
-                                            $author_image_src = wp_get_attachment_image_src( $author_image_url_id, 'influence-blog-thumbnail-' . $layout );
+                                            $author_image_src = wp_get_attachment_image_src( $author_image_url_id, $thumbnail );
 
                                             $author_image_src = $author_image_src[0];
 
@@ -97,7 +106,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
                                                 ?>
                                                 <div class="img-holder">
                                                     <figure>
-                                                        <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                                        <?php the_post_thumbnail( $thumbnail, array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
                                                     </figure>
                                                 </div>
                                                 <?php
