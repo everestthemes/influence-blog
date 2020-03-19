@@ -27,13 +27,13 @@ Wordpress Default Style Here
     color: #e9b105;
 }
 
-.widget .side-tt.widget-title .s-title {
+.secondary-widget-area .widget .side-tt.widget-title .s-title {
     font-size: 20px;
     text-transform: capitalize;
     font-weight: 700;
     font-family: Lato, sans-serif;
     margin-bottom: 15px;
-    color: #000;
+    color: #183244;
     padding: 5px;
 }
 .secondary-widget-area .widget .side-tt.widget-title  .s-title{
@@ -138,6 +138,8 @@ Wordpress Default Style Here
 .widget_product_categories ul.children li:last-child,
 .woocommerce-widget-layered-nav>ul>li:last-child,
 .woocommerce .widget_rating_filter ul li:last-child,
+.widget.widget_meta li:last-child,
+ .foot-top-wrap .widget.widget_recent_comments li:last-child,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:last-child {
 
     padding-bottom: 0;
@@ -448,6 +450,7 @@ textarea {
 .foot-top-wrap .widget select option {
     color: #183244;
 }
+
 
 /*Search widget *****************/
 
@@ -860,6 +863,9 @@ form.search-form button[type="search"]:focus,
     color: #fff;
     font-weight: inherit;
 }
+.foot-top-wrap .widget .side-tt .s-title a{
+    color: #183244;
+}
 
 .foot-top-wrap .widget a:hover,
 .foot-top-wrap .widget ul li a:hover,
@@ -952,9 +958,11 @@ form.search-form button[type="search"]:focus,
     color: #e9b105;
 }
 
+
 .footer-mid-sec .widget ul li {
     margin-bottom: 0;
 }
+
 
 .footer-mid-sec .side-tt.widget-title {
     font-size: 20px;
