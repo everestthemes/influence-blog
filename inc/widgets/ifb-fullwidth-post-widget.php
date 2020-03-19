@@ -195,30 +195,28 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             ?>
 
-            <p class="layout-options-image">
+            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('layout') ); ?>">
                     <strong><?php esc_html_e('Chooose Layout', 'influence-blog'); ?></strong>
                 </label>
-
-                <br>
-                <br>
-                <?php
-
-                foreach( $fullwidth_layouts as $key => $fullwidth_layout ) {
-
-                ?>
-                <label for="<?php echo esc_attr( $this->get_field_id('layout') ); ?>" class="rad">
-                    <input
-                      type="radio" name="<?php echo esc_attr( $this->get_field_name('layout') ); ?>"
-                      id="<?php echo esc_attr( $this->get_field_id('layout') ); ?>" class="input-hidden" <?php checked($instance['layout'],$key); ?> value="<?php echo esc_attr( $key ); ?>">
-                    <img class="rad-image" src="<?php echo esc_url( $fullwidth_layout ); ?>" />
-                </label>
-
-                <?php
-                }
-                ?>
-
             </p>
+            <div class="selector-labels">
+            <?php
+            foreach( $sidebar_layouts as $key => $value ) {
+
+                $img_path = $value['image'];
+
+                $class = ( $instance['layout'] == $key ) ? ' selector-selected': '';
+
+                echo '<label class="selector-images'. esc_attr( $class ) .'" data-val="'. esc_attr( $key ) .'">';
+
+                echo '<img src="'. esc_url( $value['image'] ) .'" title="'. esc_attr( $value['name'] ) .'" alt="'. esc_attr( $value['name'] ) .'"/>';
+
+                echo '</label>';
+            }
+            ?>
+            </div>
+            <input data-default="<?php echo esc_attr( $instance['layout'] ) ?>" type="hidden" value="<?php echo esc_attr( $instance['layout'] ) ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ) ?>"/>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">

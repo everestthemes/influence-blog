@@ -11,18 +11,112 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( !function_exists( 'influence_blog_pagination_type_array' ) ) :
+if( !function_exists( 'influence_blog_author_widget_select_array' ) ) :
 	/*
-	 * Function to get pagination type for in homepage
+	 * Function to get author widgets
 	 */
-	function influence_blog_pagination_type_array() {
+	function influence_blog_author_widget_select_array() {
 
-        $pagination_for = array(
-            'default'   => esc_html__( 'Default', 'influence-blog' ),
-            'loadmore' => esc_html__( 'Load More', 'influence-blog' ),
+        $options = array(
+
+            'one' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-one.png',
+                'name' => __( 'Layout One', 'influence-blog' )
+            ),
+            'two' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-two.png',
+                'name' => __( 'Layout Two', 'influence-blog' )
+            ),
+            'three' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-three.png',
+                'name' => __( 'Layout Three', 'influence-blog' )
+            ),
         );
 
-        return $pagination_for;
+        $options = apply_filters( 'influence_blog_filter_author_widget_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_widget_content_select_array' ) ) :
+	/*
+	 * Function to get widget content
+	 */
+	function influence_blog_widget_content_select_array() {
+
+        $options = array(
+
+            'one' => esc_html__( 'Excerpt Content', 'influence-blog' ),
+            'two' => esc_html__( 'Full Content', 'influence-blog' ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_author_widget_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_sidebar_widget_select_array' ) ) :
+	/*
+	 * Function to get sidebar widgets
+	 */
+	function influence_blog_sidebar_widget_select_array() {
+
+        $options = array(
+
+            'one' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/post-one.png',
+                'name' => __( 'Layout One', 'influence-blog' )
+            ),
+            'two' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/post-two.png',
+                'name' => __( 'Layout Two', 'influence-blog' )
+            ),
+        );
+
+        $options = apply_filters( 'influence_blog_filter_sidebar_widget_select_array', $options );
+
+        return $options;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_widget_orderby_array' ) ) :
+	/*
+	 * Function to get orderby choices
+	 */
+	function influence_blog_widget_orderby_array() {
+
+        $orderby_choices = array(
+            'date'            => esc_html__( 'Date', 'influence-blog' ),
+            'author'           => esc_html__( 'Author', 'influence-blog' ),
+            'comment_count'    => esc_html__( 'Comments', 'influence-blog' ),
+        );
+
+        $orderby_choices = apply_filters( 'influence_blog_filter_widget_orderby_choices_array', $orderby_choices );
+
+        return $orderby_choices;
+
+	}
+endif;
+
+if( !function_exists( 'influence_blog_widget_sort_order_array' ) ) :
+	/*
+	 * Function to get order choices
+	 */
+	function influence_blog_widget_sort_order_array() {
+
+        $order_choices = array(
+            'asc'      => esc_html__( 'Ascending Order', 'influence-blog' ),
+            'desc'     => esc_html__( 'Descending Order', 'influence-blog' ),
+        );
+
+        $order_choices = apply_filters( 'influence_blog_filter_widget_order_choices_array', $order_choices );
+
+        return $order_choices;
 
 	}
 endif;

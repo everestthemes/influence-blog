@@ -19,7 +19,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
             parent::__construct(
                 'influence_blog_sidebar_post_widget',  // Widget ID
-                esc_html__( 'IfB: Post Widget', 'influence-blog' ),   // Widget Name
+                esc_html__( 'IfB: Sidebar Post Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays Posts.', 'influence-blog' ),
                 )
@@ -33,11 +33,17 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
             $posts_no = !empty( $instance[ 'post_no' ] ) ? $instance[ 'post_no' ] : 4;
 
-            $layout = !empty( $instance[ 'layout' ] ) ? $instance[ 'layout' ] : 'post_one';
+            $layout = !empty( $instance[ 'layout' ] ) ? $instance[ 'layout' ] : 'one';
 
             $select_cat    = !empty( $instance['select_cat'] ) ? $instance['select_cat'] : 0;
 
-            $post_type = !empty( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'recent_posts';
+            $sort_order    = !empty( $instance['sort_order'] ) ? $instance['sort_order'] : 'desc';
+
+            $orderby       = !empty( $instance['orderby'] ) ? $instance['orderby'] : 'date';
+
+            $display_featured_image  = !empty( $instance['display_featured_image'] ) ? $instance['display_featured_image'] : false;
+
+            $display_category  = !empty( $instance['display_category'] ) ? $instance['display_category'] : false;
 
             $post_args = array(
 
@@ -49,9 +55,12 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                 $post_args['cat'] = absint( $select_cat );
             }
 
-            if( $post_type == 'popular_posts' ) {
+            if( !empty( $sort_order ) ) {
+                $post_args['order'] = $sort_order;
+            }
 
-                $post_args['orderby'] = 'comment_count';
+            if( !empty( $orderby ) ) {
+                $post_args['orderby'] = $orderby;
             }
 
             if( absint( $posts_no ) > 0 ) {
@@ -63,52 +72,91 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
             if( $post_query->have_posts() ) {
 
-                if( $args['id'] == 'influence-blog-sidebar' || $args['id'] == 'influence-blog-footer-left' || $args['id'] == 'influence-blog-footer-middle' || $args['id'] == 'influence-blog-footer-right' ) {
+                if( $layout == 'one' ) {
 
-                    if( $layout == 'post_one' ) {
-
-                        ?>
-                        <div class="side-space">
-                            <div class="recent-cate-wrap">
-                                <?php
-                                if( !empty( $title ) ) {
-                                    ?>
-                                    <div class="side-tt">
-                                        <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
-                                    </div>
-                                    <?php
-                                }
-
-                                while( $post_query->have_posts() ) :
-
-                                    $post_query->the_post();
-                                    ?>
-                                    <div class="side-widget-d4 clearfix">
-                                        <?php
-                                        if( has_post_thumbnail() ) {
-                                            ?>
-                                            <div class="img-holder">
-                                                <figure>
-                                                    <?php the_post_thumbnail( 'influence-blog-thumbnail-two', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
-                                                </figure>
-                                            </div>
-                                            <?php
-                                        }
-
-                                        influence_blog_categories_meta( true );
-                                        ?>
-                                        <div class="side-widget-bdy">
-                                            <h3 class="sm-title"><a href="<?php the_permalink(); ?>" tabindex="-1"><?php the_title(); ?></a></h3>
-                                        </div>
-                                    </div><!--//side-widget-d1-->
-                                    <?php
-                                endwhile;
-                                wp_reset_postdata();
+                    ?>
+                    <div class="side-space">
+                        <div class="recent-cate-wrap">
+                            <?php
+                            if( !empty( $title ) ) {
                                 ?>
-                            </div><!--author-post-->
-                        </div><!--//side bar-->
-                        <?php
-                    }
+                                <div class="side-tt">
+                                    <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
+                                </div>
+                                <?php
+                            }
+
+                            while( $post_query->have_posts() ) :
+
+                                $post_query->the_post();
+                                ?>
+                                <div class="side-widget-d4">
+                                    <?php
+                                    if( has_post_thumbnail() && $display_featured_image == true ) {
+                                        ?>
+                                        <div class="img-holder">
+                                            <figure>
+                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-two', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                            </figure>
+                                        </div>
+                                        <?php
+                                    }
+
+                                    influence_blog_categories_meta( $display_category );
+                                    ?>
+                                    <div class="side-widget-bdy">
+                                        <h3 class="sm-title"><a href="<?php the_permalink(); ?>" tabindex="-1"><?php the_title(); ?></a></h3>
+                                    </div>
+                                </div><!--//side-widget-d1-->
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
+                        </div><!--author-post-->
+                    </div><!--//side bar-->
+                    <?php
+                } else {
+
+                    ?>
+                    <div class="side-bar">
+                        <div class="side-space side1-space">
+                            <?php
+                            if( !empty( $title ) ) {
+                            ?>
+                            <div class="side-tt">
+                                <h3 class="s-title"><?php echo esc_html( $title ); ?></h3>
+                            </div>
+                            <?php
+                            }
+
+                            while( $post_query->have_posts() ) :
+
+                                $post_query->the_post();
+                                ?>
+                                <div class="side-widget-d1 clearfix">
+                                    <?php
+                                    if( has_post_thumbnail() && $display_featured_image == true ) {
+                                        ?>
+                                        <div class="img-holder">
+                                            <figure>
+                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-two', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                            </figure>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                    <div class="side-widget-bdy">
+                                        <?php influence_blog_categories_meta( $display_category ); ?>
+                                        <h3 class="sm-title"><a href="<?php the_permalink(); ?>" tabindex="-1"><?php the_title(); ?></a></h3>
+                                    </div>
+                                </div><!--//side-widget-d1-->
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
+                        </div><!--latest-post-->
+                    </div><!--//side bar-->
+                    <?php
                 }
             }
         }
@@ -117,63 +165,46 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
             $defaults = array(
                 'title'        => '',
                 'post_no'      => 4,
-                'layout'       => 'post_one',
-                'post_type'    => 'recent_posts',
+                'layout'       => 'one',
                 'select_cat'   => 0,
+                'sort_order'   => 'desc',
+                'orderby'      => 'date',
+                'display_featured_image' => true,
+                'display_category' => true,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
 
-            $sidebar_layouts = influence_blog_post_layouts_array();
+            $sidebar_layouts = influence_blog_sidebar_widget_select_array();
 
-            $post_types = influence_blog_post_types_array();
+            $orderby_choices = influence_blog_widget_orderby_array();
+
+            $sort_order_choices = influence_blog_widget_sort_order_array();
 
             ?>
 
-            <p class="layout-options-image">
+            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('layout') ); ?>">
                     <strong><?php esc_html_e('Chooose Layout', 'influence-blog'); ?></strong>
                 </label>
-
-                <br>
-                <br>
-                <?php
-
-                foreach( $sidebar_layouts as $key => $sidebar_layout ) {
-
-                ?>
-                <label for="<?php echo esc_attr( $this->get_field_id('layout') ); ?>" class="rad">
-                    <input
-                      type="radio" name="<?php echo esc_attr( $this->get_field_name('layout') ); ?>"
-                      id="<?php echo esc_attr( $this->get_field_id('layout') ); ?>" class="input-hidden" <?php checked($instance['layout'],$key); ?> value="<?php echo esc_attr( $key ); ?>">
-                    <img class="rad-image" src="<?php echo esc_url( $sidebar_layout ); ?>" />
-                </label>
-
-                <?php
-                }
-                ?>
-
             </p>
+            <div class="selector-labels">
+            <?php
+            foreach( $sidebar_layouts as $key => $value ) {
 
-            <p>
-                <label for="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
-                    <strong><?php esc_html_e( 'Post Type' , 'influence-blog' ); ?></strong>
-                </label>
-                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>">
-                <?php
+                $img_path = $value['image'];
 
-                foreach( $post_types as $key => $post_type ){
-                    ?>
-                    <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['post_type'], $key ); ?>>
-                        <?php
-                            echo esc_html( $post_type );
-                        ?>
-                    </option>
-                    <?php
-                }
-                ?>
-                </select>
-            </p>
+                $class = ( $instance['layout'] == $key ) ? ' selector-selected': '';
+
+                echo '<label class="selector-images'. esc_attr( $class ) .'" data-val="'. esc_attr( $key ) .'">';
+
+                echo '<img src="'. esc_url( $value['image'] ) .'" title="'. esc_attr( $value['name'] ) .'" alt="'. esc_attr( $value['name'] ) .'"/>';
+
+                echo '</label>';
+            }
+            ?>
+            </div>
+            <input data-default="<?php echo esc_attr( $instance['layout'] ) ?>" type="hidden" value="<?php echo esc_attr( $instance['layout'] ) ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ) ?>"/>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">
@@ -200,10 +231,68 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
             </p>
 
             <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>">
+                    <strong><?php esc_html_e( 'Order By' , 'influence-blog' ); ?></strong>
+                    <br>
+                    <small><b><?php esc_html_e( 'Select how to sort retrieved posts.' , 'influence-blog' ); ?></b></small>
+                </label>
+                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>">
+                    <?php
+
+                    foreach( $orderby_choices as $key => $orderby ){
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['orderby'], $key ); ?>>
+                            <?php
+                                echo esc_html( $orderby );
+                            ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'sort_order' ) ); ?>">
+                    <strong><?php esc_html_e( 'Sort Order' , 'influence-blog' ); ?></strong>
+                    <br>
+                    <small><b><?php esc_html_e( 'Designates the ascending or descending order.' , 'influence-blog' ); ?></b></small>
+                </label>
+                <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'sort_order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'sort_order' ) ); ?>">
+                    <?php
+
+                    foreach( $sort_order_choices as $key => $sort_order ){
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $instance['sort_order'], $key ); ?>>
+                            <?php
+                                echo esc_html( $sort_order );
+                            ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
+
+            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('post_no') ); ?>">
                     <strong><?php esc_html_e('No of Posts', 'influence-blog'); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('post_no') ); ?>" name="<?php echo esc_attr( $this->get_field_name('post_no') ); ?>" type="number" value="<?php echo esc_attr( $instance['post_no'] ); ?>" />
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_featured_image' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_featured_image' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_featured_image' ) ); ?>" <?php checked( $instance['display_featured_image'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Featured Image', 'influence-blog' ); ?></strong>
+                </label>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'display_category' ) ); ?>" class="ckb">
+                  <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_category' ) ); ?>" <?php checked( $instance['display_category'], true ); ?>>
+                  <i></i><strong><?php esc_html_e( 'Display Post Category', 'influence-blog' ); ?></strong>
+                </label>
             </p>
 
             <?php
@@ -221,7 +310,13 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
             $instance['layout']       = sanitize_text_field( $new_instance['layout'] );
 
-             $instance['post_type']   = sanitize_text_field( $new_instance['post_type'] );
+            $instance['sort_order']   = sanitize_text_field( $new_instance['sort_order'] );
+
+            $instance['orderby']      = sanitize_text_field( $new_instance['orderby'] );
+
+            $instance['display_featured_image'] = wp_validate_boolean( $new_instance['display_featured_image'] );
+
+            $instance['display_category'] = wp_validate_boolean( $new_instance['display_category'] );
 
             return $instance;
         }

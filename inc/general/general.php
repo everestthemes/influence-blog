@@ -72,9 +72,9 @@ if ( ! function_exists( 'influence_blog_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-        add_image_size( 'influence-blog-thumbnail-one', 820, 550, true ); //Grid layout
-        add_image_size( 'influence-blog-thumbnail-two', 300, 200, true ); //Related post
-        add_image_size( 'influence-blog-thumbnail-three', 800, 1200, true ); //Related post
+        add_image_size( 'influence-blog-thumbnail-one', 820, 550, true );
+        add_image_size( 'influence-blog-thumbnail-two', 300, 300, true );
+        add_image_size( 'influence-blog-thumbnail-three', 800, 1200, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
