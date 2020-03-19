@@ -50,25 +50,58 @@ Widget at Apperence > widgets
 	border: 1px solid #eeeeee;
 }
 
-
 /*
 ===================================
 =
-= Radio Button
+= Widget image select
 =
 ================================================
 */
 
-.rad {
+.widget-content .selector-labels label.selector-selected {
+    position: relative;
+}
+
+.widget-content .selector-labels label.selector-images {
+    padding: 10px;
+}
+
+.widget-content .selector-labels label.selector-selected:after {
+    content: "";
+    height: 35px;
+    width: 35px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background: url(../images/selected.png) no-repeat right top;
+}
+
+
+/*
+===================================
+=
+= Widget Check Box
+=
+================================================
+*/
+
+.ckb{
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
 }
 
-/* RADIO & CHECKBOX STYLES */
+.ckb > input{ /* HIDE ORG RADIO & CHECKBOX */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* CHECKBOX STYLES */
 /* DEFAULT <i> STYLE */
-.rad input[type=radio] { 
+.ckb > i {
     display: inline-block;
     vertical-align: middle;
     border-radius: 50%;
@@ -78,24 +111,33 @@ Widget at Apperence > widgets
     background: gray;
 }
 
-.rad input[type=radio]:checked { 
-    box-shadow: inset 0 0 0 3px #fff;
-    transition: 0.2s;
+/* CHECKBOX OVERWRITE STYLES */
+.ckb > i {
+    width: 25px;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
-.rad .rad-image {
-    height: 100px;
-    width: 40%;
-    padding: 5px 0px;
+/* CHECKBOX */
+.ckb > input + i:after{
+    content: "";
+    display: block;
+    height: 12px;
+    width:  12px;
+    margin: 2px;
+    border-radius: inherit;
+    transition: inherit;
+    background: gray;
+}
+
+.ckb > input:checked + i:after{
+    margin-left: 11px;
+    background:  #1e8cbe;
 }
 
 @media screen and (max-width: 782px) {
     
-    .rad .rad-image{
-        width:35%;
-    }
-    
-    .rad input[type=radio] {
+    .ckb > i {
         display: inline-block;
         vertical-align: middle;
         border-radius: 50%;
@@ -104,26 +146,10 @@ Widget at Apperence > widgets
         background: gray;
     }
     
-    .rad input[type=radio]:checked { 
-        box-shadow: inset 0 0 0 8px #fff;
-        background:  #1e8cbe;
-        display: inline-block;
-        vertical-align: middle;
-        transition: 0.2s;
+    .ckb > i {
+        width: 25px;
+        border-radius: 3px;
+        margin-right: 5px;
     }
     
-}
-
-@media screen and (max-width:520px) {
-    .rad .rad-image {
-        width:100%;
-        height: auto;
-    }
-}
-
-@media screen and (max-width:2000px) {
-    .rad .rad-image{
-        height: 100px;
-        width: 100px;
-    }
 }
