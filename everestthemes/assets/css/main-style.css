@@ -12,7 +12,6 @@ body {
     text-transform: none;
     letter-spacing: 1px;
     color: #000000;
-    word-break: break-all;
 }
 
 body.wide {
@@ -194,7 +193,6 @@ figure {
     line-height: 1.5;
     text-transform: none;
     letter-spacing: 1px;
-    color: #000000;
 }
 
 figure {
@@ -657,7 +655,6 @@ button {
 }
 
 .search-icon .btn-search {
-    border: none;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
@@ -670,6 +667,10 @@ button {
 .search-icon .btn-search:focus {
     background: #d0a32f;
     color: white;
+}
+.search-icon .btn-search:focus{
+    border:thin dashed;
+    border-color: white;
 }
 
 #header-search {
@@ -688,10 +689,16 @@ button {
     width: 400px;
     z-index: 10;
     top: 50px;
-    display: none;
+    transition: 0.5s;
+    opacity: 0;
+}
+#header-search.show{
+    opacity: 1;
 }
 
-
+.header .search-icon .search-form input{
+    height: 43px;
+}
 
 .search-icon .search-form input {
     border: 1px solid #eee;
@@ -709,7 +716,6 @@ button {
 .search-icon .search-form #submit {
     background: #d0a32f;
     color: #fff;
-    border: none;
 }
 
 #header-search #search-form {
@@ -1491,14 +1497,14 @@ span.sub-toggle.open {
     padding-bottom: 60px;
 }
 
-.side-widget-d2 {
+.author-wrap.style-one .side-widget-d2 {
     background-color: #183244;
     padding: 30px;
     text-align: center;
     color: #fff;
 }
 
-.side-widget-d2 .img-holder {
+.author-wrap.style-one .side-widget-d2 .img-holder {
     height: 120px;
     width: 120px;
     margin: auto;
@@ -1520,6 +1526,34 @@ span.sub-toggle.open {
     margin-bottom: 30px;
 }
 
+.author-wrap.style-two .side-widget-d2{
+   padding:0;
+   background-color: transparent;
+}
+.author-wrap.style-two .side-widget-d2  .img-holder{
+    border-radius: 0;
+    border: 1px solid #e9b105;
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+
+.author-wrap.style-three .side-widget-d2{
+   padding:0;
+   text-align: center
+}
+.author-wrap.style-three .side-widget-d2  .img-holder{
+    border-radius: 0;
+    height: 120px;
+    width: 120px; 
+    transform:rotate(45deg);
+    text-align: center;
+    margin:0 auto;
+    padding: 10px;
+    border:1px solid #e9b105;
+     margin-top:30px;
+    margin-bottom:30px;
+}
 .side-widget-d2 .author-detail {
     margin-top: 15px;
 }
