@@ -31,6 +31,10 @@ if( !function_exists( 'influence_blog_author_widget_select_array' ) ) :
                 'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-three.png',
                 'name' => __( 'Layout Three', 'influence-blog' )
             ),
+            'four' => array(
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-four.png',
+                'name' => __( 'Layout Four', 'influence-blog' )
+            ),
         );
 
         $options = apply_filters( 'influence_blog_filter_author_widget_select_array', $options );
