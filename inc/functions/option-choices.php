@@ -134,11 +134,11 @@ if( !function_exists( 'influence_blog_fullwidth_widget_select_array' ) ) :
         $options = array(
 
             'one' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/post-one.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/full-one.png',
                 'name' => __( 'Layout One', 'influence-blog' )
             ),
             'two' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/post-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/full-two.png',
                 'name' => __( 'Layout Two', 'influence-blog' )
             ),
         );
