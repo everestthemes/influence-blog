@@ -1317,8 +1317,8 @@ span.sub-toggle.open {
 }
 
 .full-widget-d3-slide-wrap .slick-arrow {
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid #e9bd33;
+    color: #e9bd33;
     right: auto;
     left: 0;
     bottom: 0px;
@@ -3065,13 +3065,23 @@ button.btn-style.btn-search:focus {
 .banner-inner3 {
     padding-top: 60px;
 }
-
+.banner-inner3{
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding:40px 0;
+}
 .banner-inner3 .banner-layout3 .slide {
-    height: 400px;
+    height: 500px;
+    width: 500px;
+    border-radius: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
+    padding:10px;
+    border:2px solid #e9b105;
 }
 
 .banner-wrap3 .banner-caption {
