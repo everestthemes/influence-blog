@@ -3213,3 +3213,52 @@ button.btn-style.btn-search:focus {
     border-top: 2px solid transparent;
 }
 
+
+/* post widget of footer */
+.recent-cate-wrap{
+    margin-bottom: 30px;
+}
+.recent-cate-wrap .img-holder{
+    margin-bottom: 15px;
+}
+.author-wrap.style-one .side-widget-d2 .sm-title,
+.author-wrap.style-one .side-widget-d2 .author-detail p{
+    color: white;
+}
+
+
+.foot-top-wrap .author-wrap .side-tt .s-title,
+.foot-top-wrap .side-bar .side-tt .s-title,
+.foot-top-wrap  .author-detail .sm-title,
+.foot-top-wrap  .side-bar .sm-title a,
+.foot-top-wrap .author-wrap .author-detail,
+.foot-top-wrap .author-wrap .author-detail p,
+.foot-top-wrap .recent-cate-wrap .side-tt .s-title,
+
+.footer-mid-sec .author-wrap .side-tt .s-title,
+.footer-mid-sec .side-bar .side-tt .s-title,
+.footer-mid-sec  .author-detail .sm-title,
+.footer-mid-sec  .side-bar .sm-title a,
+.footer-mid-sec .author-wrap .author-detail,
+.footer-mid-sec .author-wrap .author-detail p,
+.footer-mid-sec .recent-cate-wrap .side-tt .s-title{
+    color: white;
+}
+
+.foot-top-wrap  .side-bar .sm-title a:hover,
+.footer-mid-sec  .side-bar .sm-title a:hover{
+    color: #e9b105;
+}
+.foot-top-wrap .author-wrap,
+.foot-top-wrap  .side-bar,
+.footer-mid-sec .author-wrap,
+.footer-mid-sec  .side-bar,
+.secondary-widget-area .side-bar {
+    margin-bottom: 30px;
+}
+
+.footer-mid-sec .side-bar .post-categories a{
+   font-size: 12px;
+    color: white;
+}
+
