@@ -96,7 +96,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                                         ?>
                                         <div class="img-holder">
                                             <figure>
-                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-two', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
                                             </figure>
                                         </div>
                                         <?php
@@ -139,7 +139,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
                                         ?>
                                         <div class="img-holder">
                                             <figure>
-                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-two', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+                                                <?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
                                             </figure>
                                         </div>
                                         <?php

@@ -481,6 +481,13 @@ if( ! function_exists( 'influence_blog_banner_action' ) ) :
             }
 
             $banner_template = apply_filters( 'influence_blog_banner_layout_template', $banner_layout );
+
+            /**
+            * Hook - influence_blog_banner_widget_area
+            *
+            * @hooked influence_blog_banner_widget_area_action - 199
+            */
+            do_action( 'influence_blog_banner_widget_area' );
         }
     }
 endif;
@@ -505,6 +512,13 @@ if( ! function_exists( 'influence_blog_blogpage_action' ) ) :
             * @hooked influence_blog_blogpage_section_one_action - 310
             */
             do_action( 'influence_blog_blogpage_section_one' );
+
+            /**
+            * Hook - influence_blog_blogpage_section_one_widget_area
+            *
+            * @hooked influence_blog_blogpage_section_one_widget_area_action - 299
+            */
+            do_action( 'influence_blog_blogpage_section_one_widget_area' );
         }
 
         /**
@@ -1368,3 +1382,87 @@ if( ! function_exists( 'influence_blog_pagination_default_template_action' ) ) :
     }
 endif;
 add_action( 'influence_blog_pagination_default_template', 'influence_blog_pagination_default_template_action', 510 );
+
+/**
+ * Header widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_header_widget_area_action' ) ) :
+
+ 	function influence_blog_header_widget_area_action() {
+
+        $display = influence_blog_get_mod( 'header_widget_area_display_toggle' );
+
+        $area = influence_blog_get_mod( 'header_widget_area_select' );
+
+        if( $display ) {
+
+            if( is_active_sidebar( $area ) ) {
+
+                ?>
+                <div class="header-widget-area">
+                    <?php dynamic_sidebar( $area ); ?>
+                </div>
+                <?php
+            }
+        }
+    }
+endif;
+add_action( 'influence_blog_header_widget_area', 'influence_blog_header_widget_area_action', 99 );
+
+/**
+ * Banner widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_banner_widget_area_action' ) ) :
+
+ 	function influence_blog_banner_widget_area_action() {
+
+        $display = influence_blog_get_mod( 'banner_widget_area_display_toggle' );
+
+        $area = influence_blog_get_mod( 'banner_widget_area_select' );
+
+        if( $display ) {
+
+            if( is_active_sidebar( $area ) ) {
+
+                ?>
+                <div class="banner-widget-area">
+                    <?php dynamic_sidebar( $area ); ?>
+                </div>
+                <?php
+            }
+        }
+    }
+endif;
+add_action( 'influence_blog_banner_widget_area', 'influence_blog_banner_widget_area_action', 199 );
+
+/**
+ * Blogpage section one widget area hook declaration
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists( 'influence_blog_blogpage_section_one_widget_area_action' ) ) :
+
+ 	function influence_blog_blogpage_section_one_widget_area_action() {
+
+        $display = influence_blog_get_mod( 'blogpage_section_one_widget_area_display_toggle' );
+
+        $area = influence_blog_get_mod( 'blogpage_section_one_widget_area_select' );
+
+        if( $display ) {
+
+            if( is_active_sidebar( $area ) ) {
+
+                ?>
+                <div class="blogpage-section-one-widget-area">
+                    <?php dynamic_sidebar( $area ); ?>
+                </div>
+                <?php
+            }
+        }
+    }
+endif;
+add_action( 'influence_blog_blogpage_section_one_widget_area', 'influence_blog_blogpage_section_one_widget_area_action', 299 );

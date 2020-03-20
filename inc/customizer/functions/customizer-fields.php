@@ -48,11 +48,14 @@ require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/layout-options/layou
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-one/header-one.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-two/header-two.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/header-three/header-three.php';
+require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'header/widget-area/widget-area.php';
 
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'banner/layout-options/layout-options.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'banner/content-options/content-options.php';
+require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'banner/widget-area/widget-area.php';
 
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'blogpage/section-one/section-one.php';
+require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'blogpage/section-one-widget-area/section-one-widget-area.php';
 
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'archivepage/layout-options/layout-options.php';
 require INFLUENCE_BLOG_INC_CUSTOMIZER_FIELDS_PATH . 'archivepage/content-options/content-options.php';

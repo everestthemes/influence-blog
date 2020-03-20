@@ -165,7 +165,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
                             <div class="fl-top-widget-area primary-widget-area">
                                 <div class="widget-area-inner lrg-padding">
                                     <div class="container">
-                                        <div class="row justify-content-between">
+                                        <div class="row justify-content-around">
                                             <div class="col-12 col-lg-7">
                                                 <div class="widget-area-entry">
                                                     <div class="widget text_widget">

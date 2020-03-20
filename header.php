@@ -35,6 +35,13 @@ if( function_exists( 'wp_body_open' ) ) {
 * @hooked influence_blog_header_action - 100
 */
 do_action( 'influence_blog_header' );
+
+/**
+* Hook - influence_blog_header_widget_area
+*
+* @hooked influence_blog_header_widget_area_action - 99
+*/
+do_action( 'influence_blog_header_widget_area' );
 ?>
 <div class="container-style-<?php echo esc_attr( influence_blog_site_layout_container_style() ); ?>">
 

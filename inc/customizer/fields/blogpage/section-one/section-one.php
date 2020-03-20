@@ -26,6 +26,10 @@ $area_lists  = influence_blog_get_registered_widget_areas();
 
 $pagination_style = influence_blog_pagination_style_array();
 
+$font_attrs = influence_blog_font_attrs_array();
+
+$size_attrs = influence_blog_font_size_attrs_array();
+
 $button_one_array = array(
     'influence_blog_blogpage_section_one_display_toggle' => array(),
     'influence_blog_blogpage_section_one_layout_select_heading' => array(),
@@ -61,6 +65,11 @@ $button_one_array = array(
 $button_one_array = apply_filters( 'influence_blog_filter_blogpage_section_one_button_one_array', $button_one_array );
 
 $button_two_array = array(
+    'influence_blog_blogpage_section_one_design_content_options_heading' => array(),
+    'influence_blog_blogpage_section_one_design_title_heading' => array(),
+    'influence_blog_blogpage_section_one_design_title_typo_heading' => array(),
+    'influence_blog_typo_blogpage_section_one_design_title_font' => array(),
+    'influence_blog_typo_blogpage_section_one_design_title_size' => array(),
 );
 
 $button_two_array = apply_filters( 'influence_blog_filter_blogpage_section_one_button_two_array', $button_two_array );
@@ -565,4 +574,102 @@ $wp_customize->add_control( new Influence_Blog_Button_One_Control ( $wp_customiz
     'choices' 		           => $pagination_style,
     'priority'                 => 145,
     'active_callback'          => 'influence_blog_is_blogpage_section_one_pagination_enable',
+) ) );
+
+/*-----------------------------------------------------------------------------
+							 Design options
+-----------------------------------------------------------------------------*/
+
+/*---------------------------------- Blog page section one design content options heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_design_content_options_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_blogpage_section_one_design_content_options_heading', array(
+    'label'                    => esc_html__( 'Content Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'priority'                 => 150,
+) ) );
+
+/*---------------------------------- Blog page section one design title heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_design_title_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_blogpage_section_one_design_title_heading', array(
+    'label'                    => esc_html__( 'Title Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => true,
+    'class'                    => esc_attr( 'blogpage-section-one-design-title-heading' ),
+    'controls_to_wrap'         => 3,
+    'expanded'                 => false,
+    'priority'                 => 155,
+) ) );
+
+/*---------------------------------- Blog page section one design title typo heading -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_design_title_typo_heading', array(
+    'sanitize_callback' 	   => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customize, 'influence_blog_blogpage_section_one_design_title_typo_heading', array(
+    'label'                    => esc_html__( 'Typography Options', 'influence-blog' ),
+    'section'                  => $section,
+    'type'                     => 'heading-one',
+    'accordion'                => false,
+    'class'                    => esc_attr( 'blogpage-section-one-design-title-typo-heading' ),
+    'controls_to_wrap'         => 2,
+    'expanded'                 => false,
+    'priority'                 => 160,
+) ) );
+
+/*---------------------------------- Blog page section one design title typo font family -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_typo_blogpage_section_one_design_title_font', array(
+    'default'                  => influence_blog_defaults( 'typo_blogpage_section_one_design_title_font' ),
+    'sanitize_callback'        => 'sanitize_typography_one'
+) );
+
+$wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_blogpage_section_one_design_title_font', array(
+    'label'                    => __( 'Font Family', 'influence-blog' ),
+    'section'                  => $section,
+    'input_attrs'              => $font_attrs,
+    'priority'                 => 165,
+) ) );
+
+/*---------------------------------- Blog page section one design title typo font size -----------------------------------*/
+
+$wp_customize->add_setting( 'influence_blog_typo_blogpage_section_one_design_title_size_d', array(
+    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'transport' 		       => 'postMessage',
+    'default'                  => influence_blog_defaults( 'typo_blogpage_section_one_design_title_size_d' ),
+) );
+
+$wp_customize->add_setting( 'influence_blog_typo_blogpage_section_one_design_title_size_t', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'default'                  => influence_blog_defaults( 'typo_blogpage_section_one_design_title_size_t' ),
+) );
+
+$wp_customize->add_setting( 'influence_blog_typo_blogpage_section_one_design_title_size_m', array(
+    'transport' 			   => 'postMessage',
+    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'default'                  => influence_blog_defaults( 'typo_blogpage_section_one_design_title_size_m' ),
+) );
+
+$wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_customize,'influence_blog_typo_blogpage_section_one_design_title_size', array(
+    'label'                    => esc_html__( 'Font Size', 'influence-blog' ) . ' (px) ',
+    'section' 			       => $section,
+    'type'                     => 'range-slider-two',
+    'settings' 			       => array(
+        'desktop' 	           => 'influence_blog_typo_blogpage_section_one_design_title_size_d',
+        'tablet' 	           => 'influence_blog_typo_blogpage_section_one_design_title_size_t',
+        'mobile' 	           => 'influence_blog_typo_blogpage_section_one_design_title_size_m',
+    ),
+    'input_attrs' 		       => $size_attrs,
+    'priority' 			       => 170,
 ) ) );

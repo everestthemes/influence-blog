@@ -51,3 +51,11 @@ $wp_customize->add_section( 'influence_blog_header_three_section', array(
     'title'        => esc_html__( 'Header Two', 'influence-blog' ),
     'panel'        => $panel,
 ) );
+
+/*---------------------------------- Header widget area -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_header_widget_area_section', array(
+    'priority'     => 100,
+    'title'        => esc_html__( 'Widget Area', 'influence-blog' ),
+    'panel'        => $panel,
+) );
