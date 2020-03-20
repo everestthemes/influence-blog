@@ -415,6 +415,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_advance_search_icon_m_p_right' => '20',
             'header_three_advance_search_icon_m_p_bottom' => '12',
             'header_three_advance_search_icon_m_p_left' => '20',
+            //Header - Header widget area
+            'header_widget_area_display_toggle' => false,
+            'header_widget_area_select' => 'influence-blog-widget-six',
 
             //Banner - layout options
             'banner_layout_options_select' => 'one',
@@ -437,6 +440,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_content_options_two_ads_link' => '#',
             'banner_content_options_two_ads_link_rel' => 'nofollow',
             'banner_content_options_two_ads_link_tab_toggle' => true,
+            //Banner - Banner widget area
+            'banner_widget_area_display_toggle' => false,
+            'banner_widget_area_select' => 'influence-blog-widget-six',
 
             //Blog page - Section one - General
             'blogpage_section_one_display_toggle' => true,
@@ -462,6 +468,21 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'blogpage_section_one_widget_area_select' => 'influence-blog-sidebar',
             'blogpage_section_one_pagination_toggle' => true,
             'blogpage_section_one_pagination_style' => 'one',
+            //Blog page - Section one - Design
+            'typo_blogpage_section_one_design_title_font' => json_encode(
+				array(
+					'font' => 'Lobster',
+					'variantlist' => array( 'regular' ),
+					'fontweight' => 'regular',
+					'category' => 'display'
+				)
+			),
+            'typo_blogpage_section_one_design_title_size_d' => '30',
+            'typo_blogpage_section_one_design_title_size_t' => '30',
+            'typo_blogpage_section_one_design_title_size_m' => '30',
+            //Blog page - Blogpage section one widget area
+            'blogpage_section_one_widget_area_display_toggle' => false,
+            'blogpage_section_one_widget_area_select' => 'influence-blog-widget-six',
 
             //Archive page - Layout options - General
             'archivepage_layout_options_select' => 'one',

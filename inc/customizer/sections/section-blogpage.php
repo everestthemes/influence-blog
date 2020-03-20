@@ -26,3 +26,11 @@ $wp_customize->add_section( 'influence_blog_blogpage_section_one_section', array
     'panel'        => $panel,
 ) );
 
+/*---------------------------------- Blog page widget area -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_blogpage_section_one_widget_area_section', array(
+    'priority'     => 15,
+    'title'        => esc_html__( 'Widget Area', 'influence-blog' ),
+    'panel'        => $panel,
+    'active_callback' => 'influence_blog_is_blogpage_section_one_display_enable',
+) );

@@ -453,6 +453,21 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             );
         }
 
+        /*---------------------------------- Blog page section one design Section -----------------------------------*/
+
+        $typo_blogpage_section_one_design_title_size_t = influence_blog_get_mod( 'typo_blogpage_section_one_design_title_size_t' );
+
+        $typo_blogpage_section_one_design_css_t = array(
+            '#section-one .widget-tt .l-title' => array(
+                'font-size' => esc_attr( $typo_blogpage_section_one_design_title_size_t . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_blogpage_section_one_design_css_t
+        );
+
         /*---------------------------------- Footer one design Section -----------------------------------*/
 
         $typo_footer_one_widget_area_design_title_font_size_t = influence_blog_get_mod( 'typo_footer_one_widget_area_design_title_size_t' );
@@ -1079,6 +1094,21 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                 $header_three_advance_css_m
             );
         }
+
+        /*---------------------------------- Blog page section one design Section -----------------------------------*/
+
+        $typo_blogpage_section_one_design_title_size_m = influence_blog_get_mod( 'typo_blogpage_section_one_design_title_size_m' );
+
+        $typo_blogpage_section_one_design_css_m = array(
+            '#section-one .widget-tt .l-title' => array(
+                'font-size' => esc_attr( $typo_blogpage_section_one_design_title_size_m . 'px' ),
+            ),
+        );
+
+        $output_css = array_merge(
+            $output_css,
+            $typo_blogpage_section_one_design_css_m
+        );
 
         /*---------------------------------- Footer one design Section -----------------------------------*/
 

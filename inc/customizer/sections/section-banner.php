@@ -34,3 +34,12 @@ $wp_customize->add_section( 'influence_blog_banner_content_options_section', arr
     'panel'        => $panel,
     'active_callback' => 'influence_blog_is_banner_display_enable',
 ) );
+
+/*---------------------------------- Banner widget area -----------------------------------*/
+
+$wp_customize->add_section( 'influence_blog_banner_widget_area_section', array(
+    'priority'     => 100,
+    'title'        => esc_html__( 'Widget Area', 'influence-blog' ),
+    'panel'        => $panel,
+    'active_callback' => 'influence_blog_is_banner_display_enable',
+) );

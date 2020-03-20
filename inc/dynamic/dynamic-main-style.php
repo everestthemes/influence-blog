@@ -870,6 +870,30 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         }
 
         /*-----------------------------------------------------------------------------
+							 Blog Page Settings
+        -----------------------------------------------------------------------------*/
+
+        /*-----------------------------------------------------------------------------
+							 Section one options
+        -----------------------------------------------------------------------------*/
+
+        /*---------------------------------- Design Section -----------------------------------*/
+
+        $typo_blogpage_section_one_design_title_font_family = influence_blog_get_font_data( 'typo_blogpage_section_one_design_title_font' );
+        $typo_blogpage_section_one_design_title_font_weight = influence_blog_get_font_data( 'typo_blogpage_section_one_design_title_font', 'fontweight' );
+        $typo_blogpage_section_one_design_title_font_size = influence_blog_get_mod( 'typo_blogpage_section_one_design_title_size_d' );
+
+        $blogpage_section_one_design_css = array(
+            '#section-one .widget-tt .l-title' => array(
+                'font-family' => esc_attr( $typo_blogpage_section_one_design_title_font_family ),
+                'font-weight' => esc_attr( $typo_blogpage_section_one_design_title_font_weight ),
+                'font-size' => esc_attr( $typo_blogpage_section_one_design_title_font_size . 'px' ),
+            ),
+        );
+
+        $parse_css .= influence_blog_parse_css( $blogpage_section_one_design_css );
+
+        /*-----------------------------------------------------------------------------
 							 Footer One Options
         -----------------------------------------------------------------------------*/
 

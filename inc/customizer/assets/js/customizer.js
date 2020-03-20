@@ -4685,6 +4685,64 @@
     } );
 
     /*-----------------------------------------------------------------------------
+							 Blog page Settings
+    -----------------------------------------------------------------------------*/
+
+    /*-----------------------------------------------------------------------------
+							 Section one options
+    -----------------------------------------------------------------------------*/
+
+    /*---------------------------------- Section one design -----------------------------------*/
+
+    c( 'influence_blog_typo_blogpage_section_one_design_title_size_d', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_typo_blogpage_section_one_design_title_size_d' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_typo_blogpage_section_one_design_title_size_d">#section-one .widget-tt .l-title { font-size: ' + to + 'px; }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_typo_blogpage_section_one_design_title_size_t', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_typo_blogpage_section_one_design_title_size_t' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_typo_blogpage_section_one_design_title_size_t">@media (max-width: 768px) { #section-one .widget-tt .l-title { font-size: ' + to + 'px; } }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    c( 'influence_blog_typo_blogpage_section_one_design_title_size_m', function( value ) {
+        value.bind( function( to ) {
+            var $child = $( '.customizer-influence_blog_typo_blogpage_section_one_design_title_size_m' );
+            if ( to ) {
+                var style = '<style class="customizer-influence_blog_typo_blogpage_section_one_design_title_size_m">@media (max-width: 480px) { #section-one .widget-tt .l-title { font-size: ' + to + 'px; } }</style>';
+                if ( $child.length ) {
+                    $child.replaceWith( style );
+                } else {
+                    $( 'head' ).append( style );
+                }
+            } else {
+                $child.remove();
+            }
+        } );
+    } );
+
+    /*-----------------------------------------------------------------------------
 							 Footer One
     -----------------------------------------------------------------------------*/
 
