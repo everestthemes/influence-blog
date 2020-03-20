@@ -41,13 +41,13 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             if( $layout == 'one' || $layout == 'two' || $layout == 'three' ) {
 
-                if( $layout == 'one' ) {
+                if( $layout == 'two' ) {
 
-                    $thumbnail = 'influence-blog-thumbnail-two';
+                    $thumbnail = 'influence-blog-thumbnail-one';
 
                 } else {
 
-                    $thumbnail = 'influence-blog-thumbnail-one';
+                    $thumbnail = 'influence-blog-thumbnail-two';
                 }
 
                 ?>
