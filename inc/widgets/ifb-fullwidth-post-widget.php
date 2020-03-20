@@ -31,15 +31,35 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-            $description = !empty( $instance[ 'description' ] ) ? $instance[ 'description' ] : '';
-
             $posts_no = !empty( $instance[ 'post_no' ] ) ? $instance[ 'post_no' ] : 4;
 
             $layout = !empty( $instance[ 'layout' ] ) ? $instance[ 'layout' ] : 'full_one';
 
             $select_cat    = !empty( $instance['select_cat'] ) ? $instance['select_cat'] : 0;
 
-            $post_type = !empty( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'recent_posts';
+            $sort_order    = !empty( $instance['sort_order'] ) ? $instance['sort_order'] : 'desc';
+
+            $orderby       = !empty( $instance['orderby'] ) ? $instance['orderby'] : 'date';
+
+            $post_excerpt = !empty( $instance['post_excerpt'] ) ? $instance['post_excerpt'] : '';
+
+            $bg_title = !empty( $instance['bg_title'] ) ? $instance['bg_title'] : '';
+
+            $button_title = !empty( $instance['button_title'] ) ? $instance['button_title'] : '';
+
+            $display_category_desc  = !empty( $instance['display_category_desc'] ) ? $instance['display_category_desc'] : false;
+
+            $display_featured_image  = !empty( $instance['display_featured_image'] ) ? $instance['display_featured_image'] : false;
+
+            $display_category  = !empty( $instance['display_category'] ) ? $instance['display_category'] : false;
+
+            $display_posted_date  = !empty( $instance['display_posted_date'] ) ? $instance['display_posted_date'] : false;
+
+            $display_comment_no  = !empty( $instance['display_comment_no'] ) ? $instance['display_comment_no'] : false;
+
+            $display_post_author  = !empty( $instance['display_post_author'] ) ? $instance['display_post_author'] : false;
+
+            $display_post_content  = !empty( $instance['display_post_content'] ) ? $instance['display_post_content'] : false;
 
             $post_args = array(
 
@@ -51,9 +71,12 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                 $post_args['cat'] = absint( $select_cat );
             }
 
-            if( $post_type == 'popular_posts' ) {
+            if( !empty( $sort_order ) ) {
+                $post_args['order'] = $sort_order;
+            }
 
-                $post_args['orderby'] = 'comment_count';
+            if( !empty( $orderby ) ) {
+                $post_args['orderby'] = $orderby;
             }
 
             if( absint( $posts_no ) > 0 ) {
@@ -65,114 +88,225 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             if( $post_query->have_posts() ) {
 
-                if( $args['id'] == 'influence-blog-top-widget-area' || $args['id'] == 'influence-blog-fullwidth-bottom-widget-area' ) {
+                if( $layout == 'one' ) {
 
-                    if( $layout == 'full_one' ) {
+                    ?>
+                    <div class="fl-mid-widget-area">
+                        <div class="widget-area-inner">
+                            <div class="full-widget-d1 lrg-padding">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-md-12 col-lg-4">
+                                            <div class="full-content-bdy">
+                                                <div class="widget-tt">
+                                                    <?php
+                                                    if( !empty( $title ) ) {
 
-                        ?>
-                        <div class="fl-mid-widget-area">
-                            <div class="widget-area-inner">
-                                <div class="full-widget-d1 lrg-padding">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12 col-md-12 col-lg-4">
-                                                <div class="full-content-bdy">
-                                                    <div class="widget-tt">
-                                                        <?php
-                                                        if( !empty( $title ) ) {
-
-                                                            ?>
-                                                            <h3 class="l-title"><?php echo esc_html( $title ); ?></h3>
-                                                            <?php
-                                                        }
-
-                                                        influence_blog_categories_meta( true );
-
-                                                        if( !empty( $description ) ) {
-
-                                                            ?>
-                                                            <p class="sub-title"><?php echo esc_html( $description ); ?></p>
-                                                            <?php
-                                                        }
-
-                                                        $category_link = get_category_link( absint( $select_cat ) );
-
-                                                        if( !empty( $category_link ) ) {
-
-                                                            ?>
-                                                            <a href="<?php echo esc_url( $category_link ); ?>" class="btn-more" tabindex="0"><?php echo esc_html__( 'Read More', 'influence-blog' ); ?></a>
-                                                            <?php
-                                                        }
                                                         ?>
-                                                    </div>
+                                                        <h3 class="l-title"><?php echo esc_html( $title ); ?></h3>
+                                                        <?php
+                                                    }
+
+                                                    $category_name = get_cat_name( $select_cat );
+
+                                                    $category_link = get_category_link( absint( $select_cat ) );
+
+                                                    if( $display_category == true ) {
+
+                                                        ?>
+                                                        <div class="ifb-sub-cate">
+                                                            <ul class="post-categories">
+                                                               <li>
+                                                                   <a href="<?php echo esc_url( $category_link ); ?>">
+                                                                       <?php echo esc_html( $category_name ); ?>
+                                                                   </a>
+                                                               </li>
+                                                           </ul>
+                                                        </div>
+                                                        <?php
+                                                    }
+
+                                                    if( $display_category_desc ) {
+
+                                                        echo wp_kses_post( category_description( $select_cat ) );
+                                                    }
+
+                                                    if( !empty( $category_link ) && !empty( $button_title ) ) {
+
+                                                        ?>
+                                                        <a href="<?php echo esc_url( $category_link ); ?>" class="btn-more" tabindex="0"><?php echo esc_html( $button_title ); ?></a>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-8">
-                                                <div class="slide-widget-d1-wrap">
-                                                    <?php
-                                                    $total_count = $post_query->post_count;
+                                        </div>
+                                        <div class="col-12 col-lg-8">
+                                            <div class="slide-widget-d1-wrap">
+                                                <?php
+                                                $total_count = $post_query->post_count;
 
-                                                    $count = 0;
+                                                $count = 0;
 
-                                                    while( $post_query->have_posts() ) :
+                                                while( $post_query->have_posts() ) :
 
-                                                        $post_query->the_post();
+                                                    $post_query->the_post();
 
-                                                        if( $count == 0 ) {
-                                                            ?>
-                                                            <div class="slide-widget-d1-list">
-                                                                <div class="row">
-                                                            <?php
-                                                        }
-
-                                                        if( $count > 0 && $count%2 == 0 && $count < $total_count ) {
-                                                            ?>
-                                                                </div>
-                                                            </div>
-                                                            <div class="slide-widget-d1-list">
-                                                                <div class="row">
-                                                            <?php
-                                                        }
-
+                                                    if( $count == 0 ) {
                                                         ?>
-                                                        <div class="col-12 col-md-6 col-lg-6">
-                                                            <div class="full-content-bdy">
-                                                                <div class="img-holder">
-                                                                    <figure><?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></figure>
+                                                        <div class="slide-widget-d1-list">
+                                                            <div class="row">
+                                                        <?php
+                                                    }
+
+                                                    if( $count > 0 && $count%2 == 0 && $count < $total_count ) {
+                                                        ?>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slide-widget-d1-list">
+                                                            <div class="row">
+                                                        <?php
+                                                    }
+
+                                                    ?>
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <div class="full-content-bdy">
+                                                            <?php
+                                                            if( $display_featured_image == true ) {
+                                                            ?>
+                                                            <div class="img-holder">
+                                                                <figure><?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></figure>
+                                                            </div>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                            <div class="inner-detail">
+                                                                <div class="metas">
+                                                                  <?php influence_blog_posted_on( $display_posted_date ); ?>
+                                                                  <?php influence_blog_posted_by( $display_post_author ); ?>
+                                                                  <?php influence_blog_comments_no( $display_comment_no ); ?>
                                                                 </div>
-                                                                <div class="inner-detail">
-                                                                    <div class="metas">
-                                                                      <?php influence_blog_posted_on( true ); ?>
-                                                                      <?php influence_blog_posted_by( true ); ?>
-                                                                      <?php influence_blog_comments_no( true ); ?>
-                                                                    </div>
-                                                                    <div class="widget-in-tt">
-                                                                      <h3 class="sub-cate"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                                                    </div>
+                                                                <div class="widget-in-tt">
+                                                                  <h3 class="sub-cate"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <?php
+                                                    </div>
+                                                    <?php
 
-                                                        if( $count == $total_count ) {
-                                                            ?>
-                                                            </div>
-                                                            </div>
-                                                            <?php
-                                                        }
-                                                        $count++;
-                                                    endwhile;
-                                                    wp_reset_postdata();
-                                                    ?>
-                                                </div><!--slide-widget-d1-wrap-->
-                                            </div><!--col-lg-8-->
-                                        </div>
+                                                    if( $count == $total_count ) {
+                                                        ?>
+                                                        </div>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    $count++;
+                                                endwhile;
+                                                wp_reset_postdata();
+                                                ?>
+                                            </div><!--slide-widget-d1-wrap-->
+                                        </div><!--col-lg-8-->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                    }
+                    </div>
+                    <?php
+
+                } else {
+
+                    ?>
+                    <div class="fl-mid-widget-area design3">
+                        <div class="trangle"></div>
+                        <div class="widget-area-inner has-pattern">
+                            <div class="full-widget-d3  mdm-padding">
+                                <div class="container">
+                                    <div class="full-widget-d3-slide-wrap">
+                                        <?php
+                                        while( $post_query->have_posts() ) :
+
+                                        $post_query->the_post();
+                                        ?>
+                                        <div class="full-widget-d3-slide-list">
+                                            <div class="row align-items-center">
+                                                <div class="col-12 col-md-6 col-lg-6">
+                                                    <div class="full-sec-less">
+                                                        <div class="full-content-bdy">
+                                                            <div class="widget-tt">
+                                                                <?php
+
+                                                                if( !empty( $bg_title ) ) {
+
+                                                                    ?>
+                                                                    <h2 class="big-tt"><?php echo esc_html( $bg_title ); ?></h2>
+                                                                    <?php
+                                                                }
+
+                                                                if( !empty( $title ) ) {
+
+                                                                    ?>
+                                                                    <h3 class="l-title"><?php echo esc_html( $title ); ?></h3>
+                                                                    <?php
+                                                                }
+
+                                                                influence_blog_categories_meta( $display_category );
+
+                                                                echo wp_kses_post( category_description( $select_cat ) );
+
+                                                                $category_link = get_category_link( absint( $select_cat ) );
+
+                                                                if( !empty( $category_link ) && !empty( $button_title ) ) {
+
+                                                                    ?>
+                                                                    <a href="<?php echo esc_url( $category_link ); ?>" class="btn-more" tabindex="0"><?php echo esc_html( $button_title ); ?></a>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--//col-md-6-->
+                                                <div class="col-12 col-md-6 col-lg-6">
+                                                    <div class="full-sec-less right">
+                                                        <div class="full-content-bdy">
+                                                            <?php
+                                                            if( $display_featured_image == true ) {
+                                                            ?>
+                                                            <div class="img-holder">
+                                                                <figure><?php the_post_thumbnail( 'influence-blog-thumbnail-one', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?></figure>
+                                                            </div>
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                            <div class="inner-detail">
+                                                                <div class="widget-in-tt">
+                                                                   <h3 class="sub-cate"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                                                </div>
+                                                                <div class="metastyle1">
+                                                                    <?php influence_blog_posted_on( $display_posted_date ); ?>
+                                                                </div>
+                                                                <?php
+                                                                if( $display_post_content == true ) {
+
+                                                                    the_excerpt();
+                                                                }
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--//full-sec-less right-->
+                                                </div><!--//col-md-6-->
+                                            </div><!--//row-->
+                                        </div><!--//slide-list-->
+                                        <?php
+                                    endwhile;
+                                    wp_reset_postdata();
+                                    ?>
+                                    </div><!--//slide-wrap-->
+                                </div><!--//container-->
+                            </div><!--//full-widget-d3-->
+                        </div><!--//widget-area-inner-->
+                    </div>
+                    <?php
                 }
             }
         }
@@ -181,6 +315,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
 
             $defaults = array(
                 'title'        => '',
+                'bg_title'     => '',
                 'post_no'      => 4,
                 'layout'       => 'one',
                 'sort_order'   => 'desc',
@@ -226,13 +361,20 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             }
             ?>
             </div>
-            <input data-default="<?php echo esc_attr( $instance['layout'] ) ?>" type="hidden" value="<?php echo esc_attr( $instance['layout'] ) ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ) ?>"/>
+            <input id="selected-img-val" data-default="<?php echo esc_attr( $instance['layout'] ) ?>" type="hidden" value="<?php echo esc_attr( $instance['layout'] ) ?>" name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ) ?>"/>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">
                     <strong><?php esc_html_e('Title', 'influence-blog'); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+            </p>
+
+            <p class="bg-title two <?php echo esc_attr( ( $instance['layout']== 'two' ) ? 'active' : '' ); ?>">
+                <label for="<?php echo esc_attr( $this->get_field_id('bg_title') ); ?>">
+                    <strong><?php esc_html_e('Background Title', 'influence-blog'); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('bg_title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('bg_title') ); ?>" type="text" value="<?php echo esc_attr( $instance['bg_title'] ); ?>" />
             </p>
 
             <p>
@@ -338,7 +480,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                 </label>
             </p>
 
-            <p>
+            <p class="bg-title one <?php echo esc_attr( ( $instance['layout']== 'one' ) ? 'active' : '' ); ?>">
                 <label for="<?php echo esc_attr( $this->get_field_id( 'display_comment_no' ) ); ?>" class="ckb">
                   <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'display_comment_no' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_comment_no' ) ); ?>" <?php checked( $instance['display_comment_no'], true ); ?>>
                   <i></i><strong><?php esc_html_e( 'Display Comment No.', 'influence-blog' ); ?></strong>
@@ -366,6 +508,8 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
             $instance = $old_instance;
 
             $instance['title']        = sanitize_text_field( $new_instance['title'] );
+
+            $instance['bg_title']     = sanitize_text_field( $new_instance['bg_title'] );
 
             $instance['select_cat']   = absint( $new_instance['select_cat'] );
 

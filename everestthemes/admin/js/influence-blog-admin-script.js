@@ -78,5 +78,16 @@
             $this.closest('.selector-labels').next('input').val(value).trigger('change');
         });
 
+        //display the bg title as per layout
+        $('body').on('click','.selector-labels label', function(){
+            var $this = $(this);
+            var value = $this.attr('data-val');
+
+            var widget = $this.closest( '.widget' );
+
+            widget.find( '.bg-title' ).removeClass( 'active' );
+            widget.find( '.bg-title.'+value ).addClass( 'active' );
+        });
+
 	} );
 } ) ( jQuery );

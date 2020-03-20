@@ -62,8 +62,18 @@ Widget at Apperence > widgets
     position: relative;
 }
 
+.widget-content .selector-labels label.selector-images.selector-selected img {
+    border: 2px solid #3ca5ed;
+    padding: 5px;
+}
+
 .widget-content .selector-labels label.selector-images {
     padding: 10px;
+}
+
+.widget-content .selector-labels label.selector-images img {
+    border: 2px solid gray;
+    padding: 5px;
 }
 
 .widget-content .selector-labels label.selector-selected:after {
@@ -76,6 +86,22 @@ Widget at Apperence > widgets
     background: url(../images/selected.png) no-repeat right top;
 }
 
+
+/*
+===================================
+=
+= Widget Layout condition
+=
+================================================
+*/
+
+.bg-title {
+    display: none;
+}
+
+.bg-title.active {
+    display:block;
+}
 
 /*
 ===================================
