@@ -554,7 +554,7 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             '.social-media-foot ul li a' => array(
                 'font-size' => esc_attr( $typo_footer_two_design_social_links_font_size_t . 'px' ),
             ),
-            '.footer-mid-sec .widget-title .s-title' => array(
+            '.footer-mid-sec .widget-title .s-title, .footer-mid-sec .widget-title .s-title a, .footer-mid-sec .side-bar .side-tt .s-title, .footer-mid-sec .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                 'font-size' => esc_attr( $typo_footer_two_widget_area_design_title_font_size_t . 'px' ),
                 'line-height' => esc_attr( $typo_footer_two_widget_area_design_title_line_height_t ),
                 'letter-spacing' => esc_attr( $typo_footer_two_widget_area_design_title_letter_spacing_t . 'px' ),
@@ -1196,7 +1196,7 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
             '.social-media-foot ul li a' => array(
                 'font-size' => esc_attr( $typo_footer_two_design_social_links_font_size_m . 'px' ),
             ),
-            '.footer-mid-sec .side-tt .s-title' => array(
+            '.footer-mid-sec .side-tt .s-title, .footer-mid-sec .widget-title .s-title a, .footer-mid-sec .side-bar .side-tt .s-title, .footer-mid-sec .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                 'font-size' => esc_attr( $typo_footer_two_widget_area_design_title_font_size_m . 'px' ),
                 'line-height' => esc_attr( $typo_footer_two_widget_area_design_title_line_height_m ),
                 'letter-spacing' => esc_attr( $typo_footer_two_widget_area_design_title_letter_spacing_m . 'px' ),

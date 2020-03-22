@@ -569,11 +569,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             //Footer - Footer one - Design - widget content
             'footer_one_design_widget_content_color' => '#fff',
             'footer_one_design_widget_content_hover_color' => '#e9b105',
-            'footer_one_design_widget_content_bg_color' => 'rgba(0,0,0,0)',
+            'footer_one_design_widget_content_bg_color' => '#e9b105',
             'footer_one_design_widget_content_bg_hover_color' => 'rgba(0,0,0,0)',
             'footer_one_design_widget_content_border_color' => '#eee',
-            'footer_one_design_widget_content_button_color' => '',
-            'footer_one_design_widget_content_button_hover_color' => '',
             //Footer - Footer one - Advance - options
             'footer_one_advance_bg_image_size' => 'cover',
             'footer_one_advance_bg_image_attch' => 'fixed',
@@ -696,11 +694,9 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             //Footer - Footer two - Design - widget content
             'footer_two_design_widget_content_color' => '#fff',
             'footer_two_design_widget_content_hover_color' => '#e9b105',
-            'footer_two_design_widget_content_bg_color' => 'rgba(0,0,0,0)',
+            'footer_two_design_widget_content_bg_color' => '#e9b105',
             'footer_two_design_widget_content_bg_hover_color' => 'rgba(0,0,0,0)',
             'footer_two_design_widget_content_border_color' => '#eee',
-            'footer_two_design_widget_content_button_color' => '',
-            'footer_two_design_widget_content_button_hover_color' => '',
             //Footer - Footer two - Advance - options
             'footer_two_advance_bg_image_size' => 'cover',
             'footer_two_advance_bg_image_attch' => 'fixed',
