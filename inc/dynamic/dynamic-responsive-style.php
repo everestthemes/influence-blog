@@ -515,7 +515,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                     'padding-bottom' => esc_attr( $footer_one_widget_area_advance_t_p_bottom . 'px' ),
                     'padding-left' => esc_attr( $footer_one_widget_area_advance_t_p_left . 'px' ),
                 ),
-                '.foot-top-border .side-tt.widget-title' => array(
+                '.foot-top-border .side-tt.widget-title,
+                .foot-top-border .side-bar .side-tt .s-title,
+                .foot-top-border .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .foot-top-border .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_one_widget_title_advance_t_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_one_widget_title_advance_t_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_one_widget_title_advance_t_m_bottom . 'px' ),
@@ -643,7 +646,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                     'margin-bottom' => esc_attr( $footer_two_widget_area_advance_t_m_bottom . 'px' ),
                     'margin-left' => esc_attr( $footer_two_widget_area_advance_t_m_left . 'px' ),
                 ),
-                '.footer-mid-sec .widget .side-tt.widget-title' => array(
+                '.footer-mid-sec .widget .side-tt.widget-title,
+                .footer-mid-sec .side-bar .side-tt .s-title,
+                .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_two_widget_title_advance_t_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_two_widget_title_advance_t_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_two_widget_title_advance_t_m_bottom . 'px' ),
@@ -1157,7 +1163,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                     'padding-bottom' => esc_attr( $footer_one_widget_area_advance_m_p_bottom . 'px' ),
                     'padding-left' => esc_attr( $footer_one_widget_area_advance_m_p_left . 'px' ),
                 ),
-                '.foot-top-border .side-tt.widget-title' => array(
+                '.foot-top-border .side-tt.widget-title,
+                .foot-top-border .side-bar .side-tt .s-title,
+                .foot-top-border .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .foot-top-border .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_one_widget_title_advance_m_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_one_widget_title_advance_m_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_one_widget_title_advance_m_m_bottom . 'px' ),
@@ -1285,7 +1294,10 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                     'margin-bottom' => esc_attr( $footer_two_widget_area_advance_m_m_bottom . 'px' ),
                     'margin-left' => esc_attr( $footer_two_widget_area_advance_m_m_left . 'px' ),
                 ),
-                '.footer-mid-sec .widget .side-tt.widget-title' => array(
+                '.footer-mid-sec .widget .side-tt.widget-title,
+                .footer-mid-sec .side-bar .side-tt .s-title,
+                .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_two_widget_title_advance_m_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_two_widget_title_advance_m_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_two_widget_title_advance_m_m_bottom . 'px' ),

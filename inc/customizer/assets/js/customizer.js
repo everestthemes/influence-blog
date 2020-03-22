@@ -5072,7 +5072,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_design_widget_content_bg_color' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_design_widget_content_bg_color">.foot-top-wrap .widget_search .search-form .search-submit, .foot-top-wrap .form-submit .submit, .foot-top-wrap .widget_search .search-form #submit, .foot-top-wrap .widget_search .search-form .search-submit:hover, .foot-top-wrap .form-submit .submit:hover, .foot-top-wrap .post-categories li a, .foot-top-wrap .post-categories li a:before { background-color: ' + to + '; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_design_widget_content_bg_color">.foot-top-wrap .widget_search .search-form .search-submit, .foot-top-wrap .form-submit .submit, .foot-top-wrap .widget_search .search-form #submit, .foot-top-wrap .widget_search .search-form .search-submit:hover, .foot-top-wrap .form-submit .submit:hover, .foot-top-wrap .post-categories li a, .foot-top-wrap .post-categories li a:before, .foot-top-wrap .author-wrap.style-one .side-widget-d2 { background-color: ' + to + '; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5440,7 +5440,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_top">.foot-top-border .side-tt.widget-title { margin-top: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_top">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5456,7 +5456,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_right">.foot-top-border .side-tt.widget-title { margin-right: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_right">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5472,7 +5472,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_bottom">.foot-top-border .side-tt.widget-title { margin-bottom: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_bottom">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5488,7 +5488,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_left">.foot-top-border .side-tt.widget-title { margin-left: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_m_left">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5504,7 +5504,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_top">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { margin-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_top">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5520,7 +5520,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_right">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { margin-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_right">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5536,7 +5536,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_bottom">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { margin-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_bottom">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5552,7 +5552,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_left">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { margin-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_m_left">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5568,7 +5568,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_top">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { margin-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_top">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5584,7 +5584,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_right">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { margin-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_right">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5600,7 +5600,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_bottom">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { margin-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_bottom">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5616,7 +5616,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_left">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { margin-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_m_left">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5632,7 +5632,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_top">.foot-top-border .side-tt.widget-title { padding-top: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_top">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5648,7 +5648,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_right">.foot-top-border .side-tt.widget-title { padding-right: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_right">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5664,7 +5664,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_bottom">.foot-top-border .side-tt.widget-title { padding-bottom: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_bottom">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5680,7 +5680,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_d_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_left">.foot-top-border .side-tt.widget-title { padding-left: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_d_p_left">.foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5696,7 +5696,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_top">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { padding-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_top">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5712,7 +5712,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_right">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { padding-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_right">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5728,7 +5728,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_bottom">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { padding-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_bottom">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5744,7 +5744,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_t_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_left">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title { padding-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_t_p_left">@media (max-width: 768px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5760,7 +5760,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_top">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { padding-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_top">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5776,7 +5776,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_right">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { padding-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_right">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5792,7 +5792,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_bottom">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { padding-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_bottom">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -5808,7 +5808,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_one_widget_title_advance_m_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_left">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title { padding-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_one_widget_title_advance_m_p_left">@media (max-width: 480px) { .foot-top-border .side-tt.widget-title, .foot-top-border .side-tt.widget-title, .foot-top-wrap .side-bar .side-tt .s-title,  .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title, .foot-top-wrap .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7846,7 +7846,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_top">.footer-mid-sec .widget .side-tt.widget-title { margin-top: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_top">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7862,7 +7862,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_right">.footer-mid-sec .widget .side-tt.widget-title { margin-right: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_right">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7878,7 +7878,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_bottom">.footer-mid-sec .widget .side-tt.widget-title { margin-bottom: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_bottom">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7894,7 +7894,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_left">.footer-mid-sec .widget .side-tt.widget-title { margin-left: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_m_left">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7910,7 +7910,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_top">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { margin-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_top">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7926,7 +7926,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_right">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { margin-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_right">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7942,7 +7942,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_bottom">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { margin-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_bottom">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7958,7 +7958,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_left">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { margin-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_m_left">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7974,7 +7974,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_m_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_top">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { margin-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_top">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -7990,7 +7990,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_m_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_right">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { margin-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_right">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8006,7 +8006,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_m_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_bottom">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { margin-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_bottom">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8022,7 +8022,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_m_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_left">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { margin-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_m_left">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { margin-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8038,7 +8038,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_top">.footer-mid-sec .widget .side-tt.widget-title { padding-top: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_top">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8054,7 +8054,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_right">.footer-mid-sec .widget .side-tt.widget-title { padding-right: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_right">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8070,7 +8070,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_bottom">.footer-mid-sec .widget .side-tt.widget-title { padding-bottom: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_bottom">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8086,7 +8086,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_d_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_left">.footer-mid-sec .widget .side-tt.widget-title { padding-left: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_d_p_left">.footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8102,7 +8102,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_top">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { padding-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_top">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8118,7 +8118,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_right">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { padding-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_right">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8134,7 +8134,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_bottom">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { padding-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_bottom">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8150,7 +8150,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_t_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_left">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title { padding-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_t_p_left">@media (max-width: 768px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8166,7 +8166,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_p_top' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_top">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { padding-top: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_top">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-top: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8182,7 +8182,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_p_right' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_right">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { padding-right: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_right">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-right: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8198,7 +8198,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_p_bottom' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_bottom">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { padding-bottom: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_bottom">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-bottom: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8214,7 +8214,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_m_p_left' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_left">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title { padding-left: ' + to + 'px; } }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_m_p_left">@media (max-width: 480px) { .footer-mid-sec .widget .side-tt.widget-title, .footer-mid-sec .side-bar .side-tt .s-title,  .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { padding-left: ' + to + 'px; } }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {
@@ -8230,7 +8230,7 @@
         value.bind( function( to ) {
             var $child = $( '.customizer-influence_blog_footer_two_widget_title_advance_border_width' );
             if ( to ) {
-                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_border_width">.footer-mid-sec .widget .side-tt .s-title { border-bottom-width: ' + to + 'px; }</style>';
+                var style = '<style class="customizer-influence_blog_footer_two_widget_title_advance_border_width">.footer-mid-sec .widget .side-tt .s-title, .footer-mid-sec .widget-title .s-title a, .footer-mid-sec .side-bar .side-tt .s-title, .footer-mid-sec .recent-cate-wrap .side-tt .s-title, .footer-mid-sec .author-wrap .side-tt .s-title { border-bottom-width: ' + to + 'px; }</style>';
                 if ( $child.length ) {
                     $child.replaceWith( style );
                 } else {

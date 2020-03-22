@@ -848,7 +848,6 @@ form.search-form button[type="search"]:focus,
 /* widget title **************************/
 .foot-top-wrap .widget {
     margin-bottom: 60px;
-    padding: 5px;
     color: white;
 }
 
