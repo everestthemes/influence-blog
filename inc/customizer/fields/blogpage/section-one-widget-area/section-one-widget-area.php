@@ -18,7 +18,7 @@ $wp_customize->add_setting( 'influence_blog_blogpage_section_one_widget_area_inf
 
 $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize, 'influence_blog_blogpage_section_one_widget_area_info', array(
     'label'                    => esc_html__( 'Note', 'influence-blog' ),
-    'description'              => __( 'Selected widget area will display below section one.', 'influence-blog' ),
+    'description'              => __( 'Selected widget area will display below section one in fullwidth.', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'info-one',
     'info_type'                => 'info',

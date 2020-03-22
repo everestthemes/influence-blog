@@ -20,19 +20,19 @@ if( !function_exists( 'influence_blog_author_widget_select_array' ) ) :
         $options = array(
 
             'one' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-one.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-one.jpg',
                 'name' => __( 'Layout One', 'influence-blog' )
             ),
             'two' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-two.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-two.jpg',
                 'name' => __( 'Layout Two', 'influence-blog' )
             ),
             'three' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-three.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-three.jpg',
                 'name' => __( 'Layout Three', 'influence-blog' )
             ),
             'four' => array(
-                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-four.png',
+                'image' => trailingslashit( INFLUENCE_BLOG_EVERESTTHEMES_ADMIN_PATH_URI ). 'images/author-four.jpg',
                 'name' => __( 'Layout Four', 'influence-blog' )
             ),
         );

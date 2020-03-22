@@ -848,7 +848,6 @@ form.search-form button[type="search"]:focus,
 /* widget title **************************/
 .foot-top-wrap .widget {
     margin-bottom: 60px;
-    background-color: transparent;
     padding: 5px;
     color: white;
 }
@@ -945,8 +944,6 @@ form.search-form button[type="search"]:focus,
     color: white;
 }
 
-.footer-mid-sec .widget a,
-.footer-mid-sec .widget ul li a,
 .footer-mid-sec .widget_tag_cloud .tagcloud a {
     color: #fff;
     font-weight: inherit;

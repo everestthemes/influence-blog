@@ -146,20 +146,20 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                                                 <?php
                                                 $total_count = $post_query->post_count;
 
-                                                $count = 0;
+                                                $count = 1;
 
                                                 while( $post_query->have_posts() ) :
 
                                                     $post_query->the_post();
 
-                                                    if( $count == 0 ) {
+                                                    if( $count == 1 ) {
                                                         ?>
                                                         <div class="slide-widget-d1-list">
                                                             <div class="row">
                                                         <?php
                                                     }
 
-                                                    if( $count > 0 && $count%2 == 0 && $count < $total_count ) {
+                                                    if( $count > 1 && $count%2 != 0 ) {
                                                         ?>
                                                             </div>
                                                         </div>
@@ -216,17 +216,12 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                 } else {
 
                     ?>
-                    <div class="fl-mid-widget-area design3">
+                    <section class="fl-mid-widget-area design3">
                         <div class="trangle"></div>
                         <div class="widget-area-inner has-pattern">
                             <div class="full-widget-d3  mdm-padding">
                                 <div class="container">
                                     <div class="full-widget-d3-slide-wrap">
-                                        <?php
-                                        while( $post_query->have_posts() ) :
-
-                                        $post_query->the_post();
-                                        ?>
                                         <div class="full-widget-d3-slide-list">
                                             <div class="row align-items-center">
                                                 <div class="col-12 col-md-6 col-lg-6">
@@ -249,7 +244,22 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                                                                     <?php
                                                                 }
 
-                                                                influence_blog_categories_meta( $display_category );
+                                                                $category_name = get_cat_name( $select_cat );
+
+                                                                $category_link = get_category_link( absint( $select_cat ) );
+
+                                                                if( $display_category == true ) {
+
+                                                                    ?>
+                                                                    <ul class="cate-meta">
+                                                                        <li>
+                                                                           <a href="<?php echo esc_url( $category_link ); ?>">
+                                                                               <?php echo esc_html( $category_name ); ?>
+                                                                           </a>
+                                                                       </li>
+                                                                    </ul>
+                                                                    <?php
+                                                                }
 
                                                                 echo wp_kses_post( category_description( $select_cat ) );
 
@@ -265,9 +275,16 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><!--//col-md-6-->
+                                                </div>
+                                                <!--//col-md-6-->
                                                 <div class="col-12 col-md-6 col-lg-6">
                                                     <div class="full-sec-less right">
+                                                        <?php
+                                                        while( $post_query->have_posts() ) :
+
+                                                        $post_query->the_post();
+                                                        ?>
+
                                                         <div class="full-content-bdy">
                                                             <?php
                                                             if( $display_featured_image == true ) {
@@ -293,19 +310,27 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                                                                 ?>
                                                             </div>
                                                         </div>
-                                                    </div><!--//full-sec-less right-->
-                                                </div><!--//col-md-6-->
-                                            </div><!--//row-->
-                                        </div><!--//slide-list-->
-                                        <?php
-                                    endwhile;
-                                    wp_reset_postdata();
-                                    ?>
-                                    </div><!--//slide-wrap-->
-                                </div><!--//container-->
-                            </div><!--//full-widget-d3-->
-                        </div><!--//widget-area-inner-->
-                    </div>
+                                                        <?php
+                                                        endwhile;
+                                                        wp_reset_postdata();
+                                                        ?>
+                                                    </div>
+                                                    <!--//full-sec-less right-->
+                                                </div>
+                                                <!--//col-md-6-->
+                                            </div>
+                                            <!--//row-->
+                                        </div>
+                                        <!--//slide-list-->
+                                    </div>
+                                    <!--//slide-wrap-->
+                                </div>
+                                <!--//container-->
+                            </div>
+                            <!--//full-widget-d3-->
+                        </div>
+                        <!--//widget-area-inner-->
+                    </section>
                     <?php
                 }
             }

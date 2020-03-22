@@ -63,8 +63,6 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_one_design_widget_content_bg_color = influence_blog_get_mod( 'footer_one_design_widget_content_bg_color' );
         $footer_one_design_widget_content_bg_hover_color = influence_blog_get_mod( 'footer_one_design_widget_content_bg_hover_color' );
         $footer_one_design_widget_content_border_color = influence_blog_get_mod( 'footer_one_design_widget_content_border_color' );
-        $footer_one_design_widget_content_button_color = influence_blog_get_mod( 'footer_one_design_widget_content_button_color' );
-        $footer_one_design_widget_content_button_hover_color = influence_blog_get_mod( 'footer_one_design_widget_content_button_hover_color' );
 
         $footer_one_design_css = array(
             '.foot-top-wrap .widget_archive>ul>li a,
@@ -117,13 +115,25 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .widget_product_search form input[type="search"],
             .foot-top-wrap .widget_pages ul li .sub-menu>li>.sub-menu li:before,
             .foot-top-wrap .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
-            .foot-top-wrap .widget select
+            .foot-top-wrap .widget select,
+            .foot-top-wrap .post-categories li a,
+            .foot-top-wrap .recent-cate-wrap .sm-title a,
+            .foot-top-wrap .side-bar .sm-title a,
+            .foot-top-wrap .author-wrap.style-one .side-widget-d2 .sm-title,
+            .foot-top-wrap .author-wrap.style-one .side-widget-d2 .author-detail p,
+            .foot-top-wrap .author-detail .sm-title,
+            .foot-top-wrap .author-wrap .author-detail p,
+            .foot-top-wrap .widget a, .foot-top-wrap .widget ul li a,
+            .foot-top-wrap .widget_product_categories ul li,
+            .foot-top-wrap .widget_categories ul li
             ' => array(
                 'color' => esc_attr( $footer_one_design_widget_content_color ),
             ),
             '.foot-top-wrap .widget a:hover,
             .foot-top-wrap .widget ul li a:hover,
-            .foot-top-wrap .widget_tag_cloud .tagcloud a:hover
+            .foot-top-wrap .widget_tag_cloud .tagcloud a:hover,
+            .foot-top-wrap .recent-cate-wrap .sm-title a:hover,
+            .foot-top-wrap .side-bar .sm-title a:hover
             '=> array(
                 'color'=> esc_attr( $footer_one_design_widget_content_hover_color ),
             ),
@@ -131,7 +141,9 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .form-submit .submit,
             .foot-top-wrap .widget_search .search-form #submit,
             .foot-top-wrap .widget_search .search-form .search-submit:hover,
-            .foot-top-wrap .form-submit .submit:hover
+            .foot-top-wrap .form-submit .submit:hover,
+            .foot-top-wrap .post-categories li a,
+            .foot-top-wrap .post-categories li a:before
             '=> array(
                 'background-color'=> esc_attr( $footer_one_design_widget_content_bg_color ),
             ),
@@ -141,13 +153,16 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             ),
             '.foot-top-wrap .calendar_wrap table th,
             .foot-top-wrap .widget_tag_cloud .tagcloud a,
-            .foot-top-wrap .widget_product_tag_cloud .tagcloud a
+            .foot-top-wrap .widget_product_tag_cloud .tagcloud a,
+            .foot-top-wrap .author-wrap.style-two .side-widget-d2 .img-holder,
+            .foot-top-wrap .author-wrap.style-three .side-widget-d2 .img-holder
             '=> array(
                 'border'=> esc_attr( '1px solid ' . $footer_one_design_widget_content_border_color ),
             ),
             '.foot-top-wrap .widget.widget_recent_entries li,
             .foot-top-wrap .widget.widget_recent_comments li,
-            .foot-top-wrap .widget.widget_meta li
+            .foot-top-wrap .widget.widget_meta li,
+            .foot-top-wrap .side-widget-d1
             '=> array(
                 'border-bottom'=> esc_attr( '1px solid ' . $footer_one_design_widget_content_border_color ),
             ),
@@ -166,13 +181,30 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
         $footer_two_design_widget_content_bg_color = influence_blog_get_mod( 'footer_two_design_widget_content_bg_color' );
         $footer_two_design_widget_content_bg_hover_color = influence_blog_get_mod( 'footer_two_design_widget_content_bg_hover_color' );
         $footer_two_design_widget_content_border_color = influence_blog_get_mod( 'footer_two_design_widget_content_border_color' );
-        $footer_two_design_widget_content_button_color = influence_blog_get_mod( 'footer_two_design_widget_content_button_color' );
-        $footer_two_design_widget_content_button_hover_color = influence_blog_get_mod( 'footer_two_design_widget_content_button_hover_color' );
 
         $footer_two_design_css = array(
-            '.footer-mid-sec .widget,
-            .footer-mid-sec .widget a,
-            .footer-mid-sec .widget ul li a,
+            '.footer-mid-sec .widget_archive>ul>li a,
+            .footer-mid-sec .widget_archive>ul>li,
+            .footer-mid-sec .calendar_wrap tr th,
+            .footer-mid-sec .calendar_wrap tr td,
+            .footer-mid-sec .calendar_wrap caption,
+            .footer-mid-sec .calendar_wrap tr td a,
+            .footer-mid-sec .widget_pages>ul>li,
+            .footer-mid-sec .widget_nav_menu .menu>li,
+            .footer-mid-sec .widget_nav_menu .menu>li a,
+            .footer-mid-sec .widget_nav_menu .menu>li .sub-menu li a,
+            .footer-mid-sec .widget_pages>ul>li a,
+            .footer-mid-sec .widget_rss>ul>li a,
+            .footer-mid-sec .rssSummary,
+            .footer-mid-sec .widget_rss>ul>li cite,
+            .footer-mid-sec .widget_rss>ul>li .rss-date,
+            .footer-mid-sec .recentcomments,
+            .footer-mid-sec .recentcomments .comment-author-link,
+            .footer-mid-sec .widget_search .search-form .search-submit,
+            .footer-mid-sec .form-submit .submit,
+            .footer-mid-sec .widget_search .search-form #submit,
+            .footer-mid-sec .widget_text .textwidget p,
+            .footer-mid-sec .widget_text .textwidget a,
             .footer-mid-sec .widget_tag_cloud .tagcloud a,
             .footer-mid-sec input[type="text"],
             .footer-mid-sec input[type="email"],
@@ -201,17 +233,37 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .footer-mid-sec .widget_product_search form input[type="search"],
             .footer-mid-sec .widget_pages ul li .sub-menu>li>.sub-menu li:before,
             .footer-mid-sec .widget_nav_menu ul li .sub-menu>li>.sub-menu li:before,
-            .footer-mid-sec .widget select
+            .footer-mid-sec .widget select,
+            .footer-mid-sec .side-bar .post-categories a,
+            .footer-mid-sec .post-categories a,
+            .footer-mid-sec .recent-cate-wrap .sm-title a,
+            .footer-mid-sec .side-bar .sm-title a,
+            .footer-mid-sec .author-wrap.style-one .side-widget-d2 .sm-title,
+            .footer-mid-sec .author-wrap.style-one .side-widget-d2 .author-detail p,
+            .footer-mid-sec .author-detail .sm-title,
+            .footer-mid-sec .author-wrap .author-detail p,
+            .footer-mid-sec .widget a, .widget ul li a,
+            .footer-mid-sec .widget_product_categories ul li,
+            .footer-mid-sec .widget_categories ul li
             ' => array(
                 'color' => esc_attr( $footer_two_design_widget_content_color ),
             ),
             '.footer-mid-sec .widget a:hover,
             .footer-mid-sec .widget ul li a:hover,
-            .footer-mid-sec .widget_tag_cloud .tagcloud a:hover
+            .footer-mid-sec .widget_tag_cloud .tagcloud a:hover,
+            .footer-mid-sec .recent-cate-wrap .sm-title a:hover,
+            .footer-mid-sec .side-bar .sm-title a:hover
             '=> array(
                 'color'=> esc_attr( $footer_two_design_widget_content_hover_color ),
             ),
-            '.footer-mid-sec .widget_tag_cloud .tagcloud a
+            '.footer-mid-sec .widget_search .search-form .search-submit,
+            .footer-mid-sec .form-submit .submit,
+            .footer-mid-sec .widget_search .search-form #submit,
+            .footer-mid-sec .widget_search .search-form .search-submit:hover,
+            .footer-mid-sec .form-submit .submit:hover,
+            .footer-mid-sec .post-categories li a,
+            .footer-mid-sec .post-categories li a:before,
+            .footer-mid-sec .author-wrap.style-one .side-widget-d2
             '=> array(
                 'background-color'=> esc_attr( $footer_two_design_widget_content_bg_color ),
             ),
@@ -221,13 +273,16 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             ),
             '.footer-mid-sec .calendar_wrap table th,
             .footer-mid-sec .widget_tag_cloud .tagcloud a,
-            .footer-mid-sec .widget_product_tag_cloud .tagcloud a
+            .footer-mid-sec .widget_product_tag_cloud .tagcloud a,
+            .footer-mid-sec .author-wrap.style-two .side-widget-d2 .img-holder,
+            .footer-mid-sec .author-wrap.style-three .side-widget-d2 .img-holder
             '=> array(
                 'border'=> esc_attr( '1px solid ' . $footer_two_design_widget_content_border_color ),
             ),
             '.footer-mid-sec .widget.widget_recent_entries li,
             .footer-mid-sec .widget.widget_recent_comments li,
-            .footer-mid-sec .widget.widget_meta li
+            .footer-mid-sec .widget.widget_meta li,
+            .footer-mid-sec .side-widget-d1
             '=> array(
                 'border-bottom'=> esc_attr( '1px solid ' . $footer_two_design_widget_content_border_color ),
             ),

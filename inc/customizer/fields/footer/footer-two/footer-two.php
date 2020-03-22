@@ -98,8 +98,6 @@ $button_two_array = array(
     'influence_blog_footer_two_design_widget_content_bg_color' => array(),
     'influence_blog_footer_two_design_widget_content_bg_hover_color' => array(),
     'influence_blog_footer_two_design_widget_content_border_color' => array(),
-    'influence_blog_footer_two_design_widget_content_button_color' => array(),
-    'influence_blog_footer_two_design_widget_content_button_hover_color' => array(),
 );
 
 $button_two_array = apply_filters( 'influence_blog_filter_footer_two_button_two_array', $button_two_array );
@@ -1109,7 +1107,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
     'type'                     => 'heading-one',
     'accordion'                => true,
     'class'                    => esc_attr( 'footer-two-design-widget-area-content-heading' ),
-    'controls_to_wrap'         => 8,
+    'controls_to_wrap'         => 6,
     'expanded'                 => false,
     'priority'                 => 270,
 ) ) );
@@ -1200,36 +1198,6 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
     'section'                  => $section,
     'type'                     => 'color-one',
     'priority'                 => 300,
-) ) );
-
-/*---------------------------------- Footer two design widget content button color -----------------------------------*/
-
-$wp_customize->add_setting( 'influence_blog_footer_two_design_widget_content_button_color', array(
-    'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
-    'default'                  => influence_blog_defaults( 'footer_two_design_widget_content_button_color' ),
-) );
-
-$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_footer_two_design_widget_content_button_color', array(
-    'label'                    => esc_html__( 'Button Color', 'influence-blog' ),
-    'section'                  => $section,
-    'type'                     => 'color-one',
-    'priority'                 => 305,
-) ) );
-
-/*---------------------------------- Footer two design widget content button hover color -----------------------------------*/
-
-$wp_customize->add_setting( 'influence_blog_footer_two_design_widget_content_button_hover_color', array(
-    'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
-    'default'                  => influence_blog_defaults( 'footer_two_design_widget_content_button_hover_color' ),
-) );
-
-$wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize, 'influence_blog_footer_two_design_widget_content_button_hover_color', array(
-    'label'                    => esc_html__( 'Button Hover Color', 'influence-blog' ),
-    'section'                  => $section,
-    'type'                     => 'color-one',
-    'priority'                 => 310,
 ) ) );
 
 
