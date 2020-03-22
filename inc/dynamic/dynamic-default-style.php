@@ -143,7 +143,8 @@ if( !function_exists( 'influence_blog_dynamic_default_style' ) ) {
             .foot-top-wrap .widget_search .search-form .search-submit:hover,
             .foot-top-wrap .form-submit .submit:hover,
             .foot-top-wrap .post-categories li a,
-            .foot-top-wrap .post-categories li a:before
+            .foot-top-wrap .post-categories li a:before,
+            .foot-top-wrap .author-wrap.style-one .side-widget-d2
             '=> array(
                 'background-color'=> esc_attr( $footer_one_design_widget_content_bg_color ),
             ),

@@ -999,6 +999,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'border-bottom-width' => esc_attr( $footer_one_advance_border_bottom . 'px' ),
                 ),
                 '.foot-top-border .widget' => array(
+                    'border-style' => esc_attr( 'solid' ),
                     'border-top-width' => esc_attr( $footer_one_widget_area_advance_border_width . 'px' ),
                     'border-right-width' => esc_attr( $footer_one_widget_area_advance_border_width . 'px' ),
                     'border-bottom-width' => esc_attr( $footer_one_widget_area_advance_border_width . 'px' ),
@@ -1008,7 +1009,10 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'padding-bottom' => esc_attr( $footer_one_widget_area_advance_d_p_bottom . 'px' ),
                     'padding-left' => esc_attr( $footer_one_widget_area_advance_d_p_left . 'px' ),
                 ),
-                '.foot-top-border .side-tt.widget-title' => array(
+                '.foot-top-border .side-tt.widget-title,
+                .foot-top-wrap .side-bar .side-tt .s-title,
+                .foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .foot-top-wrap .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_one_widget_title_advance_d_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_one_widget_title_advance_d_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_one_widget_title_advance_d_m_bottom . 'px' ),
@@ -1189,6 +1193,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'border-bottom-width' => esc_attr( $footer_two_advance_border_bottom . 'px' ),
                 ),
                 '.footer-mid-sec .widget' => array(
+                    'border-style' => esc_attr( 'solid' ),
                     'border-top-width' => esc_attr( $footer_two_widget_area_advance_border_width . 'px' ),
                     'border-right-width' => esc_attr( $footer_two_widget_area_advance_border_width . 'px' ),
                     'border-bottom-width' => esc_attr( $footer_two_widget_area_advance_border_width . 'px' ),
@@ -1202,7 +1207,10 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'margin-bottom' => esc_attr( $footer_two_widget_area_advance_d_m_bottom . 'px' ),
                     'margin-left' => esc_attr( $footer_two_widget_area_advance_d_m_left . 'px' ),
                 ),
-                '.footer-mid-sec .widget .side-tt.widget-title' => array(
+                '.footer-mid-sec .widget .side-tt.widget-title,
+                .footer-mid-sec .side-bar .side-tt .s-title,
+                .footer-mid-sec .foot-top-border .recent-cate-wrap .side-tt .s-title,
+                .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                     'margin-top' => esc_attr( $footer_two_widget_title_advance_d_m_top . 'px' ),
                     'margin-right' => esc_attr( $footer_two_widget_title_advance_d_m_right . 'px' ),
                     'margin-bottom' => esc_attr( $footer_two_widget_title_advance_d_m_bottom . 'px' ),
@@ -1212,12 +1220,27 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'padding-bottom' => esc_attr( $footer_two_widget_title_advance_d_p_bottom . 'px' ),
                     'padding-left' => esc_attr( $footer_two_widget_title_advance_d_p_left . 'px' ),
                 ),
-                '.footer-mid-sec .widget .side-tt .s-title' => array(
+                '.footer-mid-sec .widget .side-tt .s-title,
+                .footer-mid-sec .widget-title .s-title a,
+                .footer-mid-sec .side-bar .side-tt .s-title,
+                .footer-mid-sec .recent-cate-wrap .side-tt .s-title,
+                .footer-mid-sec .author-wrap .side-tt .s-title' => array(
                     'border-bottom-width' => esc_attr( $footer_two_widget_title_advance_border_width . 'px' ),
                 ),
             );
 
             $parse_css .= influence_blog_parse_css( $footer_two_advance_css );
+        }
+
+        if( !defined( 'INFLUENCE_BLOG_PRO' ) && !class_exists( 'Influence_Blog_Pro' ) ) {
+
+            $free_theme_css = array(
+                '.classhere' => array(
+
+                ),
+            );
+
+            $parse_css .= influence_blog_parse_css( $free_theme_css );
         }
 
 
