@@ -421,7 +421,13 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         $color_link_hover = influence_blog_get_mod( 'color_link_hover' );
 
         $color_theme_css = array(
-            '' => array(
+            '.slick-arrow' => array(
+                'color' => esc_attr( $color_theme ),
+                'border' => esc_attr( '2px solid ' . $color_theme ),
+            ),
+            '.slick-arrow:hover,
+            .scrollup,
+            .author-box' => array(
                 'background-color' => esc_attr( $color_theme ),
             ),
         );
@@ -1270,8 +1276,28 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                     'line-height' => esc_attr( $heading_H4_line_height ),
                     'letter-spacing' => esc_attr( $heading_H4_letter_spacing . 'px' ),
                 ),
-                '.banner-inner:before' => array(
+                '.banner-inner:before,
+                .abt-img-sec:before,
+                .date-meta,
+                .trangle,
+                .full-widget-d1 .btn-more:hover,
+                .author-wrap.style-one .side-widget-d2,
+                .post-categories li a,
+                .post-categories li a:before' => array(
                     'background-color' => esc_attr( $color_theme ),
+                ),
+                '.full-widget-d1 .btn-more,
+                .full-widget-d1 .btn-more:hover' => array(
+                    'border-color' => esc_attr( $color_theme ),
+                ),
+                '.banner-wrapper .banner-caption' => array(
+                    'background-image' => esc_attr( 'linear-gradient(180deg, transparent 0%, rgba(233, 177, 5, 0.7) 40%, ' . $color_theme . ' 100%)' ),
+                ),
+                '' => array(
+                    'color' => esc_attr( $color_link ),
+                ),
+                '' => array(
+                    'color' => esc_attr( $color_link_hover ),
                 ),
             );
 
