@@ -691,9 +691,11 @@ button {
     top: 50px;
     transition: 0.5s;
     opacity: 0;
+    visibility: hidden;
 }
 #header-search.show{
     opacity: 1;
+    visibility: visible;
 }
 
 .header .search-icon .search-form input{
@@ -950,6 +952,10 @@ span.sub-toggle.open {
     letter-spacing: 5px;
     color: white;
 }
+.banner-caption .m-title a{
+    color: white;
+}
+
 .banner-caption  p{
     color: white;
 }
@@ -2485,10 +2491,13 @@ Single-post layout-1
     font-size: 40px;
 }
 
-.archive-detail-wrap .archive-content-bdy {
+.archive-detail-wrap .archive-content-bdy{
     margin-bottom: 30px;
 }
 
+.archive-detail-wrap .half-content-bdy  .img-holder{
+    margin-top: 30px
+}
 .archive-content-bdy {
     position: relative;
     padding-right: 30px;
