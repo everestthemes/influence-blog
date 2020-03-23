@@ -11,12 +11,6 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-function debug( $var ) {
-    echo '<pre>';
-    var_dump( $var );
-    echo '</pre>';
-}
-
 /**
  * Function to get customizer options
  */
@@ -253,10 +247,10 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
     <style type="text/css" id="custom-background-css">
         body.boxed,
         body.framed {
-            <?php echo trim( $bg_style ); ?>
+            <?php echo wp_kses_post( trim( $bg_style ) ); ?>
         }
         body.wide {
-            <?php echo trim( $style ); ?>
+            <?php echo esc_attr( trim( $style ) ); ?>
         }
     </style>
     <?php
@@ -655,44 +649,6 @@ function influence_blog_paginator( $first_page_url ){
 	// replace first page before printing it
 	echo str_replace( array( "/page/1?", "/page/1\"" ), array( "?", "\"" ), $pagination );
 }
-
-//add_action('wp_ajax_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
-//add_action('wp_ajax_nopriv_load_posts_by_ajax', 'influence_blog_load_posts_by_ajax_callback');
-//
-//function influence_blog_load_posts_by_ajax_callback() {
-//
-//    check_ajax_referer('load_more_posts', 'security');
-//
-//    $paged = $_POST['page'];
-//
-//    $args = array(
-//        'post_type' => 'post',
-//        'post_status' => 'publish',
-//        'paged' => $paged,
-//    );
-//
-//    $home_grid_posts_query = new WP_Query( $args );
-//
-//    if ( $home_grid_posts_query->have_posts() ) :
-//
-//        while ( $home_grid_posts_query->have_posts() ) :
-//
-//            $home_grid_posts_query->the_post();
-//
-//            /*
-//             * Include the Post-Format-specific template for the content.
-//             * If you want to override this in a child theme, then include a file
-//             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-//             */
-//
-//            get_template_part( 'template-parts/content', 'home-grid' );
-//
-//        endwhile;
-//
-//    endif;
-//
-//    wp_die();
-//}
 
 if( !function_exists( 'influence_blog_default_archive_widget' ) ) :
     /**

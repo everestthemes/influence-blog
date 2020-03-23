@@ -15,7 +15,7 @@ $display_related_posts_section = true;
 
 if( $display_related_posts_section == true ) {
     
-    $related_posts_post_number = influence_blog_get_mod( 'single_post_related_posts_section_post_no', 3 );
+    $related_posts_post_number = 3;
 
     $related_posts_query_args = array(
         'no_found_rows'       => true,

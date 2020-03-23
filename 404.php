@@ -14,7 +14,7 @@ get_header();
         <div class="not-found-caption">
             <h1 class="ex-large"><?php echo esc_html__( '404', 'influence-blog' ); ?></h1>
             <h3 class="s-title"><?php echo esc_html__( 'Oops! Page not found', 'influence-blog' ); ?></h3>
-            <p><?php echo esc_html__( 'Why dont you try searching changing keyword.', 'influence-blog' ); ?></p>
+            <p><?php echo esc_html__( "Why don't you try searching changing keyword.", "influence-blog" ); ?></p>
             <div class="search-again">
                 <?php get_search_form(); ?>
             </div><!--/search-again-->

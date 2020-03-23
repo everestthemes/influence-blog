@@ -307,7 +307,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'author_content' ) ); ?>">
-                    <strong><?php esc_html_e( 'Content Options' , 'influence-blog-pro' ); ?></strong>
+                    <strong><?php esc_html_e( 'Content Options' , 'influence-blog' ); ?></strong>
                 </label>
                 <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'author_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'author_content' ) ); ?>">
                     <?php

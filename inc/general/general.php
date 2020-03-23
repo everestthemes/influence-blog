@@ -301,7 +301,7 @@ function influence_blog_scripts() {
 
     wp_enqueue_script( 'influence-blog-main', INFLUENCE_BLOG_EVERESTTHEMES_ASSETS_PATH_URI . 'js/main.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION, true );
 
-    if( ! is_singular() ) {
+    if( ! is_singular() && ( is_home() || is_front_page() ) ) {
 
         global $wp_query;
 
