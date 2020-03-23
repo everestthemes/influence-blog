@@ -27,12 +27,12 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 
 /*---------------------------------- Widget area display toggle -----------------------------------*/
 
-$wp_customize->add_setting( 'influence_blog_blogpage_section_one_widget_area_display_toggle', array(
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_widget_area_below_display_toggle', array(
     'sanitize_callback'        => 'wp_validate_boolean',
-    'default'                  => influence_blog_defaults( 'blogpage_section_one_widget_area_display_toggle' ),
+    'default'                  => influence_blog_defaults( 'blogpage_section_one_widget_area_below_display_toggle' ),
 ) );
 
-$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_blogpage_section_one_widget_area_display_toggle', array(
+$wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_customize, 'influence_blog_blogpage_section_one_widget_area_below_display_toggle', array(
     'label'                    => esc_html__( 'Display Area', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'toggle-three',
@@ -41,13 +41,13 @@ $wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_custom
 
 /*---------------------------------- Widget area select -----------------------------------*/
 
-$wp_customize->add_setting( 'influence_blog_blogpage_section_one_widget_area_select', array(
+$wp_customize->add_setting( 'influence_blog_blogpage_section_one_widget_area_below_select', array(
     'transport'                => 'refresh',
     'sanitize_callback'        => 'influence_blog_sanitize_select',
-    'default'                  => influence_blog_defaults( 'blogpage_section_one_widget_area_select' ),
+    'default'                  => influence_blog_defaults( 'blogpage_section_one_widget_area_below_select' ),
 ) );
 
-$wp_customize->add_control( 'influence_blog_blogpage_section_one_widget_area_select', array(
+$wp_customize->add_control( 'influence_blog_blogpage_section_one_widget_area_below_select', array(
     'label'                    => esc_html__( 'Select Widget Area', 'influence-blog' ),
 	'section'				   => $section,
     'choices'                  => $area_lists,

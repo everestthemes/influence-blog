@@ -421,13 +421,13 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         $color_link_hover = influence_blog_get_mod( 'color_link_hover' );
 
         $color_theme_css = array(
-            '.foot-top-sec' => array(
+            '' => array(
                 'background-color' => esc_attr( $color_theme ),
             ),
         );
 
         $color_text_css = array(
-            'p' => array(
+            'body, p' => array(
                 'color' => esc_attr( $color_text ),
             ),
         );
@@ -1235,15 +1235,48 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         if( !defined( 'INFLUENCE_BLOG_PRO' ) && !class_exists( 'Influence_Blog_Pro' ) ) {
 
             $free_theme_css = array(
-                '.classhere' => array(
-
+                '.single-layout1-bdy .single-title' => array(
+                    'font-size' => esc_attr( $heading_H1_font_size . 'px' ),
+                ),
+                '.archive-bdy-d1 .widget-tt .l-title' => array(
+                    'font-family' => esc_attr( $heading_font_family ),
+                    'font-weight' => esc_attr( $heading_font_weight ),
+                    'text-transform' => esc_attr( $heading_H1_text_transform ),
+                    'font-size' => esc_attr( $heading_H1_font_size . 'px' ),
+                    'line-height' => esc_attr( $heading_H1_line_height ),
+                    'letter-spacing' => esc_attr( $heading_H1_letter_spacing . 'px' ),
+                ),
+                '.sub-cate,
+                .secondary-widget-area .side-tt .s-title,
+                .author-name .s-title,
+                .single-related-post .widget-tt .l-title' => array(
+                    'font-family' => esc_attr( $heading_font_family ),
+                    'font-weight' => esc_attr( $heading_font_weight ),
+                    'text-transform' => esc_attr( $heading_H3_text_transform ),
+                    'line-height' => esc_attr( $heading_H3_line_height ),
+                    'letter-spacing' => esc_attr( $heading_H3_letter_spacing . 'px' ),
+                ),
+                '.banner-caption .m-title' => array(
+                    'font-weight' => esc_attr( $heading_font_weight ),
+                    'text-transform' => esc_attr( $heading_H3_text_transform ),
+                    'font-size' => esc_attr( $heading_H3_font_size . 'px' ),
+                    'line-height' => esc_attr( $heading_H3_line_height ),
+                    'letter-spacing' => esc_attr( $heading_H3_letter_spacing . 'px' ),
+                ),
+                '.side-widget-d2 .author-detail .sm-title' => array(
+                    'font-family' => esc_attr( $heading_font_family ),
+                    'font-weight' => esc_attr( $heading_font_weight ),
+                    'text-transform' => esc_attr( $heading_H4_text_transform ),
+                    'line-height' => esc_attr( $heading_H4_line_height ),
+                    'letter-spacing' => esc_attr( $heading_H4_letter_spacing . 'px' ),
+                ),
+                '.banner-inner:before' => array(
+                    'background-color' => esc_attr( $color_theme ),
                 ),
             );
 
             $parse_css .= influence_blog_parse_css( $free_theme_css );
         }
-
-
 
 
         $dynamic_css = $parse_css;

@@ -15,7 +15,7 @@ $section  = 'influence_blog_global_color_section';
 /*---------------------------------- Theme color -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_color_theme', array(
-    'transport' 			   => 'postMessage',
+    'transport' 			   => 'refresh',
     'sanitize_callback' 	   => 'sanitize_color_one',
     'default'                  => influence_blog_defaults( 'color_theme' ),
 ) );
