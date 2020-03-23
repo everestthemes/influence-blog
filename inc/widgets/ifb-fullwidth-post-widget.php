@@ -251,7 +251,7 @@ if( ! class_exists( 'Influence_Blog_Fullwidth_Post_Widget' ) ) :
                                                                 if( $display_category == true ) {
 
                                                                     ?>
-                                                                    <ul class="cate-meta">
+                                                                    <ul class="post-categories">
                                                                         <li>
                                                                            <a href="<?php echo esc_url( $category_link ); ?>">
                                                                                <?php echo esc_html( $category_name ); ?>
