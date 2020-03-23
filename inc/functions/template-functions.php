@@ -630,7 +630,7 @@ if ( ! function_exists( 'influence_blog_has_header_image' ) ) :
             $bg_image_style = '';
         }
 
-        echo $bg_image_style;
+        echo $bg_image_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -655,7 +655,7 @@ if ( ! function_exists( 'influence_blog_has_image_url' ) ) :
             $bg_image_style = '';
         }
 
-        echo $bg_image_style;
+        echo $bg_image_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 

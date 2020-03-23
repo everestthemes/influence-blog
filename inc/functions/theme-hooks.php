@@ -136,7 +136,7 @@ if( ! function_exists( 'influence_blog_header_logo_action' ) ) :
             if ( $influence_blog_description || is_customize_preview() ) :
 
             ?>
-            <p class="site-description"><?php echo esc_html( $influence_blog_description ); /* WPCS: xss ok. */ ?></p>
+            <p class="site-description"><?php echo esc_html( $influence_blog_description ); ?></p>
             <?php
 
             endif;
@@ -937,12 +937,12 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
                 if( !empty( $footer_copyright_text ) ) {
 
                     /* translators: 1: Copyright Text 2: Theme name, 3: Theme author. */
-                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
                 } else {
 
                     /* translators: 1: Theme name, 2: Theme author. */
-                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
             }
             ?>

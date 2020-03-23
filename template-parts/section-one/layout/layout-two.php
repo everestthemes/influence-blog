@@ -34,13 +34,13 @@ if ( !defined( 'ABSPATH' ) ) {
 
         $category = influence_blog_get_mod( 'blogpage_section_one_content_category' );
 
-        $orderby = influence_blog_get_mod( 'blogpage_section_one_content_orderby' );
+        $order_by = influence_blog_get_mod( 'blogpage_section_one_content_orderby' );
 
         $sort_order = influence_blog_get_mod( 'blogpage_section_one_content_sort_order' );
 
         $posts_no = influence_blog_get_mod( 'blogpage_section_one_content_posts_number' );
 
-        $query = influence_blog_blogpage_posts_query( $category, $orderby, $sort_order, $posts_no );
+        $query = influence_blog_blogpage_posts_query( $category, $order_by, $sort_order, $posts_no );
 
         if( $query -> have_posts() ) {
 

@@ -8,13 +8,13 @@ if ( !defined( 'ABSPATH' ) ) {
 
 $section  = 'influence_blog_banner_content_options_section';
 
-$tabs     = influence_blog_tab_one_array();
+$option_tabs     = influence_blog_tab_one_array();
 
 $categories = influence_blog_categories_array();
 
 $posts_no = influence_blog_posts_number_attrs_array();
 
-$orderby = influence_blog_orderby_array();
+$order_by = influence_blog_orderby_array();
 
 $sort_order = influence_blog_sort_order_array();
 
@@ -69,7 +69,7 @@ $wp_customize->add_setting( 'influence_blog_banner_content_options_tabs', array(
 
 $wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_banner_content_options_tabs', array(
     'section'                  => $section,
-    'tabs'                     => $tabs,
+    'tabs'                     => $option_tabs,
     'controls'                 => array(
         'button_one'           => $button_one_array,
         'button_two'           => $button_two_array,
@@ -218,7 +218,7 @@ $wp_customize->add_control( 'influence_blog_banner_orderby', array(
     'description'              => esc_html__( 'Select how to sort retrieved posts.', 'influence-blog' ),
     'section'                  => $section,
     'type'                     => 'select',
-    'choices'                  => $orderby,
+    'choices'                  => $order_by,
     'priority'                 => 45,
     'active_callback'          => 'influence_blog_is_banner_content_options_query_enable',
 ) );

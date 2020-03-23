@@ -34,7 +34,7 @@ if ( ! function_exists( 'influence_blog_posted_on' ) ) :
                 esc_html( get_the_modified_date() )
             );
 
-            echo '<span class="date-meta">' . $time_string . '</span>'; // WPCS: XSS OK.
+            echo '<span class="date-meta">' . $time_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
         }
 	}
@@ -52,7 +52,7 @@ if ( ! function_exists( 'influence_blog_posted_by' ) ) :
                 /* translators: %s: post author. */
                 esc_html_x( 'By %s', 'post author', 'influence-blog' ), esc_html( get_the_author() ) );
 
-            echo '<span class="editor-meta"> ' . $byline . '</span>'; // WPCS: XSS OK.
+            echo '<span class="editor-meta"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
         }
 	}
@@ -92,7 +92,7 @@ if( ! function_exists( 'influence_blog_categories_meta' ) ) :
 				$categories_list = get_the_category_list();
 
 				if ( $categories_list ) {
-					echo '<div class="ifb-sub-cate">' . wp_kses_post( $categories_list ) . '</div>'; // WPCS: XSS OK.
+					echo '<div class="ifb-sub-cate">' . wp_kses_post( $categories_list ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
 		}
@@ -114,7 +114,7 @@ if( ! function_exists( 'influence_blog_tags_meta' ) ) :
 				$tags_list = get_the_tag_list();
 
 				if ( $tags_list ) {
-					echo '<div class="entry-tags"><div class="post-tags">' . wp_kses_post( $tags_list ) . '</div></div>'; // WPCS: XSS OK.
+					echo '<div class="entry-tags"><div class="post-tags">' . wp_kses_post( $tags_list ) . '</div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 			}
 		}

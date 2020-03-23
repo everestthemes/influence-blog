@@ -455,87 +455,92 @@ add_action('wp_ajax_nopriv_loadmore', 'influence_blog_loadmore_ajax_handler'); /
 
 function influence_blog_loadmore_ajax_handler() {
 
-	// prepare our arguments for the query
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
-	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-	$args['post_status'] = 'publish';
+    if( isset( $_POST['query'] ) ) {
 
-    $section_one_query = influence_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
+        // prepare our arguments for the query
+        $args = json_decode( sanitize_text_field( wp_unslash( $_POST['query'] ) ), true );
+        $args['paged'] = isset( $_POST['page'] ) ? sanitize_text_field( wp_unslash( $_POST['page'] ) ) + 1 : ''; // we need next page to be loaded
+        $args['post_status'] = 'publish';
 
-    if( $section_one_query ) {
+        $section_one_query = influence_blog_get_mod( 'blogpage_section_one_content_query_toggle' );
 
-        $cat = influence_blog_get_mod( 'blogpage_section_one_content_category' );
+        if( $section_one_query ) {
 
-        $order = influence_blog_get_mod( 'blogpage_section_one_content_orderby' );
+            $cat = influence_blog_get_mod( 'blogpage_section_one_content_category' );
 
-        $sort = influence_blog_get_mod( 'blogpage_section_one_content_sort_order' );
+            $order = influence_blog_get_mod( 'blogpage_section_one_content_orderby' );
 
-        $num = influence_blog_get_mod( 'blogpage_section_one_content_posts_number' );
+            $sort = influence_blog_get_mod( 'blogpage_section_one_content_sort_order' );
 
-        if( !empty( $cat ) ) {
+            $num = influence_blog_get_mod( 'blogpage_section_one_content_posts_number' );
 
-            if( is_array( $cat ) ) {
+            if( !empty( $cat ) ) {
 
-                $args['category_name'] = implode( ',', $cat );
+                if( is_array( $cat ) ) {
+
+                    $args['category_name'] = implode( ',', $cat );
+
+                } else {
+
+                    $args['category_name'] = $cat;
+                }
+            }
+
+            if( !empty( $order ) ) {
+
+                $args['orderby'] = $order;
 
             } else {
 
-                $args['category_name'] = $cat;
+                $args['orderby'] = esc_html( 'date' );
+
+            }
+
+            if( !empty( $sort ) ) {
+
+                $args['order'] = $sort;
+
+            } else {
+
+                $args['order'] = esc_html( 'desc' );
+
+            }
+
+            if( !empty( $num ) ) {
+
+                $args['posts_per_page'] = absint( $num );
             }
         }
 
-        if( !empty( $order ) ) {
+        // it is always better to use WP_Query but not here
+        query_posts( $args );
 
-            $args['orderby'] = $order;
+        if( have_posts() ) :
 
-        } else {
+            ?>
+            <div id="content" class="row">
+            <?php
 
-            $args['orderby'] = esc_html( 'date' );
+            // run the loop
+            while( have_posts() ): the_post();
 
-        }
+                $section_one_layout = influence_blog_get_mod( 'blogpage_section_one_layout_select' );
 
-        if( !empty( $sort ) ) {
+                if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
 
-            $args['order'] = $sort;
+                    get_template_part( 'template-parts/section-one/content/content', $section_one_layout );
+                }
 
-        } else {
+                $section_one_template = apply_filters( 'influence_blog_section_one_layout_template', $section_one_layout );
 
-            $args['order'] = esc_html( 'desc' );
-
-        }
-
-        if( !empty( $num ) ) {
-
-            $args['posts_per_page'] = absint( $num );
-        }
+            endwhile;
+            ?></div><?php
+            if( isset( $_POST['first_page'] ) ) {
+                influence_blog_paginator( sanitize_text_field( wp_unslash( $_POST['first_page'] ) ) );
+            }
+        endif;
+        die; // here we exit the script and even no wp_reset_query() required!
     }
-
-	// it is always better to use WP_Query but not here
-	query_posts( $args );
-
-	if( have_posts() ) :
-
-        ?>
-        <div id="content" class="row">
-        <?php
-
-		// run the loop
-		while( have_posts() ): the_post();
-
-            $section_one_layout = influence_blog_get_mod( 'blogpage_section_one_layout_select' );
-
-            if( $section_one_layout == 'one' || $section_one_layout == 'two' || $section_one_layout == 'three' ) {
-
-                get_template_part( 'template-parts/section-one/content/content', $section_one_layout );
-            }
-
-            $section_one_template = apply_filters( 'influence_blog_section_one_layout_template', $section_one_layout );
-
-		endwhile;
-        ?></div><?php
-        influence_blog_paginator( $_POST['first_page'] );
-	endif;
-	die; // here we exit the script and even no wp_reset_query() required!
 }
 
 function influence_blog_paginator( $first_page_url ){
@@ -608,7 +613,7 @@ function influence_blog_paginator( $first_page_url ){
 	// when to display "..." and the first page before it
 	if ( $first_link_in_the_middle >= 2 && $links_in_the_middle < $max_page ) {
 
-		$pagination.= '<a href="'. $first_page_url . $search_query . '" class="page-numbers">1</a>'; // first page
+		$pagination.= '<a href="'. esc_url( $first_page_url ) . esc_attr( $search_query ) . '" class="page-numbers">1</a>'; // first page
 
 		if( $first_link_in_the_middle != 2 ) {
 
@@ -620,11 +625,11 @@ function influence_blog_paginator( $first_page_url ){
 
 		if( $i == $current_page ) {
 
-			$pagination.= '<span class="page-numbers current">'.$i.'</span>';
+			$pagination.= '<span class="page-numbers current">'.absint( $i ).'</span>';
 
 		} else {
 
-			$pagination .= '<a href="'. $first_page_url . '/page/' . $i . $search_query .'" class="page-numbers">'.$i.'</a>';
+			$pagination .= '<a href="'. esc_url( $first_page_url ) . '/page/' . absint( $i ) . esc_attr( $search_query ) .'" class="page-numbers">'.absint( $i ).'</a>';
 		}
 	}
 
@@ -635,7 +640,7 @@ function influence_blog_paginator( $first_page_url ){
 			$pagination .= '<span class="page-numbers extend">...</span>';
         }
 
-		$pagination .= '<a href="'. $first_page_url . '/page/' . $max_page . $search_query .'" class="page-numbers">'. $max_page .'</a>';
+		$pagination .= '<a href="'. esc_url( $first_page_url ) . '/page/' . esc_attr( $max_page ) . esc_attr( $search_query ) .'" class="page-numbers">'. esc_html( $max_page ) .'</a>';
 	}
 
 	// end HTML
@@ -647,7 +652,7 @@ function influence_blog_paginator( $first_page_url ){
     }
 
 	// replace first page before printing it
-	echo str_replace( array( "/page/1?", "/page/1\"" ), array( "?", "\"" ), $pagination );
+	echo str_replace( array( "/page/1?", "/page/1\"" ), array( "?", "\"" ), $pagination ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 if( !function_exists( 'influence_blog_default_archive_widget' ) ) :

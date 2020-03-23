@@ -8,7 +8,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 $section  = 'influence_blog_searchpage_layout_options_section';
 
-$tabs     = influence_blog_tab_one_array();
+$option_tabs     = influence_blog_tab_one_array();
 
 $archive_layouts = influence_blog_blog_layouts_select_array();
 
@@ -41,7 +41,7 @@ $wp_customize->add_setting( 'influence_blog_searchpage_layout_options_tabs', arr
 
 $wp_customize->add_control( new Influence_Blog_Tab_One_Control( $wp_customize, 'influence_blog_searchpage_layout_options_tabs', array(
     'section'                  => $section,
-    'tabs'                     => $tabs,
+    'tabs'                     => $option_tabs,
     'controls'                 => array(
         'button_one'           => $button_one_array,
         'button_two'           => $button_two_array,
