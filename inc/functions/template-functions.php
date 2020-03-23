@@ -467,7 +467,7 @@ if( ! function_exists( 'influence_blog_arrange_banner_content_title' ) ) {
     function influence_blog_arrange_banner_content_title() {
 
         ?>
-        <h3 class="m-title"><?php the_title(); ?></h3>
+<h3 class="m-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php
     }
 }

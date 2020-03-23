@@ -186,7 +186,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'typo_heading_H6_spacing_t' => 1,
             'typo_heading_H6_spacing_m' => 1,
             //Color
-            'color_theme' => '#eeeeee',
+            'color_theme' => '#183244',
             'color_text' => '#000000',
             'color_link' => '#183244',
             'color_link_hover' => '#e9b105',
@@ -306,7 +306,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_three_menu_icon_alignment' => 'left',
             'header_three_menu_select' => 'menu-1',
             'header_three_menu_alignment' => 'center',
-            'header_three_search_icon_select' => '',
+            'header_three_search_icon_select' => 'fa fa-search',
             'header_three_search_icon_alignment' => 'right',
             //Header - Header three - Design
             'header_three_design_bg_color' => '#e9b105',
@@ -481,8 +481,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'typo_blogpage_section_one_design_title_size_t' => '30',
             'typo_blogpage_section_one_design_title_size_m' => '30',
             //Blog page - Blogpage section one widget area
-            'blogpage_section_one_widget_area_display_toggle' => false,
-            'blogpage_section_one_widget_area_select' => 'influence-blog-widget-six',
+            'blogpage_section_one_widget_area_below_display_toggle' => false,
+            'blogpage_section_one_widget_area_below_select' => 'influence-blog-widget-six',
 
             //Archive page - Layout options - General
             'archivepage_layout_options_select' => 'one',

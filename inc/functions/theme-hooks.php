@@ -1448,9 +1448,9 @@ if( ! function_exists( 'influence_blog_blogpage_section_one_widget_area_action' 
 
  	function influence_blog_blogpage_section_one_widget_area_action() {
 
-        $display = influence_blog_get_mod( 'blogpage_section_one_widget_area_display_toggle' );
+        $display = influence_blog_get_mod( 'blogpage_section_one_widget_area_below_display_toggle' );
 
-        $area = influence_blog_get_mod( 'blogpage_section_one_widget_area_select' );
+        $area = influence_blog_get_mod( 'blogpage_section_one_widget_area_below_select' );
 
         if( $display ) {
 
