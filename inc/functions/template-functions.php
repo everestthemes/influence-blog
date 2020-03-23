@@ -47,93 +47,6 @@ function influence_blog_pingback_header() {
 }
 add_action( 'wp_head', 'influence_blog_pingback_header' );
 
-
-
-/**
- * Social links template
- */
-if( ! function_exists( 'influence_blog_social_links_template' ) ) {
-
-    function influence_blog_social_links_template( $position ) {
-
-        if( empty( $position ) ) {
-
-            return;
-        }
-
-        $facebook_link = influence_blog_get_mod( 'facebook_link', '' );
-        $twitter_link = influence_blog_get_mod( 'twitter_link', '' );
-        $instagram_link = influence_blog_get_mod( 'instagram_link', '' );
-        $youtube_link = influence_blog_get_mod( 'youtube_link', '' );
-        $display_rss_feed = influence_blog_get_mod( 'display_rss_feed', false );
-
-        $youtube_class = '';
-
-        if( $position == 'header' ) {
-
-            $youtube_class = 'fa fa-youtube-play';
-
-        }
-
-        if( $position == 'footer' ) {
-
-            $youtube_class = 'fa fa-youtube';
-
-        }
-
-        if( !empty( $facebook_link ) ) {
-
-            ?>
-            <li>
-                <a href="<?php echo esc_url( $facebook_link ); ?>" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </li>
-        <?php
-        }
-
-        if( !empty( $instagram_link ) ) {
-            ?>
-            <li>
-                <a href="<?php echo esc_url( $instagram_link ); ?>" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </li>
-        <?php
-        }
-
-        if( !empty( $twitter_link ) ) {
-            ?>
-            <li>
-                <a href="<?php echo esc_url( $twitter_link ); ?>" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        <?php
-        }
-
-        if( !empty( $youtube_link ) ) {
-            ?>
-            <li>
-                <a href="<?php echo esc_url( $youtube_link ); ?>" target="_blank">
-                    <i class="<?php echo esc_attr( $youtube_class ); ?>"></i>
-                </a>
-            </li>
-        <?php
-        }
-
-        if( $display_rss_feed == true ) {
-            ?>
-            <li>
-                <a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" target="_blank">
-                    <i class="fa fa-rss"></i>
-                </a>
-            </li>
-        <?php
-        }
-    }
-}
-
 /**
  * Arrange header one top
  */
@@ -467,7 +380,7 @@ if( ! function_exists( 'influence_blog_arrange_banner_content_title' ) ) {
     function influence_blog_arrange_banner_content_title() {
 
         ?>
-<h3 class="m-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <h3 class="m-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php
     }
 }
@@ -658,7 +571,7 @@ if( ! function_exists( 'influence_blog_main_container_class' ) ) {
 
         $sidebar_position = influence_blog_sidebar_position();
 
-		$sticky_enabled = apply_filters( 'influence_blog_archivepage_sticky_status', false );
+		$sticky_enabled = apply_filters( 'influence_blog_singularpage_sticky_status', false );
 
 		if( $sidebar_position == 'none' || !is_active_sidebar( 'influence-blog-sidebar' ) ) {
 
@@ -717,7 +630,7 @@ if ( ! function_exists( 'influence_blog_has_header_image' ) ) :
             $bg_image_style = '';
         }
 
-        echo $bg_image_style;
+        echo $bg_image_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -742,7 +655,7 @@ if ( ! function_exists( 'influence_blog_has_image_url' ) ) :
             $bg_image_style = '';
         }
 
-        echo $bg_image_style;
+        echo $bg_image_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -842,12 +755,12 @@ if( ! function_exists( 'influence_blog_image_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_image = influence_blog_get_mod( 'archivepage_content_options_image_toggle', true );
+            $display_image = influence_blog_get_mod( 'archivepage_content_options_image_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_image = influence_blog_get_mod( 'searchpage_content_options_image_toggle', true );
+            $display_image = influence_blog_get_mod( 'searchpage_content_options_image_toggle' );
         }
 
         return $display_image;
@@ -867,12 +780,12 @@ if( ! function_exists( 'influence_blog_title_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_title = influence_blog_get_mod( 'archivepage_content_options_title_toggle', true );
+            $display_title = influence_blog_get_mod( 'archivepage_content_options_title_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_title = influence_blog_get_mod( 'searchpage_content_options_title_toggle', true );
+            $display_title = influence_blog_get_mod( 'searchpage_content_options_title_toggle' );
         }
 
         return $display_title;
@@ -892,12 +805,12 @@ if( ! function_exists( 'influence_blog_category_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_category = influence_blog_get_mod( 'archivepage_content_options_cat_toggle', true );
+            $display_category = influence_blog_get_mod( 'archivepage_content_options_cat_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_category = influence_blog_get_mod( 'searchpage_content_options_cat_toggle', true );
+            $display_category = influence_blog_get_mod( 'searchpage_content_options_cat_toggle' );
         }
 
         return $display_category;
@@ -917,12 +830,12 @@ if( ! function_exists( 'influence_blog_date_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_date = influence_blog_get_mod( 'archivepage_content_options_date_toggle', true );
+            $display_date = influence_blog_get_mod( 'archivepage_content_options_date_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_date = influence_blog_get_mod( 'searchpage_content_options_date_toggle', true );
+            $display_date = influence_blog_get_mod( 'searchpage_content_options_date_toggle' );
         }
 
         return $display_date;
@@ -942,12 +855,12 @@ if( ! function_exists( 'influence_blog_content_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_content = influence_blog_get_mod( 'archivepage_content_options_content_toggle', true );
+            $display_content = influence_blog_get_mod( 'archivepage_content_options_content_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_content = influence_blog_get_mod( 'searchpage_content_options_content_toggle', true );
+            $display_content = influence_blog_get_mod( 'searchpage_content_options_content_toggle' );
         }
 
         return $display_content;
@@ -967,12 +880,12 @@ if( ! function_exists( 'influence_blog_button_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_button = influence_blog_get_mod( 'archivepage_content_options_button_toggle', true );
+            $display_button = influence_blog_get_mod( 'archivepage_content_options_button_toggle' );
         }
 
         if( is_search() ) {
 
-            $display_button = influence_blog_get_mod( 'searchpage_content_options_button_toggle', true );
+            $display_button = influence_blog_get_mod( 'searchpage_content_options_button_toggle' );
         }
 
         return $display_button;
@@ -992,38 +905,14 @@ if( ! function_exists( 'influence_blog_button_text_option' ) ) :
 
         if( is_archive() ) {
 
-            $display_button_text = influence_blog_get_mod( 'archivepage_content_options_field_button_title', true );
+            $display_button_text = influence_blog_get_mod( 'archivepage_content_options_field_button_title' );
         }
 
         if( is_search() ) {
 
-            $display_button_text = influence_blog_get_mod( 'searchpage_content_options_field_button_title', true );
+            $display_button_text = influence_blog_get_mod( 'searchpage_content_options_field_button_title' );
         }
 
         return $display_button_text;
- 	}
-endif;
-
-
-
-
-
-/**
- * Function to return customizer option for tags
- *
- * @since 1.0.0
- */
-if( ! function_exists( 'influence_blog_tags_option' ) ) :
-
- 	function influence_blog_tags_option() {
-
-        $display_category = false;
-
-        if( is_single() ) {
-
-            $display_category = influence_blog_get_mod( 'display_single_post_tags', true );
-        }
-
-        return $display_category;
  	}
 endif;

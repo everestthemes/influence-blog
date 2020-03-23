@@ -44,6 +44,9 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
             $header_three_design_menu_font_family = influence_blog_get_font_data( 'typo_header_three_design_main_menu_font' );
             $header_three_design_menu_font_variants = influence_blog_get_font_data( 'typo_header_three_design_main_menu_font', 'variants' );
 
+            $blogpage_section_one_design_title_font_family = influence_blog_get_font_data( 'typo_blogpage_section_one_design_title_font' );
+            $blogpage_section_one_design_title_font_variants = influence_blog_get_font_data( 'typo_blogpage_section_one_design_title_font', 'variants' );
+
             $footer_one_widget_area_title_font_family = influence_blog_get_font_data( 'typo_footer_one_widget_area_design_title_font' );
             $footer_one_widget_area_title_font_variants = influence_blog_get_font_data( 'typo_footer_one_widget_area_design_title_font', 'variants' );
 
@@ -77,6 +80,10 @@ if ( !class_exists( 'Influence_Blog_Google_Fonts' ) ) :
                 'header_ThreeMenu'			=> array(
                     'family'   => $header_three_design_menu_font_family,
                     'variants' => $header_three_design_menu_font_variants ? $header_three_design_menu_font_variants : self::$variants,
+                ),
+                'blogpage_SectionOne'			=> array(
+                    'family'   => $blogpage_section_one_design_title_font_family,
+                    'variants' => $blogpage_section_one_design_title_font_variants ? $blogpage_section_one_design_title_font_variants : self::$variants,
                 ),
                 'footerOne_Title'			=> array(
                     'family'   => $footer_one_widget_area_title_font_family,

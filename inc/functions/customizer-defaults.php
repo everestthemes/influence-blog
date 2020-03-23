@@ -430,13 +430,13 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_orderby' => 'date',
             'banner_sort_order' => 'desc',
             'banner_posts_number' => 2,
-            'banner_background_text' => 'Fashion Time',
-            'banner_read_more_text' => 'Read More',
+            'banner_background_text' => esc_html__( 'Fashion Time', 'influence-blog' ),
+            'banner_read_more_text' => esc_html__( 'Read More', 'influence-blog' ),
             'banner_content_options_two_slider_col' => 8,
             'banner_content_options_two_ads_toggle' => true,
             'banner_content_options_two_ads_col' => 4,
             'banner_content_options_two_ads_upload_image' => '',
-            'banner_content_options_two_ads_title' => 'This is Great',
+            'banner_content_options_two_ads_title' => '',
             'banner_content_options_two_ads_link' => '#',
             'banner_content_options_two_ads_link_rel' => 'nofollow',
             'banner_content_options_two_ads_link_tab_toggle' => true,
@@ -448,8 +448,8 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'blogpage_section_one_display_toggle' => true,
             'blogpage_section_one_layout_select' => 'one',
             'blogpage_section_one_content_col' => 9,
-            'blogpage_section_one_content_title' => 'Recent Posts',
-            'blogpage_section_one_content_button_text' => 'Read More',
+            'blogpage_section_one_content_title' => esc_html__( 'Recent Posts', 'influence-blog' ),
+            'blogpage_section_one_content_button_text' => esc_html__( 'Read More', 'influence-blog' ),
             'blogpage_section_one_content_query_toggle' => false,
             'blogpage_section_one_content_category'=> array(
                 'uncategorized'
@@ -488,7 +488,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'archivepage_layout_options_select' => 'one',
 
             //Archive page - Content options - General
-            'archivepage_content_options_field_button_title' => 'Read More',
+            'archivepage_content_options_field_button_title' => esc_html__( 'Read More', 'influence-blog' ),
             'archivepage_content_options_breadcrumb_toggle' => true,
             'archivepage_content_options_image_toggle' => true,
             'archivepage_content_options_title_toggle' => true,
@@ -504,7 +504,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'searchpage_layout_options_select' => 'one',
 
             //Search page - Content options - General
-            'searchpage_content_options_field_button_title' => 'Read More',
+            'searchpage_content_options_field_button_title' => esc_html__( 'Read More', 'influence-blog' ),
             'searchpage_content_options_breadcrumb_toggle' => true,
             'searchpage_content_options_image_toggle' => true,
             'searchpage_content_options_title_toggle' => true,
@@ -620,7 +620,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_one_widget_title_advance_m_p_bottom' => 10,
             'footer_one_widget_title_advance_m_p_left' => 10,
             //Footer - Footer two - General - Title
-            'footer_two_title' => 'Get In Touch',
+            'footer_two_title' => esc_html__( 'Get In Touch', 'influence-blog' ),
             'footer_two_title_col' => 12,
             'footer_two_title_alignment' => 'center',
             //Footer - Footer two - General - Social links
@@ -812,7 +812,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_two_widget_title_advance_m_p_left' => 10,
             'footer_two_widget_title_advance_border_width' => 2,
             //Footer - footer three - general
-            'footer_three_cr_text' => 'Your Copy Right Text Here.',
+            'footer_three_cr_text' => esc_html__( 'Your Copy Right Text Here.', 'influence-blog' ),
             'footer_three_menu_select' => 'menu-3',
             //Reset
             'reset_toggle' => false,

@@ -267,7 +267,7 @@ class Everestthemes_Breadcrumb_Trail {
 	 */
 	public function trail() {
 
-		echo $this->get_trail();
+		echo $this->get_trail(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/* ====== Protected Methods ====== */

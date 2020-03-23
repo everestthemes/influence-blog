@@ -136,7 +136,7 @@ if( ! function_exists( 'influence_blog_header_logo_action' ) ) :
             if ( $influence_blog_description || is_customize_preview() ) :
 
             ?>
-            <p class="site-description"><?php echo esc_html( $influence_blog_description ); /* WPCS: xss ok. */ ?></p>
+            <p class="site-description"><?php echo esc_html( $influence_blog_description ); ?></p>
             <?php
 
             endif;
@@ -520,20 +520,6 @@ if( ! function_exists( 'influence_blog_blogpage_action' ) ) :
             */
             do_action( 'influence_blog_blogpage_section_one_widget_area' );
         }
-
-        /**
-        * Hook - influence_blog_blogpage_section_two
-        *
-        * @hooked influence_blog_blogpage_section_two_action - 320
-        */
-        //do_action( 'influence_blog_blogpage_section_two' );
-
-        /**
-        * Hook - influence_blog_blogpage_section_three
-        *
-        * @hooked influence_blog_blogpage_section_three_action - 330
-        */
-        //do_action( 'influence_blog_blogpage_section_three' );
     }
 endif;
 add_action( 'influence_blog_blogpage', 'influence_blog_blogpage_action', 300 );
@@ -588,109 +574,6 @@ if( ! function_exists( 'influence_blog_blogpage_section_one_action' ) ) :
     }
 endif;
 add_action( 'influence_blog_blogpage_section_one', 'influence_blog_blogpage_section_one_action', 310 );
-
-/**
- * Blogpage section two hook declaration
- *
- * @since 1.0.0
- */
-if( ! function_exists( 'influence_blog_blogpage_section_two_action' ) ) :
-
- 	function influence_blog_blogpage_section_two_action() {
-
-        $sidebar_position = influence_blog_sidebar_position();
-
-        ?>
-        <div id="section-two" class="half-widget-area">
-            <div class="half-widget-area-inner lrg-padding">
-                <div class="container">
-
-                    <div class="row">
-                        <?php
-
-                        if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-
-                            get_sidebar();
-                        }
-
-                        ?>
-                        <div class="<?php influence_blog_main_container_class(); ?>">
-                            <aside id="primary" class="primary-widget-area">
-                                <?php
-
-                                influence_blog_post_listing_layout_template();
-
-                                ?>
-                            </aside>
-                        </div><!--//col-12 col-md-6 col-lg-9-->
-                        <?php
-
-                        if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-
-                            get_sidebar();
-                        }
-
-                        ?>
-                    </div><!--//row-->
-                </div><!--//container-->
-            </div><!--//half-widget-area-->
-        </div>
-        <?php
-    }
-endif;
-add_action( 'influence_blog_blogpage_section_two', 'influence_blog_blogpage_section_two_action', 320 );
-
-/**
- * Blogpage section three hook declaration
- *
- * @since 1.0.0
- */
-if( ! function_exists( 'influence_blog_blogpage_section_three_action' ) ) :
-
- 	function influence_blog_blogpage_section_three_action() {
-
-        $sidebar_position = influence_blog_sidebar_position();
-
-        ?>
-        <div id="section-three" class="half-widget-area">
-            <div class="half-widget-area-inner lrg-padding">
-                <div class="container">
-
-                    <div class="row">
-                        <?php
-
-                        if( $sidebar_position == 'left' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-
-                            get_sidebar();
-                        }
-
-                        ?>
-                        <div class="<?php influence_blog_main_container_class(); ?>">
-                            <aside id="primary" class="primary-widget-area">
-                                <?php
-
-                                influence_blog_post_listing_layout_template();
-
-                                ?>
-                            </aside>
-                        </div><!--//col-12 col-md-6 col-lg-9-->
-                        <?php
-
-                        if( $sidebar_position == 'right' && is_active_sidebar( 'influence-blog-sidebar' ) ) {
-
-                            get_sidebar();
-                        }
-
-                        ?>
-                    </div><!--//row-->
-                </div><!--//container-->
-            </div><!--//half-widget-area-->
-        </div>
-        <?php
-    }
-endif;
-add_action( 'influence_blog_blogpage_section_three', 'influence_blog_blogpage_section_three_action', 330 );
-
 
 /**
  * Footer first widget area hook declaration
@@ -1054,12 +937,12 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
                 if( !empty( $footer_copyright_text ) ) {
 
                     /* translators: 1: Copyright Text 2: Theme name, 3: Theme author. */
-                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
                 } else {
 
                     /* translators: 1: Theme name, 2: Theme author. */
-                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );
+                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
             }
             ?>

@@ -154,12 +154,6 @@ function influence_blog_customize_register( $wp_customize ) {
     $wp_customize->register_control_type( 'Influence_Blog_Color_One_Control' );
 
     /**
-	 * Load custom customizer control for repeater one control
-	 */
-	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'repeater/repeater-one/class-repeater-one-setting.php';
-	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'repeater/repeater-one/class-repeater-one-control.php';
-
-    /**
 	 * Load custom customizer control for repeater two control
 	 */
 	require INFLUENCE_BLOG_INC_CUSTOMIZER_CONTROLS_PATH . 'repeater/repeater-two/class-repeater-two-control.php';

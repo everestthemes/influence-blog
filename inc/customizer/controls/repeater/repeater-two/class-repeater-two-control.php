@@ -240,15 +240,15 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
 
             if( !empty( $array ) ) {
 
-                $exist_service= count( $array );
+                $exist_service = count( $array );
 
-                    $repeater_two_del_btn_id=$this->boxtitle . $this->id;
+                $repeater_two_del_btn_id=$this->boxtitle . $this->id;
 
                 global $influence_blog_repeater_two_limit;
 
                 global $influence_blog_type_with_id;
 
-                echo "<input type='hidden' value='$exist_service' id='exist_repeater_two_$repeater_two_del_btn_id'/>";
+                echo "<input type='hidden' value='" . esc_attr( $exist_service ) . "' id='exist_repeater_two_" . esc_attr( $repeater_two_del_btn_id ) . "'/>";
 
                 foreach( $array as $icon ) {
 
@@ -491,7 +491,10 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         <button type="button" class="social-repeater-general-control-remove-field" <?php if ( $it == 0 ) {
                             echo 'style="display:none;"';
                         } ?>>
-                            <?php printf( __( 'Delete %s', 'influence-blog' ), $this->boxtitle );	?>
+                            <?php
+                            /* translators: 1: box title. */
+                            printf( esc_html__( 'Delete %s', 'influence-blog' ), esc_html( $this->boxtitle ) );
+                            ?>
                         </button>
 
                     </div>
@@ -662,13 +665,13 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
 
                     case 'textarea':
                         ?>
-                        <textarea class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"><?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?></textarea>
+                        <textarea class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"><?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></textarea>
                         <?php
                     break;
 
                     case 'color':
                         ?>
-                        <input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?>" class="<?php echo esc_attr($options['class']); ?>" />
+                        <input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" class="<?php echo esc_attr($options['class']); ?>" />
                         <?php
                     break;
                 }
@@ -676,7 +679,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
             } else {
 
                 ?>
-                <input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); ?>" class="<?php echo esc_attr($options['class']); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"/>
+                <input type="text" value="<?php echo ( !empty($options['sanitize_callback']) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr($value) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" class="<?php echo esc_attr($options['class']); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"/>
                 <?php
             }
         }
@@ -687,7 +690,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
             <div class="customize-control-title">
             <?php esc_html_e('Open link in new tab:','influence-blog'); ?>
                 <span class="switch">
-                    <input type="checkbox" name="custom_checkbox" value="yes" <?php if( $value=='yes' ){ echo 'checked'; } ?> class="customizer-repeater-two-checkbox <?php echo $class; ?> <?php echo $influence_blog_type_with_id; ?>">
+                    <input type="checkbox" name="custom_checkbox" value="yes" <?php if( $value=='yes' ){ echo 'checked'; } ?> class="customizer-repeater-two-checkbox <?php echo esc_attr( $class ); ?> <?php echo esc_html( $influence_blog_type_with_id ); ?>">
                 </span>
             </div>
         <?php
@@ -702,7 +705,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                 </span>
                 <span class="description customize-control-description">
                     <?php
-                    echo sprintf(
+                    echo /* translators: 1: Icons link 2: Icons link text. */ sprintf(
                         esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'influence-blog' ),
                         sprintf( '<a href="' . esc_url( 'http://fontawesome.io/icons/' ) . '" rel="nofollow" target="_blank">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'influence-blog' ) )
                     );
@@ -745,8 +748,8 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                 <span class="customize-control-title">
                     <?php esc_html_e('Image','influence-blog')?>
                 </span>
-                <input type="text" class="widefat custom-media-url <?php if($class="repeater_two_overlimit") { echo 'repeater-two-uploading-img';}?> <?php echo $auto;?>" value="<?php echo esc_attr( $value ); ?>">
-                <input type="button" class="button button-secondary customizer-repeater-two-custom-media-button <?php if($class="repeater_two_overlimit") { echo 'repeater-two-uploading-img-btn';}?> <?php echo $auto;?>" value="<?php esc_attr_e( 'Upload Image','influence-blog' ); ?>" />
+                <input type="text" class="widefat custom-media-url <?php if($class="repeater_two_overlimit") { echo 'repeater-two-uploading-img';}?> <?php echo esc_attr( $auto );?>" value="<?php echo esc_attr( $value ); ?>">
+                <input type="button" class="button button-secondary customizer-repeater-two-custom-media-button <?php if($class="repeater_two_overlimit") { echo 'repeater-two-uploading-img-btn';}?> <?php echo esc_attr( $auto );?>" value="<?php esc_attr_e( 'Upload Image','influence-blog' ); ?>" />
             </div>
             <?php
         }
@@ -757,7 +760,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
             <span class="customize-control-title">
                 <?php esc_html_e('Image type','influence-blog');?>
             </span>
-            <select class="customizer-repeater-two-image-choice  <?php echo $influence_blog_repeater_two_limit;?>">
+            <select class="customizer-repeater-two-image-choice  <?php echo esc_attr( $influence_blog_repeater_two_limit );?>">
                 <option value="customizer_repeater_two_icon" <?php selected( $value,'customizer_repeater_two_icon' ); ?>><?php esc_html_e( 'Icon','influence-blog' ); ?></option>
                 <option value="customizer_repeater_two_image" <?php selected( $value,'customizer_repeater_two_image' ); ?>><?php esc_html_e( 'Image','influence-blog' ); ?></option>
                 <option value="customizer_repeater_two_none" <?php selected( $value,'customizer_repeater_two_none' ); ?>><?php esc_html_e( 'None','influence-blog' ); ?></option>
@@ -787,7 +790,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                             <span class="input-group-addon"></span>
                         </div>
                         <?php get_template_part( $this->customizer_icon_container ); ?>
-                        <input type="text" class="customizer-repeater-two-social-repeater-link team_linkdata_<?php echo $influence_blog_repeater_two_limit;?> <?php echo $influence_blog_type_with_id;?>"
+                        <input type="text" class="customizer-repeater-two-social-repeater-link team_linkdata_<?php echo esc_attr( $influence_blog_repeater_two_limit );?> <?php echo esc_attr( $influence_blog_type_with_id );?>"
                                placeholder="<?php esc_attr_e( 'Link', 'influence-blog' ); ?>">
                         <input type="hidden" class="customizer-repeater-two-social-repeater-id" value="">
                         <button class="social-repeater-remove-social-item" style="display:none">
@@ -811,7 +814,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         ?>
                         <div class="customizer-repeater-two-social-repeater-container">
                             <div class="customizer-repeater-two-rc input-group icp-container">
-                                <input data-placement="bottomRight" class="icp icp-auto team_data_<?php echo $influence_blog_repeater_two_limit;?> <?php echo $influence_blog_type_with_id;?>" value="<?php if( !empty($social_icon['icon']) ) { echo esc_attr( $social_icon['icon'] ); } ?>" type="text">
+                                <input data-placement="bottomRight" class="icp icp-auto team_data_<?php echo esc_attr( $influence_blog_repeater_two_limit );?> <?php echo esc_attr( $influence_blog_type_with_id );?>" value="<?php if( !empty($social_icon['icon']) ) { echo esc_attr( $social_icon['icon'] ); } ?>" type="text">
                                 <span class="input-group-addon"><i class="fa <?php echo esc_attr( $social_icon['icon'] ); ?>"></i></span>
                             </div>
                             <?php get_template_part( $this->customizer_icon_container ); ?>
@@ -836,7 +839,7 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                            class="social-repeater-socials-repeater-colector"
                            value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
                 </div>
-                <button class="social-repeater-add-social-item button-secondary <?php echo $influence_blog_repeater_two_limit; ?> <?php echo $influence_blog_type_with_id;?>"><?php esc_html_e( 'Add Icon', 'influence-blog' ); ?></button>
+                <button class="social-repeater-add-social-item button-secondary <?php echo esc_attr( $influence_blog_repeater_two_limit ); ?> <?php echo esc_attr( $influence_blog_type_with_id );?>"><?php esc_html_e( 'Add Icon', 'influence-blog' ); ?></button>
                 <?php
             }
         }

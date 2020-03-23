@@ -4,7 +4,7 @@ Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
 Tested up to: 5.3.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -41,7 +41,7 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 * Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar, Copyright (c) 2014 Liviu Cristian Mirea Ghiban, [MIT](http://opensource.org/licenses/MIT)
 
-* Images Included, header-one.png, header-two.png, self created GPLv2
+* Images Included, header-one.png, header-two.png, banner-one.png, banner-two.png, post-one.png, post-two.png, post-three.png, author-one.jpg, author-two.jpg, author-three.jpg, author-four.jpg, full-one.png, full-two.png - self created GPLv2
 
 
 == Screenshot ==
@@ -63,22 +63,41 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 Influence Blog includes support for mailchimp, contact form 7.
 
-
 == Changelog ==
 
-= 1.0.2 - March 3, 2020 =
-* Customizer options updated
-* Codes optimized
-* Fixed : Design
-* Updated as per reviewer
-* Screenshot image changed
+= v1.0.4 : March 23, 2020 =
 
-= 1.0.1 - February 24, 2020 =
-* Customizer improved
-* Codes optimized
-* Fixed : Design
-* Updated as per reviewer
-* Removed unused files
+- Customizer options added
+- Fixed : Design
+- Screenshot image changed
+- Updated as per reviewer
 
-= 1.0.0 - October 22, 2019 =
-* Initial release
+= v1.0.3 : March 18, 2020 =
+
+- Customizer options updated
+- Fixed : Design
+- Screenshot image changed
+- Removed unused codes
+- Accessibility updated
+- Prefixings updated
+- Updated as per reviewer
+
+= v1.0.2 : March 3, 2020 =
+
+- Customizer options updated
+- Codes optimized
+- Fixed : Design
+- Updated as per reviewer
+- Screenshot image changed
+
+= v1.0.1 : February 24, 2020 =
+
+- Customizer improved
+- Codes optimized
+- Fixed : Design
+- Updated as per reviewer
+- Removed unused files
+
+= v1.0.0 : October 22, 2019 =
+
+- Initial release
