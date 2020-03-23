@@ -680,7 +680,8 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                 .sub-cate,
                 .secondary-widget-area .widget .side-tt.widget-title .s-title,
                 .widget .widget-title,
-                .comments-area .comment-reply-title' => array(
+                .comments-area .comment-reply-title,
+                .primary-widget-area .text_widget .m-title' => array(
                     'font-size' => esc_attr( $heading_H3_font_size_t . 'px' ),
                     'line-height' => esc_attr( $heading_H3_line_height_t ),
                     'letter-spacing' => esc_attr( $heading_H3_letter_spacing_t . 'px' ),
@@ -1356,7 +1357,11 @@ if( !function_exists( 'influence_blog_dynamic_responsive_style' ) ) {
                     'letter-spacing' => esc_attr( $heading_H1_letter_spacing_m . 'px' ),
                 ),
                 '.banner-caption .m-title,
-                .sub-cate' => array(
+                .sub-cate,
+                .secondary-widget-area .widget .side-tt.widget-title .s-title,
+                .widget .widget-title,
+                .comments-area .comment-reply-title,
+                .primary-widget-area .text_widget .m-title' => array(
                     'font-size' => esc_attr( $heading_H3_font_size_m . 'px' ),
                     'line-height' => esc_attr( $heading_H3_line_height_m ),
                     'letter-spacing' => esc_attr( $heading_H3_letter_spacing_m . 'px' ),

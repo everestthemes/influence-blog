@@ -433,7 +433,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
         );
 
         $color_text_css = array(
-            'body, p' => array(
+            'body, p, h1, h2, h3, h4, h5, h6' => array(
                 'color' => esc_attr( $color_text ),
             ),
         );
@@ -1255,7 +1255,8 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 '.sub-cate,
                 .secondary-widget-area .side-tt .s-title,
                 .author-name .s-title,
-                .single-related-post .widget-tt .l-title' => array(
+                .single-related-post .widget-tt .l-title,
+                .primary-widget-area .text_widget .m-title' => array(
                     'font-family' => esc_attr( $heading_font_family ),
                     'font-weight' => esc_attr( $heading_font_weight ),
                     'text-transform' => esc_attr( $heading_H3_text_transform ),
@@ -1281,9 +1282,7 @@ if( !function_exists( 'influence_blog_dynamic_main_style' ) ) {
                 .date-meta,
                 .trangle,
                 .full-widget-d1 .btn-more:hover,
-                .author-wrap.style-one .side-widget-d2,
-                .post-categories li a,
-                .post-categories li a:before' => array(
+                .author-wrap.style-one .side-widget-d2' => array(
                     'background-color' => esc_attr( $color_theme ),
                 ),
                 '.full-widget-d1 .btn-more,
