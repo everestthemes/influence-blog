@@ -3232,33 +3232,39 @@ cite strong,
     margin-bottom: 30px;
 }
 
-.search-again {
+.search-again,
+.not-found .search-form {
     position: relative;
     max-width: 450px;
     margin: auto;
     margin-top: 30px;
 }
 
-.search-again input {
+.search-again input,
+.not-found .search-form input {
     position: relative;
 }
 
-.search-again .search-field {
+.search-again .search-field,
+.not-found .search-form  .search-field{
     background-color: #cecece;
     position: relative;
 
 }
 
 .search-again input,
-.search-again [type=submit] {
+.search-again [type=submit],
+.not-found .search-form [type=submit] {
     border: none;
     padding: 10px;
 }
 
-.search-again form.search-form input[type=search]{
+.search-again .search-form input[type=search],
+.not-found  .search-form input[type=search]{
     max-width: 450px;
 }
-.search-again [type=submit] {
+.search-again [type=submit],
+.not-found .search-form [type=submit] {
     margin-left: -4px;
     cursor: pointer;
     background-color: #e9b105;
@@ -3271,7 +3277,8 @@ cite strong,
     height: 43px;
 }
 
-.search-again [type=submit]:hover {
+.search-again [type=submit]:hover,
+.not-found .search-form [type=submit]:hover {
     background-color: #e9b105;
     color: #fff;
 }
