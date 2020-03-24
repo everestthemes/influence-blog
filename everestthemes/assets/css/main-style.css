@@ -690,7 +690,6 @@ button {
 
 .search-icon .search-form input {
     border: 1px solid #eee;
-    background: #fff;
     height: 40px;
     padding: 5px 15px;
     margin: 0;
@@ -998,6 +997,7 @@ button {
     text-align: center;
     font-size: 24px;
     z-index: 3;
+    display: none;
 }
 
 .sub-toggle i {
@@ -3232,33 +3232,39 @@ cite strong,
     margin-bottom: 30px;
 }
 
-.search-again {
+.search-again,
+.not-found .search-form {
     position: relative;
     max-width: 450px;
     margin: auto;
     margin-top: 30px;
 }
 
-.search-again input {
+.search-again input,
+.not-found .search-form input {
     position: relative;
 }
 
-.search-again .search-field {
+.search-again .search-field,
+.not-found .search-form  .search-field{
     background-color: #cecece;
     position: relative;
 
 }
 
 .search-again input,
-.search-again [type=submit] {
+.search-again [type=submit],
+.not-found .search-form [type=submit] {
     border: none;
     padding: 10px;
 }
 
-.search-again form.search-form input[type=search]{
+.search-again .search-form input[type=search],
+.not-found  .search-form input[type=search]{
     max-width: 450px;
 }
-.search-again [type=submit] {
+.search-again [type=submit],
+.not-found .search-form [type=submit] {
     margin-left: -4px;
     cursor: pointer;
     background-color: #e9b105;
@@ -3271,7 +3277,8 @@ cite strong,
     height: 43px;
 }
 
-.search-again [type=submit]:hover {
+.search-again [type=submit]:hover,
+.not-found .search-form [type=submit]:hover {
     background-color: #e9b105;
     color: #fff;
 }
@@ -3770,6 +3777,15 @@ button.btn-style.btn-search:focus {
     color: white;
 }
 
+.foot-top-wrap .author-wrap .side-tt .s-title,
+.foot-top-wrap .side-bar .side-tt .s-title,
+.footer-mid-sec .author-wrap .side-tt .s-title,
+.footer-mid-sec .side-bar .side-tt .s-title,
+.foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title{
+    margin-bottom: 15px;
+    padding:5px;
+}
+
 .foot-top-wrap  .side-bar .sm-title a:hover,
 .footer-mid-sec  .side-bar .sm-title a:hover{
     color: #e9b105;
@@ -3787,3 +3803,22 @@ button.btn-style.btn-search:focus {
     color: white;
 }
 
+
+.banner-widget-area .widget.widget_media_image{
+    margin: auto;
+    text-align:center;
+    margin-bottom:80px;
+}
+.foot-top-wrap .author-wrap .side-tt .s-title,
+.foot-top-wrap .side-bar .side-tt .s-title,
+.footer-mid-sec .author-wrap .side-tt .s-title,
+.footer-mid-sec .side-bar .side-tt .s-title,
+.foot-top-wrap .foot-top-border .recent-cate-wrap .side-tt .s-title{
+    margin-bottom: 15px;
+    padding:5px;
+}
+
+.slide-widget-d1-list  .metas span.comment-meta {
+    position: absolute;
+    right: 10px;
+}
