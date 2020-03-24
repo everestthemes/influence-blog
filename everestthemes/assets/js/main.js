@@ -169,6 +169,7 @@ $('.banner-img-wrap').slick({
     } );
 
 
+
 function closeSearchForm() {
 
     var searchForm = $( '#header-search' );
@@ -178,7 +179,7 @@ function closeSearchForm() {
 }
 
 function showSearchForm() {
-
+    
     var searchForm = $( '#header-search' );
 
     searchForm.toggleClass('show').find('.search-field').focus();

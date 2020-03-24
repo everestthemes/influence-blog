@@ -95,9 +95,9 @@
         text-transform: uppercase;
     }
 
-    /* .search-icon {
-    top: 6px;
-} */
+    .sub-toggle {
+        display: block;
+    }
     .archive-bdy-d1 {
         margin-bottom: 40px;
     }
