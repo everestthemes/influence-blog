@@ -52,8 +52,8 @@ if( ! class_exists( 'Influence_Blog_Info_One_Control' ) ) :
 				if ( isset( $this->label ) && '' !== $this->label ) {
 					printf(
 						'<span class="customize-control-title control-info-one-label">%1$s%2$s</span>',
-						esc_html( $this->label ),
-						esc_html( $icon )
+						wp_kses_post( $this->label ),
+						wp_kses_post( $icon )
 					);
 				}
 
