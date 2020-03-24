@@ -696,7 +696,22 @@ button {
     margin: 0;
 
 }
+.main_navigation ul li:hover a {
+    color: white;
+}
 
+.main_navigation ul li.menu-item-has-children .sub-menu>li{
+    position:relative;
+    transition:0.5s ease all;
+}
+.main_navigation ul li.menu-item-has-children .sub-menu>li .sub-menu {
+    right: -100%;
+    top: 0;
+    visibility:hidden;
+}
+.main_navigation ul li.menu-item-has-children .sub-menu>li:hover  .sub-menu{
+    visibility:visible;
+}
 
 
 /*--------------------------------------------------------------
@@ -3219,6 +3234,8 @@ cite strong,
 
 .search-again {
     position: relative;
+    max-width: 450px;
+    margin: auto;
     margin-top: 30px;
 }
 
@@ -3238,16 +3255,20 @@ cite strong,
     padding: 10px;
 }
 
+.search-again form.search-form input[type=search]{
+    max-width: 450px;
+}
 .search-again [type=submit] {
     margin-left: -4px;
     cursor: pointer;
     background-color: #e9b105;
     padding-left: 10px;
     padding-right: 10px;
-    width: 100px;
+    position: absolute;
     transition: 0.5s ease all;
     right: 0;
     top: 0;
+    height: 43px;
 }
 
 .search-again [type=submit]:hover {
@@ -3260,9 +3281,7 @@ cite strong,
     margin-right: 15px;
 }
 
-.search-again input[type='search'] {
-    width: 300px;
-}
+
 
 
 
