@@ -47,8 +47,8 @@ Influence Blog is distributed under the terms of the GNU GPL
 == Screenshot ==
 
 1. Logo Image - self created GPLv2
-2. Advertisement Image - self created GPLv2
-3. Banner Image (https://pxhere.com/en/photo/1230347) - (http://creativecommons.org/publicdomain/zero/1.0 - CCO)
+2. Advertisement Image - self created GPLv2 (https://pxhere.com/en/photo/1172314)
+3. Banner Image (https://pxhere.com/en/photo/1175886) - (http://creativecommons.org/publicdomain/zero/1.0 - CCO)
 
 == Installation ==
 
