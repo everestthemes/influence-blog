@@ -579,7 +579,9 @@ form.search-form button[type="search"]:focus,
     text-align: right;
 }
 
-
+table.wp-block-table {
+    width: 100%;
+}
 
 
 
