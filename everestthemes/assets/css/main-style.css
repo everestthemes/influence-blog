@@ -2324,10 +2324,7 @@ body.no-sidebar .page {
     margin-bottom: 80px;
 }
 
-body.no-sidebar  .alignwide,
 body.no-sidebar  .alignwide {
-    margin-left: -100px;
-    margin-right: -100px;
     width: 80vw;
     max-width: 80vw;
 }
