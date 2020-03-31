@@ -989,14 +989,12 @@ button {
 .sub-toggle {
     position: absolute;
     color: white;
-    right: 30px;
-    top: 10px;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
+    right: 0px;
+    top: 50%;
+    height: auto;
     text-align: center;
     font-size: 24px;
-    z-index: 3;
+    transform: translateY(-50%);
     display: none;
 }
 
@@ -1004,9 +1002,7 @@ button {
     display: none;
 }
 
-span.sub-toggle.open {
-    transform: rotate(180deg);
-}
+
 
 .mobile-nav .social-media {
     float: none;

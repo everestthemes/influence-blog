@@ -29,7 +29,7 @@ $('.hamburger').click(function(e) {
   $('.main_navigation').slideToggle('medium');
 });
 $('.main_navigation .menu-item-has-children > a').each(function() {
-  $(this).after('<span class=\'sub-toggle\'><i class=\'fa fa-angle-down\'></i></span>');
+  $(this).after('<span class=\'sub-toggle\'><button> <i class=\'fa fa-angle-down\'></i></button></span>');
 
 }); 
 $(document).on('click', '.sub-toggle', function(){
