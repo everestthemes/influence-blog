@@ -77,6 +77,12 @@
     .single-layout1-bdy .single-title {
         font-size: 30px;
     }
+   
+
+    *[dir="rtl"] .copy.center,
+    *[dir="rtl"] .foot-menu {
+        text-align: center;
+    }
 
 
 }
@@ -94,10 +100,12 @@
         font-size: 12px;
         text-transform: uppercase;
     }
-    span.sub-toggle.open{
-        top:0;
+
+    span.sub-toggle.open {
+        top: 0;
         transform: none;
     }
+
     .sub-toggle {
         display: block;
     }
@@ -154,11 +162,13 @@
         color: white;
     }
 
-   
+
 
 }
 
 @media (max-width:767px) {
+
+
     .main_navigation {
         display: none;
         background-color: #183244;
@@ -581,6 +591,28 @@
 
     .secondary-widget-area {
         margin-top: 30px;
+    }
+
+     *[dir="rtl"] .half-content-bdy {
+        margin-bottom: 0px;
+        padding-left: 0px;
+        margin-top: 30px
+    }
+
+    *[dir="rtl"] .hamburger {
+        right: auto;
+        left: 50%;
+        width: auto;
+        padding: 5px;
+    }
+
+    *[dir="rtl"] .hamburger_box {
+        margin-left: 35px;
+    }
+
+    *[dir="rtl"] .sub-toggle {
+        left: 0;
+        right: auto;
     }
 
 }
