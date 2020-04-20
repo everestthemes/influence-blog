@@ -301,7 +301,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'header_two_advance_ads_m_m_bottom' => '10',
             //Header - Header three - General
             'header_three_menu_icon_select' => 'fa fa-home',
-            'header_three_menu_icon_link' => site_url(),
+            'header_three_menu_icon_link' => home_url( '/' ),
             'header_three_menu_icon_link_tab_toggle' => true,
             'header_three_menu_icon_alignment' => 'left',
             'header_three_menu_select' => 'menu-1',
@@ -812,7 +812,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'footer_two_widget_title_advance_m_p_left' => 10,
             'footer_two_widget_title_advance_border_width' => 2,
             //Footer - footer three - general
-            'footer_three_cr_text' => esc_html__( 'Your Copy Right Text Here.', 'influence-blog' ),
+            'footer_three_cr_text' => esc_html__( 'Your Copy Right Text', 'influence-blog' ),
             'footer_three_menu_select' => 'menu-3',
             //Reset
             'reset_toggle' => false,

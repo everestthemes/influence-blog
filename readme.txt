@@ -3,8 +3,8 @@
 Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 5.3.2
-Stable tag: 1.0.5
+Tested up to: 5.4
+Stable tag: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -46,9 +46,16 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 == Screenshot ==
 
-1. Logo Image - self created GPLv2
-2. Advertisement Image - self created GPLv2 (https://pxhere.com/en/photo/1172314)
-3. Banner Image (https://pxhere.com/en/photo/1175886) - (http://creativecommons.org/publicdomain/zero/1.0 - CCO)
+Image for theme screenshot
+License: CC0 1.0 Universal (CC0 1.0)
+Sources:
+1. https://pxhere.com/en/photo/1172314
+2. https://pxhere.com/en/photo/1175886
+
+Logo for theme screenshot
+License: GPLv2, Copyright everestthemes
+Self created
+
 
 == Installation ==
 
@@ -64,6 +71,11 @@ Influence Blog is distributed under the terms of the GNU GPL
 Influence Blog includes support for mailchimp, contact form 7.
 
 == Changelog ==
+
+= v1.0.6 : April 20, 2020 =
+
+- Fixed : Rtl issue, Design issue
+- Updated as per reviewer
 
 = v1.0.5 : April 10, 2020 =
 

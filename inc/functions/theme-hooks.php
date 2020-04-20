@@ -937,12 +937,12 @@ if( ! function_exists( 'influence_blog_footer_copyright_text_action' ) ) :
                 if( !empty( $footer_copyright_text ) ) {
 
                     /* translators: 1: Copyright Text 2: Theme name, 3: Theme author. */
-                    printf( esc_html__( '%1$s %2$s by %3$s','influence-blog' ), $footer_copyright_text, get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    printf( esc_html__( '%1$s | %2$s by %3$s','influence-blog' ), $footer_copyright_text, esc_html__( 'Influence Blog', 'influence-blog' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' );// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
                 } else {
 
                     /* translators: 1: Theme name, 2: Theme author. */
-                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), get_bloginfo( 'name' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    printf( esc_html__( '%1$s by %2$s', 'influence-blog' ), esc_html__( 'Influence Blog', 'influence-blog' ), '<a href="'. esc_url( 'https://everestthemes.com' ) . '">' . esc_html__( 'Everestthemes', 'influence-blog' ) . '</a>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
             }
             ?>

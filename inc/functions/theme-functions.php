@@ -366,7 +366,7 @@ if( !function_exists( 'influence_blog_blogpage_container_class' ) ) {
 /**
  * Customize Readmore Link.
  */
-function post_excerpt_more( $more ) {
+function influene_blog_post_excerpt_more( $more ) {
 
     if( is_admin() ) {
         return $more;
@@ -374,12 +374,12 @@ function post_excerpt_more( $more ) {
 
   	return '...';
 }
-add_filter( 'excerpt_more', 'post_excerpt_more' );
+add_filter( 'excerpt_more', 'influene_blog_post_excerpt_more' );
 
 
 
 /**
-* Filter the except length to 40 words default.
+* Filter the except length default.
 */
 if( !function_exists( 'influence_blog_excerpt_length' ) ) {
    /*

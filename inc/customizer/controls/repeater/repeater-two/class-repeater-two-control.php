@@ -358,56 +358,56 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_title_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Title','influence-blog' ), $this->id, 'customizer_repeater_two_title_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Title','influence-blog' ), $this->id, 'customizer_repeater_two_title_control' ),
                                 'class' => 'customizer-repeater-two-title-control '."$influence_blog_repeater_two_limit".' '."$influence_blog_type_with_id".'',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_title_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_title_control' ),
                             ), $title );
                         }
 
                         if( $this->customizer_repeater_two_subtitle_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Subtitle','influence-blog' ), $this->id, 'customizer_repeater_two_subtitle_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Subtitle','influence-blog' ), $this->id, 'customizer_repeater_two_subtitle_control' ),
                                 'class' => 'customizer-repeater-two-subtitle-control '."$influence_blog_repeater_two_limit".' '."$influence_blog_type_with_id".'',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_subtitle_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_subtitle_control' ),
                             ), $subtitle );
                         }
 
                         if( $this->customizer_repeater_two_text_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Description','influence-blog' ), $this->id, 'customizer_repeater_two_text_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Description','influence-blog' ), $this->id, 'customizer_repeater_two_text_control' ),
                                 'class' => 'customizer-repeater-two-text-control '."$influence_blog_repeater_two_limit".' '."$influence_blog_type_with_id".'',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_text_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_text_control' ),
                             ), $text );
                         }
 
                         if( $this->customizer_repeater_two_text2_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Button Label','influence-blog' ), $this->id, 'customizer_repeater_two_text2_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Button Label','influence-blog' ), $this->id, 'customizer_repeater_two_text2_control' ),
                                 'class' => 'customizer-repeater-two-text2-control '."$influence_blog_repeater_two_limit".'',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_text2_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_text2_control' ),
                             ), $text2 );
                         }
 
                         if( $this->customizer_repeater_two_link2_control ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'skills','influence-blog' ), $this->id, 'customizer_repeater_two_link2_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'skills','influence-blog' ), $this->id, 'customizer_repeater_two_link2_control' ),
                                 'class' => 'customizer-repeater-two-link2-control '."$influence_blog_repeater_two_limit".' '."$influence_blog_type_with_id".'',
                                 //'sanitize_callback' => 'esc_url_raw',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link2_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link2_control' ),
                             ), $link2 );
                         }
 
                         if( $this->customizer_repeater_two_button_text_control ) {
 
                             $this->input_control( array(
-                            'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__('Button Text',
+                            'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__('Button Text',
                             'influence-blog'), $this->id, 'customizer_repeater_two_button_text_control'),
                             'class' => 'customizer-repeater-two-button-text-control '."$influence_blog_repeater_two_limit".'',
-                            'type' => apply_filters('repeater_two_repeater_input_types_filter', '' , $this->id,
+                            'type' => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '' , $this->id,
                             'customizer_repeater_two_button_text_control'),
                             ), $button );
                         }
@@ -415,10 +415,10 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_link_control ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Link','influence-blog' ), $this->id, 'customizer_repeater_two_link_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Link','influence-blog' ), $this->id, 'customizer_repeater_two_link_control' ),
                                 'class' => 'customizer-repeater-two-link-control '."$influence_blog_repeater_two_limit".' '."$influence_blog_type_with_id".'',
                                 'sanitize_callback' => 'esc_url_raw',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link_control' ),
                             ), $link );
                         }
 
@@ -431,10 +431,10 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_video_url_control ) {
 
                             $this->input_control( array(
-                            'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__('Video Url',
+                            'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__('Video Url',
                             'influence-blog'), $this->id, 'customizer_repeater_two_video_url_control'),
                             'class' => 'customizer-repeater-two-video-url-control',
-                            'type'  => apply_filters('repeater_two_customizer_repeater_two_video_url_control', 'textarea', $this->id, 'customizer_repeater_two_video_url_control' ),
+                            'type'  => apply_filters('influence_blog_repeater_two_customizer_repeater_two_video_url_control', 'textarea', $this->id, 'customizer_repeater_two_video_url_control' ),
                             ), $video_url );
                         }
 
@@ -455,9 +455,9 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
 
                         if( $this->customizer_repeater_two_color_control == true ) {
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Color','influence-blog' ), $this->id, 'customizer_repeater_two_color_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Color','influence-blog' ), $this->id, 'customizer_repeater_two_color_control' ),
                                 'class' => 'customizer-repeater-two-color-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_two_color_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_two_color_control' ),
                                 'sanitize_callback' => 'sanitize_hex_color'
                             ), $color );
                         }
@@ -465,18 +465,18 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_shortcode_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Shortcode','influence-blog' ), $this->id, 'customizer_repeater_two_shortcode_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Shortcode','influence-blog' ), $this->id, 'customizer_repeater_two_shortcode_control' ),
                                 'class' => 'customizer-repeater-two-shortcode-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_shortcode_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_shortcode_control' ),
                             ), $shortcode );
                         }
 
                         if( $this->customizer_repeater_two_designation_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Designation','influence-blog' ), $this->id, 'customizer_repeater_two_designation_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Designation','influence-blog' ), $this->id, 'customizer_repeater_two_designation_control' ),
                                 'class' => 'customizer-repeater-two-designation-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_designation_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_designation_control' ),
                             ), $designation );
                         }
 
@@ -531,9 +531,9 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_color_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Color','influence-blog' ), $this->id, 'customizer_repeater_two_color_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Color','influence-blog' ), $this->id, 'customizer_repeater_two_color_control' ),
                                 'class' => 'customizer-repeater-two-color-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_two_color_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'color', $this->id, 'customizer_repeater_two_color_control' ),
                                 'sanitize_callback' => 'sanitize_hex_color'
                             ) );
                         }
@@ -541,55 +541,55 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if ( $this->customizer_repeater_two_title_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Title','influence-blog' ), $this->id, 'customizer_repeater_two_title_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Title','influence-blog' ), $this->id, 'customizer_repeater_two_title_control' ),
                                 'class' => 'customizer-repeater-two-title-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_title_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_title_control' ),
                             ) );
                         }
 
                         if ( $this->customizer_repeater_two_subtitle_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Subtitle','influence-blog' ), $this->id, 'customizer_repeater_two_subtitle_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Subtitle','influence-blog' ), $this->id, 'customizer_repeater_two_subtitle_control' ),
                                 'class' => 'customizer-repeater-two-subtitle-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_subtitle_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_subtitle_control' ),
                             ) );
                         }
 
                         if ( $this->customizer_repeater_two_text_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Description','influence-blog' ), $this->id, 'customizer_repeater_two_text_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Description','influence-blog' ), $this->id, 'customizer_repeater_two_text_control' ),
                                 'class' => 'customizer-repeater-two-text-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_text_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_text_control' ),
                             ) );
                         }
 
                         if ( $this->customizer_repeater_two_text2_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Button Label','influence-blog' ), $this->id, 'customizer_repeater_two_text2_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Button Label','influence-blog' ), $this->id, 'customizer_repeater_two_text2_control' ),
                                 'class' => 'customizer-repeater-two-text2-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_text2_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_text2_control' ),
                             ) );
                         }
 
                          if ( $this->customizer_repeater_two_link2_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'skill','influence-blog' ), $this->id, 'customizer_repeater_two_link2_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'skill','influence-blog' ), $this->id, 'customizer_repeater_two_link2_control' ),
                                 'class' => 'customizer-repeater-two-link2-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link2_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link2_control' ),
                             ) );
                         }
 
                         if( $this->customizer_repeater_two_button_text_control ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__('Button Text',
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__('Button Text',
                                 'influence-blog'), $this->id, 'customizer_repeater_two_button_text_control'),
                                 'class' => 'customizer-repeater-two-button-text-control',
-                                'type' => apply_filters('repeater_two_repeater_input_types_filter', '' , $this->id,
+                                'type' => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '' , $this->id,
                                 'customizer_repeater_two_button_text_control'),
                             ) );
                         }
@@ -597,9 +597,9 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if ( $this->customizer_repeater_two_link_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Link','influence-blog' ), $this->id, 'customizer_repeater_two_link_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Link','influence-blog' ), $this->id, 'customizer_repeater_two_link_control' ),
                                 'class' => 'customizer-repeater-two-link-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_link_control' ),
                             ) );
                         }
 
@@ -611,28 +611,28 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
                         if( $this->customizer_repeater_two_video_url_control ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__('Video Url',
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__('Video Url',
                                 'influence-blog'), $this->id, 'customizer_repeater_two_video_url_control'),
                                 'class' => 'customizer-repeater-two-video-url-control',
-                                'type'  => apply_filters('repeater_two_customizer_repeater_two_video_url_control', 'textarea', $this->id, 'customizer_repeater_two_video_url_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_customizer_repeater_two_video_url_control', 'textarea', $this->id, 'customizer_repeater_two_video_url_control' ),
                             ) );
                         }
 
                         if ( $this->customizer_repeater_two_shortcode_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Shortcode','influence-blog' ), $this->id, 'customizer_repeater_two_shortcode_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Shortcode','influence-blog' ), $this->id, 'customizer_repeater_two_shortcode_control' ),
                                 'class' => 'customizer-repeater-two-shortcode-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_shortcode_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', '', $this->id, 'customizer_repeater_two_shortcode_control' ),
                             ) );
                         }
 
                         if ( $this->customizer_repeater_two_designation_control == true ) {
 
                             $this->input_control( array(
-                                'label' => apply_filters('repeater_two_repeater_input_labels_filter', esc_html__( 'Designation','influence-blog' ), $this->id, 'customizer_repeater_two_designation_control' ),
+                                'label' => apply_filters('influence_blog_repeater_two_repeater_input_labels_filter', esc_html__( 'Designation','influence-blog' ), $this->id, 'customizer_repeater_two_designation_control' ),
                                 'class' => 'customizer-repeater-two-designation-control',
-                                'type'  => apply_filters('repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_designation_control' ),
+                                'type'  => apply_filters('influence_blog_repeater_two_repeater_input_types_filter', 'textarea', $this->id, 'customizer_repeater_two_designation_control' ),
                             ) );
                         }
 
