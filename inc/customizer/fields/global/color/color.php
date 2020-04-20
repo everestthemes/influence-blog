@@ -16,7 +16,7 @@ $section  = 'influence_blog_global_color_section';
 
 $wp_customize->add_setting( 'influence_blog_color_theme', array(
     'transport' 			   => 'refresh',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'color_theme' ),
 ) );
 
@@ -31,7 +31,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_color_text', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'color_text' ),
 ) );
 
@@ -46,7 +46,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_color_link', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'color_link' ),
 ) );
 
@@ -61,7 +61,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_color_link_hover', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'color_link_hover' ),
 ) );
 

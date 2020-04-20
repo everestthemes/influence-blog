@@ -327,8 +327,8 @@ add_action( 'customize_preview_init', 'influence_blog_customize_preview_js', 5 )
  */
 function influence_blog_customizer_enqueues() {
 
-	wp_register_style( 'customizer-responsive-media-style', INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI . 'css/customizer-responsive-media.css' );
+	wp_register_style( 'influence-blog-customizer-responsive-media-style', INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI . 'css/customizer-responsive-media.css' );
 
-    wp_register_script( 'customizer-responsive-media-script', INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI . 'js/customizer-responsive-media.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION , true );
+    wp_register_script( 'influence-blog-customizer-responsive-media-script', INFLUENCE_BLOG_INC_CUSTOMIZER_ASSETS_PATH_URI . 'js/customizer-responsive-media.js', array( 'jquery' ), INFLUENCE_BLOG_VERSION , true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'influence_blog_customizer_enqueues', 1 );

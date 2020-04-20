@@ -24,9 +24,9 @@ if( ! class_exists( 'Influence_Blog_Text_One_Control' ) ) :
          */
         public function enqueue() {
 
-            wp_enqueue_style( 'customizer-responsive-media-style' );
+            wp_enqueue_style( 'influence-blog-customizer-responsive-media-style' );
 
-            wp_enqueue_script( 'influence-blog-customizer-text-one-script', get_template_directory_uri() . '/inc/customizer/controls/text/text-one/js/text-one.js', array( 'jquery', 'customize-base', 'customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
+            wp_enqueue_script( 'influence-blog-customizer-text-one-script', get_template_directory_uri() . '/inc/customizer/controls/text/text-one/js/text-one.js', array( 'jquery', 'customize-base', 'influence-blog-customizer-responsive-media-script' ), wp_get_theme()->get( 'Version' ) , true );
         }
 
         /**

@@ -266,7 +266,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_bg_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_bg_color' ),
 ) );
 
@@ -315,7 +315,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_menu_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_menu_color' ),
 ) );
 
@@ -330,7 +330,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_menu_hover_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_menu_hover_color' ),
 ) );
 
@@ -345,7 +345,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_menu_sep_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_menu_sep_color' ),
 ) );
 
@@ -540,7 +540,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_social_links_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_social_links_color' ),
 ) );
 
@@ -555,7 +555,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_social_links_hover_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_social_links_hover_color' ),
 ) );
 
@@ -570,7 +570,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_design_social_links_sep_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'header_one_layout_one_design_social_links_sep_color' ),
 ) );
 

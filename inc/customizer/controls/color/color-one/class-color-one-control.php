@@ -45,7 +45,7 @@ if( ! class_exists( 'Influence_Blog_Color_One_Control' ) ) :
             wp_enqueue_script( 'influence-blog-customizer-color-one-script', get_template_directory_uri() . '/inc/customizer/controls/color/color-one/js/color-one.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), wp_get_theme()->get( 'Version' ) , true );
 
             wp_localize_script( 'influence-blog-customizer-color-one-script', 'colorOne', array(
-                'colorPalettes' => color_one_default_color_palettes(),
+                'colorPalettes' => influence_blog_color_one_default_color_palettes(),
             ) );
         }
 
@@ -94,13 +94,13 @@ if( ! class_exists( 'Influence_Blog_Color_One_Control' ) ) :
     }
 endif;
 
-if ( !function_exists( 'color_one_default_color_palettes' ) ) :
+if ( !function_exists( 'influence_blog_color_one_default_color_palettes' ) ) :
     /**
      * Default color picker palettes
      *
      * @since 1.4.9
      */
-	function color_one_default_color_palettes() {
+	function influence_blog_color_one_default_color_palettes() {
 
 		$palettes = array(
 			'#000000',
@@ -114,16 +114,16 @@ if ( !function_exists( 'color_one_default_color_palettes' ) ) :
 		);
 
 		// Apply filters and return
-		return apply_filters( 'color_one_default_color_palettes', $palettes );
+		return apply_filters( 'influence_blog_color_one_default_color_palettes', $palettes );
 
 	}
 endif;
 
-if( !function_exists( 'sanitize_color_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_color_one' ) ) :
     /**
      * Sanitization callback function for color one control.
      */
-    function sanitize_color_one( $color ) {
+    function influence_blog_sanitize_color_one( $color ) {
 
         if ( empty( $color ) || is_array( $color ) ) {
             return '';

@@ -240,7 +240,7 @@ $wp_customize->add_control( new Influence_Blog_Button_One_Control ( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_design_outside', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'site_layout_style_design_outside' ),
 ) );
 
@@ -256,7 +256,7 @@ $wp_customize->add_control( new Influence_Blog_Color_One_Control( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_design_inside', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'site_layout_style_design_inside' ),
 ) );
 
@@ -318,7 +318,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 
 $wp_customize->add_setting( 'influence_blog_site_layout_container_design_bg', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'site_layout_container_design_bg' ),
 ) );
 
@@ -687,7 +687,7 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_cu
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_color', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_color_one',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_color_one',
     'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_color' ),
 ) );
 
