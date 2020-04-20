@@ -75,7 +75,7 @@ $(document).on('click', '.sub-toggle', function(){
   slidesToShow: 1,
   autoplaySpeed: 6000,
   infinite: true,
-  rtl:true,
+  rtl:false,
   speed: 500,
   cssEase: 'linear',
   prevArrow:'<button type="button" class="prev"><i class="fa fa-angle-left"></i></button>',
