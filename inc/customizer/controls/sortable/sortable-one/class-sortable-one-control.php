@@ -106,11 +106,11 @@ if( ! class_exists( 'Influence_Blog_Sortable_One_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_sortable_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_sortable_one' ) ) :
     /**
      * Sanitization callback function for sortable one control.
      */
-    function sanitize_sortable_one( $input, $setting ) {
+    function influence_blog_sanitize_sortable_one( $input, $setting ) {
 
         $output  = [];
 

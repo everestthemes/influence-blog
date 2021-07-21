@@ -31,7 +31,6 @@
     .main_navigation ul li a,
     .header-layout1 .main_navigation ul li a {
         padding: 15px 8px;
-        
     }
 
 }
@@ -191,9 +190,7 @@
         width: auto;
         margin-left: -18px;
     }
-    button.hamburger.hamburger_nb.active:focus{
-        background-color: transparent;
-    }
+
     .menu-bg-wrap {
         position: relative;
     }
@@ -227,7 +224,6 @@
     .main_navigation ul li a,
     .header-layout1 .main_navigation ul li a {
         padding: 15px 10px;
-        color:white;
     }
 
     .header-layout1 .main_navigation ul li.menu-item-has-children .sub-menu,

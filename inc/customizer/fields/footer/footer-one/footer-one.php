@@ -236,7 +236,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_first_widget_area_select'
 /*---------------------------------- First widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_first_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_first_widget_area_col' ),
 ) );
 
@@ -304,7 +304,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_second_widget_area_select
 /*---------------------------------- Second widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_second_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_second_widget_area_col' ),
 ) );
 
@@ -372,7 +372,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_third_widget_area_select'
 /*---------------------------------- Third widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_third_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_third_widget_area_col' ),
 ) );
 
@@ -440,7 +440,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_fourth_widget_area_select
 /*---------------------------------- Fourth widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_fourth_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_fourth_widget_area_col' ),
 ) );
 
@@ -508,7 +508,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_fifth_widget_area_select'
 /*---------------------------------- Fifth widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_fifth_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_fifth_widget_area_col' ),
 ) );
 
@@ -576,7 +576,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_sixth_widget_area_select'
 /*---------------------------------- Sixth widget area column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_footer_one_sixth_widget_area_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_sixth_widget_area_col' ),
 ) );
 
@@ -808,7 +808,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_font', array(
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_font' ),
-    'sanitize_callback'        => 'sanitize_typography_one'
+    'sanitize_callback'        => 'influence_blog_sanitize_typography_one'
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_footer_one_widget_area_design_title_font', array(
@@ -837,20 +837,20 @@ $wp_customize->add_control( 'influence_blog_typo_footer_one_widget_area_design_t
 /*---------------------------------- Footer one layout one design title typo font size -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_size_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_size_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_size_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_size_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_size_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_size_m' ),
 ) );
 
@@ -870,20 +870,20 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_cu
 /*---------------------------------- Footer one layout one design title typo line height -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_height_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_height_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_height_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_height_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_height_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_height_m' ),
 ) );
 
@@ -903,20 +903,20 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_cu
 /*---------------------------------- Footer one layout one design title typo letter spacing -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_spacing_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_spacing_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_spacing_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_spacing_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_footer_one_widget_area_design_title_spacing_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_footer_one_widget_area_design_title_spacing_m' ),
 ) );
 
@@ -1157,7 +1157,7 @@ $wp_customize->add_control( 'influence_blog_footer_one_advance_bg_image_position
 
 $wp_customize->add_setting( 'influence_blog_footer_one_advance_border_top', array(
     'transport'                => 'postMessage',
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_advance_border_top' ),
 ) );
 
@@ -1178,7 +1178,7 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_cu
 
 $wp_customize->add_setting( 'influence_blog_footer_one_advance_border_bottom', array(
     'transport'                => 'postMessage',
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_advance_border_bottom' ),
 ) );
 
@@ -1217,7 +1217,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_footer_one_widget_area_advance_border_width', array(
     'transport'                => 'postMessage',
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'footer_one_widget_area_advance_border_width' ),
 ) );
 

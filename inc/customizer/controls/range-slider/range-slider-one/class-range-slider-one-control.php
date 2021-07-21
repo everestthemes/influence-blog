@@ -87,11 +87,11 @@ if( ! class_exists( 'Influence_Blog_Range_Slider_One_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_range_slider_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_range_slider_one' ) ) :
     /**
      * Sanitization callback function for range slider one control.
      */
-    function sanitize_range_slider_one( $input, $setting ) {
+    function influence_blog_sanitize_range_slider_one( $input, $setting ) {
 
         return is_numeric( $input ) ? $input : 0;
     }

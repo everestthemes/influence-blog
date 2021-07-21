@@ -53,24 +53,20 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: ../inc/custom-fields/sidebar-position.php:62, ../inc/customizer/functions/customizer-options.php:255, ../inc/customizer/functions/customizer-options.php:311, ../inc/customizer/functions/customizer-options.php:330, ../inc/customizer/functions/customizer-options.php:503, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:188, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:192, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:196
+#: ../inc/custom-fields/sidebar-position.php:128, ../inc/customizer/functions/customizer-options.php:255, ../inc/customizer/functions/customizer-options.php:311, ../inc/customizer/functions/customizer-options.php:330, ../inc/customizer/functions/customizer-options.php:503, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:188, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:192, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:196
 msgid "Right"
 msgstr ""
 
-#: ../inc/custom-fields/sidebar-position.php:63, ../inc/customizer/functions/customizer-options.php:254, ../inc/customizer/functions/customizer-options.php:310, ../inc/customizer/functions/customizer-options.php:329, ../inc/customizer/functions/customizer-options.php:504, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:190, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:194, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:198
+#: ../inc/custom-fields/sidebar-position.php:129, ../inc/customizer/functions/customizer-options.php:254, ../inc/customizer/functions/customizer-options.php:310, ../inc/customizer/functions/customizer-options.php:329, ../inc/customizer/functions/customizer-options.php:504, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:190, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:194, ../inc/customizer/controls/dimension/dimension-one/class-dimension-one-control.php:198
 msgid "Left"
 msgstr ""
 
-#: ../inc/custom-fields/sidebar-position.php:64
+#: ../inc/custom-fields/sidebar-position.php:130
 msgid "Fullwidth"
 msgstr ""
 
 #: ../inc/customizer/customizer.php:284
 msgid "Display Site Title"
-msgstr ""
-
-#: ../inc/functions/customizer-defaults.php:433
-msgid "Fashion Time"
 msgstr ""
 
 #: ../inc/functions/customizer-defaults.php:434, ../inc/functions/customizer-defaults.php:452, ../inc/functions/customizer-defaults.php:491, ../inc/functions/customizer-defaults.php:507
@@ -86,7 +82,7 @@ msgid "Get In Touch"
 msgstr ""
 
 #: ../inc/functions/customizer-defaults.php:815
-msgid "Your Copy Right Text Here."
+msgid "Your Copy Right Text"
 msgstr ""
 
 #: ../inc/functions/customizer-helper.php:86
@@ -223,11 +219,11 @@ msgstr ""
 msgid "Descending Order"
 msgstr ""
 
-#: ../inc/functions/template-functions.php:446, ../inc/functions/theme-hooks.php:1243
+#: ../inc/functions/template-functions.php:446, ../inc/functions/theme-hooks.php:1248
 msgid "Prev"
 msgstr ""
 
-#: ../inc/functions/template-functions.php:447, ../inc/functions/theme-hooks.php:1244
+#: ../inc/functions/template-functions.php:447, ../inc/functions/theme-hooks.php:1249
 msgid "Next"
 msgstr ""
 
@@ -272,16 +268,20 @@ msgid "Everest Toolkit"
 msgstr ""
 
 #. translators: 1: Copyright Text 2: Theme name, 3: Theme author.
-#: ../inc/functions/theme-hooks.php:940
-msgid "%1$s %2$s by %3$s"
+#: ../inc/functions/theme-hooks.php:945
+msgid "%1$s | %2$s by %3$s"
 msgstr ""
 
-#: ../inc/functions/theme-hooks.php:940, ../inc/functions/theme-hooks.php:945
+#: ../inc/functions/theme-hooks.php:945, ../inc/functions/theme-hooks.php:950
+msgid "Influence Blog"
+msgstr ""
+
+#: ../inc/functions/theme-hooks.php:945, ../inc/functions/theme-hooks.php:950
 msgid "Everestthemes"
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.
-#: ../inc/functions/theme-hooks.php:945
+#: ../inc/functions/theme-hooks.php:950
 msgid "%1$s by %2$s"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgstr ""
 msgid "Widget Area Six"
 msgstr ""
 
-#: ../inc/general/general.php:316
+#: ../inc/general/general.php:320
 msgid "Loading"
 msgstr ""
 
@@ -799,7 +799,7 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: ../inc/widgets/ifb-author-widget.php:22
-msgid "IfB: Author Widget"
+msgid "IFB: Author Widget"
 msgstr ""
 
 #: ../inc/widgets/ifb-author-widget.php:24
@@ -843,7 +843,7 @@ msgid "Remove"
 msgstr ""
 
 #: ../inc/widgets/ifb-fullwidth-post-widget.php:22
-msgid "IfB: Fullwidth Post Widget"
+msgid "IFB: Fullwidth Post Widget"
 msgstr ""
 
 #: ../inc/widgets/ifb-fullwidth-post-widget.php:24
@@ -915,7 +915,7 @@ msgid "Display Post Content"
 msgstr ""
 
 #: ../inc/widgets/ifb-sidebar-post-widget.php:22
-msgid "IfB: Sidebar Post Widget"
+msgid "IFB: Sidebar Post Widget"
 msgstr ""
 
 #: ../inc/widgets/ifb-sidebar-post-widget.php:24
@@ -1762,6 +1762,10 @@ msgstr ""
 
 #: ../inc/customizer/fields/header/widget-area/widget-area.php:21
 msgid "Selected widget area will display below header in fullwidth."
+msgstr ""
+
+#: ../inc/customizer/controls/repeater/repeater-two/icons/icons.php:4
+msgid "Type to filter"
 msgstr ""
 
 #: ../template-parts/content-none.php:20

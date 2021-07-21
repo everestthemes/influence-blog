@@ -147,21 +147,21 @@ if( ! class_exists( 'Influence_Blog_Range_Slider_Two_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_range_slider_two_number' ) ) :
+if( !function_exists( 'influence_blog_sanitize_range_slider_two_number' ) ) :
     /**
      * Sanitization callback function for range slider two control.
      */
-    function sanitize_range_slider_two_number( $input ) {
+    function influence_blog_sanitize_range_slider_two_number( $input ) {
 
         return is_numeric( $input ) ? $input : 0;
     }
 endif;
 
-if( !function_exists( 'sanitize_range_slider_two_blank' ) ) :
+if( !function_exists( 'influence_blog_sanitize_range_slider_two_blank' ) ) :
     /**
      * Sanitization callback function for range slider two control.
      */
-    function sanitize_range_slider_two_blank( $input ) {
+    function influence_blog_sanitize_range_slider_two_blank( $input ) {
 
         return is_numeric( $input ) ? $input : '';
     }

@@ -1,7 +1,7 @@
 <div class="iconpicker-popover popover bottomLeft">
     <div class="arrow"></div>
     <div class="popover-title">
-        <input type="search" class="form-control iconpicker-search" placeholder="Type to filter">
+        <input type="search" class="form-control iconpicker-search" placeholder="<?php echo esc_attr__( 'Type to filter', 'influence-blog' ); ?>">
     </div>
     <div class="popover-content">
         <div class="iconpicker">

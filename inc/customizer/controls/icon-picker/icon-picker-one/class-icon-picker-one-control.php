@@ -66,7 +66,7 @@ if( ! class_exists( 'Influence_Blog_Icon_Picker_One_Control' ) ) :
             $icon_lists = array(
                 'font_awesome' => array(
                     'title' => __('Font Awesome', 'influence-blog'),
-                    'icons' => icon_picker_one_fontawesome_icon_list(),
+                    'icons' => influence_blog_icon_picker_one_fontawesome_icon_list(),
                 )
             );
 
@@ -76,7 +76,7 @@ if( ! class_exists( 'Influence_Blog_Icon_Picker_One_Control' ) ) :
             $icon_lists = array(
                 'font_awesome' => array(
                     'title' => __('Font Awesome', 'influence-blog'),
-                    'icons' => icon_picker_one_fontawesome_icon_list(),
+                    'icons' => influence_blog_icon_picker_one_fontawesome_icon_list(),
                 )
             );
 

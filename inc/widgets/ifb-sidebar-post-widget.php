@@ -19,7 +19,7 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
             parent::__construct(
                 'influence_blog_sidebar_post_widget',  // Widget ID
-                esc_html__( 'IfB: Sidebar Post Widget', 'influence-blog' ),   // Widget Name
+                esc_html__( 'IFB: Sidebar Post Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays Posts.', 'influence-blog' ),
                 )
@@ -300,23 +300,31 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Post_Widget' ) ) :
 
         public function update( $new_instance, $old_instance ) {
 
+            $sidebar_layouts = influence_blog_sidebar_widget_select_array();
+
+            $orderby_choices = influence_blog_widget_orderby_array();
+
+            $sort_order_choices = influence_blog_widget_sort_order_array();
+
+            $post_categories = influence_blog_post_category_array();
+
             $instance = $old_instance;
 
             $instance['title']        = sanitize_text_field( $new_instance['title'] );
 
-            $instance['select_cat']   = absint( $new_instance['select_cat'] );
+            $instance['select_cat']   = ( isset( $new_instance['select_cat'] ) && array_key_exists( $new_instance['select_cat'], $post_categories ) ) ? absint( $new_instance['select_cat'] ) : 0;
 
             $instance['post_no']      = absint( $new_instance['post_no'] );
 
-            $instance['layout']       = sanitize_text_field( $new_instance['layout'] );
+            $instance['layout']       = ( isset( $new_instance['layout'] ) && array_key_exists( $new_instance['layout'], $sidebar_layouts ) ) ? sanitize_text_field( $new_instance['layout'] ) : 'one';
 
-            $instance['sort_order']   = sanitize_text_field( $new_instance['sort_order'] );
+            $instance['sort_order']   = ( isset( $new_instance['sort_order'] ) && array_key_exists( $new_instance['sort_order'], $sort_order_choices ) ) ? sanitize_text_field( $new_instance['sort_order'] ) : 'desc';
 
-            $instance['orderby']      = sanitize_text_field( $new_instance['orderby'] );
+            $instance['orderby']      = ( isset( $new_instance['orderby'] ) && array_key_exists( $new_instance['orderby'], $orderby_choices ) ) ? sanitize_text_field( $new_instance['orderby'] ) : 'date';
 
-            $instance['display_featured_image'] = wp_validate_boolean( $new_instance['display_featured_image'] );
+            $instance['display_featured_image'] = isset( $new_instance['display_featured_image'] ) ? wp_validate_boolean( $new_instance['display_featured_image'] ) : false;
 
-            $instance['display_category'] = wp_validate_boolean( $new_instance['display_category'] );
+            $instance['display_category'] = isset( $new_instance['display_category'] ) ? wp_validate_boolean( $new_instance['display_category'] ) : false;
 
             return $instance;
         }

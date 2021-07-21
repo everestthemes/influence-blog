@@ -93,7 +93,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 /*---------------------------------- Header layout options select -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_layout_options_select', array(
-    'sanitize_callback'        => 'sanitize_radio_image_two',
+    'sanitize_callback'        => 'influence_blog_sanitize_radio_image_two',
     'default'                  => influence_blog_defaults( 'header_layout_options_select' ),
 ) );
 
@@ -149,7 +149,7 @@ foreach( $arrange_header_layout_one_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_header_layout_one', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults ( $arrange_header_layout_one_options ),
 ) );
 
@@ -173,7 +173,7 @@ foreach( $arrange_header_layout_two_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_header_layout_two', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults ( $arrange_header_layout_two_options ),
 ) );
 
@@ -366,7 +366,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 /*---------------------------------- Header layout options advance header height -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_layout_options_advance_header_height', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'header_layout_options_advance_header_height' ),
 ) );

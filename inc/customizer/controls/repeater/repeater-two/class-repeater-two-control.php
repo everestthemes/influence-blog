@@ -846,11 +846,11 @@ if( ! class_exists( 'Influence_Blog_Repeater_Two_Control' ) ) {
     }
 }
 
-if( !function_exists( 'sanitize_repeater_two' ) ) :
+if( !function_exists( 'influence_blog_sanitize_repeater_two' ) ) :
     /**
      * Sanitization callback function for repeater two control.
      */
-    function sanitize_repeater_two( $input ) {
+    function influence_blog_sanitize_repeater_two( $input ) {
 
         $input_decoded = json_decode( $input, true );
 
@@ -860,7 +860,14 @@ if( !function_exists( 'sanitize_repeater_two' ) ) :
 
                 foreach ($box as $key => $value){
 
-                    $input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+                    if( $key == 'icon_value' || $key == 'text' || $key == 'text2' || $key == 'title' || $key == 'subtitle' || $key == 'social_repeater' || $key == 'id' || $key == 'shortcode' ) {
+
+                        $input_decoded[$boxk][$key] = sanitize_text_field( $value );
+                    }
+
+                    if( $key == 'link' ) {
+                        $input_decoded[$boxk][$key] = esc_url_raw( $value );
+                    }
                 }
             }
             return json_encode($input_decoded);

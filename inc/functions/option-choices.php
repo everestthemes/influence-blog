@@ -149,3 +149,27 @@ if( !function_exists( 'influence_blog_fullwidth_widget_select_array' ) ) :
 
 	}
 endif;
+
+
+if( !function_exists( 'influence_blog_post_category_array' ) ) :
+    /*
+     * Function to get order choices
+     */
+    function influence_blog_post_category_array() {
+
+        $taxonomy = 'category';
+
+        $terms = get_terms( $taxonomy );
+
+        $categories = array();
+
+        foreach( $terms as $term ) {
+
+            $categories[$term->term_id] = $term->name;
+        }
+
+        $post_categories = apply_filters( 'influence_blog_filter_post_category_array', $categories );
+
+        return $post_categories;
+    }
+endif;

@@ -139,11 +139,11 @@ if( ! class_exists( 'Influence_Blog_Box_Shadow_One_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_box_shadow_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_box_shadow_one' ) ) :
     /**
      * Sanitization callback function for box shadow one control.
      */
-    function sanitize_box_shadow_one( $input, $setting ) {
+    function influence_blog_sanitize_box_shadow_one( $input, $setting ) {
 
         return is_numeric( $input ) ? $input : 0;
     }

@@ -129,7 +129,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 /*---------------------------------- Layout style -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style', array(
-    'sanitize_callback'        => 'sanitize_button_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_button_one',
     'default'                  => influence_blog_defaults( 'site_layout_style' ),
 ) );
 
@@ -174,7 +174,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 /*---------------------------------- Container style -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_container_style', array(
-    'sanitize_callback'        => 'sanitize_button_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_button_one',
     'default'                  => influence_blog_defaults( 'site_layout_container_style' ),
 ) );
 
@@ -225,7 +225,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 /*---------------------------------- Layout style for image/color -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_design_options', array(
-    'sanitize_callback'        => 'sanitize_button_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_button_one',
     'default'                  => influence_blog_defaults( 'site_layout_style_design_options' ),
 ) );
 
@@ -406,43 +406,43 @@ $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_d_p_left',
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_t_p_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_t_p_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_t_p_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_t_p_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_t_p_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_t_p_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_t_p_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_t_p_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_m_p_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_m_p_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_m_p_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_m_p_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_m_p_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_m_p_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_m_p_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_m_p_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_site_layout_style_advance_p', array(
@@ -488,25 +488,25 @@ $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_b_d_m_left
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_b_t_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_b_t_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_b_t_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_b_t_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_b_m_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_b_m_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_b_m_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_b_m_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_site_layout_style_advance_box_m', array(
@@ -555,43 +555,43 @@ $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_d_m_left
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_t_m_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_t_m_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_t_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_t_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_t_m_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_t_m_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_t_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_t_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_m_m_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_m_m_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_m_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_m_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_m_m_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_m_m_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_f_m_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_style_advance_f_m_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_site_layout_style_advance_f_m', array(
@@ -623,7 +623,7 @@ $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_custom
 /*---------------------------------- Layout style width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_width', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_width' ),
 ) );
@@ -644,7 +644,7 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_cu
 /*---------------------------------- Layout style border radius -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_radius', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_radius' ),
 ) );
@@ -665,7 +665,7 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_One_Control ( $wp_cu
 /*---------------------------------- Layout style border width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_site_layout_style_advance_boxed_border_width', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'site_layout_style_advance_boxed_border_width' ),
 ) );
@@ -743,43 +743,43 @@ $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_d_p_
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_p_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_p_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_p_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_p_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_p_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_p_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_p_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_p_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_p_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_p_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_p_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_p_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_p_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_p_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_p_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_p_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_site_layout_container_advance_b_p', array(
@@ -834,43 +834,43 @@ $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_d_m_
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_m_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_m_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_m_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_m_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_t_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_t_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_m_top', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_m_top' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_m_right', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_m_right' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_m_bottom', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_m_bottom' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 $wp_customize->add_setting( 'influence_blog_site_layout_container_advance_b_m_m_left', array(
     'transport' 			   => 'postMessage',
     'default'           	   => influence_blog_defaults( 'site_layout_container_advance_b_m_m_left' ),
-    'sanitize_callback' 	   => 'sanitize_dimension_one_blank',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_dimension_one_blank',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Dimension_One_Control( $wp_customize, 'influence_blog_site_layout_container_advance_b_m', array(

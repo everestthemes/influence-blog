@@ -421,7 +421,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
 
             //Banner - layout options
             'banner_layout_options_select' => 'one',
-            'banner_display_toggle'=> true,
+            'banner_display_toggle'=> false,
             //Banner - content options
             'banner_content_options_query_toggle' => false,
             'banner_category'=> array(
@@ -430,7 +430,7 @@ if ( !function_exists( 'influence_blog_defaults' ) ) {
             'banner_orderby' => 'date',
             'banner_sort_order' => 'desc',
             'banner_posts_number' => 2,
-            'banner_background_text' => esc_html__( 'Fashion Time', 'influence-blog' ),
+            'banner_background_text' => '',
             'banner_read_more_text' => esc_html__( 'Read More', 'influence-blog' ),
             'banner_content_options_two_slider_col' => 8,
             'banner_content_options_two_ads_toggle' => true,

@@ -342,6 +342,11 @@ button {
     cursor: pointer;
 }
 
+.hamburger.active {
+
+    display: none;
+}
+
 .hamburger:hover {
     opacity: 0.7;
 }
@@ -1428,9 +1433,6 @@ button {
     background-color: #eee;
     padding: 30px;
 }
-.fl-mid-widget-area.design3 .widget-tt p{
-color:white;
-  }
 
 .metastyle1 {
     float: left;
@@ -2204,13 +2206,6 @@ color:white;
 .min-half-banner {
     margin-bottom: 60px;
 }
-.full-widget-d3-slide-wrap
-.slick-arrow:active,
-.full-widget-d3-slide-wrap
-.slick-arrow:focus{
-    color:white;
-}
-
 
 /* ==============
 
@@ -4153,11 +4148,4 @@ margin-right:15px;
 }
 *[dir="rtl"] .navigation.pagination{
     margin-bottom: 30px;
-}
-
-
-/* contact-page */
-
-.wpcf7-form p label {
-  display:block;
 }

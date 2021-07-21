@@ -53,11 +53,11 @@ if ( ! class_exists( 'Influence_Blog_Radio_Image_Two_Control' ) ) :
 	}
 endif;
 
-if( !function_exists( 'sanitize_radio_image_two' ) ) :
+if( !function_exists( 'influence_blog_sanitize_radio_image_two' ) ) :
     /**
      * Sanitization callback function for radio image one control.
      */
-    function sanitize_radio_image_two( $input, $setting ) {
+    function influence_blog_sanitize_radio_image_two( $input, $setting ) {
 
         $input = sanitize_key( $input );
 

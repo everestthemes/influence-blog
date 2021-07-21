@@ -77,11 +77,11 @@ if( ! class_exists( 'Influence_Blog_Select_One_Control' ) ) :
 	}
 endif;
 
-if( !function_exists( 'sanitize_select_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_select_one' ) ) :
     /**
      * Sanitization callback function for select one control.
      */
-    function sanitize_select_one( $input ) {
+    function influence_blog_sanitize_select_one( $input ) {
 
         if( !empty( $input ) ) {
 

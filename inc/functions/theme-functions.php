@@ -219,27 +219,27 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
         if ( ! $background && ! $color )
             return;
 
-        $style = $color ? "background-color: #$color;" : '';
+        $style = $color ? "background-color: #" . esc_attr( $color ) . ";" : '';
 
         $bg_style = '';
 
         if ( $background ) {
-            $image = " background-image: url('$background');";
+            $image = " background-image: url('" . esc_url( $background ) . "');";
 
             $repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
             if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
                 $repeat = 'repeat';
-            $repeat = " background-repeat: $repeat;";
+            $repeat = " background-repeat: " . esc_attr( $repeat ) . ";";
 
             $position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
             if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
                 $position = 'left';
-            $position = " background-position: top $position;";
+            $position = " background-position: top " . esc_attr( $position ) . ";";
 
             $attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
             if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
                 $attachment = 'scroll';
-            $attachment = " background-attachment: $attachment;";
+            $attachment = " background-attachment:" . esc_attr( $attachment ) . ";";
 
             $bg_style = $image . $repeat . $position . $attachment;
         }
@@ -247,10 +247,10 @@ if( !function_exists( 'influence_blog_custom_bg_image' ) ) :
     <style type="text/css" id="custom-background-css">
         body.boxed,
         body.framed {
-            <?php echo wp_kses_post( trim( $bg_style ) ); ?>
+            <?php echo $bg_style; ?>
         }
         body.wide {
-            <?php echo esc_attr( trim( $style ) ); ?>
+            <?php echo $style; ?>
         }
     </style>
     <?php

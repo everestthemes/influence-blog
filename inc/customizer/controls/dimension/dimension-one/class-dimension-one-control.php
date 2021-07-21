@@ -215,11 +215,11 @@ if( !function_exists( 'sanitize_dimension_one_number' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_dimension_one_blank' ) ) :
+if( !function_exists( 'influence_blog_sanitize_dimension_one_blank' ) ) :
     /**
      * Sanitization callback function for dimension one control.
      */
-    function sanitize_dimension_one_blank( $input ) {
+    function influence_blog_sanitize_dimension_one_blank( $input ) {
 
         return is_numeric( $input ) ? $input : '';
     }

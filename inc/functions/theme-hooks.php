@@ -289,7 +289,7 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
         <div class="<?php echo esc_attr( $col_class ); ?>">
             <div id="header" class="mastheader header header-layout1">
                 <div class="container">
-                   <button class="hamburger hamburger_nb" type="button">
+                    <button class="hamburger hamburger_nb no-active" type="button">
                         <span class="hamburger_box">
                             <span class="hamburger_inner"></span>
                         </span>
@@ -309,6 +309,11 @@ if( ! function_exists( 'influence_blog_header_main_navigation_action' ) ) :
                         wp_nav_menu( $menu_args );
                         ?>
                     </nav>
+                    <button class="hamburger hamburger_nb active" type="button">
+                        <span class="hamburger_box">
+                            <span class="hamburger_inner"></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div><!--col-md-9-->

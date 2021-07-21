@@ -3,8 +3,8 @@
 Contributors: everestthemes
 Requires at least: 5.0
 Requires PHP: 5.6
-Tested up to: 5.4
-Stable tag: 1.0.6
+Tested up to: 5.8
+Stable tag: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, entertainment, featured-image-header, featured-images, footer-widgets, full-width-template, grid-layout, news, blog, right-sidebar, left-sidebar, theme-options, threaded-comments, translation-ready, two-columns, block-styles, wide-blocks
@@ -17,7 +17,7 @@ Influence Blog is a modern Gutenberg compatible eye catching interactive designe
 
 == License ==
 
-Influence Blog WordPress Theme, Copyright (C) 2019, everestthemes.
+Influence Blog WordPress Theme, Copyright (C) 2020, everestthemes.
 Influence Blog is distributed under the terms of the GNU GPL
 
 
@@ -46,11 +46,13 @@ Influence Blog is distributed under the terms of the GNU GPL
 
 == Screenshot ==
 
-Image for theme screenshot
+Image used in the screenshot
 License: CC0 1.0 Universal (CC0 1.0)
+
 Sources:
 1. https://pxhere.com/en/photo/1172314
 2. https://pxhere.com/en/photo/1175886
+3. https://pxhere.com/en/photo/1416866
 
 Logo for theme screenshot
 License: GPLv2, Copyright everestthemes
@@ -71,6 +73,22 @@ Self created
 Influence Blog includes support for mailchimp, contact form 7.
 
 == Changelog ==
+
+= v1.0.9 : July 21, 2021 =
+
+- Compatibility check for WordPress 5.8
+- Added remove_theme_support : widgets-block-editor
+
+= v1.0.8 : June 5, 2020 =
+
+- Removed: RTL CSS and JS
+- Fixed: Issues mentioned by reviewer
+
+= v1.0.7 : May 17, 2020 =
+
+- Added: Unmified bootstrap-rtl.css
+- Fixed: Issues mentioned by reviewer
+
 
 = v1.0.6 : April 20, 2020 =
 

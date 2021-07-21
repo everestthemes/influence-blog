@@ -19,7 +19,7 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
             parent::__construct(
                 'influence_blog_author_widget',  // Widget ID
-                esc_html__( 'IfB: Author Widget', 'influence-blog' ),   // Widget Name
+                esc_html__( 'IFB: Author Widget', 'influence-blog' ),   // Widget Name
                 array(
                     'description' => esc_html__( 'Displays the author.', 'influence-blog' ),
                 )
@@ -361,15 +361,21 @@ if( ! class_exists( 'Influence_Blog_Author_Widget' ) ) :
 
         public function update( $new_instance, $old_instance ) {
 
+            $author_layouts = influence_blog_author_widget_select_array();
+            
+            $author_contents = influence_blog_widget_content_select_array();
+
             $instance = $old_instance;
 
             $instance['title']        = sanitize_text_field( $new_instance['title'] );
 
-            $instance['layout']        = sanitize_text_field( $new_instance['layout'] );
+            $instance['layout'] = ( isset( $new_instance['layout'] ) && array_key_exists( $new_instance['layout'], $author_layouts ) ) ? sanitize_text_field( $new_instance['layout'] ) : 'one';   
 
-            $instance['author_content']  = sanitize_text_field( $new_instance['author_content'] );
+            $instance['author_content'] = ( isset( $new_instance['author_content'] ) && array_key_exists( $new_instance['author_content'], $author_contents ) ) ? sanitize_text_field( $new_instance['author_content'] ) : 'one'; 
 
-            $instance['author_page']   = absint( $new_instance['author_page'] );
+            $author_page = get_post( absint( $new_instance['author_page'] ) );
+
+            $instance['author_page']   = ( is_object( $author_page ) ) ? absint( $new_instance['author_page'] ) : '';
 
             $instance['author_image_url']  = esc_url_raw( $new_instance['author_image_url'] );
 

@@ -1,10 +1,10 @@
 <?php
 
-if( !function_exists( 'icon_picker_one_fontawesome_icon_list' ) ) {
+if( !function_exists( 'influence_blog_icon_picker_one_fontawesome_icon_list' ) ) {
     /*
     * returns fontawesome icon list
     */
-    function icon_picker_one_fontawesome_icon_list() {
+    function influence_blog_icon_picker_one_fontawesome_icon_list() {
 
         return array(
             'fa-glass' => 'f000',

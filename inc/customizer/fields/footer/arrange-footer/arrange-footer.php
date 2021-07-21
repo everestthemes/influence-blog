@@ -42,7 +42,7 @@ $disableKey = apply_filters( 'influence_blog_filter_footer_three_disable_key', '
 
 $wp_customize->add_setting( 'influence_blog_arrange_footer', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults ( $arrange_footer_options ),
 ) );
 

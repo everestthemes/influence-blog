@@ -70,7 +70,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 /*---------------------------------- Search page layout options select -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_searchpage_layout_options_select', array(
-    'sanitize_callback'        => 'sanitize_radio_image_two',
+    'sanitize_callback'        => 'influence_blog_sanitize_radio_image_two',
     'default'                  => influence_blog_defaults( 'searchpage_layout_options_select' ),
 ) );
 

@@ -1,4 +1,4 @@
-jQuery(function($){
+(function($){
 
 	/*
 	 * Load More
@@ -27,4 +27,4 @@ jQuery(function($){
 		return false;
 	});
 
-});
+})(jQuery);

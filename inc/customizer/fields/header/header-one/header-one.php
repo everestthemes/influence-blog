@@ -123,7 +123,7 @@ foreach( $arrange_header_one_layout_one_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_header_one_layout_one', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults( $arrange_header_one_layout_one_options ),
 ) );
 
@@ -202,7 +202,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 /*---------------------------------- Header one layout one social links repeater -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_header_one_layout_one_social_links', array(
-    'sanitize_callback'        => 'sanitize_repeater_two',
+    'sanitize_callback'        => 'influence_blog_sanitize_repeater_two',
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Repeater_Two_Control( $wp_customize, 'influence_blog_header_one_layout_one_social_links', array(
@@ -377,7 +377,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_font', array(
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_font' ),
-    'sanitize_callback'        => 'sanitize_typography_one'
+    'sanitize_callback'        => 'influence_blog_sanitize_typography_one'
 ) );
 
 $wp_customize->add_control( new Influence_Blog_Typography_One_Control( $wp_customize, 'influence_blog_typo_header_one_layout_one_design_menu_font', array(
@@ -406,20 +406,20 @@ $wp_customize->add_control( 'influence_blog_typo_header_one_layout_one_design_me
 /*---------------------------------- Header one layout one design menu typo font size -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_size_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_size_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_size_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_size_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_size_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_size_m' ),
 ) );
 
@@ -439,20 +439,20 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_cu
 /*---------------------------------- Header one layout one design menu typo line height -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_height_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_height_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_height_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_height_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_height_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_height_m' ),
 ) );
 
@@ -472,20 +472,20 @@ $wp_customize->add_control( new Influence_Blog_Range_Slider_Two_Control ( $wp_cu
 /*---------------------------------- Header one layout one design menu typo letter spacing -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_spacing_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_spacing_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_spacing_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_spacing_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_menu_spacing_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_menu_spacing_m' ),
 ) );
 
@@ -601,20 +601,20 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 /*---------------------------------- Header one layout one design social links typo font size -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_social_links_size_d', array(
-    'sanitize_callback'        => 'sanitize_range_slider_two_number',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_two_number',
     'transport' 		       => 'postMessage',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_social_links_size_d' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_social_links_size_t', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_social_links_size_t' ),
 ) );
 
 $wp_customize->add_setting( 'influence_blog_typo_header_one_layout_one_design_social_links_size_m', array(
     'transport' 			   => 'postMessage',
-    'sanitize_callback' 	   => 'sanitize_range_slider_two_number',
+    'sanitize_callback' 	   => 'influence_blog_sanitize_range_slider_two_number',
     'default'                  => influence_blog_defaults( 'typo_header_one_layout_one_design_social_links_size_m' ),
 ) );
 

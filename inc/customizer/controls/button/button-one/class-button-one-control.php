@@ -90,11 +90,11 @@ if( ! class_exists( 'Influence_Blog_Button_One_Control' ) ) :
 	}
 endif;
 
-if( !function_exists( 'sanitize_button_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_button_one' ) ) :
     /**
      * Sanitization callback function for button one control.
      */
-    function sanitize_button_one( $input, $setting ) {
+    function influence_blog_sanitize_button_one( $input, $setting ) {
         // Ensure input is a slug.
         $input = sanitize_key( $input );
 

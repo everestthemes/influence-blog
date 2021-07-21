@@ -58,14 +58,9 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Position_Custom_Field' ) ) :
 
 		    wp_nonce_field( 'sidebar_position_meta_nonce', 'sidebar_position_meta_nonce_id' );
 
-		    $choices = array(
-		        'right' => esc_html__( 'Right', 'influence-blog' ),
-		        'left' => esc_html__( 'Left', 'influence-blog' ),
-		        'none' => esc_html__( 'Fullwidth', 'influence-blog' ),
-		    );
+		    $choices = $this->sidebar_position_choices();
 
 		    ?>
-
 		    <table width="100%" border="0" class="options" cellspacing="5" cellpadding="5">
 		        <tr>
 		        	<td>
@@ -114,8 +109,26 @@ if( ! class_exists( 'Influence_Blog_Sidebar_Position_Custom_Field' ) ) :
 
 		    if( isset( $_POST['sidebar_position'] ) ) {
 
-				update_post_meta( $post->ID, $sidebar_position_key, sanitize_text_field( wp_unslash( $_POST['sidebar_position'] ) ) ); 
+		    	$choices = $this->sidebar_position_choices();
+
+		    	if( array_key_exists( $_POST['sidebar_position'], $choices ) ) {
+
+					update_post_meta( $post->ID, $sidebar_position_key, sanitize_text_field( wp_unslash( $_POST['sidebar_position'] ) ) ); 
+				} else {
+					
+					update_post_meta( $post->ID, $sidebar_position_key, 'right' );
+				}
 			}
+		}
+
+
+		public function sidebar_position_choices() {
+
+			return array(
+		        'right' => esc_html__( 'Right', 'influence-blog' ),
+		        'left' => esc_html__( 'Left', 'influence-blog' ),
+		        'none' => esc_html__( 'Fullwidth', 'influence-blog' ),
+		    );
 		}
 	}
 endif;

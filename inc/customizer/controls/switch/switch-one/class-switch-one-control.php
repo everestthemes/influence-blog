@@ -78,11 +78,11 @@ if( ! class_exists( 'Influence_Blog_Switch_One_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_switch_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_switch_one' ) ) :
     /**
      * Sanitization callback function for switch one control.
      */
-    function sanitize_switch_one( $input ) {
+    function influence_blog_sanitize_switch_one( $input ) {
 
         $input = sanitize_text_field( $input );
 

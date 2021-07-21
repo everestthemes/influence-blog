@@ -244,11 +244,11 @@ if( ! class_exists( 'Influence_Blog_Typography_One_Control' ) ) :
     }
 endif;
 
-if( !function_exists( 'sanitize_typography_one' ) ) :
+if( !function_exists( 'influence_blog_sanitize_typography_one' ) ) :
     /**
      * Sanitization callback function for typography one control.
      */
-    function sanitize_typography_one( $input ) {
+    function influence_blog_sanitize_typography_one( $input ) {
 
         $val =  json_decode( $input, true );
 

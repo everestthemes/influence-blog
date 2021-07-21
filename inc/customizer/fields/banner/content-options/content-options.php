@@ -108,7 +108,7 @@ foreach( $arrange_banner_one_content_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_banner_content_options_one', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults ( $arrange_banner_one_content_options ),
 ) );
 
@@ -132,7 +132,7 @@ foreach( $arrange_banner_two_content_options as $key => $val ) {
 
 $wp_customize->add_setting( 'influence_blog_arrange_banner_content_options_two', array(
     'transport'                => 'refresh',
-    'sanitize_callback'        => 'sanitize_sortable_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_sortable_one',
     'default'                  => influence_blog_sortable_defaults ( $arrange_banner_two_content_options ),
 ) );
 
@@ -193,7 +193,7 @@ $wp_customize->add_control( new Influence_Blog_Info_One_Control ( $wp_customize,
 /*---------------------------------- Banner select category -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_banner_category', array(
-    'sanitize_callback'        => 'sanitize_select_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_select_one',
     'default'                  => influence_blog_defaults( 'banner_category' ),
 ) );
 
@@ -341,7 +341,7 @@ $wp_customize->add_control( new Influence_Blog_Heading_One_Control( $wp_customiz
 /*---------------------------------- Banner content options two slider column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_banner_content_options_two_slider_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'banner_content_options_two_slider_col' ),
 ) );
 
@@ -394,7 +394,7 @@ $wp_customize->add_control( new Influence_Blog_Toggle_Three_Control ( $wp_custom
 /*---------------------------------- Banner content options two ads column width -----------------------------------*/
 
 $wp_customize->add_setting( 'influence_blog_banner_content_options_two_ads_col', array(
-    'sanitize_callback'        => 'sanitize_range_slider_one',
+    'sanitize_callback'        => 'influence_blog_sanitize_range_slider_one',
     'default'                  => influence_blog_defaults( 'banner_content_options_two_ads_col' ),
 ) );
 
