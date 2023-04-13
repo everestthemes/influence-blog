@@ -74,6 +74,8 @@ Influence Blog includes support for mailchimp, contact form 7.
 
 == Changelog ==
 
+= v1.1.0 : April 12, 2023 =
+
 = v1.0.9 : July 21, 2021 =
 
 - Compatibility check for WordPress 5.8
